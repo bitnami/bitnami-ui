@@ -1,0 +1,27 @@
+/**
+ * We need to get a Senior Naming Engineer
+ */
+
+$scale-names: (
+  -2: 'tiny',
+  -1: 'small',
+  0: 'normal',
+  1: 'big',
+  2: 'bigger',
+  3: 'enormous',
+  4: 'giant',
+  5: 'huge'
+);
+
+$color-names: (
+  'bitnami': 'brand',
+  'navi': 'primary',
+  'elephant': 'secondary',
+  'firefly': 'tertiary',
+  'emerald': 'accent',
+  'iron': 'light',
+  'mako': 'dark',
+  'shark': 'text', 
+  'pomegranate': 'action',
+  'white': 'base'
+);

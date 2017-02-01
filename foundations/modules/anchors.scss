@@ -1,0 +1,25 @@
+/**
+ * Styles for the anchors.
+ */
+
+a {
+  color: color('accent');
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('accent', 200);
+  }
+}
+
+// Inverse anchors
+[class*="inverse"] a {
+  color: color-level('accent', 300);
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('accent', 100);
+  }
+}

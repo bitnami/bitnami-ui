@@ -1,0 +1,50 @@
+/**
+ * Styles for the headers.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: su(.5) 0 su(.25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $type-headings;
+  color: color('bitnami');
+}
+
+h1 {
+  font-size: type-scale(4);
+}
+
+h2 {
+  font-size: type-scale(3);
+}
+
+h3 {
+  font-size: type-scale(2);
+  color: color('emerald');
+}
+
+h4 {
+  font-size: type-scale(2);
+  font-weight: bold;
+}
+
+h5 {
+  font-size: type-scale(1);
+  font-weight: bold;
+}
+
+h6 {
+  font-size: type-scale(0);
+  font-weight: bold;
+  color: color('bitnami');
+}

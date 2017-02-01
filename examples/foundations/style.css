@@ -1,0 +1,54 @@
+/**
+ * This file only contains some CSS classes to display the Bitnami UI foundations guideline
+ */
+
+header {
+  margin: 2em;
+  text-align: center;
+}
+
+header .logo {
+  height: 120px;
+}
+
+main {
+  max-width: 980px;
+  padding: 0 1em;
+  margin: 0 auto 5em;
+}
+
+/* Blocks */
+.block {
+  margin: 2em 0;
+}
+
+.block .title {
+  border-bottom: 1px solid #ddd;
+}
+
+.element {
+  position: relative;
+}
+
+.element.small {
+  width: 560px;
+  margin: 0 auto;
+}
+
+.element .selector {
+  position: absolute;
+  display: none;
+  font-size: 1em;
+  font-weight: bold;
+  color: #999;
+  background-color: rgba(255, 255, 255, .95);
+  padding: 1em;
+  top: 50%;
+  left: -3em;
+  margin-top: -1.5em;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .1);
+}
+
+.element:hover .selector {
+  display: block;
+}

@@ -1,0 +1,27 @@
+/**
+ * Typo styles. This classes are helpers, feel free to add it to your selectors
+ * to modify the default behaviour
+ */
+
+/**
+ * Those selectors modify the size of the typography
+ */
+
+@for $i from -2 through 5 {
+  $name: map-get($scale-names, $i);
+
+  .type--scale#{$i},
+  .type--#{$name} {
+    font-size: type-scale($i);
+  }
+}
+
+/**
+ * Colors
+ */
+@each $alias, $name in $color-names {
+  .type--color-#{$alias},
+  .type--color-#{$name} {
+    color: color($name);
+  }
+}
