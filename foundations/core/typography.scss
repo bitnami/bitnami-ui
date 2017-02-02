@@ -19,7 +19,9 @@
 /**
  * Colors
  */
-@each $alias, $name in $color-names {
+@each $alias in 'bitnami', 'accent', 'iron', 'action' {
+  $name: map-get($color-names, $alias);
+
   .type--color-#{$alias},
   .type--color-#{$name} {
     color: color($name);

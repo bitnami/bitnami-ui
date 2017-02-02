@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Bitnami UI Foundations</title>
-    <!--<link href="https://fonts.googleapis.com/css?family=Dosis:400,700|Source+Sans+Pro:400,600" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700|Source+Sans+Pro:400,600" rel="stylesheet">
     <link href="../../dist/bitnami.ui.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
   </head>
@@ -193,36 +193,8 @@
 
         <h2 class="title">Colors</h2>
         <div class="element">
-          <div class="selector">p.type--color-bitnami</div>
+          <div class="selector">p.type--color-bitnami or p.type--color-brand</div>
           <p class="type--color-bitnami">
-            For example, our Rails Development Container includes full Rails environment and
-            SQL database (MariaDB).
-          </p>
-        </div>
-        <div class="element">
-          <div class="selector">p.type--color-navi</div>
-          <p class="type--color-navi">
-            For example, our Rails Development Container includes full Rails environment and
-            SQL database (MariaDB).
-          </p>
-        </div>
-        <div class="element">
-          <div class="selector">p.type--color-elephant</div>
-          <p class="type--color-elephant">
-            For example, our Rails Development Container includes full Rails environment and
-            SQL database (MariaDB).
-          </p>
-        </div>
-        <div class="element">
-          <div class="selector">p.type--color-firefly</div>
-          <p class="type--color-firefly">
-            For example, our Rails Development Container includes full Rails environment and
-            SQL database (MariaDB).
-          </p>
-        </div>
-        <div class="element">
-          <div class="selector">p.type--color-mako</div>
-          <p class="type--color-mako">
             For example, our Rails Development Container includes full Rails environment and
             SQL database (MariaDB).
           </p>
@@ -230,6 +202,13 @@
         <div class="element">
           <div class="selector">p.type--color-accent</div>
           <p class="type--color-accent">
+            For example, our Rails Development Container includes full Rails environment and
+            SQL database (MariaDB).
+          </p>
+        </div>
+        <div class="element">
+          <div class="selector">p.type--color-iron or p.type--color-light</div>
+          <p class="type--color-iron">
             For example, our Rails Development Container includes full Rails environment and
             SQL database (MariaDB).
           </p>
@@ -264,7 +243,7 @@
       <article class="block">
         <h1 class="title">Quotations</h1>
         <div class="element">
-          <div class="selector">blockquote</div>
+          <div class="selector">blockquote, a[rel="author"]</div>
           <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
             Great day at my first Linux Foundation board meeting, but looking forward to seeing
             everyone at #awsreinvent. On my way!
@@ -273,7 +252,7 @@
           </blockquote>
         </div>
         <div class="element small">
-          <div class="selector">blockquote</div>
+          <div class="selector">blockquote, a[rel="author"]</div>
           <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
             Great day at my first Linux Foundation board meeting, but looking forward to seeing
             everyone at #awsreinvent. On my way!
@@ -288,6 +267,145 @@
             <abbr title="Structured Query Language">SQL</abbr> database (MariaDB) to get developers productive immediately ‐ with all the
             most common tools ready to go.
           </p>
+        </div>
+      </article>
+
+      <!-- Lists -->
+
+      <article class="block">
+        <h1 class="title">Lists</h1>
+        <div class="element">
+          <div class="selector">ul, li</div>
+          <ul>
+            <li>Can't find what you're looking for?</li>
+            <li>Click here for account questions</li>
+            <li>Click here for app questions</li>
+          </ul>
+        </div>
+        <div class="element">
+          <div class="selector">ol, li</div>
+          <ol>
+            <li>Can't find what you're looking for?</li>
+            <li>Click here for account questions</li>
+            <li>Click here for app questions</li>
+          </ol>
+        </div>
+      </article>
+
+      <!-- Tables -->
+
+      <article class="block">
+        <h1 class="title">Tables</h1>
+        <div class="element">
+          <div class="selector">table, thead, tbody, tr, th, td</div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Downloads</th>
+                <th>Stars</th>
+              </tr>
+            </thead>
+            <body>
+              <tr>
+                <td>123</td>
+                <td>Gitlab</td>
+                <td>42343</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>321</td>
+                <td>Moodle</td>
+                <td>54312</td>
+                <td>4.5</td>
+              </tr>
+              <tr>
+                <td>753</td>
+                <td>Wordpress</td>
+                <td>23434</td>
+                <td>4.3</td>
+              </tr>
+            </body>
+          </table>
+        </div>
+        <div class="element">
+          <div class="selector">table.striped, thead, tbody, tr, th, td</div>
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Downloads</th>
+                <th>Stars</th>
+              </tr>
+            </thead>
+            <body>
+              <tr>
+                <td>123</td>
+                <td>Gitlab</td>
+                <td>42343</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>321</td>
+                <td>Moodle</td>
+                <td>54312</td>
+                <td>4.5</td>
+              </tr>
+              <tr>
+                <td>753</td>
+                <td>Wordpress</td>
+                <td>23434</td>
+                <td>4.3</td>
+              </tr>
+              <tr>
+                <td>713</td>
+                <td>Ghost</td>
+                <td>23234</td>
+                <td>4.8</td>
+              </tr>
+            </body>
+          </table>
+        </div>
+        <div class="element">
+          <div class="selector">table.text-c, thead, tbody, tr, th, td</div>
+          <table class="text-c">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Downloads</th>
+                <th>Stars</th>
+              </tr>
+            </thead>
+            <body>
+              <tr>
+                <td>123</td>
+                <td>Gitlab</td>
+                <td>42343</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>321</td>
+                <td>Moodle</td>
+                <td>54312</td>
+                <td>4.5</td>
+              </tr>
+              <tr>
+                <td>753</td>
+                <td>Wordpress</td>
+                <td>23434</td>
+                <td>4.3</td>
+              </tr>
+              <tr>
+                <td>713</td>
+                <td>Ghost</td>
+                <td>23234</td>
+                <td>4.8</td>
+              </tr>
+            </body>
+          </table>
         </div>
       </article>
     </main>

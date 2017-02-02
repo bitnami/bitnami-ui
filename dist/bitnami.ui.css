@@ -419,10 +419,16 @@ template {
  * are font families, line heights, colors...
  */
 /**
+ * Represents the basic values for Bitnami UI
+ */
+/**
  * Main colors are defined in the Bitnami Brand book.
  */
 /**
  * We need to get a Senior Naming Engineer
+ */
+/**
+ * Basic sizes to reuse across the project
  */
 /**
  * Defines all typography related variables for the project. Some fonts should
@@ -441,14 +447,17 @@ template {
  * Power operator for SASS!
  */
 /**
+ * Utils methods for sizing
+ */
+/**
+ * Using $su allow us to set the correct vertical rhythm of the page
+ */
+/**
  * Get the type scale.
  * You can check: http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source%2BSans%2BPro&font-family=%27Source%20Sans%20Pro%27%2C%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333
  */
 /**
  * Get the line-height for different levels
- */
-/**
- * Using $su allow us to set the correct vertical rhythm of the page
  */
 /**
  * Remove the unit of a length
@@ -526,6 +535,17 @@ h6 {
   color: #1F577A; }
 
 /**
+ * Styles for lists
+ */
+ul,
+ol {
+  padding-left: 2.666em;
+  margin: 0.6665em 0 1.333em; }
+  ul li,
+  ol li {
+    padding: 0.1333em 0; }
+
+/**
  * Styles for paragraphs.
  */
 p {
@@ -549,6 +569,28 @@ abbr[title],
 cite {
   text-decoration: none;
   font-weight: 600; }
+
+/**
+ * Styles for tables.
+ */
+table {
+  width: 100%;
+  margin: 0.6665em 0 1.333em;
+  border-collapse: collapse;
+  text-align: left; }
+  table th,
+  table td {
+    padding: 0.6665em 0; }
+  table th {
+    border-bottom: 1px solid #E6E7E8; }
+  table tbody > tr:hover {
+    background-color: #f8f8f8; }
+
+table.striped tbody tr:nth-child(even) td {
+  background-color: #f8f8f8; }
+
+table.striped tr:hover {
+  background-color: initial; }
 
 /**
  * Typo styles. This classes are helpers, feel free to add it to your selectors
@@ -596,19 +638,7 @@ cite {
 .type--color-brand {
   color: #1F577A; }
 
-.type--color-navi,
-.type--color-primary {
-  color: #14384E; }
-
-.type--color-elephant,
-.type--color-secondary {
-  color: #0C2C3C; }
-
-.type--color-firefly,
-.type--color-tertiary {
-  color: #162D50; }
-
-.type--color-emerald,
+.type--color-accent,
 .type--color-accent {
   color: #40B654; }
 
@@ -616,18 +646,27 @@ cite {
 .type--color-light {
   color: #E6E7E8; }
 
-.type--color-mako,
-.type--color-dark {
-  color: #37474F; }
-
-.type--color-shark,
-.type--color-text {
-  color: #2F3032; }
-
-.type--color-pomegranate,
+.type--color-action,
 .type--color-action {
   color: #EF4324; }
 
-.type--color-white,
-.type--color-base {
-  color: #FFFFFF; }
+/**
+ * Helper classes for positioning
+ */
+.text-l {
+  text-align: left; }
+
+.text-r {
+  text-align: right; }
+
+.text-c {
+  text-align: center; }
+
+.float-l {
+  float: left; }
+
+.float-r {
+  float: right; }
+
+.float-n {
+  float: none; }

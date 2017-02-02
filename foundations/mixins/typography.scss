@@ -3,7 +3,7 @@
  * You can check: http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source%2BSans%2BPro&font-family=%27Source%20Sans%20Pro%27%2C%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333
  */
 @function type-scale($level: 0) {
-  $base: strip-unit($type-size * $scale);
+  $base: strip-unit($base-type-size * $scale);
   @return pow($base, $level) * 1em;
 }
 
@@ -12,11 +12,4 @@
  */
 @function line-height($level: 0) {
   @return map-get($line-heights, $level);
-}
-
-/**
- * Using $su allow us to set the correct vertical rhythm of the page
- */
-@function su($level: 1) {
-  @return $su * $level;
 }

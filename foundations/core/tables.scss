@@ -1,0 +1,39 @@
+/**
+ * Styles for tables.
+ */
+
+table {
+  // By default, we want the table to use all the size of the container
+  width: 100%;
+  margin: margin('big-bottom');
+  border-collapse: collapse;
+  text-align: left;
+
+  // Increase padding of cells
+  th,
+  td {
+    padding: padding('normal');
+  }
+
+  th {
+    border-bottom: 1px solid color('iron');
+  }
+
+  tbody > tr:hover {
+    background-color: color-level('iron', 700);
+  }
+}
+
+// Modifiers!
+table {
+  // Striped
+  &.striped {
+    tbody tr:nth-child(even) td {
+      background-color: color-level('iron', 700);
+    }
+
+    tr:hover {
+      background-color: initial;
+    }
+  }
+}

@@ -46,7 +46,6 @@ main {
 .element .selector::after {
   content: 'selector';
   font-weight: 500;
-  font-size: .9em;
   color: #999;
   position: absolute;
   left: 1em;

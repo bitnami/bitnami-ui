@@ -8,7 +8,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  margin: su(.5) 0 su(.25);
+  margin: margin('small-bottom');
 }
 
 h1,
@@ -30,7 +30,7 @@ h2 {
 
 h3 {
   font-size: type-scale(2);
-  color: color('emerald');
+  color: color('accent');
 }
 
 h4 {

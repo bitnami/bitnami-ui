@@ -1,0 +1,25 @@
+/**
+ * Utils methods for sizing
+ */
+
+@function margin($name: 'normal') {
+  @if map-has-key($margin-sizes, $name) {
+    @return map-get($margin-sizes, $name);
+  } @else {
+    @warn "We didn't find the margin called #{$name}. Please check available sizes";
+    @return map-get($margin-sizes, 'normal');
+  }
+}
+
+// Alias for margin
+@function padding($name: 'normal') {
+  @return margin($name);
+}
+
+
+/**
+ * Using $su allow us to set the correct vertical rhythm of the page
+ */
+@function su($level: 1) {
+  @return $su * $level;
+}

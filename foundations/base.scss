@@ -6,13 +6,13 @@
 
 html {
   // We can increase this percentage to modify the base type size
-  font-size: $type-base;
+  font-size: $base-type-zoom;
 }
 
 body {
   // Basic values
   font-family: $type-body;
-  font-size: $type-size;
+  font-size: $base-type-size;
   color: color('text');
   line-height: $scale;
   // Improve legibility

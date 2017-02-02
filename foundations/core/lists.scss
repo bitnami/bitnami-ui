@@ -1,0 +1,13 @@
+/**
+ * Styles for lists
+ */
+
+ul,
+ol {
+  padding-left: su(2);
+  margin: margin('big-bottom');
+
+  li {
+    padding: margin('tiny');
+  }
+}
