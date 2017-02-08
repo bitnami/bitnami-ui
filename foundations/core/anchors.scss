@@ -1,0 +1,49 @@
+/*
+---
+name: Anchors
+category: Foundations/Anchors
+tag: text
+---
+They use the `accent` color.
+
+```html
+<a>Testing anchors</a>
+```
+*/
+/*
+---
+name: Inverse anchors
+category: Foundations/Anchors
+tag: text
+---
+If you add an anchor inside an element with some *inverse* class as a parent, it will use a
+lighten version of `accent` color.
+
+```html
+<div class="preview-inverse">
+  <a>Testing anchors</a>
+</div>
+```
+*/
+a:not(.button) {
+  color: color('accent');
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('accent', 200);
+  }
+}
+
+// Inverse anchors
+[class*="inverse"] a:not(.button) {
+  color: color-level('accent', 300);
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('accent', 100);
+  }
+}

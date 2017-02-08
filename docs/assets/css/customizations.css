@@ -1,0 +1,65 @@
+/* Add the logo to the header*/
+.aigis-header {
+  text-align: center;
+}
+
+.aigis-header img {
+  height: 60px;
+}
+
+/* Fix preview */
+.aigis-preview {
+  background: none;
+}
+
+/* Add a dark version of the preview */
+.preview-inverse {
+  margin: -1em;
+  padding: 1em;
+  background-color: #3f3f46;
+}
+
+/* Fix the position of the category lists */
+.aigis-categoryList ul {
+  margin: 0;
+  list-style: none;
+}
+
+/* Fix the position of the filename */
+.aigis-module__filepath {
+  margin-top: 0;
+}
+
+/* Reduce base font size for content */
+.aigis-contents {
+  font-size: initial;
+}
+
+/* Add a border to the sidebar */
+.aigis-sidemenu {
+  border-right: 1px solid #eee;
+}
+
+/* Improve text code box */
+.aigis-preview {
+  border-color: #ddd;
+  overflow: auto;
+}
+
+.aigis-module > pre {
+  background-color: #3f3f46;
+  border-color: #3f3f46;
+  padding: 1em;
+  overflow: auto;
+}
+
+/* Show code of README */
+.readme pre {
+  background-color: #3f3f46;
+  padding: 1em;
+}
+
+/* Increase the code size for inline elements */
+.aigis-module > p code {
+  font-size: .9em;
+}

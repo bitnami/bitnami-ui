@@ -1,0 +1,48 @@
+/*
+---
+name: Paragraphs
+category: Foundations/Paragraphs
+tag: text
+---
+The styles of the paragraphs are pretty similar for the base style. We only reset the margins.
+
+```html
+<p>
+For example, our Rails Development Container includes full Rails environment and
+SQL database (MariaDB) to get developers productive immediately - with all the most
+common tools ready to go.
+<p/>
+<p>
+And because they're built on top of Stacksmith, they're
+kept up-to-date to make sure the latest language features are available and you're
+building on a secure foundation.
+</p>
+```
+*/
+/*
+---
+name: Paragraphs with headers
+category: Foundations/Paragraphs
+tag: text
+---
+Paragraphs works pretty well with headers. The margin display both elements as a single block
+of content.
+
+```html
+<h1>Rails Development Container</h1>
+<p>
+For example, our Rails Development Container includes full Rails environment and
+SQL database (MariaDB) to get developers productive immediately - with all the most
+common tools ready to go.
+<p/>
+
+<h3>Stacksmith</h3>
+<p>
+The containers are built on top of Stacksmith, they're kept up-to-date to make sure the
+latest language features are available and you're building on a secure foundation.
+</p>
+```
+*/
+p {
+  margin: margin('normal') 0 margin('big');
+}

@@ -1,0 +1,41 @@
+/*
+---
+name: Colors
+category: Foundations/Variables
+tag: variables
+---
+Base colors of the applications. These colors are defined in the Brand Book Guide of Bitnami.
+You can see the colors in [Project colors](/color.html).
+
+```scss
+$colors: (
+  'brand': #1f577a,
+  'primary': #14384e,
+  'secondary': #0c2c3c,
+  'accent': #40b654,
+  'light': #e6e7e8,
+  'dark': #37474f,
+  'text': #2f3032,
+  'action': #ef4324,
+  'base': #fff
+);
+
+// Interval to get tints and shades
+$color-interval: 10%;
+```
+*/
+
+$colors: (
+  'brand': #1f577a,
+  'primary': #14384e,
+  'secondary': #0c2c3c,
+  'accent': #40b654,
+  'light': #e6e7e8,
+  'dark': #37474f,
+  'text': #2f3032,
+  'action': #ef4324,
+  'base': #fff
+);
+
+// Interval to get tints and shades
+$color-interval: 10%;

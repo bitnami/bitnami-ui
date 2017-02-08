@@ -1,0 +1,70 @@
+/*
+---
+name: Blockquote
+category: Foundations/Quotations
+tag: blocks
+---
+Blockquotes can be combined with anchors to display a complete quote. The `rel` property of the
+anchor must be equal to "author". You can check the following
+[link](https://html.spec.whatwg.org/multipage/semantics.html#link-type-author) for more information.
+
+```html
+<blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
+  Great day at my first Linux Foundation board meeting, but looking forward to seeing
+  everyone at #awsreinvent. On my way!
+  <br/>
+  <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+</blockquote>
+```
+*/
+blockquote {
+  padding-left: su(1);
+  margin: su(.5) 0 su();
+  border-left: 2px solid color-level('bitnami', 400);
+  color: color-level('text', 200);
+
+  // scss-lint:disable QualifyingElement
+  // Italic style is only for the Author of the quote
+  // https://html.spec.whatwg.org/multipage/semantics.html#link-type-author
+  a[rel="author"] {
+    font-style: italic;
+  }
+  // scss-lint:enable QualifyingElement
+
+  br + a {
+    display: inline-block;
+    margin-top: su(.25);
+  }
+}
+
+/*
+---
+name: Abbreviation
+category: Foundations/Quotations
+tag: text
+---
+`abbr` tags are useful to show more information about an abbreviation.
+
+```html
+For example, our Rails Development Container includes full Rails environment and
+<abbr title="Structured Query Language">SQL</abbr> database (MariaDB) to get developers
+productive immediately - with all the most common tools ready to go.
+```
+*/
+/*
+---
+name: Cite
+category: Foundations/Quotations
+tag: text
+---
+```html
+For example, our Rails Development Container includes full Rails environment and
+<abbr title="Structured Query Language">SQL</abbr> database (MariaDB) to get developers
+productive immediately - with all the most common tools ready to go.
+```
+*/
+abbr,
+cite {
+  text-decoration: none;
+  font-weight: 600;
+}

@@ -1,0 +1,30 @@
+/*
+---
+name: Base
+category: Foundations/Variables
+tag: variables
+---
+Basic values of the applications
+
+```scss
+// Sizing values
+$base-type-zoom: 100%;
+$base-type-size: 1em; // 16px
+// Fourth
+$scale: 1.333;
+
+// Basic size unity
+$size-unity: $base-type-size * $scale;
+$su: $size-unity;
+```
+*/
+
+// Sizing values
+$base-type-zoom: 100%;
+$base-type-size: 1em; // 16px
+// Fourth
+$scale: 1.333;
+
+// Basic size unity
+$size-unity: $base-type-size * $scale;
+$su: $size-unity;

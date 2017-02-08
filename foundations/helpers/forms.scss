@@ -1,0 +1,44 @@
+/*
+---
+name: Button Colors
+category: Foundations/Helpers/Forms
+tag: helpers
+---
+Modify the color of the buttons. Available classes:
+* `.button-primary`
+* `.button-accent`
+* `.button-action`
+
+```html
+<button class="button-primary">Submit</button>
+<a class="button button-accent">Link button</a>
+<a class="button button-action">Link button</a>
+<a class="button">Link button</a>
+```
+*/
+@include button-skin('primary', 'bitnami', 'white');
+@include button-skin('accent', 'accent', 'white');
+@include button-skin('action', 'action', 'white');
+
+/*
+---
+name: Button Sizes
+category: Foundations/Helpers/Forms
+tag: helpers
+---
+Modify the size of the buttons. Available classes:
+
+* `.button-small`
+* `.button-big`
+* `.button-bigger`
+
+```html
+<button class="button-primary button-small">Submit</button>
+<a class="button button-accent">Link button</a>
+<a class="button button-action button-big">Link button</a>
+<a class="button button-bigger">Link button</a>
+```
+*/
+@include button-size('small');
+@include button-size('big');
+@include button-size('bigger');

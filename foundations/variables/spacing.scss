@@ -1,0 +1,36 @@
+/*
+---
+name: Spacing
+category: Foundations/Variables
+tag: variables
+---
+Standard spacing values.
+
+```scss
+$colors: (
+$spacing-sizes: (
+  -3: 0,
+  -2: $su / 8,
+  -1: $su / 4,
+  0: $su / 2,
+  1: $su,
+  2: 1.5 * $su,
+  3: 2 * $su,
+  4: 3 * $su,
+  5: 5 * $su
+);
+```
+*/
+$spacing-sizes: (
+  -3: 0,
+  -2: $su / 8,
+  -1: $su / 4,
+  0: $su / 2,
+  1: $su,
+  2: 1.5 * $su,
+  3: 2 * $su,
+  4: 3 * $su,
+  5: 5 * $su
+);
+
+$spacing-border-radius: 3px;

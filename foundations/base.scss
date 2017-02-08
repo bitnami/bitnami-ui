@@ -1,0 +1,28 @@
+/**
+ * This file set the base of Bitnami UI. It will set the font-size, scale,
+ * background-color... of the body. All custom reset properties must be placed
+ * here.
+ */
+
+html {
+  // We can increase this percentage to modify the base type size
+  font-size: $base-type-zoom;
+}
+
+body {
+  // Basic values
+  font-family: $type-body;
+  font-size: $base-type-size;
+  color: color('text');
+  line-height: $scale;
+  // Improve legibility
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * Match the size of elements to the border box. This property allow us to add padding to elements
+ * preventing display the element outside of the container
+ */
+* {
+  box-sizing: border-box;
+}

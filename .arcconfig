@@ -1,0 +1,7 @@
+{
+  "phabricator.uri": "http://phabricator.bitnami.com:8080/",
+  "arc.land.onto.default": "development",
+  "load": [
+    ".arcanist-extensions/linters/scss_lint_linter"
+  ]
+}

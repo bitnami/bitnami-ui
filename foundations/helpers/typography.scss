@@ -1,0 +1,88 @@
+/*
+---
+name: Size
+category: Foundations/Helpers/Typography
+tag: helpers
+---
+Reduce or increase the default `font-size` of an element.
+
+```html
+<p class="type-tiny">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-small">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-big">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-enormous">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-giant">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-huge">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+```
+*/
+@each $name, $scale in $scale-names {
+  // Ignore reset
+
+  @if $name != 'reset' {
+    .type-#{$name} {
+      font-size: type-scale($name);
+    }
+  }
+}
+
+/*
+---
+name: Color
+category: Foundations/Helpers/Typography
+tag: helpers
+---
+Reduce or increase the default `color` of an element.
+
+```html
+<p class="type-color-bitnami">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-color-accent">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-color-iron">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+<p class="type-color-action">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
+```
+*/
+@each $alias in 'bitnami', 'accent', 'iron', 'action' {
+  $name: map-get($color-names, $alias);
+
+  .type-color-#{$alias},
+  .type-color-#{$name} {
+    color: color($name);
+  }
+}

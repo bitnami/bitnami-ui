@@ -1,0 +1,269 @@
+/*
+---
+name: Padding
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase the default padding based on the base size unity.
+
+```html
+<p class="padding-reset">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-tiny">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-small">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-big">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-enormous">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-giant">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-giant">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-spacing-helper('padding', 'padding');
+
+/*
+---
+name: Padding - specific
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase a padding property based on the base size unity.
+
+```html
+<p class="padding-t-reset">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-r-tiny">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-b-small">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-l-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-spacing-helper('padding-t', 'padding-top');
+@include generate-spacing-helper('padding-b', 'padding-bottom');
+@include generate-spacing-helper('padding-l', 'padding-left');
+@include generate-spacing-helper('padding-r', 'padding-right');
+
+/*
+---
+name: Padding - horizontal and vertical
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase the vertical or horizontal padding based on the base size unity.
+
+```html
+<p class="padding-v-big">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-h-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-vertical-spacing-helper('padding-v', 'padding');
+@include generate-horizontal-spacing-helper('padding-h', 'padding');
+
+/*
+---
+name: Margin
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase the default margin based on the base size unity.
+
+```html
+<p class="margin-reset">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-tiny">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-small">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-big">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-enormous">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-giant">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-giant">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-spacing-helper('margin', 'margin');
+
+/*
+---
+name: Margin - specific
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase a margin property based on the base size unity.
+
+```html
+<p class="margin-t-reset">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-r-tiny">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-b-small">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-l-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-spacing-helper('margin-t', 'margin-top');
+@include generate-spacing-helper('margin-b', 'margin-bottom');
+@include generate-spacing-helper('margin-l', 'margin-left');
+@include generate-spacing-helper('margin-r', 'margin-right');
+
+/*
+---
+name: Margin - horizontal and vertical
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Reduce or increase the vertical or horizontal margin based on the base size unity.
+
+```html
+<p class="margin-v-big">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-h-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+@include generate-vertical-spacing-helper('margin-v', 'margin');
+@include generate-horizontal-spacing-helper('margin-h', 'margin');
+
+
+/*
+---
+name: Margin - center
+category: Foundations/Helpers/Spacing
+tag: helpers
+---
+Apply a margin `auto` to center elements.
+
+```html
+<p class="margin-c" style="max-width: 500px;">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-vc-bigger" style="max-width: 500px;">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+.margin-c {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Vertical spacing + center
+@each $name, $scale in $scale-names {
+  .margin-vc-#{$name} {
+    margin: margin($name) auto;
+  }
+}

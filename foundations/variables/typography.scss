@@ -1,0 +1,42 @@
+/*
+---
+name: Typography
+category: Foundations/Variables
+tag: variables
+---
+Defines all typography related variables for the project. Some fonts must be imported
+from Google Fonts or Typekit:
+
+* [Dosis](https://fonts.google.com/specimen/Dosis)
+* [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
+
+```scss
+// Font families
+$type-headings: Dosis, Geneva, Tahoma, sans-serif;
+$type-body: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$type-code: monospace;
+
+// Fix the line-heights
+$line-heights: (
+  -1: $size-unity,
+  0: $size-unity,
+  1: $size-unity * 1.5,
+  2: $size-unity * 2,
+  3: $size-unity * 3,
+);
+```
+*/
+
+// Font families
+$type-headings: Dosis, Geneva, Tahoma, sans-serif;
+$type-body: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$type-code: monospace;
+
+// Fix the line-heights
+$line-heights: (
+  -1: $size-unity,
+  0: $size-unity,
+  1: $size-unity * 1.5,
+  2: $size-unity * 2,
+  3: $size-unity * 3,
+);

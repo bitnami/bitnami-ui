@@ -1,2 +1,5 @@
 # Modules
 node_modules
+
+# Compilated docs
+docs/dist

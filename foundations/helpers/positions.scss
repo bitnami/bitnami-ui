@@ -1,0 +1,54 @@
+/*
+---
+name: Text alignment
+category: Foundations/Helpers/Positions
+tag: helpers
+---
+These classes help us to modify the default aligntment of the text in our views
+
+```html
+<p class="text-l">Left alignment</p>
+<p class="text-r">Right alignment</p>
+<p class="text-c">Center alignment</p>
+```
+*/
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.text-c {
+  text-align: center;
+}
+
+/*
+---
+name: Floating
+category: Foundations/Helpers/Positions
+tag: helpers
+---
+Also, we can update the float property of our blocks
+
+```html
+<div class="float-l">Float left</div>
+<div class="float-r">Float right</div>
+```
+
+```html
+<div class="float-n">Remove floating</div>
+```
+*/
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.float-n {
+  float: none;
+}

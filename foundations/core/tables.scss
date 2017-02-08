@@ -1,0 +1,62 @@
+/*
+---
+name: Tables
+category: Foundations/Tables
+tag: blocks
+---
+Tables should follow the standard format using `thead > th` and `tbody > td` tags.
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Downloads</th>
+      <th>Stars</th>
+    </tr>
+  </thead>
+  <body>
+    <tr>
+      <td>123</td>
+      <td>Gitlab</td>
+      <td>42343</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>321</td>
+      <td>Moodle</td>
+      <td>54312</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <td>753</td>
+      <td>Wordpress</td>
+      <td>23434</td>
+      <td>4.3</td>
+    </tr>
+  </body>
+</table>
+```
+*/
+table {
+  // By default, we want the table to use all the size of the container
+  width: 100%;
+  margin: margin('normal') 0 margin('big');
+  border-collapse: collapse;
+  text-align: left;
+
+  // Increase padding of cells
+  th,
+  td {
+    padding: padding('normal');
+  }
+
+  th {
+    border-bottom: 1px solid color('iron');
+  }
+
+  tbody > tr:hover {
+    background-color: color-level('iron', 700);
+  }
+}

@@ -1,0 +1,42 @@
+/*
+---
+name: button-skin(name, base-color, text-color)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the color of the buttons.
+
+```scss
+@include('primary', 'primary', 'light');
+```
+*/
+@mixin button-skin($name, $base-color, $text-color) {
+  .button-#{$name} {
+    background-color: color-level($base-color, 100);
+    border-color: color($base-color);
+    color: color($text-color);
+
+    &:hover {
+      background-color: color($base-color);
+      border-color: color-level($base-color, -200);
+    }
+  }
+}
+
+/*
+---
+name: button-size(name-of-scale)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the size of the buttons.
+
+```scss
+@include('small');
+```
+*/
+@mixin button-size($name) {
+  .button-#{$name} {
+    font-size: type-scale($name);
+  }
+}

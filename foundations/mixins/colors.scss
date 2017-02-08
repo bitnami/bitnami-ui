@@ -1,0 +1,51 @@
+/*
+---
+name: color(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a color from the brand guide
+
+```scss
+.test {
+  color: color('bitnami');
+  background-color: color('iron');
+}
+```
+*/
+@function color($name: 'bitnami') {
+  @if map-has-key($colors, $name) {
+    @return map-get($colors, $name);
+  } @else if map-has-key($color-names, $name) {
+    @return map-get($colors, map-get($color-names, $name));
+  } @else {
+    @warn "We didn't find the color called #{$name}. Please check available colors";
+    @return map-get($colors, 'brand');
+  }
+}
+
+/*
+---
+name: color-level(name, level)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a tint or shade of a base color. The `level` variable should be a number between -1000 to 1000
+in steps of one hundred.
+
+```scss
+.test {
+  color: color-level('bitnami', 700);
+  background-color: color('iron', -500);
+}
+```
+*/
+@function color-level($name: 'bitnami', $level: 0) {
+  $color: color($name);
+  $level: $level / 100;
+  // scss-lint:disable ColorVariable
+  $color-base: if($level < 0, #000, #fff);
+  // scss-lint:enable ColorVariable
+
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}

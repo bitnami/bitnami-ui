@@ -1,0 +1,65 @@
+/*
+---
+name: Headers
+category: Foundations/Headers
+tag: text
+---
+The foundations provide headers from `h1` to `h6`. Those headers vary in colors, font sizes,
+font weights and font families.
+
+```html
+<h1>Bitnami rocks!</h1>
+<h2>Bitnami rocks!</h2>
+<h3>Bitnami rocks!</h3>
+<h4>Bitnami rocks!</h4>
+<h5>Bitnami rocks!</h5>
+<h6>Bitnami rocks!</h6>
+```
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: margin('normal') 0 margin('small');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $type-headings;
+  color: color('bitnami');
+}
+
+h1 {
+  font-size: type-scale('giant');
+}
+
+h2 {
+  font-size: type-scale('enormous');
+}
+
+h3 {
+  font-size: type-scale('bigger');
+  color: color('accent');
+}
+
+h4 {
+  font-size: type-scale('bigger');
+  font-weight: bold;
+}
+
+h5 {
+  font-size: type-scale('big');
+  font-weight: bold;
+}
+
+h6 {
+  font-size: type-scale('normal');
+  font-weight: bold;
+  color: color('bitnami');
+}

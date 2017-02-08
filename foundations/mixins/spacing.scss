@@ -1,0 +1,102 @@
+/*
+---
+name: margin(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a margin value based on the `size unity`. This method will throw an exception if the name
+of the size is not valid.
+
+```scss
+.test {
+  margin: margin('tiny');
+}
+.test2 {
+  margin-bottom: margin('huge');
+}
+```
+*/
+@function margin($name: 'normal') {
+  @if map-has-key($spacing-sizes, $name) {
+    @return map-get($spacing-sizes, $name);
+  } @else if map-has-key($scale-names, $name) {
+    @return map-get($spacing-sizes, map-get($scale-names, $name));
+  } @else {
+    @warn "We didn't find the size called #{$name}. Please check available sizes";
+    @return map-get($spacing-sizes, 'normal');
+  }
+}
+
+/*
+---
+name: padding(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a padding value based on the `size unity`. This method will throw an exception if the name
+of the size is not valid.
+
+```scss
+.test {
+  padding: padding('tiny');
+}
+.test2 {
+  padding-top: padding('huge');
+}
+```
+*/
+@function padding($name: 'normal') {
+  @return margin($name);
+}
+
+/**
+ * Using $su allow us to set the correct vertical rhythm of the page
+ */
+/*
+---
+name: su(multiplier)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Return `multiplier * $su`. This method allows us to set the correct vertical rhythm of the page.
+
+```scss
+.test {
+  height: su(10);
+}
+```
+*/
+@function su($multiplier: 1) {
+  @return $su * $multiplier;
+}
+
+/**
+ * Mixins that generates spacing class helpers.
+ *
+ * NOTE: These are an internal mixins. They shouldn't be documented
+ */
+@mixin generate-spacing-helper($selector, $property) {
+  @each $name, $scale in $scale-names {
+    .#{$selector}-#{$name} {
+      #{$property}: margin($name);
+    }
+  }
+}
+
+@mixin generate-vertical-spacing-helper($selector, $base-property) {
+  @each $name, $scale in $scale-names {
+    .#{$selector}-#{$name} {
+      #{$base-property}-top: margin($name);
+      #{$base-property}-bottom: margin($name);
+    }
+  }
+}
+
+@mixin generate-horizontal-spacing-helper($selector, $base-property) {
+  @each $name, $scale in $scale-names {
+    .#{$selector}-#{$name} {
+      #{$base-property}-left: margin($name);
+      #{$base-property}-right: margin($name);
+    }
+  }
+}

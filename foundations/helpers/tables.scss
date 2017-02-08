@@ -1,0 +1,53 @@
+/*
+---
+name: Striped
+category: Foundations/Helpers/Tables
+tag: blocks
+---
+Show a light gray background in even rows.
+
+```html
+<table class="striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Downloads</th>
+      <th>Stars</th>
+    </tr>
+  </thead>
+  <body>
+    <tr>
+      <td>123</td>
+      <td>Gitlab</td>
+      <td>42343</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>321</td>
+      <td>Moodle</td>
+      <td>54312</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <td>753</td>
+      <td>Wordpress</td>
+      <td>23434</td>
+      <td>4.3</td>
+    </tr>
+  </body>
+</table>
+```
+*/
+table {
+  // Striped
+  &.striped {
+    tr:nth-child(even) td {
+      background-color: color-level('iron', 700);
+    }
+
+    tr:hover {
+      background-color: initial;
+    }
+  }
+}

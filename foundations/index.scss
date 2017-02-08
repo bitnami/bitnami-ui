@@ -1,0 +1,30 @@
+/*!
+ * Bitnami UI - v{VERSION}
+ *
+ * This is the main file of Bitnami UI foundations. It contains all
+ * the base code for styling our UI. This file includes the reset, the base code
+ * and the basic element styles.
+ */
+
+/**
+ * Variables contain the values of differents properties for the UI. Some of them
+ * are font families, line heights, colors...
+ */
+@import 'variables/all';
+
+/**
+ * Helper functions to work with the Bitnami UI.
+ */
+@import 'mixins/all';
+
+/**
+ * First of all, we need to require a reset CSS file. There are several options
+ * for resetting. Now, we are going to select normalize.css. However,
+ * we can change it updating this line.
+ */
+@import 'vendor/normalize';
+
+// Now, it's time to import all the library
+@import 'base';
+@import 'core/all';
+@import 'helpers/all';

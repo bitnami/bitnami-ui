@@ -1,0 +1,228 @@
+/*
+---
+name: Input
+category: Foundations/Forms
+tag: text
+---
+Basic inputs to build forms.
+
+```html
+<input name="test" placeholder="This is a test" />
+```
+*/
+input,
+select,
+textarea {
+  margin: margin('small') 0 margin('normal');
+  padding: 0 padding('normal');
+  font-size: type-scale('normal');
+  border-radius: $spacing-border-radius;
+  border: 1px solid color('light');
+  width: 100%;
+}
+
+// We need to set a fixed height because select doesn't allow `padding`
+input,
+select {
+  height: su(1.5);
+  // I must use line-height to center the elements to display it correctly in Firefox
+  line-height: su(1.5);
+}
+
+// Update the outline
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  border-color: color-level('accent', 200);
+  box-shadow: inset 0 1px 1px rgba(color('dark'), .01),
+    0 0 6px rgba(color('accent'), .1);
+}
+
+/*
+---
+name: Select
+category: Foundations/Forms
+tag: text
+---
+Selectors are a bit different in Safari. We can't remove the gloss effect without using the
+`-webkit-appareance` hack.
+
+```html
+<select name="test">
+  <option>Select one element</option>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+```
+*/
+select {
+  background-color: color('white');
+}
+
+/*
+---
+name: Textarea
+category: Foundations/Forms
+tag: text
+---
+```html
+<textarea>
+This is a test
+</textarea>
+```
+*/
+textarea {
+  padding: padding('normal');
+  // Set the font family to display it in Firefox
+  font-family: $type-body;
+  // By default, don't allow users to resize it horizontally
+  resize: vertical;
+  // Set a base height to prevent problems with vertical rhythm
+  min-height: su(5);
+}
+
+/*
+---
+name: Labels
+category: Foundations/Forms
+tag: text
+---
+```html
+<label for="test">Label for input</label>
+<input name="check" id="test" placeholder="test" />
+```
+*/
+label {
+  cursor: pointer;
+  font-size: type-scale('small');
+  font-weight: bold;
+  text-transform: uppercase;
+
+  + label {
+    margin-left: margin('normal');
+  }
+
+  &.checkbox,
+  &.radio {
+    text-transform: none;
+    font-size: type-scale('normal');
+    font-weight: normal;
+  }
+}
+
+/*
+---
+name: Checkbox
+category: Foundations/Forms
+tag: text
+---
+```html
+<label for="check" class="checkbox">
+  <input type="checkbox" name="check" id="check" /> Test
+</label>
+```
+*/
+/*
+---
+name: Radio
+category: Foundations/Forms
+tag: text
+---
+```html
+<label for="test1" class="radio">
+  <input type="radio" name="test" id="test1"/>Test 1
+</label>
+<label for="test2" class="radio">
+  <input type="radio" name="test" id="test2"/>Test 2
+</label>
+<label for="test3" class="radio">
+  <input type="radio" name="test" id="test3"/>Test 3
+</label>
+<label for="test4" class="radio">
+  <input type="radio" name="test" id="test4"/>Test 4
+</label>
+```
+*/
+// scss-lint:disable QualifyingElement
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  margin: 0 margin('small') 0 0;
+  width: auto;
+  height: auto;
+  // Hack to align checkbox and labels in Chrome and Firefox
+  vertical-align: 1px;
+}
+// scss-lint:enable QualifyingElement
+
+/**
+ * This is the second part of the hack. Safari display the checkbox well so
+ * we need to reset the value for Safari. This only affects to Safari 7+.
+ * For Safari < 7, the checkbox and radio buttons will be showed 1px above the
+ * center.
+ *
+ * If we don't use this hack, all checkboxes and radio buttons will be misaligned
+ * in all versions of Firefox and Chrome. CSS is beatiful...
+ */
+// scss-lint:disable QualifyingElement
+_::-webkit-full-page-media,
+_:future,
+:root input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: baseline;
+}
+// scss-lint:enable QualifyingElement
+
+/*
+---
+name: Buttons
+category: Foundations/Forms
+tag: text
+---
+```html
+<button>Submit</button>
+<a class="button">Link button</a>
+<button disabled="disabled">Disabled</button>
+```
+*/
+button,
+.button {
+  // Display correctly non buttons elements like anchors
+  display: inline-block;
+  padding: padding('small') padding('normal');
+  font-size: type-scale('normal');
+  border-radius: $spacing-border-radius;
+  border: 1px solid color('iron');
+  cursor: pointer;
+  height: su(1.5);
+  // Align elements in the same line
+  vertical-align: bottom;
+
+  // Default skin
+  background-color: color-level('iron', 100);
+
+  &:hover {
+    background-color: color('iron');
+    border-color: color-level('iron', -200);
+  }
+
+  // Show an inset shadow on click
+  &:focus {
+    outline: 0;
+    box-shadow: inset 1px 1px 2px rgba(color('dark'), .1);
+  }
+
+  // Set the correct cursor on disabled
+  &[disabled="disabled"],
+  &[disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  // Add a margin on consecutive elements
+  + .button,
+  + button {
+    margin-left: margin('small');
+  }
+}

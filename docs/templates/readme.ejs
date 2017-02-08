@@ -1,0 +1,30 @@
+<h1 id="bitnami-user-interfaces-bitnami-ui-">Bitnami User Interfaces (Bitnami UI)</h1>
+<p>This project contains the CSS code to add Bitnami Branding colors and styles to our web projects. It&#39;s split in to main folders that represents the two libraries we can import:</p>
+<ul>
+<li><code>foundations</code>: This project includes the basic branding variables for any Bitnami User Interface. It provides the foundations like font size, font families, colors and base styles for standard HTML tags.</li>
+<li><code>components</code>: This library contains a set of prebuilt components that we can use in Bitnami projects. Those components may be very simple, like buttons or paragraphs with a background (notes). However, it also defines complex structures like a menu or a layout.</li>
+</ul>
+<h2 id="development">Development</h2>
+<p>First of all, please read the <em>CSS Foundations</em>. The environment is really
+simple, we only need to install <code>gulp</code> and the dependencies to compile the entire project.</p>
+<pre><code class="language-sh">npm install <span class="token operator">-</span>g gulp
+npm install
+</code></pre>
+<p>Now, we can execute the command <code>gulp</code>. It will listen changes in files and refresh the output
+CSS files. By default, distribution files are located in <code>dist</code> folder.</p>
+<pre><code class="language-sh">gulp
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Using gulpfile ~<span class="token operator">/</span>projects<span class="token operator">/</span>bitnami<span class="token operator">-</span>ui<span class="token operator">/</span>gulpfile<span class="token punctuation">.</span>js
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Starting <span class="token string">'foundations'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Finished <span class="token string">'foundations'</span> after <span class="token number">66</span> ms
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Starting <span class="token string">'dist'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Finished <span class="token string">'dist'</span> after <span class="token number">30</span> us
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Starting <span class="token string">'default'</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+# <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">:</span><span class="token number">53</span><span class="token punctuation">]</span> Finished <span class="token string">'default'</span> after <span class="token number">17</span> ms
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p>Bitnami UI comes with a powerful documentation. It&#39;s a static site. You need to execute the
+following command and navigate to <a href="http://localhost:8080">localhost:8080</a>.</p>
+<pre><code class="language-sh">npm run docs<span class="token punctuation">:</span>serve
+</code></pre>
+<p>Also, if you execute <code>gulp</code> in another tab of the terminal, the documentation will be reloaded
+with every change.</p>

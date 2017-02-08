@@ -7,14 +7,16 @@ This project contains the CSS code to add Bitnami Branding colors and styles to 
 
 ## Development
 
-First of all, please read the [CSS Foundations](./FOUNDATIONS.md). The environment is really simple, we only need to install `gulp` and the dependencies to compile the entire project.
+First of all, please read the _CSS Foundations_. The environment is really
+simple, we only need to install `gulp` and the dependencies to compile the entire project.
 
 ```sh
 npm install -g gulp
 npm install
 ```
 
-Now, we can execute the command `gulp`. It will listen changes in files and refresh the output CSS files. By default, distribution files are located in `dist` folder.
+Now, we can execute the command `gulp`. It will listen changes in files and refresh the output
+CSS files. By default, distribution files are located in `dist` folder.
 
 ```sh
 gulp
@@ -22,7 +24,19 @@ gulp
 # [16:24:53] Starting 'foundations'...
 # [16:24:53] Finished 'foundations' after 66 ms
 # [16:24:53] Starting 'dist'...
-# [16:24:53] Finished 'dist' after 30 μs
+# [16:24:53] Finished 'dist' after 30 us
 # [16:24:53] Starting 'default'...
 # [16:24:53] Finished 'default' after 17 ms
 ```
+
+## Documentation
+
+Bitnami UI comes with a powerful documentation. It's a static site. You need to execute the
+following command and navigate to [localhost:8080](http://localhost:8080).
+
+```sh
+npm run docs:serve
+```
+
+Also, if you execute `gulp` in another tab of the terminal, the documentation will be reloaded
+with every change.

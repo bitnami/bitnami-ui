@@ -1,0 +1,39 @@
+/*
+---
+name: Unordered lists
+category: Foundations/Lists
+tag: blocks
+---
+List are very similar to the base style. We only improved the margin and padding
+
+```html
+<ul>
+  <li>Can't find what you're looking for?</li>
+  <li>Click here for account questions</li>
+  <li>Click here for app questions</li>
+</ul>
+```
+*/
+/*
+---
+name: Ordered lists
+category: Foundations/Lists
+tag: blocks
+---
+```html
+<ol>
+  <li>Can't find what you're looking for?</li>
+  <li>Click here for account questions</li>
+  <li>Click here for app questions</li>
+</ol>
+```
+*/
+ul,
+ol {
+  padding-left: su(2);
+  margin: margin('normal') 0 margin('big');
+
+  li {
+    padding: padding('tiny');
+  }
+}

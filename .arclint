@@ -1,0 +1,36 @@
+{
+  "exclude": "(^vendor/)",
+  "linters": {
+    "chmod": {
+      "type": "chmod"
+    },
+    "filename": {
+      "type": "filename",
+      "exclude": [
+        "(.*@2x\\.(png|jpg|jpeg|gif)$)"
+      ]
+    },
+    "merge-conflict": {
+      "type": "merge-conflict"
+    },
+    "nolint": {
+      "type": "nolint"
+    },
+    "spelling": {
+      "type": "spelling"
+    },
+    "text": {
+      "type": "text",
+      "include" : "(\\.(txt|md|html|haml?)$)",
+      "text.max-line-length": 100
+    },
+    "scss-lint": {
+      "type": "scss-lint",
+      "include": "/\\.(scss)$/",
+      "exclude": [
+        "(foundations/vendor/(.*).scss)"
+      ],
+      "scss-lint.config": ".scss-lint.yml"
+    }
+  }
+}
