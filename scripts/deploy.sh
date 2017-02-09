@@ -12,10 +12,10 @@ DEPLOY_URL=bitnami-ui-dev.nami
 
 ## Configure ssh key for deployment
 if  [ -f $SSH_KEY ]; then
-  mkdir -p /home/bitnami/.ssh
-  cp $SSH_KEY /home/bitnami/.ssh/id_rsa
-  chown bitnami:bitnami /home/bitnami/.ssh/id_rsa
-  chmod 600 /home/bitnami/.ssh/id_rsa
+  mkdir -p /home/root/.ssh
+  cp $SSH_KEY /home/root/.ssh/id_rsa
+  chown root:root /home/root/.ssh/id_rsa
+  chmod 600 /home/root/.ssh/id_rsa
 fi
 
 # Compile the project. Now, we are deploying to staging server, so

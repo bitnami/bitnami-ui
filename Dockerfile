@@ -3,7 +3,6 @@ MAINTAINER Bitnami <containers@bitnami.com>
 
 RUN sudo apt-get update && sudo apt-get install -y openssh-client
 
-USER bitnami
 WORKDIR /app
 
 # Documentation port
