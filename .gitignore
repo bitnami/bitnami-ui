@@ -6,3 +6,6 @@ docs/dist
 
 # Ignore compilated README
 docs/templates/readme.ejs
+
+# Deploy key
+deploy.key
