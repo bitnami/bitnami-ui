@@ -24,5 +24,5 @@ npm run docs:build
 
 # Copy the generated output to the server
 if [ $? -eq 0 ]; then
-  scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
+  scp -v -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
 fi
