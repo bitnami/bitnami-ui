@@ -12,13 +12,13 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 */
 @mixin button-skin($name, $base-color, $text-color) {
   .button-#{$name} {
-    background-color: color-level($base-color, 100);
+    background-color: color-level($base-color, 400);
     border-color: color($base-color);
     color: color($text-color);
 
     &:hover {
       background-color: color($base-color);
-      border-color: color-level($base-color, -200);
+      border-color: color-level($base-color, 700);
     }
   }
 }

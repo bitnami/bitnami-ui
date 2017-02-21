@@ -16,7 +16,15 @@
 .preview-inverse {
   margin: -1em;
   padding: 1em;
-  background-color: #3f3f46;
+  background-color: #162d50;
+  color: #e6e7e8;
+}
+
+.preview-light-blue {
+  margin: -1em;
+  padding: 1em;
+  background-color: #419cd6;
+  color: #e6e7e8;
 }
 
 /* Fix the position of the category lists */

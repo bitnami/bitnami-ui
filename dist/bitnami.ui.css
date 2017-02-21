@@ -40,9 +40,9 @@ You can see the colors in [Project colors](/color.html).
 
 ```scss
 $colors: (
-  'brand': #1f577a,
+  'brand': #162d50,
   'primary': #14384e,
-  'secondary': #0c2c3c,
+  'secondary': #1f577a,
   'accent': #40b654,
   'light': #e6e7e8,
   'dark': #37474f,
@@ -164,13 +164,13 @@ name: color-level(name, level)
 category: Foundations/Helpers/Mixins
 tag: function
 ---
-Get a tint or shade of a base color. The `level` variable should be a number between -1000 to 1000
-in steps of one hundred.
+Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
+in steps of one hundred. The base color is located in 500.
 
 ```scss
 .test {
-  color: color-level('bitnami', 700);
-  background-color: color('iron', -500);
+  color: color-level('bitnami', 200);
+  background-color: color('iron', 700);
 }
 ```
 */
@@ -693,22 +693,7 @@ tag: text
 They use the `accent` color.
 
 ```html
-<a>Testing anchors</a>
-```
-*/
-/*
----
-name: Inverse anchors
-category: Foundations/Anchors
-tag: text
----
-If you add an anchor inside an element with some *inverse* class as a parent, it will use a
-lighten version of `accent` color.
-
-```html
-<div class="preview-inverse">
-  <a>Testing anchors</a>
-</div>
+This is a <a>link</a>
 ```
 */
 a:not(.button) {
@@ -717,11 +702,6 @@ a:not(.button) {
   cursor: pointer; }
   a:not(.button):hover, a:not(.button):active, a:not(.button):visited {
     color: #66c576; }
-
-[class*="inverse"] a:not(.button) {
-  color: #79cc87; }
-  [class*="inverse"] a:not(.button):hover, [class*="inverse"] a:not(.button):active, [class*="inverse"] a:not(.button):visited {
-    color: #53bd65; }
 
 /*
 ---
@@ -949,7 +929,7 @@ h3,
 h4,
 h5 {
   font-family: Dosis, Geneva, Tahoma, sans-serif;
-  color: #1f577a; }
+  color: #162d50; }
 
 h1 {
   font-size: 3.15733em; }
@@ -972,7 +952,7 @@ h5 {
 h6 {
   font-size: 1em;
   font-weight: bold;
-  color: #1f577a; }
+  color: #162d50; }
 
 /*
 ---
@@ -1082,7 +1062,7 @@ anchor must be equal to "author". You can check the following
 blockquote {
   padding-left: 1.333em;
   margin: 0.6665em 0 1.333em;
-  border-left: 2px solid #799aaf;
+  border-left: 2px solid #0d1b30;
   color: #59595b; }
   blockquote a[rel="author"] {
     font-style: italic; }
@@ -1173,7 +1153,38 @@ table {
   table th {
     border-bottom: 1px solid #e6e7e8; }
   table tbody > tr:hover {
-    background-color: #f8f8f8; }
+    background-color: #f0f1f1; }
+
+/*
+---
+name: Anchors
+category: Foundations/Helpers/Anchors
+tag: helpers
+---
+Modify the color of the anchor. Available classes:
+* `.light`
+* `.secondary`
+
+```html
+<div class="preview-inverse">
+  This is a <a class="light">link</a>
+</div>
+```
+```html
+<div class="preview-light-blue">
+  This is a <a class="secondary">link</a>
+</div>
+```
+*/
+a.light:not(.button) {
+  color: #79cc87; }
+  a.light:not(.button):hover, a.light:not(.button):active, a.light:not(.button):visited {
+    color: #8cd398; }
+
+a.secondary:not(.button) {
+  color: #162d50; }
+  a.secondary:not(.button):hover, a.secondary:not(.button):active, a.secondary:not(.button):visited {
+    color: #142948; }
 
 /*
 ---
@@ -1194,12 +1205,12 @@ Modify the color of the buttons. Available classes:
 ```
 */
 .button-primary {
-  background-color: #356887;
-  border-color: #1f577a;
+  background-color: #2d4262;
+  border-color: #162d50;
   color: #fff; }
   .button-primary:hover {
-    background-color: #1f577a;
-    border-color: #194662; }
+    background-color: #162d50;
+    border-color: #122440; }
 
 .button-accent {
   background-color: #53bd65;
@@ -2018,7 +2029,7 @@ Show a light gray background in even rows.
 ```
 */
 table.striped tr:nth-child(even) td {
-  background-color: #f8f8f8; }
+  background-color: #f1f2f2; }
 
 table.striped tr:hover {
   background-color: initial; }
@@ -2119,7 +2130,7 @@ Reduce or increase the default `color` of an element.
 */
 .type-color-bitnami,
 .type-color-brand {
-  color: #1f577a; }
+  color: #162d50; }
 
 .type-color-accent,
 .type-color-accent {

@@ -20,8 +20,8 @@ anchor must be equal to "author". You can check the following
 blockquote {
   padding-left: su(1);
   margin: su(.5) 0 su();
-  border-left: 2px solid color-level('bitnami', 400);
-  color: color-level('text', 200);
+  border-left: 2px solid color-level('bitnami', 900);
+  color: color-level('text', 300);
 
   // scss-lint:disable QualifyingElement
   // Italic style is only for the Author of the quote

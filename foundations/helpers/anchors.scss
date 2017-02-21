@@ -1,0 +1,44 @@
+/*
+---
+name: Anchors
+category: Foundations/Helpers/Anchors
+tag: helpers
+---
+Modify the color of the anchor. Available classes:
+* `.light`
+* `.secondary`
+
+```html
+<div class="preview-inverse">
+  This is a <a class="light">link</a>
+</div>
+```
+```html
+<div class="preview-light-blue">
+  This is a <a class="secondary">link</a>
+</div>
+```
+*/
+// scss-lint:disable QualifyingElement
+a.light:not(.button) {
+// scss-lint:enable QualifyingElement
+  color: color-level('accent', 200);
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('accent', 100);
+  }
+}
+
+// scss-lint:disable QualifyingElement
+a.secondary:not(.button) {
+// scss-lint:enable QualifyingElement
+  color: color('brand');
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: color-level('brand', 600);
+  }
+}

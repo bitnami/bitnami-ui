@@ -34,7 +34,7 @@ textarea:focus,
 input:focus,
 select:focus {
   outline: none;
-  border-color: color-level('accent', 200);
+  border-color: color-level('accent', 300);
   box-shadow: inset 0 1px 1px rgba(color('dark'), .01),
     0 0 6px rgba(color('accent'), .1);
 }
@@ -201,11 +201,11 @@ button,
   vertical-align: bottom;
 
   // Default skin
-  background-color: color-level('iron', 100);
+  background-color: color-level('iron', 400);
 
   &:hover {
     background-color: color('iron');
-    border-color: color-level('iron', -200);
+    border-color: color-level('iron', 700);
   }
 
   // Show an inset shadow on click

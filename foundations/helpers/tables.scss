@@ -43,7 +43,7 @@ table {
   // Striped
   &.striped {
     tr:nth-child(even) td {
-      background-color: color-level('iron', 700);
+      background-color: color-level('iron', 50);
     }
 
     tr:hover {
