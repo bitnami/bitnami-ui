@@ -1,0 +1,46 @@
+/**
+ * Grid mixins
+ *
+ * NOTE: This is an internal function. It shouldn't be documented
+ */
+
+/**
+ * Generate a collapse property for a given prefix
+ */
+@mixin grid-collapse-on-prefix($prefix) {
+  &.collapse-on-#{$prefix} {
+    @include grid-collapse();
+  }
+}
+
+@mixin grid-collapse() {
+  > [class^="col"] {
+    float: none;
+    width: 100%;
+    margin-top: $grid-gutter;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+/**
+ * Generate a collapse property for a given prefix
+ */
+@mixin grid-collapse-by-columns-on-prefix($columns, $prefix) {
+  &.collapse-#{$columns}-on-#{$prefix} {
+    @include grid-collapse-by-columns-on($columns)
+  }
+}
+
+@mixin grid-collapse-by-columns-on($columns) {
+  > [class^="col"] {
+    width: ($grid-columns / $columns) * ($grid-width / $grid-columns);
+    margin-top: $grid-gutter;
+
+    &:nth-child(-n+#{$columns}) {
+      margin-top: 0;
+    }
+  }
+}

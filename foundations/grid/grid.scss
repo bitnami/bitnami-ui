@@ -1,0 +1,113 @@
+/*
+---
+name: Basic
+category: Foundations/Grid
+tag: grid
+---
+A grid system is based in three main values:
+
+![Grid elements illustration](/assets/images/grid-elements.png)
+
+* Width: it determines the total width of every row. People usually set this value to 100% and a
+max-width for larger screens
+* Columns: max number of columns for the grid. 12 columns is a good number because we can split
+the grid in blogs of 2, 3, 4 and 6 elements per row.
+* Gutter: it represents the spacing between the columns. We are going to use the site unity of
+our project.
+
+Based on this paramenter, we need to define the Container, the Row and the Column elements of our project.
+
+![Container illustration](/assets/images/container.png)
+![Row illustration](/assets/images/row.png)
+![Column illustration](/assets/images/column.png)
+
+_All the images comes from [this article](http://j4n.co/blog/Creating-your-own-css-grid-system)_
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+  <div class="row">
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+  </div>
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+  <div class="row">
+    <div class="col-6"><article>6</article></div>
+    <div class="col-6"><article>6</article></div>
+  </div>
+  <div class="row">
+    <div class="col-12"><article>12</article></div>
+  </div>
+  <div class="row">
+    <div class="col-5"><article>5</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-5"><article>5</article></div>
+  </div>
+</div>
+```
+*/
+
+.container {
+  width: auto;
+  max-width: $grid-width;
+  // Remove the gutter of the bottom and the left/right
+  margin: su() auto;
+  padding: 0 su();
+
+  /**
+   * Row definition
+   */
+  .row {
+    margin: $grid-gutter (-($grid-gutter / 2));
+
+    // Clean margin of the rows
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Clearfix
+    &:before,
+    &:after {
+      content: ' ';
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    /**
+     * Column definition
+     */
+    > [class^="col"] {
+      float: left;
+      min-height: 1px;
+      // Add the gutter
+      box-sizing: border-box;
+      padding: 0 $grid-gutter / 2;
+    }
+
+    @for $i from 1 through $grid-columns {
+      .col-#{$i} {
+        width: $i * (100% / $grid-columns);
+      }
+    }
+  }
+}

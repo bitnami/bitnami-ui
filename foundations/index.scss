@@ -6,6 +6,12 @@
  * and the basic element styles.
  */
 
+
+/**
+ * MAppy breakpoint library
+ */
+@import  'node_modules/mappy-breakpoints/mappy-breakpoints';
+
 /**
  * Variables contain the values of differents properties for the UI. Some of them
  * are font families, line heights, colors...
@@ -27,4 +33,5 @@
 // Now, it's time to import all the library
 @import 'base';
 @import 'core/all';
+@import 'grid/all';
 @import 'helpers/all';

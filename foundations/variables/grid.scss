@@ -1,0 +1,24 @@
+/*
+---
+name: Grid
+category: Foundations/Variables
+tag: variables
+---
+Defines the basic values for our Grid system
+
+```scss
+// Basic values of our grid system
+$grid-width: 100%;
+$grid-columns: 12;
+$grid-gutter: su();
+```
+*/
+
+// Basic values of our grid system
+$grid-width: map-get($breakpoints, 'uxl');
+$grid-columns: 12;
+$grid-gutter: $su;
+
+$grid-inner-padding: 1em;
+
+$grid-collapse-on: phone phone-portrait phone-landscape tablet desktop;

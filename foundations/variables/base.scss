@@ -28,3 +28,51 @@ $scale: 1.333;
 // Basic size unity
 $size-unity: $base-type-size * $scale;
 $su: $size-unity;
+
+/*
+---
+name: Breakpoints
+category: Foundations/Variables
+tag: variables
+---
+For managing breakpoints, we're going to use https://github.com/zellwk/mappy-breakpoints. It's a really useful library to work with Breakpoints. Also, this library uses `em` units internally and based on this [research]( https://zellwk.com/blog/media-query-units/) it's the best solution for breakpoints.
+
+```scss
+$breakpoints: (
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 900px,
+  xl: 1100px,
+  uxl: 1300px
+);
+
+$mappy-queries: (
+  phone-portrait: mappy-bp(max-width xs),
+  phone: mappy-bp(xs sm),
+  phone-landscape: mappy-bp(sm md),
+  tablet: mappy-bp(md lg),
+  desktop: mappy-bp(lg xl),
+  wide: mappy-bp(xl uxl),
+  ultrawide: mappy-bp(min-width uxl)
+);
+```
+*/
+$breakpoints: (
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 900px,
+  xl: 1100px,
+  uxl: 1300px
+);
+
+$mappy-queries: (
+  phone-portrait: mappy-bp(max-width xs),
+  phone: mappy-bp(xs sm),
+  phone-landscape: mappy-bp(sm md),
+  tablet: mappy-bp(md lg),
+  desktop: mappy-bp(lg xl),
+  wide: mappy-bp(xl uxl),
+  ultrawide: mappy-bp(min-width uxl)
+);

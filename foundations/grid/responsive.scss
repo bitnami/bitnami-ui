@@ -1,0 +1,79 @@
+/*
+---
+name: Responsive
+category: Foundations/Grid
+tag: grid
+---
+
+Classic system like bootstrap provides us responsive classes at Column level. For example, we could set the width of a column based on different media queries: `col-md-6 col-sm-3 ...`. This approach is ok, but it favors the fragmentation of the design because every column of every row can have a different behaviour.
+
+Also, it polutes our HTML code with tons of CSS classes and sometimes it's really difficult to check the behaviour of a column.
+
+To avoid this situation, I set the "responsive classes" at Row level. Now, we can set how the columns of the row will change across different sizes. For example, if we want to change the behaviour of the row for mobile screens we can add those classes to the row:
+
+* `collapse-on-phone`
+* `collapse-2-on-phone`
+* `collapse-3-on-phone`
+
+`collapse-2-on-phone` means that the row will display 2 columns per row on phone screens. We have the same classes for other screen names:
+
+* `phone-portrait`
+* `phone`
+* `phone-landscape`
+* `tablet`
+* `desktop`
+
+##### Default breakpoints
+
+By default, rows has the following behaviour:
+
+* Collapse on 3 columns on Tablet
+* Collapse on 2 columns on Phone landspace
+* Collapse on 1 columns on Phone
+
+```html
+<div class="container">
+  <div class="row collapse-3-on-tablet collapse-2-on-phone-landscape collapse-on-phone">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+</div>
+```
+*/
+.container .row {
+  /**
+   * General behviour
+   */
+  @include mappy-query('tablet') {
+    @include grid-collapse-by-columns-on(3);
+  }
+
+  @include mappy-query('phone-landscape') {
+    @include grid-collapse-by-columns-on(2);
+  }
+
+  @include mappy-bp(max-width sm) {
+    @include grid-collapse();
+  }
+
+  /**
+   * Specific media queries
+   */
+  @each $name in $grid-collapse-on {
+    @include mappy-query($name) {
+      @include grid-collapse-on-prefix($name);
+      @include grid-collapse-by-columns-on-prefix(2, $name);
+      @include grid-collapse-by-columns-on-prefix(3, $name);
+    }
+  }
+}

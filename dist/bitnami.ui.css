@@ -6,6 +6,9 @@
  * and the basic element styles.
  */
 /**
+ * MAppy breakpoint library
+ */
+/**
  * Variables contain the values of differents properties for the UI. Some of them
  * are font families, line heights, colors...
  */
@@ -27,6 +30,35 @@ $scale: 1.333;
 // Basic size unity
 $size-unity: $base-type-size * $scale;
 $su: $size-unity;
+```
+*/
+/*
+---
+name: Breakpoints
+category: Foundations/Variables
+tag: variables
+---
+For managing breakpoints, we're going to use https://github.com/zellwk/mappy-breakpoints. It's a really useful library to work with Breakpoints. Also, this library uses `em` units internally and based on this [research]( https://zellwk.com/blog/media-query-units/) it's the best solution for breakpoints.
+
+```scss
+$breakpoints: (
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 900px,
+  xl: 1100px,
+  uxl: 1300px
+);
+
+$mappy-queries: (
+  phone-portrait: mappy-bp(max-width xs),
+  phone: mappy-bp(xs sm),
+  phone-landscape: mappy-bp(sm md),
+  tablet: mappy-bp(md lg),
+  desktop: mappy-bp(lg xl),
+  wide: mappy-bp(xl uxl),
+  ultrawide: mappy-bp(min-width uxl)
+);
 ```
 */
 /*
@@ -53,6 +85,21 @@ $colors: (
 
 // Interval to get tints and shades
 $color-interval: 10%;
+```
+*/
+/*
+---
+name: Grid
+category: Foundations/Variables
+tag: variables
+---
+Defines the basic values for our Grid system
+
+```scss
+// Basic values of our grid system
+$grid-width: 100%;
+$grid-columns: 12;
+$grid-gutter: su();
 ```
 */
 /*
@@ -98,7 +145,6 @@ tag: variables
 Standard spacing values.
 
 ```scss
-$colors: (
 $spacing-sizes: (
   -3: 0,
   -2: $su / 8,
@@ -198,6 +244,17 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
 @include('small');
 ```
 */
+/**
+ * Grid mixins
+ *
+ * NOTE: This is an internal function. It shouldn't be documented
+ */
+/**
+ * Generate a collapse property for a given prefix
+ */
+/**
+ * Generate a collapse property for a given prefix
+ */
 /**
  * Power operator for SASS!
  *
@@ -1154,6 +1211,305 @@ table {
     border-bottom: 1px solid #e6e7e8; }
   table tbody > tr:hover {
     background-color: #f0f1f1; }
+
+/*
+---
+name: Basic
+category: Foundations/Grid
+tag: grid
+---
+A grid system is based in three main values:
+
+![Grid elements illustration](/assets/images/grid-elements.png)
+
+* Width: it determines the total width of every row. People usually set this value to 100% and a
+max-width for larger screens
+* Columns: max number of columns for the grid. 12 columns is a good number because we can split
+the grid in blogs of 2, 3, 4 and 6 elements per row.
+* Gutter: it represents the spacing between the columns. We are going to use the site unity of
+our project.
+
+Based on this paramenter, we need to define the Container, the Row and the Column elements of our project.
+
+![Container illustration](/assets/images/container.png)
+![Row illustration](/assets/images/row.png)
+![Column illustration](/assets/images/column.png)
+
+_All the images comes from [this article](http://j4n.co/blog/Creating-your-own-css-grid-system)_
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+  <div class="row">
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+  </div>
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+  <div class="row">
+    <div class="col-6"><article>6</article></div>
+    <div class="col-6"><article>6</article></div>
+  </div>
+  <div class="row">
+    <div class="col-12"><article>12</article></div>
+  </div>
+  <div class="row">
+    <div class="col-5"><article>5</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-5"><article>5</article></div>
+  </div>
+</div>
+```
+*/
+.container {
+  width: auto;
+  max-width: 1300px;
+  margin: 1.333em auto;
+  padding: 0 1.333em;
+  /**
+   * Row definition
+   */ }
+  .container .row {
+    margin: 1.333em -0.6665em;
+    /**
+     * Column definition
+     */ }
+    .container .row:first-child {
+      margin-top: 0; }
+    .container .row:last-child {
+      margin-bottom: 0; }
+    .container .row:before, .container .row:after {
+      content: ' ';
+      display: table; }
+    .container .row:after {
+      clear: both; }
+    .container .row > [class^="col"] {
+      float: left;
+      min-height: 1px;
+      box-sizing: border-box;
+      padding: 0 0.6665em; }
+    .container .row .col-1 {
+      width: 8.33333%; }
+    .container .row .col-2 {
+      width: 16.66667%; }
+    .container .row .col-3 {
+      width: 25%; }
+    .container .row .col-4 {
+      width: 33.33333%; }
+    .container .row .col-5 {
+      width: 41.66667%; }
+    .container .row .col-6 {
+      width: 50%; }
+    .container .row .col-7 {
+      width: 58.33333%; }
+    .container .row .col-8 {
+      width: 66.66667%; }
+    .container .row .col-9 {
+      width: 75%; }
+    .container .row .col-10 {
+      width: 83.33333%; }
+    .container .row .col-11 {
+      width: 91.66667%; }
+    .container .row .col-12 {
+      width: 100%; }
+
+/*
+---
+name: Responsive
+category: Foundations/Grid
+tag: grid
+---
+
+Classic system like bootstrap provides us responsive classes at Column level. For example, we could set the width of a column based on different media queries: `col-md-6 col-sm-3 ...`. This approach is ok, but it favors the fragmentation of the design because every column of every row can have a different behaviour.
+
+Also, it polutes our HTML code with tons of CSS classes and sometimes it's really difficult to check the behaviour of a column.
+
+To avoid this situation, I set the "responsive classes" at Row level. Now, we can set how the columns of the row will change across different sizes. For example, if we want to change the behaviour of the row for mobile screens we can add those classes to the row:
+
+* `collapse-on-phone`
+* `collapse-2-on-phone`
+* `collapse-3-on-phone`
+
+`collapse-2-on-phone` means that the row will display 2 columns per row on phone screens. We have the same classes for other screen names:
+
+* `phone-portrait`
+* `phone`
+* `phone-landscape`
+* `tablet`
+* `desktop`
+
+##### Default breakpoints
+
+By default, rows has the following behaviour:
+
+* Collapse on 3 columns on Tablet
+* Collapse on 2 columns on Phone landspace
+* Collapse on 1 columns on Phone
+
+```html
+<div class="container">
+  <div class="row collapse-3-on-tablet collapse-2-on-phone-landscape collapse-on-phone">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+</div>
+```
+*/
+.container .row {
+  /**
+   * General behviour
+   */
+  /**
+   * Specific media queries
+   */ }
+  @media all and (min-width: 48em) and (max-width: 56.1875em) {
+    .container .row > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: 30em) and (max-width: 47.9375em) {
+    .container .row > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; } }
+  @media all and (max-width: 29.9375em) {
+    .container .row > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row > [class^="col"]:first-child {
+        margin-top: 0; } }
+  @media all and (min-width: 20em) and (max-width: 29.9375em) {
+    .container .row.collapse-on-phone > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-phone > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-phone > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-phone > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (max-width: 19.9375em) {
+    .container .row.collapse-on-phone-portrait > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-phone-portrait > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-phone-portrait > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-phone-portrait > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-phone-portrait > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-phone-portrait > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: 30em) and (max-width: 47.9375em) {
+    .container .row.collapse-on-phone-landscape > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-phone-landscape > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-phone-landscape > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-phone-landscape > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-phone-landscape > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-phone-landscape > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: 48em) and (max-width: 56.1875em) {
+    .container .row.collapse-on-tablet > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-tablet > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-tablet > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-tablet > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
+    .container .row.collapse-on-desktop > [class^="col"] {
+      float: none;
+      width: 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-desktop > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-desktop > [class^="col"] {
+      width: 650px;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-desktop > [class^="col"] {
+      width: 433.33333px;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+
+/*
+---
+name: Sizes
+category: Foundations/Grid
+tag: helpers
+---
+
+The grid is limited by the `max-width` property. By default, the rows can not be wider than `1300px` ([uxl breakpoint](/category/Foundations/Variables/index.html#Breakpoints)). We can disable this behaviour using the `.container-fluid` class:
+
+```html
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+</div>
+```
+*/
+.container.container-fluid {
+  max-width: none; }
 
 /*
 ---

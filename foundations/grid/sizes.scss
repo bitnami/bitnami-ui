@@ -1,0 +1,26 @@
+/*
+---
+name: Sizes
+category: Foundations/Grid
+tag: helpers
+---
+
+The grid is limited by the `max-width` property. By default, the rows can not be wider than `1300px` ([uxl breakpoint](/category/Foundations/Variables/index.html#Breakpoints)). We can disable this behaviour using the `.container-fluid` class:
+
+```html
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+  </div>
+</div>
+```
+*/
+
+// Remove max-width limitation for fluid containers
+.container {
+  &.container-fluid {
+    max-width: none;
+  }
+}
