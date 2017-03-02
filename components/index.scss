@@ -1,0 +1,29 @@
+/*!
+ * Bitnami UI Components - v{VERSION}
+ *
+ * This is the main file of Bitnami UI Components library. It constains all the styles for
+ * the components of Bitnami. Every component is a complex structure with specific styles.
+ * For example, a "hero" header or an application card
+ */
+
+/**
+ * Variables
+ */
+@import '../foundations/variables/all';
+@import 'variables/all';
+
+
+/**
+ * Reference all the clouds
+ */
+@import 'clouds';
+
+/**
+ * Helper functions to work with the Bitnami UI.
+ */
+@import '../foundations/mixins/all';
+@import 'mixins/all';
+
+/**
+ * Components!
+ */

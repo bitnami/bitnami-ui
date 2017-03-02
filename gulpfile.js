@@ -12,7 +12,8 @@ var gulp = require('gulp'),
 // Variables
 var dist = join('dist'),
   docs = join('docs'),
-  basename = 'bitnami.ui';
+  basename = 'bitnami.ui',
+  basenameComponents = basename + '.components';
 
 // Compile Grid CSS
 gulp.task('foundations', function () {
@@ -23,6 +24,17 @@ gulp.task('foundations', function () {
     .pipe(gulp.dest(dist))
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(rename({ basename: basename, suffix: '.min' }))
+    .pipe(gulp.dest(dist));
+});
+
+gulp.task('components', function () {
+  return gulp.src(join('components/index.scss'))
+    .pipe(replace('{VERSION}', config.version))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename({ basename: basenameComponents }))
+    .pipe(gulp.dest(dist))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(rename({ basename: basenameComponents, suffix: '.min' }))
     .pipe(gulp.dest(dist));
 });
 
@@ -41,11 +53,12 @@ gulp.task('readme-to-doc', function() {
 });
 
 // Compile all assets
-gulp.task('dist', ['foundations', 'docs'], function() { });
+gulp.task('dist', ['foundations', 'components', 'docs'], function() { });
 
 // Default
 gulp.task('default', ['dist'], function() {
   gulp.watch(join('foundations/**/*.scss') , ['foundations', 'docs']);
+  gulp.watch(join('components/**/*.scss') , ['components', 'docs']);
   gulp.watch(join('docs/templates/*.ejs'), ['docs']);
   gulp.watch(join('docs/assets/css/*.css'), ['docs']);
 });

@@ -1,0 +1,564 @@
+/*!
+ * Bitnami UI Components - v0.1.0
+ *
+ * This is the main file of Bitnami UI Components library. It constains all the styles for
+ * the components of Bitnami. Every component is a complex structure with specific styles.
+ * For example, a "hero" header or an application card
+ */
+/**
+ * Variables
+ */
+/*
+---
+name: Base
+category: Foundations/Variables
+tag: variables
+---
+Basic values of the applications
+
+```scss
+// Sizing values
+$base-type-zoom: 100%;
+$base-type-size: 1em; // 16px
+// Fourth
+$scale: 1.333;
+
+// Basic size unity
+$size-unity: $base-type-size * $scale;
+$su: $size-unity;
+```
+*/
+/*
+---
+name: Breakpoints
+category: Foundations/Variables
+tag: variables
+---
+For managing breakpoints, we're going to use https://github.com/zellwk/mappy-breakpoints. It's a really useful library to work with Breakpoints. Also, this library uses `em` units internally and based on this [research]( https://zellwk.com/blog/media-query-units/) it's the best solution for breakpoints.
+
+```scss
+$breakpoints: (
+  xs: 320px,
+  sm: 480px,
+  md: 768px,
+  lg: 900px,
+  xl: 1100px,
+  uxl: 1300px
+);
+
+$mappy-queries: (
+  phone-portrait: mappy-bp(max-width xs),
+  phone: mappy-bp(xs sm),
+  phone-landscape: mappy-bp(sm md),
+  tablet: mappy-bp(md lg),
+  desktop: mappy-bp(lg xl),
+  wide: mappy-bp(xl uxl),
+  ultrawide: mappy-bp(min-width uxl)
+);
+```
+*/
+/*
+---
+name: Colors
+category: Foundations/Variables
+tag: variables
+---
+Base colors of the applications. These colors are defined in the Brand Book Guide of Bitnami.
+You can see the colors in [Project colors](/color.html).
+
+```scss
+$colors: (
+  'brand': #162d50,
+  'primary': #14384e,
+  'secondary': #1f577a,
+  'accent': #40b654,
+  'light': #e6e7e8,
+  'dark': #37474f,
+  'text': #2f3032,
+  'action': #ef4324,
+  'base': #fff
+);
+
+// Interval to get tints and shades
+$color-interval: 10%;
+```
+*/
+/*
+---
+name: Grid
+category: Foundations/Variables
+tag: variables
+---
+Defines the basic values for our Grid system
+
+```scss
+// Basic values of our grid system
+$grid-width: 100%;
+$grid-columns: 12;
+$grid-gutter: su();
+```
+*/
+/*
+---
+name: Names
+category: Foundations/Variables
+tag: variables
+---
+Aliases for colors and scales.
+
+```scss
+$scale-names: (
+  'reset': -3,
+  'tiny': -2,
+  'small': -1,
+  'normal': 0,
+  'big': 1,
+  'bigger': 2,
+  'enormous': 3,
+  'giant': 4,
+  'huge': 5
+);
+
+$color-names: (
+  'bitnami': 'brand',
+  'light-blue': 'primary',
+  'dark-blue': 'secondary',
+  'accent': 'accent',
+  'iron': 'light',
+  'dark': 'dark',
+  'text': 'text',
+  'action': 'action',
+  'white': 'base'
+);
+```
+*/
+/*
+---
+name: Spacing
+category: Foundations/Variables
+tag: variables
+---
+Standard spacing values.
+
+```scss
+$spacing-sizes: (
+  -3: 0,
+  -2: $su / 8,
+  -1: $su / 4,
+  0: $su / 2,
+  1: $su,
+  2: 1.5 * $su,
+  3: 2 * $su,
+  4: 3 * $su,
+  5: 5 * $su
+);
+```
+*/
+/*
+---
+name: Typography
+category: Foundations/Variables
+tag: variables
+---
+Defines all typography related variables for the project. Some fonts must be imported
+from Google Fonts or Typekit:
+
+* [Dosis](https://fonts.google.com/specimen/Dosis)
+* [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
+
+```scss
+// Font families
+$type-headings: Dosis, Geneva, Tahoma, sans-serif;
+$type-body: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$type-code: monospace;
+
+// Fix the line-heights
+$line-heights: (
+  -1: $size-unity,
+  0: $size-unity,
+  1: $size-unity * 1.5,
+  2: $size-unity * 2,
+  3: $size-unity * 3,
+);
+```
+*/
+/*
+---
+name: 1and1
+category: Components/Variables
+tag: variables
+---
+Base colors for [1and1](https://www.1and1.com/).
+
+```scss
+$cloud-1and1-colors: (
+  'brand': #003d8f,
+  'primary': #6e91ba,
+  'secondary': #3d70b7,
+  'accent': #003d8f,
+  'action': #f2cc11
+);
+```
+*/
+/*
+---
+name: AWS
+category: Components/Variables
+tag: variables
+---
+Base colors for [Amazon Web Services](https://aws.amazon.com/).
+
+```scss
+$cloud-aws-colors: (
+  'brand': #eeba37,
+  'primary': #eeba37,
+  'secondary': #444,
+  'accent': #eeba37,
+  'action': #eeba37
+);
+```
+*/
+/*
+---
+name: Azure
+category: Components/Variables
+tag: variables
+---
+Base colors for [Microsoft Azure](https://azure.microsoft.com/).
+
+```scss
+$cloud-azure-colors: (
+  'brand': #6ebaec,
+  'primary': #0072c6,
+  'secondary': #1b348e,
+  'accent': #1b348e,
+  'action': #89c402
+);
+```
+*/
+/*
+---
+name: CenturyLink
+category: Components/Variables
+tag: variables
+---
+Base colors for [Century Link](https://www.ctl.io/).
+
+```scss
+$cloud-centurylink-colors: (
+  'brand': #00853f,
+  'primary': #34b233,
+  'secondary': #007f3e,
+  'accent': #00853f
+);
+```
+*/
+/*
+---
+name: GoDaddy
+category: Components/Variables
+tag: variables
+---
+Base colors for [GoDaddy](https://godaddy.com).
+
+```scss
+$cloud-goddady-colors: (
+  'brand': #00a63f,
+  'primary': #57c82f,
+  'secondary': #333,
+  'accent': #f2812e,
+  'action': #f2812e
+);
+```
+*/
+/*
+---
+name: Google
+category: Components/Variables
+tag: variables
+---
+Base colors for [Google](https://cloud.google.com/).
+
+```scss
+$cloud-google-colors: (
+  'brand': #2b85e7,
+  'primary': #0273d4,
+  'secondary': #0463ba,
+  'accent': #0463ba
+);
+```
+*/
+/*
+---
+name: Huawei
+category: Components/Variables
+tag: variables
+---
+Base colors for [Huawei](http://www.huawei.com/en/).
+
+```scss
+$cloud-huawei-colors: (
+  'brand': #ff0000,
+  'primary': #e3281e,
+  'secondary': #000,
+  'accent': #cc0000,
+  'action': #b02d2e
+);
+```
+*/
+/*
+---
+name: Oracle
+category: Components/Variables
+tag: variables
+---
+Base colors for [Oracle](https://cloud.oracle.com/home).
+
+```scss
+$cloud-oracle-colors: (
+  'brand': #ff0000,
+  'primary': #e3281e,
+  'secondary': #000,
+  'accent': #cc0000,
+  'action': #007Ca8
+);
+```
+*/
+/*
+---
+name: Open Telekom cloud
+category: Components/Variables
+tag: variables
+---
+Base colors for [Open Telekom cloud](https://cloud.telekom.de/en/infrastructure/open-telekom-cloud/).
+
+```scss
+$cloud-otc-colors: (
+  'brand': #e20074,
+  'primary': #d0006b,
+  'secondary': #aa0057,
+  'accent': #007faf,
+  'action': #e20074
+);
+```
+*/
+/**
+ * Reference all the clouds
+ */
+/*
+---
+name: Clouds
+category: Components/Variables
+tag: variables
+---
+This variable references all available clouds
+
+```scss
+$clouds: (
+  '1and1': $cloud-1and1,
+  'aws': $cloud-aws,
+  'azure': $cloud-azure,
+  'centurylink': $cloud-centurylink,
+  'godaddy': $cloud-godaddy,
+  'google': $cloud-google,
+  'huawei': $cloud-huawei,
+  'oracle': $cloud-oracle,
+  'otc': $cloud-otc
+);
+```
+*/
+/**
+ * Helper functions to work with the Bitnami UI.
+ */
+/*
+---
+name: color(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a color from the brand guide
+
+```scss
+.test {
+  color: color('bitnami');
+  background-color: color('iron');
+}
+```
+*/
+/*
+---
+name: color-level(name, level)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
+in steps of one hundred. The base color is located in 500.
+
+```scss
+.test {
+  color: color-level('bitnami', 200);
+  background-color: color('iron', 700);
+}
+```
+*/
+/*
+---
+name: button-skin(name, base-color, text-color)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the color of the buttons.
+
+```scss
+@include('primary', 'primary', 'light');
+```
+*/
+/*
+---
+name: button-size(name-of-scale)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the size of the buttons.
+
+```scss
+@include('small');
+```
+*/
+/**
+ * Grid mixins
+ *
+ * NOTE: This is an internal function. It shouldn't be documented
+ */
+/**
+ * Generate a collapse property for a given prefix
+ */
+/**
+ * Generate a collapse property for a given prefix
+ */
+/**
+ * Power operator for SASS!
+ *
+ * NOTE: This is an internal function. It shouldn't be documented
+ */
+/*
+---
+name: margin(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a margin value based on the `size unity`. This method will throw an exception if the name
+of the size is not valid.
+
+```scss
+.test {
+  margin: margin('tiny');
+}
+.test2 {
+  margin-bottom: margin('huge');
+}
+```
+*/
+/*
+---
+name: padding(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a padding value based on the `size unity`. This method will throw an exception if the name
+of the size is not valid.
+
+```scss
+.test {
+  padding: padding('tiny');
+}
+.test2 {
+  padding-top: padding('huge');
+}
+```
+*/
+/**
+ * Using $su allow us to set the correct vertical rhythm of the page
+ */
+/*
+---
+name: su(multiplier)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Return `multiplier * $su`. This method allows us to set the correct vertical rhythm of the page.
+
+```scss
+.test {
+  height: su(10);
+}
+```
+*/
+/**
+ * Mixins that generates spacing class helpers.
+ *
+ * NOTE: These are an internal mixins. They shouldn't be documented
+ */
+/*
+---
+name: type-scale(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a font-size based on the standard values. You can check
+[Type scale](http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source%2BSans%2BPro&font-family=%27Source%20Sans%20Pro%27%2C%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333)
+to check the current scale and size.
+
+```scss
+.test {
+  font-size: type-scale('huge');
+}
+```
+*/
+/**
+ * Get the line-height for different levels
+*/
+/*
+---
+name: line-height(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a line-height based on the standard values.
+
+**NOTE**: `reset`, `tiny`, `giant` and `huge` are not available.
+
+```scss
+.test {
+  line-height: line-height('big');
+}
+```
+*/
+/**
+ * Remove the unit of a length
+ *
+ * NOTE: This is an internal function. It shouldn't be documented
+ */
+/*
+---
+name: cloud-color(cloud, name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a color of a cloud. Available values:
+
+* brand
+* primary
+* secondary
+* accent
+* action
+
+```scss
+.test {
+  color: cloud-color('aws', 'brand');
+}
+```
+*/
+/**
+ * Components!
+ */

@@ -2,6 +2,8 @@
 source:
   - ../foundations/*.scss
   - ../foundations/**/*.scss
+  - ../components/*.scss
+  - ../components/**/*.scss
 
 # The directory that aigis will build to
 dest: ./dist
@@ -12,6 +14,8 @@ dependencies:
   - ./assets
   - ../dist/bitnami.ui.css
   - ../dist/bitnami.ui.min.css
+  - ../dist/bitnami.ui.components.css
+  - ../dist/bitnami.ui.components.min.css
 
 # The directory containing the tempalte files to generate pages
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)

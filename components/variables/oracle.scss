@@ -1,0 +1,25 @@
+/*
+---
+name: Oracle
+category: Components/Variables
+tag: variables
+---
+Base colors for [Oracle](https://cloud.oracle.com/home).
+
+```scss
+$cloud-oracle-colors: (
+  'brand': #ff0000,
+  'primary': #e3281e,
+  'secondary': #000,
+  'accent': #cc0000,
+  'action': #007Ca8
+);
+```
+*/
+$cloud-oracle-colors: (
+  'brand': #f00,
+  'primary': #e3281e,
+  'secondary': #000,
+  'accent': #c00,
+  'action': #007ca8
+);
