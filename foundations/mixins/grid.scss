@@ -36,7 +36,7 @@
 
 @mixin grid-collapse-by-columns-on($columns) {
   > [class^="col"] {
-    width: ($grid-columns / $columns) * ($grid-width / $grid-columns);
+    width: ($grid-columns / $columns) * (100% / $grid-columns);
     margin-top: $grid-gutter;
 
     &:nth-child(-n+#{$columns}) {

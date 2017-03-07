@@ -1,0 +1,32 @@
+/*
+---
+name: Buttons
+category: Components/Clouds
+tag: component
+---
+Modify the color of the button to match the Brand color of the given cloud. You can combine them
+with size modification classes. You can get more information about this element in the
+[Buttons](/category/Foundations/Forms/#Buttons) documentation.
+
+```html
+<p class="text-c">
+  <button class="palette-1and1 button-small">Testing buttons</button>
+  <button class="palette-aws button-small">Testing buttons</button>
+  <button class="palette-azure button-small">Testing buttons</button>
+</p>
+<p class="text-c">
+  <button class="palette-centurylink">Testing buttons</button>
+  <button class="palette-godaddy">Testing buttons</button>
+  <button class="palette-google">Testing buttons</button>
+</p>
+<p class="text-c">
+  <button class="palette-huawei button-big">Testing buttons</button>
+  <button class="palette-oracle button-big">Testing buttons</button>
+  <button class="palette-otc button-big">Testing buttons</button>
+</p>
+```
+*/
+// Personalize for every cloud
+@each $cloud in map-keys($clouds) {
+  @include button-cloud-skin($cloud);
+}

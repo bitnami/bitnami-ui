@@ -1,9 +1,13 @@
+@charset "UTF-8";
 /*!
  * Bitnami UI Components - v0.1.0
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
  * For example, a "hero" header or an application card
+ */
+/**
+ * Mappy breakpoint library
  */
 /**
  * Variables
@@ -342,31 +346,9 @@ $cloud-otc-colors: (
 );
 ```
 */
-/**
- * Reference all the clouds
- */
 /*
----
-name: Clouds
-category: Components/Variables
-tag: variables
----
-This variable references all available clouds
-
-```scss
-$clouds: (
-  '1and1': $cloud-1and1,
-  'aws': $cloud-aws,
-  'azure': $cloud-azure,
-  'centurylink': $cloud-centurylink,
-  'godaddy': $cloud-godaddy,
-  'google': $cloud-google,
-  'huawei': $cloud-huawei,
-  'oracle': $cloud-oracle,
-  'otc': $cloud-otc
-);
-```
-*/
+ * Reference all clouds
+ */
 /**
  * Helper functions to work with the Bitnami UI.
  */
@@ -401,6 +383,11 @@ in steps of one hundred. The base color is located in 500.
 }
 ```
 */
+/**
+ * Calculate the color level based on the given color and the level.
+ *
+ * NOTE: This is an internal method.
+ */
 /*
 ---
 name: button-skin(name, base-color, text-color)
@@ -413,6 +400,11 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 @include('primary', 'primary', 'light');
 ```
 */
+/**
+ * Create the values for a skin variation of a button.
+ *
+ * NOTE: This mixin is for internal usage
+ */
 /*
 ---
 name: button-size(name-of-scale)
@@ -541,6 +533,21 @@ Get a line-height based on the standard values.
  */
 /*
 ---
+name: clearfix()
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Add clearfix code to the current selector. Clearfix is useful to prevent bad positioning of
+floated elements.
+
+```scss
+.test {
+  @include clearfix();
+}
+```
+*/
+/*
+---
 name: cloud-color(cloud, name)
 category: Foundations/Helpers/Mixins
 tag: function
@@ -559,6 +566,1327 @@ Get a color of a cloud. Available values:
 }
 ```
 */
+/*
+---
+name: cloud-color-level(cloud, name, level)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
+in steps of one hundred. The base color is located in 500.
+
+```scss
+.test {
+  color: color-level('bitnami', 200);
+  background-color: color('iron', 700);
+}
+```
+*/
+/*
+---
+name: button-cloud-skin(cloud)
+category: Components/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the color of the buttons.
+
+```scss
+@include button-cloud-skin('aws');
+```
+*/
 /**
  * Components!
  */
+/*
+---
+name: Banner
+category: Components/Clouds
+tag: component
+---
+Modify the color of the banner to match the Brand color of the given cloud. You can get more
+information about this component in the
+[Banner](/category/Components/Display/#Banner) documentation.
+
+```html
+<div class="banner palette-1and1">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">1and1 Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-aws">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Amazon Web Services Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-azure">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Azure Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-centurylink">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">CenturyLink Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-godaddy">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Godaddy Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-google">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Google Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-huawei">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Huawei Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-oracle">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Oracle Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+
+<div class="banner palette-otc">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">Open Telekom Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button">Visit CenturyLink site</a>
+  </div>
+</div>
+```
+*/
+.palette-1and1 .banner,
+.banner.palette-1and1 {
+  border-top: 10px solid #4d77b1; }
+  .palette-1and1 .banner h1,
+  .palette-1and1 .banner h2,
+  .palette-1and1 .banner h3,
+  .palette-1and1 .banner h4,
+  .banner.palette-1and1 h1,
+  .banner.palette-1and1 h2,
+  .banner.palette-1and1 h3,
+  .banner.palette-1and1 h4 {
+    color: #003d8f; }
+    .palette-1and1 .banner h1.subtitle,
+    .palette-1and1 .banner h2.subtitle,
+    .palette-1and1 .banner h3.subtitle,
+    .palette-1and1 .banner h4.subtitle,
+    .banner.palette-1and1 h1.subtitle,
+    .banner.palette-1and1 h2.subtitle,
+    .banner.palette-1and1 h3.subtitle,
+    .banner.palette-1and1 h4.subtitle {
+      color: #668bbc; }
+
+.palette-aws .banner,
+.banner.palette-aws {
+  border-top: 10px solid #f3cf73; }
+  .palette-aws .banner h1,
+  .palette-aws .banner h2,
+  .palette-aws .banner h3,
+  .palette-aws .banner h4,
+  .banner.palette-aws h1,
+  .banner.palette-aws h2,
+  .banner.palette-aws h3,
+  .banner.palette-aws h4 {
+    color: #eeba37; }
+    .palette-aws .banner h1.subtitle,
+    .palette-aws .banner h2.subtitle,
+    .palette-aws .banner h3.subtitle,
+    .palette-aws .banner h4.subtitle,
+    .banner.palette-aws h1.subtitle,
+    .banner.palette-aws h2.subtitle,
+    .banner.palette-aws h3.subtitle,
+    .banner.palette-aws h4.subtitle {
+      color: #f5d687; }
+
+.palette-azure .banner,
+.banner.palette-azure {
+  border-top: 10px solid #9acff2; }
+  .palette-azure .banner h1,
+  .palette-azure .banner h2,
+  .palette-azure .banner h3,
+  .palette-azure .banner h4,
+  .banner.palette-azure h1,
+  .banner.palette-azure h2,
+  .banner.palette-azure h3,
+  .banner.palette-azure h4 {
+    color: #6ebaec; }
+    .palette-azure .banner h1.subtitle,
+    .palette-azure .banner h2.subtitle,
+    .palette-azure .banner h3.subtitle,
+    .palette-azure .banner h4.subtitle,
+    .banner.palette-azure h1.subtitle,
+    .banner.palette-azure h2.subtitle,
+    .banner.palette-azure h3.subtitle,
+    .banner.palette-azure h4.subtitle {
+      color: #a8d6f4; }
+
+.palette-centurylink .banner,
+.banner.palette-centurylink {
+  border-top: 10px solid #4daa79; }
+  .palette-centurylink .banner h1,
+  .palette-centurylink .banner h2,
+  .palette-centurylink .banner h3,
+  .palette-centurylink .banner h4,
+  .banner.palette-centurylink h1,
+  .banner.palette-centurylink h2,
+  .banner.palette-centurylink h3,
+  .banner.palette-centurylink h4 {
+    color: #00853f; }
+    .palette-centurylink .banner h1.subtitle,
+    .palette-centurylink .banner h2.subtitle,
+    .palette-centurylink .banner h3.subtitle,
+    .palette-centurylink .banner h4.subtitle,
+    .banner.palette-centurylink h1.subtitle,
+    .banner.palette-centurylink h2.subtitle,
+    .banner.palette-centurylink h3.subtitle,
+    .banner.palette-centurylink h4.subtitle {
+      color: #66b68c; }
+
+.palette-godaddy .banner,
+.banner.palette-godaddy {
+  border-top: 10px solid #4dc179; }
+  .palette-godaddy .banner h1,
+  .palette-godaddy .banner h2,
+  .palette-godaddy .banner h3,
+  .palette-godaddy .banner h4,
+  .banner.palette-godaddy h1,
+  .banner.palette-godaddy h2,
+  .banner.palette-godaddy h3,
+  .banner.palette-godaddy h4 {
+    color: #00a63f; }
+    .palette-godaddy .banner h1.subtitle,
+    .palette-godaddy .banner h2.subtitle,
+    .palette-godaddy .banner h3.subtitle,
+    .palette-godaddy .banner h4.subtitle,
+    .banner.palette-godaddy h1.subtitle,
+    .banner.palette-godaddy h2.subtitle,
+    .banner.palette-godaddy h3.subtitle,
+    .banner.palette-godaddy h4.subtitle {
+      color: #66ca8c; }
+
+.palette-google .banner,
+.banner.palette-google {
+  border-top: 10px solid #6baaee; }
+  .palette-google .banner h1,
+  .palette-google .banner h2,
+  .palette-google .banner h3,
+  .palette-google .banner h4,
+  .banner.palette-google h1,
+  .banner.palette-google h2,
+  .banner.palette-google h3,
+  .banner.palette-google h4 {
+    color: #2b85e7; }
+    .palette-google .banner h1.subtitle,
+    .palette-google .banner h2.subtitle,
+    .palette-google .banner h3.subtitle,
+    .palette-google .banner h4.subtitle,
+    .banner.palette-google h1.subtitle,
+    .banner.palette-google h2.subtitle,
+    .banner.palette-google h3.subtitle,
+    .banner.palette-google h4.subtitle {
+      color: #80b6f1; }
+
+.palette-huawei .banner,
+.banner.palette-huawei {
+  border-top: 10px solid #ff4d4d; }
+  .palette-huawei .banner h1,
+  .palette-huawei .banner h2,
+  .palette-huawei .banner h3,
+  .palette-huawei .banner h4,
+  .banner.palette-huawei h1,
+  .banner.palette-huawei h2,
+  .banner.palette-huawei h3,
+  .banner.palette-huawei h4 {
+    color: #f00; }
+    .palette-huawei .banner h1.subtitle,
+    .palette-huawei .banner h2.subtitle,
+    .palette-huawei .banner h3.subtitle,
+    .palette-huawei .banner h4.subtitle,
+    .banner.palette-huawei h1.subtitle,
+    .banner.palette-huawei h2.subtitle,
+    .banner.palette-huawei h3.subtitle,
+    .banner.palette-huawei h4.subtitle {
+      color: #ff6666; }
+
+.palette-oracle .banner,
+.banner.palette-oracle {
+  border-top: 10px solid #ff4d4d; }
+  .palette-oracle .banner h1,
+  .palette-oracle .banner h2,
+  .palette-oracle .banner h3,
+  .palette-oracle .banner h4,
+  .banner.palette-oracle h1,
+  .banner.palette-oracle h2,
+  .banner.palette-oracle h3,
+  .banner.palette-oracle h4 {
+    color: #f00; }
+    .palette-oracle .banner h1.subtitle,
+    .palette-oracle .banner h2.subtitle,
+    .palette-oracle .banner h3.subtitle,
+    .palette-oracle .banner h4.subtitle,
+    .banner.palette-oracle h1.subtitle,
+    .banner.palette-oracle h2.subtitle,
+    .banner.palette-oracle h3.subtitle,
+    .banner.palette-oracle h4.subtitle {
+      color: #ff6666; }
+
+.palette-otc .banner,
+.banner.palette-otc {
+  border-top: 10px solid #eb4d9e; }
+  .palette-otc .banner h1,
+  .palette-otc .banner h2,
+  .palette-otc .banner h3,
+  .palette-otc .banner h4,
+  .banner.palette-otc h1,
+  .banner.palette-otc h2,
+  .banner.palette-otc h3,
+  .banner.palette-otc h4 {
+    color: #e20074; }
+    .palette-otc .banner h1.subtitle,
+    .palette-otc .banner h2.subtitle,
+    .palette-otc .banner h3.subtitle,
+    .palette-otc .banner h4.subtitle,
+    .banner.palette-otc h1.subtitle,
+    .banner.palette-otc h2.subtitle,
+    .banner.palette-otc h3.subtitle,
+    .banner.palette-otc h4.subtitle {
+      color: #ee66ac; }
+
+/*
+---
+name: Buttons
+category: Components/Clouds
+tag: component
+---
+Modify the color of the button to match the Brand color of the given cloud. You can combine them
+with size modification classes. You can get more information about this element in the
+[Buttons](/category/Foundations/Forms/#Buttons) documentation.
+
+```html
+<p class="text-c">
+  <button class="palette-1and1 button-small">Testing buttons</button>
+  <button class="palette-aws button-small">Testing buttons</button>
+  <button class="palette-azure button-small">Testing buttons</button>
+</p>
+<p class="text-c">
+  <button class="palette-centurylink">Testing buttons</button>
+  <button class="palette-godaddy">Testing buttons</button>
+  <button class="palette-google">Testing buttons</button>
+</p>
+<p class="text-c">
+  <button class="palette-huawei button-big">Testing buttons</button>
+  <button class="palette-oracle button-big">Testing buttons</button>
+  <button class="palette-otc button-big">Testing buttons</button>
+</p>
+```
+*/
+.palette-1and1 .button,
+.palette-1and1 button {
+  background-color: #1a509a;
+  border-color: #003d8f;
+  color: #fff; }
+  .palette-1and1 .button:hover,
+  .palette-1and1 button:hover {
+    background-color: #003d8f;
+    border-color: #003172; }
+
+.button.palette-1and1,
+button.palette-1and1 {
+  background-color: #1a509a;
+  border-color: #003d8f;
+  color: #fff; }
+  .button.palette-1and1:hover,
+  button.palette-1and1:hover {
+    background-color: #003d8f;
+    border-color: #003172; }
+
+.palette-aws .button,
+.palette-aws button {
+  background-color: #f0c14b;
+  border-color: #eeba37;
+  color: #fff; }
+  .palette-aws .button:hover,
+  .palette-aws button:hover {
+    background-color: #eeba37;
+    border-color: #be952c; }
+
+.button.palette-aws,
+button.palette-aws {
+  background-color: #f0c14b;
+  border-color: #eeba37;
+  color: #fff; }
+  .button.palette-aws:hover,
+  button.palette-aws:hover {
+    background-color: #eeba37;
+    border-color: #be952c; }
+
+.palette-azure .button,
+.palette-azure button {
+  background-color: #7dc1ee;
+  border-color: #6ebaec;
+  color: #fff; }
+  .palette-azure .button:hover,
+  .palette-azure button:hover {
+    background-color: #6ebaec;
+    border-color: #5895bd; }
+
+.button.palette-azure,
+button.palette-azure {
+  background-color: #7dc1ee;
+  border-color: #6ebaec;
+  color: #fff; }
+  .button.palette-azure:hover,
+  button.palette-azure:hover {
+    background-color: #6ebaec;
+    border-color: #5895bd; }
+
+.palette-centurylink .button,
+.palette-centurylink button {
+  background-color: #1a9152;
+  border-color: #00853f;
+  color: #fff; }
+  .palette-centurylink .button:hover,
+  .palette-centurylink button:hover {
+    background-color: #00853f;
+    border-color: #006a32; }
+
+.button.palette-centurylink,
+button.palette-centurylink {
+  background-color: #1a9152;
+  border-color: #00853f;
+  color: #fff; }
+  .button.palette-centurylink:hover,
+  button.palette-centurylink:hover {
+    background-color: #00853f;
+    border-color: #006a32; }
+
+.palette-godaddy .button,
+.palette-godaddy button {
+  background-color: #1aaf52;
+  border-color: #00a63f;
+  color: #fff; }
+  .palette-godaddy .button:hover,
+  .palette-godaddy button:hover {
+    background-color: #00a63f;
+    border-color: #008532; }
+
+.button.palette-godaddy,
+button.palette-godaddy {
+  background-color: #1aaf52;
+  border-color: #00a63f;
+  color: #fff; }
+  .button.palette-godaddy:hover,
+  button.palette-godaddy:hover {
+    background-color: #00a63f;
+    border-color: #008532; }
+
+.palette-google .button,
+.palette-google button {
+  background-color: #4091e9;
+  border-color: #2b85e7;
+  color: #fff; }
+  .palette-google .button:hover,
+  .palette-google button:hover {
+    background-color: #2b85e7;
+    border-color: #226ab9; }
+
+.button.palette-google,
+button.palette-google {
+  background-color: #4091e9;
+  border-color: #2b85e7;
+  color: #fff; }
+  .button.palette-google:hover,
+  button.palette-google:hover {
+    background-color: #2b85e7;
+    border-color: #226ab9; }
+
+.palette-huawei .button,
+.palette-huawei button {
+  background-color: #ff1a1a;
+  border-color: #f00;
+  color: #fff; }
+  .palette-huawei .button:hover,
+  .palette-huawei button:hover {
+    background-color: #f00;
+    border-color: #cc0000; }
+
+.button.palette-huawei,
+button.palette-huawei {
+  background-color: #ff1a1a;
+  border-color: #f00;
+  color: #fff; }
+  .button.palette-huawei:hover,
+  button.palette-huawei:hover {
+    background-color: #f00;
+    border-color: #cc0000; }
+
+.palette-oracle .button,
+.palette-oracle button {
+  background-color: #ff1a1a;
+  border-color: #f00;
+  color: #fff; }
+  .palette-oracle .button:hover,
+  .palette-oracle button:hover {
+    background-color: #f00;
+    border-color: #cc0000; }
+
+.button.palette-oracle,
+button.palette-oracle {
+  background-color: #ff1a1a;
+  border-color: #f00;
+  color: #fff; }
+  .button.palette-oracle:hover,
+  button.palette-oracle:hover {
+    background-color: #f00;
+    border-color: #cc0000; }
+
+.palette-otc .button,
+.palette-otc button {
+  background-color: #e51a82;
+  border-color: #e20074;
+  color: #fff; }
+  .palette-otc .button:hover,
+  .palette-otc button:hover {
+    background-color: #e20074;
+    border-color: #b5005d; }
+
+.button.palette-otc,
+button.palette-otc {
+  background-color: #e51a82;
+  border-color: #e20074;
+  color: #fff; }
+  .button.palette-otc:hover,
+  button.palette-otc:hover {
+    background-color: #e20074;
+    border-color: #b5005d; }
+
+/*
+---
+name: Launcher
+category: Components/Clouds
+tag: component
+---
+Modify the base hexagon image for a cloud vendor. If the image doesn't exist, it will use the
+default hexagon. You can get more information about this component in the
+[Launcher](/category/Components/Stacks/#Launcher) documentation.
+
+```html
+<div class="launcher palette-oracle">
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-more">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/"></a>
+  </div>
+</div>
+```
+*/
+.palette-google .launcher .launcher__stack,
+.launcher.palette-google .launcher__stack {
+  background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/launch-icon-bg-alt-3ee07160d3e4887b620304aeabddba64.png"); }
+
+.palette-huawei .launcher .launcher__stack,
+.launcher.palette-huawei .launcher__stack {
+  background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/oracle/launch-icon-bg-oracle-abd461907f252d3567c4766dcf151eab.png"); }
+
+.palette-oracle .launcher .launcher__stack,
+.launcher.palette-oracle .launcher__stack {
+  background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/oracle/launch-icon-bg-oracle-abd461907f252d3567c4766dcf151eab.png"); }
+
+/*
+---
+name: Separators
+category: Components/Clouds
+tag: component
+---
+Modify the color of the separator to match the Brand color of the given cloud. You can combine them
+with size modifiers. You can get more information about this element in the
+[Separators](category/Foundations/Separators/) documentation.
+
+```html
+  <hr class="palette-1and1" />
+  <hr class="palette-aws" />
+  <hr class="palette-azure" />
+  <hr class="palette-centurylink separator-big" />
+  <hr class="palette-godaddy separator-big" />
+  <hr class="palette-google separator-big" />
+  <hr class="palette-huawei separator-enormous" />
+  <hr class="palette-oracle separator-enormous" />
+  <hr class="palette-otc separator-enormous" />
+```
+*/
+.palette-1and1 hr,
+hr.palette-1and1 {
+  color: #003d8f;
+  background-color: #003d8f; }
+
+.palette-aws hr,
+hr.palette-aws {
+  color: #eeba37;
+  background-color: #eeba37; }
+
+.palette-azure hr,
+hr.palette-azure {
+  color: #6ebaec;
+  background-color: #6ebaec; }
+
+.palette-centurylink hr,
+hr.palette-centurylink {
+  color: #00853f;
+  background-color: #00853f; }
+
+.palette-godaddy hr,
+hr.palette-godaddy {
+  color: #00a63f;
+  background-color: #00a63f; }
+
+.palette-google hr,
+hr.palette-google {
+  color: #2b85e7;
+  background-color: #2b85e7; }
+
+.palette-huawei hr,
+hr.palette-huawei {
+  color: #f00;
+  background-color: #f00; }
+
+.palette-oracle hr,
+hr.palette-oracle {
+  color: #f00;
+  background-color: #f00; }
+
+.palette-otc hr,
+hr.palette-otc {
+  color: #e20074;
+  background-color: #e20074; }
+
+/*
+---
+name: Banner
+category: Components/Display
+tag: component
+---
+
+```html
+<div class="banner">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">CenturyLink Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button button-action">Visit CenturyLink site</a>
+  </div>
+</div>
+```
+*/
+.banner {
+  background-color: #f4f5f5;
+  border-top: 2px solid #162d50;
+  margin: 1.333em auto;
+  padding: 1.333em 0; }
+
+/*
+---
+name: Reasons
+category: Components/Display
+tag: component
+---
+
+```html
+<div class="container container-small">
+  <h1 class="text-c">The best of both worlds</h1>
+  <h5 class="text-c subtitle">The ease of Bitnami backed by the compute power of Google</h5>
+  <div class="row">
+    <div class="col-6">
+      <h3>Huge selection</h3>
+      <p>
+        Bitnami packages the most popular open source apps and development environments — 150+ and growing.
+      </p>
+    </div>
+    <div class="col-6">
+      <h3>Up to date</h3>
+      <p>
+        Bitnami monitors all of the apps and components it packages and releases updates once they become available.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h3>Fully configured</h3>
+      <p>
+        Bitnami cloud images are fully integrated and configured and ready-to-run. After clicking the "launch" button, you'll be up and running in minutes.
+      </p>
+    </div>
+    <div class="col-6">
+      <h3>Free of charge</h3>
+      <p>
+        Bitnami cloud images are made available at no additional cost. In other words, you only pay for the Google Cloud Platform resources that you use to run the apps.
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: Screenshots
+category: Components/Display
+tag: component
+---
+
+```html
+<div class="screenshots">
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">1.</b> Select your app
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">2.</b> Customize your deployment
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">3.</b> You're up and running
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+</div>
+```
+*/
+.screenshots {
+  position: relative; }
+  .screenshots__screenshot {
+    bottom: 0; }
+    .screenshots__screenshot:first-child, .screenshots__screenshot:last-child {
+      position: absolute;
+      width: 35%;
+      z-index: 1; }
+    .screenshots__screenshot:first-child {
+      left: 0; }
+      .screenshots__screenshot:first-child p {
+        padding-right: 10%; }
+    .screenshots__screenshot:nth-child(2) {
+      position: relative;
+      z-index: 2;
+      width: 50%;
+      left: 25%; }
+    .screenshots__screenshot:last-child {
+      right: 0; }
+      .screenshots__screenshot:last-child p {
+        padding-left: 10%; }
+    .screenshots__screenshot img {
+      display: block;
+      width: 100%; }
+    @media all and (max-width: 29.9375em) {
+      .screenshots__screenshot:nth-child(2) {
+        width: 80%;
+        left: 10%; }
+      .screenshots__screenshot:first-child, .screenshots__screenshot:last-child {
+        display: none; }
+      .screenshots__screenshot p {
+        display: none; } }
+  .screenshots:after {
+    content: '';
+    display: table;
+    clear: both; }
+
+/*
+---
+name: Steps
+category: Components/Display
+tag: component
+---
+Display an ordered lists with a bigger numbers. Also, the numbers have a circle border
+
+```html
+<ol class="steps">
+  <li>
+    <span class="step">
+      <a href="#">Create a free Bitnami account</a> or <a href="#">sign in</a> to select an application or development stack
+    </span>
+  </li>
+  <li>
+    <span class="step">
+      <a href="#">Sign up</a> or <a href="#">login</a> to your CenturyLink account
+    </span>
+  </li>
+  <li>
+    <span class="step">
+      Launch images directly from <a href="#">Bitnami Launchpad for CenturyLink Cloud</a>
+    </span>
+  </li>
+</ol>
+```
+*/
+.steps {
+  counter-reset: list-counter;
+  list-style: none;
+  padding-left: 0; }
+  .steps li {
+    display: table; }
+    .steps li:before {
+      border: 1px solid #162d50;
+      color: #162d50;
+      border-radius: 50%;
+      text-align: center;
+      content: counter(list-counter);
+      counter-increment: list-counter;
+      width: 1.9995em;
+      height: 1.9995em;
+      line-height: 1.9995em;
+      margin-right: 0.33325em;
+      float: left; }
+    .steps li:after {
+      content: '';
+      display: table;
+      clear: both; }
+    .steps li .step {
+      display: table-cell;
+      vertical-align: middle; }
+
+/*
+---
+name: Cloud page
+category: Components/Layouts/Clouds
+tag: component
+---
+
+This layout includes several components:
+
+* [Banner](/category/Components/Clouds/#Banner)
+* [Steps](/category/Components/Display/#Steps)
+* [Reasons](/category/Components/Display/#Reasons)
+* [Screenshots](/category/Components/Display/#Screenshots)
+* [Buttons](/category/Components/Clouds/#Buttons)
+* [Separators](/category/Components/Clouds/#Separators)
+* [Launcher](/category/Components/Clouds/#Launcher)
+
+```html
+<main class="clouds palette-centurylink">
+  <header>
+    <div class="container">
+      <nav class="breadcrumb">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Cloud name</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="container clouds__companies">
+      <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/centurylink-logo-cf3cb415aa7129ad61bb0d2b2c250935.png"
+        alt="Centurylink logo">
+      <span class="clouds__companies_plus">+</span>
+      <img src="//d33np9n32j53g7.cloudfront.net/assets/new/bitnami-logo-056526e247737ade38342f3b1ef6cf4f.png"
+        alt="Bitnami logo">
+    </div>
+    <h2 class="text-c margin-t-small margin-b-bigger">
+      The easiest way to deploy applications to Century Link Cloud Platform
+    </h2>
+  </header>
+
+  <div class="banner">
+    <div class="container container-small text-c">
+      <h1 class="margin-t-reset">CenturyLink Cloud</h1>
+      <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+      <p class="margin-t-big">
+        The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+      </p>
+      <a class="button button-big">View Bitnami Applications for CenturyLink Cloud</a>
+    </div>
+  </div>
+
+  <section class="clouds__started">
+    <div class="container">
+      <div class="row collapse-on-tablet collapse-on-phone">
+        <div class="col-6">
+          <iframe allowfullscreen="" frameborder="0" height="315" onclick="ga('send', 'event', 'centurylink', 'click', 'video play');" src="//www.youtube.com/embed/3ulkH1cl-wg?rel=0&amp;showinfo=0&amp;color=white&amp;controls=2&amp;autohide=1" width="560"></iframe>
+        </div>
+        <div class="col-6">
+          <h1>Get started right now</h1>
+          <ol class="steps type-big">
+            <li>
+              <span class="step">
+                <a href="#">Create a free Bitnami account</a> or <a href="#">sign in</a> to select an application or development stack
+              </span>
+            </li>
+            <li>
+              <span class="step">
+                <a href="#">Sign up</a> or <a href="#">login</a> to your CenturyLink account
+              </span>
+            </li>
+            <li>
+              <span class="step">
+                Launch images directly from <a href="#">Bitnami Launchpad for CenturyLink Cloud</a>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator-30 separator-big margin-t-giant" />
+
+  <div class="container container-small">
+    <h1 class="text-c">
+      The best of both worlds
+    </h1>
+    <h5 class="text-c subtitle">
+      The ease of Bitnami backed by the compute power of Centurylink
+    </h5>
+    <div class="row">
+      <div class="col-6">
+        <h3>Huge selection</h3>
+        <p>
+          Bitnami packages the most popular open source apps and development environments — 150+ and growing.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Up to date</h3>
+        <p>
+          Bitnami monitors all of the apps and components it packages and releases updates once they become available.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h3>Fully configured</h3>
+        <p>
+          Bitnami cloud images are fully integrated and configured and ready-to-run. After clicking the "launch" button, you'll be up and running in minutes.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Free of charge</h3>
+        <p>
+          Bitnami cloud images are made available at no additional cost. In other words, you only pay for the Google Cloud Platform resources that you use to run the apps.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h3>Consistent</h3>
+        <p>
+          All apps and dev environments are packaged and configured consistently across operating systems and deployment platforms.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Run in hybrid deployments</h3>
+        <p>
+          The Bitnami Launchpad can launch apps for public-facing, Internet-accessible use or internal, private network use.
+        </p>
+      </div>
+    </div>
+    <p class="text-c">
+      For more information on how Bitnami works, please visit the <a>About Bitnami</a> page.
+    </p>
+  </div>
+
+  <hr class="separator-30 separator-big margin-v-enormous" />
+
+  <div class="container padding-b-reset">
+    <div class="screenshots">
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">1.</b> Select your app
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">2.</b> Customize your deployment
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">3.</b> You're up and running
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+    </div>
+  </div>
+
+  <div class="clouds__stacks">
+    <div class="container">
+      <h2 class="text-c inverse">Launch a Free Server Now...</h2>
+      <div class="launcher">
+        <div class="launcher__stack stack-wordpress">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/wordress">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Wordpress v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/wordress" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/wordress">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-moodle">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Moodle v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/moodle" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-gitlab">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/gitlab">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Gitlab v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/gitlab" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/gitlab">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-redmine">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/redmine">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Redmine v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/redmine" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/redmine">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-more">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+```
+*/
+.clouds header {
+  min-height: 21.328em; }
+
+.clouds__companies {
+  margin-top: 0.6665em;
+  text-align: center; }
+  .clouds__companies img, .clouds__companies_plus {
+    vertical-align: middle;
+    display: inline-block; }
+  .clouds__companies img {
+    max-height: 6.665em;
+    max-width: 100%; }
+  .clouds__companies_plus {
+    font-size: 5.61023em;
+    color: #ebecec;
+    padding: 0 0.44433em; }
+
+.clouds__started {
+  margin-top: 3.999em; }
+
+.clouds__stacks {
+  padding: 1.9995em 0;
+  background-color: #162d50; }
+
+.clouds iframe {
+  max-width: 100%; }
+
+.clouds.palette-1and1 .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-aws .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-azure .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-centurylink .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-godaddy .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-google .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-huawei .clouds__stacks {
+  background-color: #000; }
+
+.clouds.palette-oracle .clouds__stacks {
+  background-color: #37474f; }
+
+.clouds.palette-otc .clouds__stacks {
+  background-color: #2c2d2d; }
+
+/*
+---
+name: Breadcrumb
+category: Components/Navigation
+tag: component
+---
+
+```html
+<nav class="breadcrumb">
+  <ol>
+    <li><a href="#">First element</a></li>
+    <li><a href="#">Second element</a></li>
+  </ol>
+</nav>
+```
+*/
+.breadcrumb {
+  margin: 0 0 0.6665em; }
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .breadcrumb ol li {
+      display: inline;
+      padding: 0; }
+      .breadcrumb ol li + li:before {
+        padding: 0 0.6665em;
+        color: #37474f;
+        content: '›'; }
+
+/*
+---
+name: Launcher
+category: Components/Stacks
+tag: component
+---
+Display the applications as a list. When the user hover in an element, a tooltip is displayed.
+
+```html
+<div class="launcher">
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-more">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/"></a>
+  </div>
+</div>
+```
+*/
+.launcher {
+  text-align: center;
+  padding-top: 1.333em; }
+  .launcher__stack {
+    display: inline-block;
+    background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/launch-icon-bg-418e0f317870860b107951338c9acb6e.png");
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 0.6665em 1.333em; }
+    .launcher__stack__icon {
+      display: block;
+      width: 77px;
+      height: 85px;
+      text-indent: -9999px;
+      background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/launcher-stacks-f3dc9bbc1c39fab944230ce13e71f9d7.png"); }
+    .launcher__stack:hover, .launcher__stack.hover {
+      background-position: 50% -85px; }
+      .launcher__stack:hover .launcher__stack__tooltip, .launcher__stack.hover .launcher__stack__tooltip {
+        opacity: 1;
+        left: 50%; }
+    .launcher__stack__tooltip {
+      position: absolute;
+      bottom: 4.6655em;
+      padding-bottom: 1.9995em;
+      left: -9999px;
+      width: 140px;
+      margin-left: -70px;
+      z-index: 100;
+      opacity: 0; }
+      .launcher__stack__tooltip__content {
+        position: relative;
+        background: #fff;
+        padding: 0.33325em 0.6665em;
+        border: 3px solid #ebecec;
+        border-radius: 3px; }
+        .launcher__stack__tooltip__content:after, .launcher__stack__tooltip__content:before {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          border: solid transparent;
+          content: ' ';
+          height: 0;
+          width: 0;
+          pointer-events: none; }
+        .launcher__stack__tooltip__content:after {
+          border-top-color: #fff;
+          border-width: 15px;
+          margin-left: -15px; }
+        .launcher__stack__tooltip__content:before {
+          border-top-color: #ebecec;
+          border-width: 19px;
+          margin-left: -19px; }
+    .launcher__stack.stack-wordpress .launcher__stack__icon {
+      background-position: 0px -85px; }
+    .launcher__stack.stack-wordpress:hover .launcher__stack__icon, .launcher__stack.stack-wordpress.hover .launcher__stack__icon {
+      background-position: 0px 0; }
+    .launcher__stack.stack-drupal .launcher__stack__icon {
+      background-position: -77px -85px; }
+    .launcher__stack.stack-drupal:hover .launcher__stack__icon, .launcher__stack.stack-drupal.hover .launcher__stack__icon {
+      background-position: -77px 0; }
+    .launcher__stack.stack-redmine .launcher__stack__icon {
+      background-position: -154px -85px; }
+    .launcher__stack.stack-redmine:hover .launcher__stack__icon, .launcher__stack.stack-redmine.hover .launcher__stack__icon {
+      background-position: -154px 0; }
+    .launcher__stack.stack-moodle .launcher__stack__icon {
+      background-position: -231px -85px; }
+    .launcher__stack.stack-moodle:hover .launcher__stack__icon, .launcher__stack.stack-moodle.hover .launcher__stack__icon {
+      background-position: -231px 0; }
+    .launcher__stack.stack-gitlab .launcher__stack__icon {
+      background-position: -308px -85px; }
+    .launcher__stack.stack-gitlab:hover .launcher__stack__icon, .launcher__stack.stack-gitlab.hover .launcher__stack__icon {
+      background-position: -308px 0; }
+    .launcher__stack.stack-lampstack .launcher__stack__icon {
+      background-position: -385px -85px; }
+    .launcher__stack.stack-lampstack:hover .launcher__stack__icon, .launcher__stack.stack-lampstack.hover .launcher__stack__icon {
+      background-position: -385px 0; }
+    .launcher__stack.stack-meanstack .launcher__stack__icon {
+      background-position: -462px -85px; }
+    .launcher__stack.stack-meanstack:hover .launcher__stack__icon, .launcher__stack.stack-meanstack.hover .launcher__stack__icon {
+      background-position: -462px 0; }
+    .launcher__stack.stack-redis .launcher__stack__icon {
+      background-position: -539px -85px; }
+    .launcher__stack.stack-redis:hover .launcher__stack__icon, .launcher__stack.stack-redis.hover .launcher__stack__icon {
+      background-position: -539px 0; }
+    .launcher__stack.stack-postgresql .launcher__stack__icon {
+      background-position: -616px -85px; }
+    .launcher__stack.stack-postgresql:hover .launcher__stack__icon, .launcher__stack.stack-postgresql.hover .launcher__stack__icon {
+      background-position: -616px 0; }
+    .launcher__stack.stack-more .launcher__stack__icon {
+      background-image: none;
+      color: #bcbdbd;
+      text-indent: 0; }
+      .launcher__stack.stack-more .launcher__stack__icon:after {
+        content: '>';
+        vertical-align: text-top;
+        line-height: 85px;
+        font-size: 2.36859em;
+        font-weight: bold; }
+    .launcher__stack.stack-more:hover .launcher__stack__icon, .launcher__stack.stack-more.hover .launcher__stack__icon {
+      color: #162d50; }
+  .launcher:after {
+    content: '';
+    display: table;
+    clear: both; }

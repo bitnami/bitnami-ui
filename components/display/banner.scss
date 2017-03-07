@@ -1,0 +1,27 @@
+/*
+---
+name: Banner
+category: Components/Display
+tag: component
+---
+
+```html
+<div class="banner">
+  <div class="container container-small text-c">
+    <h1 class="margin-t-reset">CenturyLink Cloud</h1>
+    <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+    <p class="margin-t-big">
+      The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+    </p>
+    <a class="button button-action">Visit CenturyLink site</a>
+  </div>
+</div>
+```
+*/
+
+.banner {
+  background-color: color-level('iron', 50);
+  border-top: 2px solid color('brand');
+  margin: margin('big') auto;
+  padding: padding('big') 0;
+}

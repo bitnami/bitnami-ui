@@ -1,0 +1,37 @@
+/*
+---
+name: Breadcrumb
+category: Components/Navigation
+tag: component
+---
+
+```html
+<nav class="breadcrumb">
+  <ol>
+    <li><a href="#">First element</a></li>
+    <li><a href="#">Second element</a></li>
+  </ol>
+</nav>
+```
+*/
+.breadcrumb {
+  margin: 0 0 margin('normal');
+
+  // Main list
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline;
+      padding: 0;
+
+      + li:before {
+        padding: 0 padding('normal');
+        color: color('dark');
+        content: '›';
+      }
+    }
+  }
+}

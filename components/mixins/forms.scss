@@ -1,0 +1,37 @@
+/*
+---
+name: button-cloud-skin(cloud)
+category: Components/Mixins
+tag: function
+---
+Mixin to generate a class for buttons. This class will modify the color of the buttons.
+
+```scss
+@include button-cloud-skin('aws');
+```
+*/
+@mixin button-cloud-skin($cloud) {
+  .palette-#{$cloud} {
+    .button,
+    button {
+      @include button-skin-values(
+        cloud-color-level($cloud, 'brand', 400),
+        cloud-color($cloud, 'brand'),
+        color('white'),
+        cloud-color($cloud, 'brand'),
+        cloud-color-level($cloud, 'brand', 700)
+      )
+    }
+  }
+
+  .button.palette-#{$cloud},
+  button.palette-#{$cloud} {
+    @include button-skin-values(
+      cloud-color-level($cloud, 'brand', 400),
+      cloud-color($cloud, 'brand'),
+      color('white'),
+      cloud-color($cloud, 'brand'),
+      cloud-color-level($cloud, 'brand', 700)
+    )
+  }
+}

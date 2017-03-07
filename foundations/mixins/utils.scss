@@ -10,3 +10,26 @@
 
   @return $number;
 }
+
+/*
+---
+name: clearfix()
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Add clearfix code to the current selector. Clearfix is useful to prevent bad positioning of
+floated elements.
+
+```scss
+.test {
+  @include clearfix();
+}
+```
+*/
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

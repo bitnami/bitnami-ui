@@ -1,0 +1,62 @@
+/*
+---
+name: Steps
+category: Components/Display
+tag: component
+---
+Display an ordered lists with a bigger numbers. Also, the numbers have a circle border
+
+```html
+<ol class="steps">
+  <li>
+    <span class="step">
+      <a href="#">Create a free Bitnami account</a> or <a href="#">sign in</a> to select an application or development stack
+    </span>
+  </li>
+  <li>
+    <span class="step">
+      <a href="#">Sign up</a> or <a href="#">login</a> to your CenturyLink account
+    </span>
+  </li>
+  <li>
+    <span class="step">
+      Launch images directly from <a href="#">Bitnami Launchpad for CenturyLink Cloud</a>
+    </span>
+  </li>
+</ol>
+```
+*/
+.steps {
+  counter-reset: list-counter;
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: table;
+
+    &:before {
+      border: 1px solid color('bitnami');
+      color: color('bitnami');
+      border-radius: 50%;
+      text-align: center;
+      content: counter(list-counter);
+      counter-increment: list-counter;
+      width: su(1.5);
+      height: su(1.5);
+      line-height: su(1.5);
+      margin-right: margin('small');
+      float: left;
+    }
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .step {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}

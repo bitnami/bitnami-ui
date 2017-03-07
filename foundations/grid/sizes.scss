@@ -15,12 +15,48 @@ The grid is limited by the `max-width` property. By default, the rows can not be
     <div class="col-4"><article>4</article></div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+</div>
+
+<div class="container container-small">
+  <div class="row">
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+  </div>
+</div>
+
+<div class="container container-tiny">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+</div>
 ```
 */
 
-// Remove max-width limitation for fluid containers
 .container {
+  // Remove max-width limitation for fluid containers
   &.container-fluid {
     max-width: none;
+  }
+
+  // A reduced width element. The width of this grid is the same of 9 columns
+  &.container-small {
+    max-width: calc(8 * (#{$grid-width} / #{$grid-columns}) + #{$grid-gutter} / 2);
+  }
+
+  &.container-tiny {
+    max-width: calc(6 * (#{$grid-width} / #{$grid-columns}) + #{$grid-gutter} / 2);
   }
 }

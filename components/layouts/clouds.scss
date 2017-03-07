@@ -1,0 +1,267 @@
+/*
+---
+name: Cloud page
+category: Components/Layouts/Clouds
+tag: component
+---
+
+This layout includes several components:
+
+* [Banner](/category/Components/Clouds/#Banner)
+* [Steps](/category/Components/Display/#Steps)
+* [Reasons](/category/Components/Display/#Reasons)
+* [Screenshots](/category/Components/Display/#Screenshots)
+* [Buttons](/category/Components/Clouds/#Buttons)
+* [Separators](/category/Components/Clouds/#Separators)
+* [Launcher](/category/Components/Clouds/#Launcher)
+
+```html
+<main class="clouds palette-centurylink">
+  <header>
+    <div class="container">
+      <nav class="breadcrumb">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Cloud name</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="container clouds__companies">
+      <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/centurylink-logo-cf3cb415aa7129ad61bb0d2b2c250935.png"
+        alt="Centurylink logo">
+      <span class="clouds__companies_plus">+</span>
+      <img src="//d33np9n32j53g7.cloudfront.net/assets/new/bitnami-logo-056526e247737ade38342f3b1ef6cf4f.png"
+        alt="Bitnami logo">
+    </div>
+    <h2 class="text-c margin-t-small margin-b-bigger">
+      The easiest way to deploy applications to Century Link Cloud Platform
+    </h2>
+  </header>
+
+  <div class="banner">
+    <div class="container container-small text-c">
+      <h1 class="margin-t-reset">CenturyLink Cloud</h1>
+      <h5 class="subtitle">Free open-source apps and developer stacks</h5>
+      <p class="margin-t-big">
+        The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
+      </p>
+      <a class="button button-big">View Bitnami Applications for CenturyLink Cloud</a>
+    </div>
+  </div>
+
+  <section class="clouds__started">
+    <div class="container">
+      <div class="row collapse-on-tablet collapse-on-phone">
+        <div class="col-6">
+          <iframe allowfullscreen="" frameborder="0" height="315" onclick="ga('send', 'event', 'centurylink', 'click', 'video play');" src="//www.youtube.com/embed/3ulkH1cl-wg?rel=0&amp;showinfo=0&amp;color=white&amp;controls=2&amp;autohide=1" width="560"></iframe>
+        </div>
+        <div class="col-6">
+          <h1>Get started right now</h1>
+          <ol class="steps type-big">
+            <li>
+              <span class="step">
+                <a href="#">Create a free Bitnami account</a> or <a href="#">sign in</a> to select an application or development stack
+              </span>
+            </li>
+            <li>
+              <span class="step">
+                <a href="#">Sign up</a> or <a href="#">login</a> to your CenturyLink account
+              </span>
+            </li>
+            <li>
+              <span class="step">
+                Launch images directly from <a href="#">Bitnami Launchpad for CenturyLink Cloud</a>
+              </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separator-30 separator-big margin-t-giant" />
+
+  <div class="container container-small">
+    <h1 class="text-c">
+      The best of both worlds
+    </h1>
+    <h5 class="text-c subtitle">
+      The ease of Bitnami backed by the compute power of Centurylink
+    </h5>
+    <div class="row">
+      <div class="col-6">
+        <h3>Huge selection</h3>
+        <p>
+          Bitnami packages the most popular open source apps and development environments — 150+ and growing.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Up to date</h3>
+        <p>
+          Bitnami monitors all of the apps and components it packages and releases updates once they become available.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h3>Fully configured</h3>
+        <p>
+          Bitnami cloud images are fully integrated and configured and ready-to-run. After clicking the "launch" button, you'll be up and running in minutes.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Free of charge</h3>
+        <p>
+          Bitnami cloud images are made available at no additional cost. In other words, you only pay for the Google Cloud Platform resources that you use to run the apps.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h3>Consistent</h3>
+        <p>
+          All apps and dev environments are packaged and configured consistently across operating systems and deployment platforms.
+        </p>
+      </div>
+      <div class="col-6">
+        <h3>Run in hybrid deployments</h3>
+        <p>
+          The Bitnami Launchpad can launch apps for public-facing, Internet-accessible use or internal, private network use.
+        </p>
+      </div>
+    </div>
+    <p class="text-c">
+      For more information on how Bitnami works, please visit the <a>About Bitnami</a> page.
+    </p>
+  </div>
+
+  <hr class="separator-30 separator-big margin-v-enormous" />
+
+  <div class="container padding-b-reset">
+    <div class="screenshots">
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">1.</b> Select your app
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">2.</b> Customize your deployment
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+      <div class="screenshots__screenshot">
+        <p class="text-c margin-t-normal">
+          <b class="type-color-accent">3.</b> You're up and running
+        </p>
+        <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+      </div>
+    </div>
+  </div>
+
+  <div class="clouds__stacks">
+    <div class="container">
+      <h2 class="text-c inverse">Launch a Free Server Now...</h2>
+      <div class="launcher">
+        <div class="launcher__stack stack-wordpress">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/wordress">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Wordpress v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/wordress" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/wordress">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-moodle">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Moodle v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/moodle" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-gitlab">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/gitlab">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Gitlab v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/gitlab" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/gitlab">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-redmine">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/redmine">Moodle</a>
+          <div class="launcher__stack__tooltip">
+            <div class="launcher__stack__tooltip__content">
+              <h6 class="margin-t-small">Redmine v3.2.1</h6>
+              <a href="https://aws.bitnami.com/launch/redmine" class="button button-small">Launch now</a>
+              <p class="margin-v-small">or <a href="/stack/redmine">Download</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="launcher__stack stack-more">
+          <a class="launcher__stack__icon" href="https://aws.bitnami.com/"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+```
+*/
+.clouds {
+  header {
+    min-height: su(16);
+  }
+
+  &__companies {
+    margin-top: margin('normal');
+    text-align: center;
+
+    img,
+    &_plus {
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    img {
+      max-height: su(5);
+      max-width: 100%;
+    }
+
+    &_plus {
+      font-size: type-scale(6);
+      color: color('iron');
+      padding: 0 (2 * (su() / 6));
+    }
+  }
+
+  &__started {
+    margin-top: margin('giant');
+  }
+
+  &__stacks {
+    padding: padding('bigger') 0;
+    background-color: color('brand');
+  }
+
+  // Prevent override on video
+  iframe {
+    max-width: 100%;
+  }
+}
+
+// Personalize for every cloud
+@each $cloud in map-keys($clouds) {
+  .clouds.palette-#{$cloud} {
+    .clouds {
+      &__stacks {
+        background-color: cloud-color($cloud, 'dark');
+      }
+    }
+  }
+}

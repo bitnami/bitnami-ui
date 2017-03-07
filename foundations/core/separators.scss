@@ -1,0 +1,19 @@
+/*
+---
+name: Horizontal
+category: Foundations/Separators
+tag: blocks
+---
+Add an horizonal line to split the content of the page.
+
+```html
+<hr />
+```
+*/
+hr {
+  color: color('iron');
+  background-color: color('iron');
+  height: 2px;
+  border: 0;
+  margin: margin('normal') auto;
+}

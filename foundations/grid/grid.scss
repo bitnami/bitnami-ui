@@ -64,8 +64,8 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   width: auto;
   max-width: $grid-width;
   // Remove the gutter of the bottom and the left/right
-  margin: su() auto;
-  padding: 0 su();
+  margin: 0 auto;
+  padding: $grid-gutter;
 
   /**
    * Row definition

@@ -7,16 +7,15 @@
  */
 
 /**
+ * Mappy breakpoint library
+ */
+@import  'node_modules/mappy-breakpoints/mappy-breakpoints';
+
+/**
  * Variables
  */
 @import '../foundations/variables/all';
 @import 'variables/all';
-
-
-/**
- * Reference all the clouds
- */
-@import 'clouds';
 
 /**
  * Helper functions to work with the Bitnami UI.
@@ -27,3 +26,8 @@
 /**
  * Components!
  */
+@import 'clouds/all';
+@import 'display/all';
+@import 'layouts/all';
+@import 'navigation/all';
+@import 'stacks/all';

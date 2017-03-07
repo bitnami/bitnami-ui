@@ -51,7 +51,7 @@
 /* Improve text code box */
 .aigis-preview {
   border-color: #ddd;
-  overflow: auto;
+  overflow: visible;
 }
 
 .aigis-module > pre {
@@ -78,7 +78,7 @@
 }
 
 /* Center images */
-.aigis-contents__body img {
+.aigis-contents__body > img {
   display: block;
   margin: 0 auto;
 }

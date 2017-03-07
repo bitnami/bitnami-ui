@@ -1,0 +1,34 @@
+/*
+---
+name: Subtitle
+category: Foundations/Helpers/Headers
+tag: helpers
+---
+Modify the color and the margin-top of a header. It should be combined with a normal header.
+
+```html
+<h1>The best of both worlds</h1>
+<h5 class="subtitle">The ease of Bitnami backed by the compute power of Google</h5>
+```
+*/
+.subtitle {
+  font-weight: normal;
+  color: color-level('secondary', 300);
+  margin-top: -(margin('normal'));
+}
+
+/*
+---
+name: Inverse
+category: Foundations/Helpers/Headers
+tag: helpers
+---
+Use this style with dark bacgrkound colors
+
+```html
+<h1 class="inverse">The best of both worlds</h1>
+```
+*/
+.inverse {
+  color: color-level('iron', 50);
+}

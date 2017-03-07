@@ -1,0 +1,175 @@
+/*
+---
+name: Launcher
+category: Components/Stacks
+tag: component
+---
+Display the applications as a list. When the user hover in an element, a tooltip is displayed.
+
+```html
+<div class="launcher">
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-moodle">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/launch/moodle">Moodle</a>
+    <div class="launcher__stack__tooltip">
+      <div class="launcher__stack__tooltip__content">
+        <h6 class="margin-t-small">Moodle v3.2.1</h6>
+        <a href="https://aws.bitnami.com/launch/moodle" class="button button-small button-action">Launch now</a>
+        <p class="margin-v-small">or <a href="/stack/moodle">Download</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="launcher__stack stack-more">
+    <a class="launcher__stack__icon" href="https://aws.bitnami.com/"></a>
+  </div>
+</div>
+```
+*/
+.launcher {
+  text-align: center;
+  padding-top: padding('big');
+
+  &__stack {
+    display: inline-block;
+    background-image: url(map-get($stacks-launcher-hexagon-images, 'default'));
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0 margin('normal') margin('big');
+
+    &__icon {
+      display: block;
+      width: $stack-launcher-width;
+      height: $stack-launcher-height;
+      text-indent: -9999px;
+      background-image: url($stacks-launcher-image);
+    }
+
+    &:hover,
+    &.hover {
+      background-position: 50% (-$stack-launcher-height);
+
+      .launcher__stack__tooltip {
+        opacity: 1;
+        left: 50%;
+      }
+    }
+
+    &__tooltip {
+      position: absolute;
+      bottom: su(3.5);
+      padding-bottom: su(1.5);
+      left: -9999px;
+      width: $stack-launcher-box-width;
+      margin-left: -($stack-launcher-box-width / 2);
+      z-index: 100;
+      opacity: 0;
+
+      &__content {
+        position: relative;
+        background: color('white');
+        padding: padding('small') padding('normal');
+        border: 3px solid color('iron');
+        border-radius: $spacing-border-radius;
+
+        &:after,
+        &:before {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          border: solid transparent;
+          content: ' ';
+          height: 0;
+          width: 0;
+          pointer-events: none;
+        }
+
+        &:after {
+          border-top-color: color('white');
+          border-width: 15px;
+          margin-left: -15px;
+        }
+
+        &:before {
+          border-top-color: color('iron');
+          border-width: 19px;
+          margin-left: -19px;
+        }
+      }
+    }
+
+    // Iterate over the different applications
+    @each $name, $position in $stack-launcher-positions {
+      &.stack-#{$name} {
+        .launcher__stack__icon {
+          background-position: -($position * $stack-launcher-width) (-$stack-launcher-height);
+        }
+
+        &:hover,
+        &.hover {
+          .launcher__stack__icon {
+            background-position: -($position * $stack-launcher-width) 0;
+          }
+        }
+      }
+
+    }
+
+    // More
+    &.stack-more {
+      .launcher__stack__icon {
+        background-image: none;
+        color: color-level('iron', 700);
+        text-indent: 0;
+
+        &:after {
+          content: '>';
+          vertical-align: text-top;
+          line-height: $stack-launcher-height;
+          font-size: type-scale('enormous');
+          font-weight: bold;
+        }
+      }
+
+      &:hover,
+      &.hover {
+        .launcher__stack__icon {
+          color: color('brand');
+        }
+      }
+    }
+  }
+
+  // scss-lint:disable DeclarationOrder
+  @include clearfix();
+  // scss-lint:enable DeclarationOrder
+}

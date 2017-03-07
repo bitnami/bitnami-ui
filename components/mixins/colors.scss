@@ -37,3 +37,24 @@ Get a color of a cloud. Available values:
     @error "The cloud #{$cloud-name} is not available";
   }
 }
+
+/*
+---
+name: cloud-color-level(cloud, name, level)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
+in steps of one hundred. The base color is located in 500.
+
+```scss
+.test {
+  color: color-level('bitnami', 200);
+  background-color: color('iron', 700);
+}
+```
+*/
+@function cloud-color-level($cloud-name, $name: 'bitnami', $level: 500) {
+  $color: cloud-color($cloud-name, $name);
+  @return calc-color-level($color, $level);
+}

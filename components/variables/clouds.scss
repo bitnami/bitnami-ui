@@ -1,0 +1,14 @@
+/*
+ * Reference all clouds
+ */
+$clouds: (
+  '1and1': $cloud-1and1-colors,
+  'aws': $cloud-aws-colors,
+  'azure': $cloud-azure-colors,
+  'centurylink': $cloud-centurylink-colors,
+  'godaddy': $cloud-godaddy-colors,
+  'google': $cloud-google-colors,
+  'huawei': $cloud-huawei-colors,
+  'oracle': $cloud-oracle-colors,
+  'otc': $cloud-otc-colors
+);

@@ -1,0 +1,47 @@
+/*
+---
+name: Height
+category: Foundations/Helpers/Separators
+tag: helpers
+---
+Modify the height and the width of the separator.
+
+```html
+<hr class="separator-small"/>
+<hr />
+<hr class="separator-big"/>
+<hr class="separator-bigger"/>
+<hr class="separator-enormous"/>
+<hr />
+<hr class="separator-70"/>
+<hr class="separator-50"/>
+<hr class="separator-30"/>
+<hr class="separator-15"/>
+```
+*/
+
+hr {
+  // Height classes
+  &.separator-small {
+    height: 1px;
+  }
+
+  &.separator-big {
+    height: margin('tiny');
+  }
+
+  &.separator-bigger {
+    height: margin('small');
+  }
+
+  &.separator-enormous {
+    height: margin('normal');
+  }
+
+  // Width classes
+  @each $width in 15, 30, 50, 70 {
+    &.separator-#{$width} {
+      width: $width * 1%;
+    }
+  }
+}

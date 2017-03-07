@@ -1,0 +1,100 @@
+/*
+---
+name: Screenshots
+category: Components/Display
+tag: component
+---
+
+```html
+<div class="screenshots">
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">1.</b> Select your app
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">2.</b> Customize your deployment
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+  <div class="screenshots__screenshot">
+    <p class="text-c margin-t-normal">
+      <b class="type-color-accent">3.</b> You're up and running
+    </p>
+    <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/ctl-show-4e35a87c5184b0b298cf190975fc1087.png" alt="Ctl show" />
+  </div>
+</div>
+```
+*/
+.screenshots {
+  position: relative;
+
+  &__screenshot {
+    bottom: 0;
+
+    // Left and right elements
+    &:first-child,
+    &:last-child {
+      position: absolute;
+      width: 35%;
+      z-index: 1;
+    }
+
+    // First screenshot
+    &:first-child {
+      left: 0;
+
+      p {
+        padding-right: 10%;
+      }
+    }
+
+    // Main screenshot
+    &:nth-child(2) {
+      position: relative;
+      z-index: 2;
+      width: 50%;
+      left: 25%;
+    }
+
+    // Last screenshot
+    &:last-child {
+      right: 0;
+
+      p {
+        padding-left: 10%;
+      }
+    }
+
+    img {
+      // Fix a 5px space after the image (extraspace due to a inline element)
+      display: block;
+      width: 100%;
+    }
+
+    // Make it responsive
+    // scss-lint:disable DeclarationOrder
+    @include mappy-bp(max-width sm) {
+    // scss-lint:enable DeclarationOrder
+      &:nth-child(2) {
+        width: 80%;
+        left: 10%;
+      }
+
+      &:first-child,
+      &:last-child {
+        display: none;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  // scss-lint:disable DeclarationOrder
+  @include clearfix();
+  // scss-lint:enable DeclarationOrder
+}

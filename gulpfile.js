@@ -39,7 +39,7 @@ gulp.task('components', function () {
 });
 
 // Compile documentation
-gulp.task('docs', ['readme-to-doc'], function() {
+gulp.task('docs', function() {
   gulp.src(`${docs}/config.yml`)
     .pipe(aigis());
 });
@@ -53,12 +53,12 @@ gulp.task('readme-to-doc', function() {
 });
 
 // Compile all assets
-gulp.task('dist', ['foundations', 'components', 'docs'], function() { });
+gulp.task('dist', ['foundations', 'components', 'readme-to-doc'], function() {
+  return gulp.start('docs');
+});
 
 // Default
 gulp.task('default', ['dist'], function() {
-  gulp.watch(join('foundations/**/*.scss') , ['foundations', 'docs']);
-  gulp.watch(join('components/**/*.scss') , ['components', 'docs']);
-  gulp.watch(join('docs/templates/*.ejs'), ['docs']);
-  gulp.watch(join('docs/assets/css/*.css'), ['docs']);
+  gulp.watch(join('foundations/**/*.scss') , ['docs', 'foundations']);
+  gulp.watch(join('components/**/*.scss') , ['docs', 'components']);
 });

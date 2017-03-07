@@ -40,8 +40,17 @@ in steps of one hundred. The base color is located in 500.
 }
 ```
 */
-@function color-level($name: 'bitnami', $level: 0) {
+@function color-level($name: 'bitnami', $level: 100) {
   $color: color($name);
+  @return calc-color-level($color, $level);
+}
+
+/**
+ * Calculate the color level based on the given color and the level.
+ *
+ * NOTE: This is an internal method.
+ */
+@function calc-color-level($color, $level) {
   $level: $level / 100;
 
   @if $level == 5 {

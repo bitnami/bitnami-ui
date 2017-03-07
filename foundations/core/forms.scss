@@ -199,6 +199,9 @@ button,
   height: su(1.5);
   // Align elements in the same line
   vertical-align: bottom;
+  // Remove text decoration on links
+  text-decoration: none;
+  color: color('text');
 
   // Default skin
   background-color: color-level('iron', 400);

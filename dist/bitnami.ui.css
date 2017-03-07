@@ -220,6 +220,11 @@ in steps of one hundred. The base color is located in 500.
 }
 ```
 */
+/**
+ * Calculate the color level based on the given color and the level.
+ *
+ * NOTE: This is an internal method.
+ */
 /*
 ---
 name: button-skin(name, base-color, text-color)
@@ -232,6 +237,11 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 @include('primary', 'primary', 'light');
 ```
 */
+/**
+ * Create the values for a skin variation of a button.
+ *
+ * NOTE: This mixin is for internal usage
+ */
 /*
 ---
 name: button-size(name-of-scale)
@@ -358,6 +368,21 @@ Get a line-height based on the standard values.
  *
  * NOTE: This is an internal function. It shouldn't be documented
  */
+/*
+---
+name: clearfix()
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Add clearfix code to the current selector. Clearfix is useful to prevent bad positioning of
+floated elements.
+
+```scss
+.test {
+  @include clearfix();
+}
+```
+*/
 /**
  * First of all, we need to require a reset CSS file. There are several options
  * for resetting. Now, we are going to select normalize.css. However,
@@ -779,7 +804,7 @@ textarea {
   padding: 0 0.6665em;
   font-size: 1em;
   border-radius: 3px;
-  border: 1px solid #e6e7e8;
+  border: 1px solid #ebecec;
   width: 100%; }
 
 input,
@@ -930,15 +955,17 @@ button,
   padding: 0.33325em 0.6665em;
   font-size: 1em;
   border-radius: 3px;
-  border: 1px solid #e6e7e8;
+  border: 1px solid #ebecec;
   cursor: pointer;
   height: 1.9995em;
   vertical-align: bottom;
-  background-color: #e9e9ea; }
+  text-decoration: none;
+  color: #2f3032;
+  background-color: #edeeee; }
   button:hover,
   .button:hover {
-    background-color: #e6e7e8;
-    border-color: #b8b9ba; }
+    background-color: #ebecec;
+    border-color: #bcbdbd; }
   button:focus,
   .button:focus {
     outline: 0;
@@ -1160,6 +1187,25 @@ cite {
 
 /*
 ---
+name: Horizontal
+category: Foundations/Separators
+tag: blocks
+---
+Add an horizonal line to split the content of the page.
+
+```html
+<hr />
+```
+*/
+hr {
+  color: #ebecec;
+  background-color: #ebecec;
+  height: 2px;
+  border: 0;
+  margin: 0.6665em auto; }
+
+/*
+---
 name: Tables
 category: Foundations/Tables
 tag: blocks
@@ -1208,9 +1254,9 @@ table {
   table td {
     padding: 0.6665em; }
   table th {
-    border-bottom: 1px solid #e6e7e8; }
+    border-bottom: 1px solid #ebecec; }
   table tbody > tr:hover {
-    background-color: #f0f1f1; }
+    background-color: #f3f4f4; }
 
 /*
 ---
@@ -1276,8 +1322,8 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
 .container {
   width: auto;
   max-width: 1300px;
-  margin: 1.333em auto;
-  padding: 0 1.333em;
+  margin: 0 auto;
+  padding: 1.333em;
   /**
    * Row definition
    */ }
@@ -1386,13 +1432,13 @@ By default, rows has the following behaviour:
    */ }
   @media all and (min-width: 48em) and (max-width: 56.1875em) {
     .container .row > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
   @media all and (min-width: 30em) and (max-width: 47.9375em) {
     .container .row > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; } }
@@ -1411,12 +1457,12 @@ By default, rows has the following behaviour:
       .container .row.collapse-on-phone > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-phone > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
@@ -1428,12 +1474,12 @@ By default, rows has the following behaviour:
       .container .row.collapse-on-phone-portrait > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-phone-portrait > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-phone-portrait > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone-portrait > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-phone-portrait > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
@@ -1445,12 +1491,12 @@ By default, rows has the following behaviour:
       .container .row.collapse-on-phone-landscape > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-phone-landscape > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-phone-landscape > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone-landscape > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-phone-landscape > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
@@ -1462,12 +1508,12 @@ By default, rows has the following behaviour:
       .container .row.collapse-on-tablet > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-tablet > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-tablet > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
@@ -1479,12 +1525,12 @@ By default, rows has the following behaviour:
       .container .row.collapse-on-desktop > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-desktop > [class^="col"] {
-      width: 650px;
+      width: 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-desktop > [class^="col"] {
-      width: 433.33333px;
+      width: 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
@@ -1506,10 +1552,43 @@ The grid is limited by the `max-width` property. By default, the rows can not be
     <div class="col-4"><article>4</article></div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+</div>
+
+<div class="container container-small">
+  <div class="row">
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+    <div class="col-3"><article>3</article></div>
+  </div>
+</div>
+
+<div class="container container-tiny">
+  <div class="row">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-4"><article>4</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+</div>
 ```
 */
 .container.container-fluid {
   max-width: none; }
+
+.container.container-small {
+  max-width: calc(8 * (1300px / 12) + 1.333em / 2); }
+
+.container.container-tiny {
+  max-width: calc(6 * (1300px / 12) + 1.333em / 2); }
 
 /*
 ---
@@ -1614,6 +1693,39 @@ Modify the size of the buttons. Available classes:
 
 /*
 ---
+name: Subtitle
+category: Foundations/Helpers/Headers
+tag: helpers
+---
+Modify the color and the margin-top of a header. It should be combined with a normal header.
+
+```html
+<h1>The best of both worlds</h1>
+<h5 class="subtitle">The ease of Bitnami backed by the compute power of Google</h5>
+```
+*/
+.subtitle {
+  font-weight: normal;
+  color: #4c7995;
+  margin-top: -0.6665em; }
+
+/*
+---
+name: Inverse
+category: Foundations/Helpers/Headers
+tag: helpers
+---
+Use this style with dark bacgrkound colors
+
+```html
+<h1 class="inverse">The best of both worlds</h1>
+```
+*/
+.inverse {
+  color: #f4f5f5; }
+
+/*
+---
 name: Text alignment
 category: Foundations/Helpers/Positions
 tag: helpers
@@ -1660,6 +1772,51 @@ Also, we can update the float property of our blocks
 
 .float-n {
   float: none; }
+
+/*
+---
+name: Height
+category: Foundations/Helpers/Separators
+tag: helpers
+---
+Modify the height and the width of the separator.
+
+```html
+<hr class="separator-small"/>
+<hr />
+<hr class="separator-big"/>
+<hr class="separator-bigger"/>
+<hr class="separator-enormous"/>
+<hr />
+<hr class="separator-70"/>
+<hr class="separator-50"/>
+<hr class="separator-30"/>
+<hr class="separator-15"/>
+```
+*/
+hr.separator-small {
+  height: 1px; }
+
+hr.separator-big {
+  height: 0.16662em; }
+
+hr.separator-bigger {
+  height: 0.33325em; }
+
+hr.separator-enormous {
+  height: 0.6665em; }
+
+hr.separator-15 {
+  width: 15%; }
+
+hr.separator-30 {
+  width: 30%; }
+
+hr.separator-50 {
+  width: 50%; }
+
+hr.separator-70 {
+  width: 70%; }
 
 /*
 ---
@@ -2343,6 +2500,12 @@ Apply a margin `auto` to center elements.
 .margin-vc-huge {
   margin: 6.665em auto; }
 
+.margin-vc-6 {
+  margin: auto; }
+
+.margin-vc-7 {
+  margin: auto; }
+
 /*
 ---
 name: Striped
@@ -2385,7 +2548,7 @@ Show a light gray background in even rows.
 ```
 */
 table.striped tr:nth-child(even) td {
-  background-color: #f1f2f2; }
+  background-color: #f4f5f5; }
 
 table.striped tr:hover {
   background-color: initial; }
@@ -2457,6 +2620,12 @@ Reduce or increase the default `font-size` of an element.
 .type-huge {
   font-size: 4.20873em; }
 
+.type-6 {
+  font-size: 5.61023em; }
+
+.type-7 {
+  font-size: 7.47844em; }
+
 /*
 ---
 name: Color
@@ -2494,7 +2663,7 @@ Reduce or increase the default `color` of an element.
 
 .type-color-iron,
 .type-color-light {
-  color: #e6e7e8; }
+  color: #ebecec; }
 
 .type-color-action,
 .type-color-action {
