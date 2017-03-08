@@ -961,6 +961,10 @@ button,
   vertical-align: bottom;
   text-decoration: none;
   color: #2f3032;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background-color: #edeeee; }
   button:hover,
   .button:hover {

@@ -20,7 +20,7 @@ fi
 
 # Compile the project. Now, we are deploying to staging server, so
 # we compile the documentation with the distributed CSS files
-npm run docs:build
+npm run dist
 
 # Copy the generated output to the server
 if [ $? -eq 0 ]; then

@@ -39,7 +39,7 @@ gulp.task('components', function () {
 });
 
 // Compile documentation
-gulp.task('docs', function() {
+gulp.task('docs', ['readme-to-doc'], function() {
   gulp.src(`${docs}/config.yml`)
     .pipe(aigis());
 });
@@ -53,7 +53,7 @@ gulp.task('readme-to-doc', function() {
 });
 
 // Compile all assets
-gulp.task('dist', ['foundations', 'components', 'readme-to-doc'], function() {
+gulp.task('dist', ['foundations', 'components'], function() {
   return gulp.start('docs');
 });
 

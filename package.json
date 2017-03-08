@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
+    "dist": "gulp dist",
     "docs:build": "gulp docs",
     "docs:serve": "npm run docs:build && http-server ./docs/dist",
     "test": "echo \"Error: no test specified\" && exit 1"

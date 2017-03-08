@@ -1278,7 +1278,7 @@ tag: component
 <div class="container container-small">
   <h1 class="text-c">The best of both worlds</h1>
   <h5 class="text-c subtitle">The ease of Bitnami backed by the compute power of Google</h5>
-  <div class="row">
+  <div class="row collapse-2-on-tablet">
     <div class="col-6">
       <h3>Huge selection</h3>
       <p>
@@ -1292,7 +1292,7 @@ tag: component
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row collapse-2-on-tablet">
     <div class="col-6">
       <h3>Fully configured</h3>
       <p>
@@ -1484,7 +1484,7 @@ This layout includes several components:
   <section class="clouds__started">
     <div class="container">
       <div class="row collapse-on-tablet collapse-on-phone">
-        <div class="col-6">
+        <div class="col-6 text-c">
           <iframe allowfullscreen="" frameborder="0" height="315" onclick="ga('send', 'event', 'centurylink', 'click', 'video play');" src="//www.youtube.com/embed/3ulkH1cl-wg?rel=0&amp;showinfo=0&amp;color=white&amp;controls=2&amp;autohide=1" width="560"></iframe>
         </div>
         <div class="col-6">
@@ -1520,7 +1520,7 @@ This layout includes several components:
     <h5 class="text-c subtitle">
       The ease of Bitnami backed by the compute power of Centurylink
     </h5>
-    <div class="row">
+    <div class="row collapse-2-on-tablet">
       <div class="col-6">
         <h3>Huge selection</h3>
         <p>
@@ -1534,7 +1534,7 @@ This layout includes several components:
         </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row collapse-2-on-tablet">
       <div class="col-6">
         <h3>Fully configured</h3>
         <p>
@@ -1548,7 +1548,7 @@ This layout includes several components:
         </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row collapse-2-on-tablet">
       <div class="col-6">
         <h3>Consistent</h3>
         <p>
