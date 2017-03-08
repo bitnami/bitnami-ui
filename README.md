@@ -40,3 +40,22 @@ npm run docs:serve
 
 Also, if you execute `gulp` in another tab of the terminal, the documentation will be reloaded
 with every change.
+
+## Production
+
+The CSS files of `dist` folder are distributed through
+[Amazon CloudFront](https://aws.amazon.com/cloudfront/). We store the files in an specific S3
+bucket and CloudFront read the files from it. Those files are publicly available in the
+following location:
+
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css
+
+To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish
+the assets from a gulp task. You may notice we don't have any AWS credentials in the repository
+and we don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it
+injects the location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
+This environment variable is read by the `aws-sdk` automatically, so we don't need to define
+anything.

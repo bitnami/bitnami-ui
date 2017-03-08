@@ -7,7 +7,8 @@ var gulp = require('gulp'),
   markdown = require('gulp-markdown'),
   path = require('path'),
   join = path.join.bind(__dirname),
-  config = require('./package.json');
+  config = require('./package.json'),
+  s3 = require('gulp-s3-upload')({ useIAM: true });
 
 // Variables
 var dist = join('dist'),
@@ -48,6 +49,7 @@ gulp.task('docs', ['readme-to-doc'], function() {
 gulp.task('readme-to-doc', function() {
   gulp.src(join('README.md'))
     .pipe(markdown())
+    .pipe(replace('{VERSION}', config.version))
     .pipe(rename({ basename: 'readme', extname: '.ejs' }))
     .pipe(gulp.dest(`${docs}/templates`));
 });
@@ -55,6 +57,26 @@ gulp.task('readme-to-doc', function() {
 // Compile all assets
 gulp.task('dist', ['foundations', 'components'], function() {
   return gulp.start('docs');
+});
+
+/**
+ * Deploy the current project to production. We need a valid AWS config file. This task assumes
+ * you have a valid credentials file.
+ *
+ * Check the README file for more information about deploying Bitnami UI
+ */
+gulp.task('publish', ['foundations', 'components'], function() {
+  gulp.src(join('dist/*.css'))
+    .pipe(s3({
+      Bucket: 'bitnami-assets-cf',
+      keyTransform: function(relative_filename) {
+        return `bitnami-ui/${config.version}/${relative_filename}`;
+      },
+      uploadNewFilesOnly: true
+    }, {
+      // S3 Constructor Options, ie:
+      maxRetries: 5
+    }));
 });
 
 // Default
