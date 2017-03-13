@@ -16,8 +16,14 @@ a {
   cursor: pointer;
 
   &:hover,
-  &:active,
-  &:visited {
+  &:active {
     color: color-level('bitnami', 50);
   }
+
+  // Now, visited links are overriding button colors, so I will disable it until we solve
+  // this issue.
+  // More information at: http://phabricator.bitnami.com:8080/T18103
+  // &:visited {
+  //   color: color-level('bitnami', 100);
+  // }
 }

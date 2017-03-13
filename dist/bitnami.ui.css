@@ -782,7 +782,7 @@ a {
   color: #5c6c85;
   text-decoration: none;
   cursor: pointer; }
-  a:hover, a:active, a:visited {
+  a:hover, a:active {
     color: #7f8c9f; }
 
 /*
@@ -1007,8 +1007,7 @@ h6 {
 h1,
 h2,
 h3,
-h4,
-h5 {
+h4 {
   font-family: Dosis, Geneva, Tahoma, sans-serif;
   color: #162d50; }
 
@@ -1023,7 +1022,7 @@ h3 {
   color: #40b654; }
 
 h4 {
-  font-size: 1.77689em;
+  font-size: 1.333em;
   font-weight: bold; }
 
 h5 {
