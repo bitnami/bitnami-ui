@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v0.1.0
+ * Bitnami UI - v0.1.1
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -772,18 +772,18 @@ name: Anchors
 category: Foundations/Anchors
 tag: text
 ---
-They use the `accent` color.
+Buttons use the `accent` color.
 
 ```html
 This is a <a>link</a>
 ```
 */
-a:not(.button) {
-  color: #40b654;
+a {
+  color: #5c6c85;
   text-decoration: none;
   cursor: pointer; }
-  a:not(.button):hover, a:not(.button):active, a:not(.button):visited {
-    color: #66c576; }
+  a:hover, a:active, a:visited {
+    color: #7f8c9f; }
 
 /*
 ---
@@ -944,12 +944,11 @@ category: Foundations/Forms
 tag: text
 ---
 ```html
-<button>Submit</button>
+<button class="button">Submit</button>
 <a class="button">Link button</a>
-<button disabled="disabled">Disabled</button>
+<button class="button" disabled="disabled">Disabled</button>
 ```
 */
-button,
 .button {
   display: inline-block;
   padding: 0.33325em 0.6665em;
@@ -966,20 +965,14 @@ button,
   overflow: hidden;
   text-overflow: ellipsis;
   background-color: #edeeee; }
-  button:hover,
   .button:hover {
     background-color: #ebecec;
     border-color: #bcbdbd; }
-  button:focus,
   .button:focus {
     outline: 0;
     box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.1); }
-  button[disabled="disabled"], button[disabled="true"],
-  .button[disabled="disabled"],
-  .button[disabled="true"] {
+  .button[disabled="disabled"], .button[disabled="true"] {
     cursor: not-allowed; }
-  button + .button,
-  button + button,
   .button + .button,
   .button + button {
     margin-left: 0.33325em; }
@@ -1076,9 +1069,6 @@ ul,
 ol {
   padding-left: 2.666em;
   margin: 0.6665em 0 1.333em; }
-  ul li,
-  ol li {
-    padding: 0.16662em; }
 
 /*
 ---
@@ -1327,7 +1317,7 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   width: auto;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1.333em;
+  padding: 0 1.333em;
   /**
    * Row definition
    */ }
@@ -1430,29 +1420,13 @@ By default, rows has the following behaviour:
 .container .row {
   /**
    * General behviour
+   *
+   * NOTE: Now, we're going to disable this functionality to avoid incompatibilities with the
+   * current CSS code of our products
    */
   /**
    * Specific media queries
    */ }
-  @media all and (min-width: 48em) and (max-width: 56.1875em) {
-    .container .row > [class^="col"] {
-      width: 33.33333%;
-      margin-top: 1.333em; }
-      .container .row > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: 30em) and (max-width: 47.9375em) {
-    .container .row > [class^="col"] {
-      width: 50%;
-      margin-top: 1.333em; }
-      .container .row > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; } }
-  @media all and (max-width: 29.9375em) {
-    .container .row > [class^="col"] {
-      float: none;
-      width: 100%;
-      margin-top: 1.333em; }
-      .container .row > [class^="col"]:first-child {
-        margin-top: 0; } }
   @media all and (min-width: 20em) and (max-width: 29.9375em) {
     .container .row.collapse-on-phone > [class^="col"] {
       float: none;
@@ -1557,7 +1531,7 @@ The grid is limited by the `max-width` property. By default, the rows can not be
   </div>
 </div>
 
-<div class="container">
+<div class="container margin-t-big">
   <div class="row">
     <div class="col-2"><article>2</article></div>
     <div class="col-4"><article>4</article></div>
@@ -1566,7 +1540,7 @@ The grid is limited by the `max-width` property. By default, the rows can not be
   </div>
 </div>
 
-<div class="container container-small">
+<div class="container container-small margin-t-big">
   <div class="row">
     <div class="col-3"><article>3</article></div>
     <div class="col-3"><article>3</article></div>
@@ -1575,7 +1549,7 @@ The grid is limited by the `max-width` property. By default, the rows can not be
   </div>
 </div>
 
-<div class="container container-tiny">
+<div class="container container-tiny margin-t-big">
   <div class="row">
     <div class="col-2"><article>2</article></div>
     <div class="col-4"><article>4</article></div>
@@ -1648,6 +1622,7 @@ Modify the color of the buttons. Available classes:
   border-color: #162d50;
   color: #fff; }
   .button-primary:hover {
+    color: #fff;
     background-color: #162d50;
     border-color: #122440; }
 
@@ -1656,6 +1631,7 @@ Modify the color of the buttons. Available classes:
   border-color: #40b654;
   color: #fff; }
   .button-accent:hover {
+    color: #fff;
     background-color: #40b654;
     border-color: #339243; }
 
@@ -1664,6 +1640,7 @@ Modify the color of the buttons. Available classes:
   border-color: #ef4324;
   color: #fff; }
   .button-action:hover {
+    color: #fff;
     background-color: #ef4324;
     border-color: #bf361d; }
 

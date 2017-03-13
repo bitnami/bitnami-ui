@@ -4,20 +4,20 @@ name: Anchors
 category: Foundations/Anchors
 tag: text
 ---
-They use the `accent` color.
+Buttons use the `accent` color.
 
 ```html
 This is a <a>link</a>
 ```
 */
-a:not(.button) {
-  color: color('accent');
+a {
+  color: color-level('bitnami', 200);
   text-decoration: none;
   cursor: pointer;
 
   &:hover,
   &:active,
   &:visited {
-    color: color-level('accent', 300);
+    color: color-level('bitnami', 50);
   }
 }

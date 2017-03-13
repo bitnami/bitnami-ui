@@ -53,6 +53,13 @@ following location:
 * https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.css
 * https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css
 
+```html
+<link rel="stylesheet" media="screen"
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css">
+<link rel="stylesheet" media="screen"
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css">
+```
+
 To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish
 the assets from a gulp task. You may notice we don't have any AWS credentials in the repository
 and we don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it

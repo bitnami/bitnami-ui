@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v0.1.0
+ * Bitnami UI Components - v0.1.1
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -941,6 +941,7 @@ with size modification classes. You can get more information about this element 
   color: #fff; }
   .palette-1and1 .button:hover,
   .palette-1and1 button:hover {
+    color: #fff;
     background-color: #003d8f;
     border-color: #003172; }
 
@@ -951,6 +952,7 @@ button.palette-1and1 {
   color: #fff; }
   .button.palette-1and1:hover,
   button.palette-1and1:hover {
+    color: #fff;
     background-color: #003d8f;
     border-color: #003172; }
 
@@ -961,6 +963,7 @@ button.palette-1and1 {
   color: #fff; }
   .palette-aws .button:hover,
   .palette-aws button:hover {
+    color: #fff;
     background-color: #eeba37;
     border-color: #be952c; }
 
@@ -971,6 +974,7 @@ button.palette-aws {
   color: #fff; }
   .button.palette-aws:hover,
   button.palette-aws:hover {
+    color: #fff;
     background-color: #eeba37;
     border-color: #be952c; }
 
@@ -981,6 +985,7 @@ button.palette-aws {
   color: #fff; }
   .palette-azure .button:hover,
   .palette-azure button:hover {
+    color: #fff;
     background-color: #6ebaec;
     border-color: #5895bd; }
 
@@ -991,6 +996,7 @@ button.palette-azure {
   color: #fff; }
   .button.palette-azure:hover,
   button.palette-azure:hover {
+    color: #fff;
     background-color: #6ebaec;
     border-color: #5895bd; }
 
@@ -1001,6 +1007,7 @@ button.palette-azure {
   color: #fff; }
   .palette-centurylink .button:hover,
   .palette-centurylink button:hover {
+    color: #fff;
     background-color: #00853f;
     border-color: #006a32; }
 
@@ -1011,6 +1018,7 @@ button.palette-centurylink {
   color: #fff; }
   .button.palette-centurylink:hover,
   button.palette-centurylink:hover {
+    color: #fff;
     background-color: #00853f;
     border-color: #006a32; }
 
@@ -1021,6 +1029,7 @@ button.palette-centurylink {
   color: #fff; }
   .palette-godaddy .button:hover,
   .palette-godaddy button:hover {
+    color: #fff;
     background-color: #00a63f;
     border-color: #008532; }
 
@@ -1031,6 +1040,7 @@ button.palette-godaddy {
   color: #fff; }
   .button.palette-godaddy:hover,
   button.palette-godaddy:hover {
+    color: #fff;
     background-color: #00a63f;
     border-color: #008532; }
 
@@ -1041,6 +1051,7 @@ button.palette-godaddy {
   color: #fff; }
   .palette-google .button:hover,
   .palette-google button:hover {
+    color: #fff;
     background-color: #2b85e7;
     border-color: #226ab9; }
 
@@ -1051,6 +1062,7 @@ button.palette-google {
   color: #fff; }
   .button.palette-google:hover,
   button.palette-google:hover {
+    color: #fff;
     background-color: #2b85e7;
     border-color: #226ab9; }
 
@@ -1061,6 +1073,7 @@ button.palette-google {
   color: #fff; }
   .palette-huawei .button:hover,
   .palette-huawei button:hover {
+    color: #fff;
     background-color: #f00;
     border-color: #cc0000; }
 
@@ -1071,6 +1084,7 @@ button.palette-huawei {
   color: #fff; }
   .button.palette-huawei:hover,
   button.palette-huawei:hover {
+    color: #fff;
     background-color: #f00;
     border-color: #cc0000; }
 
@@ -1081,6 +1095,7 @@ button.palette-huawei {
   color: #fff; }
   .palette-oracle .button:hover,
   .palette-oracle button:hover {
+    color: #fff;
     background-color: #f00;
     border-color: #cc0000; }
 
@@ -1091,6 +1106,7 @@ button.palette-oracle {
   color: #fff; }
   .button.palette-oracle:hover,
   button.palette-oracle:hover {
+    color: #fff;
     background-color: #f00;
     border-color: #cc0000; }
 
@@ -1101,6 +1117,7 @@ button.palette-oracle {
   color: #fff; }
   .palette-otc .button:hover,
   .palette-otc button:hover {
+    color: #fff;
     background-color: #e20074;
     border-color: #b5005d; }
 
@@ -1111,6 +1128,7 @@ button.palette-otc {
   color: #fff; }
   .button.palette-otc:hover,
   button.palette-otc:hover {
+    color: #fff;
     background-color: #e20074;
     border-color: #b5005d; }
 
@@ -1409,7 +1427,8 @@ Display an ordered lists with a bigger numbers. Also, the numbers have a circle 
   list-style: none;
   padding-left: 0; }
   .steps li {
-    display: table; }
+    display: table;
+    padding: 0.16662em; }
     .steps li:before {
       border: 1px solid #162d50;
       color: #162d50;
@@ -1458,14 +1477,14 @@ This layout includes several components:
         </ol>
       </nav>
     </div>
-    <div class="container clouds__companies">
+    <div class="container clouds__companies margin-t-huge">
       <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/centurylink-logo-cf3cb415aa7129ad61bb0d2b2c250935.png"
         alt="Centurylink logo">
       <span class="clouds__companies_plus">+</span>
       <img src="//d33np9n32j53g7.cloudfront.net/assets/new/bitnami-logo-056526e247737ade38342f3b1ef6cf4f.png"
         alt="Bitnami logo">
     </div>
-    <h2 class="text-c margin-t-small margin-b-bigger">
+    <h2 class="text-c margin-t-small margin-b-enormous">
       The easiest way to deploy applications to Century Link Cloud Platform
     </h2>
   </header>
@@ -1649,7 +1668,6 @@ This layout includes several components:
   min-height: 21.328em; }
 
 .clouds__companies {
-  margin-top: 0.6665em;
   text-align: center; }
   .clouds__companies img, .clouds__companies_plus {
     vertical-align: middle;
@@ -1716,7 +1734,7 @@ tag: component
 ```
 */
 .breadcrumb {
-  margin: 0 0 0.6665em; }
+  margin: 0.6665em 0; }
   .breadcrumb ol {
     list-style: none;
     padding: 0;

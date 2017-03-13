@@ -26,14 +26,14 @@ This layout includes several components:
         </ol>
       </nav>
     </div>
-    <div class="container clouds__companies">
+    <div class="container clouds__companies margin-t-huge">
       <img src="//d33np9n32j53g7.cloudfront.net/assets/new/centurylink/centurylink-logo-cf3cb415aa7129ad61bb0d2b2c250935.png"
         alt="Centurylink logo">
       <span class="clouds__companies_plus">+</span>
       <img src="//d33np9n32j53g7.cloudfront.net/assets/new/bitnami-logo-056526e247737ade38342f3b1ef6cf4f.png"
         alt="Bitnami logo">
     </div>
-    <h2 class="text-c margin-t-small margin-b-bigger">
+    <h2 class="text-c margin-t-small margin-b-enormous">
       The easiest way to deploy applications to Century Link Cloud Platform
     </h2>
   </header>
@@ -219,7 +219,6 @@ This layout includes several components:
   }
 
   &__companies {
-    margin-top: margin('normal');
     text-align: center;
 
     img,

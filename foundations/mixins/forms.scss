@@ -33,6 +33,7 @@ Mixin to generate a class for buttons. This class will modify the color of the b
   color: $text;
 
   &:hover {
+    color: $text;
     background-color: $hover-bg;
     border-color: $hover-border;
   }

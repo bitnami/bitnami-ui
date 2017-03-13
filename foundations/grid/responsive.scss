@@ -53,18 +53,21 @@ By default, rows has the following behaviour:
 .container .row {
   /**
    * General behviour
+   *
+   * NOTE: Now, we're going to disable this functionality to avoid incompatibilities with the
+   * current CSS code of our products
    */
-  @include mappy-query('tablet') {
-    @include grid-collapse-by-columns-on(3);
-  }
-
-  @include mappy-query('phone-landscape') {
-    @include grid-collapse-by-columns-on(2);
-  }
-
-  @include mappy-bp(max-width sm) {
-    @include grid-collapse();
-  }
+  // @include mappy-query('tablet') {
+  //   @include grid-collapse-by-columns-on(3);
+  // }
+  //
+  // @include mappy-query('phone-landscape') {
+  //   @include grid-collapse-by-columns-on(2);
+  // }
+  //
+  // @include mappy-bp(max-width sm) {
+  //   @include grid-collapse();
+  // }
 
   /**
    * Specific media queries

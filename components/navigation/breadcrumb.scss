@@ -15,7 +15,7 @@ tag: component
 ```
 */
 .breadcrumb {
-  margin: 0 0 margin('normal');
+  margin: margin('normal') 0;
 
   // Main list
   ol {

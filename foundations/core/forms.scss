@@ -182,12 +182,13 @@ category: Foundations/Forms
 tag: text
 ---
 ```html
-<button>Submit</button>
+<button class="button">Submit</button>
 <a class="button">Link button</a>
-<button disabled="disabled">Disabled</button>
+<button class="button" disabled="disabled">Disabled</button>
 ```
 */
-button,
+// To avoid incompatibilities with the current implementation, I'm going to comment the button selector
+// button,
 .button {
   // Display correctly non buttons elements like anchors
   display: inline-block;
