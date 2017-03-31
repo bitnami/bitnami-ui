@@ -12,5 +12,6 @@ services:
     entrypoint: /app/scripts/entrypoint.sh
     command: npm run docs:serve
     environment:
+      BITNAMI_UI_ENV: development
       VIRTUAL_HOST: bitnami-ui-dev.docker
       VIRTUAL_PORT: 8080

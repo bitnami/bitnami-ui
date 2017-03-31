@@ -75,9 +75,7 @@ tag: component
     }
 
     // Make it responsive
-    // scss-lint:disable DeclarationOrder
     @include mappy-bp(max-width sm) {
-    // scss-lint:enable DeclarationOrder
       &:nth-child(2) {
         width: 80%;
         left: 10%;
@@ -94,7 +92,5 @@ tag: component
     }
   }
 
-  // scss-lint:disable DeclarationOrder
   @include clearfix();
-  // scss-lint:enable DeclarationOrder
 }

@@ -1,0 +1,105 @@
+/*
+---
+name: Selector - Button
+category: Components/Clouds
+tag: component
+---
+Display the clouds as buttons.
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-google">
+        Google Cloud Platform
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-aws">
+        Amazon Web Services
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-oracle">
+        Oracle Cloud Platform
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-azure">
+        Microsoft Azure
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-centurylink">
+        CenturyLink
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-1and1">
+        1&1 Cloud Platform
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-godaddy">
+        GoDaddy Cloud Servers
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-otc">
+        Open Telekom Cloud
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-bch">
+        Bitnami Cloud Hosting
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-native-installers">
+        Native Installers
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-virtual-machines">
+        Virtual Machines
+      </a>
+    </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-containers">
+        Containers
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-kubernetes">
+        Kubernetes
+      </a>
+    </div>
+  </div>
+</div>
+```
+*/
+.cloud-selector {
+  height: auto;
+  width: 100%;
+  background-color: color-level('iron', 200);
+  padding: padding('normal');
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: margin('small');
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+  }
+
+  @include sprite('cloud-selector', '.cloud-selector', true, true);
+}

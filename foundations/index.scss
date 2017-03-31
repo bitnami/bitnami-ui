@@ -12,6 +12,11 @@
 @import  'node_modules/mappy-breakpoints/mappy-breakpoints';
 
 /**
+ * Config
+ */
+@import '../config';
+
+/**
  * Variables contain the values of differents properties for the UI. Some of them
  * are font families, line heights, colors...
  */

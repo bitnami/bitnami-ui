@@ -1,0 +1,25 @@
+/**
+ * This file include the configuration of Bitnami UI. This config affects to
+ * the foundations and components.
+ */
+$config: (
+  'cloudfront': '//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/'
+);
+
+// Mixin to read the configuration
+@function config($attr) {
+  @if map-has-key($config, $attr) {
+    @return map-get($config, $attr);
+  } @else {
+    @error "The configuration '#{$attr}' doesn't exist. Please check available config";
+  }
+}
+
+// Return the endpoint of the images
+@function image-endpoint() {
+  @if $env == 'production' {
+    @return "#{config('cloudfront')}images/";
+  } @else {
+    @return '/assets/images/';
+  }
+}

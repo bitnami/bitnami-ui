@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v0.1.2
+ * Bitnami UI - v0.2.0
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -7,6 +7,13 @@
  */
 /**
  * Mappy breakpoint library
+ */
+/**
+ * Config
+ */
+/**
+ * This file include the configuration of Bitnami UI. This config affects to
+ * the foundations and components.
  */
 /**
  * Variables contain the values of differents properties for the UI. Some of them
@@ -265,6 +272,7 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
 /**
  * Generate a collapse property for a given prefix
  */
+/*! HiDPI v2.0.1 | MIT License | git.io/hidpi */
 /**
  * Power operator for SASS!
  *
@@ -954,7 +962,7 @@ tag: text
   padding: 0.33325em 0.6665em;
   font-size: 1em;
   border-radius: 3px;
-  border: 1px solid #ebecec;
+  border: 1px solid #d4d4d4;
   cursor: pointer;
   height: 1.9995em;
   vertical-align: bottom;
@@ -967,12 +975,14 @@ tag: text
   background-color: #edeeee; }
   .button:hover {
     background-color: #ebecec;
-    border-color: #bcbdbd; }
+    border-color: #bcbdbd;
+    color: #2f3032; }
   .button:focus {
     outline: 0;
     box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.1); }
   .button[disabled="disabled"], .button[disabled="true"] {
-    cursor: not-allowed; }
+    cursor: not-allowed;
+    opacity: .7; }
   .button + .button,
   .button + button {
     margin-left: 0.33325em; }
@@ -1618,7 +1628,7 @@ Modify the color of the buttons. Available classes:
 */
 .button-primary {
   background-color: #2d4262;
-  border-color: #162d50;
+  border-color: #142948;
   color: #fff; }
   .button-primary:hover {
     color: #fff;
@@ -1627,7 +1637,7 @@ Modify the color of the buttons. Available classes:
 
 .button-accent {
   background-color: #53bd65;
-  border-color: #40b654;
+  border-color: #3aa44c;
   color: #fff; }
   .button-accent:hover {
     color: #fff;
@@ -1636,7 +1646,7 @@ Modify the color of the buttons. Available classes:
 
 .button-action {
   background-color: #f1563a;
-  border-color: #ef4324;
+  border-color: #d73c20;
   color: #fff; }
   .button-action:hover {
     color: #fff;

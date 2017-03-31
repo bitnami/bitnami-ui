@@ -195,7 +195,7 @@ tag: text
   padding: padding('small') padding('normal');
   font-size: type-scale('normal');
   border-radius: $spacing-border-radius;
-  border: 1px solid color('iron');
+  border: 1px solid color-level('iron', 600);
   cursor: pointer;
   height: su(1.5);
   // Align elements in the same line
@@ -215,6 +215,7 @@ tag: text
   &:hover {
     background-color: color('iron');
     border-color: color-level('iron', 700);
+    color: color('text');
   }
 
   // Show an inset shadow on click
@@ -227,6 +228,7 @@ tag: text
   &[disabled="disabled"],
   &[disabled="true"] {
     cursor: not-allowed;
+    opacity: .7;
   }
 
   // Add a margin on consecutive elements

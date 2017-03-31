@@ -6,10 +6,18 @@
  * For example, a "hero" header or an application card
  */
 
+// Environment
+$env: '{BITNAMI_UI_ENV}';
+
 /**
  * Mappy breakpoint library
  */
 @import  'node_modules/mappy-breakpoints/mappy-breakpoints';
+
+/**
+ * Config
+ */
+@import '../config';
 
 /**
  * Variables

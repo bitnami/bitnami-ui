@@ -1,0 +1,71 @@
+/*
+---
+name: generate-sprite()
+category: Components/Mixins
+tag: function
+---
+Generate different helper classes for setting the background-url based on an sprite.
+
+```scss
+@include generate-sprite('prefix', 'filename.png', hash-of-names-and-positions);
+```
+*/
+@mixin sprite($sprite-name, $base-selector, $and: false, $before: false, $after: false) {
+  @if not map-has-key($sprites, $sprite-name) {
+    @error "The sprite #{$sprite-name} doesn't exist in components/variables/sprites.scss";
+  }
+
+  // Get values
+  $filename: map-get(map-get($sprites, $sprite-name), 'filename');
+  $extension: map-get(map-get($sprites, $sprite-name), 'extension');
+  $positions: map-get(map-get($sprites, $sprite-name), 'positions');
+
+  $url: '#{image-endpoint()}#{$filename}.#{$extension}';
+  $url-retina: '#{image-endpoint()}#{$filename}@2x.#{$extension}';
+  $count: length(map-keys($positions));
+
+  // Set the common values
+  #{sprite-selector('', '', $and, $before, $after)} {
+    background-image: url(#{$url});
+    background-size: cover;
+    background-position-x: 0%;
+
+    @include hidpi {
+      background-image: url(#{$url-retina});
+    }
+  }
+
+  // Set the sprite modifiers
+  @each $position, $name in $positions {
+    $selector: sprite-selector($base-selector, $name, $and, $before, $after);
+
+    #{$selector} {
+      background-position-y: (100% / ($count - 1)) * $position;
+    }
+  }
+}
+
+// This is an internal mixin. It musn't be documented
+@function sprite-selector($base, $name, $and, $before, $after) {
+  $selector: '';
+
+  @if $name != '' {
+    $selector: '#{$base}-#{$name}';
+  } @else {
+    $selector: '#{$base}';
+  }
+
+  @if $before {
+    $selector: '#{$selector}:before';
+  }
+
+  @if $after {
+    $selector: '#{$selector}:after';
+  }
+
+  @if $and {
+    $selector: '&#{$selector}';
+  }
+
+  @return $selector;
+}

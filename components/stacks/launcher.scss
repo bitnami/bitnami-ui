@@ -169,7 +169,5 @@ Display the applications as a list. When the user hover in an element, a tooltip
     }
   }
 
-  // scss-lint:disable DeclarationOrder
   @include clearfix();
-  // scss-lint:enable DeclarationOrder
 }

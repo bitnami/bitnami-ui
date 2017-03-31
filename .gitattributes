@@ -1,0 +1,2 @@
+dist/images/*.png   export-ignore -diff
+dist/*.css          export-ignore -diff
