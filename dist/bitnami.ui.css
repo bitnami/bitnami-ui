@@ -1003,6 +1003,11 @@ font weights and font families.
 <h4>Bitnami rocks!</h4>
 <h5>Bitnami rocks!</h5>
 <h6>Bitnami rocks!</h6>
+
+<!-- With anchors -->
+<h1><a href="#">Bitnami rocks!</a></h1>
+<h2><a href="#">Bitnami rocks!</a></h2>
+<h3><a href="#">Bitnami rocks!</a></h3>
 ```
 */
 h1,
@@ -1013,6 +1018,25 @@ h5,
 h6 {
   font-weight: normal;
   margin: 0.6665em 0 0.33325em; }
+  h1 a,
+  h1 a:hover,
+  h1 a:active,
+  h2 a,
+  h2 a:hover,
+  h2 a:active,
+  h3 a,
+  h3 a:hover,
+  h3 a:active,
+  h4 a,
+  h4 a:hover,
+  h4 a:active,
+  h5 a,
+  h5 a:hover,
+  h5 a:active,
+  h6 a,
+  h6 a:hover,
+  h6 a:active {
+    color: inherit; }
 
 h1,
 h2,

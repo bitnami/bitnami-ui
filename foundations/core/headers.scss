@@ -14,6 +14,11 @@ font weights and font families.
 <h4>Bitnami rocks!</h4>
 <h5>Bitnami rocks!</h5>
 <h6>Bitnami rocks!</h6>
+
+<!-- With anchors -->
+<h1><a href="#">Bitnami rocks!</a></h1>
+<h2><a href="#">Bitnami rocks!</a></h2>
+<h3><a href="#">Bitnami rocks!</a></h3>
 ```
 */
 h1,
@@ -24,6 +29,13 @@ h5,
 h6 {
   font-weight: normal;
   margin: margin('normal') 0 margin('small');
+
+  // Fix the color of the links inside a header
+  a,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
 }
 
 h1,
