@@ -940,15 +940,15 @@ with size modification classes. You can get more information about this element 
 <p class="text-c">
   <button class="button palette-aws button-small">Testing buttons</button>
   <button class="button palette-azure button-small">Testing buttons</button>
-  <button class="button palette-centurylink">Testing buttons</button>
+  <button class="button palette-centurylink button-small">Testing buttons</button>
 </p>
 <p class="text-c">
   <button class="button palette-godaddy">Testing buttons</button>
   <button class="button palette-google">Testing buttons</button>
-  <button class="button palette-huawei button-big">Testing buttons</button>
+  <button class="button palette-huawei">Testing buttons</button>
 </p>
 <p class="text-c">
-  <button class="button palette-oneone button-small">Testing buttons</button>
+  <button class="button palette-oneone button-big">Testing buttons</button>
   <button class="button palette-oracle button-big">Testing buttons</button>
   <button class="button palette-otc button-big">Testing buttons</button>
 </p>
@@ -1300,50 +1300,50 @@ Display the clouds as buttons.
 </div>
 ```
 */
-.cloud-selector {
+.button.cloud-selector {
   height: auto;
   width: 100%;
   background-color: #f1f2f2;
   padding: 0.6665em; }
-  .cloud-selector:before {
+  .button.cloud-selector:before {
     content: '';
     display: inline-block;
     margin-right: 0.33325em;
     width: 50px;
     height: 50px;
     vertical-align: middle; }
-  .cloud-selector:before {
+  .button.cloud-selector:before {
     background-image: url(/assets/images/cloud-select-sprite.png);
     background-size: cover;
     background-position-x: 0%; }
     @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
-      .cloud-selector:before {
+      .button.cloud-selector:before {
         background-image: url(/assets/images/cloud-select-sprite@2x.png); } }
-  .cloud-selector.cloud-selector-aws:before {
+  .button.cloud-selector.cloud-selector-aws:before {
     background-position-y: 0%; }
-  .cloud-selector.cloud-selector-azure:before {
+  .button.cloud-selector.cloud-selector-azure:before {
     background-position-y: 8.33333%; }
-  .cloud-selector.cloud-selector-google:before {
+  .button.cloud-selector.cloud-selector-google:before {
     background-position-y: 16.66667%; }
-  .cloud-selector.cloud-selector-oracle:before {
+  .button.cloud-selector.cloud-selector-oracle:before {
     background-position-y: 25%; }
-  .cloud-selector.cloud-selector-centurylink:before {
+  .button.cloud-selector.cloud-selector-centurylink:before {
     background-position-y: 33.33333%; }
-  .cloud-selector.cloud-selector-bch:before {
+  .button.cloud-selector.cloud-selector-bch:before {
     background-position-y: 41.66667%; }
-  .cloud-selector.cloud-selector-oneone:before {
+  .button.cloud-selector.cloud-selector-oneone:before {
     background-position-y: 50%; }
-  .cloud-selector.cloud-selector-godaddy:before {
+  .button.cloud-selector.cloud-selector-godaddy:before {
     background-position-y: 58.33333%; }
-  .cloud-selector.cloud-selector-otc:before {
+  .button.cloud-selector.cloud-selector-otc:before {
     background-position-y: 66.66667%; }
-  .cloud-selector.cloud-selector-native-installers:before {
+  .button.cloud-selector.cloud-selector-native-installers:before {
     background-position-y: 75%; }
-  .cloud-selector.cloud-selector-virtual-machines:before {
+  .button.cloud-selector.cloud-selector-virtual-machines:before {
     background-position-y: 83.33333%; }
-  .cloud-selector.cloud-selector-containers:before {
+  .button.cloud-selector.cloud-selector-containers:before {
     background-position-y: 91.66667%; }
-  .cloud-selector.cloud-selector-kubernetes:before {
+  .button.cloud-selector.cloud-selector-kubernetes:before {
     background-position-y: 100%; }
 
 /*
