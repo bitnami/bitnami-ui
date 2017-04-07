@@ -1634,6 +1634,42 @@ a.secondary:not(.button) {
 
 /*
 ---
+name: Backgrounds
+category: Foundations/Helpers/Backgrounds
+tag: helpers
+---
+Modify the background color of the given element.
+
+```html
+<div class="container padding-v-bigger bg-bitnami"></div>
+<div class="container padding-v-bigger bg-iron"></div>
+<div class="container padding-v-bigger bg-dark"></div>
+<div class="container padding-v-bigger bg-white"></div>
+<!-- Other names -->
+<div class="container padding-v-bigger margin-t-bigger bg-brand"></div>
+<div class="container padding-v-bigger bg-light"></div>
+<div class="container padding-v-bigger bg-dark"></div>
+<div class="container padding-v-bigger bg-base"></div>
+```
+*/
+.bg-bitnami,
+.bg-brand {
+  background-color: #162d50; }
+
+.bg-iron,
+.bg-light {
+  background-color: #ebecec; }
+
+.bg-dark,
+.bg-dark {
+  background-color: #37474f; }
+
+.bg-white,
+.bg-base {
+  background-color: #fff; }
+
+/*
+---
 name: Button Colors
 category: Foundations/Helpers/Forms
 tag: helpers
