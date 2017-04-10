@@ -1275,12 +1275,12 @@ Display the clouds as buttons.
   </div>
   <div class="row">
     <div class="col-4">
-      <a class="button cloud-selector cloud-selector-native-installers">
+      <a class="button cloud-selector cloud-selector-installer">
         Native Installers
       </a>
     </div>
     <div class="col-4">
-      <a class="button cloud-selector cloud-selector-virtual-machines">
+      <a class="button cloud-selector cloud-selector-virtual-machine">
         Virtual Machines
       </a>
     </div>
@@ -1337,9 +1337,9 @@ Display the clouds as buttons.
     background-position-y: 58.33333%; }
   .button.cloud-selector.cloud-selector-otc:before {
     background-position-y: 66.66667%; }
-  .button.cloud-selector.cloud-selector-native-installers:before {
+  .button.cloud-selector.cloud-selector-installer:before {
     background-position-y: 75%; }
-  .button.cloud-selector.cloud-selector-virtual-machines:before {
+  .button.cloud-selector.cloud-selector-virtual-machine:before {
     background-position-y: 83.33333%; }
   .button.cloud-selector.cloud-selector-containers:before {
     background-position-y: 91.66667%; }
