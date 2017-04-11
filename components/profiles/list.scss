@@ -1,0 +1,57 @@
+/*
+---
+name: Simple list
+category: Components/Profiles/List
+tag: component
+---
+This component shows a list of users. You can use it for pages like webinars or study cases.
+
+```html
+<div class="container container-tiny">
+  <div class="profile-list margin-v-big">
+    <div class="profile-list__avatar">
+      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+        src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    </div>
+    <div class="profile-list__info padding-l-big">
+      <h2 class="type-big type-uppercase">
+        Miguel Martinez
+        <span class="type-color-iron"> / </span>
+        <span class="type-color-accent">Bitnami</span>
+      </h2>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <hr class="separator-50 bg-iron margin-l-reset">
+    </div>
+  </div>
+  <div class="profile-list margin-v-big">
+    <div class="profile-list__avatar">
+      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+        src="https://s3.amazonaws.com/uifaces/faces/twitter/zeldman/128.jpg" alt="Person name avatar" />
+    </div>
+    <div class="profile-list__info padding-l-big">
+      <h2 class="type-big type-uppercase">
+        Other name
+        <span class="type-color-iron"> / </span>
+        <span class="type-color-accent">Bitnami</span>
+      </h2>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami. Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <hr class="separator-50 bg-iron margin-l-reset">
+    </div>
+  </div>
+</div>
+```
+*/
+.profile-list {
+  &__avatar,
+  &__info {
+    display: table-cell;
+    vertical-align: top;
+  }
+}

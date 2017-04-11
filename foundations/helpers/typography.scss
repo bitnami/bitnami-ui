@@ -86,3 +86,21 @@ Reduce or increase the default `color` of an element.
     color: color($name);
   }
 }
+
+/*
+---
+name: Uppercase
+category: Foundations/Helpers/Typography
+tag: helpers
+---
+Set the text to Uppercase
+
+```html
+<h1 class="type-uppercase">
+  Bitnami rocks!
+</h1>
+```
+*/
+.type-uppercase {
+  text-transform: uppercase;
+}

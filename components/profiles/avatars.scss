@@ -1,0 +1,138 @@
+/*
+---
+name: Avatar
+category: Components/Profiles/Avatars
+tag: component
+---
+Display an image as an avatar. It uses a rounded square by default.
+
+```html
+<img class="avatar"
+  src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+```
+*/
+.avatar {
+  // I add these properties to align the avatar with the text
+  display: inline-block;
+  vertical-align: middle;
+  // Add base style
+  border-radius: $spacing-border-radius;
+  width: su(1.5);
+  height: su(1.5);
+}
+
+/*
+---
+name: Sizes
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Change the size of the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-enormous"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-bigger"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-tiny"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+
+@each $size-name in 'tiny', 'small', 'big', 'bigger', 'enormous' {
+  $multiplier: map-get($scale-names, $size-name);
+  $size: 1;
+
+  @if $multiplier > 0 {
+    $size: 1.5 + (1.5 * $multiplier);
+  } @else {
+    $size: 1.5 + (.5 * $multiplier);
+  }
+
+  .avatar {
+    &.avatar-#{$size-name} {
+      width: su($size);
+      height: su($size);
+    }
+  }
+}
+
+/*
+---
+name: Shapes
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Change the shape of the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-circle avatar-bigger"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-square"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+.avatar {
+  &.avatar-circle {
+    border-radius: 50%;
+  }
+
+  &.avatar-square {
+    border-radius: 0;
+  }
+}
+
+/*
+---
+name: Borders
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Add a border to the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-circle avatar-bigger avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-square avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+.avatar {
+  &.avatar-border {
+    border: 1px solid color('iron');
+  }
+}

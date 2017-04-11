@@ -1,0 +1,19 @@
+/*
+---
+name: Remove style
+category: Foundations/Helpers/Lists
+tag: helpers
+---
+Remove the decoration (bullets) of the list.
+
+```html
+<ul class="remove-style">
+  <li>Can't find what you're looking for?</li>
+  <li>Click here for account questions</li>
+  <li>Click here for app questions</li>
+</ul>
+```
+*/
+.remove-style {
+  list-style: none;
+}

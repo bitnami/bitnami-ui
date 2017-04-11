@@ -1903,6 +1903,190 @@ tag: component
 
 /*
 ---
+name: Avatar
+category: Components/Profiles/Avatars
+tag: component
+---
+Display an image as an avatar. It uses a rounded square by default.
+
+```html
+<img class="avatar"
+  src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+```
+*/
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3px;
+  width: 1.9995em;
+  height: 1.9995em; }
+
+/*
+---
+name: Sizes
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Change the size of the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-enormous"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-bigger"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-tiny"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+.avatar.avatar-tiny {
+  width: 0.6665em;
+  height: 0.6665em; }
+
+.avatar.avatar-small {
+  width: 1.333em;
+  height: 1.333em; }
+
+.avatar.avatar-big {
+  width: 3.999em;
+  height: 3.999em; }
+
+.avatar.avatar-bigger {
+  width: 5.9985em;
+  height: 5.9985em; }
+
+.avatar.avatar-enormous {
+  width: 7.998em;
+  height: 7.998em; }
+
+/*
+---
+name: Shapes
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Change the shape of the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-circle avatar-bigger"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-square"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+.avatar.avatar-circle {
+  border-radius: 50%; }
+
+.avatar.avatar-square {
+  border-radius: 0; }
+
+/*
+---
+name: Borders
+category: Components/Profiles/Avatars
+tag: helpers
+---
+Add a border to the avatar. You can combine it with other avatar classes.
+
+```html
+<p>
+  <img class="avatar avatar-circle avatar-bigger avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-big avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
+  <img class="avatar avatar-square avatar-border padding-small"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+```
+*/
+.avatar.avatar-border {
+  border: 1px solid #ebecec; }
+
+/*
+---
+name: Simple list
+category: Components/Profiles/List
+tag: component
+---
+This component shows a list of users. You can use it for pages like webinars or study cases.
+
+```html
+<div class="container container-tiny">
+  <div class="profile-list margin-v-big">
+    <div class="profile-list__avatar">
+      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+        src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    </div>
+    <div class="profile-list__info padding-l-big">
+      <h2 class="type-big type-uppercase">
+        Miguel Martinez
+        <span class="type-color-iron"> / </span>
+        <span class="type-color-accent">Bitnami</span>
+      </h2>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <hr class="separator-50 bg-iron margin-l-reset">
+    </div>
+  </div>
+  <div class="profile-list margin-v-big">
+    <div class="profile-list__avatar">
+      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+        src="https://s3.amazonaws.com/uifaces/faces/twitter/zeldman/128.jpg" alt="Person name avatar" />
+    </div>
+    <div class="profile-list__info padding-l-big">
+      <h2 class="type-big type-uppercase">
+        Other name
+        <span class="type-color-iron"> / </span>
+        <span class="type-color-accent">Bitnami</span>
+      </h2>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <p>
+        Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami. Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
+      </p>
+      <hr class="separator-50 bg-iron margin-l-reset">
+    </div>
+  </div>
+</div>
+```
+*/
+.profile-list__avatar, .profile-list__info {
+  display: table-cell;
+  vertical-align: top; }
+
+/*
+---
 name: Launcher
 category: Components/Stacks
 tag: component

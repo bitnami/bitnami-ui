@@ -1776,6 +1776,25 @@ Use this style with dark bacgrkound colors
 
 /*
 ---
+name: Remove style
+category: Foundations/Helpers/Lists
+tag: helpers
+---
+Remove the decoration (bullets) of the list.
+
+```html
+<ul class="remove-style">
+  <li>Can't find what you're looking for?</li>
+  <li>Click here for account questions</li>
+  <li>Click here for app questions</li>
+</ul>
+```
+*/
+ul.remove-style {
+  list-style: none; }
+
+/*
+---
 name: Text alignment
 category: Foundations/Helpers/Positions
 tag: helpers
@@ -1822,6 +1841,30 @@ Also, we can update the float property of our blocks
 
 .float-n {
   float: none; }
+
+/*
+---
+name: Clearfix
+category: Foundations/Helpers/Positions
+tag: helpers
+---
+Clear floating elements in the current container
+
+```html
+<div class="clearfix">
+  <div class="float-l">Float left</div>
+  <div class="float-r">Float right</div>
+</div>
+```
+
+```html
+<div class="float-n">Remove floating</div>
+```
+*/
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both; }
 
 /*
 ---
@@ -2718,3 +2761,20 @@ Reduce or increase the default `color` of an element.
 .type-color-action,
 .type-color-action {
   color: #ef4324; }
+
+/*
+---
+name: Uppercase
+category: Foundations/Helpers/Typography
+tag: helpers
+---
+Set the text to Uppercase
+
+```html
+<h1 class="type-uppercase">
+  Bitnami rocks!
+</h1>
+```
+*/
+.type-uppercase {
+  text-transform: uppercase; }

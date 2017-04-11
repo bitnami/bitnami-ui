@@ -36,7 +36,7 @@
     "gulp-sass": "^3.1.0",
     "http-server": "^0.9.0",
     "imagemin-pngquant": "^5.0.0",
-    "node-aigis": "^1.2.1"
+    "node-aigis": "^1.4.0"
   },
   "dependencies": {
     "mappy-breakpoints": "^0.2.3"
