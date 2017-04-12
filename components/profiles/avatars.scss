@@ -19,6 +19,8 @@ Display an image as an avatar. It uses a rounded square by default.
   border-radius: $spacing-border-radius;
   width: su(1.5);
   height: su(1.5);
+  // This fix problems with max-width: 100%; in some situations
+  max-width: inherit;
 }
 
 /*

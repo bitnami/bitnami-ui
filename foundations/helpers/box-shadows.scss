@@ -1,0 +1,69 @@
+/*
+---
+name: Box Shadows
+category: Foundations/Helpers/Box Shadows
+tag: helpers
+---
+Apply box shadows to the class. The number in the class represents the visual height
+of the box. Higher numbers will display the boxes in a higher level.
+
+```html
+<div class="container text-c margin-v-big">
+  <div class="row">
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-reset">.shadow-reset</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-1">.shadow-1</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-2">.shadow-2</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-3">.shadow-3</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-4">.shadow-4</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-5">.shadow-5</div>
+    </div>
+  </div>
+  <!-- An alias -->
+  <div class="row">
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-reset">.elevation-reset</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-1">.elevation-1</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-2">.elevation-2</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-3">.elevation-3</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-4">.elevation-4</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-5">.elevation-5</div>
+    </div>
+  </div>
+</div>
+```
+*/
+@for $i from 1 through 5 {
+  $level: $i * $box-shadow-deep-level;
+  $height: $i * $box-shadow-y-offset;
+
+  .shadow-#{$i},
+  .elevation-#{$i} {
+    box-shadow: 0 $height $level rgba(color('dark'), .4);
+  }
+}
+
+.shadow-reset,
+.elevation-reset {
+  box-shadow: none;
+}

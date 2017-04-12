@@ -1670,6 +1670,85 @@ Modify the background color of the given element.
 
 /*
 ---
+name: Box Shadows
+category: Foundations/Helpers/Box Shadows
+tag: helpers
+---
+Apply box shadows to the class. The number in the class represents the visual height
+of the box. Higher numbers will display the boxes in a higher level.
+
+```html
+<div class="container text-c margin-v-big">
+  <div class="row">
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-reset">.shadow-reset</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-1">.shadow-1</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-2">.shadow-2</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-3">.shadow-3</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-4">.shadow-4</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous shadow-5">.shadow-5</div>
+    </div>
+  </div>
+  <!-- An alias -->
+  <div class="row">
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-reset">.elevation-reset</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-1">.elevation-1</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-2">.elevation-2</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-3">.elevation-3</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-4">.elevation-4</div>
+    </div>
+    <div class="col-2">
+      <div class="padding-v-enormous elevation-5">.elevation-5</div>
+    </div>
+  </div>
+</div>
+```
+*/
+.shadow-1,
+.elevation-1 {
+  box-shadow: 0 3px 6px rgba(55, 71, 79, 0.4); }
+
+.shadow-2,
+.elevation-2 {
+  box-shadow: 0 6px 12px rgba(55, 71, 79, 0.4); }
+
+.shadow-3,
+.elevation-3 {
+  box-shadow: 0 9px 18px rgba(55, 71, 79, 0.4); }
+
+.shadow-4,
+.elevation-4 {
+  box-shadow: 0 12px 24px rgba(55, 71, 79, 0.4); }
+
+.shadow-5,
+.elevation-5 {
+  box-shadow: 0 15px 30px rgba(55, 71, 79, 0.4); }
+
+.shadow-reset,
+.elevation-reset {
+  box-shadow: none; }
+
+/*
+---
 name: Button Colors
 category: Foundations/Helpers/Forms
 tag: helpers
@@ -1790,7 +1869,7 @@ Remove the decoration (bullets) of the list.
 </ul>
 ```
 */
-ul.remove-style {
+.remove-style {
   list-style: none; }
 
 /*

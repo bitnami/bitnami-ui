@@ -1919,7 +1919,8 @@ Display an image as an avatar. It uses a rounded square by default.
   vertical-align: middle;
   border-radius: 3px;
   width: 1.9995em;
-  height: 1.9995em; }
+  height: 1.9995em;
+  max-width: inherit; }
 
 /*
 ---
