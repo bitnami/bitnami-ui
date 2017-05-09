@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v0.2.0
+ * Bitnami UI Components - v0.3.0
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -1602,6 +1602,146 @@ Display an ordered lists with a bigger numbers. Also, the numbers have a circle 
     .steps li .step {
       display: table-cell;
       vertical-align: middle; }
+
+/*
+---
+name: Timeline
+category: Components/Display
+tag: component
+---
+Display a timeline with different events
+
+```html
+<div class="container">
+  <div class="timeline clearfix margin-v-big">
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Bitnami Founded</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2003</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Installers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2005</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">VM's Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2007</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Cloud Images Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2008</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Containers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2015</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">So much more to come!</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">Today</p>
+    </div>
+  </div>
+  <!-- Second example -->
+  <div class="timeline clearfix margin-v-big">
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Bitnami Founded</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2003</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Installers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2005</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">VM's Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2007</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">So much more to come!</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">Today</p>
+    </div>
+  </div>
+</div>
+```
+*/
+.timeline .timeline__event:first-child:nth-last-child(2),
+.timeline .timeline__event:first-child:nth-last-child(2) ~ .timeline__event {
+  width: calc(100% / 2); }
+
+.timeline .timeline__event:first-child:nth-last-child(3),
+.timeline .timeline__event:first-child:nth-last-child(3) ~ .timeline__event {
+  width: calc(100% / 3); }
+
+.timeline .timeline__event:first-child:nth-last-child(4),
+.timeline .timeline__event:first-child:nth-last-child(4) ~ .timeline__event {
+  width: calc(100% / 4); }
+
+.timeline .timeline__event:first-child:nth-last-child(5),
+.timeline .timeline__event:first-child:nth-last-child(5) ~ .timeline__event {
+  width: calc(100% / 5); }
+
+.timeline .timeline__event:first-child:nth-last-child(6),
+.timeline .timeline__event:first-child:nth-last-child(6) ~ .timeline__event {
+  width: calc(100% / 6); }
+
+.timeline .timeline__event:first-child:nth-last-child(7),
+.timeline .timeline__event:first-child:nth-last-child(7) ~ .timeline__event {
+  width: calc(100% / 7); }
+
+.timeline .timeline__event:first-child:nth-last-child(8),
+.timeline .timeline__event:first-child:nth-last-child(8) ~ .timeline__event {
+  width: calc(100% / 8); }
+
+.timeline .timeline__event:first-child:nth-last-child(9),
+.timeline .timeline__event:first-child:nth-last-child(9) ~ .timeline__event {
+  width: calc(100% / 9); }
+
+.timeline .timeline__event:first-child:nth-last-child(10),
+.timeline .timeline__event:first-child:nth-last-child(10) ~ .timeline__event {
+  width: calc(100% / 10); }
+
+.timeline__event {
+  float: left;
+  text-align: center;
+  overflow: hidden; }
+  .timeline__event__title {
+    font-weight: normal;
+    color: #2f3032;
+    font-size: 1em;
+    height: 2.666em;
+    padding: 0 0.6665em;
+    margin: 0 0 0.6665em; }
+  .timeline__event__line {
+    position: relative;
+    height: 1.5em; }
+    .timeline__event__line:before, .timeline__event__line:after {
+      content: '';
+      background-color: #162d50;
+      position: absolute; }
+    .timeline__event__line:before {
+      height: 1.5em;
+      width: 4px;
+      margin-left: -2px;
+      left: 50%; }
+    .timeline__event__line:after {
+      height: 4px;
+      width: 100%;
+      bottom: 0;
+      left: 0; }
+  .timeline__event__date {
+    margin: 0.33325em 0 0;
+    font-weight: bold; }
+  .timeline__event:first-child .timeline__event__line:after {
+    left: 50%; }
+  .timeline__event:last-child .timeline__event__line:after {
+    left: -50%; }
 
 /*
 ---

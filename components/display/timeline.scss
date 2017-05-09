@@ -1,0 +1,136 @@
+/*
+---
+name: Timeline
+category: Components/Display
+tag: component
+---
+Display a timeline with different events
+
+```html
+<div class="container">
+  <div class="timeline clearfix margin-v-big">
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Bitnami Founded</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2003</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Installers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2005</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">VM's Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2007</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Cloud Images Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2008</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Containers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2015</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">So much more to come!</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">Today</p>
+    </div>
+  </div>
+  <!-- Second example -->
+  <div class="timeline clearfix margin-v-big">
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Bitnami Founded</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2003</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">Installers Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2005</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">VM's Released</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">2007</p>
+    </div>
+    <div class="timeline__event">
+      <h5 class="timeline__event__title">So much more to come!</h5>
+      <div class="timeline__event__line"></div>
+      <p class="timeline__event__date">Today</p>
+    </div>
+  </div>
+</div>
+```
+*/
+.timeline {
+  // Set the witdh of the elements based on the number of them (max 10)
+  // http://stackoverflow.com/questions/8720931/can-css-detect-the-number-of-children-an-element-has
+  @for $i from 2 through 10 {
+    .timeline__event:first-child:nth-last-child(#{$i}),
+    .timeline__event:first-child:nth-last-child(#{$i}) ~ .timeline__event {
+      width: calc(100% / #{$i});
+    }
+  }
+
+  &__event {
+    float: left;
+    text-align: center;
+    overflow: hidden;
+
+    &__title {
+      font-weight: normal;
+      color: color('text');
+      font-size: type-scale('normal');
+      height: su(2);
+      padding: 0 padding('normal');
+      margin: 0 0 margin('normal');
+    }
+
+    &__line {
+      position: relative;
+      height: 1.5em;
+
+      &:before,
+      &:after {
+        content: '';
+        background-color: color('brand');
+        position: absolute;
+      }
+
+      &:before {
+        height: 1.5em;
+        width: 4px;
+        margin-left: -2px;
+        left: 50%;
+      }
+
+      &:after {
+        height: 4px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    &__date {
+      margin: margin('small') 0 0;
+      font-weight: bold;
+    }
+
+    &:first-child {
+      .timeline__event__line:after {
+        left: 50%;
+      }
+    }
+
+    &:last-child {
+      .timeline__event__line:after {
+        left: -50%;
+      }
+    }
+  }
+}
