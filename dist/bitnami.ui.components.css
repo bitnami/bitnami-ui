@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v0.3.0
+ * Bitnami UI Components - v0.4.0
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -1322,28 +1322,30 @@ Display the clouds as buttons.
   .button.cloud-selector.cloud-selector-aws:before {
     background-position-y: 0%; }
   .button.cloud-selector.cloud-selector-azure:before {
-    background-position-y: 8.33333%; }
+    background-position-y: 7.69231%; }
   .button.cloud-selector.cloud-selector-google:before {
-    background-position-y: 16.66667%; }
+    background-position-y: 15.38462%; }
   .button.cloud-selector.cloud-selector-oracle:before {
-    background-position-y: 25%; }
+    background-position-y: 23.07692%; }
   .button.cloud-selector.cloud-selector-centurylink:before {
-    background-position-y: 33.33333%; }
+    background-position-y: 30.76923%; }
   .button.cloud-selector.cloud-selector-bch:before {
-    background-position-y: 41.66667%; }
+    background-position-y: 38.46154%; }
   .button.cloud-selector.cloud-selector-oneone:before {
-    background-position-y: 50%; }
+    background-position-y: 46.15385%; }
   .button.cloud-selector.cloud-selector-godaddy:before {
-    background-position-y: 58.33333%; }
+    background-position-y: 53.84615%; }
   .button.cloud-selector.cloud-selector-otc:before {
-    background-position-y: 66.66667%; }
+    background-position-y: 61.53846%; }
   .button.cloud-selector.cloud-selector-installer:before {
-    background-position-y: 75%; }
+    background-position-y: 69.23077%; }
   .button.cloud-selector.cloud-selector-virtual-machine:before {
-    background-position-y: 83.33333%; }
+    background-position-y: 76.92308%; }
   .button.cloud-selector.cloud-selector-containers:before {
-    background-position-y: 91.66667%; }
+    background-position-y: 84.61538%; }
   .button.cloud-selector.cloud-selector-kubernetes:before {
+    background-position-y: 92.30769%; }
+  .button.cloud-selector.cloud-selector-huawei:before {
     background-position-y: 100%; }
 
 /*
