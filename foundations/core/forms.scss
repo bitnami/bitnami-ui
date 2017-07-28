@@ -53,7 +53,7 @@ Selectors are a bit different in Safari. We can't remove the gloss effect withou
   <option>Select one element</option>
   <option>Option 1</option>
   <option>Option 2</option>
-  <option>Option 3</option>
+  <option disabled>Option 3</option>
 </select>
 ```
 */
@@ -109,6 +109,15 @@ label {
     text-transform: none;
     font-size: type-scale('normal');
     font-weight: normal;
+
+    span {
+      display: inline-block;
+      margin-left: margin('small');
+    }
+
+    input:disabled + span {
+      opacity: .7;
+    }
   }
 }
 
@@ -119,8 +128,13 @@ category: Foundations/Forms
 tag: text
 ---
 ```html
-<label for="check" class="checkbox">
-  <input type="checkbox" name="check" id="check" /> Test
+<label for="check1" class="checkbox">
+  <input type="checkbox" name="check1" id="check1" />
+  <span>Test</span>
+</label>
+<label for="check2" class="checkbox">
+  <input type="checkbox" name="check2" id="check2" disabled />
+  <span>Disabled</span>
 </label>
 ```
 */
@@ -132,16 +146,20 @@ tag: text
 ---
 ```html
 <label for="test1" class="radio">
-  <input type="radio" name="test" id="test1"/>Test 1
+  <input type="radio" name="test" id="test1"/>
+  <span>Test 1</span>
 </label>
 <label for="test2" class="radio">
-  <input type="radio" name="test" id="test2"/>Test 2
+  <input type="radio" name="test" id="test2"/>
+  <span>Test 2</span>
 </label>
 <label for="test3" class="radio">
-  <input type="radio" name="test" id="test3"/>Test 3
+  <input type="radio" name="test" id="test3"/>
+  <span>Test 3</span>
 </label>
 <label for="test4" class="radio">
-  <input type="radio" name="test" id="test4"/>Test 4
+  <input type="radio" name="test" id="test4" disabled/>
+  <span>Disabled</span>
 </label>
 ```
 */
