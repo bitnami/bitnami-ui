@@ -7,16 +7,15 @@
 /**
  * Generate a collapse property for a given prefix
  */
-@mixin grid-collapse-on-prefix($prefix) {
-  &.collapse-on-#{$prefix} {
+@mixin grid-collapse-on-prefix($breakpoint) {
+  &.collapse-#{$breakpoint} {
     @include grid-collapse();
   }
 }
 
 @mixin grid-collapse() {
   > [class^="col"] {
-    float: none;
-    width: 100%;
+    flex: 0 0 100%;
     margin-top: $grid-gutter;
 
     &:first-child {
@@ -28,15 +27,15 @@
 /**
  * Generate a collapse property for a given prefix
  */
-@mixin grid-collapse-by-columns-on-prefix($columns, $prefix) {
-  &.collapse-#{$columns}-on-#{$prefix} {
+@mixin grid-collapse-by-columns-on-prefix($columns, $breakpoint) {
+  &.collapse-#{$columns}-#{$breakpoint} {
     @include grid-collapse-by-columns-on($columns)
   }
 }
 
 @mixin grid-collapse-by-columns-on($columns) {
   > [class^="col"] {
-    width: ($grid-columns / $columns) * (100% / $grid-columns);
+    flex: 0 0 ($grid-columns / $columns) * (100% / $grid-columns);
     margin-top: $grid-gutter;
 
     &:nth-child(-n+#{$columns}) {

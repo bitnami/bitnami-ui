@@ -65,12 +65,17 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   max-width: $grid-width;
   // Remove the gutter of the bottom and the left/right
   margin: 0 auto;
-  padding: 0 $grid-gutter;
+
+  @include mappy-query(b-tablet) {
+    padding: 0 $grid-gutter;
+  }
 
   /**
    * Row definition
    */
   .row {
+    display: flex;
+    flex-wrap: wrap;
     margin: $grid-gutter (-($grid-gutter / 2));
 
     // Clean margin of the rows
@@ -82,22 +87,11 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
       margin-bottom: 0;
     }
 
-    // Clearfix
-    &:before,
-    &:after {
-      content: ' ';
-      display: table;
-    }
-
-    &:after {
-      clear: both;
-    }
-
     /**
      * Column definition
      */
     > [class^="col"] {
-      float: left;
+      flex: 1; // Auto by default
       min-height: 1px;
       // Add the gutter
       box-sizing: border-box;
@@ -106,7 +100,7 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
 
     @for $i from 1 through $grid-columns {
       .col-#{$i} {
-        width: $i * (100% / $grid-columns);
+        flex: 0 0 $i * (100% / $grid-columns);
       }
     }
   }

@@ -21,4 +21,6 @@ $grid-gutter: $su;
 
 $grid-inner-padding: 1em;
 
-$grid-collapse-on: phone phone-portrait phone-landscape tablet desktop;
+$grid-collapse-on: phone phone-land tablet desktop wide;
+$grid-collapse-below: b-phone-land b-tablet b-desktop b-wide;
+$grid-collapse-above: a-phone a-phone-land a-tablet a-desktop a-wide;

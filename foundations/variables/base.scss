@@ -50,7 +50,7 @@ $breakpoints: (
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
-  phone-landscape: mappy-bp(sm md),
+  phone-land: mappy-bp(sm md),
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
@@ -59,7 +59,6 @@ $mappy-queries: (
 ```
 */
 $breakpoints: (
-  xs: 320px,
   sm: 480px,
   md: 768px,
   lg: 900px,
@@ -68,11 +67,23 @@ $breakpoints: (
 );
 
 $mappy-queries: (
-  phone-portrait: mappy-bp(max-width xs),
-  phone: mappy-bp(xs sm),
-  phone-landscape: mappy-bp(sm md),
+  // Specific
+  phone: mappy-bp(max-width sm),
+  phone-land: mappy-bp(sm md),
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
-  ultrawide: mappy-bp(min-width uxl)
+  ultrawide: mappy-bp(min-width uxl),
+  // Below
+  b-phone-land: mappy-bp(max-width sm),
+  b-tablet: mappy-bp(max-width md),
+  b-desktop: mappy-bp(max-width lg),
+  b-wide: mappy-bp(max-width xl),
+  b-ultrawide: mappy-bp(max-width uxl),
+  // Above
+  a-phone: mappy-bp(min-width sm),
+  a-phone-land: mappy-bp(min-width md),
+  a-tablet: mappy-bp(min-width lg),
+  a-desktop: mappy-bp(min-width xl),
+  a-wide: mappy-bp(min-width uxl),
 );

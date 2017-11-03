@@ -17,23 +17,36 @@ To avoid this situation, I set the "responsive classes" at Row level. Now, we ca
 
 `collapse-2-on-phone` means that the row will display 2 columns per row on phone screens. We have the same classes for other screen names:
 
-* `phone-portrait`
 * `phone`
-* `phone-landscape`
+* `phone-land`
 * `tablet`
 * `desktop`
+* `wide`
 
-##### Default breakpoints
+#### Below and Above
 
-By default, rows has the following behaviour:
+`collapse-on-x` applies the rule to an specific media query. That means the `collapse-on-tablet` class only collapses the columns when the users is between the tablet minimum and maximum.
 
-* Collapse on 3 columns on Tablet
-* Collapse on 2 columns on Phone landspace
-* Collapse on 1 columns on Phone
+If you want to collapse a row above or below an specific screen size, you can use the `a` and `b` prefixes:
+
+* `collapse-a-phone`
+* `collapse-a-phone-land` `collapse-b-phone-land`
+* `collapse-a-tablet` `collapse-b-tablet`
+* `collapse-a-desktop` `collapse-b-desktop`
+* `collapse-b-wide`
 
 ```html
 <div class="container">
-  <div class="row collapse-3-on-tablet collapse-2-on-phone-landscape collapse-on-phone">
+  <div class="row collapse-3-on-tablet collapse-2-on-phone-land collapse-on-phone">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+
+  <div class="row collapse-3-on-tablet collapse-2-b-tablet">
     <div class="col-2"><article>2</article></div>
     <div class="col-2"><article>2</article></div>
     <div class="col-2"><article>2</article></div>
@@ -61,7 +74,7 @@ By default, rows has the following behaviour:
   //   @include grid-collapse-by-columns-on(3);
   // }
   //
-  // @include mappy-query('phone-landscape') {
+  // @include mappy-query('phone-land') {
   //   @include grid-collapse-by-columns-on(2);
   // }
   //
@@ -73,6 +86,29 @@ By default, rows has the following behaviour:
    * Specific media queries
    */
   @each $name in $grid-collapse-on {
+    @include mappy-query($name) {
+      $breakpoint: "on-#{$name}";
+      @include grid-collapse-on-prefix($breakpoint);
+      @include grid-collapse-by-columns-on-prefix(2, $breakpoint);
+      @include grid-collapse-by-columns-on-prefix(3, $breakpoint);
+    }
+  }
+
+  /**
+   * Below media queries
+   */
+   @each $name in $grid-collapse-below {
+    @include mappy-query($name) {
+      @include grid-collapse-on-prefix( $name);
+      @include grid-collapse-by-columns-on-prefix(2, $name);
+      @include grid-collapse-by-columns-on-prefix(3, $name);
+    }
+  }
+
+  /**
+   * Above media queries
+   */
+   @each $name in $grid-collapse-above {
     @include mappy-query($name) {
       @include grid-collapse-on-prefix($name);
       @include grid-collapse-by-columns-on-prefix(2, $name);
