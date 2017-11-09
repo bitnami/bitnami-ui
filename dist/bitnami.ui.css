@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v0.4.1
+ * Bitnami UI - v1.0.0
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -60,7 +60,7 @@ $breakpoints: (
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
-  phone-landscape: mappy-bp(sm md),
+  phone-land: mappy-bp(sm md),
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
@@ -190,6 +190,24 @@ $line-heights: (
   1: $size-unity * 1.5,
   2: $size-unity * 2,
   3: $size-unity * 3,
+);
+```
+*/
+/*
+---
+name: Z-index
+category: Foundations/Variables
+tag: variables
+---
+Instead of specifing custom Z-indexes for the different elements, these variables define five basic z-index values to position the layers of the interface.
+
+```scss
+$z-index: (
+  'bottom': -1,
+  'base': 0,
+  'above': 10,
+  'above-mean': 20,
+  'top': 99
 );
 ```
 */
@@ -388,6 +406,23 @@ floated elements.
 ```scss
 .test {
   @include clearfix();
+}
+```
+*/
+/*
+---
+name: z-index(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get the z-index from the available layer positions:
+
+```scss
+.base {
+  z-index: z-index('base');
+}
+.above {
+  z-index: z-index('above');
 }
 ```
 */
@@ -881,7 +916,8 @@ label {
   cursor: pointer;
   font-size: 0.75019em;
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 1.1px; }
   label + label {
     margin-left: 0.6665em; }
   label.checkbox, label.radio {
@@ -988,15 +1024,20 @@ tag: text
   text-overflow: ellipsis;
   background-color: #edeeee; }
   .button:hover {
-    background-color: #ebecec;
+    background-color: #e1e1e1;
     border-color: #bcbdbd;
-    color: #2f3032; }
+    color: initial; }
   .button:focus {
-    outline: 0;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.1); }
+    outline: 0; }
+  .button:active {
+    background-color: #d4d4d4;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
   .button[disabled="disabled"], .button[disabled="true"] {
     cursor: not-allowed;
     opacity: .7; }
+    .button[disabled="disabled"]:hover, .button[disabled="true"]:hover {
+      background-color: #edeeee;
+      border-color: #d4d4d4; }
   .button + .button,
   .button + button {
     margin-left: 0.33325em; }
@@ -1364,11 +1405,15 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   width: auto;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 1.333em;
   /**
    * Row definition
    */ }
+  @media all and (max-width: 47.9375em) {
+    .container {
+      padding: 0 1.333em; } }
   .container .row {
+    display: flex;
+    flex-wrap: wrap;
     margin: 1.333em -0.6665em;
     /**
      * Column definition
@@ -1377,40 +1422,86 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
       margin-top: 0; }
     .container .row:last-child {
       margin-bottom: 0; }
-    .container .row:before, .container .row:after {
-      content: ' ';
-      display: table; }
-    .container .row:after {
-      clear: both; }
     .container .row > [class^="col"] {
-      float: left;
+      flex: 1;
       min-height: 1px;
       box-sizing: border-box;
       padding: 0 0.6665em; }
     .container .row .col-1 {
-      width: 8.33333%; }
+      flex: 0 0 8.33333%; }
     .container .row .col-2 {
-      width: 16.66667%; }
+      flex: 0 0 16.66667%; }
     .container .row .col-3 {
-      width: 25%; }
+      flex: 0 0 25%; }
     .container .row .col-4 {
-      width: 33.33333%; }
+      flex: 0 0 33.33333%; }
     .container .row .col-5 {
-      width: 41.66667%; }
+      flex: 0 0 41.66667%; }
     .container .row .col-6 {
-      width: 50%; }
+      flex: 0 0 50%; }
     .container .row .col-7 {
-      width: 58.33333%; }
+      flex: 0 0 58.33333%; }
     .container .row .col-8 {
-      width: 66.66667%; }
+      flex: 0 0 66.66667%; }
     .container .row .col-9 {
-      width: 75%; }
+      flex: 0 0 75%; }
     .container .row .col-10 {
-      width: 83.33333%; }
+      flex: 0 0 83.33333%; }
     .container .row .col-11 {
-      width: 91.66667%; }
+      flex: 0 0 91.66667%; }
     .container .row .col-12 {
-      width: 100%; }
+      flex: 0 0 100%; }
+
+/*
+---
+name: Content
+category: Foundations/Grid
+tag: grid
+---
+The previous examples display boxes with a very similar context. If the content of the columns is different, by default all of them are positionated at the beginning of the row.
+
+Content helpers allows you to change the alignment of an specific column or all the elements in a row.
+
+```html
+<div class="container">
+  <div class="row align-center">
+    <div class="col-3"><article>Content</article></div>
+    <div class="col-3"><article>A very long long long long long long long long long long long long long long long long long long long long long long long long long long long long content</article></div>
+    <div class="col-3"><article>Content</article></div>
+    <div class="col-3"><article>Content</article></div>
+  </div>
+  <div class="row">
+    <div class="col-3 align-start"><article>Small content</article></div>
+    <div class="col-3"><article>A very long long long long long long long long long long long long long long long long long long long long long long long long long long long long content</article></div>
+    <div class="col-3 align-center"><article>Content</article></div>
+    <div class="col-3 align-end"><article>Content</article></div>
+  </div>
+  <div class="row align-center">
+    <div class="col-3"><article>Content</article></div>
+    <div class="col-3"><article>A very long long long long long long long long long long long long long long long long long long long long long long long long long long long long content</article></div>
+    <div class="col-3 align-start"><article>Content</article></div>
+    <div class="col-3"><article>Content</article></div>
+  </div>
+</div>
+```
+*/
+.container .row.align-center {
+  align-items: center; }
+
+.container .row.align-start {
+  align-items: flex-start; }
+
+.container .row.align-end {
+  align-items: flex-end; }
+
+.container .row > [class^="col"].align-center {
+  align-self: center; }
+
+.container .row > [class^="col"].align-start {
+  align-self: flex-start; }
+
+.container .row > [class^="col"].align-end {
+  align-self: flex-end; }
 
 /*
 ---
@@ -1431,23 +1522,36 @@ To avoid this situation, I set the "responsive classes" at Row level. Now, we ca
 
 `collapse-2-on-phone` means that the row will display 2 columns per row on phone screens. We have the same classes for other screen names:
 
-* `phone-portrait`
 * `phone`
-* `phone-landscape`
+* `phone-land`
 * `tablet`
 * `desktop`
+* `wide`
 
-##### Default breakpoints
+#### Below and Above
 
-By default, rows has the following behaviour:
+`collapse-on-x` applies the rule to an specific media query. That means the `collapse-on-tablet` class only collapses the columns when the users is between the tablet minimum and maximum.
 
-* Collapse on 3 columns on Tablet
-* Collapse on 2 columns on Phone landspace
-* Collapse on 1 columns on Phone
+If you want to collapse a row above or below an specific screen size, you can use the `a` and `b` prefixes:
+
+* `collapse-a-phone`
+* `collapse-a-phone-land` `collapse-b-phone-land`
+* `collapse-a-tablet` `collapse-b-tablet`
+* `collapse-a-desktop` `collapse-b-desktop`
+* `collapse-b-wide`
 
 ```html
 <div class="container">
-  <div class="row collapse-3-on-tablet collapse-2-on-phone-landscape collapse-on-phone">
+  <div class="row collapse-3-on-tablet collapse-2-on-phone-land collapse-on-phone">
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+    <div class="col-2"><article>2</article></div>
+  </div>
+
+  <div class="row collapse-3-on-tablet collapse-2-b-tablet">
     <div class="col-2"><article>2</article></div>
     <div class="col-2"><article>2</article></div>
     <div class="col-2"><article>2</article></div>
@@ -1473,91 +1577,236 @@ By default, rows has the following behaviour:
    */
   /**
    * Specific media queries
+   */
+  /**
+   * Below media queries
+   */
+  /**
+   * Above media queries
    */ }
-  @media all and (min-width: 20em) and (max-width: 29.9375em) {
+  @media all and (max-width: 29.9375em) {
     .container .row.collapse-on-phone > [class^="col"] {
-      float: none;
-      width: 100%;
+      flex: 0 0 100%;
       margin-top: 1.333em; }
       .container .row.collapse-on-phone > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-phone > [class^="col"] {
-      width: 50%;
+      flex: 0 0 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone > [class^="col"] {
-      width: 33.33333%;
+      flex: 0 0 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (max-width: 19.9375em) {
-    .container .row.collapse-on-phone-portrait > [class^="col"] {
-      float: none;
-      width: 100%;
-      margin-top: 1.333em; }
-      .container .row.collapse-on-phone-portrait > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-phone-portrait > [class^="col"] {
-      width: 50%;
-      margin-top: 1.333em; }
-      .container .row.collapse-2-on-phone-portrait > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-phone-portrait > [class^="col"] {
-      width: 33.33333%;
-      margin-top: 1.333em; }
-      .container .row.collapse-3-on-phone-portrait > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
   @media all and (min-width: 30em) and (max-width: 47.9375em) {
-    .container .row.collapse-on-phone-landscape > [class^="col"] {
-      float: none;
-      width: 100%;
+    .container .row.collapse-on-phone-land > [class^="col"] {
+      flex: 0 0 100%;
       margin-top: 1.333em; }
-      .container .row.collapse-on-phone-landscape > [class^="col"]:first-child {
+      .container .row.collapse-on-phone-land > [class^="col"]:first-child {
         margin-top: 0; }
-    .container .row.collapse-2-on-phone-landscape > [class^="col"] {
-      width: 50%;
+    .container .row.collapse-2-on-phone-land > [class^="col"] {
+      flex: 0 0 50%;
       margin-top: 1.333em; }
-      .container .row.collapse-2-on-phone-landscape > [class^="col"]:nth-child(-n+2) {
+      .container .row.collapse-2-on-phone-land > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
-    .container .row.collapse-3-on-phone-landscape > [class^="col"] {
-      width: 33.33333%;
+    .container .row.collapse-3-on-phone-land > [class^="col"] {
+      flex: 0 0 33.33333%;
       margin-top: 1.333em; }
-      .container .row.collapse-3-on-phone-landscape > [class^="col"]:nth-child(-n+3) {
+      .container .row.collapse-3-on-phone-land > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
   @media all and (min-width: 48em) and (max-width: 56.1875em) {
     .container .row.collapse-on-tablet > [class^="col"] {
-      float: none;
-      width: 100%;
+      flex: 0 0 100%;
       margin-top: 1.333em; }
       .container .row.collapse-on-tablet > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-tablet > [class^="col"] {
-      width: 50%;
+      flex: 0 0 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-tablet > [class^="col"] {
-      width: 33.33333%;
+      flex: 0 0 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
   @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
     .container .row.collapse-on-desktop > [class^="col"] {
-      float: none;
-      width: 100%;
+      flex: 0 0 100%;
       margin-top: 1.333em; }
       .container .row.collapse-on-desktop > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-2-on-desktop > [class^="col"] {
-      width: 50%;
+      flex: 0 0 50%;
       margin-top: 1.333em; }
       .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-3-on-desktop > [class^="col"] {
-      width: 33.33333%;
+      flex: 0 0 33.33333%;
       margin-top: 1.333em; }
       .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
+    .container .row.collapse-on-wide > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-on-wide > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-on-wide > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-on-wide > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-on-wide > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-on-wide > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (max-width: 29.9375em) {
+    .container .row.collapse-b-phone-land > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-b-phone-land > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-b-phone-land > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-b-phone-land > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-b-phone-land > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-b-phone-land > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (max-width: 47.9375em) {
+    .container .row.collapse-b-tablet > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-b-tablet > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-b-tablet > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-b-tablet > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-b-tablet > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-b-tablet > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (max-width: 56.1875em) {
+    .container .row.collapse-b-desktop > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-b-desktop > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-b-desktop > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-b-desktop > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-b-desktop > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-b-desktop > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (max-width: 68.6875em) {
+    .container .row.collapse-b-wide > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-b-wide > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-b-wide > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-b-wide > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-b-wide > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: sm) {
+    .container .row.collapse-a-phone > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-a-phone > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-a-phone > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-a-phone > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-a-phone > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: md) {
+    .container .row.collapse-a-phone-land > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-a-phone-land > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-a-phone-land > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-a-phone-land > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-a-phone-land > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: lg) {
+    .container .row.collapse-a-tablet > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-a-tablet > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-a-tablet > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-a-tablet > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-a-tablet > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: xl) {
+    .container .row.collapse-a-desktop > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-a-desktop > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-a-desktop > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-a-desktop > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-a-desktop > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
+        margin-top: 0; } }
+  @media all and (min-width: uxl) {
+    .container .row.collapse-a-wide > [class^="col"] {
+      flex: 0 0 100%;
+      margin-top: 1.333em; }
+      .container .row.collapse-a-wide > [class^="col"]:first-child {
+        margin-top: 0; }
+    .container .row.collapse-2-a-wide > [class^="col"] {
+      flex: 0 0 50%;
+      margin-top: 1.333em; }
+      .container .row.collapse-2-a-wide > [class^="col"]:nth-child(-n+2) {
+        margin-top: 0; }
+    .container .row.collapse-3-a-wide > [class^="col"] {
+      flex: 0 0 33.33333%;
+      margin-top: 1.333em; }
+      .container .row.collapse-3-a-wide > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
 
 /*
@@ -1645,6 +1894,33 @@ a.secondary:not(.button) {
   color: #162d50; }
   a.secondary:not(.button):hover, a.secondary:not(.button):active, a.secondary:not(.button):visited {
     color: #142948; }
+
+/*
+---
+name: Animations
+category: Foundations/Helpers/Animations
+tag: helpers
+---
+Different animations for the elements:
+
+* `.slideIn`
+
+```html
+<p class="slide-in">
+  This is a text with an animation
+</p>
+```
+*/
+@keyframes slide-in {
+  from {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0; }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+.slide-in {
+  animation: slide-in .150s ease-in; }
 
 /*
 ---
@@ -1785,8 +2061,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-primary:hover {
     color: #fff;
-    background-color: #162d50;
+    background-color: #1a345c;
     border-color: #122440; }
+  .button-primary:active {
+    background-color: #142948;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button-accent {
   background-color: #53bd65;
@@ -1794,8 +2073,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-accent:hover {
     color: #fff;
-    background-color: #40b654;
+    background-color: #41b755;
     border-color: #339243; }
+  .button-accent:active {
+    background-color: #3aa44c;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button-action {
   background-color: #f1563a;
@@ -1803,8 +2085,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-action:hover {
     color: #fff;
-    background-color: #ef4324;
+    background-color: #e04b30;
     border-color: #bf361d; }
+  .button-action:active {
+    background-color: #d73c20;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 /*
 ---
@@ -1833,6 +2118,50 @@ Modify the size of the buttons. Available classes:
 
 .button-bigger {
   font-size: 1.77689em; }
+
+/*
+---
+name: Button Dropdown
+category: Foundations/Helpers/Forms
+tag: helpers
+---
+Add a caret icon to the right of the button.
+
+* `.button-dropdown`
+* `.button-dropdown-open`
+
+See https://css-tricks.com/snippets/css/css-triangle/.
+
+```html
+<button class="button button-dropdown">Submit</button>
+<a class="button button-accent button-dropdown button-dropdown-open">Link button</a>
+<a class="button button-action button-big button-dropdown">Link button</a>
+<a class="button button-bigger button-dropdown button-dropdown-open">Link button</a>
+```
+*/
+.button-dropdown:after {
+  border: 5px solid transparent;
+  border-top-color: #2f3032;
+  display: inline-block;
+  content: '';
+  height: 0;
+  margin-left: 0.33325em;
+  position: relative;
+  top: 0.08331em;
+  vertical-align: middle;
+  width: 0; }
+
+.button-dropdown.button-action:after, .button-dropdown.button-accent:after {
+  border-top-color: #fff; }
+
+.button-dropdown-open:after {
+  border-top-color: transparent;
+  border-bottom-color: #2f3032;
+  top: -.2em; }
+
+.button-dropdown-open.button-action:after, .button-dropdown-open.button-accent:after {
+  border-top-color: transparent;
+  border-bottom-color: #fff; }
 
 /*
 ---

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v0.4.1
+ * Bitnami UI Components - v1.0.0
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -60,7 +60,7 @@ $breakpoints: (
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
-  phone-landscape: mappy-bp(sm md),
+  phone-land: mappy-bp(sm md),
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
@@ -190,6 +190,24 @@ $line-heights: (
   1: $size-unity * 1.5,
   2: $size-unity * 2,
   3: $size-unity * 3,
+);
+```
+*/
+/*
+---
+name: Z-index
+category: Foundations/Variables
+tag: variables
+---
+Instead of specifing custom Z-indexes for the different elements, these variables define five basic z-index values to position the layers of the interface.
+
+```scss
+$z-index: (
+  'bottom': -1,
+  'base': 0,
+  'above': 10,
+  'above-mean': 20,
+  'top': 99
 );
 ```
 */
@@ -551,6 +569,23 @@ floated elements.
 ```scss
 .test {
   @include clearfix();
+}
+```
+*/
+/*
+---
+name: z-index(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get the z-index from the available layer positions:
+
+```scss
+.base {
+  z-index: z-index('base');
+}
+.above {
+  z-index: z-index('above');
 }
 ```
 */
@@ -957,200 +992,272 @@ with size modification classes. You can get more information about this element 
 .palette-oneone .button,
 .palette-oneone button {
   background-color: #1a509a;
-  border-color: #003d8f;
+  border-color: #003781;
   color: #fff; }
   .palette-oneone .button:hover,
   .palette-oneone button:hover {
     color: #fff;
-    background-color: #003d8f;
+    background-color: #00429b;
     border-color: #003172; }
+  .palette-oneone .button:active,
+  .palette-oneone button:active {
+    background-color: #003781;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-oneone,
 button.palette-oneone {
   background-color: #1a509a;
-  border-color: #003d8f;
+  border-color: #003781;
   color: #fff; }
   .button.palette-oneone:hover,
   button.palette-oneone:hover {
     color: #fff;
-    background-color: #003d8f;
+    background-color: #00429b;
     border-color: #003172; }
+  .button.palette-oneone:active,
+  button.palette-oneone:active {
+    background-color: #003781;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-aws .button,
 .palette-aws button {
   background-color: #f0c14b;
-  border-color: #eeba37;
+  border-color: #d6a732;
   color: #fff; }
   .palette-aws .button:hover,
   .palette-aws button:hover {
     color: #fff;
-    background-color: #eeba37;
+    background-color: #dab047;
     border-color: #be952c; }
+  .palette-aws .button:active,
+  .palette-aws button:active {
+    background-color: #d6a732;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-aws,
 button.palette-aws {
   background-color: #f0c14b;
-  border-color: #eeba37;
+  border-color: #d6a732;
   color: #fff; }
   .button.palette-aws:hover,
   button.palette-aws:hover {
     color: #fff;
-    background-color: #eeba37;
+    background-color: #dab047;
     border-color: #be952c; }
+  .button.palette-aws:active,
+  button.palette-aws:active {
+    background-color: #d6a732;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-azure .button,
 .palette-azure button {
   background-color: #7dc1ee;
-  border-color: #6ebaec;
+  border-color: #63a7d4;
   color: #fff; }
   .palette-azure .button:hover,
   .palette-azure button:hover {
     color: #fff;
-    background-color: #6ebaec;
+    background-color: #77b2da;
     border-color: #5895bd; }
+  .palette-azure .button:active,
+  .palette-azure button:active {
+    background-color: #63a7d4;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-azure,
 button.palette-azure {
   background-color: #7dc1ee;
-  border-color: #6ebaec;
+  border-color: #63a7d4;
   color: #fff; }
   .button.palette-azure:hover,
   button.palette-azure:hover {
     color: #fff;
-    background-color: #6ebaec;
+    background-color: #77b2da;
     border-color: #5895bd; }
+  .button.palette-azure:active,
+  button.palette-azure:active {
+    background-color: #63a7d4;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-centurylink .button,
 .palette-centurylink button {
   background-color: #1a9152;
-  border-color: #00853f;
+  border-color: #007839;
   color: #fff; }
   .palette-centurylink .button:hover,
   .palette-centurylink button:hover {
     color: #fff;
-    background-color: #00853f;
+    background-color: #009245;
     border-color: #006a32; }
+  .palette-centurylink .button:active,
+  .palette-centurylink button:active {
+    background-color: #007839;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-centurylink,
 button.palette-centurylink {
   background-color: #1a9152;
-  border-color: #00853f;
+  border-color: #007839;
   color: #fff; }
   .button.palette-centurylink:hover,
   button.palette-centurylink:hover {
     color: #fff;
-    background-color: #00853f;
+    background-color: #009245;
     border-color: #006a32; }
+  .button.palette-centurylink:active,
+  button.palette-centurylink:active {
+    background-color: #007839;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-godaddy .button,
 .palette-godaddy button {
   background-color: #1aaf52;
-  border-color: #00a63f;
+  border-color: #009539;
   color: #fff; }
   .palette-godaddy .button:hover,
   .palette-godaddy button:hover {
     color: #fff;
-    background-color: #00a63f;
+    background-color: #00af43;
     border-color: #008532; }
+  .palette-godaddy .button:active,
+  .palette-godaddy button:active {
+    background-color: #009539;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-godaddy,
 button.palette-godaddy {
   background-color: #1aaf52;
-  border-color: #00a63f;
+  border-color: #009539;
   color: #fff; }
   .button.palette-godaddy:hover,
   button.palette-godaddy:hover {
     color: #fff;
-    background-color: #00a63f;
+    background-color: #00af43;
     border-color: #008532; }
+  .button.palette-godaddy:active,
+  button.palette-godaddy:active {
+    background-color: #009539;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-google .button,
 .palette-google button {
   background-color: #4091e9;
-  border-color: #2b85e7;
+  border-color: #2778d0;
   color: #fff; }
   .palette-google .button:hover,
   .palette-google button:hover {
     color: #fff;
-    background-color: #2b85e7;
+    background-color: #3785da;
     border-color: #226ab9; }
+  .palette-google .button:active,
+  .palette-google button:active {
+    background-color: #2778d0;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-google,
 button.palette-google {
   background-color: #4091e9;
-  border-color: #2b85e7;
+  border-color: #2778d0;
   color: #fff; }
   .button.palette-google:hover,
   button.palette-google:hover {
     color: #fff;
-    background-color: #2b85e7;
+    background-color: #3785da;
     border-color: #226ab9; }
+  .button.palette-google:active,
+  button.palette-google:active {
+    background-color: #2778d0;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-huawei .button,
 .palette-huawei button {
   background-color: #ff1a1a;
-  border-color: #f00;
+  border-color: #e60000;
   color: #fff; }
   .palette-huawei .button:hover,
   .palette-huawei button:hover {
     color: #fff;
-    background-color: #f00;
+    background-color: #ff0101;
     border-color: #cc0000; }
+  .palette-huawei .button:active,
+  .palette-huawei button:active {
+    background-color: #e60000;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-huawei,
 button.palette-huawei {
   background-color: #ff1a1a;
-  border-color: #f00;
+  border-color: #e60000;
   color: #fff; }
   .button.palette-huawei:hover,
   button.palette-huawei:hover {
     color: #fff;
-    background-color: #f00;
+    background-color: #ff0101;
     border-color: #cc0000; }
+  .button.palette-huawei:active,
+  button.palette-huawei:active {
+    background-color: #e60000;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-oracle .button,
 .palette-oracle button {
   background-color: #ff1a1a;
-  border-color: #f00;
+  border-color: #e60000;
   color: #fff; }
   .palette-oracle .button:hover,
   .palette-oracle button:hover {
     color: #fff;
-    background-color: #f00;
+    background-color: #ff0101;
     border-color: #cc0000; }
+  .palette-oracle .button:active,
+  .palette-oracle button:active {
+    background-color: #e60000;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-oracle,
 button.palette-oracle {
   background-color: #ff1a1a;
-  border-color: #f00;
+  border-color: #e60000;
   color: #fff; }
   .button.palette-oracle:hover,
   button.palette-oracle:hover {
     color: #fff;
-    background-color: #f00;
+    background-color: #ff0101;
     border-color: #cc0000; }
+  .button.palette-oracle:active,
+  button.palette-oracle:active {
+    background-color: #e60000;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .palette-otc .button,
 .palette-otc button {
   background-color: #e51a82;
-  border-color: #e20074;
+  border-color: #cb0068;
   color: #fff; }
   .palette-otc .button:hover,
   .palette-otc button:hover {
     color: #fff;
-    background-color: #e20074;
+    background-color: #e50075;
     border-color: #b5005d; }
+  .palette-otc .button:active,
+  .palette-otc button:active {
+    background-color: #cb0068;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button.palette-otc,
 button.palette-otc {
   background-color: #e51a82;
-  border-color: #e20074;
+  border-color: #cb0068;
   color: #fff; }
   .button.palette-otc:hover,
   button.palette-otc:hover {
     color: #fff;
-    background-color: #e20074;
+    background-color: #e50075;
     border-color: #b5005d; }
+  .button.palette-otc:active,
+  button.palette-otc:active {
+    background-color: #cb0068;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 /*
 ---
@@ -1607,6 +1714,28 @@ Display an ordered lists with a bigger numbers. Also, the numbers have a circle 
 
 /*
 ---
+name: Tags or Pills
+category: Components/Display
+tag: component
+---
+
+Small elements to display as pills or tags.
+
+```html
+<span class="tag">Tag</span>
+<span class="tag tag-small">Tag 2</span>
+```
+*/
+.tag {
+  background-color: #5c6c85;
+  color: #fff;
+  padding: 0.33325em;
+  border-radius: 3px; }
+  .tag-small {
+    font-size: 0.75019em; }
+
+/*
+---
 name: Timeline
 category: Components/Display
 tag: component
@@ -1744,6 +1873,389 @@ Display a timeline with different events
     left: 50%; }
   .timeline__event:last-child .timeline__event__line:after {
     left: -50%; }
+
+/*
+---
+name: Input Addons
+category: Components/Forms
+tag: component
+---
+
+These components help you to build more complex input elements. Now, you can create input fields with buttons and dropdowns.
+
+```html
+<div>
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..." />
+    <button class="button">Search</button>
+  </div>
+</div>
+
+<div class="margin-t-big">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..." />
+    <div class="dropdown dropdown-open dropdown-right">
+      <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>First element</a></li>
+        <li><a>Second element</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Last element</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+*/
+.input-group {
+  display: flex;
+  margin-top: 0.33325em; }
+  .input-group > input {
+    flex: 1;
+    margin-top: 0; }
+  .input-group > * {
+    border-radius: 0; }
+  .input-group > *:first-child {
+    border-radius: 3px 0 0 3px; }
+  .input-group > *:last-child,
+  .input-group .dropdown .button {
+    margin-left: -1px;
+    border-radius: 0 3px 3px 0; }
+  .input-group > *:not(:last-child) {
+    border-right: 0; }
+
+/*
+---
+name: Dropdown
+category: Components/Forms
+tag: component
+---
+
+```html
+<div class="container margin-v-huge">
+  <div class="row">
+    <div class="col-3">
+      <div class="dropdown">
+        <button class="button button-dropdown" aria-haspopup="true">Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open dropdown-right">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Right aligned drop</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open dropdown-top">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Top align</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+.dropdown {
+  position: relative;
+  display: inline-block; }
+  .dropdown__list {
+    background-color: #fff;
+    display: none;
+    padding: 0.33325em 0.6665em;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 99; }
+    .dropdown__list li {
+      padding: 0.33325em 0; }
+      .dropdown__list li.dropdown__list__separator {
+        margin: 0.33325em 0;
+        padding: 0;
+        border-bottom: 1px solid #ebecec; }
+  .dropdown-open .dropdown__list {
+    display: block; }
+  .dropdown-right .dropdown__list {
+    right: 0; }
+  .dropdown-top .dropdown__list {
+    bottom: 80%; }
+
+/*
+---
+name: Search form
+category: Components/Forms
+tag: component
+---
+
+Display a Search form and the results.
+
+```html
+<form class="search">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="dropdown dropdown-right">
+      <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>Filter 1</a></li>
+        <li><a>Filter 2</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Other section</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="search__results">
+    <p class="search__results__caption">Query / 4 Results</p>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+  </div>
+</form>
+```
+*/
+/*
+---
+name: Search form (Overlay)
+category: Components/Forms
+tag: component
+---
+
+You only need to add the `search-overlay` class. In this example the `results` layer is visible due to inline-css, remember that the layer is hidden by default.
+
+```html
+<form class="search search-overlay" style="min-height: 600px">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="dropdown dropdown-right">
+      <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>Filter 1</a></li>
+        <li><a>Filter 2</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Other section</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- This is hidden by default!!! -->
+  <div class="search__results elevation-3" style="display: block;">
+    <p class="search__results__caption">Query / 4 Results</p>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+  </div>
+</form>
+```
+*/
+.search {
+  position: relative; }
+  .search input {
+    padding-left: 1.9995em; }
+  .search .input-group {
+    position: relative; }
+    .search .input-group:after {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#2f3032' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.5' cy='10.5' r='7.5'></circle><line x1='21' y1='21' x2='15.8' y2='15.8'></line></svg>");
+      background-size: contain;
+      content: '';
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      left: 0.6665em;
+      top: .5em; }
+  .search__results {
+    margin-top: 0.6665em; }
+    .search__results__result {
+      padding-bottom: 1.333em;
+      margin-bottom: 0.6665em;
+      border-bottom: 1px solid #ebecec; }
+    .search__results__caption {
+      font-size: 0.75019em;
+      color: #6d6e70;
+      margin: 0.33325em 0 1.9995em; }
+    .search__results em {
+      background-color: #fff23f;
+      padding: 0 0.16662em; }
+  .search-overlay .search__results {
+    background-color: #fff;
+    display: none;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 1.333em;
+    position: absolute;
+    right: 0;
+    top: 3.999em;
+    width: 100%;
+    z-index: 10; }
 
 /*
 ---

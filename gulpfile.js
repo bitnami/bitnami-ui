@@ -19,10 +19,10 @@ var gulp = require('gulp'),
 var dist = join('dist'),
   imageDist = join('dist/images'),
   docs = join('docs'),
-  basename = 'bitnami.ds',
+  basename = 'bitnami.ui',
   basenameComponents = basename + '.components';
 
-var environment = process.env.BITNAMI_DS_ENV || 'development';
+var environment = process.env.BITNAMI_UI_ENV || 'development';
 
 // PNG quant options
 var pngquantOptions = {
@@ -36,7 +36,7 @@ var svgoOptions = {
 gulp.task('foundations', function () {
   return gulp.src(join('foundations/index.scss'))
     .pipe(replace('{VERSION}', config.version))
-    .pipe(replace('{BITNAMI_DS_ENV}', environment))
+    .pipe(replace('{BITNAMI_UI_ENV}', environment))
     .pipe(sass().on('error', sass.logError))
     .pipe(rename({ basename: basename }))
     .pipe(gulp.dest(dist))
@@ -48,7 +48,7 @@ gulp.task('foundations', function () {
 gulp.task('components', function () {
   return gulp.src(join('components/index.scss'))
     .pipe(replace('{VERSION}', config.version))
-    .pipe(replace('{BITNAMI_DS_ENV}', environment))
+    .pipe(replace('{BITNAMI_UI_ENV}', environment))
     .pipe(sass().on('error', sass.logError))
     .pipe(rename({ basename: basenameComponents }))
     .pipe(gulp.dest(dist))

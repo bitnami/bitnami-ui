@@ -1,4 +1,4 @@
-# Bitnami Design System
+# Bitnami Pattern Lib (UI)
 
 This project is a CSS library based on the Bitnami Branding guide. To make it more maintainable, it's split in two main folders:
 
@@ -18,7 +18,7 @@ Now, we can execute the command `gulp`. It will listen changes in files and refr
 
 ```sh
 gulp
-# [16:24:53] Using gulpfile ~/projects/design-system/gulpfile.js
+# [16:24:53] Using gulpfile ~/projects/ui/gulpfile.js
 # [16:24:53] Starting 'foundations'...
 # [16:24:53] Finished 'foundations' after 66 ms
 # [16:24:53] Starting 'dist'...
@@ -29,7 +29,7 @@ gulp
 
 ## Documentation
 
-The Design System comes with a powerful documentation site. Te preview it, execute the
+Bitnami UI comes with a powerful documentation site. Te preview it, execute the
 following command and navigate to [localhost:8080](http://localhost:8080).
 
 ```sh
@@ -45,16 +45,16 @@ The CSS files of `dist` folder are distributed through
 bucket and CloudFront read the files from it. Those files are publicly available in the
 following location:
 
-* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.css
-* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.min.css
-* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.components.css
-* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.components.min.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css
 
 ```html
 <link rel="stylesheet" media="screen"
-  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.min.css">
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css">
 <link rel="stylesheet" media="screen"
-  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ds.components.min.css">
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css">
 ```
 
 To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish the assets from a gulp task. You may notice we don't have any AWS credentials in the repository and we don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it injects the location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
