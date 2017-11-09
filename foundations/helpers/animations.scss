@@ -1,0 +1,32 @@
+/*
+---
+name: Animations
+category: Foundations/Helpers/Animations
+tag: helpers
+---
+Different animations for the elements:
+
+* `.slideIn`
+
+```html
+<p class="slide-in">
+  This is a text with an animation
+</p>
+```
+*/
+
+@keyframes slide-in {
+  from {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slide-in .150s ease-in;
+}

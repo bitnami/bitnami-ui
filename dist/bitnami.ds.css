@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v0.4.1
+ * Bitnami UI - v1.0.0
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -190,6 +190,24 @@ $line-heights: (
   1: $size-unity * 1.5,
   2: $size-unity * 2,
   3: $size-unity * 3,
+);
+```
+*/
+/*
+---
+name: Z-index
+category: Foundations/Variables
+tag: variables
+---
+Instead of specifing custom Z-indexes for the different elements, these variables define five basic z-index values to position the layers of the interface.
+
+```scss
+$z-index: (
+  'bottom': -1,
+  'base': 0,
+  'above': 10,
+  'above-mean': 20,
+  'top': 99
 );
 ```
 */
@@ -388,6 +406,23 @@ floated elements.
 ```scss
 .test {
   @include clearfix();
+}
+```
+*/
+/*
+---
+name: z-index(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get the z-index from the available layer positions:
+
+```scss
+.base {
+  z-index: z-index('base');
+}
+.above {
+  z-index: z-index('above');
 }
 ```
 */
@@ -881,7 +916,8 @@ label {
   cursor: pointer;
   font-size: 0.75019em;
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 1.1px; }
   label + label {
     margin-left: 0.6665em; }
   label.checkbox, label.radio {
@@ -988,15 +1024,20 @@ tag: text
   text-overflow: ellipsis;
   background-color: #edeeee; }
   .button:hover {
-    background-color: #ebecec;
+    background-color: #e1e1e1;
     border-color: #bcbdbd;
-    color: #2f3032; }
+    color: initial; }
   .button:focus {
-    outline: 0;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.1); }
+    outline: 0; }
+  .button:active {
+    background-color: #d4d4d4;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
   .button[disabled="disabled"], .button[disabled="true"] {
     cursor: not-allowed;
     opacity: .7; }
+    .button[disabled="disabled"]:hover, .button[disabled="true"]:hover {
+      background-color: #edeeee;
+      border-color: #d4d4d4; }
   .button + .button,
   .button + button {
     margin-left: 0.33325em; }
@@ -1856,6 +1897,33 @@ a.secondary:not(.button) {
 
 /*
 ---
+name: Animations
+category: Foundations/Helpers/Animations
+tag: helpers
+---
+Different animations for the elements:
+
+* `.slideIn`
+
+```html
+<p class="slide-in">
+  This is a text with an animation
+</p>
+```
+*/
+@keyframes slide-in {
+  from {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0; }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+.slide-in {
+  animation: slide-in .150s ease-in; }
+
+/*
+---
 name: Backgrounds
 category: Foundations/Helpers/Backgrounds
 tag: helpers
@@ -1993,8 +2061,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-primary:hover {
     color: #fff;
-    background-color: #162d50;
+    background-color: #1a345c;
     border-color: #122440; }
+  .button-primary:active {
+    background-color: #142948;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button-accent {
   background-color: #53bd65;
@@ -2002,8 +2073,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-accent:hover {
     color: #fff;
-    background-color: #40b654;
+    background-color: #41b755;
     border-color: #339243; }
+  .button-accent:active {
+    background-color: #3aa44c;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 .button-action {
   background-color: #f1563a;
@@ -2011,8 +2085,11 @@ Modify the color of the buttons. Available classes:
   color: #fff; }
   .button-action:hover {
     color: #fff;
-    background-color: #ef4324;
+    background-color: #e04b30;
     border-color: #bf361d; }
+  .button-action:active {
+    background-color: #d73c20;
+    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
 
 /*
 ---
@@ -2041,6 +2118,50 @@ Modify the size of the buttons. Available classes:
 
 .button-bigger {
   font-size: 1.77689em; }
+
+/*
+---
+name: Button Dropdown
+category: Foundations/Helpers/Forms
+tag: helpers
+---
+Add a caret icon to the right of the button.
+
+* `.button-dropdown`
+* `.button-dropdown-open`
+
+See https://css-tricks.com/snippets/css/css-triangle/.
+
+```html
+<button class="button button-dropdown">Submit</button>
+<a class="button button-accent button-dropdown button-dropdown-open">Link button</a>
+<a class="button button-action button-big button-dropdown">Link button</a>
+<a class="button button-bigger button-dropdown button-dropdown-open">Link button</a>
+```
+*/
+.button-dropdown:after {
+  border: 5px solid transparent;
+  border-top-color: #2f3032;
+  display: inline-block;
+  content: '';
+  height: 0;
+  margin-left: 0.33325em;
+  position: relative;
+  top: 0.08331em;
+  vertical-align: middle;
+  width: 0; }
+
+.button-dropdown.button-action:after, .button-dropdown.button-accent:after {
+  border-top-color: #fff; }
+
+.button-dropdown-open:after {
+  border-top-color: transparent;
+  border-bottom-color: #2f3032;
+  top: -.2em; }
+
+.button-dropdown-open.button-action:after, .button-dropdown-open.button-accent:after {
+  border-top-color: transparent;
+  border-bottom-color: #fff; }
 
 /*
 ---

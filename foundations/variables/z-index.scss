@@ -1,0 +1,25 @@
+/*
+---
+name: Z-index
+category: Foundations/Variables
+tag: variables
+---
+Instead of specifing custom Z-indexes for the different elements, these variables define five basic z-index values to position the layers of the interface.
+
+```scss
+$z-index: (
+  'bottom': -1,
+  'base': 0,
+  'above': 10,
+  'above-mean': 20,
+  'top': 99
+);
+```
+*/
+$z-index: (
+  'bottom': -1,
+  'base': 0,
+  'above': 10,
+  'above-mean': 20,
+  'top': 99
+);

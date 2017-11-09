@@ -1,0 +1,268 @@
+/*
+---
+name: Search form
+category: Components/Forms
+tag: component
+---
+
+Display a Search form and the results.
+
+```html
+<form class="search">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="dropdown dropdown-right">
+      <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>Filter 1</a></li>
+        <li><a>Filter 2</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Other section</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="search__results">
+    <p class="search__results__caption">Query / 4 Results</p>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+  </div>
+</form>
+```
+*/
+
+/*
+---
+name: Search form (Overlay)
+category: Components/Forms
+tag: component
+---
+
+You only need to add the `search-overlay` class. In this example the `results` layer is visible due to inline-css, remember that the layer is hidden by default.
+
+```html
+<form class="search search-overlay" style="min-height: 600px">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="dropdown dropdown-right">
+      <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>Filter 1</a></li>
+        <li><a>Filter 2</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Other section</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- This is hidden by default!!! -->
+  <div class="search__results elevation-3" style="display: block;">
+    <p class="search__results__caption">Query / 4 Results</p>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+    <div class="search__results__result">
+      <h5>
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          Mail stopped working in virtual macine - Canvas LMS - Bitnami Community
+        </a>
+      </h5>
+      <p class="margin-t-small type-small">
+        <a href="https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100">
+          https://community.bitnami.com/t/mail-stopped-working-in-virtual-macine/52100
+        </a>
+      </p>
+      <p class="margin-b-normal">
+        found that its working in Bitnami virtual machine but not working in Bitnami installer canvas. the settings of outgoinmail.yml is as follow. <em>test</em>...
+      </p>
+      <span class="tag tag-small">
+        community.bitnami.com
+      </span>
+    </div>
+  </div>
+</form>
+```
+*/
+
+.search {
+  position: relative;
+
+  input {
+    padding-left: padding('bigger');
+  }
+
+  .input-group {
+    position: relative;
+
+    &:after {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{color('text')}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.5' cy='10.5' r='7.5'></circle><line x1='21' y1='21' x2='15.8' y2='15.8'></line></svg>");
+      background-size: contain;
+      content: '';
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      left: padding('normal');
+      top: .5em;
+    }
+  }
+
+  &__results {
+    margin-top: margin('normal');
+
+    &__result {
+      padding-bottom: padding('big');
+      margin-bottom: margin('normal');
+      border-bottom: 1px solid color('light');
+    }
+
+    &__caption {
+      font-size: type-scale('small');
+      color: color-level('text', 200);
+      margin: margin('small') 0 margin('bigger');
+    }
+
+    em {
+      background-color: color('highlight');
+      padding: 0 padding('tiny');
+    }
+  }
+
+  // Overlay
+  &-overlay {
+    .search__results {
+      background-color: color('white');
+      display: none;
+      height: 500px;
+      overflow-y: scroll;
+      padding: padding('big');
+      position: absolute;
+      right: 0;
+      top: su(3);
+      width: 100%;
+      z-index: z-index('above');
+    }
+  }
+}

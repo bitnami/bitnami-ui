@@ -1,0 +1,25 @@
+/*
+---
+name: z-index(name)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Get the z-index from the available layer positions:
+
+```scss
+.base {
+  z-index: z-index('base');
+}
+.above {
+  z-index: z-index('above');
+}
+```
+*/
+@function z-index($name: 'base') {
+  @if map-has-key($z-index, $name) {
+    @return map-get($z-index, $name);
+  } @else {
+    @warn "We didn't find the z-index called #{$name}. Please check available values";
+    @return map-get($z-index, 'base');
+  }
+}

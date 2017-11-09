@@ -1,0 +1,65 @@
+/*
+---
+name: Input Addons
+category: Components/Forms
+tag: component
+---
+
+These components help you to build more complex input elements. Now, you can create input fields with buttons and dropdowns.
+
+```html
+<div>
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..." />
+    <button class="button">Search</button>
+  </div>
+</div>
+
+<div class="margin-t-big">
+  <label for="search">Search</label>
+  <div class="input-group">
+    <input id="search" placeholder="Describe your issue..." />
+    <div class="dropdown dropdown-open dropdown-right">
+      <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+        <li><a>First element</a></li>
+        <li><a>Second element</a></li>
+        <li class="dropdown__list__separator"></li>
+        <li><a>Last element</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.input-group {
+  display: flex;
+  margin-top: margin('small');
+
+  > input {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  > * {
+    border-radius: 0;
+  }
+
+  > *:first-child {
+    border-radius: $spacing-border-radius 0 0 $spacing-border-radius;
+  }
+
+  > *:last-child,
+  .dropdown .button {
+    margin-left: -1px;
+    border-radius: 0 $spacing-border-radius $spacing-border-radius 0;
+  }
+
+  > *:not(:last-child) {
+    border-right: 0;
+  }
+}
+
+

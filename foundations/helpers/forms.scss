@@ -42,3 +42,61 @@ Modify the size of the buttons. Available classes:
 @include button-size('small');
 @include button-size('big');
 @include button-size('bigger');
+
+/*
+---
+name: Button Dropdown
+category: Foundations/Helpers/Forms
+tag: helpers
+---
+Add a caret icon to the right of the button.
+
+* `.button-dropdown`
+* `.button-dropdown-open`
+
+See https://css-tricks.com/snippets/css/css-triangle/.
+
+```html
+<button class="button button-dropdown">Submit</button>
+<a class="button button-accent button-dropdown button-dropdown-open">Link button</a>
+<a class="button button-action button-big button-dropdown">Link button</a>
+<a class="button button-bigger button-dropdown button-dropdown-open">Link button</a>
+```
+*/
+.button-dropdown {
+  &:after {
+    border: 5px solid transparent;
+    border-top-color: color('text');
+    display: inline-block;
+    content: '';
+    height: 0;
+    margin-left: margin('small');
+    position: relative;
+    top: padding('tiny') / 2;
+    vertical-align: middle;
+    width: 0;
+  }
+
+  &.button-action,
+  &.button-accent {
+    &:after {
+      border-top-color: color('white');
+    }
+  }
+
+  &-open {
+    &:after {
+      border-top-color: transparent;
+      border-bottom-color: color('text');
+      top: -.2em; // I need to force this position here to center the open caret icon
+    }
+
+    &.button-action,
+    &.button-accent {
+      &:after {
+        border-top-color: transparent;
+        border-bottom-color: color('white');
+      }
+    }
+  }
+}

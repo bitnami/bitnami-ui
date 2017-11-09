@@ -1,0 +1,25 @@
+/*
+---
+name: Tags or Pills
+category: Components/Display
+tag: component
+---
+
+Small elements to display as pills or tags.
+
+```html
+<span class="tag">Tag</span>
+<span class="tag tag-small">Tag 2</span>
+```
+*/
+
+.tag {
+  background-color: color-level('brand', 200);
+  color: color('white');
+  padding: padding('small');
+  border-radius: $spacing-border-radius;
+
+  &-small {
+    font-size: type-scale('small');
+  }
+}

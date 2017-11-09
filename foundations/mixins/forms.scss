@@ -10,14 +10,15 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 @include('primary', 'primary', 'light');
 ```
 */
-@mixin button-skin($name, $base-color, $text-color) {
+@mixin button-skin($name, $base, $text) {
   .button-#{$name} {
     @include button-skin-values(
-      color-level($base-color, 400),
-      color-level($base-color, 600),
-      color($text-color),
-      color($base-color),
-      color-level($base-color, 700)
+      color-level($base, 400),
+      color-level($base, 600),
+      lighten(color-level($base, 600), 5%),
+      color-level($base, 700),
+      color-level($base, 600),
+      color($text)
     )
   }
 }
@@ -27,7 +28,7 @@ Mixin to generate a class for buttons. This class will modify the color of the b
  *
  * NOTE: This mixin is for internal usage
  */
-@mixin button-skin-values($bg, $border, $text, $hover-bg, $hover-border) {
+@mixin button-skin-values($bg, $border, $hover-bg, $hover-border, $active-bg, $text) {
   background-color: $bg;
   border-color: $border;
   color: $text;
@@ -36,6 +37,11 @@ Mixin to generate a class for buttons. This class will modify the color of the b
     color: $text;
     background-color: $hover-bg;
     border-color: $hover-border;
+  }
+
+  &:active {
+    background-color: $active-bg;
+    box-shadow: inset 1px 1px 2px rgba(color('dark'), .25);
   }
 }
 

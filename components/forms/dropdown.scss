@@ -1,0 +1,106 @@
+/*
+---
+name: Dropdown
+category: Components/Forms
+tag: component
+---
+
+```html
+<div class="container margin-v-huge">
+  <div class="row">
+    <div class="col-3">
+      <div class="dropdown">
+        <button class="button button-dropdown" aria-haspopup="true">Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open dropdown-right">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Right aligned drop</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="dropdown dropdown-open dropdown-top">
+        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Top align</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
+          <li><a>First element</a></li>
+          <li><a>Second element</a></li>
+          <li class="dropdown__list__separator"></li>
+          <li><a>Last element</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__list {
+    background-color: color('base');
+    display: none;
+    padding: padding('small') padding('normal');
+    position: absolute;
+    // Force the absolute element to fit the content
+    white-space: nowrap;
+    z-index: z-index('top');
+
+    li {
+      padding: padding('small') 0;
+
+      &.dropdown__list__separator {
+        margin: margin('small') 0;
+        padding: 0;
+        border-bottom: 1px solid color('light');
+      }
+    }
+  }
+
+  // Open status
+  &-open {
+    .dropdown__list {
+      display: block;
+    }
+  }
+
+  // Alignment options
+  &-right {
+    .dropdown__list {
+      right: 0;
+    }
+  }
+
+  &-top {
+    .dropdown__list {
+      bottom: 80%;
+    }
+  }
+}

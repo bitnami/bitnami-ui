@@ -96,3 +96,10 @@
   border: 1px solid #f5f5f5;
   background-color: white;
 }
+
+/* Fix for tags */
+code .tag {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}

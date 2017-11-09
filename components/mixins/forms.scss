@@ -16,10 +16,11 @@ Mixin to generate a class for buttons. This class will modify the color of the b
     button {
       @include button-skin-values(
         cloud-color-level($cloud, 'brand', 400),
-        cloud-color($cloud, 'brand'),
-        color('white'),
-        cloud-color($cloud, 'brand'),
-        cloud-color-level($cloud, 'brand', 700)
+        cloud-color-level($cloud, 'brand', 600),
+        lighten(cloud-color-level($cloud, 'brand', 600), 5%),
+        cloud-color-level($cloud, 'brand', 700),
+        cloud-color-level($cloud, 'brand', 600),
+        color('white')
       )
     }
   }
@@ -28,10 +29,11 @@ Mixin to generate a class for buttons. This class will modify the color of the b
   button.palette-#{$cloud} {
     @include button-skin-values(
       cloud-color-level($cloud, 'brand', 400),
-      cloud-color($cloud, 'brand'),
-      color('white'),
-      cloud-color($cloud, 'brand'),
-      cloud-color-level($cloud, 'brand', 700)
+      cloud-color-level($cloud, 'brand', 600),
+      lighten(cloud-color-level($cloud, 'brand', 600), 5%),
+      cloud-color-level($cloud, 'brand', 700),
+      cloud-color-level($cloud, 'brand', 600),
+      color('white')
     )
   }
 }
