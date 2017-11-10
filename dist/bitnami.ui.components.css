@@ -2557,6 +2557,47 @@ tag: component
 
 /*
 ---
+name: Pagination
+category: Components/Navigation
+tag: component
+---
+
+Define an accessible pagination.
+
+See http://www.a11ymatters.com/pattern/pagination/.
+
+```html
+<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+  <ul class="remove-style">
+    <li class="pagination__current"><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+    <li><a href="#" aria-label="Goto Page 2">2</a></li>
+    <li><a href="#" aria-label="Goto Page 3">3</a></li>
+    <li><a href="#" aria-label="Goto Page 4">4</a></li>
+    <li><a href="#" aria-label="Goto Page 5">5</a></li>
+    <li><a href="#" aria-label="Goto Page 6">6</a></li>
+  </ul>
+</nav>
+```
+*/
+.pagination {
+  margin: 1.333em 0; }
+  .pagination ul {
+    text-align: center; }
+    .pagination ul li {
+      display: inline-block; }
+      .pagination ul li a {
+        padding: 0.33325em 0.6665em;
+        border-radius: 3px; }
+      .pagination ul li:not(.pagination__current) a:hover {
+        background: #7f8c9f;
+        color: #fff; }
+  .pagination__current a,
+  .pagination__current a:hover {
+    background: #162d50;
+    color: #fff; }
+
+/*
+---
 name: Avatar
 category: Components/Profiles/Avatars
 tag: component

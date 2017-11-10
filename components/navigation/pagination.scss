@@ -1,0 +1,56 @@
+/*
+---
+name: Pagination
+category: Components/Navigation
+tag: component
+---
+
+Define an accessible pagination.
+
+See http://www.a11ymatters.com/pattern/pagination/.
+
+```html
+<nav class="pagination" role="navigation" aria-label="Pagination Navigation">
+  <ul class="remove-style">
+    <li class="pagination__current"><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+    <li><a href="#" aria-label="Goto Page 2">2</a></li>
+    <li><a href="#" aria-label="Goto Page 3">3</a></li>
+    <li><a href="#" aria-label="Goto Page 4">4</a></li>
+    <li><a href="#" aria-label="Goto Page 5">5</a></li>
+    <li><a href="#" aria-label="Goto Page 6">6</a></li>
+  </ul>
+</nav>
+```
+*/
+.pagination {
+  margin: margin('big') 0;
+
+  // Main list
+  ul {
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: padding('small') padding('normal');
+        border-radius: $spacing-border-radius;
+      }
+
+      &:not(.pagination__current) {
+        a:hover {
+          background: color-level('brand', 50);
+          color: color('white');
+        }
+      }
+    }
+  }
+
+  &__current {
+    a,
+    a:hover {
+      background: color('brand');
+      color: color('white');
+    }
+  }
+}
