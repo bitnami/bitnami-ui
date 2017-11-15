@@ -21,9 +21,10 @@ $su: $size-unity;
 
 // Sizing values
 $base-type-zoom: 100%;
-$base-type-size: 1em; // 16px
+$base-type-size: 1.125em; // 16px
 // Fourth
 $scale: 1.333;
+$line-height: 1.5;
 
 // Basic size unity
 $size-unity: $base-type-size * $scale;

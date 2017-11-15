@@ -27,7 +27,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-weight: 400;
+  font-family: $type-headings;
   margin: margin('normal') 0 margin('small');
 
   // Fix the color of the links inside a header
@@ -38,39 +39,30 @@ h6 {
   }
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: $type-headings;
-  color: color('bitnami');
-}
-
 h1 {
-  font-size: type-scale('giant');
+  font-size: type-scale('bigger');
+  font-weight: 300;
+  color: color-level('text', 700);
 }
 
 h2 {
-  font-size: type-scale('enormous');
+  font-size: type-scale('big');
+  font-weight: 300;
+  color: color('brand');
 }
 
 h3 {
-  font-size: type-scale('bigger');
-  color: color('accent');
+  font-size: type-scale('big');
+  color: color('text');
 }
 
 h4 {
-  font-size: type-scale('big');
-  font-weight: bold;
+  font-size: type-scale('normal');
+  color: color('brand');
 }
 
-h5 {
-  font-size: type-scale('big');
-  font-weight: bold;
-}
-
+h5,
 h6 {
   font-size: type-scale('normal');
   font-weight: bold;
-  color: color('bitnami');
 }

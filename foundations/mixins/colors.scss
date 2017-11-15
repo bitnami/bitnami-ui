@@ -63,3 +63,38 @@ in steps of one hundred. The base color is located in 500.
 
   @return mix($color-base, $color, abs($level - 5) * $color-interval);
 }
+
+/**
+ * Get the gradient pair for the given name
+ *
+ * NOTE: This is an internal method.
+ */
+@function gradient-pair($name: 'brand') {
+  @if map-has-key($gradients, $name) {
+    @return map-get($gradients, $name);
+  } @else if map-has-key($color-names, $name) {
+    @return map-get($gradients, map-get($color-names, $name));
+  } @else {
+    @warn "We didn't find the color called #{$name}. Please check available colors";
+    @return map-get($gradients, 'brand');
+  }
+}
+
+/*
+---
+name: gradient(name, directionOrDegrees)
+category: Foundations/Helpers/Mixins
+tag: function
+---
+Generate a proper gradient.
+
+```scss
+.test {
+  background: gradient('brand', 45deg);
+}
+```
+*/
+@function gradient($name: 'bitnami', $direction: 45deg) {
+  $pair: gradient-pair($name);
+  @return linear-gradient($direction, nth($pair, 1) 0%, nth($pair, 2) 100%);
+}

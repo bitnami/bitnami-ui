@@ -213,15 +213,16 @@ tag: text
   display: inline-block;
   padding: padding('small') padding('normal');
   font-size: type-scale('normal');
-  border-radius: $spacing-border-radius;
+  border-radius: 0;
   border: 1px solid color-level('iron', 600);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   height: su(1.5);
   // Align elements in the same line
-  vertical-align: bottom;
+  vertical-align: middle;
   // Remove text decoration on links
   text-decoration: none;
-  color: color('text');
+  color: color-level('text', 700);
   // Fix button content when the screen is small
   max-width: 100%;
   white-space: nowrap;

@@ -14,7 +14,8 @@ body {
   font-family: $type-body;
   font-size: $base-type-size;
   color: color('text');
-  line-height: $scale;
+  line-height: $line-height;
+  font-weight: 300;
   // Improve legibility
   text-rendering: optimizeLegibility;
 }

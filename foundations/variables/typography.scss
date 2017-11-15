@@ -4,17 +4,29 @@ name: Typography
 category: Foundations/Variables
 tag: variables
 ---
-Defines all typography related variables for the project. Some fonts must be imported
-from Google Fonts or Typekit:
+Defines all typography related variables for the project. Currently, the new selected font family
+is [Interstate](https://store.typenetwork.com/foundry/fontbureau/fonts/interstate/regular).
+This typography must be imported before the bitnami-ui require statement.
 
-* [Dosis](https://fonts.google.com/specimen/Dosis)
-* [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro)
+Interstate is a paid font family, so we need to use it through
+[Typekit](https://typekit.com/fonts/interstate). If you don't want to use Interstate due
+to this restrictment, you can use the fallback font families:
+[Fira Sans](https://fonts.google.com/specimen/Fira+Sans) and
+[Hind](https://fonts.google.com/specimen/Hind). This is an free font family and can be lodaded
+from Google Fonts:
+
+```
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400" rel="stylesheet">
+```
+
+If any of these font families are available, the UI fallbacks to OS typographies.
 
 ```scss
 // Font families
-$type-headings: Dosis, Geneva, Tahoma, sans-serif;
-$type-body: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$type-code: monospace;
+$type-os-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$type-headings: 'Interstate', 'Fira Sans', $type-os-fallback;
+$type-body: 'Interstate', 'Hind', $type-os-fallback;
+$type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
 // Fix the line-heights
 $line-heights: (
@@ -28,9 +40,10 @@ $line-heights: (
 */
 
 // Font families
-$type-headings: Dosis, Geneva, Tahoma, sans-serif;
-$type-body: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$type-code: monospace;
+$type-os-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$type-headings: 'Interstate', 'Fira Sans', #{$type-os-fallback};
+$type-body: 'Interstate', 'Hind', #{$type-os-fallback};
+$type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
 // Fix the line-heights
 $line-heights: (

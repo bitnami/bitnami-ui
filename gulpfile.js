@@ -104,7 +104,11 @@ gulp.task('docs:images', ['images'], function() {
 // Move the README to the docs folder
 gulp.task('docs:readme', function() {
   gulp.src(join('README.md'))
-    .pipe(markdown())
+    .pipe(markdown({
+      highlight: function (code) {
+        return require('highlight.js').highlightAuto(code).value;
+      }
+    }))
     .pipe(replace('{VERSION}', config.version))
     .pipe(rename({ basename: 'readme', extname: '.ejs' }))
     .pipe(gulp.dest(`${docs}/templates`));

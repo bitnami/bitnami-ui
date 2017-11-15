@@ -60,6 +60,11 @@ These components help you to build more complex input elements. Now, you can cre
   > *:not(:last-child) {
     border-right: 0;
   }
+
+  button,
+  .button {
+    box-shadow: none;
+  }
 }
 
 

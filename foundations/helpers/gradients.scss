@@ -1,0 +1,39 @@
+/*
+---
+name: Linear Gradients
+category: Foundations/Helpers/Gradients
+tag: helpers
+---
+Add a gradient for the background of an element.
+
+```html
+<div class="gradient-brand" style="height: 100px"></div>
+<div class="gradient-accent" style="height: 100px"></div>
+<div class="gradient-action" style="height: 100px"></div>
+
+<h3>Other angles</h3>
+
+<div class="gradient-45-brand" style="height: 100px"></div>
+<div class="gradient-90-accent" style="height: 100px"></div>
+<div class="gradient-135-action" style="height: 100px"></div>
+<div class="gradient-180-brand" style="height: 100px"></div>
+<div class="gradient-225-accent" style="height: 100px"></div>
+<div class="gradient-270-action" style="height: 100px"></div>
+```
+*/
+
+$gradient-helpers: 45 90 135 180 225 270;
+
+@each $name, $null in $gradients {
+  .gradient-#{$name},
+  .gradient-0-#{$name} {
+    background-image: gradient($name, 0deg);
+  }
+}
+@each $prefix in $gradient-helpers {
+  @each $name, $null in $gradients {
+    .gradient-#{$prefix}-#{$name} {
+      background-image: gradient($name, #{$prefix}deg);
+    }
+  }
+}

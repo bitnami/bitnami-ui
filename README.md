@@ -1,42 +1,49 @@
 # Bitnami Pattern Lib (UI)
 
-This project is a CSS library based on the Bitnami Branding guide. To make it more maintainable, it's split in two main folders:
+This project is a CSS library based on the Bitnami Branding guide. To make it more maintainable,
+it's split in two main folders:
 
 * `foundations`: it includes the basic branding variables for any Bitnami User Interface. It provides the foundations like font size, font families, colors and base styles for standard HTML tags.
 * `components`: it contains a set of prebuilt components that we can reuse in Bitnami projects. Those components may be very simple, like buttons or paragraphs with a background (notes). However, it also defines complex structures like menus or layouts.
 
 ## Development
 
-The environment is very simple, we only need to install `gulp` and the dependencies to compile the entire project.
+The environment is very simple, we only need to install the dependencies and run the `start` script
+to start compiling the assets and generating the documentation.
 
 ```sh
-npm install -g gulp
-npm install
+npm install # or yarn install
 ```
 
-Now, we can execute the command `gulp`. It will listen changes in files and refresh the output CSS files. By default, distributed files are located in `dist` folder.
+Now, we can execute the `start` script. It will listen changes in files and refresh the output CSS
+files. By default, distributed files are located in `dist` folder.
 
 ```sh
-gulp
-# [16:24:53] Using gulpfile ~/projects/ui/gulpfile.js
-# [16:24:53] Starting 'foundations'...
-# [16:24:53] Finished 'foundations' after 66 ms
-# [16:24:53] Starting 'dist'...
-# [16:24:53] Finished 'dist' after 30 us
-# [16:24:53] Starting 'default'...
-# [16:24:53] Finished 'default' after 17 ms
+$ npm start # or yarn start
+> npm-run-all -p dev docs:build docs:serve
+Starting up http-server, serving ./docs/dist
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.1.44:8080
+  http://172.18.5.17:8080
+Hit CTRL-C to stop the server
+[15:55:37] Using gulpfile ~/projects/ui/gulpfile.js
+[15:55:37] Starting 'foundations'...
+[15:55:37] Using gulpfile ~/projects/ui/gulpfile.js
+[15:55:37] Starting 'components'...
+[15:55:37] Starting 'docs:readme'...
+[15:55:37] Starting 'images'...
+[15:55:37] Finished 'docs:readme' after 9.43 ms
+[15:55:37] Starting 'docs'...
+[15:55:37] Finished 'docs' after 2.03 ms
+[15:55:37] Finished 'images' after 49 ms
+...
 ```
 
 ## Documentation
 
-Bitnami UI comes with a powerful documentation site. Te preview it, execute the
-following command and navigate to [localhost:8080](http://localhost:8080).
-
-```sh
-npm run docs:serve
-```
-
-Also, if you execute `gulp` in another tab of the terminal, the documentation will be reloaded with every change.
+Bitnami UI comes with a powerful documentation site. Once you executed the development environment,
+the documentation is located at [localhost:8080](http://localhost:8080).
 
 ## Production
 
@@ -57,7 +64,13 @@ following location:
   href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css">
 ```
 
-To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish the assets from a gulp task. You may notice we don't have any AWS credentials in the repository and we don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it injects the location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
+This library doesn't include the required font families. You will need to add it to your project.
+You have all the information at [Typography](/category/Foundations/Variables/index.html#Typography).
+
+To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish the
+assets from a gulp task. You may notice we don't have any AWS credentials in the repository and we
+don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it injects the
+location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
 
 This environment variable is read by the `aws-sdk` automatically, so we don't need to define
 anything.

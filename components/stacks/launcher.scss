@@ -86,7 +86,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
 
     &__tooltip {
       position: absolute;
-      bottom: su(3.5);
+      bottom: su(2.5);
       padding-bottom: su(1.5);
       left: -9999px;
       width: $stack-launcher-box-width;
