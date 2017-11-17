@@ -18,3 +18,10 @@
 
   @return $value;
 }
+
+/**
+ * Convert em to px
+ */
+@function px($em, $context: 16) {
+  @return ($em / 1em) * $context;
+}

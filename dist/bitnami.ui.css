@@ -327,6 +327,9 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
  *
  * NOTE: This is an internal function. It shouldn't be documented
  */
+/**
+ * Convert em to px
+ */
 /*
 ---
 name: margin(name)
@@ -1467,7 +1470,7 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   /**
    * Row definition
    */ }
-  @media all and (max-width: 47.9375em) {
+  @media all and (max-width: 1347.988px) {
     .container {
       padding: 0 1.49962em; } }
   .container .row {
