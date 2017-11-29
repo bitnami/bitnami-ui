@@ -27,5 +27,6 @@ npm run dist
 if [ $? -eq 0 ]; then
   scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
   # Publish the version in a specific folder too
+  ssh $DEPLOY_USER@$DEPLOY_URL "mkdir -p $DEPLOY_DEST/$PACKAGE_VERSION"
   scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST/$PACKAGE_VERSION
 fi
