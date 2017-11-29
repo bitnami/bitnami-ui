@@ -5,6 +5,7 @@ SSH_KEY=/app/deploy.key
 # Deploy vars
 DEPLOY_SRC=/app/docs/dist
 DEPLOY_DEST=/tank/data/bitnami-ui
+PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
 DEPLOY_USER=deploy
 DEPLOY_URL=bitnami-ui-dev.nami
 
@@ -25,4 +26,6 @@ npm run dist
 # Copy the generated output to the server
 if [ $? -eq 0 ]; then
   scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
+  # Publish the version in a specific folder too
+  scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST/$PACKAGE_VERSION
 fi
