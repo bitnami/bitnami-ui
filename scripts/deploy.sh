@@ -18,6 +18,11 @@ if  [ -f $SSH_KEY ]; then
   chmod 600 /root/.ssh/id_rsa
 fi
 
+if [ ! -z ${DEPLOY_TAG} ]; then
+  echo "Switching to $DEPLOY_TAG"
+  git chechout $DEPLOY_TAG
+fi
+
 # Compile the project. Now, we are deploying to staging server, so
 # we compile the documentation with the distributed CSS files
 npm run dist
