@@ -18,26 +18,19 @@ if  [ -f $SSH_KEY ]; then
   chmod 600 /root/.ssh/id_rsa
 fi
 
-if [ ! -z ${DEPLOY_TAG+x} ]; then
-  echo "Switching to $DEPLOY_TAG"
-  git checkout $DEPLOY_TAG
-fi
-
 # Compile the project. Now, we are deploying to staging server, so
 # we compile the documentation with the distributed CSS files
 npm run dist
 
 # Copy the generated output to the server
 if [ $? -eq 0 ]; then
-  if [ -z ${DEPLOY_TAG+x} ]; then
-    echo "Deploying current version"
-    scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
-  fi
-  # Publish the version in a specific folder too
+  echo "Deploying current version"
+  scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
 
+  # Publish the version in a specific folder too
   if git describe --exact-match >&/dev/null; then
-    echo "Deploying $TAG tag"
     TAG=$(git describe --exact-match)
+    echo "Deploying $TAG tag"
     ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_URL "mkdir -p $DEPLOY_DEST/$TAG"
     scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST/$TAG
   fi
