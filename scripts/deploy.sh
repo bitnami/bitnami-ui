@@ -5,7 +5,6 @@ SSH_KEY=/app/deploy.key
 # Deploy vars
 DEPLOY_SRC=/app/docs/dist
 DEPLOY_DEST=/tank/data/bitnami-ui
-PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
 DEPLOY_USER=deploy
 DEPLOY_URL=bitnami-ui-dev.nami
 
@@ -27,6 +26,10 @@ npm run dist
 if [ $? -eq 0 ]; then
   scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
   # Publish the version in a specific folder too
-  ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_URL "mkdir -p $DEPLOY_DEST/$PACKAGE_VERSION"
-  scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST/$PACKAGE_VERSION
+
+  if git describe --exact-match >&/dev/null; then
+    TAG=$(git describe --exact-match)
+    ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_URL "mkdir -p $DEPLOY_DEST/$TAG"
+    scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST/$TAG
+  fi
 fi
