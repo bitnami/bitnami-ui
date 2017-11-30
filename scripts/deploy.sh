@@ -20,7 +20,7 @@ fi
 
 if [ ! -z ${DEPLOY_TAG+x} ]; then
   echo "Switching to $DEPLOY_TAG"
-  git chechout $DEPLOY_TAG
+  git checkout $DEPLOY_TAG
 fi
 
 # Compile the project. Now, we are deploying to staging server, so
