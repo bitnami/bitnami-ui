@@ -1,0 +1,114 @@
+/*
+---
+name: Hero
+category: Components/Open Source
+tag: component
+---
+
+The Hero component helps users to find an easy navigation to get started with the project.
+You can switch the colors (brand/accent) if you want to change the base palette.
+
+This components depends on:
+
+- [Header (Open Source)](#Header)
+
+```html
+<div class="OSHero">
+  <div class="gradient-135-brand elevation-1">
+    <div class="container">
+      <header class="OSHeader padding-v-big">
+        <div class="row collapse-b-tablet align-center">
+          <div class="col-4">
+            <div class="OSHeader__Logo">
+              <a href="/">
+                <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png" alt="Logo white">
+                <span class="type-small">
+                  A Bitnami project
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <nav class="text-r">
+              <a href="#" class="margin-h-normal">Nav 1</a>
+              <a href="#" class="margin-h-normal">Nav 2</a>
+              <a href="#" class="margin-h-normal">Nav 3</a>
+              <a href="https://github.com/" class="margin-l-normal" rel="noopener" target="_blank">GitHub</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="OSHero__Content">
+        <h1 class="type-color-light margin-reset">
+          <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png"
+            class="OSHero__Logo" alt="Logo white">
+        </h1>
+        <h3 class="type-color-light margin-t-reset">
+          Packaged Applications for Any Platform
+        </h3>
+        <div class="text-c margin-t-bigger">
+          <a class="margin-h-normal button button-action" href="#">
+            Get started
+          </a>
+          <a class="margin-h-normal button" href="#">
+            Documentation
+          </a>
+          <a class="margin-h-normal button" href="#">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="OSHero__Bar gradient-accent OSHero__Bar--pattern"></div>
+    <div class="OSHero__Bar gradient-225-accent"></div>
+  </div>
+</div>
+```
+*/
+
+// Defines the rotation of the bars
+$rotation: 4deg;
+
+.OSHero {
+  position: relative;
+  min-height: 35em;
+  padding-bottom: 14em;
+  overflow: hidden;
+
+  &__Content {
+    text-align: center;
+    padding: su(4) 0 su(7);
+  }
+
+  &__Logo {
+    height: 2.5em;
+  }
+
+  &__Bar {
+    bottom: 5em;
+    height: 200px;
+    left: 50%;
+    margin-left: -100%;
+    position: absolute;
+    width: 200%;
+    transform: rotateZ($rotation);
+    overflow: hidden;
+
+    &--pattern {
+      transform: rotateZ(-($rotation));
+
+      &:after {
+        content: '';
+        bottom: -100px;
+        width: 100%;
+        background-size: 89px 77px;
+        height: 200%;
+        position: absolute;
+        transform: rotateZ($rotation);
+        background-image: url("#{image-endpoint()}hero-bar-pattern.png");
+        background-repeat: repeat;
+        opacity: .2;
+      }
+    }
+  }
+}

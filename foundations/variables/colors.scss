@@ -9,17 +9,26 @@ You can see the colors in [Project colors](/color.html).
 
 ```scss
 $colors: (
-  'brand': #162d50,
-  'primary': #14384e,
-  'secondary': #1f577a,
-  'accent': #40b654,
-  'light': #e6e7e8,
+  'brand': #00437B,
+  'primary': #1C2B39,
+  'secondary': #1598CB,
+  'accent': #008145,
+  'accent-light': #82C341,
+  'light': #ebecec,
+  'white': #ffffff,
   'dark': #37474f,
-  'text': #2f3032,
-  'action': #ef4324,
-  'base': #fff
+  'text': #5F6369,
+  'action': #F58220,
+  'action-light': #FDBA12,
+  'base': #fff,
+  'highlight': #fff23f,
 );
 
+$gradients: (
+  'brand': #00437B #1598CB,
+  'accent': #008145 #82C341,
+  'action': #F58220 #FDBA12,
+);
 // Interval to get tints and shades
 $color-interval: 10%;
 ```

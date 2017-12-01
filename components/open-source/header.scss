@@ -1,0 +1,62 @@
+/*
+---
+name: Header
+category: Components/Open Source
+tag: component
+---
+
+You can switch the header to use the `accent` gradient too.
+
+```html
+<section class="gradient-135-brand elevation-1">
+  <div class="container">
+    <header class="OSHeader padding-v-big">
+      <div class="row collapse-b-tablet align-center">
+        <div class="col-4">
+          <div class="OSHeader__Logo">
+            <a href="/">
+              <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png" alt="Logo white">
+              <span class="type-small">
+                A Bitnami project
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-8">
+          <nav class="text-r">
+            <a href="#" class="margin-h-normal">Nav 1</a>
+            <a href="#" class="margin-h-normal">Nav 2</a>
+            <a href="#" class="margin-h-normal">Nav 3</a>
+            <a href="https://github.com/" class="margin-l-normal" rel="noopener" target="_blank">GitHub</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</section>
+```
+*/
+.OSHeader {
+  &__Logo {
+    a {
+      img {
+        height: 2em;
+        vertical-align: middle;
+      }
+
+      span {
+        display: block;
+        padding-left: su(2);
+        margin-top: -5px;
+      }
+    }
+  }
+
+  &__Logo a,
+  nav a {
+    &, &:hover {
+      color: color('iron');
+    }
+  }
+}
+

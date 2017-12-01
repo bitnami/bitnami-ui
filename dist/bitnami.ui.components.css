@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v2.0.0
+ * Bitnami UI Components - v2.0.1
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -79,17 +79,26 @@ You can see the colors in [Project colors](/color.html).
 
 ```scss
 $colors: (
-  'brand': #162d50,
-  'primary': #14384e,
-  'secondary': #1f577a,
-  'accent': #40b654,
-  'light': #e6e7e8,
+  'brand': #00437B,
+  'primary': #1C2B39,
+  'secondary': #1598CB,
+  'accent': #008145,
+  'accent-light': #82C341,
+  'light': #ebecec,
+  'white': #ffffff,
   'dark': #37474f,
-  'text': #2f3032,
-  'action': #ef4324,
-  'base': #fff
+  'text': #5F6369,
+  'action': #F58220,
+  'action-light': #FDBA12,
+  'base': #fff,
+  'highlight': #fff23f,
 );
 
+$gradients: (
+  'brand': #00437B #1598CB,
+  'accent': #008145 #82C341,
+  'action': #F58220 #FDBA12,
+);
 // Interval to get tints and shades
 $color-interval: 10%;
 ```
@@ -489,6 +498,9 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
  * Power operator for SASS!
  *
  * NOTE: This is an internal function. It shouldn't be documented
+ */
+/**
+ * Convert em to px
  */
 /*
 ---
@@ -1552,6 +1564,87 @@ hr.palette-oracle {
 hr.palette-otc {
   color: #e20074;
   background-color: #e20074; }
+
+/*
+---
+name: Terminal
+category: Components/Code
+tag: component
+---
+This component allows you to include a terminal snippet in the site. Remember to use the
+`Command` class to highlight the command and add an extra space.
+
+```html
+<section class="Terminal elevation-1">
+  <div class="Terminal__Top type-small">
+    <div class="Terminal__Top__Buttons">
+      <span class="Terminal__Top__Button Terminal__Top__Button--red"></span>
+      <span class="Terminal__Top__Button Terminal__Top__Button--yellow"></span>
+      <span class="Terminal__Top__Button Terminal__Top__Button--green"></span>
+    </div>
+    <div class="Terminal__Top__Title">bash</div>
+  </div>
+  <div class="Terminal__Tab">
+    <pre class="Terminal__Code">
+      <code class="Terminal__Code__Command">kubeapps up</code>
+      <code>Creating non-existent deployments kube-system.default-http-backend
+Creating non-existent deployments kube-system.nginx-ingress-controller
+Creating non-existent deployments kubeapps.kubeapps-dashboard-api
+Creating non-existent deployments kubeapps.kubeapps-dashboard-ui
+Creating non-existent deployments kubeless.kubeless-controller
+Creating non-existent deployments kubeapps.kubeless-ui
+Creating non-existent deployments kubeapps.mongodb
+Creating non-existent deployments kube-system.sealed-secrets-controller
+Creating non-existent deployments kube-system.tiller-deploy
+[ ... ]</code>
+      <code class="Terminal__Code__Command">echo "Hi"</code>
+      <code>Hi</code>
+    </pre>
+  </div>
+</section>
+```
+*/
+.Terminal {
+  background-color: #212b2f;
+  border-radius: 5px;
+  padding: 0.74981em 1.49962em; }
+  .Terminal__Top {
+    height: 35px;
+    display: flex;
+    align-items: center; }
+    .Terminal__Top__Title {
+      flex: 1;
+      text-align: center;
+      color: #a5a5a5; }
+    .Terminal__Top__Button {
+      border-radius: 15px;
+      display: inline-block;
+      height: .75em;
+      margin-right: 0.37491em;
+      width: .75em; }
+      .Terminal__Top__Button--red {
+        background: #dd751d; }
+      .Terminal__Top__Button--yellow {
+        background: #f9b479; }
+      .Terminal__Top__Button--green {
+        background: #008145; }
+  .Terminal__Tab {
+    padding-bottom: 0.74981em; }
+  .Terminal__Code {
+    margin: 0;
+    padding: 0;
+    white-space: pre-line; }
+    .Terminal__Code code {
+      color: #a5a5a5; }
+      .Terminal__Code code.Terminal__Code__Command {
+        color: #ebecec;
+        display: inline-block;
+        margin-top: 1.49962em; }
+        .Terminal__Code code.Terminal__Code__Command:first-child {
+          margin-top: 0; }
+        .Terminal__Code code.Terminal__Code__Command:before {
+          content: '$';
+          margin-right: .5em; }
 
 /*
 ---
@@ -2632,6 +2725,351 @@ See http://www.a11ymatters.com/pattern/pagination/.
 
 /*
 ---
+name: Introduction
+category: Components/Open Source
+tag: component
+---
+
+Introductory block for the project.
+
+```html
+<div class="container container-small">
+  <h1>What is Kubeapps?</h1>
+  <div class="row collapse-b-tablet">
+    <div class="col-12">
+      <p>
+        Kubeapps is a Kubernetes dashboard that supercharges your Kubernetes cluster
+        with simple browse and click deployment of apps in any format. Building on Bitnami’s
+        contributions to leading open source projects, Kubeapps provides a complete application
+        delivery environment that empowers users to launch, review and share applications.
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: Screencast
+category: Components/Open Source
+tag: component
+---
+
+The best way to sell a product it's showing it. This block allows you to include an screencast
+with some information about it.
+
+```html
+<section class="gradient-45-brand padding-v-enormous elevation-1">
+  <div class="container">
+    <div class="row align-center collapse-b-tablet">
+      <div class="col-5">
+        <h3 class="type-color-iron">How does it work? Check it out!</h3>
+        <p class="type-color-iron">
+          Kubeapps can be deployed in your cluster in minutes. This screencast will show you how
+          to install Kubeapps and start adding new applications to your Kubernetes Cluster
+        </p>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-6">
+        <iframe allowfullscreen="" class="elevation-3" frameborder="0" height="315"
+          src="https://www.youtube-nocookie.com/embed/7GQLw-8AwsQ?rel=0&amp;amp;showinfo=0"
+          width="100%">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+```
+*/
+/*
+---
+name: Three block of content
+category: Components/Open Source
+tag: component
+---
+
+It's useful to enumerate features or a list of elements we want to highlight. It also allows
+us to display the cards with images, videos...
+
+```html
+<div class="container">
+  <h1>Who is Kubeapps for?</h1>
+  <div class="row collapse-b-tablet">
+    <div class="col-4">
+      <h4>New users</h4>
+      <p>
+        Getting Started? Populate your cluster with the tools you need and the applications you
+        want in just a few minutes.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/blob/master/docs/getting-started.md" rel="noopener" target="_blank">
+          Get started
+        </a>
+      </p>
+    </div>
+    <div class="col-4">
+      <h4>Kubernetes experts</h4>
+      <p>
+        Managing K8s Clusters? Use a single command to deploy all the components for your users
+        to be able to make efficient use of the cluster.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/blob/master/docs/getting-started.md#installation-of-the-kubeapps-installer" rel="noopener" target="_blank">
+          Installation
+        </a>
+      </p>
+    </div>
+    <div class="col-4">
+      <h4>Distribution and support providers</h4>
+      <p>
+        Providing Kubernetes or Supporting Kubernetes? Help your users populate their clusters
+        quickly and start adding new applications.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/tree/master/docs" rel="noopener" target="_blank">
+          Documentation
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/
+/*
+---
+name: Useful links
+category: Components/Open Source
+tag: component
+---
+
+Help users to find the next steps or extra information with a list of useful links.
+
+```html
+<div class="container container-small">
+  <h1>Ready to Get Started?</h1>
+  <p>
+    Kubeapps is an open-source project. We encourage you to check out the latest version and give
+    it a try.  If you like it, please share your thoughts (#kubeapps). If you have suggestions
+    or contributions to the code or documentation,
+    <strong>we encourage and welcome your participation.</strong>
+  </p>
+  <p class="margin-v-bigger text-c">
+    <a class="margin-h-normal" href="#">
+      Download
+    </a>
+    <span class="type-color-iron">/</span>
+    <a class="margin-h-normal" href="#">
+      Contribute
+    </a>
+    <span class="type-color-iron">/</span>
+    <a class="margin-h-normal" href="#">
+      Documentation
+    </a>
+  </p>
+</div>
+```
+*/
+/*
+---
+name: Footer
+category: Components/Open Source
+tag: component
+---
+
+Copyright text and social links. This components depends on the
+[Social Icons](/category/Components/Social/index.html#Social%20Icons).
+
+```html
+<footer class="OSFooter">
+  <div class="container padding-h-big padding-v-bigger">
+    <div class="row collapse-b-phone-land align-center">
+      <div class="col-6">
+        <h4 class="inverse margin-reset">
+          <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png" alt="Bitnami logo"
+            class="OSFooter__Logo">
+        </h4>
+        <p class="type-color-iron type-small margin-reset">
+          © Bitnami 2017 | All Rights Reserved.
+        </p>
+      </div>
+      <div class="col-6 text-r">
+        <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+          <svg role="img" aria-label="See the Github Profile of Bitnami" viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg"><title>github</title><path d="M27.734 7.402a14.803 14.803 0 0 0-5.41-5.408C20.046.664 17.561 0 14.864 0S9.68.664 7.403 1.994a14.8 14.8 0 0 0-5.409 5.408C.664 9.68 0 12.167 0 14.864c0 3.238.946 6.15 2.835 8.737 1.89 2.587 4.332 4.377 7.326 5.37.348.065.607.02.773-.134a.756.756 0 0 0 .252-.582l-.01-1.044a162.6 162.6 0 0 1-.01-1.723l-.444.078a5.604 5.604 0 0 1-1.074.067 8.08 8.08 0 0 1-1.345-.136 2.995 2.995 0 0 1-1.297-.579c-.4-.303-.683-.7-.852-1.19l-.193-.446a4.826 4.826 0 0 0-.61-.987c-.278-.36-.558-.606-.841-.736l-.136-.096a1.46 1.46 0 0 1-.252-.233 1.021 1.021 0 0 1-.173-.27c-.039-.09-.008-.165.096-.223.103-.059.29-.087.561-.087l.388.058c.257.051.577.207.958.464.38.259.693.594.938 1.007.297.529.654.932 1.074 1.21.42.277.842.415 1.268.415.425 0 .793-.033 1.103-.096.31-.065.6-.161.871-.29.116-.865.432-1.53.948-1.994a13.221 13.221 0 0 1-1.984-.349 7.841 7.841 0 0 1-1.819-.755 5.21 5.21 0 0 1-1.558-1.296c-.412-.516-.752-1.194-1.015-2.032-.265-.84-.397-1.807-.397-2.903 0-1.561.51-2.89 1.53-3.988-.48-1.173-.434-2.489.135-3.947.373-.117.928-.028 1.664.261.735.29 1.273.54 1.615.745.343.206.617.381.823.523 1.2-.335 2.439-.503 3.716-.503 1.277 0 2.516.168 3.716.503l.736-.465c.502-.31 1.096-.593 1.78-.852.683-.257 1.206-.327 1.568-.212.58 1.458.632 2.774.155 3.948 1.019 1.097 1.528 2.426 1.528 3.987 0 1.096-.132 2.067-.397 2.913-.264.845-.605 1.522-1.025 2.032-.42.51-.942.938-1.568 1.287-.625.348-1.232.6-1.819.754a13.21 13.21 0 0 1-1.983.349c.67.581 1.005 1.496 1.005 2.748v4.083c0 .232.082.427.243.58.161.155.415.201.764.136 2.994-.994 5.435-2.783 7.325-5.371 1.89-2.587 2.835-5.499 2.835-8.737 0-2.696-.665-5.183-1.993-7.46" fill="currentColor" fill-rule="evenodd"/></svg>
+        </a>
+        <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+          <svg role="img" aria-label="See the Facebook Profile of Bitnami"  viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><title>facebook</title><path d="M15.36 0C6.877 0 0 6.877 0 15.36s6.877 15.36 15.36 15.36 15.36-6.877 15.36-15.36S23.843 0 15.36 0zm3.638 10.614H16.69c-.274 0-.578.36-.578.839v1.667H19l-.437 2.378h-2.451v7.137h-2.725v-7.137h-2.472V13.12h2.472v-1.398c0-2.007 1.392-3.637 3.303-3.637h2.308v2.53z" fill-rule="nonzero" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+          <svg role="img" aria-label="See the Google Profile of Bitnami" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>google</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-.922 22.868c-1.005.489-2.086.54-2.505.54h-.125-.09c-.653 0-3.905-.15-3.905-3.111 0-2.91 3.542-3.139 4.627-3.139h.028c-.626-.836-.496-1.68-.496-1.68a3.899 3.899 0 0 1-.234.007c-.408 0-1.196-.065-1.873-.502-.83-.533-1.25-1.441-1.25-2.698 0-3.552 3.878-3.695 3.917-3.698h3.873v.085c0 .433-.778.518-1.308.59-.18.026-.542.061-.644.113.982.525 1.14 1.348 1.14 2.575 0 1.397-.546 2.135-1.126 2.653-.36.322-.642.574-.642.912 0 .332.387.67.837 1.065.735.648 1.743 1.53 1.743 3.018 0 1.539-.662 2.639-1.967 3.27zM23.5 16H21v2.5h-1.667V16h-2.5v-1.667h2.5v-2.5H21v2.5h2.5V16zm-10.462 1.917c-.086 0-.173.003-.261.01-.74.055-1.424.331-1.917.781-.49.444-.74 1.004-.705 1.569.075 1.185 1.347 1.878 2.892 1.768 1.52-.11 2.533-.987 2.46-2.172-.07-1.113-1.039-1.956-2.469-1.956zm1.457-6.442c-.403-1.417-1.053-1.837-2.063-1.837a1.25 1.25 0 0 0-.324.045c-.438.125-.786.49-.98 1.034-.198.55-.21 1.123-.04 1.776.309 1.169 1.139 2.015 1.975 2.015.11 0 .22-.013.324-.045.915-.256 1.488-1.653 1.108-2.988z" fill-rule="nonzero" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+          <svg role="img" aria-label="See the Twitter Profile of Bitnami"viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>twitter</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm6.508 13.107c.007.136.009.273.009.406 0 4.167-3.169 8.969-8.965 8.969-1.78 0-3.437-.52-4.83-1.417.245.03.496.042.751.042a6.311 6.311 0 0 0 3.914-1.349 3.158 3.158 0 0 1-2.944-2.186 3.166 3.166 0 0 0 1.422-.055 3.154 3.154 0 0 1-2.528-3.09v-.039a3.16 3.16 0 0 0 1.428.395 3.15 3.15 0 0 1-1.402-2.625c0-.576.155-1.12.427-1.585a8.96 8.96 0 0 0 6.495 3.295 3.152 3.152 0 0 1 5.37-2.875 6.33 6.33 0 0 0 2-.765 3.166 3.166 0 0 1-1.385 1.745 6.33 6.33 0 0 0 1.81-.498 6.39 6.39 0 0 1-1.572 1.632z" fill-rule="nonzero" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+```
+*/
+.OSFooter {
+  background-color: #37474f; }
+  .OSFooter__Logo {
+    max-height: 2em; }
+
+/*
+---
+name: Header
+category: Components/Open Source
+tag: component
+---
+
+You can switch the header to use the `accent` gradient too.
+
+```html
+<section class="gradient-135-brand elevation-1">
+  <div class="container">
+    <header class="OSHeader padding-v-big">
+      <div class="row collapse-b-tablet align-center">
+        <div class="col-4">
+          <div class="OSHeader__Logo">
+            <a href="/">
+              <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png" alt="Logo white">
+              <span class="type-small">
+                A Bitnami project
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-8">
+          <nav class="text-r">
+            <a href="#" class="margin-h-normal">Nav 1</a>
+            <a href="#" class="margin-h-normal">Nav 2</a>
+            <a href="#" class="margin-h-normal">Nav 3</a>
+            <a href="https://github.com/" class="margin-l-normal" rel="noopener" target="_blank">GitHub</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</section>
+```
+*/
+.OSHeader__Logo a img {
+  height: 2em;
+  vertical-align: middle; }
+
+.OSHeader__Logo a span {
+  display: block;
+  padding-left: 2.99925em;
+  margin-top: -5px; }
+
+.OSHeader__Logo a, .OSHeader__Logo a:hover,
+.OSHeader nav a,
+.OSHeader nav a:hover {
+  color: #ebecec; }
+
+/*
+---
+name: Hero
+category: Components/Open Source
+tag: component
+---
+
+The Hero component helps users to find an easy navigation to get started with the project.
+You can switch the colors (brand/accent) if you want to change the base palette.
+
+This components depends on:
+
+- [Header (Open Source)](#Header)
+
+```html
+<div class="OSHero">
+  <div class="gradient-135-brand elevation-1">
+    <div class="container">
+      <header class="OSHeader padding-v-big">
+        <div class="row collapse-b-tablet align-center">
+          <div class="col-4">
+            <div class="OSHeader__Logo">
+              <a href="/">
+                <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png" alt="Logo white">
+                <span class="type-small">
+                  A Bitnami project
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <nav class="text-r">
+              <a href="#" class="margin-h-normal">Nav 1</a>
+              <a href="#" class="margin-h-normal">Nav 2</a>
+              <a href="#" class="margin-h-normal">Nav 3</a>
+              <a href="https://github.com/" class="margin-l-normal" rel="noopener" target="_blank">GitHub</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="OSHero__Content">
+        <h1 class="type-color-light margin-reset">
+          <img src="https://bitnami.com/downloads/logos/bitnami-dark-bg.png"
+            class="OSHero__Logo" alt="Logo white">
+        </h1>
+        <h3 class="type-color-light margin-t-reset">
+          Packaged Applications for Any Platform
+        </h3>
+        <div class="text-c margin-t-bigger">
+          <a class="margin-h-normal button button-action" href="#">
+            Get started
+          </a>
+          <a class="margin-h-normal button" href="#">
+            Documentation
+          </a>
+          <a class="margin-h-normal button" href="#">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="OSHero__Bar gradient-accent OSHero__Bar--pattern"></div>
+    <div class="OSHero__Bar gradient-225-accent"></div>
+  </div>
+</div>
+```
+*/
+.OSHero {
+  position: relative;
+  min-height: 35em;
+  padding-bottom: 14em;
+  overflow: hidden; }
+  .OSHero__Content {
+    text-align: center;
+    padding: 5.9985em 0 10.49737em; }
+  .OSHero__Logo {
+    height: 2.5em; }
+  .OSHero__Bar {
+    bottom: 5em;
+    height: 200px;
+    left: 50%;
+    margin-left: -100%;
+    position: absolute;
+    width: 200%;
+    transform: rotateZ(4deg);
+    overflow: hidden; }
+    .OSHero__Bar--pattern {
+      transform: rotateZ(-4deg); }
+      .OSHero__Bar--pattern:after {
+        content: '';
+        bottom: -100px;
+        width: 100%;
+        background-size: 89px 77px;
+        height: 200%;
+        position: absolute;
+        transform: rotateZ(4deg);
+        background-image: url("/assets/images/hero-bar-pattern.png");
+        background-repeat: repeat;
+        opacity: .2; }
+
+/*
+---
 name: Avatar
 category: Components/Profiles/Avatars
 tag: component
@@ -2814,6 +3252,62 @@ This component shows a list of users. You can use it for pages like webinars or 
 .profile-list__avatar, .profile-list__info {
   display: table-cell;
   vertical-align: top; }
+
+/*
+---
+name: Social Icons
+category: Components/Social
+tag: component
+---
+
+This component uses inline SVG icons. This very useful because it allow us to use transformations
+through CSS. For example, the color of every icon is determined by the current CSS `color` property.
+
+All the icons come from [SimpleIcons](https://simpleicons.org/).
+
+```html
+<section class="padding-h-normal">
+  <a href="#" class="SocialIcon margin-h-small">
+    <svg role="img" aria-label="See the Github Profile of Bitnami" viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg"><title>github</title><path d="M27.734 7.402a14.803 14.803 0 0 0-5.41-5.408C20.046.664 17.561 0 14.864 0S9.68.664 7.403 1.994a14.8 14.8 0 0 0-5.409 5.408C.664 9.68 0 12.167 0 14.864c0 3.238.946 6.15 2.835 8.737 1.89 2.587 4.332 4.377 7.326 5.37.348.065.607.02.773-.134a.756.756 0 0 0 .252-.582l-.01-1.044a162.6 162.6 0 0 1-.01-1.723l-.444.078a5.604 5.604 0 0 1-1.074.067 8.08 8.08 0 0 1-1.345-.136 2.995 2.995 0 0 1-1.297-.579c-.4-.303-.683-.7-.852-1.19l-.193-.446a4.826 4.826 0 0 0-.61-.987c-.278-.36-.558-.606-.841-.736l-.136-.096a1.46 1.46 0 0 1-.252-.233 1.021 1.021 0 0 1-.173-.27c-.039-.09-.008-.165.096-.223.103-.059.29-.087.561-.087l.388.058c.257.051.577.207.958.464.38.259.693.594.938 1.007.297.529.654.932 1.074 1.21.42.277.842.415 1.268.415.425 0 .793-.033 1.103-.096.31-.065.6-.161.871-.29.116-.865.432-1.53.948-1.994a13.221 13.221 0 0 1-1.984-.349 7.841 7.841 0 0 1-1.819-.755 5.21 5.21 0 0 1-1.558-1.296c-.412-.516-.752-1.194-1.015-2.032-.265-.84-.397-1.807-.397-2.903 0-1.561.51-2.89 1.53-3.988-.48-1.173-.434-2.489.135-3.947.373-.117.928-.028 1.664.261.735.29 1.273.54 1.615.745.343.206.617.381.823.523 1.2-.335 2.439-.503 3.716-.503 1.277 0 2.516.168 3.716.503l.736-.465c.502-.31 1.096-.593 1.78-.852.683-.257 1.206-.327 1.568-.212.58 1.458.632 2.774.155 3.948 1.019 1.097 1.528 2.426 1.528 3.987 0 1.096-.132 2.067-.397 2.913-.264.845-.605 1.522-1.025 2.032-.42.51-.942.938-1.568 1.287-.625.348-1.232.6-1.819.754a13.21 13.21 0 0 1-1.983.349c.67.581 1.005 1.496 1.005 2.748v4.083c0 .232.082.427.243.58.161.155.415.201.764.136 2.994-.994 5.435-2.783 7.325-5.371 1.89-2.587 2.835-5.499 2.835-8.737 0-2.696-.665-5.183-1.993-7.46" fill="currentColor" fill-rule="evenodd"/></svg>
+  </a>
+  <a href="#" class="SocialIcon margin-h-small">
+    <svg role="img" aria-label="See the Facebook Profile of Bitnami"  viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><title>facebook</title><path d="M15.36 0C6.877 0 0 6.877 0 15.36s6.877 15.36 15.36 15.36 15.36-6.877 15.36-15.36S23.843 0 15.36 0zm3.638 10.614H16.69c-.274 0-.578.36-.578.839v1.667H19l-.437 2.378h-2.451v7.137h-2.725v-7.137h-2.472V13.12h2.472v-1.398c0-2.007 1.392-3.637 3.303-3.637h2.308v2.53z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+  <a href="#" class="SocialIcon margin-h-small">
+    <svg role="img" aria-label="See the Google Profile of Bitnami" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>google</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-.922 22.868c-1.005.489-2.086.54-2.505.54h-.125-.09c-.653 0-3.905-.15-3.905-3.111 0-2.91 3.542-3.139 4.627-3.139h.028c-.626-.836-.496-1.68-.496-1.68a3.899 3.899 0 0 1-.234.007c-.408 0-1.196-.065-1.873-.502-.83-.533-1.25-1.441-1.25-2.698 0-3.552 3.878-3.695 3.917-3.698h3.873v.085c0 .433-.778.518-1.308.59-.18.026-.542.061-.644.113.982.525 1.14 1.348 1.14 2.575 0 1.397-.546 2.135-1.126 2.653-.36.322-.642.574-.642.912 0 .332.387.67.837 1.065.735.648 1.743 1.53 1.743 3.018 0 1.539-.662 2.639-1.967 3.27zM23.5 16H21v2.5h-1.667V16h-2.5v-1.667h2.5v-2.5H21v2.5h2.5V16zm-10.462 1.917c-.086 0-.173.003-.261.01-.74.055-1.424.331-1.917.781-.49.444-.74 1.004-.705 1.569.075 1.185 1.347 1.878 2.892 1.768 1.52-.11 2.533-.987 2.46-2.172-.07-1.113-1.039-1.956-2.469-1.956zm1.457-6.442c-.403-1.417-1.053-1.837-2.063-1.837a1.25 1.25 0 0 0-.324.045c-.438.125-.786.49-.98 1.034-.198.55-.21 1.123-.04 1.776.309 1.169 1.139 2.015 1.975 2.015.11 0 .22-.013.324-.045.915-.256 1.488-1.653 1.108-2.988z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+  <a href="#" class="SocialIcon margin-h-small">
+    <svg role="img" aria-label="See the Twitter Profile of Bitnami"viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>twitter</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm6.508 13.107c.007.136.009.273.009.406 0 4.167-3.169 8.969-8.965 8.969-1.78 0-3.437-.52-4.83-1.417.245.03.496.042.751.042a6.311 6.311 0 0 0 3.914-1.349 3.158 3.158 0 0 1-2.944-2.186 3.166 3.166 0 0 0 1.422-.055 3.154 3.154 0 0 1-2.528-3.09v-.039a3.16 3.16 0 0 0 1.428.395 3.15 3.15 0 0 1-1.402-2.625c0-.576.155-1.12.427-1.585a8.96 8.96 0 0 0 6.495 3.295 3.152 3.152 0 0 1 5.37-2.875 6.33 6.33 0 0 0 2-.765 3.166 3.166 0 0 1-1.385 1.745 6.33 6.33 0 0 0 1.81-.498 6.39 6.39 0 0 1-1.572 1.632z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+</section>
+
+<section class="margin-t-normal padding-normal text-r gradient-brand">
+  <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+    <svg role="img" aria-label="See the Github Profile of Bitnami" viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg"><title>github</title><path d="M27.734 7.402a14.803 14.803 0 0 0-5.41-5.408C20.046.664 17.561 0 14.864 0S9.68.664 7.403 1.994a14.8 14.8 0 0 0-5.409 5.408C.664 9.68 0 12.167 0 14.864c0 3.238.946 6.15 2.835 8.737 1.89 2.587 4.332 4.377 7.326 5.37.348.065.607.02.773-.134a.756.756 0 0 0 .252-.582l-.01-1.044a162.6 162.6 0 0 1-.01-1.723l-.444.078a5.604 5.604 0 0 1-1.074.067 8.08 8.08 0 0 1-1.345-.136 2.995 2.995 0 0 1-1.297-.579c-.4-.303-.683-.7-.852-1.19l-.193-.446a4.826 4.826 0 0 0-.61-.987c-.278-.36-.558-.606-.841-.736l-.136-.096a1.46 1.46 0 0 1-.252-.233 1.021 1.021 0 0 1-.173-.27c-.039-.09-.008-.165.096-.223.103-.059.29-.087.561-.087l.388.058c.257.051.577.207.958.464.38.259.693.594.938 1.007.297.529.654.932 1.074 1.21.42.277.842.415 1.268.415.425 0 .793-.033 1.103-.096.31-.065.6-.161.871-.29.116-.865.432-1.53.948-1.994a13.221 13.221 0 0 1-1.984-.349 7.841 7.841 0 0 1-1.819-.755 5.21 5.21 0 0 1-1.558-1.296c-.412-.516-.752-1.194-1.015-2.032-.265-.84-.397-1.807-.397-2.903 0-1.561.51-2.89 1.53-3.988-.48-1.173-.434-2.489.135-3.947.373-.117.928-.028 1.664.261.735.29 1.273.54 1.615.745.343.206.617.381.823.523 1.2-.335 2.439-.503 3.716-.503 1.277 0 2.516.168 3.716.503l.736-.465c.502-.31 1.096-.593 1.78-.852.683-.257 1.206-.327 1.568-.212.58 1.458.632 2.774.155 3.948 1.019 1.097 1.528 2.426 1.528 3.987 0 1.096-.132 2.067-.397 2.913-.264.845-.605 1.522-1.025 2.032-.42.51-.942.938-1.568 1.287-.625.348-1.232.6-1.819.754a13.21 13.21 0 0 1-1.983.349c.67.581 1.005 1.496 1.005 2.748v4.083c0 .232.082.427.243.58.161.155.415.201.764.136 2.994-.994 5.435-2.783 7.325-5.371 1.89-2.587 2.835-5.499 2.835-8.737 0-2.696-.665-5.183-1.993-7.46" fill="currentColor" fill-rule="evenodd"/></svg>
+  </a>
+  <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+    <svg role="img" aria-label="See the Facebook Profile of Bitnami"  viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><title>facebook</title><path d="M15.36 0C6.877 0 0 6.877 0 15.36s6.877 15.36 15.36 15.36 15.36-6.877 15.36-15.36S23.843 0 15.36 0zm3.638 10.614H16.69c-.274 0-.578.36-.578.839v1.667H19l-.437 2.378h-2.451v7.137h-2.725v-7.137h-2.472V13.12h2.472v-1.398c0-2.007 1.392-3.637 3.303-3.637h2.308v2.53z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+  <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+    <svg role="img" aria-label="See the Google Profile of Bitnami" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>google</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm-.922 22.868c-1.005.489-2.086.54-2.505.54h-.125-.09c-.653 0-3.905-.15-3.905-3.111 0-2.91 3.542-3.139 4.627-3.139h.028c-.626-.836-.496-1.68-.496-1.68a3.899 3.899 0 0 1-.234.007c-.408 0-1.196-.065-1.873-.502-.83-.533-1.25-1.441-1.25-2.698 0-3.552 3.878-3.695 3.917-3.698h3.873v.085c0 .433-.778.518-1.308.59-.18.026-.542.061-.644.113.982.525 1.14 1.348 1.14 2.575 0 1.397-.546 2.135-1.126 2.653-.36.322-.642.574-.642.912 0 .332.387.67.837 1.065.735.648 1.743 1.53 1.743 3.018 0 1.539-.662 2.639-1.967 3.27zM23.5 16H21v2.5h-1.667V16h-2.5v-1.667h2.5v-2.5H21v2.5h2.5V16zm-10.462 1.917c-.086 0-.173.003-.261.01-.74.055-1.424.331-1.917.781-.49.444-.74 1.004-.705 1.569.075 1.185 1.347 1.878 2.892 1.768 1.52-.11 2.533-.987 2.46-2.172-.07-1.113-1.039-1.956-2.469-1.956zm1.457-6.442c-.403-1.417-1.053-1.837-2.063-1.837a1.25 1.25 0 0 0-.324.045c-.438.125-.786.49-.98 1.034-.198.55-.21 1.123-.04 1.776.309 1.169 1.139 2.015 1.975 2.015.11 0 .22-.013.324-.045.915-.256 1.488-1.653 1.108-2.988z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+  <a href="#" class="SocialIcon SocialIcon--white margin-h-small">
+    <svg role="img" aria-label="See the Twitter Profile of Bitnami"viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>twitter</title><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm6.508 13.107c.007.136.009.273.009.406 0 4.167-3.169 8.969-8.965 8.969-1.78 0-3.437-.52-4.83-1.417.245.03.496.042.751.042a6.311 6.311 0 0 0 3.914-1.349 3.158 3.158 0 0 1-2.944-2.186 3.166 3.166 0 0 0 1.422-.055 3.154 3.154 0 0 1-2.528-3.09v-.039a3.16 3.16 0 0 0 1.428.395 3.15 3.15 0 0 1-1.402-2.625c0-.576.155-1.12.427-1.585a8.96 8.96 0 0 0 6.495 3.295 3.152 3.152 0 0 1 5.37-2.875 6.33 6.33 0 0 0 2-.765 3.166 3.166 0 0 1-1.385 1.745 6.33 6.33 0 0 0 1.81-.498 6.39 6.39 0 0 1-1.572 1.632z" fill-rule="nonzero" fill="currentColor"/></svg>
+  </a>
+</section>
+```
+*/
+.SocialIcon {
+  vertical-align: middle;
+  display: inline-block; }
+  .SocialIcon svg {
+    display: block;
+    width: 1.49962em;
+    height: 1.49962em; }
+  .SocialIcon--white {
+    color: #ebecec; }
+    .SocialIcon--white:hover {
+      color: #ffffff; }
 
 /*
 ---

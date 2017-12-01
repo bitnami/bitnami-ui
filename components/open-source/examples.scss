@@ -1,0 +1,155 @@
+/*
+---
+name: Introduction
+category: Components/Open Source
+tag: component
+---
+
+Introductory block for the project.
+
+```html
+<div class="container container-small">
+  <h1>What is Kubeapps?</h1>
+  <div class="row collapse-b-tablet">
+    <div class="col-12">
+      <p>
+        Kubeapps is a Kubernetes dashboard that supercharges your Kubernetes cluster
+        with simple browse and click deployment of apps in any format. Building on Bitnami’s
+        contributions to leading open source projects, Kubeapps provides a complete application
+        delivery environment that empowers users to launch, review and share applications.
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/
+
+// No CSS code here ;)
+
+/*
+---
+name: Screencast
+category: Components/Open Source
+tag: component
+---
+
+The best way to sell a product it's showing it. This block allows you to include an screencast
+with some information about it.
+
+```html
+<section class="gradient-45-brand padding-v-enormous elevation-1">
+  <div class="container">
+    <div class="row align-center collapse-b-tablet">
+      <div class="col-5">
+        <h3 class="type-color-iron">How does it work? Check it out!</h3>
+        <p class="type-color-iron">
+          Kubeapps can be deployed in your cluster in minutes. This screencast will show you how
+          to install Kubeapps and start adding new applications to your Kubernetes Cluster
+        </p>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-6">
+        <iframe allowfullscreen="" class="elevation-3" frameborder="0" height="315"
+          src="https://www.youtube-nocookie.com/embed/7GQLw-8AwsQ?rel=0&amp;amp;showinfo=0"
+          width="100%">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+```
+*/
+
+// No CSS code here ;)
+
+/*
+---
+name: Three block of content
+category: Components/Open Source
+tag: component
+---
+
+It's useful to enumerate features or a list of elements we want to highlight. It also allows
+us to display the cards with images, videos...
+
+```html
+<div class="container">
+  <h1>Who is Kubeapps for?</h1>
+  <div class="row collapse-b-tablet">
+    <div class="col-4">
+      <h4>New users</h4>
+      <p>
+        Getting Started? Populate your cluster with the tools you need and the applications you
+        want in just a few minutes.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/blob/master/docs/getting-started.md" rel="noopener" target="_blank">
+          Get started
+        </a>
+      </p>
+    </div>
+    <div class="col-4">
+      <h4>Kubernetes experts</h4>
+      <p>
+        Managing K8s Clusters? Use a single command to deploy all the components for your users
+        to be able to make efficient use of the cluster.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/blob/master/docs/getting-started.md#installation-of-the-kubeapps-installer" rel="noopener" target="_blank">
+          Installation
+        </a>
+      </p>
+    </div>
+    <div class="col-4">
+      <h4>Distribution and support providers</h4>
+      <p>
+        Providing Kubernetes or Supporting Kubernetes? Help your users populate their clusters
+        quickly and start adding new applications.
+      </p>
+      <p class="margin-t-bigger text-c">
+        <a class="button button-accent" href="https://github.com/kubeapps/kubeapps/tree/master/docs" rel="noopener" target="_blank">
+          Documentation
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/
+
+// No CSS code here ;)
+
+/*
+---
+name: Useful links
+category: Components/Open Source
+tag: component
+---
+
+Help users to find the next steps or extra information with a list of useful links.
+
+```html
+<div class="container container-small">
+  <h1>Ready to Get Started?</h1>
+  <p>
+    Kubeapps is an open-source project. We encourage you to check out the latest version and give
+    it a try.  If you like it, please share your thoughts (#kubeapps). If you have suggestions
+    or contributions to the code or documentation,
+    <strong>we encourage and welcome your participation.</strong>
+  </p>
+  <p class="margin-v-bigger text-c">
+    <a class="margin-h-normal" href="#">
+      Download
+    </a>
+    <span class="type-color-iron">/</span>
+    <a class="margin-h-normal" href="#">
+      Contribute
+    </a>
+    <span class="type-color-iron">/</span>
+    <a class="margin-h-normal" href="#">
+      Documentation
+    </a>
+  </p>
+</div>
+```
+*/
