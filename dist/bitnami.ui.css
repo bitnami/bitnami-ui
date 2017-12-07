@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v2.0.1
+ * Bitnami UI - v2.1.0
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -238,7 +238,7 @@ $z-index: (
 /*
 ---
 name: color(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a color from the brand guide
@@ -253,7 +253,7 @@ Get a color from the brand guide
 /*
 ---
 name: color-level(name, level)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
@@ -279,7 +279,7 @@ in steps of one hundred. The base color is located in 500.
 /*
 ---
 name: gradient(name, directionOrDegrees)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Generate a proper gradient.
@@ -293,7 +293,7 @@ Generate a proper gradient.
 /*
 ---
 name: button-skin(name, base-color, text-color)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Mixin to generate a class for buttons. This class will modify the color of the buttons.
@@ -310,7 +310,7 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 /*
 ---
 name: button-size(name-of-scale)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Mixin to generate a class for buttons. This class will modify the size of the buttons.
@@ -342,7 +342,7 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
 /*
 ---
 name: margin(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a margin value based on the `size unity`. This method will throw an exception if the name
@@ -360,7 +360,7 @@ of the size is not valid.
 /*
 ---
 name: padding(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a padding value based on the `size unity`. This method will throw an exception if the name
@@ -381,7 +381,7 @@ of the size is not valid.
 /*
 ---
 name: su(multiplier)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Return `multiplier * $su`. This method allows us to set the correct vertical rhythm of the page.
@@ -400,7 +400,7 @@ Return `multiplier * $su`. This method allows us to set the correct vertical rhy
 /*
 ---
 name: type-scale(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a font-size based on the standard values. You can check
@@ -419,7 +419,7 @@ to check the current scale and size.
 /*
 ---
 name: line-height(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a line-height based on the standard values.
@@ -440,7 +440,7 @@ Get a line-height based on the standard values.
 /*
 ---
 name: clearfix()
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Add clearfix code to the current selector. Clearfix is useful to prevent bad positioning of
@@ -455,7 +455,7 @@ floated elements.
 /*
 ---
 name: z-index(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get the z-index from the available layer positions:
@@ -901,8 +901,7 @@ code {
 pre > code {
   padding: 0;
   background-color: initial;
-  border: none;
-  color: inherit; }
+  border: none; }
 
 /*
 ---
@@ -1938,7 +1937,7 @@ The grid is limited by the `max-width` property. By default, the rows can not be
 /*
 ---
 name: Anchors
-category: Foundations/Helpers/Anchors
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the color of the anchor. Available classes:
@@ -1969,7 +1968,7 @@ a.secondary:not(.button) {
 /*
 ---
 name: Animations
-category: Foundations/Helpers/Animations
+category: Foundations/Helpers
 tag: helpers
 ---
 Different animations for the elements:
@@ -1996,7 +1995,7 @@ Different animations for the elements:
 /*
 ---
 name: Backgrounds
-category: Foundations/Helpers/Backgrounds
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the background color of the given element.
@@ -2032,7 +2031,7 @@ Modify the background color of the given element.
 /*
 ---
 name: Box Shadows
-category: Foundations/Helpers/Box Shadows
+category: Foundations/Helpers
 tag: helpers
 ---
 Apply box shadows to the class. The number in the class represents the visual height
@@ -2111,7 +2110,7 @@ of the box. Higher numbers will display the boxes in a higher level.
 /*
 ---
 name: Button Colors
-category: Foundations/Helpers/Forms
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the color of the buttons. Available classes:
@@ -2165,7 +2164,7 @@ Modify the color of the buttons. Available classes:
 /*
 ---
 name: Button Sizes
-category: Foundations/Helpers/Forms
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the size of the buttons. Available classes:
@@ -2193,7 +2192,7 @@ Modify the size of the buttons. Available classes:
 /*
 ---
 name: Button Dropdown
-category: Foundations/Helpers/Forms
+category: Foundations/Helpers
 tag: helpers
 ---
 Add a caret icon to the right of the button.
@@ -2237,7 +2236,7 @@ See https://css-tricks.com/snippets/css/css-triangle/.
 /*
 ---
 name: Linear Gradients
-category: Foundations/Helpers/Gradients
+category: Foundations/Helpers
 tag: helpers
 ---
 Add a gradient for the background of an element.
@@ -2326,7 +2325,7 @@ Add a gradient for the background of an element.
 /*
 ---
 name: Subtitle
-category: Foundations/Helpers/Headers
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the color and the margin-top of a header. It should be combined with a normal header.
@@ -2344,7 +2343,7 @@ Modify the color and the margin-top of a header. It should be combined with a no
 /*
 ---
 name: Inverse
-category: Foundations/Helpers/Headers
+category: Foundations/Helpers
 tag: helpers
 ---
 Use this style with dark bacgrkound colors
@@ -2358,8 +2357,8 @@ Use this style with dark bacgrkound colors
 
 /*
 ---
-name: Remove style
-category: Foundations/Helpers/Lists
+name: Lists without styles
+category: Foundations/Helpers
 tag: helpers
 ---
 Remove the decoration (bullets) of the list.
@@ -2378,7 +2377,7 @@ Remove the decoration (bullets) of the list.
 /*
 ---
 name: Text alignment
-category: Foundations/Helpers/Positions
+category: Foundations/Helpers
 tag: helpers
 ---
 These classes help us to modify the default aligntment of the text in our views
@@ -2401,7 +2400,7 @@ These classes help us to modify the default aligntment of the text in our views
 /*
 ---
 name: Floating
-category: Foundations/Helpers/Positions
+category: Foundations/Helpers
 tag: helpers
 ---
 Also, we can update the float property of our blocks
@@ -2427,7 +2426,7 @@ Also, we can update the float property of our blocks
 /*
 ---
 name: Clearfix
-category: Foundations/Helpers/Positions
+category: Foundations/Helpers
 tag: helpers
 ---
 Clear floating elements in the current container
@@ -2450,8 +2449,8 @@ Clear floating elements in the current container
 
 /*
 ---
-name: Height
-category: Foundations/Helpers/Separators
+name: Separator height
+category: Foundations/Helpers
 tag: helpers
 ---
 Modify the height and the width of the separator.
@@ -2496,7 +2495,7 @@ hr.separator-70 {
 /*
 ---
 name: Padding
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default padding based on the base size unity.
@@ -2579,7 +2578,7 @@ Reduce or increase the default padding based on the base size unity.
 /*
 ---
 name: Padding - specific
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase a padding property based on the base size unity.
@@ -2718,7 +2717,7 @@ Reduce or increase a padding property based on the base size unity.
 /*
 ---
 name: Padding - horizontal and vertical
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the vertical or horizontal padding based on the base size unity.
@@ -2811,7 +2810,7 @@ Reduce or increase the vertical or horizontal padding based on the base size uni
 /*
 ---
 name: Margin
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default margin based on the base size unity.
@@ -2894,7 +2893,7 @@ Reduce or increase the default margin based on the base size unity.
 /*
 ---
 name: Margin - specific
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase a margin property based on the base size unity.
@@ -3033,7 +3032,7 @@ Reduce or increase a margin property based on the base size unity.
 /*
 ---
 name: Margin - horizontal and vertical
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the vertical or horizontal margin based on the base size unity.
@@ -3126,7 +3125,7 @@ Reduce or increase the vertical or horizontal margin based on the base size unit
 /*
 ---
 name: Margin - center
-category: Foundations/Helpers/Spacing
+category: Foundations/Helpers
 tag: helpers
 ---
 Apply a margin `auto` to center elements.
@@ -3184,7 +3183,7 @@ Apply a margin `auto` to center elements.
 /*
 ---
 name: Striped
-category: Foundations/Helpers/Tables
+category: Foundations/Helpers
 tag: blocks
 ---
 Show a light gray background in even rows.
@@ -3231,7 +3230,7 @@ table.striped tr:hover {
 /*
 ---
 name: Size
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default `font-size` of an element.
@@ -3304,7 +3303,7 @@ Reduce or increase the default `font-size` of an element.
 /*
 ---
 name: Color
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default `color` of an element.
@@ -3318,7 +3317,7 @@ Reduce or increase the default `color` of an element.
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
-<p class="type-color-iron">
+<p class="type-color-iron padding-normal bg-dark">
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
@@ -3347,7 +3346,7 @@ Reduce or increase the default `color` of an element.
 /*
 ---
 name: Uppercase
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Set the text to Uppercase

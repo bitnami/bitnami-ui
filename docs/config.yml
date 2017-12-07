@@ -1,9 +1,15 @@
 # The directory containing the source files to parse recursively
 source:
-  - ../foundations/*.scss
   - ../foundations/**/*.scss
-  - ../components/*.scss
+  - ../foundations/**/*.md
   - ../components/**/*.scss
+  - ../components/**/*.md
+
+source_type:
+  - .css
+  - .sass
+  - .scss
+  - .styl
 
 # The directory that aigis will build to
 dest: ./dist
@@ -21,3 +27,11 @@ dependencies:
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
 template_dir: ./templates
 template_engine: ejs
+
+helper_options:
+  disable_link_index: false
+
+preview_class: Component__Preview
+
+# For debugging purposes
+log: false

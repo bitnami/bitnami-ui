@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bitnami UI Foundations</title>
+    <title>Bitnami Pattern Lib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400" rel="stylesheet">
     <link href="<%- root %>assets/favicon.png" rel="icon">
+    <link href="<%- root %>assets/css/customizations.css" rel="stylesheet">
     <link href="<%- root %>assets/css/highlight/hljs.css" rel="stylesheet">
     <link href="<%- root %>assets/css/highlight/okadia.css" rel="stylesheet">
-    <link href="<%- root %>assets/css/theme.css" rel="stylesheet">
-    <link href="<%- root %>assets/css/customizations.css" rel="stylesheet">
     <link href="<%- root %>bitnami.ui.components.css" rel="stylesheet">
     <link href="<%- root %>bitnami.ui.css" rel="stylesheet">
   </head>
-<body>
-  <div class="aigis-container">
-    <%- include('sidemenu') %>
-    <div class="aigis-contents">
-      <div class="aigis-contents__body">
-        <% if(components.length) { %>
-          <%- include('components') %>
-        <% } else if (html.length) { %>
-          <%- html %>
-        <% } else { %>
-          <div class="readme">
-            <%- include('readme') %>
-          </div>
-        <% } %>
-        <footer class="aigis-footer">Bitnami Pattern Lib (UI)</footer>
-      </div>
-    </div>
-  </div>
-</body>
+  <body>
+    <%- include('partials/header') %>
+    <main>
+      <%- include('menu') %>
+      <% if(components.length) { %>
+        <%- include('components') %>
+      <% } else if (html.length) { %>
+        <%- html %>
+      <% } else { %>
+        <div class="container">
+          <%- include('readme') %>
+        </div>
+      <% } %>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
 </html>

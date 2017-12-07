@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v2.0.1
+ * Bitnami UI Components - v2.1.0
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -401,7 +401,7 @@ $cloud-otc-colors: (
 /*
 ---
 name: color(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a color from the brand guide
@@ -416,7 +416,7 @@ Get a color from the brand guide
 /*
 ---
 name: color-level(name, level)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
@@ -442,7 +442,7 @@ in steps of one hundred. The base color is located in 500.
 /*
 ---
 name: gradient(name, directionOrDegrees)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Generate a proper gradient.
@@ -456,7 +456,7 @@ Generate a proper gradient.
 /*
 ---
 name: button-skin(name, base-color, text-color)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Mixin to generate a class for buttons. This class will modify the color of the buttons.
@@ -473,7 +473,7 @@ Mixin to generate a class for buttons. This class will modify the color of the b
 /*
 ---
 name: button-size(name-of-scale)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Mixin to generate a class for buttons. This class will modify the size of the buttons.
@@ -505,7 +505,7 @@ Mixin to generate a class for buttons. This class will modify the size of the bu
 /*
 ---
 name: margin(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a margin value based on the `size unity`. This method will throw an exception if the name
@@ -523,7 +523,7 @@ of the size is not valid.
 /*
 ---
 name: padding(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a padding value based on the `size unity`. This method will throw an exception if the name
@@ -544,7 +544,7 @@ of the size is not valid.
 /*
 ---
 name: su(multiplier)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Return `multiplier * $su`. This method allows us to set the correct vertical rhythm of the page.
@@ -563,7 +563,7 @@ Return `multiplier * $su`. This method allows us to set the correct vertical rhy
 /*
 ---
 name: type-scale(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a font-size based on the standard values. You can check
@@ -582,7 +582,7 @@ to check the current scale and size.
 /*
 ---
 name: line-height(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a line-height based on the standard values.
@@ -603,7 +603,7 @@ Get a line-height based on the standard values.
 /*
 ---
 name: clearfix()
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Add clearfix code to the current selector. Clearfix is useful to prevent bad positioning of
@@ -618,7 +618,7 @@ floated elements.
 /*
 ---
 name: z-index(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get the z-index from the available layer positions:
@@ -635,7 +635,7 @@ Get the z-index from the available layer positions:
 /*
 ---
 name: cloud-color(cloud, name)
-category: Foundations/Helpers/Mixins
+category: Components/Mixins
 tag: function
 ---
 Get a color of a cloud. Available values:
@@ -655,7 +655,7 @@ Get a color of a cloud. Available values:
 /*
 ---
 name: cloud-color-level(cloud, name, level)
-category: Foundations/Helpers/Mixins
+category: Components/Mixins
 tag: function
 ---
 Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000
@@ -3071,7 +3071,7 @@ This components depends on:
 /*
 ---
 name: Avatar
-category: Components/Profiles/Avatars
+category: Components/Profiles
 tag: component
 ---
 Display an image as an avatar. It uses a rounded square by default.
@@ -3091,8 +3091,8 @@ Display an image as an avatar. It uses a rounded square by default.
 
 /*
 ---
-name: Sizes
-category: Components/Profiles/Avatars
+name: Avatar sizes
+category: Components/Profiles
 tag: helpers
 ---
 Change the size of the avatar. You can combine it with other avatar classes.
@@ -3146,8 +3146,8 @@ Change the size of the avatar. You can combine it with other avatar classes.
 
 /*
 ---
-name: Shapes
-category: Components/Profiles/Avatars
+name: Avatar shapes
+category: Components/Profiles
 tag: helpers
 ---
 Change the shape of the avatar. You can combine it with other avatar classes.
@@ -3175,8 +3175,8 @@ Change the shape of the avatar. You can combine it with other avatar classes.
 
 /*
 ---
-name: Borders
-category: Components/Profiles/Avatars
+name: Avatar borders
+category: Components/Profiles
 tag: helpers
 ---
 Add a border to the avatar. You can combine it with other avatar classes.
@@ -3201,8 +3201,8 @@ Add a border to the avatar. You can combine it with other avatar classes.
 
 /*
 ---
-name: Simple list
-category: Components/Profiles/List
+name: Profile list
+category: Components/Profiles
 tag: component
 ---
 This component shows a list of users. You can use it for pages like webinars or study cases.

@@ -1,0 +1,26 @@
+<section class="Menu container margin-t-big margin-b-normal">
+  <% if (components.length && components[0].config.name === 'Index') { %>
+    <% var category = components[0].config.category[0]; %>
+    <% var links = config.collection.category.filter(
+        (c) => c.indexOf(category) > -1 && c !== category
+      ).map(
+        (c) => c.replace(`${category}/`, '').split('/')[0]
+      ).filter((elem, pos, arr) => arr.indexOf(elem) == pos) %>
+
+    <nav class="Menu__Items text-c">
+      <% links.forEach((l, i) => { %>
+        <a class="margin-r-big margin-b-normal" href="<%- root %>category/<%- category %>/<%- l.replace(' ', '-') %>/"><%- l %></a>
+      <% }); %>
+    </nav>
+  <% } else if (components.length) { %>
+    <% var breadcrumb = components[0].config.category[0].split('/') %>
+    <nav class="breadcrumb">
+      <ol>
+        <% breadcrumb.forEach((label, i) => { %>
+          <% var link = breadcrumb.slice(0, i + 1).join('/'); %>
+          <li><a href="<%- root %>category/<%- link %>"><%- label %></a></li>
+        <% }); %>
+      </ol>
+    </nav>
+  <% } %>
+</section>

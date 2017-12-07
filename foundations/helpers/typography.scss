@@ -1,7 +1,7 @@
 /*
 ---
 name: Size
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default `font-size` of an element.
@@ -54,7 +54,7 @@ Reduce or increase the default `font-size` of an element.
 /*
 ---
 name: Color
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Reduce or increase the default `color` of an element.
@@ -68,7 +68,7 @@ Reduce or increase the default `color` of an element.
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
-<p class="type-color-iron">
+<p class="type-color-iron padding-normal bg-dark">
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
@@ -90,7 +90,7 @@ Reduce or increase the default `color` of an element.
 /*
 ---
 name: Uppercase
-category: Foundations/Helpers/Typography
+category: Foundations/Helpers
 tag: helpers
 ---
 Set the text to Uppercase

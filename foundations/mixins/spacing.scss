@@ -1,7 +1,7 @@
 /*
 ---
 name: margin(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a margin value based on the `size unity`. This method will throw an exception if the name
@@ -30,7 +30,7 @@ of the size is not valid.
 /*
 ---
 name: padding(name)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Get a padding value based on the `size unity`. This method will throw an exception if the name
@@ -55,7 +55,7 @@ of the size is not valid.
 /*
 ---
 name: su(multiplier)
-category: Foundations/Helpers/Mixins
+category: Foundations/Mixins
 tag: function
 ---
 Return `multiplier * $su`. This method allows us to set the correct vertical rhythm of the page.

@@ -1,7 +1,7 @@
 /*
 ---
 name: cloud-color(cloud, name)
-category: Foundations/Helpers/Mixins
+category: Components/Mixins
 tag: function
 ---
 Get a color of a cloud. Available values:
@@ -41,7 +41,7 @@ Get a color of a cloud. Available values:
 /*
 ---
 name: cloud-color-level(cloud, name, level)
-category: Foundations/Helpers/Mixins
+category: Components/Mixins
 tag: function
 ---
 Get a tint or shade of a base color. The `level` variable should be a number between 100 to 1000

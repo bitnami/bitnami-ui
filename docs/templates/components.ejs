@@ -1,30 +1,45 @@
-<nav>
-  <h2 class="aigis-module__heading">Components</h2>
-  <ul class="aigis-moduleList">
-    <% components.forEach(function(component) { %>
-      <li class="aigis-moduleList__item">
-        <a href="#<%- component.config.name %>"><%- component.config.name %></a>
-      </li>
-    <% }) %>
-  </ul>
-</nav>
-<div>
+<% if (components.length > 1) { %>
+  <nav class="container margin-b-bigger">
+    <hr class="separator-75 separator-small margin-b-big">
+    <h5>Content</h5>
+    <ul>
+      <% components.forEach(function(component) { %>
+        <li>
+          <a href="#<%- component.config.name %>"><%- component.config.name %></a>
+        </li>
+      <% }) %>
+    </ul>
+    <% if (components.length > 0 && components[0].config.description) { %>
+      <h3>Ajay!</h3>
+    <% } %>
+    <hr class="separator-75 separator-small">
+  </nav>
+<% } %>
+<section class="Components">
   <% components.forEach(function(component) { %>
-    <div class="aigis-module">
-      <h2 class="aigis-module__heading" id="<%- component.config.name %>">
-        <%- component.config.name %>
-      </h2>
-      <div class="aigis-module__filepath">
-        <%- component.sourcePath %>
-      </div>
-      <ul class="aigis-tags">
-        <% component.config.tag.forEach(function(tag) { %>
-          <li class="aigis-tags__item aigis-tags__item--<%- tag %>">
-            <%- tag %>
-          </li>
-        <% })%>
-      </ul>
-      <%- component.html %>
-    </div>
+    <article class="Component margin-b-enormous">
+      <!-- Hide the title and file if ignoreHeader is present in the frontmatter -->
+      <% if (component.config.ignoreHeader !== true) { %>
+        <div class="container margin-b-big">
+          <div class="row align-center">
+            <div class="col-8">
+              <h3 class="margin-reset" id="<%- component.config.name %>">
+                <%- component.config.name %>
+              </h3>
+            </div>
+            <div class="col-4 text-r">
+              <span class="type-small"><%- component.sourcePath %></span>
+            </div>
+          </div>
+        </div>
+      <% } else { %>
+        <div class="container margin-b-big">
+          <hr class="separator-75 separator-small">
+        </div>
+      <% } %>
+      <section class="Component__Content">
+        <%- component.html %>
+      </section>
+    </article>
   <% }) %>
-</div>
+</section>
