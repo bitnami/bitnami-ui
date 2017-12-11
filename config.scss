@@ -18,7 +18,7 @@ $config: (
 // Return the endpoint of the images
 @function image-endpoint() {
   @if $env == 'production' {
-    @return "#{config('cloudfront')}images/";
+    @return "#{config('cloudfront')}#{$version}/images/";
   } @else {
     @return '/assets/images/';
   }
