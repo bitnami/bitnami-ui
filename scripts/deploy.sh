@@ -24,8 +24,10 @@ npm run dist
 
 # Copy the generated output to the server
 if [ $? -eq 0 ]; then
-  echo "Deploying current version"
-  scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
+  if [ -z ${DEPLOY_TAG+x} ]; then
+    echo "Deploying current version"
+    scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $DEPLOY_SRC/* $DEPLOY_USER@$DEPLOY_URL:$DEPLOY_DEST
+  fi
 
   # Publish the version in a specific folder too
   if git describe --exact-match >&/dev/null; then
