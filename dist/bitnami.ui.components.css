@@ -1446,6 +1446,11 @@ Display the clouds as buttons.
         Kubernetes
       </a>
     </div>
+    <div class="col-4">
+      <a class="button cloud-selector cloud-selector-vmware">
+        Vmware
+      </a>
+    </div>
   </div>
 </div>
 ```
@@ -1472,30 +1477,32 @@ Display the clouds as buttons.
   .button.cloud-selector.cloud-selector-aws:before {
     background-position-y: 0%; }
   .button.cloud-selector.cloud-selector-azure:before {
-    background-position-y: 7.69231%; }
+    background-position-y: 7.14286%; }
   .button.cloud-selector.cloud-selector-google:before {
-    background-position-y: 15.38462%; }
+    background-position-y: 14.28571%; }
   .button.cloud-selector.cloud-selector-oracle:before {
-    background-position-y: 23.07692%; }
+    background-position-y: 21.42857%; }
   .button.cloud-selector.cloud-selector-centurylink:before {
-    background-position-y: 30.76923%; }
+    background-position-y: 28.57143%; }
   .button.cloud-selector.cloud-selector-bch:before {
-    background-position-y: 38.46154%; }
+    background-position-y: 35.71429%; }
   .button.cloud-selector.cloud-selector-oneone:before {
-    background-position-y: 46.15385%; }
+    background-position-y: 42.85714%; }
   .button.cloud-selector.cloud-selector-godaddy:before {
-    background-position-y: 53.84615%; }
+    background-position-y: 50%; }
   .button.cloud-selector.cloud-selector-otc:before {
-    background-position-y: 61.53846%; }
+    background-position-y: 57.14286%; }
   .button.cloud-selector.cloud-selector-installer:before {
-    background-position-y: 69.23077%; }
+    background-position-y: 64.28571%; }
   .button.cloud-selector.cloud-selector-virtual-machine:before {
-    background-position-y: 76.92308%; }
+    background-position-y: 71.42857%; }
   .button.cloud-selector.cloud-selector-containers:before {
-    background-position-y: 84.61538%; }
+    background-position-y: 78.57143%; }
   .button.cloud-selector.cloud-selector-kubernetes:before {
-    background-position-y: 92.30769%; }
+    background-position-y: 85.71429%; }
   .button.cloud-selector.cloud-selector-huawei:before {
+    background-position-y: 92.85714%; }
+  .button.cloud-selector.cloud-selector-vmware:before {
     background-position-y: 100%; }
 
 /*

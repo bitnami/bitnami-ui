@@ -145,7 +145,7 @@ gulp.task('publish', ['foundations', 'components', 'images'], function() {
     .pipe(s3({
       Bucket: 'bitnami-assets-cf',
       keyTransform: function(relative_filename) {
-        return `bitnami-ui/images/${relative_filename}`;
+        return `bitnami-ui/${config.version}/images/${relative_filename}`;
       }
     }, {
       // S3 Constructor Options, ie:
