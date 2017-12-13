@@ -1,0 +1,39 @@
+/*!
+ * Bitnami UI (embed) - v{VERSION}
+ *
+ * This is the main file of Bitnami UI foundations. It contains all
+ * the base code for styling our UI. This file includes the reset, the base code
+ * and the basic element styles.
+ */
+
+// Environment
+$env: '{BITNAMI_UI_ENV}';
+$version: '{VERSION}';
+
+/**
+ * Mappy breakpoint library
+ */
+@import  'node_modules/mappy-breakpoints/mappy-breakpoints';
+
+/**
+ * Config
+ */
+@import '../config';
+
+/**
+ * Variables contain the values of differents properties for the UI. Some of them
+ * are font families, line heights, colors...
+ */
+@import '../foundations/variables/all';
+
+/**
+ * Helper functions to work with the Bitnami UI.
+ */
+@import '../foundations/mixins/all';
+
+// Now, it's time to import all the library
+.bitnami-ui {
+  @import '../foundations/core/all';
+  @import '../foundations/grid/all';
+  @import '../foundations/helpers/all';
+}

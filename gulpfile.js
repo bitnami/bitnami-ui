@@ -57,6 +57,32 @@ gulp.task('components', function () {
     .pipe(gulp.dest(dist));
 });
 
+gulp.task('embed:foundations', function () {
+  return gulp.src(join('embed/foundations.scss'))
+    .pipe(replace('{VERSION}', config.version))
+    .pipe(replace('{BITNAMI_UI_ENV}', environment))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename({ basename: basename, suffix: '.embed' }))
+    .pipe(gulp.dest(dist))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(rename({ basename: basename, suffix: '.embed.min' }))
+    .pipe(gulp.dest(dist));
+});
+
+gulp.task('embed:components', function () {
+  return gulp.src(join('embed/components.scss'))
+    .pipe(replace('{VERSION}', config.version))
+    .pipe(replace('{BITNAMI_UI_ENV}', environment))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename({ basename: basenameComponents, suffix: '.embed' }))
+    .pipe(gulp.dest(dist))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(rename({ basename: basenameComponents, suffix: '.embed.min' }))
+    .pipe(gulp.dest(dist));
+});
+
+gulp.task('embed', ['embed:foundations', 'embed:components']);
+
 // Image tasks
 gulp.task('images', function() {
   // First copy the base images as @2x
@@ -115,7 +141,7 @@ gulp.task('docs:readme', function() {
 });
 
 // Compile all assets
-gulp.task('dist', ['foundations', 'components', 'images'], function() {
+gulp.task('dist', ['foundations', 'components', 'embed', 'images'], function() {
   gulp.start('docs:images');
   gulp.start('docs');
 });
@@ -126,7 +152,7 @@ gulp.task('dist', ['foundations', 'components', 'images'], function() {
  *
  * Check the README file for more information about deploying Bitnami UI
  */
-gulp.task('publish', ['foundations', 'components', 'images'], function() {
+gulp.task('publish', ['foundations', 'components', 'embed', 'images'], function() {
   // Upload CSS Files
   gulp.src(join('dist/*.css'))
     .pipe(s3({

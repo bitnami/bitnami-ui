@@ -45,7 +45,17 @@ Hit CTRL-C to stop the server
 Bitnami UI comes with a powerful documentation site. Once you executed the development environment,
 the documentation is located at [localhost:8080](http://localhost:8080).
 
-## Production
+## Deployment
+
+To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish the
+assets from a gulp task. You may notice we don't have any AWS credentials in the repository and we
+don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it injects the
+location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
+
+This environment variable is read by the `aws-sdk` automatically, so we don't need to define
+anything.
+
+## Usage
 
 The CSS files of `dist` folder are distributed through
 [Amazon CloudFront](https://aws.amazon.com/cloudfront/). We store the files in an specific S3
@@ -67,10 +77,25 @@ following location:
 This library doesn't include the required font families. You will need to add it to your project.
 You have all the information at [Typography](/category/Foundations/Variables/index.html#Typography).
 
-To upload the assets to CloudFront, we use `gulp-s3-upload`. This library allows us to publish the
-assets from a gulp task. You may notice we don't have any AWS credentials in the repository and we
-don't read any variable in `gulpfile.js`. Deployments are executed from Jenkins and it injects the
-location of the credentials file in `AWS_SHARED_CREDENTIALS_FILE` environment variable.
+### Embed version
 
-This environment variable is read by the `aws-sdk` automatically, so we don't need to define
-anything.
+We recommend to use this pattern lib as a complete framework. However, there are specific use cases when we need to use this library in sites that already have their own base styles. To avoid conflicts between styles, we provide an `embed` version.
+
+```html
+<link rel="stylesheet" media="screen"
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.embed.min.css">
+<link rel="stylesheet" media="screen"
+  href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.embed.min.css">
+```
+
+All the rules in these files are scoped under the `.bitnami-ui` selector. So, they won't interfere with the styles of your site outside of `.bitnami-ui` blocks.
+
+```html
+<div>
+  <!-- Non Bitnami UI styles are applied -->
+  <div class="bitnami-ui">
+    <!-- Bitnami UI styles are applied -->
+  </div>
+  <!-- Non Bitnami UI styles are applied -->
+</div>
+```

@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v2.1.1
+ * Bitnami UI (embed) - v2.1.1
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -469,391 +469,8 @@ Get the z-index from the available layer positions:
 }
 ```
 */
-/**
- * First of all, we need to require a reset CSS file. There are several options
- * for resetting. Now, we are going to select normalize.css. However,
- * we can change it updating this line.
- */
-/**
- * This file is based on Normalize.css v5.0.0 (github.com/necolas/normalize.css).
- * However, I modified the code to remove unnecesary code.
- *
- * Also, I included our current variables to the project.
- */
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers (opinionated).
- */
-body {
-  margin: 0; }
-
-/**
- * Add the correct display in IE 9-.
- */
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block; }
-
-/* Grouping content
-   ========================================================================== */
-/**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in IE.
- */
-figcaption,
-figure,
-main {
-  /* 1 */
-  display: block; }
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */ }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  /* 1 */
-  font-size: 1.125em;
-  /* 2 */ }
-
-/* Text-level semantics
-   ========================================================================== */
-/**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-a {
-  background-color: transparent;
-  /* 1 */
-  -webkit-text-decoration-skip: objects;
-  /* 2 */ }
-
-/**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-a:active,
-a:hover {
-  outline-width: 0; }
-
-/**
- * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */ }
-
-/**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- */
-b,
-strong {
-  font-weight: inherit; }
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: bolder; }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-code,
-kbd,
-samp {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  /* 1 */
-  font-size: 1.125em;
-  /* 2 */ }
-
-/**
- * Add the correct font style in Android 4.3-.
- */
-dfn {
-  font-style: italic; }
-
-/**
- * Add the correct font size in all browsers.
- */
-small {
-  font-size: 0.66683em; }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-sub,
-sup {
-  font-size: 0.66683em;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -0.18745em; }
-
-sup {
-  top: -0.37491em; }
-
-/* Embedded content
-   ========================================================================== */
-/**
- * Add the correct display in IE 9-.
- */
-audio,
-video {
-  display: inline-block; }
-
-/**
- * Add the correct display in iOS 4-7.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-/**
- * Remove the border on images inside links in IE 10-.
- */
-img {
-  border-style: none; }
-
-/**
- * Hide the overflow in IE.
- */
-svg:not(:root) {
-  overflow: hidden; }
-
-/* Forms
-   ========================================================================== */
-/**
- * 1. Change the font styles in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  /* 2 */ }
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input {
-  /* 1 */
-  overflow: visible; }
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-button,
-select {
-  /* 1 */
-  text-transform: none; }
-
-/**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
- *    controls in Android 4.
- * 2. Correct the inability to style clickable types in iOS and Safari.
- */
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */ }
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0; }
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText; }
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */ }
-
-/**
- * 1. Add the correct display in IE 9-.
- * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */ }
-
-/**
- * Remove the default vertical scrollbar in IE.
- */
-textarea {
-  overflow: auto; }
-
-/**
- * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
- */
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */ }
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */ }
-
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */ }
-
-/* Interactive
-   ========================================================================== */
-/*
- * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- */
-details,
-menu {
-  display: block; }
-
-/*
- * Add the correct display in all browsers.
- */
-summary {
-  display: list-item; }
-
-/* Scripting
-   ========================================================================== */
-/**
- * Add the correct display in IE 9-.
- */
-canvas {
-  display: inline-block; }
-
-/**
- * Add the correct display in IE.
- */
-template {
-  display: none; }
-
-/* Hidden
-   ========================================================================== */
-/**
- * Add the correct display in IE 10-.
- */
-[hidden] {
-  display: none; }
-
-/**
- * This file set the base of Bitnami UI. It will set the font-size, scale,
- * background-color... of the body. All custom reset properties must be placed
- * here.
- */
-html {
-  font-size: 100%; }
-
-body {
-  font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  font-size: 1.125em;
-  color: #5F6369;
-  line-height: 1.5;
-  font-weight: 300;
-  text-rendering: optimizeLegibility; }
-
-/**
- * Match the size of elements to the border box. This property allow us to add padding to elements
- * preventing display the element outside of the container
- */
-* {
-  box-sizing: border-box; }
-
-/*
+.bitnami-ui {
+  /*
 ---
 name: Anchors
 category: Foundations/Anchors
@@ -865,14 +482,7 @@ Buttons use the `accent` color.
 This is a <a>link</a>
 ```
 */
-a {
-  color: #4d7ba3;
-  text-decoration: none;
-  cursor: pointer; }
-  a:hover, a:active {
-    color: #7398b6; }
-
-/*
+  /*
 ---
 name: Code
 category: Foundations/Code
@@ -884,26 +494,7 @@ Display an inline code element correctly.
 This is a <code>code example</code>
 ```
 */
-pre {
-  padding: 0.74981em;
-  margin: 0.74981em 0 1.49962em;
-  line-height: 1.2; }
-
-code {
-  font-size: 0.66683em;
-  padding: 0.18745em 0.37491em;
-  background-color: #ebecec;
-  border-radius: 3px;
-  border: 1px solid #d4d4d4;
-  color: #00743e;
-  vertical-align: middle; }
-
-pre > code {
-  padding: 0;
-  background-color: initial;
-  border: none; }
-
-/*
+  /*
 ---
 name: Input
 category: Foundations/Forms
@@ -915,29 +506,7 @@ Basic inputs to build forms.
 <input name="test" placeholder="This is a test" />
 ```
 */
-input,
-select,
-textarea {
-  margin: 0.37491em 0 0.74981em;
-  padding: 0 0.74981em;
-  font-size: 1em;
-  border-radius: 3px;
-  border: 1px solid #ebecec;
-  width: 100%; }
-
-input,
-select {
-  height: 2.24944em;
-  line-height: 2.24944em; }
-
-textarea:focus,
-input:focus,
-select:focus {
-  outline: none;
-  border-color: #339a6a;
-  box-shadow: inset 0 1px 1px rgba(55, 71, 79, 0.01), 0 0 6px rgba(0, 129, 69, 0.1); }
-
-/*
+  /*
 ---
 name: Select
 category: Foundations/Forms
@@ -955,10 +524,7 @@ Selectors are a bit different in Safari. We can't remove the gloss effect withou
 </select>
 ```
 */
-select {
-  background-color: #ffffff; }
-
-/*
+  /*
 ---
 name: Textarea
 category: Foundations/Forms
@@ -970,13 +536,7 @@ This is a test
 </textarea>
 ```
 */
-textarea {
-  padding: 0.74981em;
-  font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  resize: vertical;
-  min-height: 7.49812em; }
-
-/*
+  /*
 ---
 name: Labels
 category: Foundations/Forms
@@ -987,25 +547,7 @@ tag: text
 <input name="check" id="test" placeholder="test" />
 ```
 */
-label {
-  cursor: pointer;
-  font-size: 0.66683em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.1px; }
-  label + label {
-    margin-left: 0.74981em; }
-  label.checkbox, label.radio {
-    text-transform: none;
-    font-size: 1em;
-    font-weight: normal; }
-    label.checkbox span, label.radio span {
-      display: inline-block;
-      margin-left: 0.37491em; }
-    label.checkbox input:disabled + span, label.radio input:disabled + span {
-      opacity: .7; }
-
-/*
+  /*
 ---
 name: Checkbox
 category: Foundations/Forms
@@ -1022,7 +564,7 @@ tag: text
 </label>
 ```
 */
-/*
+  /*
 ---
 name: Radio
 category: Foundations/Forms
@@ -1047,15 +589,7 @@ tag: text
 </label>
 ```
 */
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline-block;
-  margin: 0 0.37491em 0 0;
-  width: auto;
-  height: auto;
-  vertical-align: 1px; }
-
-/**
+  /**
  * This is the second part of the hack. Safari display the checkbox well so
  * we need to reset the value for Safari. This only affects to Safari 7+.
  * For Safari < 7, the checkbox and radio buttons will be showed 1px above the
@@ -1064,13 +598,7 @@ input[type="radio"] {
  * If we don't use this hack, all checkboxes and radio buttons will be misaligned
  * in all versions of Firefox and Chrome. CSS is beatiful...
  */
-_::-webkit-full-page-media,
-_:future,
-:root input[type="checkbox"],
-input[type="radio"] {
-  vertical-align: baseline; }
-
-/*
+  /*
 ---
 name: Buttons
 category: Foundations/Forms
@@ -1082,43 +610,7 @@ tag: text
 <button class="button" disabled="disabled">Disabled</button>
 ```
 */
-.button {
-  display: inline-block;
-  padding: 0.37491em 0.74981em;
-  font-size: 1em;
-  border-radius: 0;
-  border: 1px solid #d4d4d4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  height: 2.24944em;
-  vertical-align: middle;
-  text-decoration: none;
-  color: #4c4f54;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-color: #edeeee; }
-  .button:hover {
-    background-color: #e1e1e1;
-    border-color: #bcbdbd;
-    color: initial; }
-  .button:focus {
-    outline: 0; }
-  .button:active {
-    background-color: #d4d4d4;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-  .button[disabled="disabled"], .button[disabled="true"] {
-    cursor: not-allowed;
-    opacity: .7; }
-    .button[disabled="disabled"]:hover, .button[disabled="true"]:hover {
-      background-color: #edeeee;
-      border-color: #d4d4d4; }
-  .button + .button,
-  .button + button {
-    margin-left: 0.37491em; }
-
-/*
+  /*
 ---
 name: Headers
 category: Foundations/Headers
@@ -1141,59 +633,7 @@ font weights and font families.
 <h3><a href="#">Bitnami rocks!</a></h3>
 ```
 */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-  font-family: "Interstate", "Fira Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  margin: 0.74981em 0 0.37491em; }
-  h1 a,
-  h1 a:hover,
-  h1 a:active,
-  h2 a,
-  h2 a:hover,
-  h2 a:active,
-  h3 a,
-  h3 a:hover,
-  h3 a:active,
-  h4 a,
-  h4 a:hover,
-  h4 a:active,
-  h5 a,
-  h5 a:hover,
-  h5 a:active,
-  h6 a,
-  h6 a:hover,
-  h6 a:active {
-    color: inherit; }
-
-h1 {
-  font-size: 2.24888em;
-  font-weight: 300;
-  color: #4c4f54; }
-
-h2 {
-  font-size: 1.49962em;
-  font-weight: 300;
-  color: #00437B; }
-
-h3 {
-  font-size: 1.49962em;
-  color: #5F6369; }
-
-h4 {
-  font-size: 1em;
-  color: #00437B; }
-
-h5,
-h6 {
-  font-size: 1em;
-  font-weight: bold; }
-
-/*
+  /*
 ---
 name: Unordered lists
 category: Foundations/Lists
@@ -1209,7 +649,7 @@ List are very similar to the base style. We only improved the margin and padding
 </ul>
 ```
 */
-/*
+  /*
 ---
 name: Ordered lists
 category: Foundations/Lists
@@ -1223,12 +663,7 @@ tag: blocks
 </ol>
 ```
 */
-ul,
-ol {
-  padding-left: 2.99925em;
-  margin: 0.74981em 0 1.49962em; }
-
-/*
+  /*
 ---
 name: Paragraphs
 category: Foundations/Paragraphs
@@ -1249,7 +684,7 @@ building on a secure foundation.
 </p>
 ```
 */
-/*
+  /*
 ---
 name: Paragraphs with headers
 category: Foundations/Paragraphs
@@ -1273,10 +708,7 @@ latest language features are available and you're building on a secure foundatio
 </p>
 ```
 */
-p {
-  margin: 0.74981em 0 1.49962em; }
-
-/*
+  /*
 ---
 name: Blockquote
 category: Foundations/Quotations
@@ -1295,18 +727,7 @@ anchor must be equal to "author". You can check the following
 </blockquote>
 ```
 */
-blockquote {
-  padding-left: 1.49962em;
-  margin: 0.74981em 0 1.49962em;
-  border-left: 2px solid #00284a;
-  color: #7f8287; }
-  blockquote a[rel="author"] {
-    font-style: italic; }
-  blockquote br + a {
-    display: inline-block;
-    margin-top: 0.37491em; }
-
-/*
+  /*
 ---
 name: Abbreviation
 category: Foundations/Quotations
@@ -1320,7 +741,7 @@ For example, our Rails Development Container includes full Rails environment and
 productive immediately - with all the most common tools ready to go.
 ```
 */
-/*
+  /*
 ---
 name: Cite
 category: Foundations/Quotations
@@ -1332,12 +753,7 @@ For example, our Rails Development Container includes full Rails environment and
 productive immediately - with all the most common tools ready to go.
 ```
 */
-abbr,
-cite {
-  text-decoration: none;
-  font-weight: 600; }
-
-/*
+  /*
 ---
 name: Horizontal
 category: Foundations/Separators
@@ -1349,14 +765,7 @@ Add an horizonal line to split the content of the page.
 <hr />
 ```
 */
-hr {
-  color: #ebecec;
-  background-color: #ebecec;
-  height: 2px;
-  border: 0;
-  margin: 0.74981em auto; }
-
-/*
+  /*
 ---
 name: Tables
 category: Foundations/Tables
@@ -1397,20 +806,7 @@ Tables should follow the standard format using `thead > th` and `tbody > td` tag
 </table>
 ```
 */
-table {
-  width: 100%;
-  margin: 0.74981em 0 1.49962em;
-  border-collapse: collapse;
-  text-align: left; }
-  table th,
-  table td {
-    padding: 0.74981em; }
-  table th {
-    border-bottom: 1px solid #ebecec; }
-  table tbody > tr:hover {
-    background-color: #f3f4f4; }
-
-/*
+  /*
 ---
 name: Basic
 category: Foundations/Grid
@@ -1471,58 +867,7 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
 </div>
 ```
 */
-.container {
-  width: auto;
-  max-width: 1300px;
-  margin: 0 auto;
-  /**
-   * Row definition
-   */ }
-  @media all and (max-width: 1347.988px) {
-    .container {
-      padding: 0 1.49962em; } }
-  .container .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1.49962em -0.74981em;
-    /**
-     * Column definition
-     */ }
-    .container .row:first-child {
-      margin-top: 0; }
-    .container .row:last-child {
-      margin-bottom: 0; }
-    .container .row > [class^="col"] {
-      flex: 1;
-      min-height: 1px;
-      box-sizing: border-box;
-      padding: 0 0.74981em; }
-    .container .row .col-1 {
-      flex: 0 0 8.33333%; }
-    .container .row .col-2 {
-      flex: 0 0 16.66667%; }
-    .container .row .col-3 {
-      flex: 0 0 25%; }
-    .container .row .col-4 {
-      flex: 0 0 33.33333%; }
-    .container .row .col-5 {
-      flex: 0 0 41.66667%; }
-    .container .row .col-6 {
-      flex: 0 0 50%; }
-    .container .row .col-7 {
-      flex: 0 0 58.33333%; }
-    .container .row .col-8 {
-      flex: 0 0 66.66667%; }
-    .container .row .col-9 {
-      flex: 0 0 75%; }
-    .container .row .col-10 {
-      flex: 0 0 83.33333%; }
-    .container .row .col-11 {
-      flex: 0 0 91.66667%; }
-    .container .row .col-12 {
-      flex: 0 0 100%; }
-
-/*
+  /*
 ---
 name: Content
 category: Foundations/Grid
@@ -1555,25 +900,7 @@ Content helpers allows you to change the alignment of an specific column or all 
 </div>
 ```
 */
-.container .row.align-center {
-  align-items: center; }
-
-.container .row.align-start {
-  align-items: flex-start; }
-
-.container .row.align-end {
-  align-items: flex-end; }
-
-.container .row > [class^="col"].align-center {
-  align-self: center; }
-
-.container .row > [class^="col"].align-start {
-  align-self: flex-start; }
-
-.container .row > [class^="col"].align-end {
-  align-self: flex-end; }
-
-/*
+  /*
 ---
 name: Responsive
 category: Foundations/Grid
@@ -1638,248 +965,7 @@ If you want to collapse a row above or below an specific screen size, you can us
 </div>
 ```
 */
-.container .row {
-  /**
-   * General behviour
-   *
-   * NOTE: Now, we're going to disable this functionality to avoid incompatibilities with the
-   * current CSS code of our products
-   */
-  /**
-   * Specific media queries
-   */
-  /**
-   * Below media queries
-   */
-  /**
-   * Above media queries
-   */ }
-  @media all and (max-width: 29.9375em) {
-    .container .row.collapse-on-phone > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-on-phone > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-phone > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-phone > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: 30em) and (max-width: 47.9375em) {
-    .container .row.collapse-on-phone-land > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-on-phone-land > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-phone-land > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-on-phone-land > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-phone-land > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-on-phone-land > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: 48em) and (max-width: 56.1875em) {
-    .container .row.collapse-on-tablet > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-on-tablet > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-tablet > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-tablet > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
-    .container .row.collapse-on-desktop > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-on-desktop > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-desktop > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-desktop > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
-    .container .row.collapse-on-wide > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-on-wide > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-on-wide > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-on-wide > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-on-wide > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-on-wide > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (max-width: 29.9375em) {
-    .container .row.collapse-b-phone-land > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-b-phone-land > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-b-phone-land > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-b-phone-land > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-b-phone-land > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-b-phone-land > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (max-width: 47.9375em) {
-    .container .row.collapse-b-tablet > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-b-tablet > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-b-tablet > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-b-tablet > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-b-tablet > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-b-tablet > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (max-width: 56.1875em) {
-    .container .row.collapse-b-desktop > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-b-desktop > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-b-desktop > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-b-desktop > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-b-desktop > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-b-desktop > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (max-width: 68.6875em) {
-    .container .row.collapse-b-wide > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-b-wide > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-b-wide > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-b-wide > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-b-wide > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: sm) {
-    .container .row.collapse-a-phone > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-a-phone > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-a-phone > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-a-phone > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-a-phone > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: md) {
-    .container .row.collapse-a-phone-land > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-a-phone-land > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-a-phone-land > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-a-phone-land > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-a-phone-land > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: lg) {
-    .container .row.collapse-a-tablet > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-a-tablet > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-a-tablet > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-a-tablet > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-a-tablet > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: xl) {
-    .container .row.collapse-a-desktop > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-a-desktop > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-a-desktop > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-a-desktop > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-a-desktop > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-  @media all and (min-width: uxl) {
-    .container .row.collapse-a-wide > [class^="col"] {
-      flex: 0 0 100%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-a-wide > [class^="col"]:first-child {
-        margin-top: 0; }
-    .container .row.collapse-2-a-wide > [class^="col"] {
-      flex: 0 0 50%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-2-a-wide > [class^="col"]:nth-child(-n+2) {
-        margin-top: 0; }
-    .container .row.collapse-3-a-wide > [class^="col"] {
-      flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
-      .container .row.collapse-3-a-wide > [class^="col"]:nth-child(-n+3) {
-        margin-top: 0; } }
-
-/*
+  /*
 ---
 name: Sizes
 category: Foundations/Grid
@@ -1925,16 +1011,7 @@ The grid is limited by the `max-width` property. By default, the rows can not be
 </div>
 ```
 */
-.container.container-fluid {
-  max-width: none; }
-
-.container.container-small {
-  max-width: calc(8 * (1300px / 12) + 1.49962em / 2); }
-
-.container.container-tiny {
-  max-width: calc(6 * (1300px / 12) + 1.49962em / 2); }
-
-/*
+  /*
 ---
 name: Anchors
 category: Foundations/Helpers
@@ -1955,17 +1032,7 @@ Modify the color of the anchor. Available classes:
 </div>
 ```
 */
-a.light:not(.button) {
-  color: #4da77d; }
-  a.light:not(.button):hover, a.light:not(.button):active, a.light:not(.button):visited {
-    color: #66b38f; }
-
-a.secondary:not(.button) {
-  color: #00437B; }
-  a.secondary:not(.button):hover, a.secondary:not(.button):active, a.secondary:not(.button):visited {
-    color: #003c6f; }
-
-/*
+  /*
 ---
 name: Animations
 category: Foundations/Helpers
@@ -1981,18 +1048,7 @@ Different animations for the elements:
 </p>
 ```
 */
-@keyframes slide-in {
-  from {
-    transform: translate3d(0, -10%, 0);
-    opacity: 0; }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1; } }
-
-.slide-in {
-  animation: slide-in .150s ease-in; }
-
-/*
+  /*
 ---
 name: Backgrounds
 category: Foundations/Helpers
@@ -2012,23 +1068,7 @@ Modify the background color of the given element.
 <div class="container padding-v-bigger bg-base"></div>
 ```
 */
-.bg-bitnami,
-.bg-brand {
-  background-color: #00437B; }
-
-.bg-iron,
-.bg-light {
-  background-color: #ebecec; }
-
-.bg-dark,
-.bg-dark {
-  background-color: #37474f; }
-
-.bg-white,
-.bg-base {
-  background-color: #fff; }
-
-/*
+  /*
 ---
 name: Box Shadows
 category: Foundations/Helpers
@@ -2083,31 +1123,7 @@ of the box. Higher numbers will display the boxes in a higher level.
 </div>
 ```
 */
-.shadow-1,
-.elevation-1 {
-  box-shadow: 0 3px 6px rgba(55, 71, 79, 0.4); }
-
-.shadow-2,
-.elevation-2 {
-  box-shadow: 0 6px 12px rgba(55, 71, 79, 0.4); }
-
-.shadow-3,
-.elevation-3 {
-  box-shadow: 0 9px 18px rgba(55, 71, 79, 0.4); }
-
-.shadow-4,
-.elevation-4 {
-  box-shadow: 0 12px 24px rgba(55, 71, 79, 0.4); }
-
-.shadow-5,
-.elevation-5 {
-  box-shadow: 0 15px 30px rgba(55, 71, 79, 0.4); }
-
-.shadow-reset,
-.elevation-reset {
-  box-shadow: none; }
-
-/*
+  /*
 ---
 name: Button Colors
 category: Foundations/Helpers
@@ -2125,43 +1141,7 @@ Modify the color of the buttons. Available classes:
 <a class="button">Link button</a>
 ```
 */
-.button-primary {
-  background-color: #1a5688;
-  border-color: #003c6f;
-  color: #ffffff; }
-  .button-primary:hover {
-    color: #ffffff;
-    background-color: #004a89;
-    border-color: #003662; }
-  .button-primary:active {
-    background-color: #003c6f;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
-.button-accent {
-  background-color: #1a8e58;
-  border-color: #00743e;
-  color: #ffffff; }
-  .button-accent:hover {
-    color: #ffffff;
-    background-color: #008e4c;
-    border-color: #006737; }
-  .button-accent:active {
-    background-color: #00743e;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
-.button-action {
-  background-color: #f68f36;
-  border-color: #dd751d;
-  color: #ffffff; }
-  .button-action:hover {
-    color: #ffffff;
-    background-color: #e48230;
-    border-color: #c4681a; }
-  .button-action:active {
-    background-color: #dd751d;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
-/*
+  /*
 ---
 name: Button Sizes
 category: Foundations/Helpers
@@ -2180,16 +1160,7 @@ Modify the size of the buttons. Available classes:
 <a class="button button-bigger">Link button</a>
 ```
 */
-.button-small {
-  font-size: 0.66683em; }
-
-.button-big {
-  font-size: 1.49962em; }
-
-.button-bigger {
-  font-size: 2.24888em; }
-
-/*
+  /*
 ---
 name: Button Dropdown
 category: Foundations/Helpers
@@ -2209,31 +1180,7 @@ See https://css-tricks.com/snippets/css/css-triangle/.
 <a class="button button-bigger button-dropdown button-dropdown-open">Link button</a>
 ```
 */
-.button-dropdown:after {
-  border: 5px solid transparent;
-  border-top-color: #5F6369;
-  display: inline-block;
-  content: '';
-  height: 0;
-  margin-left: 0.37491em;
-  position: relative;
-  top: 0.09373em;
-  vertical-align: middle;
-  width: 0; }
-
-.button-dropdown.button-action:after, .button-dropdown.button-accent:after {
-  border-top-color: #ffffff; }
-
-.button-dropdown-open:after {
-  border-top-color: transparent;
-  border-bottom-color: #5F6369;
-  top: -.2em; }
-
-.button-dropdown-open.button-action:after, .button-dropdown-open.button-accent:after {
-  border-top-color: transparent;
-  border-bottom-color: #ffffff; }
-
-/*
+  /*
 ---
 name: Linear Gradients
 category: Foundations/Helpers
@@ -2256,73 +1203,7 @@ Add a gradient for the background of an element.
 <div class="gradient-270-action" style="height: 100px"></div>
 ```
 */
-.gradient-brand,
-.gradient-0-brand {
-  background-image: linear-gradient(0deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-accent,
-.gradient-0-accent {
-  background-image: linear-gradient(0deg, #008145 0%, #82C341 100%); }
-
-.gradient-action,
-.gradient-0-action {
-  background-image: linear-gradient(0deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-45-brand {
-  background-image: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-45-accent {
-  background-image: linear-gradient(45deg, #008145 0%, #82C341 100%); }
-
-.gradient-45-action {
-  background-image: linear-gradient(45deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-90-brand {
-  background-image: linear-gradient(90deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-90-accent {
-  background-image: linear-gradient(90deg, #008145 0%, #82C341 100%); }
-
-.gradient-90-action {
-  background-image: linear-gradient(90deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-135-brand {
-  background-image: linear-gradient(135deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-135-accent {
-  background-image: linear-gradient(135deg, #008145 0%, #82C341 100%); }
-
-.gradient-135-action {
-  background-image: linear-gradient(135deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-180-brand {
-  background-image: linear-gradient(180deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-180-accent {
-  background-image: linear-gradient(180deg, #008145 0%, #82C341 100%); }
-
-.gradient-180-action {
-  background-image: linear-gradient(180deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-225-brand {
-  background-image: linear-gradient(225deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-225-accent {
-  background-image: linear-gradient(225deg, #008145 0%, #82C341 100%); }
-
-.gradient-225-action {
-  background-image: linear-gradient(225deg, #F58220 0%, #FDBA12 100%); }
-
-.gradient-270-brand {
-  background-image: linear-gradient(270deg, #00437B 0%, #1598CB 100%); }
-
-.gradient-270-accent {
-  background-image: linear-gradient(270deg, #008145 0%, #82C341 100%); }
-
-.gradient-270-action {
-  background-image: linear-gradient(270deg, #F58220 0%, #FDBA12 100%); }
-
-/*
+  /*
 ---
 name: Subtitle
 category: Foundations/Helpers
@@ -2335,12 +1216,7 @@ Modify the color and the margin-top of a header. It should be combined with a no
 <h5 class="subtitle">The ease of Bitnami backed by the compute power of Google</h5>
 ```
 */
-.subtitle {
-  font-weight: normal;
-  color: #44add5;
-  margin-top: -0.74981em; }
-
-/*
+  /*
 ---
 name: Inverse
 category: Foundations/Helpers
@@ -2352,10 +1228,7 @@ Use this style with dark bacgrkound colors
 <h1 class="inverse">The best of both worlds</h1>
 ```
 */
-.inverse {
-  color: #f4f5f5; }
-
-/*
+  /*
 ---
 name: Lists without styles
 category: Foundations/Helpers
@@ -2371,10 +1244,7 @@ Remove the decoration (bullets) of the list.
 </ul>
 ```
 */
-.remove-style {
-  list-style: none; }
-
-/*
+  /*
 ---
 name: Text alignment
 category: Foundations/Helpers
@@ -2388,16 +1258,7 @@ These classes help us to modify the default aligntment of the text in our views
 <p class="text-c">Center alignment</p>
 ```
 */
-.text-l {
-  text-align: left; }
-
-.text-r {
-  text-align: right; }
-
-.text-c {
-  text-align: center; }
-
-/*
+  /*
 ---
 name: Floating
 category: Foundations/Helpers
@@ -2414,16 +1275,7 @@ Also, we can update the float property of our blocks
 <div class="float-n">Remove floating</div>
 ```
 */
-.float-l {
-  float: left; }
-
-.float-r {
-  float: right; }
-
-.float-n {
-  float: none; }
-
-/*
+  /*
 ---
 name: Clearfix
 category: Foundations/Helpers
@@ -2442,12 +1294,7 @@ Clear floating elements in the current container
 <div class="float-n">Remove floating</div>
 ```
 */
-.clearfix:after {
-  content: '';
-  display: table;
-  clear: both; }
-
-/*
+  /*
 ---
 name: Separator height
 category: Foundations/Helpers
@@ -2468,31 +1315,7 @@ Modify the height and the width of the separator.
 <hr class="separator-15"/>
 ```
 */
-hr.separator-small {
-  height: 1px; }
-
-hr.separator-big {
-  height: 0.18745em; }
-
-hr.separator-bigger {
-  height: 0.37491em; }
-
-hr.separator-enormous {
-  height: 0.74981em; }
-
-hr.separator-15 {
-  width: 15%; }
-
-hr.separator-30 {
-  width: 30%; }
-
-hr.separator-50 {
-  width: 50%; }
-
-hr.separator-70 {
-  width: 70%; }
-
-/*
+  /*
 ---
 name: Padding
 category: Foundations/Helpers
@@ -2548,34 +1371,7 @@ Reduce or increase the default padding based on the base size unity.
 </p>
 ```
 */
-.padding-reset {
-  padding: 0; }
-
-.padding-tiny {
-  padding: 0.18745em; }
-
-.padding-small {
-  padding: 0.37491em; }
-
-.padding-normal {
-  padding: 0.74981em; }
-
-.padding-big {
-  padding: 1.49962em; }
-
-.padding-bigger {
-  padding: 2.24944em; }
-
-.padding-enormous {
-  padding: 2.99925em; }
-
-.padding-giant {
-  padding: 4.49887em; }
-
-.padding-huge {
-  padding: 7.49812em; }
-
-/*
+  /*
 ---
 name: Padding - specific
 category: Foundations/Helpers
@@ -2606,115 +1402,7 @@ Reduce or increase a padding property based on the base size unity.
 </p>
 ```
 */
-.padding-t-reset {
-  padding-top: 0; }
-
-.padding-t-tiny {
-  padding-top: 0.18745em; }
-
-.padding-t-small {
-  padding-top: 0.37491em; }
-
-.padding-t-normal {
-  padding-top: 0.74981em; }
-
-.padding-t-big {
-  padding-top: 1.49962em; }
-
-.padding-t-bigger {
-  padding-top: 2.24944em; }
-
-.padding-t-enormous {
-  padding-top: 2.99925em; }
-
-.padding-t-giant {
-  padding-top: 4.49887em; }
-
-.padding-t-huge {
-  padding-top: 7.49812em; }
-
-.padding-b-reset {
-  padding-bottom: 0; }
-
-.padding-b-tiny {
-  padding-bottom: 0.18745em; }
-
-.padding-b-small {
-  padding-bottom: 0.37491em; }
-
-.padding-b-normal {
-  padding-bottom: 0.74981em; }
-
-.padding-b-big {
-  padding-bottom: 1.49962em; }
-
-.padding-b-bigger {
-  padding-bottom: 2.24944em; }
-
-.padding-b-enormous {
-  padding-bottom: 2.99925em; }
-
-.padding-b-giant {
-  padding-bottom: 4.49887em; }
-
-.padding-b-huge {
-  padding-bottom: 7.49812em; }
-
-.padding-l-reset {
-  padding-left: 0; }
-
-.padding-l-tiny {
-  padding-left: 0.18745em; }
-
-.padding-l-small {
-  padding-left: 0.37491em; }
-
-.padding-l-normal {
-  padding-left: 0.74981em; }
-
-.padding-l-big {
-  padding-left: 1.49962em; }
-
-.padding-l-bigger {
-  padding-left: 2.24944em; }
-
-.padding-l-enormous {
-  padding-left: 2.99925em; }
-
-.padding-l-giant {
-  padding-left: 4.49887em; }
-
-.padding-l-huge {
-  padding-left: 7.49812em; }
-
-.padding-r-reset {
-  padding-right: 0; }
-
-.padding-r-tiny {
-  padding-right: 0.18745em; }
-
-.padding-r-small {
-  padding-right: 0.37491em; }
-
-.padding-r-normal {
-  padding-right: 0.74981em; }
-
-.padding-r-big {
-  padding-right: 1.49962em; }
-
-.padding-r-bigger {
-  padding-right: 2.24944em; }
-
-.padding-r-enormous {
-  padding-right: 2.99925em; }
-
-.padding-r-giant {
-  padding-right: 4.49887em; }
-
-.padding-r-huge {
-  padding-right: 7.49812em; }
-
-/*
+  /*
 ---
 name: Padding - horizontal and vertical
 category: Foundations/Helpers
@@ -2735,79 +1423,7 @@ Reduce or increase the vertical or horizontal padding based on the base size uni
 </p>
 ```
 */
-.padding-v-reset {
-  padding-top: 0;
-  padding-bottom: 0; }
-
-.padding-v-tiny {
-  padding-top: 0.18745em;
-  padding-bottom: 0.18745em; }
-
-.padding-v-small {
-  padding-top: 0.37491em;
-  padding-bottom: 0.37491em; }
-
-.padding-v-normal {
-  padding-top: 0.74981em;
-  padding-bottom: 0.74981em; }
-
-.padding-v-big {
-  padding-top: 1.49962em;
-  padding-bottom: 1.49962em; }
-
-.padding-v-bigger {
-  padding-top: 2.24944em;
-  padding-bottom: 2.24944em; }
-
-.padding-v-enormous {
-  padding-top: 2.99925em;
-  padding-bottom: 2.99925em; }
-
-.padding-v-giant {
-  padding-top: 4.49887em;
-  padding-bottom: 4.49887em; }
-
-.padding-v-huge {
-  padding-top: 7.49812em;
-  padding-bottom: 7.49812em; }
-
-.padding-h-reset {
-  padding-left: 0;
-  padding-right: 0; }
-
-.padding-h-tiny {
-  padding-left: 0.18745em;
-  padding-right: 0.18745em; }
-
-.padding-h-small {
-  padding-left: 0.37491em;
-  padding-right: 0.37491em; }
-
-.padding-h-normal {
-  padding-left: 0.74981em;
-  padding-right: 0.74981em; }
-
-.padding-h-big {
-  padding-left: 1.49962em;
-  padding-right: 1.49962em; }
-
-.padding-h-bigger {
-  padding-left: 2.24944em;
-  padding-right: 2.24944em; }
-
-.padding-h-enormous {
-  padding-left: 2.99925em;
-  padding-right: 2.99925em; }
-
-.padding-h-giant {
-  padding-left: 4.49887em;
-  padding-right: 4.49887em; }
-
-.padding-h-huge {
-  padding-left: 7.49812em;
-  padding-right: 7.49812em; }
-
-/*
+  /*
 ---
 name: Margin
 category: Foundations/Helpers
@@ -2863,34 +1479,7 @@ Reduce or increase the default margin based on the base size unity.
 </p>
 ```
 */
-.margin-reset {
-  margin: 0; }
-
-.margin-tiny {
-  margin: 0.18745em; }
-
-.margin-small {
-  margin: 0.37491em; }
-
-.margin-normal {
-  margin: 0.74981em; }
-
-.margin-big {
-  margin: 1.49962em; }
-
-.margin-bigger {
-  margin: 2.24944em; }
-
-.margin-enormous {
-  margin: 2.99925em; }
-
-.margin-giant {
-  margin: 4.49887em; }
-
-.margin-huge {
-  margin: 7.49812em; }
-
-/*
+  /*
 ---
 name: Margin - specific
 category: Foundations/Helpers
@@ -2921,115 +1510,7 @@ Reduce or increase a margin property based on the base size unity.
 </p>
 ```
 */
-.margin-t-reset {
-  margin-top: 0; }
-
-.margin-t-tiny {
-  margin-top: 0.18745em; }
-
-.margin-t-small {
-  margin-top: 0.37491em; }
-
-.margin-t-normal {
-  margin-top: 0.74981em; }
-
-.margin-t-big {
-  margin-top: 1.49962em; }
-
-.margin-t-bigger {
-  margin-top: 2.24944em; }
-
-.margin-t-enormous {
-  margin-top: 2.99925em; }
-
-.margin-t-giant {
-  margin-top: 4.49887em; }
-
-.margin-t-huge {
-  margin-top: 7.49812em; }
-
-.margin-b-reset {
-  margin-bottom: 0; }
-
-.margin-b-tiny {
-  margin-bottom: 0.18745em; }
-
-.margin-b-small {
-  margin-bottom: 0.37491em; }
-
-.margin-b-normal {
-  margin-bottom: 0.74981em; }
-
-.margin-b-big {
-  margin-bottom: 1.49962em; }
-
-.margin-b-bigger {
-  margin-bottom: 2.24944em; }
-
-.margin-b-enormous {
-  margin-bottom: 2.99925em; }
-
-.margin-b-giant {
-  margin-bottom: 4.49887em; }
-
-.margin-b-huge {
-  margin-bottom: 7.49812em; }
-
-.margin-l-reset {
-  margin-left: 0; }
-
-.margin-l-tiny {
-  margin-left: 0.18745em; }
-
-.margin-l-small {
-  margin-left: 0.37491em; }
-
-.margin-l-normal {
-  margin-left: 0.74981em; }
-
-.margin-l-big {
-  margin-left: 1.49962em; }
-
-.margin-l-bigger {
-  margin-left: 2.24944em; }
-
-.margin-l-enormous {
-  margin-left: 2.99925em; }
-
-.margin-l-giant {
-  margin-left: 4.49887em; }
-
-.margin-l-huge {
-  margin-left: 7.49812em; }
-
-.margin-r-reset {
-  margin-right: 0; }
-
-.margin-r-tiny {
-  margin-right: 0.18745em; }
-
-.margin-r-small {
-  margin-right: 0.37491em; }
-
-.margin-r-normal {
-  margin-right: 0.74981em; }
-
-.margin-r-big {
-  margin-right: 1.49962em; }
-
-.margin-r-bigger {
-  margin-right: 2.24944em; }
-
-.margin-r-enormous {
-  margin-right: 2.99925em; }
-
-.margin-r-giant {
-  margin-right: 4.49887em; }
-
-.margin-r-huge {
-  margin-right: 7.49812em; }
-
-/*
+  /*
 ---
 name: Margin - horizontal and vertical
 category: Foundations/Helpers
@@ -3050,79 +1531,7 @@ Reduce or increase the vertical or horizontal margin based on the base size unit
 </p>
 ```
 */
-.margin-v-reset {
-  margin-top: 0;
-  margin-bottom: 0; }
-
-.margin-v-tiny {
-  margin-top: 0.18745em;
-  margin-bottom: 0.18745em; }
-
-.margin-v-small {
-  margin-top: 0.37491em;
-  margin-bottom: 0.37491em; }
-
-.margin-v-normal {
-  margin-top: 0.74981em;
-  margin-bottom: 0.74981em; }
-
-.margin-v-big {
-  margin-top: 1.49962em;
-  margin-bottom: 1.49962em; }
-
-.margin-v-bigger {
-  margin-top: 2.24944em;
-  margin-bottom: 2.24944em; }
-
-.margin-v-enormous {
-  margin-top: 2.99925em;
-  margin-bottom: 2.99925em; }
-
-.margin-v-giant {
-  margin-top: 4.49887em;
-  margin-bottom: 4.49887em; }
-
-.margin-v-huge {
-  margin-top: 7.49812em;
-  margin-bottom: 7.49812em; }
-
-.margin-h-reset {
-  margin-left: 0;
-  margin-right: 0; }
-
-.margin-h-tiny {
-  margin-left: 0.18745em;
-  margin-right: 0.18745em; }
-
-.margin-h-small {
-  margin-left: 0.37491em;
-  margin-right: 0.37491em; }
-
-.margin-h-normal {
-  margin-left: 0.74981em;
-  margin-right: 0.74981em; }
-
-.margin-h-big {
-  margin-left: 1.49962em;
-  margin-right: 1.49962em; }
-
-.margin-h-bigger {
-  margin-left: 2.24944em;
-  margin-right: 2.24944em; }
-
-.margin-h-enormous {
-  margin-left: 2.99925em;
-  margin-right: 2.99925em; }
-
-.margin-h-giant {
-  margin-left: 4.49887em;
-  margin-right: 4.49887em; }
-
-.margin-h-huge {
-  margin-left: 7.49812em;
-  margin-right: 7.49812em; }
-
-/*
+  /*
 ---
 name: Margin - center
 category: Foundations/Helpers
@@ -3143,44 +1552,7 @@ Apply a margin `auto` to center elements.
 </p>
 ```
 */
-.margin-c {
-  margin-left: auto;
-  margin-right: auto; }
-
-.margin-vc-reset {
-  margin: 0 auto; }
-
-.margin-vc-tiny {
-  margin: 0.18745em auto; }
-
-.margin-vc-small {
-  margin: 0.37491em auto; }
-
-.margin-vc-normal {
-  margin: 0.74981em auto; }
-
-.margin-vc-big {
-  margin: 1.49962em auto; }
-
-.margin-vc-bigger {
-  margin: 2.24944em auto; }
-
-.margin-vc-enormous {
-  margin: 2.99925em auto; }
-
-.margin-vc-giant {
-  margin: 4.49887em auto; }
-
-.margin-vc-huge {
-  margin: 7.49812em auto; }
-
-.margin-vc-6 {
-  margin: auto; }
-
-.margin-vc-7 {
-  margin: auto; }
-
-/*
+  /*
 ---
 name: Striped
 category: Foundations/Helpers
@@ -3221,13 +1593,7 @@ Show a light gray background in even rows.
 </table>
 ```
 */
-table.striped tr:nth-child(even) td {
-  background-color: #f4f5f5; }
-
-table.striped tr:hover {
-  background-color: initial; }
-
-/*
+  /*
 ---
 name: Size
 category: Foundations/Helpers
@@ -3270,37 +1636,7 @@ Reduce or increase the default `font-size` of an element.
 </p>
 ```
 */
-.type-tiny {
-  font-size: 0.44467em; }
-
-.type-small {
-  font-size: 0.66683em; }
-
-.type-normal {
-  font-size: 1em; }
-
-.type-big {
-  font-size: 1.49962em; }
-
-.type-bigger {
-  font-size: 2.24888em; }
-
-.type-enormous {
-  font-size: 3.37247em; }
-
-.type-giant {
-  font-size: 5.05744em; }
-
-.type-huge {
-  font-size: 7.58426em; }
-
-.type-6 {
-  font-size: 11.37355em; }
-
-.type-7 {
-  font-size: 17.05606em; }
-
-/*
+  /*
 ---
 name: Color
 category: Foundations/Helpers
@@ -3327,23 +1663,7 @@ Reduce or increase the default `color` of an element.
 </p>
 ```
 */
-.type-color-bitnami,
-.type-color-brand {
-  color: #00437B; }
-
-.type-color-accent,
-.type-color-accent {
-  color: #008145; }
-
-.type-color-iron,
-.type-color-light {
-  color: #ebecec; }
-
-.type-color-action,
-.type-color-action {
-  color: #F58220; }
-
-/*
+  /*
 ---
 name: Uppercase
 category: Foundations/Helpers
@@ -3356,6 +1676,1051 @@ Set the text to Uppercase
   Bitnami rocks!
 </h1>
 ```
-*/
-.type-uppercase {
-  text-transform: uppercase; }
+*/ }
+  .bitnami-ui a {
+    color: #4d7ba3;
+    text-decoration: none;
+    cursor: pointer; }
+    .bitnami-ui a:hover, .bitnami-ui a:active {
+      color: #7398b6; }
+  .bitnami-ui pre {
+    padding: 0.74981em;
+    margin: 0.74981em 0 1.49962em;
+    line-height: 1.2; }
+  .bitnami-ui code {
+    font-size: 0.66683em;
+    padding: 0.18745em 0.37491em;
+    background-color: #ebecec;
+    border-radius: 3px;
+    border: 1px solid #d4d4d4;
+    color: #00743e;
+    vertical-align: middle; }
+  .bitnami-ui pre > code {
+    padding: 0;
+    background-color: initial;
+    border: none; }
+  .bitnami-ui input,
+  .bitnami-ui select,
+  .bitnami-ui textarea {
+    margin: 0.37491em 0 0.74981em;
+    padding: 0 0.74981em;
+    font-size: 1em;
+    border-radius: 3px;
+    border: 1px solid #ebecec;
+    width: 100%; }
+  .bitnami-ui input,
+  .bitnami-ui select {
+    height: 2.24944em;
+    line-height: 2.24944em; }
+  .bitnami-ui textarea:focus,
+  .bitnami-ui input:focus,
+  .bitnami-ui select:focus {
+    outline: none;
+    border-color: #339a6a;
+    box-shadow: inset 0 1px 1px rgba(55, 71, 79, 0.01), 0 0 6px rgba(0, 129, 69, 0.1); }
+  .bitnami-ui select {
+    background-color: #ffffff; }
+  .bitnami-ui textarea {
+    padding: 0.74981em;
+    font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    resize: vertical;
+    min-height: 7.49812em; }
+  .bitnami-ui label {
+    cursor: pointer;
+    font-size: 0.66683em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.1px; }
+    .bitnami-ui label + label {
+      margin-left: 0.74981em; }
+    .bitnami-ui label.checkbox, .bitnami-ui label.radio {
+      text-transform: none;
+      font-size: 1em;
+      font-weight: normal; }
+      .bitnami-ui label.checkbox span, .bitnami-ui label.radio span {
+        display: inline-block;
+        margin-left: 0.37491em; }
+      .bitnami-ui label.checkbox input:disabled + span, .bitnami-ui label.radio input:disabled + span {
+        opacity: .7; }
+  .bitnami-ui input[type="checkbox"],
+  .bitnami-ui input[type="radio"] {
+    display: inline-block;
+    margin: 0 0.37491em 0 0;
+    width: auto;
+    height: auto;
+    vertical-align: 1px; }
+  .bitnami-ui _::-webkit-full-page-media,
+  .bitnami-ui _:future,
+  .bitnami-ui :root input[type="checkbox"],
+  .bitnami-ui input[type="radio"] {
+    vertical-align: baseline; }
+  .bitnami-ui .button {
+    display: inline-block;
+    padding: 0.37491em 0.74981em;
+    font-size: 1em;
+    border-radius: 0;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 2.24944em;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #4c4f54;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #edeeee; }
+    .bitnami-ui .button:hover {
+      background-color: #e1e1e1;
+      border-color: #bcbdbd;
+      color: initial; }
+    .bitnami-ui .button:focus {
+      outline: 0; }
+    .bitnami-ui .button:active {
+      background-color: #d4d4d4;
+      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+    .bitnami-ui .button[disabled="disabled"], .bitnami-ui .button[disabled="true"] {
+      cursor: not-allowed;
+      opacity: .7; }
+      .bitnami-ui .button[disabled="disabled"]:hover, .bitnami-ui .button[disabled="true"]:hover {
+        background-color: #edeeee;
+        border-color: #d4d4d4; }
+    .bitnami-ui .button + .button,
+    .bitnami-ui .button + button {
+      margin-left: 0.37491em; }
+  .bitnami-ui h1,
+  .bitnami-ui h2,
+  .bitnami-ui h3,
+  .bitnami-ui h4,
+  .bitnami-ui h5,
+  .bitnami-ui h6 {
+    font-weight: 400;
+    font-family: "Interstate", "Fira Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    margin: 0.74981em 0 0.37491em; }
+    .bitnami-ui h1 a,
+    .bitnami-ui h1 a:hover,
+    .bitnami-ui h1 a:active,
+    .bitnami-ui h2 a,
+    .bitnami-ui h2 a:hover,
+    .bitnami-ui h2 a:active,
+    .bitnami-ui h3 a,
+    .bitnami-ui h3 a:hover,
+    .bitnami-ui h3 a:active,
+    .bitnami-ui h4 a,
+    .bitnami-ui h4 a:hover,
+    .bitnami-ui h4 a:active,
+    .bitnami-ui h5 a,
+    .bitnami-ui h5 a:hover,
+    .bitnami-ui h5 a:active,
+    .bitnami-ui h6 a,
+    .bitnami-ui h6 a:hover,
+    .bitnami-ui h6 a:active {
+      color: inherit; }
+  .bitnami-ui h1 {
+    font-size: 2.24888em;
+    font-weight: 300;
+    color: #4c4f54; }
+  .bitnami-ui h2 {
+    font-size: 1.49962em;
+    font-weight: 300;
+    color: #00437B; }
+  .bitnami-ui h3 {
+    font-size: 1.49962em;
+    color: #5F6369; }
+  .bitnami-ui h4 {
+    font-size: 1em;
+    color: #00437B; }
+  .bitnami-ui h5,
+  .bitnami-ui h6 {
+    font-size: 1em;
+    font-weight: bold; }
+  .bitnami-ui ul,
+  .bitnami-ui ol {
+    padding-left: 2.99925em;
+    margin: 0.74981em 0 1.49962em; }
+  .bitnami-ui p {
+    margin: 0.74981em 0 1.49962em; }
+  .bitnami-ui blockquote {
+    padding-left: 1.49962em;
+    margin: 0.74981em 0 1.49962em;
+    border-left: 2px solid #00284a;
+    color: #7f8287; }
+    .bitnami-ui blockquote a[rel="author"] {
+      font-style: italic; }
+    .bitnami-ui blockquote br + a {
+      display: inline-block;
+      margin-top: 0.37491em; }
+  .bitnami-ui abbr,
+  .bitnami-ui cite {
+    text-decoration: none;
+    font-weight: 600; }
+  .bitnami-ui hr {
+    color: #ebecec;
+    background-color: #ebecec;
+    height: 2px;
+    border: 0;
+    margin: 0.74981em auto; }
+  .bitnami-ui table {
+    width: 100%;
+    margin: 0.74981em 0 1.49962em;
+    border-collapse: collapse;
+    text-align: left; }
+    .bitnami-ui table th,
+    .bitnami-ui table td {
+      padding: 0.74981em; }
+    .bitnami-ui table th {
+      border-bottom: 1px solid #ebecec; }
+    .bitnami-ui table tbody > tr:hover {
+      background-color: #f3f4f4; }
+  .bitnami-ui .container {
+    width: auto;
+    max-width: 1300px;
+    margin: 0 auto;
+    /**
+   * Row definition
+   */ }
+    @media all and (max-width: 1347.988px) {
+      .bitnami-ui .container {
+        padding: 0 1.49962em; } }
+    .bitnami-ui .container .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1.49962em -0.74981em;
+      /**
+     * Column definition
+     */ }
+      .bitnami-ui .container .row:first-child {
+        margin-top: 0; }
+      .bitnami-ui .container .row:last-child {
+        margin-bottom: 0; }
+      .bitnami-ui .container .row > [class^="col"] {
+        flex: 1;
+        min-height: 1px;
+        box-sizing: border-box;
+        padding: 0 0.74981em; }
+      .bitnami-ui .container .row .col-1 {
+        flex: 0 0 8.33333%; }
+      .bitnami-ui .container .row .col-2 {
+        flex: 0 0 16.66667%; }
+      .bitnami-ui .container .row .col-3 {
+        flex: 0 0 25%; }
+      .bitnami-ui .container .row .col-4 {
+        flex: 0 0 33.33333%; }
+      .bitnami-ui .container .row .col-5 {
+        flex: 0 0 41.66667%; }
+      .bitnami-ui .container .row .col-6 {
+        flex: 0 0 50%; }
+      .bitnami-ui .container .row .col-7 {
+        flex: 0 0 58.33333%; }
+      .bitnami-ui .container .row .col-8 {
+        flex: 0 0 66.66667%; }
+      .bitnami-ui .container .row .col-9 {
+        flex: 0 0 75%; }
+      .bitnami-ui .container .row .col-10 {
+        flex: 0 0 83.33333%; }
+      .bitnami-ui .container .row .col-11 {
+        flex: 0 0 91.66667%; }
+      .bitnami-ui .container .row .col-12 {
+        flex: 0 0 100%; }
+  .bitnami-ui .container .row.align-center {
+    align-items: center; }
+  .bitnami-ui .container .row.align-start {
+    align-items: flex-start; }
+  .bitnami-ui .container .row.align-end {
+    align-items: flex-end; }
+  .bitnami-ui .container .row > [class^="col"].align-center {
+    align-self: center; }
+  .bitnami-ui .container .row > [class^="col"].align-start {
+    align-self: flex-start; }
+  .bitnami-ui .container .row > [class^="col"].align-end {
+    align-self: flex-end; }
+  .bitnami-ui .container .row {
+    /**
+   * General behviour
+   *
+   * NOTE: Now, we're going to disable this functionality to avoid incompatibilities with the
+   * current CSS code of our products
+   */
+    /**
+   * Specific media queries
+   */
+    /**
+   * Below media queries
+   */
+    /**
+   * Above media queries
+   */ }
+    @media all and (max-width: 29.9375em) {
+      .bitnami-ui .container .row.collapse-on-phone > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-on-phone > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-phone > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-phone > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: 30em) and (max-width: 47.9375em) {
+      .bitnami-ui .container .row.collapse-on-phone-land > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-on-phone-land > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-phone-land > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-on-phone-land > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-phone-land > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-on-phone-land > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: 48em) and (max-width: 56.1875em) {
+      .bitnami-ui .container .row.collapse-on-tablet > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-on-tablet > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-tablet > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-tablet > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
+      .bitnami-ui .container .row.collapse-on-desktop > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-on-desktop > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-desktop > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-desktop > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
+      .bitnami-ui .container .row.collapse-on-wide > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-on-wide > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-wide > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-on-wide > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-wide > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-on-wide > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (max-width: 29.9375em) {
+      .bitnami-ui .container .row.collapse-b-phone-land > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-b-phone-land > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-phone-land > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-b-phone-land > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-phone-land > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-b-phone-land > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (max-width: 47.9375em) {
+      .bitnami-ui .container .row.collapse-b-tablet > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-b-tablet > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-tablet > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-b-tablet > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-tablet > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-b-tablet > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (max-width: 56.1875em) {
+      .bitnami-ui .container .row.collapse-b-desktop > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-b-desktop > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-desktop > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-b-desktop > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-desktop > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-b-desktop > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (max-width: 68.6875em) {
+      .bitnami-ui .container .row.collapse-b-wide > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-b-wide > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-wide > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-b-wide > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-wide > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: sm) {
+      .bitnami-ui .container .row.collapse-a-phone > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-a-phone > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-phone > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-a-phone > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-phone > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: md) {
+      .bitnami-ui .container .row.collapse-a-phone-land > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-a-phone-land > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-phone-land > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-a-phone-land > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-phone-land > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: lg) {
+      .bitnami-ui .container .row.collapse-a-tablet > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-a-tablet > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-tablet > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-a-tablet > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-tablet > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: xl) {
+      .bitnami-ui .container .row.collapse-a-desktop > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-a-desktop > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-desktop > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-a-desktop > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-desktop > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+    @media all and (min-width: uxl) {
+      .bitnami-ui .container .row.collapse-a-wide > [class^="col"] {
+        flex: 0 0 100%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-a-wide > [class^="col"]:first-child {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-wide > [class^="col"] {
+        flex: 0 0 50%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-2-a-wide > [class^="col"]:nth-child(-n+2) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-wide > [class^="col"] {
+        flex: 0 0 33.33333%;
+        margin-top: 1.49962em; }
+        .bitnami-ui .container .row.collapse-3-a-wide > [class^="col"]:nth-child(-n+3) {
+          margin-top: 0; } }
+  .bitnami-ui .container.container-fluid {
+    max-width: none; }
+  .bitnami-ui .container.container-small {
+    max-width: calc(8 * (1300px / 12) + 1.49962em / 2); }
+  .bitnami-ui .container.container-tiny {
+    max-width: calc(6 * (1300px / 12) + 1.49962em / 2); }
+  .bitnami-ui a.light:not(.button) {
+    color: #4da77d; }
+    .bitnami-ui a.light:not(.button):hover, .bitnami-ui a.light:not(.button):active, .bitnami-ui a.light:not(.button):visited {
+      color: #66b38f; }
+  .bitnami-ui a.secondary:not(.button) {
+    color: #00437B; }
+    .bitnami-ui a.secondary:not(.button):hover, .bitnami-ui a.secondary:not(.button):active, .bitnami-ui a.secondary:not(.button):visited {
+      color: #003c6f; }
+
+@keyframes slide-in {
+  from {
+    transform: translate3d(0, -10%, 0);
+    opacity: 0; }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+  .bitnami-ui .slide-in {
+    animation: slide-in .150s ease-in; }
+  .bitnami-ui .bg-bitnami,
+  .bitnami-ui .bg-brand {
+    background-color: #00437B; }
+  .bitnami-ui .bg-iron,
+  .bitnami-ui .bg-light {
+    background-color: #ebecec; }
+  .bitnami-ui .bg-dark,
+  .bitnami-ui .bg-dark {
+    background-color: #37474f; }
+  .bitnami-ui .bg-white,
+  .bitnami-ui .bg-base {
+    background-color: #fff; }
+  .bitnami-ui .shadow-1,
+  .bitnami-ui .elevation-1 {
+    box-shadow: 0 3px 6px rgba(55, 71, 79, 0.4); }
+  .bitnami-ui .shadow-2,
+  .bitnami-ui .elevation-2 {
+    box-shadow: 0 6px 12px rgba(55, 71, 79, 0.4); }
+  .bitnami-ui .shadow-3,
+  .bitnami-ui .elevation-3 {
+    box-shadow: 0 9px 18px rgba(55, 71, 79, 0.4); }
+  .bitnami-ui .shadow-4,
+  .bitnami-ui .elevation-4 {
+    box-shadow: 0 12px 24px rgba(55, 71, 79, 0.4); }
+  .bitnami-ui .shadow-5,
+  .bitnami-ui .elevation-5 {
+    box-shadow: 0 15px 30px rgba(55, 71, 79, 0.4); }
+  .bitnami-ui .shadow-reset,
+  .bitnami-ui .elevation-reset {
+    box-shadow: none; }
+  .bitnami-ui .button-primary {
+    background-color: #1a5688;
+    border-color: #003c6f;
+    color: #ffffff; }
+    .bitnami-ui .button-primary:hover {
+      color: #ffffff;
+      background-color: #004a89;
+      border-color: #003662; }
+    .bitnami-ui .button-primary:active {
+      background-color: #003c6f;
+      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  .bitnami-ui .button-accent {
+    background-color: #1a8e58;
+    border-color: #00743e;
+    color: #ffffff; }
+    .bitnami-ui .button-accent:hover {
+      color: #ffffff;
+      background-color: #008e4c;
+      border-color: #006737; }
+    .bitnami-ui .button-accent:active {
+      background-color: #00743e;
+      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  .bitnami-ui .button-action {
+    background-color: #f68f36;
+    border-color: #dd751d;
+    color: #ffffff; }
+    .bitnami-ui .button-action:hover {
+      color: #ffffff;
+      background-color: #e48230;
+      border-color: #c4681a; }
+    .bitnami-ui .button-action:active {
+      background-color: #dd751d;
+      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  .bitnami-ui .button-small {
+    font-size: 0.66683em; }
+  .bitnami-ui .button-big {
+    font-size: 1.49962em; }
+  .bitnami-ui .button-bigger {
+    font-size: 2.24888em; }
+  .bitnami-ui .button-dropdown:after {
+    border: 5px solid transparent;
+    border-top-color: #5F6369;
+    display: inline-block;
+    content: '';
+    height: 0;
+    margin-left: 0.37491em;
+    position: relative;
+    top: 0.09373em;
+    vertical-align: middle;
+    width: 0; }
+  .bitnami-ui .button-dropdown.button-action:after, .bitnami-ui .button-dropdown.button-accent:after {
+    border-top-color: #ffffff; }
+  .bitnami-ui .button-dropdown-open:after {
+    border-top-color: transparent;
+    border-bottom-color: #5F6369;
+    top: -.2em; }
+  .bitnami-ui .button-dropdown-open.button-action:after, .bitnami-ui .button-dropdown-open.button-accent:after {
+    border-top-color: transparent;
+    border-bottom-color: #ffffff; }
+  .bitnami-ui .gradient-brand,
+  .bitnami-ui .gradient-0-brand {
+    background-image: linear-gradient(0deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-accent,
+  .bitnami-ui .gradient-0-accent {
+    background-image: linear-gradient(0deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-action,
+  .bitnami-ui .gradient-0-action {
+    background-image: linear-gradient(0deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-45-brand {
+    background-image: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-45-accent {
+    background-image: linear-gradient(45deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-45-action {
+    background-image: linear-gradient(45deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-90-brand {
+    background-image: linear-gradient(90deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-90-accent {
+    background-image: linear-gradient(90deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-90-action {
+    background-image: linear-gradient(90deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-135-brand {
+    background-image: linear-gradient(135deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-135-accent {
+    background-image: linear-gradient(135deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-135-action {
+    background-image: linear-gradient(135deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-180-brand {
+    background-image: linear-gradient(180deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-180-accent {
+    background-image: linear-gradient(180deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-180-action {
+    background-image: linear-gradient(180deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-225-brand {
+    background-image: linear-gradient(225deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-225-accent {
+    background-image: linear-gradient(225deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-225-action {
+    background-image: linear-gradient(225deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-270-brand {
+    background-image: linear-gradient(270deg, #00437B 0%, #1598CB 100%); }
+  .bitnami-ui .gradient-270-accent {
+    background-image: linear-gradient(270deg, #008145 0%, #82C341 100%); }
+  .bitnami-ui .gradient-270-action {
+    background-image: linear-gradient(270deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .subtitle {
+    font-weight: normal;
+    color: #44add5;
+    margin-top: -0.74981em; }
+  .bitnami-ui .inverse {
+    color: #f4f5f5; }
+  .bitnami-ui .remove-style {
+    list-style: none; }
+  .bitnami-ui .text-l {
+    text-align: left; }
+  .bitnami-ui .text-r {
+    text-align: right; }
+  .bitnami-ui .text-c {
+    text-align: center; }
+  .bitnami-ui .float-l {
+    float: left; }
+  .bitnami-ui .float-r {
+    float: right; }
+  .bitnami-ui .float-n {
+    float: none; }
+  .bitnami-ui .clearfix:after {
+    content: '';
+    display: table;
+    clear: both; }
+  .bitnami-ui hr.separator-small {
+    height: 1px; }
+  .bitnami-ui hr.separator-big {
+    height: 0.18745em; }
+  .bitnami-ui hr.separator-bigger {
+    height: 0.37491em; }
+  .bitnami-ui hr.separator-enormous {
+    height: 0.74981em; }
+  .bitnami-ui hr.separator-15 {
+    width: 15%; }
+  .bitnami-ui hr.separator-30 {
+    width: 30%; }
+  .bitnami-ui hr.separator-50 {
+    width: 50%; }
+  .bitnami-ui hr.separator-70 {
+    width: 70%; }
+  .bitnami-ui .padding-reset {
+    padding: 0; }
+  .bitnami-ui .padding-tiny {
+    padding: 0.18745em; }
+  .bitnami-ui .padding-small {
+    padding: 0.37491em; }
+  .bitnami-ui .padding-normal {
+    padding: 0.74981em; }
+  .bitnami-ui .padding-big {
+    padding: 1.49962em; }
+  .bitnami-ui .padding-bigger {
+    padding: 2.24944em; }
+  .bitnami-ui .padding-enormous {
+    padding: 2.99925em; }
+  .bitnami-ui .padding-giant {
+    padding: 4.49887em; }
+  .bitnami-ui .padding-huge {
+    padding: 7.49812em; }
+  .bitnami-ui .padding-t-reset {
+    padding-top: 0; }
+  .bitnami-ui .padding-t-tiny {
+    padding-top: 0.18745em; }
+  .bitnami-ui .padding-t-small {
+    padding-top: 0.37491em; }
+  .bitnami-ui .padding-t-normal {
+    padding-top: 0.74981em; }
+  .bitnami-ui .padding-t-big {
+    padding-top: 1.49962em; }
+  .bitnami-ui .padding-t-bigger {
+    padding-top: 2.24944em; }
+  .bitnami-ui .padding-t-enormous {
+    padding-top: 2.99925em; }
+  .bitnami-ui .padding-t-giant {
+    padding-top: 4.49887em; }
+  .bitnami-ui .padding-t-huge {
+    padding-top: 7.49812em; }
+  .bitnami-ui .padding-b-reset {
+    padding-bottom: 0; }
+  .bitnami-ui .padding-b-tiny {
+    padding-bottom: 0.18745em; }
+  .bitnami-ui .padding-b-small {
+    padding-bottom: 0.37491em; }
+  .bitnami-ui .padding-b-normal {
+    padding-bottom: 0.74981em; }
+  .bitnami-ui .padding-b-big {
+    padding-bottom: 1.49962em; }
+  .bitnami-ui .padding-b-bigger {
+    padding-bottom: 2.24944em; }
+  .bitnami-ui .padding-b-enormous {
+    padding-bottom: 2.99925em; }
+  .bitnami-ui .padding-b-giant {
+    padding-bottom: 4.49887em; }
+  .bitnami-ui .padding-b-huge {
+    padding-bottom: 7.49812em; }
+  .bitnami-ui .padding-l-reset {
+    padding-left: 0; }
+  .bitnami-ui .padding-l-tiny {
+    padding-left: 0.18745em; }
+  .bitnami-ui .padding-l-small {
+    padding-left: 0.37491em; }
+  .bitnami-ui .padding-l-normal {
+    padding-left: 0.74981em; }
+  .bitnami-ui .padding-l-big {
+    padding-left: 1.49962em; }
+  .bitnami-ui .padding-l-bigger {
+    padding-left: 2.24944em; }
+  .bitnami-ui .padding-l-enormous {
+    padding-left: 2.99925em; }
+  .bitnami-ui .padding-l-giant {
+    padding-left: 4.49887em; }
+  .bitnami-ui .padding-l-huge {
+    padding-left: 7.49812em; }
+  .bitnami-ui .padding-r-reset {
+    padding-right: 0; }
+  .bitnami-ui .padding-r-tiny {
+    padding-right: 0.18745em; }
+  .bitnami-ui .padding-r-small {
+    padding-right: 0.37491em; }
+  .bitnami-ui .padding-r-normal {
+    padding-right: 0.74981em; }
+  .bitnami-ui .padding-r-big {
+    padding-right: 1.49962em; }
+  .bitnami-ui .padding-r-bigger {
+    padding-right: 2.24944em; }
+  .bitnami-ui .padding-r-enormous {
+    padding-right: 2.99925em; }
+  .bitnami-ui .padding-r-giant {
+    padding-right: 4.49887em; }
+  .bitnami-ui .padding-r-huge {
+    padding-right: 7.49812em; }
+  .bitnami-ui .padding-v-reset {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .bitnami-ui .padding-v-tiny {
+    padding-top: 0.18745em;
+    padding-bottom: 0.18745em; }
+  .bitnami-ui .padding-v-small {
+    padding-top: 0.37491em;
+    padding-bottom: 0.37491em; }
+  .bitnami-ui .padding-v-normal {
+    padding-top: 0.74981em;
+    padding-bottom: 0.74981em; }
+  .bitnami-ui .padding-v-big {
+    padding-top: 1.49962em;
+    padding-bottom: 1.49962em; }
+  .bitnami-ui .padding-v-bigger {
+    padding-top: 2.24944em;
+    padding-bottom: 2.24944em; }
+  .bitnami-ui .padding-v-enormous {
+    padding-top: 2.99925em;
+    padding-bottom: 2.99925em; }
+  .bitnami-ui .padding-v-giant {
+    padding-top: 4.49887em;
+    padding-bottom: 4.49887em; }
+  .bitnami-ui .padding-v-huge {
+    padding-top: 7.49812em;
+    padding-bottom: 7.49812em; }
+  .bitnami-ui .padding-h-reset {
+    padding-left: 0;
+    padding-right: 0; }
+  .bitnami-ui .padding-h-tiny {
+    padding-left: 0.18745em;
+    padding-right: 0.18745em; }
+  .bitnami-ui .padding-h-small {
+    padding-left: 0.37491em;
+    padding-right: 0.37491em; }
+  .bitnami-ui .padding-h-normal {
+    padding-left: 0.74981em;
+    padding-right: 0.74981em; }
+  .bitnami-ui .padding-h-big {
+    padding-left: 1.49962em;
+    padding-right: 1.49962em; }
+  .bitnami-ui .padding-h-bigger {
+    padding-left: 2.24944em;
+    padding-right: 2.24944em; }
+  .bitnami-ui .padding-h-enormous {
+    padding-left: 2.99925em;
+    padding-right: 2.99925em; }
+  .bitnami-ui .padding-h-giant {
+    padding-left: 4.49887em;
+    padding-right: 4.49887em; }
+  .bitnami-ui .padding-h-huge {
+    padding-left: 7.49812em;
+    padding-right: 7.49812em; }
+  .bitnami-ui .margin-reset {
+    margin: 0; }
+  .bitnami-ui .margin-tiny {
+    margin: 0.18745em; }
+  .bitnami-ui .margin-small {
+    margin: 0.37491em; }
+  .bitnami-ui .margin-normal {
+    margin: 0.74981em; }
+  .bitnami-ui .margin-big {
+    margin: 1.49962em; }
+  .bitnami-ui .margin-bigger {
+    margin: 2.24944em; }
+  .bitnami-ui .margin-enormous {
+    margin: 2.99925em; }
+  .bitnami-ui .margin-giant {
+    margin: 4.49887em; }
+  .bitnami-ui .margin-huge {
+    margin: 7.49812em; }
+  .bitnami-ui .margin-t-reset {
+    margin-top: 0; }
+  .bitnami-ui .margin-t-tiny {
+    margin-top: 0.18745em; }
+  .bitnami-ui .margin-t-small {
+    margin-top: 0.37491em; }
+  .bitnami-ui .margin-t-normal {
+    margin-top: 0.74981em; }
+  .bitnami-ui .margin-t-big {
+    margin-top: 1.49962em; }
+  .bitnami-ui .margin-t-bigger {
+    margin-top: 2.24944em; }
+  .bitnami-ui .margin-t-enormous {
+    margin-top: 2.99925em; }
+  .bitnami-ui .margin-t-giant {
+    margin-top: 4.49887em; }
+  .bitnami-ui .margin-t-huge {
+    margin-top: 7.49812em; }
+  .bitnami-ui .margin-b-reset {
+    margin-bottom: 0; }
+  .bitnami-ui .margin-b-tiny {
+    margin-bottom: 0.18745em; }
+  .bitnami-ui .margin-b-small {
+    margin-bottom: 0.37491em; }
+  .bitnami-ui .margin-b-normal {
+    margin-bottom: 0.74981em; }
+  .bitnami-ui .margin-b-big {
+    margin-bottom: 1.49962em; }
+  .bitnami-ui .margin-b-bigger {
+    margin-bottom: 2.24944em; }
+  .bitnami-ui .margin-b-enormous {
+    margin-bottom: 2.99925em; }
+  .bitnami-ui .margin-b-giant {
+    margin-bottom: 4.49887em; }
+  .bitnami-ui .margin-b-huge {
+    margin-bottom: 7.49812em; }
+  .bitnami-ui .margin-l-reset {
+    margin-left: 0; }
+  .bitnami-ui .margin-l-tiny {
+    margin-left: 0.18745em; }
+  .bitnami-ui .margin-l-small {
+    margin-left: 0.37491em; }
+  .bitnami-ui .margin-l-normal {
+    margin-left: 0.74981em; }
+  .bitnami-ui .margin-l-big {
+    margin-left: 1.49962em; }
+  .bitnami-ui .margin-l-bigger {
+    margin-left: 2.24944em; }
+  .bitnami-ui .margin-l-enormous {
+    margin-left: 2.99925em; }
+  .bitnami-ui .margin-l-giant {
+    margin-left: 4.49887em; }
+  .bitnami-ui .margin-l-huge {
+    margin-left: 7.49812em; }
+  .bitnami-ui .margin-r-reset {
+    margin-right: 0; }
+  .bitnami-ui .margin-r-tiny {
+    margin-right: 0.18745em; }
+  .bitnami-ui .margin-r-small {
+    margin-right: 0.37491em; }
+  .bitnami-ui .margin-r-normal {
+    margin-right: 0.74981em; }
+  .bitnami-ui .margin-r-big {
+    margin-right: 1.49962em; }
+  .bitnami-ui .margin-r-bigger {
+    margin-right: 2.24944em; }
+  .bitnami-ui .margin-r-enormous {
+    margin-right: 2.99925em; }
+  .bitnami-ui .margin-r-giant {
+    margin-right: 4.49887em; }
+  .bitnami-ui .margin-r-huge {
+    margin-right: 7.49812em; }
+  .bitnami-ui .margin-v-reset {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .bitnami-ui .margin-v-tiny {
+    margin-top: 0.18745em;
+    margin-bottom: 0.18745em; }
+  .bitnami-ui .margin-v-small {
+    margin-top: 0.37491em;
+    margin-bottom: 0.37491em; }
+  .bitnami-ui .margin-v-normal {
+    margin-top: 0.74981em;
+    margin-bottom: 0.74981em; }
+  .bitnami-ui .margin-v-big {
+    margin-top: 1.49962em;
+    margin-bottom: 1.49962em; }
+  .bitnami-ui .margin-v-bigger {
+    margin-top: 2.24944em;
+    margin-bottom: 2.24944em; }
+  .bitnami-ui .margin-v-enormous {
+    margin-top: 2.99925em;
+    margin-bottom: 2.99925em; }
+  .bitnami-ui .margin-v-giant {
+    margin-top: 4.49887em;
+    margin-bottom: 4.49887em; }
+  .bitnami-ui .margin-v-huge {
+    margin-top: 7.49812em;
+    margin-bottom: 7.49812em; }
+  .bitnami-ui .margin-h-reset {
+    margin-left: 0;
+    margin-right: 0; }
+  .bitnami-ui .margin-h-tiny {
+    margin-left: 0.18745em;
+    margin-right: 0.18745em; }
+  .bitnami-ui .margin-h-small {
+    margin-left: 0.37491em;
+    margin-right: 0.37491em; }
+  .bitnami-ui .margin-h-normal {
+    margin-left: 0.74981em;
+    margin-right: 0.74981em; }
+  .bitnami-ui .margin-h-big {
+    margin-left: 1.49962em;
+    margin-right: 1.49962em; }
+  .bitnami-ui .margin-h-bigger {
+    margin-left: 2.24944em;
+    margin-right: 2.24944em; }
+  .bitnami-ui .margin-h-enormous {
+    margin-left: 2.99925em;
+    margin-right: 2.99925em; }
+  .bitnami-ui .margin-h-giant {
+    margin-left: 4.49887em;
+    margin-right: 4.49887em; }
+  .bitnami-ui .margin-h-huge {
+    margin-left: 7.49812em;
+    margin-right: 7.49812em; }
+  .bitnami-ui .margin-c {
+    margin-left: auto;
+    margin-right: auto; }
+  .bitnami-ui .margin-vc-reset {
+    margin: 0 auto; }
+  .bitnami-ui .margin-vc-tiny {
+    margin: 0.18745em auto; }
+  .bitnami-ui .margin-vc-small {
+    margin: 0.37491em auto; }
+  .bitnami-ui .margin-vc-normal {
+    margin: 0.74981em auto; }
+  .bitnami-ui .margin-vc-big {
+    margin: 1.49962em auto; }
+  .bitnami-ui .margin-vc-bigger {
+    margin: 2.24944em auto; }
+  .bitnami-ui .margin-vc-enormous {
+    margin: 2.99925em auto; }
+  .bitnami-ui .margin-vc-giant {
+    margin: 4.49887em auto; }
+  .bitnami-ui .margin-vc-huge {
+    margin: 7.49812em auto; }
+  .bitnami-ui .margin-vc-6 {
+    margin: auto; }
+  .bitnami-ui .margin-vc-7 {
+    margin: auto; }
+  .bitnami-ui table.striped tr:nth-child(even) td {
+    background-color: #f4f5f5; }
+  .bitnami-ui table.striped tr:hover {
+    background-color: initial; }
+  .bitnami-ui .type-tiny {
+    font-size: 0.44467em; }
+  .bitnami-ui .type-small {
+    font-size: 0.66683em; }
+  .bitnami-ui .type-normal {
+    font-size: 1em; }
+  .bitnami-ui .type-big {
+    font-size: 1.49962em; }
+  .bitnami-ui .type-bigger {
+    font-size: 2.24888em; }
+  .bitnami-ui .type-enormous {
+    font-size: 3.37247em; }
+  .bitnami-ui .type-giant {
+    font-size: 5.05744em; }
+  .bitnami-ui .type-huge {
+    font-size: 7.58426em; }
+  .bitnami-ui .type-6 {
+    font-size: 11.37355em; }
+  .bitnami-ui .type-7 {
+    font-size: 17.05606em; }
+  .bitnami-ui .type-color-bitnami,
+  .bitnami-ui .type-color-brand {
+    color: #00437B; }
+  .bitnami-ui .type-color-accent,
+  .bitnami-ui .type-color-accent {
+    color: #008145; }
+  .bitnami-ui .type-color-iron,
+  .bitnami-ui .type-color-light {
+    color: #ebecec; }
+  .bitnami-ui .type-color-action,
+  .bitnami-ui .type-color-action {
+    color: #F58220; }
+  .bitnami-ui .type-uppercase {
+    text-transform: uppercase; }
