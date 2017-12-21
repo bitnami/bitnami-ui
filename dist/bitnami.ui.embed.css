@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI (embed) - v2.1.1
+ * Bitnami UI (embed) - v2.2.0
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -491,7 +491,8 @@ tag: text
 Display an inline code element correctly.
 
 ```html
-This is a <code>code example</code>
+<p>This is a <code>code example</code></p>
+<pre><code>More code!</code></pre>
 ```
 */
   /*
@@ -1684,9 +1685,10 @@ Set the text to Uppercase
     .bitnami-ui a:hover, .bitnami-ui a:active {
       color: #7398b6; }
   .bitnami-ui pre {
-    padding: 0.74981em;
+    background-color: #212b2f;
+    line-height: 1.2;
     margin: 0.74981em 0 1.49962em;
-    line-height: 1.2; }
+    padding: 0.74981em; }
   .bitnami-ui code {
     font-size: 0.66683em;
     padding: 0.18745em 0.37491em;
@@ -1695,10 +1697,11 @@ Set the text to Uppercase
     border: 1px solid #d4d4d4;
     color: #00743e;
     vertical-align: middle; }
-  .bitnami-ui pre > code {
-    padding: 0;
+  .bitnami-ui pre code {
     background-color: initial;
-    border: none; }
+    border: none;
+    color: #ebecec;
+    padding: 0; }
   .bitnami-ui input,
   .bitnami-ui select,
   .bitnami-ui textarea {

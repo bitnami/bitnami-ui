@@ -7,14 +7,16 @@ tag: text
 Display an inline code element correctly.
 
 ```html
-This is a <code>code example</code>
+<p>This is a <code>code example</code></p>
+<pre><code>More code!</code></pre>
 ```
 */
 
 pre {
-  padding: padding('normal');
-  margin: margin('normal') 0 margin('big');
+  background-color: color-level('dark', 900);
   line-height: 1.2;
+  margin: margin('normal') 0 margin('big');
+  padding: padding('normal');
 }
 
 code {
@@ -27,8 +29,9 @@ code {
   vertical-align: middle;
 }
 
-pre > code {
-  padding: 0;
+pre code {
   background-color: initial;
   border: none;
+  color: color('iron');
+  padding: 0;
 }
