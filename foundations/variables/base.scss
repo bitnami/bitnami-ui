@@ -48,6 +48,10 @@ $breakpoints: (
   uxl: 1300px
 );
 
+// If only one value is provided, mappy-bp will produce a min-width query.
+// If a two values are provided, mappy-bp will produce a min-width and max-width query.
+// If a max-width or max string is provided, mappy-bp will produce a max-width query.
+
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
@@ -55,7 +59,7 @@ $mappy-queries: (
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
-  ultrawide: mappy-bp(min-width uxl)
+  ultrawide: mappy-bp(uxl)
 );
 ```
 */
@@ -74,7 +78,7 @@ $mappy-queries: (
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
-  ultrawide: mappy-bp(min-width uxl),
+  ultrawide: mappy-bp(uxl),
   // Below
   b-phone-land: mappy-bp(max-width sm),
   b-tablet: mappy-bp(max-width md),
@@ -82,9 +86,9 @@ $mappy-queries: (
   b-wide: mappy-bp(max-width xl),
   b-ultrawide: mappy-bp(max-width uxl),
   // Above
-  a-phone: mappy-bp(min-width sm),
-  a-phone-land: mappy-bp(min-width md),
-  a-tablet: mappy-bp(min-width lg),
-  a-desktop: mappy-bp(min-width xl),
-  a-wide: mappy-bp(min-width uxl),
+  a-phone: mappy-bp(sm),
+  a-phone-land: mappy-bp(md),
+  a-tablet: mappy-bp(lg),
+  a-desktop: mappy-bp(xl),
+  a-wide: mappy-bp(uxl),
 );

@@ -9,3 +9,6 @@ docs/templates/readme.ejs
 
 # Deploy key
 deploy.key
+
+# DS_Store
+.DS_Store

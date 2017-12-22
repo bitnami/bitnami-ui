@@ -118,6 +118,36 @@ Reduce or increase the vertical or horizontal padding based on the base size uni
 
 /*
 ---
+name: Padding - responsive
+category: Foundations/Helpers
+tag: helpers
+---
+Reset the padding property for a specific media query.
+You can see here working in the [Divider Component](/category/Components/Display/#Divider)
+
+```html
+<p class="padding-bigger padding-reset-b-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-bigger padding-reset-on-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-bigger padding-reset-a-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+
+@include generate-spacing-reset-helper('padding', 'padding');
+
+/*
+---
 name: Margin
 category: Foundations/Helpers
 tag: helpers
@@ -234,6 +264,35 @@ Reduce or increase the vertical or horizontal margin based on the base size unit
 @include generate-vertical-spacing-helper('margin-v', 'margin');
 @include generate-horizontal-spacing-helper('margin-h', 'margin');
 
+
+/*
+---
+name: Margin - responsive
+category: Foundations/Helpers
+tag: helpers
+---
+Reset the margin property for a specific media query.
+
+```html
+<p class="margin-reset-b-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-reset-on-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-reset-a-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+
+@include generate-spacing-reset-helper('margin', 'margin');
 
 /*
 ---

@@ -99,7 +99,7 @@ If you want to collapse a row above or below an specific screen size, you can us
    */
    @each $name in $grid-collapse-below {
     @include mappy-query($name) {
-      @include grid-collapse-on-prefix( $name);
+      @include grid-collapse-on-prefix($name);
       @include grid-collapse-by-columns-on-prefix(2, $name);
       @include grid-collapse-by-columns-on-prefix(3, $name);
     }

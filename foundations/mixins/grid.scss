@@ -10,6 +10,13 @@
 @mixin grid-collapse-on-prefix($breakpoint) {
   &.collapse-#{$breakpoint} {
     @include grid-collapse();
+
+    // Reset the border-right for vdivide class
+    &.row-vdivide {
+      > [class^="col"] {
+        border-right: 0;
+      }
+    }
   }
 }
 
@@ -30,6 +37,15 @@
 @mixin grid-collapse-by-columns-on-prefix($columns, $breakpoint) {
   &.collapse-#{$columns}-#{$breakpoint} {
     @include grid-collapse-by-columns-on($columns)
+
+    // Reset the border-right for vdivide class
+    &.row-vdivide {
+      > [class^="col"] {
+        &:nth-child(#{$columns}n) {
+          border-right: 0;
+        }
+      }
+    }
   }
 }
 

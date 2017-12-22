@@ -1,0 +1,69 @@
+/*
+---
+name: Divider
+category: Components/Display
+tag: component
+---
+Display 3 columns using a divider. We also can see the
+[padding reset responsive](/category/Foundations/Helpers/#Padding%20%2D%20responsive)
+helpers in action.
+
+```html
+<div class="container">
+  <div class="row collapse-b-tablet row-vdivide">
+    <div class="col-4">
+      <div class="padding-r-bigger padding-reset-b-desktop">
+        <h2>EVENT</h2>
+        <h3>Join us at Kubecon 2017</h3>
+        <p>
+          Join us at the Bitnami booth for a demo of any of our Kubernetes projects,
+          to see simple ways to launch applications in your cluster
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All Events</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="padding-h-bigger padding-reset-b-desktop">
+        <h2>BLOG</h2>
+        <h3>Exploring The Security Of Helm</h3>
+        <p>
+          Bitnami has been a part of the Helm community for a long while, but I
+          personally started looking at Helm only a few weeks ago in the context
+          of our work on ...
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All Articles</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="padding-l-bigger padding-reset-b-desktop">
+        <h2>NEWS</h2>
+        <h3>Software vendors line up Kubernetes tasting menu for devops</h3>
+        <p>
+          With the advent of KubCon and CloudNativeCon in Austin, Texas, on Wednesday,
+          assorted enterprise vendors have chosen ..
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All News</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.row {
+  &.row-vdivide {
+    [class*="col-"] {
+      border-right: 1px solid color('dark');
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}
