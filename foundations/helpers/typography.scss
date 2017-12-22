@@ -1,6 +1,6 @@
 /*
 ---
-name: Size
+name: Typography size
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -53,11 +53,12 @@ Reduce or increase the default `font-size` of an element.
 
 /*
 ---
-name: Color
+name: Typography color
 category: Foundations/Helpers
 tag: helpers
 ---
-Reduce or increase the default `color` of an element.
+Change the default `color` of an element. If you want to use the `type-color-iron` helper,
+the [reverse helper](#Typography%20color%20reverse) may interest you.
 
 ```html
 <p class="type-color-bitnami">
@@ -89,7 +90,121 @@ Reduce or increase the default `color` of an element.
 
 /*
 ---
-name: Uppercase
+name: Typography color reverse
+category: Foundations/Helpers
+tag: helpers
+---
+The `type-color-reverse` modifier changes the color for headers, links and other text elements
+inside the current container. This is really useful for text elements that are placed inside a
+container with a dark background.
+
+For known dark backgrounds, the `type-color-reverse` modifier is added automatically.
+The list of known dark backgrounds is:
+
+* [Backgrounds](/category/Foundations/Helpers/#Backgrounds)
+* [Linear Gradients](/category/Foundations/Helpers/#Linear%20Gradients)
+
+```html
+<h2>Unknown dark background (with type-color-reverse)</h2>
+<div class="padding-normal type-color-reverse" style="background-color: black;">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known flat backgrounds (no modifier required)</h2>
+<div class="bg-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-dark padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known gradient backgrounds (no modifier required)</h2>
+<div class="gradient-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-135-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+```
+*/
+
+/**
+ * Enable type-color-reverse by default with known dark backgrounds.
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353398961
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353556092
+ */
+.bg-dark,
+.bg-brand,
+.bg-accent,
+.bg-action,
+[class*="gradient-"][class*="-brand"],
+[class*="gradient-"][class*="-accent"],
+[class*="gradient-"][class*="-action"],
+.type-color-reverse {
+  color: color('white');
+}
+
+// Display anchors depends on the background.
+a.type-color-reverse,
+.type-color-reverse a {
+  color: color('white');
+  // I've added this text decoration in case the background it's not known.
+  text-decoration: underline;
+
+  &:hover {
+    color: color-level('light', 600);
+  }
+}
+
+// The background comes from the library so we can disable the text-decoration property
+.bg-dark,
+.bg-brand,
+.bg-accent,
+.bg-action,
+[class*="gradient-"][class*="-brand"],
+[class*="gradient-"][class*="-accent"],
+[class*="gradient-"][class*="-action"] {
+  a {
+    text-decoration: none;
+  }
+}
+
+.bg-brand,
+.bg-dark,
+[class*="gradient-"][class*="-brand"] {
+  @include type-color-reverse-anchor('accent-light', 300);
+}
+
+.bg-accent,
+[class*="gradient-"][class*="-accent"] {
+  @include type-color-reverse-anchor('action-light', 200);
+}
+
+.bg-action,
+[class*="gradient-"][class*="-action"] {
+  @include type-color-reverse-anchor('primary', 400);
+}
+
+/*
+---
+name: Typography uppercase
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -103,4 +218,34 @@ Set the text to Uppercase
 */
 .type-uppercase {
   text-transform: uppercase;
+}
+
+/*
+---
+name: Typography weight
+category: Foundations/Helpers
+tag: helpers
+---
+By default, the weight of the text is 300. For certain situations, we may need to increase the
+weight of the typography.
+
+```html
+<p>
+  You may need to change the typo weight to
+  <span class="type-light">light</span>,
+  <span class="type-regular">regular</span>
+  or <span class="type-bold">bold</span>
+</p>
+```
+*/
+.type-light {
+  font-weight: 300;
+}
+
+.type-regular {
+  font-weight: 400;
+}
+
+.type-bold {
+  font-weight: bold;
 }

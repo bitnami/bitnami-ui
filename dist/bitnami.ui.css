@@ -84,12 +84,14 @@ $colors: (
   'secondary': #1598CB,
   'accent': #008145,
   'accent-light': #82C341,
-  'light': #ebecec,
+  'light': #f1f1f1,
   'white': #ffffff,
   'dark': #37474f,
-  'text': #5F6369,
+  'text': #1C2B39,
   'action': #F58220,
   'action-light': #FDBA12,
+  'gray': #5F6369,
+  'gray-light': #C7C9C8,
   'base': #fff,
   'highlight': #fff23f,
 );
@@ -144,12 +146,19 @@ $color-names: (
   'light-blue': 'primary',
   'dark-blue': 'secondary',
   'accent': 'accent',
+  'accent-light': 'accent-light',
   'iron': 'light',
+  'white': 'white',
   'dark': 'dark',
   'text': 'text',
   'action': 'action',
-  'white': 'base'
+  'action-light': 'action-light',
+  'gray': 'gray',
+  'gray-light': 'gray-light',
+  'white': 'base',
+  'highlight': 'highlight'
 );
+
 ```
 */
 /*
@@ -192,7 +201,7 @@ to this restrictment, you can use the fallback font families:
 from Google Fonts:
 
 ```
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400,700" rel="stylesheet">
 ```
 
 If any of these font families are available, the UI fallbacks to OS typographies.
@@ -413,9 +422,6 @@ to check the current scale and size.
 }
 ```
 */
-/**
- * Get the line-height for different levels
-*/
 /*
 ---
 name: line-height(name)
@@ -432,6 +438,11 @@ Get a line-height based on the standard values.
 }
 ```
 */
+/**
+ * Set the color for anchors in the type-color-reverse
+ *
+ * NOTE: This is an internal mixin. It shouldn't be documented
+ */
 /**
  * Remove the unit of a length
  *
@@ -837,11 +848,20 @@ template {
  */
 html {
   font-size: 100%; }
+  @media all and (max-width: 47.9375em) {
+    html {
+      font-size: 95%; } }
+  @media all and (max-width: 29.9375em) {
+    html {
+      font-size: 90%; } }
+  @media all and (min-width: 81.25em) {
+    html {
+      font-size: 105%; } }
 
 body {
   font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1.125em;
-  color: #5F6369;
+  color: #1C2B39;
   line-height: 1.5;
   font-weight: 300;
   text-rendering: optimizeLegibility; }
@@ -894,16 +914,16 @@ pre {
 code {
   font-size: 0.66683em;
   padding: 0.18745em 0.37491em;
-  background-color: #ebecec;
+  background-color: #f1f1f1;
   border-radius: 3px;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #d9d9d9;
   color: #00743e;
   vertical-align: middle; }
 
 pre code {
   background-color: initial;
   border: none;
-  color: #ebecec;
+  color: #f1f1f1;
   padding: 0; }
 
 /*
@@ -925,7 +945,7 @@ textarea {
   padding: 0 0.74981em;
   font-size: 1em;
   border-radius: 3px;
-  border: 1px solid #ebecec;
+  border: 1px solid #f1f1f1;
   width: 100%; }
 
 input,
@@ -1090,33 +1110,33 @@ tag: text
   padding: 0.37491em 0.74981em;
   font-size: 1em;
   border-radius: 0;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #d9d9d9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   height: 2.24944em;
   vertical-align: middle;
   text-decoration: none;
-  color: #4c4f54;
+  color: #16222e;
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  background-color: #edeeee; }
+  background-color: #f2f2f2; }
   .button:hover {
-    background-color: #e1e1e1;
-    border-color: #bcbdbd;
+    background-color: #e6e6e6;
+    border-color: #c1c1c1;
     color: initial; }
   .button:focus {
     outline: 0; }
   .button:active {
-    background-color: #d4d4d4;
+    background-color: #d9d9d9;
     box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
   .button[disabled="disabled"], .button[disabled="true"] {
     cursor: not-allowed;
     opacity: .7; }
     .button[disabled="disabled"]:hover, .button[disabled="true"]:hover {
-      background-color: #edeeee;
-      border-color: #d4d4d4; }
+      background-color: #f2f2f2;
+      border-color: #d9d9d9; }
   .button + .button,
   .button + button {
     margin-left: 0.37491em; }
@@ -1176,7 +1196,7 @@ h6 {
 h1 {
   font-size: 2.24888em;
   font-weight: 300;
-  color: #4c4f54; }
+  color: #16222e; }
 
 h2 {
   font-size: 1.49962em;
@@ -1185,11 +1205,11 @@ h2 {
 
 h3 {
   font-size: 1.49962em;
-  color: #5F6369; }
+  color: #1C2B39; }
 
 h4 {
   font-size: 1em;
-  color: #00437B; }
+  text-transform: uppercase; }
 
 h5,
 h6 {
@@ -1302,7 +1322,7 @@ blockquote {
   padding-left: 1.49962em;
   margin: 0.74981em 0 1.49962em;
   border-left: 2px solid #00284a;
-  color: #7f8287; }
+  color: #495561; }
   blockquote a[rel="author"] {
     font-style: italic; }
   blockquote br + a {
@@ -1353,8 +1373,8 @@ Add an horizonal line to split the content of the page.
 ```
 */
 hr {
-  color: #ebecec;
-  background-color: #ebecec;
+  color: #f1f1f1;
+  background-color: #f1f1f1;
   height: 2px;
   border: 0;
   margin: 0.74981em auto; }
@@ -1409,9 +1429,9 @@ table {
   table td {
     padding: 0.74981em; }
   table th {
-    border-bottom: 1px solid #ebecec; }
+    border-bottom: 1px solid #f1f1f1; }
   table tbody > tr:hover {
-    background-color: #f3f4f4; }
+    background-color: #f7f7f7; }
 
 /*
 ---
@@ -1801,7 +1821,7 @@ If you want to collapse a row above or below an specific screen size, you can us
       margin-top: 1.49962em; }
       .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (min-width: sm) {
+  @media all and (min-width: 30em) {
     .container .row.collapse-a-phone > [class^="col"] {
       flex: 0 0 100%;
       margin-top: 1.49962em; }
@@ -1817,7 +1837,7 @@ If you want to collapse a row above or below an specific screen size, you can us
       margin-top: 1.49962em; }
       .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (min-width: md) {
+  @media all and (min-width: 48em) {
     .container .row.collapse-a-phone-land > [class^="col"] {
       flex: 0 0 100%;
       margin-top: 1.49962em; }
@@ -1833,7 +1853,7 @@ If you want to collapse a row above or below an specific screen size, you can us
       margin-top: 1.49962em; }
       .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (min-width: lg) {
+  @media all and (min-width: 56.25em) {
     .container .row.collapse-a-tablet > [class^="col"] {
       flex: 0 0 100%;
       margin-top: 1.49962em; }
@@ -1849,7 +1869,7 @@ If you want to collapse a row above or below an specific screen size, you can us
       margin-top: 1.49962em; }
       .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (min-width: xl) {
+  @media all and (min-width: 68.75em) {
     .container .row.collapse-a-desktop > [class^="col"] {
       flex: 0 0 100%;
       margin-top: 1.49962em; }
@@ -1865,7 +1885,7 @@ If you want to collapse a row above or below an specific screen size, you can us
       margin-top: 1.49962em; }
       .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; } }
-  @media all and (min-width: uxl) {
+  @media all and (min-width: 81.25em) {
     .container .row.collapse-a-wide > [class^="col"] {
       flex: 0 0 100%;
       margin-top: 1.49962em; }
@@ -2008,28 +2028,40 @@ Modify the background color of the given element.
 <div class="container padding-v-bigger bg-iron"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-white"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 <!-- Other names -->
 <div class="container padding-v-bigger margin-t-bigger bg-brand"></div>
 <div class="container padding-v-bigger bg-light"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-base"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 ```
 */
 .bg-bitnami,
 .bg-brand {
   background-color: #00437B; }
 
+.bg-accent,
+.bg-accent {
+  background-color: #008145; }
+
+.bg-action,
+.bg-action {
+  background-color: #F58220; }
+
 .bg-iron,
 .bg-light {
-  background-color: #ebecec; }
+  background-color: #f1f1f1; }
 
 .bg-dark,
 .bg-dark {
   background-color: #37474f; }
 
 .bg-white,
-.bg-base {
-  background-color: #fff; }
+.bg-white {
+  background-color: #ffffff; }
 
 /*
 ---
@@ -2214,7 +2246,7 @@ See https://css-tricks.com/snippets/css/css-triangle/.
 */
 .button-dropdown:after {
   border: 5px solid transparent;
-  border-top-color: #5F6369;
+  border-top-color: #1C2B39;
   display: inline-block;
   content: '';
   height: 0;
@@ -2229,7 +2261,7 @@ See https://css-tricks.com/snippets/css/css-triangle/.
 
 .button-dropdown-open:after {
   border-top-color: transparent;
-  border-bottom-color: #5F6369;
+  border-bottom-color: #1C2B39;
   top: -.2em; }
 
 .button-dropdown-open.button-action:after, .button-dropdown-open.button-accent:after {
@@ -2356,7 +2388,7 @@ Use this style with dark bacgrkound colors
 ```
 */
 .inverse {
-  color: #f4f5f5; }
+  color: #f7f7f7; }
 
 /*
 ---
@@ -3225,14 +3257,14 @@ Show a light gray background in even rows.
 ```
 */
 table.striped tr:nth-child(even) td {
-  background-color: #f4f5f5; }
+  background-color: #f7f7f7; }
 
 table.striped tr:hover {
   background-color: initial; }
 
 /*
 ---
-name: Size
+name: Typography size
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -3305,11 +3337,12 @@ Reduce or increase the default `font-size` of an element.
 
 /*
 ---
-name: Color
+name: Typography color
 category: Foundations/Helpers
 tag: helpers
 ---
-Reduce or increase the default `color` of an element.
+Change the default `color` of an element. If you want to use the `type-color-iron` helper,
+the [reverse helper](#Typography%20color%20reverse) may interest you.
 
 ```html
 <p class="type-color-bitnami">
@@ -3340,7 +3373,7 @@ Reduce or increase the default `color` of an element.
 
 .type-color-iron,
 .type-color-light {
-  color: #ebecec; }
+  color: #f1f1f1; }
 
 .type-color-action,
 .type-color-action {
@@ -3348,7 +3381,118 @@ Reduce or increase the default `color` of an element.
 
 /*
 ---
-name: Uppercase
+name: Typography color reverse
+category: Foundations/Helpers
+tag: helpers
+---
+The `type-color-reverse` modifier changes the color for headers, links and other text elements
+inside the current container. This is really useful for text elements that are placed inside a
+container with a dark background.
+
+For known dark backgrounds, the `type-color-reverse` modifier is added automatically.
+The list of known dark backgrounds is:
+
+* [Backgrounds](/category/Foundations/Helpers/#Backgrounds)
+* [Linear Gradients](/category/Foundations/Helpers/#Linear%20Gradients)
+
+```html
+<h2>Unknown dark background (with type-color-reverse)</h2>
+<div class="padding-normal type-color-reverse" style="background-color: black;">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known flat backgrounds (no modifier required)</h2>
+<div class="bg-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-dark padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known gradient backgrounds (no modifier required)</h2>
+<div class="gradient-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-135-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+```
+*/
+/**
+ * Enable type-color-reverse by default with known dark backgrounds.
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353398961
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353556092
+ */
+.bg-dark,
+.bg-brand,
+.bg-accent,
+.bg-action,
+[class*="gradient-"][class*="-brand"],
+[class*="gradient-"][class*="-accent"],
+[class*="gradient-"][class*="-action"],
+.type-color-reverse {
+  color: #ffffff; }
+
+a.type-color-reverse,
+.type-color-reverse a {
+  color: #ffffff;
+  text-decoration: underline; }
+  a.type-color-reverse:hover,
+  .type-color-reverse a:hover {
+    color: #d9d9d9; }
+
+.bg-dark a,
+.bg-brand a,
+.bg-accent a,
+.bg-action a,
+[class*="gradient-"][class*="-brand"] a,
+[class*="gradient-"][class*="-accent"] a,
+[class*="gradient-"][class*="-action"] a {
+  text-decoration: none; }
+
+.bg-brand a,
+.bg-dark a,
+[class*="gradient-"][class*="-brand"] a {
+  color: #9bcf67; }
+  .bg-brand a:hover,
+  .bg-dark a:hover,
+  [class*="gradient-"][class*="-brand"] a:hover {
+    color: #8fc954; }
+
+.bg-accent a,
+[class*="gradient-"][class*="-accent"] a {
+  color: #fecf59; }
+  .bg-accent a:hover,
+  [class*="gradient-"][class*="-accent"] a:hover {
+    color: #fdc841; }
+
+.bg-action a,
+[class*="gradient-"][class*="-action"] a {
+  color: #33404d; }
+  .bg-action a:hover,
+  [class*="gradient-"][class*="-action"] a:hover {
+    color: #1C2B39; }
+
+/*
+---
+name: Typography uppercase
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -3362,3 +3506,30 @@ Set the text to Uppercase
 */
 .type-uppercase {
   text-transform: uppercase; }
+
+/*
+---
+name: Typography weight
+category: Foundations/Helpers
+tag: helpers
+---
+By default, the weight of the text is 300. For certain situations, we may need to increase the
+weight of the typography.
+
+```html
+<p>
+  You may need to change the typo weight to
+  <span class="type-light">light</span>,
+  <span class="type-regular">regular</span>
+  or <span class="type-bold">bold</span>
+</p>
+```
+*/
+.type-light {
+  font-weight: 300; }
+
+.type-regular {
+  font-weight: 400; }
+
+.type-bold {
+  font-weight: bold; }

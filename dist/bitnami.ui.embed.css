@@ -84,7 +84,7 @@ $colors: (
   'secondary': #1598CB,
   'accent': #008145,
   'accent-light': #82C341,
-  'light': #ebecec,
+  'light': #f1f1f1,
   'white': #ffffff,
   'dark': #37474f,
   'text': #5F6369,
@@ -192,7 +192,7 @@ to this restrictment, you can use the fallback font families:
 from Google Fonts:
 
 ```
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400,700" rel="stylesheet">
 ```
 
 If any of these font families are available, the UI fallbacks to OS typographies.
@@ -1596,7 +1596,7 @@ Show a light gray background in even rows.
 */
   /*
 ---
-name: Size
+name: Typography size
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -1639,7 +1639,7 @@ Reduce or increase the default `font-size` of an element.
 */
   /*
 ---
-name: Color
+name: Typography color
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -1666,7 +1666,7 @@ Reduce or increase the default `color` of an element.
 */
   /*
 ---
-name: Uppercase
+name: Typography uppercase
 category: Foundations/Helpers
 tag: helpers
 ---
@@ -1676,6 +1676,24 @@ Set the text to Uppercase
 <h1 class="type-uppercase">
   Bitnami rocks!
 </h1>
+```
+*/
+  /*
+---
+name: Typography weight
+category: Foundations/Helpers
+tag: helpers
+---
+By default, the weight of the text is 300. For certain situations, we may need to increase the
+weight of the typography.
+
+```html
+<p>
+  You may need to change the typo weight to
+  <span class="type-light">light</span>,
+  <span class="type-regular">regular</span>
+  or <span class="type-bold">bold</span>
+</p>
 ```
 */ }
   .bitnami-ui a {
@@ -1692,15 +1710,15 @@ Set the text to Uppercase
   .bitnami-ui code {
     font-size: 0.66683em;
     padding: 0.18745em 0.37491em;
-    background-color: #ebecec;
+    background-color: #f1f1f1;
     border-radius: 3px;
-    border: 1px solid #d4d4d4;
+    border: 1px solid #d9d9d9;
     color: #00743e;
     vertical-align: middle; }
   .bitnami-ui pre code {
     background-color: initial;
     border: none;
-    color: #ebecec;
+    color: #f1f1f1;
     padding: 0; }
   .bitnami-ui input,
   .bitnami-ui select,
@@ -1709,7 +1727,7 @@ Set the text to Uppercase
     padding: 0 0.74981em;
     font-size: 1em;
     border-radius: 3px;
-    border: 1px solid #ebecec;
+    border: 1px solid #f1f1f1;
     width: 100%; }
   .bitnami-ui input,
   .bitnami-ui select {
@@ -1762,33 +1780,33 @@ Set the text to Uppercase
     padding: 0.37491em 0.74981em;
     font-size: 1em;
     border-radius: 0;
-    border: 1px solid #d4d4d4;
+    border: 1px solid #d9d9d9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     height: 2.24944em;
     vertical-align: middle;
     text-decoration: none;
-    color: #4c4f54;
+    color: #16222e;
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    background-color: #edeeee; }
+    background-color: #f2f2f2; }
     .bitnami-ui .button:hover {
-      background-color: #e1e1e1;
-      border-color: #bcbdbd;
+      background-color: #e6e6e6;
+      border-color: #c1c1c1;
       color: initial; }
     .bitnami-ui .button:focus {
       outline: 0; }
     .bitnami-ui .button:active {
-      background-color: #d4d4d4;
+      background-color: #d9d9d9;
       box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
     .bitnami-ui .button[disabled="disabled"], .bitnami-ui .button[disabled="true"] {
       cursor: not-allowed;
       opacity: .7; }
       .bitnami-ui .button[disabled="disabled"]:hover, .bitnami-ui .button[disabled="true"]:hover {
-        background-color: #edeeee;
-        border-color: #d4d4d4; }
+        background-color: #f2f2f2;
+        border-color: #d9d9d9; }
     .bitnami-ui .button + .button,
     .bitnami-ui .button + button {
       margin-left: 0.37491em; }
@@ -1823,17 +1841,17 @@ Set the text to Uppercase
   .bitnami-ui h1 {
     font-size: 2.24888em;
     font-weight: 300;
-    color: #4c4f54; }
+    color: #16222e; }
   .bitnami-ui h2 {
     font-size: 1.49962em;
     font-weight: 300;
     color: #00437B; }
   .bitnami-ui h3 {
     font-size: 1.49962em;
-    color: #5F6369; }
+    color: #1C2B39; }
   .bitnami-ui h4 {
     font-size: 1em;
-    color: #00437B; }
+    text-transform: uppercase; }
   .bitnami-ui h5,
   .bitnami-ui h6 {
     font-size: 1em;
@@ -1848,7 +1866,7 @@ Set the text to Uppercase
     padding-left: 1.49962em;
     margin: 0.74981em 0 1.49962em;
     border-left: 2px solid #00284a;
-    color: #7f8287; }
+    color: #495561; }
     .bitnami-ui blockquote a[rel="author"] {
       font-style: italic; }
     .bitnami-ui blockquote br + a {
@@ -1859,8 +1877,8 @@ Set the text to Uppercase
     text-decoration: none;
     font-weight: 600; }
   .bitnami-ui hr {
-    color: #ebecec;
-    background-color: #ebecec;
+    color: #f1f1f1;
+    background-color: #f1f1f1;
     height: 2px;
     border: 0;
     margin: 0.74981em auto; }
@@ -1873,9 +1891,9 @@ Set the text to Uppercase
     .bitnami-ui table td {
       padding: 0.74981em; }
     .bitnami-ui table th {
-      border-bottom: 1px solid #ebecec; }
+      border-bottom: 1px solid #f1f1f1; }
     .bitnami-ui table tbody > tr:hover {
-      background-color: #f3f4f4; }
+      background-color: #f7f7f7; }
   .bitnami-ui .container {
     width: auto;
     max-width: 1300px;
@@ -2207,7 +2225,7 @@ Set the text to Uppercase
     background-color: #00437B; }
   .bitnami-ui .bg-iron,
   .bitnami-ui .bg-light {
-    background-color: #ebecec; }
+    background-color: #f1f1f1; }
   .bitnami-ui .bg-dark,
   .bitnami-ui .bg-dark {
     background-color: #37474f; }
@@ -2273,7 +2291,7 @@ Set the text to Uppercase
     font-size: 2.24888em; }
   .bitnami-ui .button-dropdown:after {
     border: 5px solid transparent;
-    border-top-color: #5F6369;
+    border-top-color: #1C2B39;
     display: inline-block;
     content: '';
     height: 0;
@@ -2286,7 +2304,7 @@ Set the text to Uppercase
     border-top-color: #ffffff; }
   .bitnami-ui .button-dropdown-open:after {
     border-top-color: transparent;
-    border-bottom-color: #5F6369;
+    border-bottom-color: #1C2B39;
     top: -.2em; }
   .bitnami-ui .button-dropdown-open.button-action:after, .bitnami-ui .button-dropdown-open.button-accent:after {
     border-top-color: transparent;
@@ -2341,7 +2359,7 @@ Set the text to Uppercase
     color: #44add5;
     margin-top: -0.74981em; }
   .bitnami-ui .inverse {
-    color: #f4f5f5; }
+    color: #f7f7f7; }
   .bitnami-ui .remove-style {
     list-style: none; }
   .bitnami-ui .text-l {
@@ -2690,7 +2708,7 @@ Set the text to Uppercase
   .bitnami-ui .margin-vc-7 {
     margin: auto; }
   .bitnami-ui table.striped tr:nth-child(even) td {
-    background-color: #f4f5f5; }
+    background-color: #f7f7f7; }
   .bitnami-ui table.striped tr:hover {
     background-color: initial; }
   .bitnami-ui .type-tiny {
@@ -2721,9 +2739,15 @@ Set the text to Uppercase
     color: #008145; }
   .bitnami-ui .type-color-iron,
   .bitnami-ui .type-color-light {
-    color: #ebecec; }
+    color: #f1f1f1; }
   .bitnami-ui .type-color-action,
   .bitnami-ui .type-color-action {
     color: #F58220; }
   .bitnami-ui .type-uppercase {
     text-transform: uppercase; }
+  .bitnami-ui .type-light {
+    font-weight: 300; }
+  .bitnami-ui .type-regular {
+    font-weight: 400; }
+  .bitnami-ui .type-bold {
+    font-weight: bold; }

@@ -24,12 +24,19 @@ $color-names: (
   'light-blue': 'primary',
   'dark-blue': 'secondary',
   'accent': 'accent',
+  'accent-light': 'accent-light',
   'iron': 'light',
+  'white': 'white',
   'dark': 'dark',
   'text': 'text',
   'action': 'action',
-  'white': 'base'
+  'action-light': 'action-light',
+  'gray': 'gray',
+  'gray-light': 'gray-light',
+  'white': 'base',
+  'highlight': 'highlight'
 );
+
 ```
 */
 $scale-names: (
@@ -48,12 +55,18 @@ $scale-names: (
 
 $color-names: (
   'bitnami': 'brand',
-  'light-blue': 'primary',
-  'dark-blue': 'secondary',
+  'dark-blue': 'primary',
+  'light-blue': 'secondary',
   'accent': 'accent',
+  'accent-light': 'accent-light',
   'iron': 'light',
+  'white': 'white',
   'dark': 'dark',
   'text': 'text',
   'action': 'action',
-  'white': 'base'
+  'action-light': 'action-light',
+  'gray': 'gray',
+  'gray-light': 'gray-light',
+  'base': 'base',
+  'highlight': 'highlight'
 );

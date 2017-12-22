@@ -20,9 +20,6 @@ to check the current scale and size.
   @return pow($base, $level) * 1em;
 }
 
-/**
- * Get the line-height for different levels
-*/
 /*
 ---
 name: line-height(name)
@@ -47,5 +44,20 @@ Get a line-height based on the standard values.
   } @else {
     @warn "We didn't find the size called #{$name}. Please check available sizes";
     @return map-get($line-heights, 0);
+  }
+}
+
+/**
+ * Set the color for anchors in the type-color-reverse
+ *
+ * NOTE: This is an internal mixin. It shouldn't be documented
+ */
+@mixin type-color-reverse-anchor($color, $base-level) {
+  a {
+    color: color-level($color, $base-level);
+
+    &:hover {
+      color: color-level($color, $base-level + 100);
+    }
   }
 }

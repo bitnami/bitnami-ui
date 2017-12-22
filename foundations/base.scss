@@ -7,6 +7,20 @@
 html {
   // We can increase this percentage to modify the base type size
   font-size: $base-type-zoom;
+
+  // Change the font-size based on the screen site
+  @include mappy-query('b-tablet') {
+    font-size: $base-type-zoom - 5;
+  }
+
+  @include mappy-query('b-phone-land') {
+    font-size: $base-type-zoom - 10;
+  }
+
+  // The base size is big, so I'm gonna increase it only for ultrawide screens
+  @include mappy-query('a-wide') {
+    font-size: $base-type-zoom + 5;
+  }
 }
 
 body {

@@ -11,14 +11,18 @@ Modify the background color of the given element.
 <div class="container padding-v-bigger bg-iron"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-white"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 <!-- Other names -->
 <div class="container padding-v-bigger margin-t-bigger bg-brand"></div>
 <div class="container padding-v-bigger bg-light"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-base"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 ```
 */
-@each $alias in 'bitnami', 'iron', 'dark', 'white' {
+@each $alias in 'bitnami', 'accent', 'action', 'iron', 'dark', 'white' {
   $name: map-get($color-names, $alias);
 
   .bg-#{$alias},

@@ -84,7 +84,7 @@ $colors: (
   'secondary': #1598CB,
   'accent': #008145,
   'accent-light': #82C341,
-  'light': #ebecec,
+  'light': #f1f1f1,
   'white': #ffffff,
   'dark': #37474f,
   'text': #5F6369,
@@ -192,7 +192,7 @@ to this restrictment, you can use the fallback font families:
 from Google Fonts:
 
 ```
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700|Hind:300,400,700" rel="stylesheet">
 ```
 
 If any of these font families are available, the UI fallbacks to OS typographies.
@@ -2787,7 +2787,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
   .bitnami-ui .button.cloud-selector {
     height: auto;
     width: 100%;
-    background-color: #f1f2f2;
+    background-color: whitesmoke;
     padding: 0.74981em; }
     .bitnami-ui .button.cloud-selector:before {
       content: '';
@@ -2880,7 +2880,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
       .bitnami-ui .Terminal__Top__Title {
         flex: 1;
         text-align: center;
-        color: #a5a5a5; }
+        color: darkgray; }
       .bitnami-ui .Terminal__Top__Button {
         border-radius: 15px;
         display: inline-block;
@@ -2900,9 +2900,9 @@ Display the applications as a list. When the user hover in an element, a tooltip
       padding: 0;
       white-space: pre-line; }
       .bitnami-ui .Terminal__Code code {
-        color: #a5a5a5; }
+        color: darkgray; }
         .bitnami-ui .Terminal__Code code.Terminal__Code__Command {
-          color: #ebecec;
+          color: #f1f1f1;
           display: inline-block;
           margin-top: 1.49962em; }
           .bitnami-ui .Terminal__Code code.Terminal__Code__Command:first-child {
@@ -2911,7 +2911,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
             content: '$';
             margin-right: .5em; }
   .bitnami-ui .banner {
-    background-color: #f4f5f5;
+    background-color: #f7f7f7;
     border-top: 2px solid #00437B;
     margin: 1.49962em auto;
     padding: 1.49962em 0; }
@@ -3017,7 +3017,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
     overflow: hidden; }
     .bitnami-ui .timeline__event__title {
       font-weight: normal;
-      color: #5F6369;
+      color: #1C2B39;
       font-size: 1em;
       height: 2.99925em;
       padding: 0 0.74981em;
@@ -3080,7 +3080,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
         .bitnami-ui .dropdown__list li.dropdown__list__separator {
           margin: 0.37491em 0;
           padding: 0;
-          border-bottom: 1px solid #ebecec; }
+          border-bottom: 1px solid #f1f1f1; }
     .bitnami-ui .dropdown-open .dropdown__list {
       display: block; }
     .bitnami-ui .dropdown-right .dropdown__list {
@@ -3094,7 +3094,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
     .bitnami-ui .search .input-group {
       position: relative; }
       .bitnami-ui .search .input-group:after {
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#5F6369' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.5' cy='10.5' r='7.5'></circle><line x1='21' y1='21' x2='15.8' y2='15.8'></line></svg>");
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#1C2B39' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.5' cy='10.5' r='7.5'></circle><line x1='21' y1='21' x2='15.8' y2='15.8'></line></svg>");
         background-size: contain;
         content: '';
         width: 1em;
@@ -3107,10 +3107,10 @@ Display the applications as a list. When the user hover in an element, a tooltip
       .bitnami-ui .search__results__result {
         padding-bottom: 1.49962em;
         margin-bottom: 0.74981em;
-        border-bottom: 1px solid #ebecec; }
+        border-bottom: 1px solid #f1f1f1; }
       .bitnami-ui .search__results__caption {
         font-size: 0.66683em;
-        color: #8f9296;
+        color: #606b74;
         margin: 0.37491em 0 2.24944em; }
       .bitnami-ui .search__results em {
         background-color: #fff23f;
@@ -3138,7 +3138,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
       max-width: 100%; }
     .bitnami-ui .clouds__companies_plus {
       font-size: 5.05744em;
-      color: #ebecec;
+      color: #f1f1f1;
       padding: 0 0.49988em; }
   .bitnami-ui .clouds__started {
     margin-top: 4.49887em; }
@@ -3208,7 +3208,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
   .bitnami-ui .OSHeader__Logo a, .bitnami-ui .OSHeader__Logo a:hover,
   .bitnami-ui .OSHeader nav a,
   .bitnami-ui .OSHeader nav a:hover {
-    color: #ebecec; }
+    color: #f1f1f1; }
   .bitnami-ui .OSHero {
     position: relative;
     min-height: 35em;
@@ -3268,7 +3268,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
   .bitnami-ui .avatar.avatar-square {
     border-radius: 0; }
   .bitnami-ui .avatar.avatar-border {
-    border: 1px solid #ebecec; }
+    border: 1px solid #f1f1f1; }
   .bitnami-ui .profile-list__avatar, .bitnami-ui .profile-list__info {
     display: table-cell;
     vertical-align: top; }
@@ -3280,7 +3280,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
       width: 1.49962em;
       height: 1.49962em; }
     .bitnami-ui .SocialIcon--white {
-      color: #ebecec; }
+      color: #f1f1f1; }
       .bitnami-ui .SocialIcon--white:hover {
         color: #ffffff; }
   .bitnami-ui .launcher {
@@ -3317,7 +3317,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
           position: relative;
           background: #ffffff;
           padding: 0.37491em 0.74981em;
-          border: 3px solid #ebecec;
+          border: 3px solid #f1f1f1;
           border-radius: 3px; }
           .bitnami-ui .launcher__stack__tooltip__content:after, .bitnami-ui .launcher__stack__tooltip__content:before {
             position: absolute;
@@ -3333,7 +3333,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
             border-width: 15px;
             margin-left: -15px; }
           .bitnami-ui .launcher__stack__tooltip__content:before {
-            border-top-color: #ebecec;
+            border-top-color: #f1f1f1;
             border-width: 19px;
             margin-left: -19px; }
       .bitnami-ui .launcher__stack.stack-wordpress .launcher__stack__icon {
@@ -3374,7 +3374,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
         background-position: -616px 0; }
       .bitnami-ui .launcher__stack.stack-more .launcher__stack__icon {
         background-image: none;
-        color: #bcbdbd;
+        color: #c1c1c1;
         text-indent: 0; }
         .bitnami-ui .launcher__stack.stack-more .launcher__stack__icon:after {
           content: '>';
