@@ -82,7 +82,7 @@ in steps of one hundred. The base color is located in 500.
 
 /*
 ---
-name: gradient(name, directionOrDegrees)
+name: gradient(name, directionOrDegrees, firstPosition, lastPosition)
 category: Foundations/Mixins
 tag: function
 ---
@@ -94,7 +94,8 @@ Generate a proper gradient.
 }
 ```
 */
-@function gradient($name: 'bitnami', $direction: 45deg) {
+@function gradient($name: 'bitnami', $direction: 45deg, $firstPosition: 0%, $lastPosition: 100%) {
   $pair: gradient-pair($name);
-  @return linear-gradient($direction, nth($pair, 1) 0%, nth($pair, 2) 100%);
+  @return linear-gradient($direction, nth($pair, 1) $firstPosition, nth($pair, 2) $lastPosition);
 }
+

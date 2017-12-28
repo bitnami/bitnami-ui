@@ -162,17 +162,29 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
 [class*="gradient-"][class*="-action"],
 .type-color-reverse {
   color: color('white');
+
+  // Apply same changes to headers
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: color('white');
+  }
 }
 
 // Display anchors depends on the background.
 a.type-color-reverse,
 .type-color-reverse a {
-  color: color('white');
-  // I've added this text decoration in case the background it's not known.
-  text-decoration: underline;
+  &:not(.button) {
+    color: color('white');
+    // I've added this text decoration in case the background it's not known.
+    text-decoration: underline;
 
-  &:hover {
-    color: color-level('light', 600);
+    &:hover {
+      color: color-level('light', 600);
+    }
   }
 }
 
@@ -185,7 +197,7 @@ a.type-color-reverse,
 [class*="gradient-"][class*="-accent"],
 [class*="gradient-"][class*="-action"] {
   &:not(.type-color-reverse-anchor-reset) {
-    a {
+    a:not(.button) {
       text-decoration: none;
     }
   }

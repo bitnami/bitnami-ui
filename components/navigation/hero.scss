@@ -1,0 +1,70 @@
+/*
+---
+name: Hero
+category: Components/Navigation
+tag: component
+---
+
+```html
+<section class="hero type-color-reverse">
+  <div class="container">
+    <section class="hero__content">
+      <h1 class="hero__title">Bitnami Application Catalog</h1>
+      <p class="hero__subtitle">Ready-to-run Applications and Development Environments</p>
+      <p class="margin-b-reset">
+        <a class="button button-action">Sign in</a>
+      </p>
+    </section>
+  </div>
+</section>
+```
+*/
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: su(3) padding('bigger') su(5);
+
+  &__content {
+    max-width: 600px;
+  }
+
+  &__title,
+  &__subtitle {
+    margin: 0;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    height: 200%;
+    position: absolute;
+    top: -105%;
+    width: 300%;
+    z-index: z-index('bottom');
+  }
+
+  &:before {
+    background: color('action');
+    right: -150%;
+    transform: rotateZ(10deg);
+
+  }
+
+  &:after {
+    background: gradient('brand', -45deg, 20%, 42%);
+    left: -150%;
+    transform: rotateZ(-8deg);
+  }
+
+  // Opacity effect for mobile
+  @include mappy-query('b-phone-land') {
+    &:before {
+      transform: rotateZ(15deg);
+    }
+
+    &:after {
+      transform: rotateZ(-15deg);
+      opacity: .9;
+    }
+  }
+}

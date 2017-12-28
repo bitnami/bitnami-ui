@@ -292,7 +292,7 @@ in steps of one hundred. The base color is located in 500.
  */
 /*
 ---
-name: gradient(name, directionOrDegrees)
+name: gradient(name, directionOrDegrees, firstPosition, lastPosition)
 category: Foundations/Mixins
 tag: function
 ---
@@ -310,7 +310,9 @@ name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Return the gradient for a button with the cut corner already added
+Return the gradient for a button with the cut corner already added.
+Inspired by [this pen](https://codepen.io/aaahollister/pen/wKwxNY). This is the simplest
+approach I've found.
 
 ```scss
 button-gradient('brand');
@@ -3812,45 +3814,94 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
 [class*="gradient-"][class*="-action"],
 .type-color-reverse {
   color: #ffffff; }
+  .bg-dark h1,
+  .bg-dark h2,
+  .bg-dark h3,
+  .bg-dark h4,
+  .bg-dark h5,
+  .bg-dark h6,
+  .bg-brand h1,
+  .bg-brand h2,
+  .bg-brand h3,
+  .bg-brand h4,
+  .bg-brand h5,
+  .bg-brand h6,
+  .bg-accent h1,
+  .bg-accent h2,
+  .bg-accent h3,
+  .bg-accent h4,
+  .bg-accent h5,
+  .bg-accent h6,
+  .bg-action h1,
+  .bg-action h2,
+  .bg-action h3,
+  .bg-action h4,
+  .bg-action h5,
+  .bg-action h6,
+  [class*="gradient-"][class*="-brand"] h1,
+  [class*="gradient-"][class*="-brand"] h2,
+  [class*="gradient-"][class*="-brand"] h3,
+  [class*="gradient-"][class*="-brand"] h4,
+  [class*="gradient-"][class*="-brand"] h5,
+  [class*="gradient-"][class*="-brand"] h6,
+  [class*="gradient-"][class*="-accent"] h1,
+  [class*="gradient-"][class*="-accent"] h2,
+  [class*="gradient-"][class*="-accent"] h3,
+  [class*="gradient-"][class*="-accent"] h4,
+  [class*="gradient-"][class*="-accent"] h5,
+  [class*="gradient-"][class*="-accent"] h6,
+  [class*="gradient-"][class*="-action"] h1,
+  [class*="gradient-"][class*="-action"] h2,
+  [class*="gradient-"][class*="-action"] h3,
+  [class*="gradient-"][class*="-action"] h4,
+  [class*="gradient-"][class*="-action"] h5,
+  [class*="gradient-"][class*="-action"] h6,
+  .type-color-reverse h1,
+  .type-color-reverse h2,
+  .type-color-reverse h3,
+  .type-color-reverse h4,
+  .type-color-reverse h5,
+  .type-color-reverse h6 {
+    color: #ffffff; }
 
-a.type-color-reverse,
-.type-color-reverse a {
+a.type-color-reverse:not(.button),
+.type-color-reverse a:not(.button) {
   color: #ffffff;
   text-decoration: underline; }
-  a.type-color-reverse:hover,
-  .type-color-reverse a:hover {
+  a.type-color-reverse:not(.button):hover,
+  .type-color-reverse a:not(.button):hover {
     color: #d9d9d9; }
 
-.bg-dark:not(.type-color-reverse-anchor-reset) a,
-.bg-brand:not(.type-color-reverse-anchor-reset) a,
-.bg-accent:not(.type-color-reverse-anchor-reset) a,
-.bg-action:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+.bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
   text-decoration: none; }
 
-.bg-brand:not(.type-color-reverse-anchor-reset) a,
-.bg-dark:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a {
+.bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
   color: #9bcf67; }
-  .bg-brand:not(.type-color-reverse-anchor-reset) a:hover,
-  .bg-dark:not(.type-color-reverse-anchor-reset) a:hover,
-  [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:hover {
+  .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+  .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+  [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
     color: #8fc954; }
 
-.bg-accent:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a {
+.bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
   color: #fecf59; }
-  .bg-accent:not(.type-color-reverse-anchor-reset) a:hover,
-  [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:hover {
+  .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+  [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
     color: #fdc841; }
 
-.bg-action:not(.type-color-reverse-anchor-reset) a,
-[class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+.bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+[class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
   color: #33404d; }
-  .bg-action:not(.type-color-reverse-anchor-reset) a:hover,
-  [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:hover {
+  .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+  [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
     color: #1C2B39; }
 
 /*

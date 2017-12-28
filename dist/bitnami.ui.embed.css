@@ -310,17 +310,14 @@ name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Return the gradient for a button with the cut corner already added
+Return the gradient for a button with the cut corner already added.
+Inspired by [this pen](https://codepen.io/aaahollister/pen/wKwxNY). This is the simplest
+approach I've found.
 
 ```scss
 button-gradient('brand');
 ```
 */
-/**
- * Create the values for a skin variation of a button.
- *
- * NOTE: This mixin is for internal usage
- */
 /*
 ---
 name: button-size(name-of-scale)

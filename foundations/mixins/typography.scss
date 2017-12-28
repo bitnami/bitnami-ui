@@ -54,7 +54,7 @@ Get a line-height based on the standard values.
  */
 @mixin type-color-reverse-anchor($color, $base-level) {
   &:not(.type-color-reverse-anchor-reset) {
-    a {
+    a:not(.button) {
       color: color-level($color, $base-level);
 
       &:hover {
