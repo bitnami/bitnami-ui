@@ -15,6 +15,7 @@ Basic inputs to build forms.
 input,
 select,
 textarea,
+button,
 .button {
   font-size: su(.6);
 }
@@ -221,31 +222,35 @@ tag: text
 // button,
 .button {
   // Display correctly non buttons elements like anchors
-  display: inline-block;
-  padding: padding('small') padding('normal');
   border-radius: 0;
-  border: 1px solid color-level('iron', 600);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 0 12px 10px -7px rgba(0, 0, 0, .2);
+  color: color-level('text', 700);
   cursor: pointer;
-  height: su(1.5);
+  display: inline-block;
+  font-weight: 300;
+  // Center the text in the button for `button` and anchors
+  line-height: su(1.6);
   // Align elements in the same line
   vertical-align: middle;
   // Remove text decoration on links
   text-decoration: none;
-  color: color-level('text', 700);
   // Fix button content when the screen is small
   max-width: 100%;
-  white-space: nowrap;
   overflow: hidden;
+  padding: 0 padding('bigger');
   text-overflow: ellipsis;
+  transition: transform .15s ease-in-out,
+              box-shadow .15s ease-in-out;
+  white-space: nowrap;
+  will-change: transform;
 
   // Default skin
-  background-color: color-level('iron', 400);
+  background: button-gradient('light');
 
   &:hover {
-    background-color: lighten(color-level('iron', 600), 5%);
-    border-color: color-level('iron', 700);
-    color: initial;
+    background: button-gradient('action');
+    color: color('white');
   }
 
   // Show an inset shadow on click
@@ -254,20 +259,15 @@ tag: text
   }
 
   &:active {
-    background-color: color-level('iron', 600);
-    box-shadow: inset 1px 1px 2px rgba(color('dark'), .25);
+    transform: translateY(2px);
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, .2);
   }
 
   // Set the correct cursor on disabled
   &[disabled="disabled"],
   &[disabled="true"] {
     cursor: not-allowed;
-    opacity: .7;
-
-    &:hover {
-      background-color: color-level('iron', 400);
-      border-color:  color-level('iron', 600);
-    }
+    opacity: .5;
   }
 
   // Add a margin on consecutive elements

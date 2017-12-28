@@ -104,6 +104,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 // Interval to get tints and shades
 $color-interval: 10%;
@@ -468,21 +469,16 @@ Generate a proper gradient.
 */
 /*
 ---
-name: button-skin(name, base-color, text-color)
+name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
+Return the gradient for a button with the cut corner already added
 
 ```scss
-@include('primary', 'primary', 'light');
+button-gradient('brand');
 ```
 */
-/**
- * Create the values for a skin variation of a button.
- *
- * NOTE: This mixin is for internal usage
- */
 /*
 ---
 name: button-size(name-of-scale)
@@ -685,18 +681,6 @@ in steps of one hundred. The base color is located in 500.
 */
 /*
 ---
-name: button-cloud-skin(cloud)
-category: Components/Mixins
-tag: function
----
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
-
-```scss
-@include button-cloud-skin('aws');
-```
-*/
-/*
----
 name: generate-sprite()
 category: Components/Mixins
 tag: function
@@ -728,7 +712,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -739,7 +723,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -750,7 +734,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -761,7 +745,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -772,7 +756,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -783,7 +767,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -794,7 +778,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -805,7 +789,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 
@@ -816,7 +800,7 @@ information about this component in the
     <p class="margin-t-big">
       The Bitnami Launchpad for CenturyLink Cloud gives you fully configured applications and development stacks ready to run on your CenturyLink Cloud account in minutes.
     </p>
-    <a class="button">Visit CenturyLink site</a>
+    <a class="button button-action">Visit CenturyLink site</a>
   </div>
 </div>
 ```
@@ -1031,291 +1015,75 @@ with size modification classes. You can get more information about this element 
 
 ```html
 <p class="text-c">
-  <button class="button palette-aws button-small">Testing buttons</button>
-  <button class="button palette-azure button-small">Testing buttons</button>
-  <button class="button palette-centurylink button-small">Testing buttons</button>
+  <button class="button palette-aws button-small">Amazon Web Services</button>
+  <button class="button palette-azure button-small">Microsoft Azure</button>
+  <button class="button palette-centurylink button-small">Centurylink</button>
 </p>
 <p class="text-c">
-  <button class="button palette-godaddy">Testing buttons</button>
-  <button class="button palette-google">Testing buttons</button>
-  <button class="button palette-huawei">Testing buttons</button>
+  <button class="button palette-godaddy">GoDaddy</button>
+  <button class="button palette-google">Google</button>
+  <button class="button palette-huawei">Huawei</button>
 </p>
 <p class="text-c">
-  <button class="button palette-oneone button-big">Testing buttons</button>
-  <button class="button palette-oracle button-big">Testing buttons</button>
-  <button class="button palette-otc button-big">Testing buttons</button>
+  <button class="button palette-oneone button-big">1&1</button>
+  <button class="button palette-oracle button-big">Oracle</button>
+  <button class="button palette-otc button-big">Open Telekom Cloud</button>
 </p>
 ```
 */
 .palette-oneone .button,
-.palette-oneone button {
-  background-color: #1a509a;
-  border-color: #003781;
-  color: #ffffff; }
-  .palette-oneone .button:hover,
-  .palette-oneone button:hover {
-    color: #ffffff;
-    background-color: #00429b;
-    border-color: #003172; }
-  .palette-oneone .button:active,
-  .palette-oneone button:active {
-    background-color: #003781;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-oneone button,
 .button.palette-oneone,
 button.palette-oneone {
-  background-color: #1a509a;
-  border-color: #003781;
-  color: #ffffff; }
-  .button.palette-oneone:hover,
-  button.palette-oneone:hover {
-    color: #ffffff;
-    background-color: #00429b;
-    border-color: #003172; }
-  .button.palette-oneone:active,
-  button.palette-oneone:active {
-    background-color: #003781;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #003d8f; }
 
 .palette-aws .button,
-.palette-aws button {
-  background-color: #f0c14b;
-  border-color: #d6a732;
-  color: #ffffff; }
-  .palette-aws .button:hover,
-  .palette-aws button:hover {
-    color: #ffffff;
-    background-color: #dab047;
-    border-color: #be952c; }
-  .palette-aws .button:active,
-  .palette-aws button:active {
-    background-color: #d6a732;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-aws button,
 .button.palette-aws,
 button.palette-aws {
-  background-color: #f0c14b;
-  border-color: #d6a732;
-  color: #ffffff; }
-  .button.palette-aws:hover,
-  button.palette-aws:hover {
-    color: #ffffff;
-    background-color: #dab047;
-    border-color: #be952c; }
-  .button.palette-aws:active,
-  button.palette-aws:active {
-    background-color: #d6a732;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #eeba37; }
 
 .palette-azure .button,
-.palette-azure button {
-  background-color: #7dc1ee;
-  border-color: #63a7d4;
-  color: #ffffff; }
-  .palette-azure .button:hover,
-  .palette-azure button:hover {
-    color: #ffffff;
-    background-color: #77b2da;
-    border-color: #5895bd; }
-  .palette-azure .button:active,
-  .palette-azure button:active {
-    background-color: #63a7d4;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-azure button,
 .button.palette-azure,
 button.palette-azure {
-  background-color: #7dc1ee;
-  border-color: #63a7d4;
-  color: #ffffff; }
-  .button.palette-azure:hover,
-  button.palette-azure:hover {
-    color: #ffffff;
-    background-color: #77b2da;
-    border-color: #5895bd; }
-  .button.palette-azure:active,
-  button.palette-azure:active {
-    background-color: #63a7d4;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #6ebaec; }
 
 .palette-centurylink .button,
-.palette-centurylink button {
-  background-color: #1a9152;
-  border-color: #007839;
-  color: #ffffff; }
-  .palette-centurylink .button:hover,
-  .palette-centurylink button:hover {
-    color: #ffffff;
-    background-color: #009245;
-    border-color: #006a32; }
-  .palette-centurylink .button:active,
-  .palette-centurylink button:active {
-    background-color: #007839;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-centurylink button,
 .button.palette-centurylink,
 button.palette-centurylink {
-  background-color: #1a9152;
-  border-color: #007839;
-  color: #ffffff; }
-  .button.palette-centurylink:hover,
-  button.palette-centurylink:hover {
-    color: #ffffff;
-    background-color: #009245;
-    border-color: #006a32; }
-  .button.palette-centurylink:active,
-  button.palette-centurylink:active {
-    background-color: #007839;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #00853f; }
 
 .palette-godaddy .button,
-.palette-godaddy button {
-  background-color: #1aaf52;
-  border-color: #009539;
-  color: #ffffff; }
-  .palette-godaddy .button:hover,
-  .palette-godaddy button:hover {
-    color: #ffffff;
-    background-color: #00af43;
-    border-color: #008532; }
-  .palette-godaddy .button:active,
-  .palette-godaddy button:active {
-    background-color: #009539;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-godaddy button,
 .button.palette-godaddy,
 button.palette-godaddy {
-  background-color: #1aaf52;
-  border-color: #009539;
-  color: #ffffff; }
-  .button.palette-godaddy:hover,
-  button.palette-godaddy:hover {
-    color: #ffffff;
-    background-color: #00af43;
-    border-color: #008532; }
-  .button.palette-godaddy:active,
-  button.palette-godaddy:active {
-    background-color: #009539;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #00a63f; }
 
 .palette-google .button,
-.palette-google button {
-  background-color: #4091e9;
-  border-color: #2778d0;
-  color: #ffffff; }
-  .palette-google .button:hover,
-  .palette-google button:hover {
-    color: #ffffff;
-    background-color: #3785da;
-    border-color: #226ab9; }
-  .palette-google .button:active,
-  .palette-google button:active {
-    background-color: #2778d0;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-google button,
 .button.palette-google,
 button.palette-google {
-  background-color: #4091e9;
-  border-color: #2778d0;
-  color: #ffffff; }
-  .button.palette-google:hover,
-  button.palette-google:hover {
-    color: #ffffff;
-    background-color: #3785da;
-    border-color: #226ab9; }
-  .button.palette-google:active,
-  button.palette-google:active {
-    background-color: #2778d0;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #2b85e7; }
 
 .palette-huawei .button,
-.palette-huawei button {
-  background-color: #ff1a1a;
-  border-color: #e60000;
-  color: #ffffff; }
-  .palette-huawei .button:hover,
-  .palette-huawei button:hover {
-    color: #ffffff;
-    background-color: #ff0101;
-    border-color: #cc0000; }
-  .palette-huawei .button:active,
-  .palette-huawei button:active {
-    background-color: #e60000;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-huawei button,
 .button.palette-huawei,
 button.palette-huawei {
-  background-color: #ff1a1a;
-  border-color: #e60000;
-  color: #ffffff; }
-  .button.palette-huawei:hover,
-  button.palette-huawei:hover {
-    color: #ffffff;
-    background-color: #ff0101;
-    border-color: #cc0000; }
-  .button.palette-huawei:active,
-  button.palette-huawei:active {
-    background-color: #e60000;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #f00; }
 
 .palette-oracle .button,
-.palette-oracle button {
-  background-color: #ff1a1a;
-  border-color: #e60000;
-  color: #ffffff; }
-  .palette-oracle .button:hover,
-  .palette-oracle button:hover {
-    color: #ffffff;
-    background-color: #ff0101;
-    border-color: #cc0000; }
-  .palette-oracle .button:active,
-  .palette-oracle button:active {
-    background-color: #e60000;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-oracle button,
 .button.palette-oracle,
 button.palette-oracle {
-  background-color: #ff1a1a;
-  border-color: #e60000;
-  color: #ffffff; }
-  .button.palette-oracle:hover,
-  button.palette-oracle:hover {
-    color: #ffffff;
-    background-color: #ff0101;
-    border-color: #cc0000; }
-  .button.palette-oracle:active,
-  button.palette-oracle:active {
-    background-color: #e60000;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #f00; }
 
 .palette-otc .button,
-.palette-otc button {
-  background-color: #e51a82;
-  border-color: #cb0068;
-  color: #ffffff; }
-  .palette-otc .button:hover,
-  .palette-otc button:hover {
-    color: #ffffff;
-    background-color: #e50075;
-    border-color: #b5005d; }
-  .palette-otc .button:active,
-  .palette-otc button:active {
-    background-color: #cb0068;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.palette-otc button,
 .button.palette-otc,
 button.palette-otc {
-  background-color: #e51a82;
-  border-color: #cb0068;
-  color: #ffffff; }
-  .button.palette-otc:hover,
-  button.palette-otc:hover {
-    color: #ffffff;
-    background-color: #e50075;
-    border-color: #b5005d; }
-  .button.palette-otc:active,
-  button.palette-otc:active {
-    background-color: #cb0068;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  background-color: #e20074; }
 
 /*
 ---
@@ -1473,7 +1241,6 @@ Display the clouds as buttons.
 .button.cloud-selector {
   height: auto;
   width: 100%;
-  background-color: whitesmoke;
   padding: 0.74981em; }
   .button.cloud-selector:before {
     content: '';
@@ -2118,7 +1885,10 @@ These components help you to build more complex input elements. Now, you can cre
 ```
 */
 .input-group {
-  display: flex; }
+  display: flex;
+  /*
+   * For the height and remove the cut corner for buttons
+   */ }
   .input-group > input,
   .input-group [class*="input"] {
     flex: 1;
@@ -2131,7 +1901,18 @@ These components help you to build more complex input elements. Now, you can cre
   .input-group button,
   .input-group .button {
     height: 2.99925em;
+    background: linear-gradient(45deg, #f1f1f1 0%, #f7f7f7 100%);
     box-shadow: none; }
+    .input-group button.button-primary,
+    .input-group .button.button-primary {
+      background: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
+    .input-group button.button-accent, .input-group button.button-action,
+    .input-group .button.button-accent,
+    .input-group .button.button-action {
+      background: linear-gradient(45deg, #008145 0%, #82C341 100%); }
+    .input-group button:hover,
+    .input-group .button:hover {
+      background: linear-gradient(45deg, #F58220 0%, #FDBA12 100%); }
 
 /*
 ---

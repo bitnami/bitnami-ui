@@ -104,6 +104,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 // Interval to get tints and shades
 $color-interval: 10%;
@@ -305,21 +306,16 @@ Generate a proper gradient.
 */
 /*
 ---
-name: button-skin(name, base-color, text-color)
+name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
+Return the gradient for a button with the cut corner already added
 
 ```scss
-@include('primary', 'primary', 'light');
+button-gradient('brand');
 ```
 */
-/**
- * Create the values for a skin variation of a button.
- *
- * NOTE: This mixin is for internal usage
- */
 /*
 ---
 name: button-size(name-of-scale)
@@ -945,6 +941,7 @@ Basic inputs to build forms.
 input,
 select,
 textarea,
+button,
 .button {
   font-size: 0.89977em; }
 
@@ -1114,36 +1111,35 @@ tag: text
 ```
 */
 .button {
-  display: inline-block;
-  padding: 0.37491em 0.74981em;
   border-radius: 0;
-  border: 1px solid #d9d9d9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 0 12px 10px -7px rgba(0, 0, 0, 0.2);
+  color: #16222e;
   cursor: pointer;
-  height: 2.24944em;
+  display: inline-block;
+  font-weight: 300;
+  line-height: 2.3994em;
   vertical-align: middle;
   text-decoration: none;
-  color: #16222e;
   max-width: 100%;
-  white-space: nowrap;
   overflow: hidden;
+  padding: 0 2.24944em;
   text-overflow: ellipsis;
-  background-color: #f2f2f2; }
+  transition: transform .15s ease-in-out, box-shadow .15s ease-in-out;
+  white-space: nowrap;
+  will-change: transform;
+  background: linear-gradient(135deg, transparent 7px, #f1f1f1 7px, #f7f7f7 100%); }
   .button:hover {
-    background-color: #e6e6e6;
-    border-color: #c1c1c1;
-    color: initial; }
+    background: linear-gradient(135deg, transparent 7px, #F58220 7px, #FDBA12 100%);
+    color: #ffffff; }
   .button:focus {
     outline: 0; }
   .button:active {
-    background-color: #d9d9d9;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+    transform: translateY(2px);
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.2); }
   .button[disabled="disabled"], .button[disabled="true"] {
     cursor: not-allowed;
-    opacity: .7; }
-    .button[disabled="disabled"]:hover, .button[disabled="true"]:hover {
-      background-color: #f2f2f2;
-      border-color: #d9d9d9; }
+    opacity: .5; }
   .button + .button,
   .button + button {
     margin-left: 0.37491em; }
@@ -2245,47 +2241,23 @@ Modify the color of the buttons. Available classes:
 * `.button-action`
 
 ```html
-<button class="button-primary">Submit</button>
+<button class="button button-primary">Submit</button>
 <a class="button button-accent">Link button</a>
 <a class="button button-action">Link button</a>
 <a class="button">Link button</a>
 ```
 */
-.button-primary {
-  background-color: #1a5688;
-  border-color: #003c6f;
-  color: #ffffff; }
-  .button-primary:hover {
-    color: #ffffff;
-    background-color: #004a89;
-    border-color: #003662; }
-  .button-primary:active {
-    background-color: #003c6f;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
-.button-accent {
-  background-color: #1a8e58;
-  border-color: #00743e;
-  color: #ffffff; }
-  .button-accent:hover {
-    color: #ffffff;
-    background-color: #008e4c;
-    border-color: #006737; }
-  .button-accent:active {
-    background-color: #00743e;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-
+.button-primary,
+.button-accent,
 .button-action {
-  background-color: #f68f36;
-  border-color: #dd751d;
-  color: #ffffff; }
-  .button-action:hover {
-    color: #ffffff;
-    background-color: #e48230;
-    border-color: #c4681a; }
-  .button-action:active {
-    background-color: #dd751d;
-    box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  color: white; }
+
+.button-primary {
+  background: linear-gradient(135deg, transparent 7px, #00437B 7px, #1598CB 100%); }
+
+.button-accent,
+.button-action {
+  background: linear-gradient(135deg, transparent 7px, #008145 7px, #82C341 100%); }
 
 /*
 ---
@@ -2504,6 +2476,10 @@ Add a gradient for the background of an element.
 .gradient-0-action {
   background-image: linear-gradient(0deg, #F58220 0%, #FDBA12 100%); }
 
+.gradient-light,
+.gradient-0-light {
+  background-image: linear-gradient(0deg, #f1f1f1 0%, #f7f7f7 100%); }
+
 .gradient-45-brand {
   background-image: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
 
@@ -2512,6 +2488,9 @@ Add a gradient for the background of an element.
 
 .gradient-45-action {
   background-image: linear-gradient(45deg, #F58220 0%, #FDBA12 100%); }
+
+.gradient-45-light {
+  background-image: linear-gradient(45deg, #f1f1f1 0%, #f7f7f7 100%); }
 
 .gradient-90-brand {
   background-image: linear-gradient(90deg, #00437B 0%, #1598CB 100%); }
@@ -2522,6 +2501,9 @@ Add a gradient for the background of an element.
 .gradient-90-action {
   background-image: linear-gradient(90deg, #F58220 0%, #FDBA12 100%); }
 
+.gradient-90-light {
+  background-image: linear-gradient(90deg, #f1f1f1 0%, #f7f7f7 100%); }
+
 .gradient-135-brand {
   background-image: linear-gradient(135deg, #00437B 0%, #1598CB 100%); }
 
@@ -2530,6 +2512,9 @@ Add a gradient for the background of an element.
 
 .gradient-135-action {
   background-image: linear-gradient(135deg, #F58220 0%, #FDBA12 100%); }
+
+.gradient-135-light {
+  background-image: linear-gradient(135deg, #f1f1f1 0%, #f7f7f7 100%); }
 
 .gradient-180-brand {
   background-image: linear-gradient(180deg, #00437B 0%, #1598CB 100%); }
@@ -2540,6 +2525,9 @@ Add a gradient for the background of an element.
 .gradient-180-action {
   background-image: linear-gradient(180deg, #F58220 0%, #FDBA12 100%); }
 
+.gradient-180-light {
+  background-image: linear-gradient(180deg, #f1f1f1 0%, #f7f7f7 100%); }
+
 .gradient-225-brand {
   background-image: linear-gradient(225deg, #00437B 0%, #1598CB 100%); }
 
@@ -2549,6 +2537,9 @@ Add a gradient for the background of an element.
 .gradient-225-action {
   background-image: linear-gradient(225deg, #F58220 0%, #FDBA12 100%); }
 
+.gradient-225-light {
+  background-image: linear-gradient(225deg, #f1f1f1 0%, #f7f7f7 100%); }
+
 .gradient-270-brand {
   background-image: linear-gradient(270deg, #00437B 0%, #1598CB 100%); }
 
@@ -2557,6 +2548,9 @@ Add a gradient for the background of an element.
 
 .gradient-270-action {
   background-image: linear-gradient(270deg, #F58220 0%, #FDBA12 100%); }
+
+.gradient-270-light {
+  background-image: linear-gradient(270deg, #f1f1f1 0%, #f7f7f7 100%); }
 
 /*
 ---

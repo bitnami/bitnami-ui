@@ -52,10 +52,27 @@ These components help you to build more complex input elements. Now, you can cre
     border-right: 0;
   }
 
+  /*
+   * For the height and remove the cut corner for buttons
+   */
   button,
   .button {
     height: su(2);
+    background: gradient('light');
     box-shadow: none;
+
+    &.button-primary {
+      background: gradient('brand');
+    }
+
+    &.button-accent,
+    &.button-action {
+      background: gradient('accent');
+    }
+
+    &:hover {
+      background: gradient('action');
+    }
   }
 }
 

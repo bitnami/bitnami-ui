@@ -104,6 +104,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 // Interval to get tints and shades
 $color-interval: 10%;
@@ -468,14 +469,14 @@ Generate a proper gradient.
 */
 /*
 ---
-name: button-skin(name, base-color, text-color)
+name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
+Return the gradient for a button with the cut corner already added
 
 ```scss
-@include('primary', 'primary', 'light');
+button-gradient('brand');
 ```
 */
 /**
@@ -3127,7 +3128,10 @@ Display the applications as a list. When the user hover in an element, a tooltip
     .bitnami-ui .timeline__event:last-child .timeline__event__line:after {
       left: -50%; }
   .bitnami-ui .input-group {
-    display: flex; }
+    display: flex;
+    /*
+   * For the height and remove the cut corner for buttons
+   */ }
     .bitnami-ui .input-group > input,
     .bitnami-ui .input-group [class*="input"] {
       flex: 1;
@@ -3140,7 +3144,15 @@ Display the applications as a list. When the user hover in an element, a tooltip
     .bitnami-ui .input-group button,
     .bitnami-ui .input-group .button {
       height: 2.99925em;
+      background: linear-gradient(45deg, #f1f1f1 0%, #f7f7f7 100%);
       box-shadow: none; }
+      .bitnami-ui .input-group button.button-primary,
+      .bitnami-ui .input-group .button.button-primary {
+        background: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
+      .bitnami-ui .input-group button.button-accent, .bitnami-ui .input-group button.button-action,
+      .bitnami-ui .input-group .button.button-accent,
+      .bitnami-ui .input-group .button.button-action {
+        background: linear-gradient(45deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .dropdown {
     position: relative;
     display: inline-block; }

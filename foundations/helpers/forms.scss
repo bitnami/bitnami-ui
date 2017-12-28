@@ -10,15 +10,28 @@ Modify the color of the buttons. Available classes:
 * `.button-action`
 
 ```html
-<button class="button-primary">Submit</button>
+<button class="button button-primary">Submit</button>
 <a class="button button-accent">Link button</a>
 <a class="button button-action">Link button</a>
 <a class="button">Link button</a>
 ```
 */
-@include button-skin('primary', 'bitnami', 'white');
-@include button-skin('accent', 'accent', 'white');
-@include button-skin('action', 'action', 'white');
+.button-primary,
+.button-accent,
+.button-action {
+  color: white;
+}
+
+.button-primary {
+  background: button-gradient('brand');
+}
+
+.button-accent,
+// The styleguide uses accent as the action button. The action color is used
+// for :hover
+.button-action {
+  background: button-gradient('accent');
+}
 
 /*
 ---

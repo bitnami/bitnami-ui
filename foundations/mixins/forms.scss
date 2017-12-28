@@ -1,48 +1,20 @@
 /*
 ---
-name: button-skin(name, base-color, text-color)
+name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
+Return the gradient for a button with the cut corner already added.
+Inspired by [this pen](https://codepen.io/aaahollister/pen/wKwxNY). This is the simplest
+approach I've found.
 
 ```scss
-@include('primary', 'primary', 'light');
+button-gradient('brand');
 ```
 */
-@mixin button-skin($name, $base, $text) {
-  .button-#{$name} {
-    @include button-skin-values(
-      color-level($base, 400),
-      color-level($base, 600),
-      lighten(color-level($base, 600), 5%),
-      color-level($base, 700),
-      color-level($base, 600),
-      color($text)
-    )
-  }
-}
-
-/**
- * Create the values for a skin variation of a button.
- *
- * NOTE: This mixin is for internal usage
- */
-@mixin button-skin-values($bg, $border, $hover-bg, $hover-border, $active-bg, $text) {
-  background-color: $bg;
-  border-color: $border;
-  color: $text;
-
-  &:hover {
-    color: $text;
-    background-color: $hover-bg;
-    border-color: $hover-border;
-  }
-
-  &:active {
-    background-color: $active-bg;
-    box-shadow: inset 1px 1px 2px rgba(color('dark'), .25);
-  }
+@function button-gradient($name) {
+  $pair: gradient-pair($name);
+  @return linear-gradient(135deg, transparent 7px, nth($pair, 1) 7px, nth($pair, 2) 100%);
 }
 
 /*

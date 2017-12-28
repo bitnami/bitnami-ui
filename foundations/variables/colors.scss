@@ -30,6 +30,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 // Interval to get tints and shades
 $color-interval: 10%;
@@ -58,6 +59,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 
 // Interval to get tints and shades

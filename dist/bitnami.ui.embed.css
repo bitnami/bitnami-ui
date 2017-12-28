@@ -104,6 +104,7 @@ $gradients: (
   'brand': #00437B #1598CB,
   'accent': #008145 #82C341,
   'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
 );
 // Interval to get tints and shades
 $color-interval: 10%;
@@ -305,14 +306,14 @@ Generate a proper gradient.
 */
 /*
 ---
-name: button-skin(name, base-color, text-color)
+name: button-gradient(name)
 category: Foundations/Mixins
 tag: function
 ---
-Mixin to generate a class for buttons. This class will modify the color of the buttons.
+Return the gradient for a button with the cut corner already added
 
 ```scss
-@include('primary', 'primary', 'light');
+button-gradient('brand');
 ```
 */
 /**
@@ -1155,7 +1156,7 @@ Modify the color of the buttons. Available classes:
 * `.button-action`
 
 ```html
-<button class="button-primary">Submit</button>
+<button class="button button-primary">Submit</button>
 <a class="button button-accent">Link button</a>
 <a class="button button-action">Link button</a>
 <a class="button">Link button</a>
@@ -1909,6 +1910,7 @@ weight of the typography.
   .bitnami-ui input,
   .bitnami-ui select,
   .bitnami-ui textarea,
+  .bitnami-ui button,
   .bitnami-ui .button {
     font-size: 0.89977em; }
   .bitnami-ui input,
@@ -1965,36 +1967,35 @@ weight of the typography.
   .bitnami-ui input[type="radio"] {
     vertical-align: baseline; }
   .bitnami-ui .button {
-    display: inline-block;
-    padding: 0.37491em 0.74981em;
     border-radius: 0;
-    border: 1px solid #d9d9d9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    box-shadow: 0 12px 10px -7px rgba(0, 0, 0, 0.2);
+    color: #16222e;
     cursor: pointer;
-    height: 2.24944em;
+    display: inline-block;
+    font-weight: 300;
+    line-height: 2.3994em;
     vertical-align: middle;
     text-decoration: none;
-    color: #16222e;
     max-width: 100%;
-    white-space: nowrap;
     overflow: hidden;
+    padding: 0 2.24944em;
     text-overflow: ellipsis;
-    background-color: #f2f2f2; }
+    transition: transform .15s ease-in-out, box-shadow .15s ease-in-out;
+    white-space: nowrap;
+    will-change: transform;
+    background: linear-gradient(135deg, transparent 7px, #f1f1f1 7px, #f7f7f7 100%); }
     .bitnami-ui .button:hover {
-      background-color: #e6e6e6;
-      border-color: #c1c1c1;
-      color: initial; }
+      background: linear-gradient(135deg, transparent 7px, #F58220 7px, #FDBA12 100%);
+      color: #ffffff; }
     .bitnami-ui .button:focus {
       outline: 0; }
     .bitnami-ui .button:active {
-      background-color: #d9d9d9;
-      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+      transform: translateY(2px);
+      box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.2); }
     .bitnami-ui .button[disabled="disabled"], .bitnami-ui .button[disabled="true"] {
       cursor: not-allowed;
-      opacity: .7; }
-      .bitnami-ui .button[disabled="disabled"]:hover, .bitnami-ui .button[disabled="true"]:hover {
-        background-color: #f2f2f2;
-        border-color: #d9d9d9; }
+      opacity: .5; }
     .bitnami-ui .button + .button,
     .bitnami-ui .button + button {
       margin-left: 0.37491em; }
@@ -2528,39 +2529,15 @@ weight of the typography.
   .bitnami-ui .shadow-reset,
   .bitnami-ui .elevation-reset {
     box-shadow: none; }
-  .bitnami-ui .button-primary {
-    background-color: #1a5688;
-    border-color: #003c6f;
-    color: #ffffff; }
-    .bitnami-ui .button-primary:hover {
-      color: #ffffff;
-      background-color: #004a89;
-      border-color: #003662; }
-    .bitnami-ui .button-primary:active {
-      background-color: #003c6f;
-      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
-  .bitnami-ui .button-accent {
-    background-color: #1a8e58;
-    border-color: #00743e;
-    color: #ffffff; }
-    .bitnami-ui .button-accent:hover {
-      color: #ffffff;
-      background-color: #008e4c;
-      border-color: #006737; }
-    .bitnami-ui .button-accent:active {
-      background-color: #00743e;
-      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+  .bitnami-ui .button-primary,
+  .bitnami-ui .button-accent,
   .bitnami-ui .button-action {
-    background-color: #f68f36;
-    border-color: #dd751d;
-    color: #ffffff; }
-    .bitnami-ui .button-action:hover {
-      color: #ffffff;
-      background-color: #e48230;
-      border-color: #c4681a; }
-    .bitnami-ui .button-action:active {
-      background-color: #dd751d;
-      box-shadow: inset 1px 1px 2px rgba(55, 71, 79, 0.25); }
+    color: white; }
+  .bitnami-ui .button-primary {
+    background: linear-gradient(135deg, transparent 7px, #00437B 7px, #1598CB 100%); }
+  .bitnami-ui .button-accent,
+  .bitnami-ui .button-action {
+    background: linear-gradient(135deg, transparent 7px, #008145 7px, #82C341 100%); }
   .bitnami-ui .button-small {
     font-size: 0.66683em; }
   .bitnami-ui .button-big {
@@ -2655,42 +2632,57 @@ weight of the typography.
   .bitnami-ui .gradient-action,
   .bitnami-ui .gradient-0-action {
     background-image: linear-gradient(0deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-light,
+  .bitnami-ui .gradient-0-light {
+    background-image: linear-gradient(0deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-45-brand {
     background-image: linear-gradient(45deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-45-accent {
     background-image: linear-gradient(45deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-45-action {
     background-image: linear-gradient(45deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-45-light {
+    background-image: linear-gradient(45deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-90-brand {
     background-image: linear-gradient(90deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-90-accent {
     background-image: linear-gradient(90deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-90-action {
     background-image: linear-gradient(90deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-90-light {
+    background-image: linear-gradient(90deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-135-brand {
     background-image: linear-gradient(135deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-135-accent {
     background-image: linear-gradient(135deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-135-action {
     background-image: linear-gradient(135deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-135-light {
+    background-image: linear-gradient(135deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-180-brand {
     background-image: linear-gradient(180deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-180-accent {
     background-image: linear-gradient(180deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-180-action {
     background-image: linear-gradient(180deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-180-light {
+    background-image: linear-gradient(180deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-225-brand {
     background-image: linear-gradient(225deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-225-accent {
     background-image: linear-gradient(225deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-225-action {
     background-image: linear-gradient(225deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-225-light {
+    background-image: linear-gradient(225deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .gradient-270-brand {
     background-image: linear-gradient(270deg, #00437B 0%, #1598CB 100%); }
   .bitnami-ui .gradient-270-accent {
     background-image: linear-gradient(270deg, #008145 0%, #82C341 100%); }
   .bitnami-ui .gradient-270-action {
     background-image: linear-gradient(270deg, #F58220 0%, #FDBA12 100%); }
+  .bitnami-ui .gradient-270-light {
+    background-image: linear-gradient(270deg, #f1f1f1 0%, #f7f7f7 100%); }
   .bitnami-ui .subtitle {
     font-weight: normal;
     color: #44add5;
