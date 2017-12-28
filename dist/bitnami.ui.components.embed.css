@@ -455,7 +455,7 @@ in steps of one hundred. The base color is located in 500.
  */
 /*
 ---
-name: gradient(name, directionOrDegrees)
+name: gradient(name, directionOrDegrees, firstPosition, lastPosition)
 category: Foundations/Mixins
 tag: function
 ---
@@ -1837,6 +1837,27 @@ tag: component
 */
   /*
 ---
+name: Hero
+category: Components/Navigation
+tag: component
+---
+
+```html
+<section class="hero type-color-reverse">
+  <div class="container">
+    <section class="hero__content">
+      <h1 class="hero__title">Bitnami Application Catalog</h1>
+      <p class="hero__subtitle">Ready-to-run Applications and Development Environments</p>
+      <p class="margin-b-reset">
+        <a class="button button-action">Sign in</a>
+      </p>
+    </section>
+  </div>
+</section>
+```
+*/
+  /*
+---
 name: Pagination
 category: Components/Navigation
 tag: component
@@ -3047,6 +3068,35 @@ Display the applications as a list. When the user hover in an element, a tooltip
           padding: 0 0.74981em;
           color: #37474f;
           content: '›'; }
+  .bitnami-ui .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4.49887em 2.24944em 7.49812em; }
+    .bitnami-ui .hero__content {
+      max-width: 600px; }
+    .bitnami-ui .hero__title, .bitnami-ui .hero__subtitle {
+      margin: 0; }
+    .bitnami-ui .hero:before, .bitnami-ui .hero:after {
+      content: '';
+      height: 200%;
+      position: absolute;
+      top: -105%;
+      width: 300%;
+      z-index: -1; }
+    .bitnami-ui .hero:before {
+      background: #F58220;
+      right: -150%;
+      transform: rotateZ(10deg); }
+    .bitnami-ui .hero:after {
+      background: linear-gradient(-45deg, #00437B 20%, #1598CB 42%);
+      left: -150%;
+      transform: rotateZ(-8deg); }
+    @media all and (max-width: 29.9375em) {
+      .bitnami-ui .hero:before {
+        transform: rotateZ(15deg); }
+      .bitnami-ui .hero:after {
+        transform: rotateZ(-15deg);
+        opacity: .9; } }
   .bitnami-ui .pagination {
     margin: 1.49962em 0; }
     .bitnami-ui .pagination ul {

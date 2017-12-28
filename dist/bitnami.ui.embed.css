@@ -292,7 +292,7 @@ in steps of one hundred. The base color is located in 500.
  */
 /*
 ---
-name: gradient(name, directionOrDegrees)
+name: gradient(name, directionOrDegrees, firstPosition, lastPosition)
 category: Foundations/Mixins
 tag: function
 ---
@@ -3162,40 +3162,89 @@ weight of the typography.
   .bitnami-ui [class*="gradient-"][class*="-action"],
   .bitnami-ui .type-color-reverse {
     color: #ffffff; }
-  .bitnami-ui a.type-color-reverse,
-  .bitnami-ui .type-color-reverse a {
+    .bitnami-ui .bg-dark h1,
+    .bitnami-ui .bg-dark h2,
+    .bitnami-ui .bg-dark h3,
+    .bitnami-ui .bg-dark h4,
+    .bitnami-ui .bg-dark h5,
+    .bitnami-ui .bg-dark h6,
+    .bitnami-ui .bg-brand h1,
+    .bitnami-ui .bg-brand h2,
+    .bitnami-ui .bg-brand h3,
+    .bitnami-ui .bg-brand h4,
+    .bitnami-ui .bg-brand h5,
+    .bitnami-ui .bg-brand h6,
+    .bitnami-ui .bg-accent h1,
+    .bitnami-ui .bg-accent h2,
+    .bitnami-ui .bg-accent h3,
+    .bitnami-ui .bg-accent h4,
+    .bitnami-ui .bg-accent h5,
+    .bitnami-ui .bg-accent h6,
+    .bitnami-ui .bg-action h1,
+    .bitnami-ui .bg-action h2,
+    .bitnami-ui .bg-action h3,
+    .bitnami-ui .bg-action h4,
+    .bitnami-ui .bg-action h5,
+    .bitnami-ui .bg-action h6,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h1,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h2,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h3,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h4,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h5,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] h6,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h1,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h2,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h3,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h4,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h5,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] h6,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h1,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h2,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h3,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h4,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h5,
+    .bitnami-ui [class*="gradient-"][class*="-action"] h6,
+    .bitnami-ui .type-color-reverse h1,
+    .bitnami-ui .type-color-reverse h2,
+    .bitnami-ui .type-color-reverse h3,
+    .bitnami-ui .type-color-reverse h4,
+    .bitnami-ui .type-color-reverse h5,
+    .bitnami-ui .type-color-reverse h6 {
+      color: #ffffff; }
+  .bitnami-ui a.type-color-reverse:not(.button),
+  .bitnami-ui .type-color-reverse a:not(.button) {
     color: #ffffff;
     text-decoration: underline; }
-    .bitnami-ui a.type-color-reverse:hover,
-    .bitnami-ui .type-color-reverse a:hover {
+    .bitnami-ui a.type-color-reverse:not(.button):hover,
+    .bitnami-ui .type-color-reverse a:not(.button):hover {
       color: #d9d9d9; }
-  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     text-decoration: none; }
-  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a {
+  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     color: #9bcf67; }
-    .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:hover,
-    .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:hover,
-    .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:hover {
+    .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+    .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+    .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
       color: #8fc954; }
-  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a {
+  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     color: #fecf59; }
-    .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:hover,
-    .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:hover {
+    .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+    .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
       color: #fdc841; }
-  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a,
-  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     color: #33404d; }
-    .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:hover,
-    .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:hover {
+    .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+    .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
       color: #1C2B39; }
   .bitnami-ui .type-uppercase {
     text-transform: uppercase; }

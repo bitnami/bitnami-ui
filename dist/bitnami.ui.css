@@ -1318,21 +1318,44 @@ anchor must be equal to "author". You can check the following
 <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
   Great day at my first Linux Foundation board meeting, but looking forward to seeing
   everyone at #awsreinvent. On my way!
-  <br/>
+  </br>
+  See you there!
   <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
 </blockquote>
 ```
 */
 blockquote {
-  padding-left: 1.49962em;
-  margin: 0.74981em 0 1.49962em;
-  border-left: 2px solid #00284a;
-  color: #495561; }
+  font-size: 1.49962em;
+  margin: 1.49962em auto;
+  max-width: 37.49063em;
+  padding: 0.37491em;
+  position: relative;
+  text-align: center; }
+  blockquote:before, blockquote:after {
+    background-image: url("data:image/svg+xml;utf8,<svg width='68' height='49' viewBox='0 0 68 49' xmlns='http://www.w3.org/2000/svg'><title>Fill 1</title><path d='M30.769 21.522c0 19.627-11.1 26.936-28.521 27.478L0 39.119c9.413-1.083 14.05-5.415 13.769-12.724H3.372V0h27.397v21.522zm37.231 0C68 41.15 57.041 48.458 39.48 49l-2.108-9.881c9.413-1.083 14.05-5.415 13.628-12.724H40.603V0H68v21.522z' fill='#7ED321' fill-rule='evenodd'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 2.24944em;
+    position: absolute;
+    top: 0.74981em;
+    width: 2.99925em; }
+  blockquote:before {
+    left: 0.37491em;
+    transform: rotateZ(180deg); }
+  blockquote:after {
+    right: 0.37491em; }
   blockquote a[rel="author"] {
-    font-style: italic; }
-  blockquote br + a {
-    display: inline-block;
-    margin-top: 0.37491em; }
+    color: #1C2B39;
+    display: block;
+    font-weight: bold;
+    font-size: 0.66683em;
+    margin-top: 1.49962em; }
+  @media all and (min-width: 48em) {
+    blockquote {
+      padding: 0.37491em 4.49887em; }
+      blockquote:before, blockquote:after {
+        content: ''; } }
 
 /*
 ---

@@ -12,28 +12,61 @@ anchor must be equal to "author". You can check the following
 <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
   Great day at my first Linux Foundation board meeting, but looking forward to seeing
   everyone at #awsreinvent. On my way!
-  <br/>
+  </br>
+  See you there!
   <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
 </blockquote>
 ```
 */
 blockquote {
-  padding-left: su(1);
-  margin: su(.5) 0 su();
-  border-left: 2px solid color-level('bitnami', 900);
-  color: color-level('text', 300);
+  font-size: type-scale('big');
+  margin: margin('big') auto;
+  max-width: su(25);
+  padding: padding('small');
+  position: relative;
+  text-align: center;
+
+  // Quotes
+  &:before,
+  &:after {
+    background-image: url("data:image/svg+xml;utf8,<svg width='68' height='49' viewBox='0 0 68 49' xmlns='http://www.w3.org/2000/svg'><title>Fill 1</title><path d='M30.769 21.522c0 19.627-11.1 26.936-28.521 27.478L0 39.119c9.413-1.083 14.05-5.415 13.769-12.724H3.372V0h27.397v21.522zm37.231 0C68 41.15 57.041 48.458 39.48 49l-2.108-9.881c9.413-1.083 14.05-5.415 13.628-12.724H40.603V0H68v21.522z' fill='#7ED321' fill-rule='evenodd'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: su(1.5);
+    position: absolute;
+    top: su(.5);
+    width: su(2);
+  }
+
+  &:before {
+    left: padding('small');
+    transform: rotateZ(180deg);
+  }
+
+  &:after {
+    right: padding('small');
+  }
 
   // scss-lint:disable QualifyingElement
-  // Italic style is only for the Author of the quote
-  // https://html.spec.whatwg.org/multipage/semantics.html#link-type-author
+  // @see https://html.spec.whatwg.org/multipage/semantics.html#link-type-author
   a[rel="author"] {
-    font-style: italic;
+    color: color('text');
+    display: block;
+    font-weight: bold;
+    font-size: type-scale('small');
+    margin-top: margin('big');
   }
   // scss-lint:enable QualifyingElement
 
-  br + a {
-    display: inline-block;
-    margin-top: su(.25);
+  @include mappy-query('a-phone-land') {
+    // Increase padding and show quotes
+    padding: padding('small') su(3);
+
+    &:before,
+    &:after {
+      content: '';
+    }
   }
 }
 

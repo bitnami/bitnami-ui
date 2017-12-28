@@ -2581,23 +2581,19 @@ tag: component
     margin: 0; }
   .hero:before, .hero:after {
     content: '';
-    position: absolute; }
+    height: 200%;
+    position: absolute;
+    top: -105%;
+    width: 300%;
+    z-index: -1; }
   .hero:before {
     background: #F58220;
-    height: 200%;
     right: -150%;
-    top: -105%;
-    transform: rotateZ(10deg);
-    width: 300%;
-    z-index: -1; }
+    transform: rotateZ(10deg); }
   .hero:after {
     background: linear-gradient(-45deg, #00437B 20%, #1598CB 42%);
-    height: 200%;
     left: -150%;
-    top: -105%;
-    transform: rotateZ(-8deg);
-    width: 300%;
-    z-index: -1; }
+    transform: rotateZ(-8deg); }
   @media all and (max-width: 29.9375em) {
     .hero:before {
       transform: rotateZ(15deg); }
