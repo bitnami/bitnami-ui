@@ -9,7 +9,7 @@ Copyright text and social links. This components depends on the
 [Social Icons](/category/Components/Social/index.html#Social%20Icons).
 
 ```html
-<footer class="OSFooter">
+<footer class="OSFooter bg-dark type-color-reverse-anchor-reset">
   <div class="container padding-h-big padding-v-bigger">
     <div class="row collapse-b-phone-land align-center">
       <div class="col-6">
@@ -42,8 +42,6 @@ Copyright text and social links. This components depends on the
 */
 
 .OSFooter {
-  background-color: color('dark');
-
   &__Logo {
     max-height: 2em;
   }

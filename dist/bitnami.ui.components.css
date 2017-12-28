@@ -57,6 +57,10 @@ $breakpoints: (
   uxl: 1300px
 );
 
+// If only one value is provided, mappy-bp will produce a min-width query.
+// If a two values are provided, mappy-bp will produce a min-width and max-width query.
+// If a max-width or max string is provided, mappy-bp will produce a max-width query.
+
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
@@ -64,7 +68,7 @@ $mappy-queries: (
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
-  ultrawide: mappy-bp(min-width uxl)
+  ultrawide: mappy-bp(uxl)
 );
 ```
 */
@@ -87,9 +91,11 @@ $colors: (
   'light': #f1f1f1,
   'white': #ffffff,
   'dark': #37474f,
-  'text': #5F6369,
+  'text': #1C2B39,
   'action': #F58220,
   'action-light': #FDBA12,
+  'gray': #5F6369,
+  'gray-light': #C7C9C8,
   'base': #fff,
   'highlight': #fff23f,
 );
@@ -144,12 +150,19 @@ $color-names: (
   'light-blue': 'primary',
   'dark-blue': 'secondary',
   'accent': 'accent',
+  'accent-light': 'accent-light',
   'iron': 'light',
+  'white': 'white',
   'dark': 'dark',
   'text': 'text',
   'action': 'action',
-  'white': 'base'
+  'action-light': 'action-light',
+  'gray': 'gray',
+  'gray-light': 'gray-light',
+  'white': 'base',
+  'highlight': 'highlight'
 );
+
 ```
 */
 /*
@@ -576,9 +589,6 @@ to check the current scale and size.
 }
 ```
 */
-/**
- * Get the line-height for different levels
-*/
 /*
 ---
 name: line-height(name)
@@ -595,6 +605,11 @@ Get a line-height based on the standard values.
 }
 ```
 */
+/**
+ * Set the color for anchors in the type-color-reverse
+ *
+ * NOTE: This is an internal mixin. It shouldn't be documented
+ */
 /**
  * Remove the unit of a length
  *
@@ -1681,6 +1696,68 @@ tag: component
 
 /*
 ---
+name: Divider
+category: Components/Display
+tag: component
+---
+Display 3 columns using a divider. We also can see the
+[padding reset responsive](/category/Foundations/Helpers/#Padding%20%2D%20responsive)
+helpers in action.
+
+```html
+<div class="container">
+  <div class="row collapse-b-tablet row-vdivide">
+    <div class="col-4">
+      <div class="padding-r-bigger padding-reset-b-desktop">
+        <h2>EVENT</h2>
+        <h3>Join us at Kubecon 2017</h3>
+        <p>
+          Join us at the Bitnami booth for a demo of any of our Kubernetes projects,
+          to see simple ways to launch applications in your cluster
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All Events</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="padding-h-bigger padding-reset-b-desktop">
+        <h2>BLOG</h2>
+        <h3>Exploring The Security Of Helm</h3>
+        <p>
+          Bitnami has been a part of the Helm community for a long while, but I
+          personally started looking at Helm only a few weeks ago in the context
+          of our work on ...
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All Articles</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="padding-l-bigger padding-reset-b-desktop">
+        <h2>NEWS</h2>
+        <h3>Software vendors line up Kubernetes tasting menu for devops</h3>
+        <p>
+          With the advent of KubCon and CloudNativeCon in Austin, Texas, on Wednesday,
+          assorted enterprise vendors have chosen ..
+        </p>
+        <p class="margin-b-reset">
+          <a href="#">See All News</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+.row.row-vdivide [class*="col-"] {
+  border-right: 1px solid #37474f; }
+  .row.row-vdivide [class*="col-"]:last-child {
+    border: 0; }
+
+/*
+---
 name: Reasons
 category: Components/Display
 tag: component
@@ -2041,23 +2118,19 @@ These components help you to build more complex input elements. Now, you can cre
 ```
 */
 .input-group {
-  display: flex;
-  margin-top: 0.37491em; }
-  .input-group > input {
+  display: flex; }
+  .input-group > input,
+  .input-group [class*="input"] {
     flex: 1;
     margin-top: 0; }
-  .input-group > * {
-    border-radius: 0; }
-  .input-group > *:first-child {
-    border-radius: 3px 0 0 3px; }
   .input-group > *:last-child,
   .input-group .dropdown .button {
-    margin-left: -1px;
-    border-radius: 0 3px 3px 0; }
+    margin-left: -1px; }
   .input-group > *:not(:last-child) {
     border-right: 0; }
   .input-group button,
   .input-group .button {
+    height: 2.99925em;
     box-shadow: none; }
 
 /*
@@ -2157,7 +2230,9 @@ Display a Search form and the results.
 <form class="search">
   <label for="search">Search</label>
   <div class="input-group">
-    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="search__input">
+      <input id="search" placeholder="Describe your issue..."></input>
+    </div>
     <div class="dropdown dropdown-right">
       <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
       <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
@@ -2260,7 +2335,9 @@ You only need to add the `search-overlay` class. In this example the `results` l
 <form class="search search-overlay" style="min-height: 600px">
   <label for="search">Search</label>
   <div class="input-group">
-    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="search__input">
+      <input id="search" placeholder="Describe your issue..."></input>
+    </div>
     <div class="dropdown dropdown-right">
       <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
       <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
@@ -2354,10 +2431,11 @@ You only need to add the `search-overlay` class. In this example the `results` l
 .search {
   position: relative; }
   .search input {
+    margin-top: 0;
     padding-left: 2.24944em; }
-  .search .input-group {
+  .search__input {
     position: relative; }
-    .search .input-group:after {
+    .search__input:after {
       background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#1C2B39' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='10.5' cy='10.5' r='7.5'></circle><line x1='21' y1='21' x2='15.8' y2='15.8'></line></svg>");
       background-size: contain;
       content: '';
@@ -2365,7 +2443,7 @@ You only need to add the `search-overlay` class. In this example the `results` l
       height: 1em;
       position: absolute;
       left: 0.74981em;
-      top: .65em; }
+      top: .9em; }
   .search__results {
     margin-top: 0.74981em; }
     .search__results__result {
@@ -2887,7 +2965,7 @@ Copyright text and social links. This components depends on the
 [Social Icons](/category/Components/Social/index.html#Social%20Icons).
 
 ```html
-<footer class="OSFooter">
+<footer class="OSFooter bg-dark type-color-reverse-anchor-reset">
   <div class="container padding-h-big padding-v-bigger">
     <div class="row collapse-b-phone-land align-center">
       <div class="col-6">
@@ -2918,10 +2996,8 @@ Copyright text and social links. This components depends on the
 </footer>
 ```
 */
-.OSFooter {
-  background-color: #37474f; }
-  .OSFooter__Logo {
-    max-height: 2em; }
+.OSFooter__Logo {
+  max-height: 2em; }
 
 /*
 ---
@@ -2933,7 +3009,7 @@ tag: component
 You can switch the header to use the `accent` gradient too.
 
 ```html
-<section class="gradient-135-brand elevation-1">
+<section class="gradient-135-brand elevation-1 type-color-reverse-anchor-reset">
   <div class="container">
     <header class="OSHeader padding-v-big">
       <div class="row collapse-b-tablet align-center">

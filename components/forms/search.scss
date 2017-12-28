@@ -11,7 +11,9 @@ Display a Search form and the results.
 <form class="search">
   <label for="search">Search</label>
   <div class="input-group">
-    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="search__input">
+      <input id="search" placeholder="Describe your issue..."></input>
+    </div>
     <div class="dropdown dropdown-right">
       <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
       <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
@@ -115,7 +117,9 @@ You only need to add the `search-overlay` class. In this example the `results` l
 <form class="search search-overlay" style="min-height: 600px">
   <label for="search">Search</label>
   <div class="input-group">
-    <input id="search" placeholder="Describe your issue..."></input>
+    <div class="search__input">
+      <input id="search" placeholder="Describe your issue..."></input>
+    </div>
     <div class="dropdown dropdown-right">
       <button class="button button-dropdown" aria-haspopup="true">All Bitnami sites</button>
       <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
@@ -211,10 +215,11 @@ You only need to add the `search-overlay` class. In this example the `results` l
   position: relative;
 
   input {
+    margin-top: 0;
     padding-left: padding('bigger');
   }
 
-  .input-group {
+  &__input {
     position: relative;
 
     &:after {
@@ -225,7 +230,7 @@ You only need to add the `search-overlay` class. In this example the `results` l
       height: 1em;
       position: absolute;
       left: padding('normal');
-      top: .65em;
+      top: .9em;
     }
   }
 

@@ -36,25 +36,16 @@ These components help you to build more complex input elements. Now, you can cre
 
 .input-group {
   display: flex;
-  margin-top: margin('small');
 
-  > input {
+  > input,
+  [class*="input"] {
     flex: 1;
     margin-top: 0;
-  }
-
-  > * {
-    border-radius: 0;
-  }
-
-  > *:first-child {
-    border-radius: $spacing-border-radius 0 0 $spacing-border-radius;
   }
 
   > *:last-child,
   .dropdown .button {
     margin-left: -1px;
-    border-radius: 0 $spacing-border-radius $spacing-border-radius 0;
   }
 
   > *:not(:last-child) {
@@ -63,6 +54,7 @@ These components help you to build more complex input elements. Now, you can cre
 
   button,
   .button {
+    height: su(2);
     box-shadow: none;
   }
 }

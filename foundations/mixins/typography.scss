@@ -53,11 +53,13 @@ Get a line-height based on the standard values.
  * NOTE: This is an internal mixin. It shouldn't be documented
  */
 @mixin type-color-reverse-anchor($color, $base-level) {
-  a {
-    color: color-level($color, $base-level);
+  &:not(.type-color-reverse-anchor-reset) {
+    a {
+      color: color-level($color, $base-level);
 
-    &:hover {
-      color: color-level($color, $base-level + 100);
+      &:hover {
+        color: color-level($color, $base-level + 100);
+      }
     }
   }
 }

@@ -57,6 +57,10 @@ $breakpoints: (
   uxl: 1300px
 );
 
+// If only one value is provided, mappy-bp will produce a min-width query.
+// If a two values are provided, mappy-bp will produce a min-width and max-width query.
+// If a max-width or max string is provided, mappy-bp will produce a max-width query.
+
 $mappy-queries: (
   phone-portrait: mappy-bp(max-width xs),
   phone: mappy-bp(xs sm),
@@ -64,7 +68,7 @@ $mappy-queries: (
   tablet: mappy-bp(md lg),
   desktop: mappy-bp(lg xl),
   wide: mappy-bp(xl uxl),
-  ultrawide: mappy-bp(min-width uxl)
+  ultrawide: mappy-bp(uxl)
 );
 ```
 */
@@ -87,9 +91,11 @@ $colors: (
   'light': #f1f1f1,
   'white': #ffffff,
   'dark': #37474f,
-  'text': #5F6369,
+  'text': #1C2B39,
   'action': #F58220,
   'action-light': #FDBA12,
+  'gray': #5F6369,
+  'gray-light': #C7C9C8,
   'base': #fff,
   'highlight': #fff23f,
 );
@@ -144,12 +150,19 @@ $color-names: (
   'light-blue': 'primary',
   'dark-blue': 'secondary',
   'accent': 'accent',
+  'accent-light': 'accent-light',
   'iron': 'light',
+  'white': 'white',
   'dark': 'dark',
   'text': 'text',
   'action': 'action',
-  'white': 'base'
+  'action-light': 'action-light',
+  'gray': 'gray',
+  'gray-light': 'gray-light',
+  'white': 'base',
+  'highlight': 'highlight'
 );
+
 ```
 */
 /*
@@ -413,9 +426,6 @@ to check the current scale and size.
 }
 ```
 */
-/**
- * Get the line-height for different levels
-*/
 /*
 ---
 name: line-height(name)
@@ -432,6 +442,11 @@ Get a line-height based on the standard values.
 }
 ```
 */
+/**
+ * Set the color for anchors in the type-color-reverse
+ *
+ * NOTE: This is an internal mixin. It shouldn't be documented
+ */
 /**
  * Remove the unit of a length
  *
@@ -1062,11 +1077,15 @@ Modify the background color of the given element.
 <div class="container padding-v-bigger bg-iron"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-white"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 <!-- Other names -->
 <div class="container padding-v-bigger margin-t-bigger bg-brand"></div>
 <div class="container padding-v-bigger bg-light"></div>
 <div class="container padding-v-bigger bg-dark"></div>
 <div class="container padding-v-bigger bg-base"></div>
+<div class="container padding-v-bigger bg-accent"></div>
+<div class="container padding-v-bigger bg-action"></div>
 ```
 */
   /*
@@ -1181,6 +1200,55 @@ See https://css-tricks.com/snippets/css/css-triangle/.
 <a class="button button-bigger button-dropdown button-dropdown-open">Link button</a>
 ```
 */
+  /*
+---
+name: Form reverse
+category: Foundations/Helpers
+tag: helpers
+---
+The `form-reverse` modifier changes the form field styles inside the current container.
+This is really useful for forms that are placed inside a container with a dark background.
+
+For known dark backgrounds, the `form-reverse` modifier is added automatically.
+The list of known dark backgrounds is:
+
+* [Backgrounds](/category/Foundations/Helpers/#Backgrounds)
+* [Linear Gradients](/category/Foundations/Helpers/#Linear%20Gradients)
+
+**NOTE:** This behaviour is very opinionated and it may cause issues in some situations.
+So, you can disable it using the `form-reverse-reset` class.
+
+```html
+<form>
+  <div>
+    <label for="username">Username</label>
+    <input name="username" id="username" placeholder="Your username" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input name="password" id="password" placeholder="A secure password" />
+  </div>
+</form>
+
+<section class="gradient-brand margin-t-big padding-normal">
+  <form>
+    <div>
+      <label for="username">Username</label>
+      <input name="username" id="username" placeholder="Your username" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input name="password" id="password" placeholder="A secure password" />
+    </div>
+  </form>
+</section>
+```
+*/
+  /**
+ * Enable form-reverse by default with known dark backgrounds.
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353398961
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353556092
+ */
   /*
 ---
 name: Linear Gradients
@@ -1426,6 +1494,33 @@ Reduce or increase the vertical or horizontal padding based on the base size uni
 */
   /*
 ---
+name: Padding - responsive
+category: Foundations/Helpers
+tag: helpers
+---
+Reset the padding property for a specific media query.
+You can see here working in the [Divider Component](/category/Components/Display/#Divider)
+
+```html
+<p class="padding-bigger padding-reset-b-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-bigger padding-reset-on-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="padding-bigger padding-reset-a-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+  /*
+---
 name: Margin
 category: Foundations/Helpers
 tag: helpers
@@ -1526,6 +1621,32 @@ Reduce or increase the vertical or horizontal margin based on the base size unit
   common tools ready to go.
 </p>
 <p class="margin-h-bigger">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+```
+*/
+  /*
+---
+name: Margin - responsive
+category: Foundations/Helpers
+tag: helpers
+---
+Reset the margin property for a specific media query.
+
+```html
+<p class="margin-reset-b-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-reset-on-tablet">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB) to get developers productive immediately - with all the most
+  common tools ready to go.
+</p>
+<p class="margin-reset-a-tablet">
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB) to get developers productive immediately - with all the most
   common tools ready to go.
@@ -1643,7 +1764,8 @@ name: Typography color
 category: Foundations/Helpers
 tag: helpers
 ---
-Reduce or increase the default `color` of an element.
+Change the default `color` of an element. If you want to use the `type-color-iron` helper,
+the [reverse helper](#Typography%20color%20reverse) may interest you.
 
 ```html
 <p class="type-color-bitnami">
@@ -1664,6 +1786,70 @@ Reduce or increase the default `color` of an element.
 </p>
 ```
 */
+  /*
+---
+name: Typography color reverse
+category: Foundations/Helpers
+tag: helpers
+---
+The `type-color-reverse` modifier changes the color for headers, links and other text elements
+inside the current container. This is really useful for text elements that are placed inside a
+container with a dark background.
+
+For known dark backgrounds, the `type-color-reverse` modifier is added automatically.
+The list of known dark backgrounds is:
+
+* [Backgrounds](/category/Foundations/Helpers/#Backgrounds)
+* [Linear Gradients](/category/Foundations/Helpers/#Linear%20Gradients)
+
+**NOTE:** This behaviour is very opinionated and it may cause issues with anchors in some situations like
+headers. So, you can disable it using the `type-color-reverse-anchor-reset` class.
+
+```html
+<h2>Unknown dark background (with type-color-reverse)</h2>
+<div class="padding-normal type-color-reverse" style="background-color: black;">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known flat backgrounds (no modifier required)</h2>
+<div class="bg-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-dark padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="bg-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+
+<h2>Known gradient backgrounds (no modifier required)</h2>
+<div class="gradient-brand padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-accent padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+<div class="gradient-135-action padding-normal">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (<a href="#">MariaDB</a>).
+</div>
+```
+*/
+  /**
+ * Enable type-color-reverse by default with known dark backgrounds.
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353398961
+ * @see https://github.com/bitnami/ui/pull/45#issuecomment-353556092
+ */
   /*
 ---
 name: Typography uppercase
@@ -1722,23 +1908,27 @@ weight of the typography.
     padding: 0; }
   .bitnami-ui input,
   .bitnami-ui select,
+  .bitnami-ui textarea,
+  .bitnami-ui .button {
+    font-size: 0.89977em; }
+  .bitnami-ui input,
+  .bitnami-ui select,
   .bitnami-ui textarea {
     margin: 0.37491em 0 0.74981em;
     padding: 0 0.74981em;
-    font-size: 1em;
-    border-radius: 3px;
-    border: 1px solid #f1f1f1;
+    border-radius: 0;
+    border: 1px solid #C7C9C8;
     width: 100%; }
   .bitnami-ui input,
   .bitnami-ui select {
-    height: 2.24944em;
-    line-height: 2.24944em; }
+    height: 2.99925em;
+    line-height: 2.99925em; }
   .bitnami-ui textarea:focus,
   .bitnami-ui input:focus,
   .bitnami-ui select:focus {
     outline: none;
-    border-color: #339a6a;
-    box-shadow: inset 0 1px 1px rgba(55, 71, 79, 0.01), 0 0 6px rgba(0, 129, 69, 0.1); }
+    border-color: #336995;
+    box-shadow: inset 0 1px 1px rgba(55, 71, 79, 0.05), 0 0 8px rgba(21, 152, 203, 0.3); }
   .bitnami-ui select {
     background-color: #ffffff; }
   .bitnami-ui textarea {
@@ -1747,22 +1937,18 @@ weight of the typography.
     resize: vertical;
     min-height: 7.49812em; }
   .bitnami-ui label {
-    cursor: pointer;
-    font-size: 0.66683em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.1px; }
+    color: #37474f;
+    font-size: 1em; }
     .bitnami-ui label + label {
-      margin-left: 0.74981em; }
+      margin-left: 1.49962em; }
     .bitnami-ui label.checkbox, .bitnami-ui label.radio {
-      text-transform: none;
-      font-size: 1em;
-      font-weight: normal; }
-      .bitnami-ui label.checkbox span, .bitnami-ui label.radio span {
-        display: inline-block;
-        margin-left: 0.37491em; }
+      cursor: pointer; }
       .bitnami-ui label.checkbox input:disabled + span, .bitnami-ui label.radio input:disabled + span {
         opacity: .7; }
+    .bitnami-ui label + input,
+    .bitnami-ui label + select,
+    .bitnami-ui label + textarea {
+      margin-top: 0; }
   .bitnami-ui input[type="checkbox"],
   .bitnami-ui input[type="radio"] {
     display: inline-block;
@@ -1770,6 +1956,9 @@ weight of the typography.
     width: auto;
     height: auto;
     vertical-align: 1px; }
+    .bitnami-ui input[type="checkbox"]:focus,
+    .bitnami-ui input[type="radio"]:focus {
+      box-shadow: none; }
   .bitnami-ui _::-webkit-full-page-media,
   .bitnami-ui _:future,
   .bitnami-ui :root input[type="checkbox"],
@@ -1778,7 +1967,6 @@ weight of the typography.
   .bitnami-ui .button {
     display: inline-block;
     padding: 0.37491em 0.74981em;
-    font-size: 1em;
     border-radius: 0;
     border: 1px solid #d9d9d9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1978,224 +2166,308 @@ weight of the typography.
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-on-phone > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-on-phone.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-on-phone > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-phone.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-on-phone > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-phone.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (min-width: 30em) and (max-width: 47.9375em) {
       .bitnami-ui .container .row.collapse-on-phone-land > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-on-phone-land > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-on-phone-land.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-on-phone-land > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-on-phone-land > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-on-phone-land > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-on-phone-land > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (min-width: 48em) and (max-width: 56.1875em) {
       .bitnami-ui .container .row.collapse-on-tablet > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-on-tablet > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-on-tablet.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-on-tablet > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-on-tablet > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
       .bitnami-ui .container .row.collapse-on-desktop > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-on-desktop > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-on-desktop.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-on-desktop > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-on-desktop > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
       .bitnami-ui .container .row.collapse-on-wide > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-on-wide > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-on-wide.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-on-wide > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-on-wide > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-on-wide.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-on-wide > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-on-wide > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-on-wide.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (max-width: 29.9375em) {
       .bitnami-ui .container .row.collapse-b-phone-land > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-b-phone-land > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-b-phone-land.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-b-phone-land > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-b-phone-land > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-b-phone-land > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-b-phone-land > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (max-width: 47.9375em) {
       .bitnami-ui .container .row.collapse-b-tablet > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-b-tablet > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-b-tablet.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-b-tablet > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-b-tablet > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-b-tablet > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-b-tablet > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (max-width: 56.1875em) {
       .bitnami-ui .container .row.collapse-b-desktop > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-b-desktop > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-b-desktop.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-b-desktop > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-b-desktop > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-b-desktop > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-b-desktop > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
     @media all and (max-width: 68.6875em) {
       .bitnami-ui .container .row.collapse-b-wide > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-b-wide > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-b-wide.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-b-wide > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-b-wide > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-b-wide.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-b-wide > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
-    @media all and (min-width: sm) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-b-wide.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
+    @media all and (min-width: 30em) {
       .bitnami-ui .container .row.collapse-a-phone > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-a-phone > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-a-phone.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-a-phone > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-a-phone > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-phone.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-a-phone > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
-    @media all and (min-width: md) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-phone.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
+    @media all and (min-width: 48em) {
       .bitnami-ui .container .row.collapse-a-phone-land > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-a-phone-land > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-a-phone-land.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-a-phone-land > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-a-phone-land > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-a-phone-land > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
-    @media all and (min-width: lg) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
+    @media all and (min-width: 56.25em) {
       .bitnami-ui .container .row.collapse-a-tablet > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-a-tablet > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-a-tablet.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-a-tablet > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-a-tablet > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-a-tablet > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
-    @media all and (min-width: xl) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
+    @media all and (min-width: 68.75em) {
       .bitnami-ui .container .row.collapse-a-desktop > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-a-desktop > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-a-desktop.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-a-desktop > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-a-desktop > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-a-desktop > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
-    @media all and (min-width: uxl) {
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
+    @media all and (min-width: 81.25em) {
       .bitnami-ui .container .row.collapse-a-wide > [class^="col"] {
         flex: 0 0 100%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-a-wide > [class^="col"]:first-child {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-a-wide.row-vdivide > [class^="col"] {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-2-a-wide > [class^="col"] {
         flex: 0 0 50%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-2-a-wide > [class^="col"]:nth-child(-n+2) {
           margin-top: 0; }
+      .bitnami-ui .container .row.collapse-2-a-wide.row-vdivide > [class^="col"]:nth-child(2n) {
+        border-right: 0; }
       .bitnami-ui .container .row.collapse-3-a-wide > [class^="col"] {
         flex: 0 0 33.33333%;
         margin-top: 1.49962em; }
         .bitnami-ui .container .row.collapse-3-a-wide > [class^="col"]:nth-child(-n+3) {
-          margin-top: 0; } }
+          margin-top: 0; }
+      .bitnami-ui .container .row.collapse-3-a-wide.row-vdivide > [class^="col"]:nth-child(3n) {
+        border-right: 0; } }
   .bitnami-ui .container.container-fluid {
     max-width: none; }
   .bitnami-ui .container.container-small {
@@ -2223,6 +2495,12 @@ weight of the typography.
   .bitnami-ui .bg-bitnami,
   .bitnami-ui .bg-brand {
     background-color: #00437B; }
+  .bitnami-ui .bg-accent,
+  .bitnami-ui .bg-accent {
+    background-color: #008145; }
+  .bitnami-ui .bg-action,
+  .bitnami-ui .bg-action {
+    background-color: #F58220; }
   .bitnami-ui .bg-iron,
   .bitnami-ui .bg-light {
     background-color: #f1f1f1; }
@@ -2230,8 +2508,8 @@ weight of the typography.
   .bitnami-ui .bg-dark {
     background-color: #37474f; }
   .bitnami-ui .bg-white,
-  .bitnami-ui .bg-base {
-    background-color: #fff; }
+  .bitnami-ui .bg-white {
+    background-color: #ffffff; }
   .bitnami-ui .shadow-1,
   .bitnami-ui .elevation-1 {
     box-shadow: 0 3px 6px rgba(55, 71, 79, 0.4); }
@@ -2309,6 +2587,65 @@ weight of the typography.
   .bitnami-ui .button-dropdown-open.button-action:after, .bitnami-ui .button-dropdown-open.button-accent:after {
     border-top-color: transparent;
     border-bottom-color: #ffffff; }
+  .bitnami-ui .bg-dark *:not(.form-reverse-reset) label,
+  .bitnami-ui .bg-brand *:not(.form-reverse-reset) label,
+  .bitnami-ui .bg-accent *:not(.form-reverse-reset) label,
+  .bitnami-ui .bg-action *:not(.form-reverse-reset) label,
+  .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) label,
+  .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) label,
+  .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) label,
+  .bitnami-ui .form-reverse *:not(.form-reverse-reset) label {
+    color: #C7C9C8; }
+  .bitnami-ui .bg-dark *:not(.form-reverse-reset) input,
+  .bitnami-ui .bg-dark *:not(.form-reverse-reset) select,
+  .bitnami-ui .bg-dark *:not(.form-reverse-reset) textarea,
+  .bitnami-ui .bg-brand *:not(.form-reverse-reset) input,
+  .bitnami-ui .bg-brand *:not(.form-reverse-reset) select,
+  .bitnami-ui .bg-brand *:not(.form-reverse-reset) textarea,
+  .bitnami-ui .bg-accent *:not(.form-reverse-reset) input,
+  .bitnami-ui .bg-accent *:not(.form-reverse-reset) select,
+  .bitnami-ui .bg-accent *:not(.form-reverse-reset) textarea,
+  .bitnami-ui .bg-action *:not(.form-reverse-reset) input,
+  .bitnami-ui .bg-action *:not(.form-reverse-reset) select,
+  .bitnami-ui .bg-action *:not(.form-reverse-reset) textarea,
+  .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input,
+  .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select,
+  .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea,
+  .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) input,
+  .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) select,
+  .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) textarea,
+  .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) input,
+  .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) select,
+  .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) textarea,
+  .bitnami-ui .form-reverse *:not(.form-reverse-reset) input,
+  .bitnami-ui .form-reverse *:not(.form-reverse-reset) select,
+  .bitnami-ui .form-reverse *:not(.form-reverse-reset) textarea {
+    border-color: transparent; }
+    .bitnami-ui .bg-dark *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .bg-dark *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .bg-dark *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui .bg-brand *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .bg-brand *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .bg-brand *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui .bg-accent *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .bg-accent *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .bg-accent *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui .bg-action *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .bg-action *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .bg-action *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui .form-reverse *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .form-reverse *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .form-reverse *:not(.form-reverse-reset) textarea:focus {
+      border-color: #336995; }
   .bitnami-ui .gradient-brand,
   .bitnami-ui .gradient-0-brand {
     background-image: linear-gradient(0deg, #00437B 0%, #1598CB 100%); }
@@ -2538,6 +2875,48 @@ weight of the typography.
   .bitnami-ui .padding-h-huge {
     padding-left: 7.49812em;
     padding-right: 7.49812em; }
+  @media all and (max-width: 29.9375em) {
+    .bitnami-ui .padding-reset-on-phone {
+      padding: 0; } }
+  @media all and (min-width: 30em) and (max-width: 47.9375em) {
+    .bitnami-ui .padding-reset-on-phone-land {
+      padding: 0; } }
+  @media all and (min-width: 48em) and (max-width: 56.1875em) {
+    .bitnami-ui .padding-reset-on-tablet {
+      padding: 0; } }
+  @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
+    .bitnami-ui .padding-reset-on-desktop {
+      padding: 0; } }
+  @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
+    .bitnami-ui .padding-reset-on-wide {
+      padding: 0; } }
+  @media all and (min-width: 30em) {
+    .bitnami-ui .padding-reset-a-phone {
+      padding: 0; } }
+  @media all and (min-width: 48em) {
+    .bitnami-ui .padding-reset-a-phone-land {
+      padding: 0; } }
+  @media all and (min-width: 56.25em) {
+    .bitnami-ui .padding-reset-a-tablet {
+      padding: 0; } }
+  @media all and (min-width: 68.75em) {
+    .bitnami-ui .padding-reset-a-desktop {
+      padding: 0; } }
+  @media all and (min-width: 81.25em) {
+    .bitnami-ui .padding-reset-a-wide {
+      padding: 0; } }
+  @media all and (max-width: 29.9375em) {
+    .bitnami-ui .padding-reset-b-phone-land {
+      padding: 0; } }
+  @media all and (max-width: 47.9375em) {
+    .bitnami-ui .padding-reset-b-tablet {
+      padding: 0; } }
+  @media all and (max-width: 56.1875em) {
+    .bitnami-ui .padding-reset-b-desktop {
+      padding: 0; } }
+  @media all and (max-width: 68.6875em) {
+    .bitnami-ui .padding-reset-b-wide {
+      padding: 0; } }
   .bitnami-ui .margin-reset {
     margin: 0; }
   .bitnami-ui .margin-tiny {
@@ -2682,6 +3061,48 @@ weight of the typography.
   .bitnami-ui .margin-h-huge {
     margin-left: 7.49812em;
     margin-right: 7.49812em; }
+  @media all and (max-width: 29.9375em) {
+    .bitnami-ui .margin-reset-on-phone {
+      margin: 0; } }
+  @media all and (min-width: 30em) and (max-width: 47.9375em) {
+    .bitnami-ui .margin-reset-on-phone-land {
+      margin: 0; } }
+  @media all and (min-width: 48em) and (max-width: 56.1875em) {
+    .bitnami-ui .margin-reset-on-tablet {
+      margin: 0; } }
+  @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
+    .bitnami-ui .margin-reset-on-desktop {
+      margin: 0; } }
+  @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
+    .bitnami-ui .margin-reset-on-wide {
+      margin: 0; } }
+  @media all and (min-width: 30em) {
+    .bitnami-ui .margin-reset-a-phone {
+      margin: 0; } }
+  @media all and (min-width: 48em) {
+    .bitnami-ui .margin-reset-a-phone-land {
+      margin: 0; } }
+  @media all and (min-width: 56.25em) {
+    .bitnami-ui .margin-reset-a-tablet {
+      margin: 0; } }
+  @media all and (min-width: 68.75em) {
+    .bitnami-ui .margin-reset-a-desktop {
+      margin: 0; } }
+  @media all and (min-width: 81.25em) {
+    .bitnami-ui .margin-reset-a-wide {
+      margin: 0; } }
+  @media all and (max-width: 29.9375em) {
+    .bitnami-ui .margin-reset-b-phone-land {
+      margin: 0; } }
+  @media all and (max-width: 47.9375em) {
+    .bitnami-ui .margin-reset-b-tablet {
+      margin: 0; } }
+  @media all and (max-width: 56.1875em) {
+    .bitnami-ui .margin-reset-b-desktop {
+      margin: 0; } }
+  @media all and (max-width: 68.6875em) {
+    .bitnami-ui .margin-reset-b-wide {
+      margin: 0; } }
   .bitnami-ui .margin-c {
     margin-left: auto;
     margin-right: auto; }
@@ -2743,6 +3164,50 @@ weight of the typography.
   .bitnami-ui .type-color-action,
   .bitnami-ui .type-color-action {
     color: #F58220; }
+  .bitnami-ui .bg-dark,
+  .bitnami-ui .bg-brand,
+  .bitnami-ui .bg-accent,
+  .bitnami-ui .bg-action,
+  .bitnami-ui [class*="gradient-"][class*="-brand"],
+  .bitnami-ui [class*="gradient-"][class*="-accent"],
+  .bitnami-ui [class*="gradient-"][class*="-action"],
+  .bitnami-ui .type-color-reverse {
+    color: #ffffff; }
+  .bitnami-ui a.type-color-reverse,
+  .bitnami-ui .type-color-reverse a {
+    color: #ffffff;
+    text-decoration: underline; }
+    .bitnami-ui a.type-color-reverse:hover,
+    .bitnami-ui .type-color-reverse a:hover {
+      color: #d9d9d9; }
+  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+    text-decoration: none; }
+  .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a {
+    color: #9bcf67; }
+    .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:hover,
+    .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:hover,
+    .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:hover {
+      color: #8fc954; }
+  .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a {
+    color: #fecf59; }
+    .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:hover,
+    .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:hover {
+      color: #fdc841; }
+  .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a,
+  .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a {
+    color: #33404d; }
+    .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:hover,
+    .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:hover {
+      color: #1C2B39; }
   .bitnami-ui .type-uppercase {
     text-transform: uppercase; }
   .bitnami-ui .type-light {

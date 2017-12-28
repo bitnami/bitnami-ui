@@ -10,23 +10,31 @@ Basic inputs to build forms.
 <input name="test" placeholder="This is a test" />
 ```
 */
+// Inputs and buttons use a font size between normal and small. That's the reason I was
+// forced to use su instead of the normal helpers.
+input,
+select,
+textarea,
+.button {
+  font-size: su(.6);
+}
+
 input,
 select,
 textarea {
   margin: margin('small') 0 margin('normal');
   padding: 0 padding('normal');
-  font-size: type-scale('normal');
-  border-radius: $spacing-border-radius;
-  border: 1px solid color('light');
+  border-radius: 0;
+  border: 1px solid color('gray-light');
   width: 100%;
 }
 
 // We need to set a fixed height because select doesn't allow `padding`
 input,
 select {
-  height: su(1.5);
+  height: su(2);
   // I must use line-height to center the elements to display it correctly in Firefox
-  line-height: su(1.5);
+  line-height: su(2);
 }
 
 // Update the outline
@@ -34,9 +42,9 @@ textarea:focus,
 input:focus,
 select:focus {
   outline: none;
-  border-color: color-level('accent', 300);
-  box-shadow: inset 0 1px 1px rgba(color('dark'), .01),
-    0 0 6px rgba(color('accent'), .1);
+  border-color: color-level('brand', 300);
+  box-shadow: inset 0 1px 1px rgba(color('dark'), .05),
+    0 0 8px rgba(color('secondary'), .3);
 }
 
 /*
@@ -95,32 +103,31 @@ tag: text
 ```
 */
 label {
-  cursor: pointer;
-  font-size: type-scale('small');
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
+  // TODO: change to gray for accesibility issues with gray-light!
+  color: color('dark');
+  font-size: type-scale('normal');
 
   + label {
-    margin-left: margin('normal');
+    margin-left: margin('big');
   }
 
   &.checkbox,
   &.radio {
-    text-transform: none;
-    font-size: type-scale('normal');
-    font-weight: normal;
-
-    span {
-      display: inline-block;
-      margin-left: margin('small');
-    }
+    cursor: pointer;
 
     input:disabled + span {
       opacity: .7;
     }
   }
+
+  // Reduce the margin of inputs or selects after a label
+  & + input,
+  & + select,
+  & + textarea {
+    margin-top: 0;
+  }
 }
+
 
 /*
 ---
@@ -173,6 +180,10 @@ input[type="radio"] {
   height: auto;
   // Hack to align checkbox and labels in Chrome and Firefox
   vertical-align: 1px;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
 // scss-lint:enable QualifyingElement
 
@@ -212,7 +223,6 @@ tag: text
   // Display correctly non buttons elements like anchors
   display: inline-block;
   padding: padding('small') padding('normal');
-  font-size: type-scale('normal');
   border-radius: 0;
   border: 1px solid color-level('iron', 600);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

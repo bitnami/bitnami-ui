@@ -104,6 +104,9 @@ The list of known dark backgrounds is:
 * [Backgrounds](/category/Foundations/Helpers/#Backgrounds)
 * [Linear Gradients](/category/Foundations/Helpers/#Linear%20Gradients)
 
+**NOTE:** This behaviour is very opinionated and it may cause issues with anchors in some situations like
+headers. So, you can disable it using the `type-color-reverse-anchor-reset` class.
+
 ```html
 <h2>Unknown dark background (with type-color-reverse)</h2>
 <div class="padding-normal type-color-reverse" style="background-color: black;">
@@ -181,8 +184,10 @@ a.type-color-reverse,
 [class*="gradient-"][class*="-brand"],
 [class*="gradient-"][class*="-accent"],
 [class*="gradient-"][class*="-action"] {
-  a {
-    text-decoration: none;
+  &:not(.type-color-reverse-anchor-reset) {
+    a {
+      text-decoration: none;
+    }
   }
 }
 
