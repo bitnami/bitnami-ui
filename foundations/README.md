@@ -12,7 +12,7 @@ like paragraphs (`p`), headers (`h*`) and the body itself (`body`). In the
 [variables section](/category/Foundations/Variables/) you can find important configuration params
 like [colors](/category/Foundations/Variables/#Colors),
 [typography](/category/Foundations/Variables/#Typography) and
-[breakpoins](/category/Foundations/Variables/#Breakpoints).
+[breakpoints](/category/Foundations/Variables/#Breakpoints).
 
 **We're working to complete this documentation with more detailed UX guidelines.**
 
