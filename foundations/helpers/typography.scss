@@ -77,9 +77,13 @@ the [reverse helper](#Typography%20color%20reverse) may interest you.
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
+<p class="type-color-white">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
 ```
 */
-@each $alias in 'bitnami', 'accent', 'iron', 'action' {
+@each $alias in 'bitnami', 'accent', 'iron', 'action', 'white' {
   $name: map-get($color-names, $alias);
 
   .type-color-#{$alias},
