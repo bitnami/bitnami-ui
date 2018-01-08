@@ -90,14 +90,13 @@ $colors: (
   'accent-light': #82C341,
   'light': #f1f1f1,
   'white': #ffffff,
-  'dark': #37474f,
   'text': #1C2B39,
   'action': #F58220,
   'action-light': #FDBA12,
   'gray': #5F6369,
   'gray-light': #C7C9C8,
   'base': #fff,
-  'highlight': #fff23f,
+  'highlight': #fff23f
 );
 
 $gradients: (
@@ -154,7 +153,7 @@ $color-names: (
   'accent-light': 'accent-light',
   'iron': 'light',
   'white': 'white',
-  'dark': 'dark',
+  'dark': 'text',
   'text': 'text',
   'action': 'action',
   'action-light': 'action-light',
@@ -736,7 +735,8 @@ anchor must be equal to "author". You can check the following
 <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
   Great day at my first Linux Foundation board meeting, but looking forward to seeing
   everyone at #awsreinvent. On my way!
-  <br/>
+  </br>
+  See you there!
   <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
 </blockquote>
 ```
@@ -1782,6 +1782,10 @@ the [reverse helper](#Typography%20color%20reverse) may interest you.
   For example, our Rails Development Container includes full Rails environment and
   SQL database (MariaDB).
 </p>
+<p class="type-color-white">
+  For example, our Rails Development Container includes full Rails environment and
+  SQL database (MariaDB).
+</p>
 ```
 */
   /*
@@ -1887,7 +1891,7 @@ weight of the typography.
     .bitnami-ui a:hover, .bitnami-ui a:active {
       color: #7398b6; }
   .bitnami-ui pre {
-    background-color: #212b2f;
+    background-color: #111a22;
     line-height: 1.2;
     margin: 0.74981em 0 1.49962em;
     padding: 0.74981em; }
@@ -1927,7 +1931,7 @@ weight of the typography.
   .bitnami-ui select:focus {
     outline: none;
     border-color: #336995;
-    box-shadow: inset 0 1px 1px rgba(55, 71, 79, 0.05), 0 0 8px rgba(21, 152, 203, 0.3); }
+    box-shadow: inset 0 1px 1px rgba(28, 43, 57, 0.05), 0 0 8px rgba(21, 152, 203, 0.3); }
   .bitnami-ui select {
     background-color: #ffffff; }
   .bitnami-ui textarea {
@@ -1936,7 +1940,7 @@ weight of the typography.
     resize: vertical;
     min-height: 7.49812em; }
   .bitnami-ui label {
-    color: #37474f;
+    color: #1C2B39;
     font-size: 1em; }
     .bitnami-ui label + label {
       margin-left: 1.49962em; }
@@ -2049,15 +2053,37 @@ weight of the typography.
   .bitnami-ui p {
     margin: 0.74981em 0 1.49962em; }
   .bitnami-ui blockquote {
-    padding-left: 1.49962em;
-    margin: 0.74981em 0 1.49962em;
-    border-left: 2px solid #00284a;
-    color: #495561; }
+    font-size: 1.49962em;
+    margin: 1.49962em auto;
+    max-width: 37.49063em;
+    padding: 0.37491em;
+    position: relative;
+    text-align: center; }
+    .bitnami-ui blockquote:before, .bitnami-ui blockquote:after {
+      background-image: url("data:image/svg+xml;utf8,<svg width='68' height='49' viewBox='0 0 68 49' xmlns='http://www.w3.org/2000/svg'><title>Fill 1</title><path d='M30.769 21.522c0 19.627-11.1 26.936-28.521 27.478L0 39.119c9.413-1.083 14.05-5.415 13.769-12.724H3.372V0h27.397v21.522zm37.231 0C68 41.15 57.041 48.458 39.48 49l-2.108-9.881c9.413-1.083 14.05-5.415 13.628-12.724H40.603V0H68v21.522z' fill='#7ED321' fill-rule='evenodd'/></svg>");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 2.24944em;
+      position: absolute;
+      top: 0.74981em;
+      width: 2.99925em; }
+    .bitnami-ui blockquote:before {
+      left: 0.37491em;
+      transform: rotateZ(180deg); }
+    .bitnami-ui blockquote:after {
+      right: 0.37491em; }
     .bitnami-ui blockquote a[rel="author"] {
-      font-style: italic; }
-    .bitnami-ui blockquote br + a {
-      display: inline-block;
-      margin-top: 0.37491em; }
+      color: #1C2B39;
+      display: block;
+      font-weight: bold;
+      font-size: 0.66683em;
+      margin-top: 1.49962em; }
+    @media all and (min-width: 48em) {
+      .bitnami-ui blockquote {
+        padding: 0.37491em 4.49887em; }
+        .bitnami-ui blockquote:before, .bitnami-ui blockquote:after {
+          content: ''; } }
   .bitnami-ui abbr,
   .bitnami-ui cite {
     text-decoration: none;
@@ -2503,26 +2529,26 @@ weight of the typography.
   .bitnami-ui .bg-light {
     background-color: #f1f1f1; }
   .bitnami-ui .bg-dark,
-  .bitnami-ui .bg-dark {
-    background-color: #37474f; }
+  .bitnami-ui .bg-text {
+    background-color: #1C2B39; }
   .bitnami-ui .bg-white,
   .bitnami-ui .bg-white {
     background-color: #ffffff; }
   .bitnami-ui .shadow-1,
   .bitnami-ui .elevation-1 {
-    box-shadow: 0 3px 6px rgba(55, 71, 79, 0.4); }
+    box-shadow: 0 3px 6px rgba(28, 43, 57, 0.4); }
   .bitnami-ui .shadow-2,
   .bitnami-ui .elevation-2 {
-    box-shadow: 0 6px 12px rgba(55, 71, 79, 0.4); }
+    box-shadow: 0 6px 12px rgba(28, 43, 57, 0.4); }
   .bitnami-ui .shadow-3,
   .bitnami-ui .elevation-3 {
-    box-shadow: 0 9px 18px rgba(55, 71, 79, 0.4); }
+    box-shadow: 0 9px 18px rgba(28, 43, 57, 0.4); }
   .bitnami-ui .shadow-4,
   .bitnami-ui .elevation-4 {
-    box-shadow: 0 12px 24px rgba(55, 71, 79, 0.4); }
+    box-shadow: 0 12px 24px rgba(28, 43, 57, 0.4); }
   .bitnami-ui .shadow-5,
   .bitnami-ui .elevation-5 {
-    box-shadow: 0 15px 30px rgba(55, 71, 79, 0.4); }
+    box-shadow: 0 15px 30px rgba(28, 43, 57, 0.4); }
   .bitnami-ui .shadow-reset,
   .bitnami-ui .elevation-reset {
     box-shadow: none; }
@@ -3153,6 +3179,9 @@ weight of the typography.
   .bitnami-ui .type-color-action,
   .bitnami-ui .type-color-action {
     color: #F58220; }
+  .bitnami-ui .type-color-white,
+  .bitnami-ui .type-color-white {
+    color: #ffffff; }
   .bitnami-ui .bg-dark,
   .bitnami-ui .bg-brand,
   .bitnami-ui .bg-accent,
