@@ -1,0 +1,69 @@
+/*
+---
+name: Half Section
+category: Components/Display
+tag: component
+---
+Display a section that has 2 backgrounds. Each half could have its own background (image, color,
+gradient, etc..)
+
+```html
+<section class="halfBg">
+  <div class="halfBg__left bg-dark">
+    <div class="halfBg__container">
+      <div class="container padding-big">
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <p>At the core of Bitnami is an application automation platform that builds software stacks
+        from applications and their dependencies, packaging them for one-click deployment to all
+        major platforms, local or cloud. Bitnami then maintains those stacks by continuously
+        monitoring for updates and security vulnerabilities and providing new versions as necessary
+        and available.</p>
+      </div>
+    </div>
+  </div>
+  <div class="halfBg__right gradient-brand">
+    <div class="halfBg__container">
+      <div class="container padding-big">
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <p>The Result: An application deployment platform that developers love and ops can trust</p>
+      </div>
+    </div>
+  </div>
+</section>
+```
+*/
+
+.halfBg {
+  display: flex;
+
+  &__left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__right {
+    width: 50%;
+  }
+
+  &__container {
+    max-width: $grid-width/2;
+  }
+
+  @include mappy-query('b-tablet') {
+    display: block;
+
+    &__left {
+      display: block;
+      width: 100%;
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__container {
+      max-width: $grid-width;
+    }
+  }
+}
