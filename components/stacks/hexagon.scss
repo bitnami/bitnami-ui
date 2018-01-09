@@ -1,0 +1,127 @@
+/*
+---
+name: Hexagon
+category: Components/Stacks
+tag: component
+---
+
+We use this element as a background on any element. You just need to add the class
+<code>.hexagon</code> to get the blue hexagon. The reverse option (white hexagon) can be used with
+the class <code>.hexagon-reverse</code>
+
+```html
+<div class="padding-big">
+  <div class="hexagon">
+    <p class="margin-reset">This is just text</p>
+  </div>
+</div>
+<div class="bg-dark padding-big">
+  <div class="hexagon hexagon-reverse">
+    <img src="/assets/images/gears.svg"/>
+  </div>
+</div>
+```
+*/
+
+.hexagon {
+  background: url("#{image-endpoint()}hexagon.svg") no-repeat center center;
+  background-size: contain;
+  width: su(4.5);
+  height: su(5.5);
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color("white");
+
+  &-reverse {
+    background-image: url("#{image-endpoint()}hexagon-reverse.svg");
+  }
+}
+
+/*
+---
+name: Hexagon Inline
+category: Components/Stacks
+tag: helpers
+---
+The hexagon will align vertically with the header text. The size of the hexagon is fixed.
+Multiline is supported, the hexagon will align vertically in the middle when multiples
+lines.
+
+```html
+<div class="bg-dark padding-normal">
+  <div class="hexagon-inline">
+    <div class="hexagon hexagon-reverse">
+      <img src="/assets/images/gears.svg"/>
+    </div>
+    <h4 class="margin-reset">This is a regular header with an hexagon next to it.</h4>
+  </div>
+</div>
+
+<div class="padding-normal">
+  <div class="hexagon-inline">
+    <div class="hexagon">&nbsp;</div>
+    <h4 class="margin-reset">This is a regular header with an hexagon next to it.</h4>
+  </div>
+</div>
+```
+*/
+
+.hexagon-inline {
+  display: flex;
+  align-items: center;
+
+  .hexagon {
+    width: su(1.3);
+    height: su(1.4);
+    margin-right: margin("normal");
+    flex: none;
+    // Fixing icon alignment with this typography
+    position: relative;
+    top: -0.05em;
+
+    img {
+      width: 60%;
+    }
+  }
+}
+
+/*
+---
+name: Hexagon sizes
+category: Components/Stacks
+tag: helpers
+---
+Change the size of the hexagon. You can combine it with other hexagon classes.
+
+```html
+<div class="hexagon margin-v-big"></div>
+<div class="hexagon hexagon-small margin-v-big"></div>
+<div class="hexagon hexagon-tiny margin-v-big"></div>
+```
+*/
+
+@each $size-name in 'tiny', 'small' {
+  $multiplier: map-get($scale-names, $size-name);
+  $size-w: 1;
+  $size-h: 1;
+  $width: 4.5;
+  $height: 5.5;
+
+  @if $multiplier > 0 {
+    $size-w: $width + (1.5 * $multiplier);
+    $size-h: $height + (1.5 * $multiplier);
+  } @else {
+    $size-w: $width + (.5 * $multiplier);
+    $size-h: $height + (.5 * $multiplier);
+  }
+
+  .hexagon {
+    &.hexagon-#{$size-name} {
+      width: su($size-w);
+      height: su($size-h);
+    }
+  }
+}

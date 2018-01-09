@@ -39,30 +39,44 @@ h6 {
   }
 }
 
+//TODO Fix the ratios to adjust to the real sizes once we get the final type base size
+//TODO Fix the margin bottom for each header
+
 h1 {
-  font-size: type-scale('bigger');
+  // Interstate Light 42px
+  // 30px margin-bottom
+  font-size: type-scale('bigger'); // Computed 40.47px
   font-weight: 300;
   color: color-level('text', 700);
 }
 
 h2 {
-  font-size: type-scale('big');
+  // Interstate Light 30px
+  // 25px margin-bottom
+  font-size: type-scale('big'); // Computed 27px
   font-weight: 300;
   color: color('brand');
 }
 
 h3 {
-  font-size: type-scale('big');
+  // Interstate Light 24px
+  // 20px margin-bottom
+  font-size: type-scale('big'); // Computed 27px
+  font-weight: 300;
   color: color('text');
 }
 
 h4 {
-  font-size: type-scale('normal');
+  // Interstate Regular 24px
+  // 20px margin-bottom
+  font-size: type-scale('big'); // Computed 27px
   text-transform: uppercase;
 }
 
 h5,
 h6 {
-  font-size: type-scale('normal');
+  // Interstate Bold 20px
+  // 20px margin-bottom
+  font-size: type-scale('normal'); // Computed 20px
   font-weight: bold;
 }
