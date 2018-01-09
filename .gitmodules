@@ -1,3 +1,0 @@
-[submodule ".arcanist-extensions"]
-	path = .arcanist-extensions
-	url = git@github.com:Angelmmiguel/arcanist-extensions.git
