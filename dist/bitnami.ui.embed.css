@@ -1054,10 +1054,14 @@ tag: helpers
 ---
 Different animations for the elements:
 
-* `.slideIn`
+* `.slide-in`
+* `.fade-in`
 
 ```html
 <p class="slide-in">
+  This is a text with an animation
+</p>
+<p class="fade-in">
   This is a text with an animation
 </p>
 ```
@@ -2509,13 +2513,21 @@ weight of the typography.
 
 @keyframes slide-in {
   from {
-    transform: translate3d(0, -10%, 0);
+    transform: translateY(-10%);
     opacity: 0; }
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
     opacity: 1; } }
   .bitnami-ui .slide-in {
     animation: slide-in .150s ease-in; }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+  .bitnami-ui .fade-in {
+    animation: fade-in .150s ease-in; }
   .bitnami-ui .bg-bitnami,
   .bitnami-ui .bg-brand {
     background-color: #00437B; }
@@ -3241,11 +3253,11 @@ weight of the typography.
     .bitnami-ui .type-color-reverse h6 {
       color: #ffffff; }
   .bitnami-ui a.type-color-reverse:not(.button),
-  .bitnami-ui .type-color-reverse a:not(.button) {
+  .bitnami-ui .type-color-reverse:not(.type-color-reverse-anchor-reset) a:not(.button) {
     color: #ffffff;
     text-decoration: underline; }
     .bitnami-ui a.type-color-reverse:not(.button):hover,
-    .bitnami-ui .type-color-reverse a:not(.button):hover {
+    .bitnami-ui .type-color-reverse:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
       color: #d9d9d9; }
   .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),

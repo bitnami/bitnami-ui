@@ -1,0 +1,314 @@
+/*
+---
+name: Header
+category: Components/Navigation
+tag: component
+---
+
+Main header component.
+
+Accesibility best practices:
+* https://inclusive-components.design/menus-menu-buttons/
+* https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html
+
+```html
+<div class="gradient-brand type-color-reverse type-color-reverse-anchor-reset">
+  <div class="container">
+    <header class="header">
+      <div class="header__logo">
+        <a>
+          <img src="/assets/images/logo-white.svg" alt="Bitnami Logo" />
+        </a>
+      </div>
+      <nav class="header__nav">
+        <button class="header__nav__hamburguer" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+        <ul class="header__nav__menu" role="menubar">
+          <li>
+            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Products</a>
+            <ul role="menu" aria-label="Products" class="header__nav__submenu">
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">App Catalog</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Stacksmith</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">Solutions</a>
+            <ul role="menu" aria-label="Solutions" class="header__nav__submenu">
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">App Packaging</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Cloud Migration</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Kubernetes</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Partners</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">About Us</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Support</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Blog</a>
+          </li>
+        </ul>
+        <div class="header__nav__user">
+          <a class="button button-action">Sign in</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+</div>
+
+<div style="height: 200px;"></div>
+```
+*/
+.header {
+  align-items: center;
+  display: flex;
+  padding: padding('big') 0;
+
+  &__logo {
+    img {
+      display: block;
+      height: su(1.5);
+    }
+  }
+
+  &__nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-top: margin('small');
+    padding-left: padding('bigger');
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        color: color('white');
+        display: inline-block;
+        padding: padding('normal') padding('normal');
+        font-size: su(.6);
+      }
+    }
+
+    // Hamburguer
+    &__hamburguer {
+      border: none;
+      background: transparent;
+      display: none;
+
+      div {
+        background: color('white');
+        height: 4px;
+        width: 25px;
+        will-change: transform;
+        transition: transform .3s ease-out;
+
+        &:nth-child(1) {
+          background: linear-gradient(135deg, transparent 3px, color('white') 3px, color('white') 100%);
+        }
+
+        &:nth-child(3) {
+          background: linear-gradient(-45deg, transparent 3px, color('white') 3px, color('white') 100%);
+        }
+
+        & + div {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    // Submenu
+    & > ul > li {
+      position: relative;
+
+      @include mappy-query('a-phone-land') {
+        &:hover > a {
+          color: color-level('action', 100);
+        }
+      }
+    }
+
+    &__submenu {
+      animation: slide-in-header .150s ease-in;
+      background-color: color('white');
+      box-shadow: 0 8px 10px -3px rgba(0, 0, 0, .2);
+      display: none;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      transform: translateX(-50%) translateY(-2%);
+      z-index: z-index('top');
+
+      &-open {
+        display: block;
+      }
+
+      // Small triangle that points to the menu element
+      &:before {
+        background: color('white');
+        content: '';
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%) translateY(-40%) rotate(45deg);
+        height: su(.5);
+        width: su(.5);
+        z-index: z-index('bottom');
+      }
+
+      li {
+        display: block;
+        margin: 0;
+        width: 100%;
+
+        a {
+          color: color('text');
+          display: block;
+          padding: padding('normal');
+          white-space: nowrap;
+
+          &:hover {
+            background: gradient('action');
+            color: color('white');
+          }
+        }
+      }
+    }
+  }
+
+  // Small screens
+  @include mappy-query('b-tablet') {
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    &.header-open {
+      background: gradient('action');
+      padding: padding('big');
+      position: absolute;
+
+      .header__nav {
+        &__menu,
+        &__user {
+          display: block;
+        }
+
+        &__hamburguer {
+          div:nth-child(1) {
+            background: color('white');
+            transform: translateY(8px) rotateZ(45deg);
+          }
+
+          div:nth-child(2) {
+            transform: scale(0);
+          }
+
+          div:nth-child(3) {
+            background: color('white');
+            transform: translateY(-8px) rotateZ(-45deg);
+          }
+        }
+      }
+    }
+
+    &__logo {
+      position: absolute;
+    }
+
+    &__nav {
+      align-items: flex-start;
+      flex-direction: column;
+      padding-left: 0;
+
+      &__hamburguer {
+        align-self: flex-end;
+        display: block;
+      }
+
+      &__menu,
+      &__user {
+        animation: fade-in .150s ease-in;
+        display: none;
+      }
+
+      & > ul {
+        margin-top: margin('big');
+      }
+
+      & > ul > li {
+        display: block;
+        font-size: type-scale('big');
+
+        a {
+          padding: padding('small') 0;
+        }
+      }
+
+      &__user {
+        margin-top: margin('bigger');
+      }
+
+      // Modify submenu behaviour
+      &__submenu {
+        animation: fade-in .150s ease-in;
+        background: none;
+        box-shadow: none;
+        position: static;
+        transform: none;
+
+        &:before {
+          display: none;
+        }
+
+        li {
+          padding-left: padding('big');
+          text-align: left;
+
+          a {
+            font-size: type-scale('small');
+            color: color('white');
+
+            &:hover {
+              background: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Specific animation due to the translateX for centering
+@keyframes slide-in-header {
+  from {
+    transform: translateX(-50%) translateY(-10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(-50%) translateY(-2%);
+    opacity: 1;
+  }
+}

@@ -6,10 +6,14 @@ tag: helpers
 ---
 Different animations for the elements:
 
-* `.slideIn`
+* `.slide-in`
+* `.fade-in`
 
 ```html
 <p class="slide-in">
+  This is a text with an animation
+</p>
+<p class="fade-in">
   This is a text with an animation
 </p>
 ```
@@ -17,16 +21,30 @@ Different animations for the elements:
 
 @keyframes slide-in {
   from {
-    transform: translate3d(0, -10%, 0);
+    transform: translateY(-10%);
     opacity: 0;
   }
 
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
 .slide-in {
   animation: slide-in .150s ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in .150s ease-in;
 }

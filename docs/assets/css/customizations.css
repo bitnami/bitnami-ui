@@ -53,6 +53,7 @@ pre code .tag {
   border-top: 1px solid #ebecec;
   margin-top: 2.24944em;
   padding: 1.333em;
+  position: relative;
 }
 
 .Components > .Component:last-child,

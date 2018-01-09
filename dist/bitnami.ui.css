@@ -2107,24 +2107,37 @@ tag: helpers
 ---
 Different animations for the elements:
 
-* `.slideIn`
+* `.slide-in`
+* `.fade-in`
 
 ```html
 <p class="slide-in">
+  This is a text with an animation
+</p>
+<p class="fade-in">
   This is a text with an animation
 </p>
 ```
 */
 @keyframes slide-in {
   from {
-    transform: translate3d(0, -10%, 0);
+    transform: translateY(-10%);
     opacity: 0; }
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
     opacity: 1; } }
 
 .slide-in {
   animation: slide-in .150s ease-in; }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.fade-in {
+  animation: fade-in .150s ease-in; }
 
 /*
 ---
@@ -3895,11 +3908,11 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
     color: #ffffff; }
 
 a.type-color-reverse:not(.button),
-.type-color-reverse a:not(.button) {
+.type-color-reverse:not(.type-color-reverse-anchor-reset) a:not(.button) {
   color: #ffffff;
   text-decoration: underline; }
   a.type-color-reverse:not(.button):hover,
-  .type-color-reverse a:not(.button):hover {
+  .type-color-reverse:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
     color: #d9d9d9; }
 
 .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),

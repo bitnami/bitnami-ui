@@ -180,7 +180,7 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
 
 // Display anchors depends on the background.
 a.type-color-reverse,
-.type-color-reverse a {
+.type-color-reverse:not(.type-color-reverse-anchor-reset) a {
   &:not(.button) {
     color: color('white');
     // I've added this text decoration in case the background it's not known.

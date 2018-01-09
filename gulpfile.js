@@ -13,7 +13,12 @@ var gulp = require('gulp'),
   path = require('path'),
   join = path.join.bind(__dirname),
   config = require('./package.json'),
-  s3 = require('gulp-s3-upload')({ useIAM: true });
+  s3 = require('gulp-s3-upload')({ useIAM: true }),
+  // Webpack
+  webpack = require('webpack'),
+  webpackStream = require('webpack-stream'),
+  webpackConfig = require('./webpack.config.js');
+  webpackConfigProd = require('./webpack.config.prod.js');
 
 // Variables
 var dist = join('dist'),
@@ -83,6 +88,24 @@ gulp.task('embed:components', function () {
 
 gulp.task('embed', ['embed:foundations', 'embed:components']);
 
+// Javascript
+gulp.task('js', () => {
+  if (environment === 'production') {
+    return gulp.src(join('js/index.js'))
+      .pipe(webpackStream(webpackConfig), webpack)
+      .pipe(replace('{VERSION}', config.version))
+      .pipe(gulp.dest(dist))
+      .pipe(webpackStream(webpackConfigProd), webpack)
+      .pipe(replace('{VERSION}', config.version))
+      .pipe(gulp.dest(dist));
+  } else {
+    return gulp.src(join('js/index.js'))
+      .pipe(webpackStream(webpackConfig), webpack)
+      .pipe(replace('{VERSION}', config.version))
+      .pipe(gulp.dest(dist));
+  }
+});
+
 // Image tasks
 gulp.task('images', function() {
   // First copy the base images as @2x
@@ -120,9 +143,13 @@ gulp.task('docs:components', ['components'], function() {
   return gulp.start('docs');
 });
 
+gulp.task('docs:js', ['js'], function() {
+  return gulp.start('docs');
+});
+
 // Move images
 gulp.task('docs:images', ['images'], function() {
-  gulp.src(`${imageDist}/*.png`)
+  gulp.src([`${imageDist}/*.png`, `${imageDist}/*.svg`])
     .pipe(gulp.dest(`${docs}/assets/images`));
 });
 
@@ -141,7 +168,7 @@ gulp.task('docs:readme', function() {
 });
 
 // Compile all assets
-gulp.task('dist', ['foundations', 'components', 'embed', 'images'], function() {
+gulp.task('dist', ['foundations', 'components', 'embed', 'images', 'js'], function() {
   gulp.start('docs:images');
   gulp.start('docs');
 });
@@ -152,9 +179,22 @@ gulp.task('dist', ['foundations', 'components', 'embed', 'images'], function() {
  *
  * Check the README file for more information about deploying Bitnami UI
  */
-gulp.task('publish', ['foundations', 'components', 'embed', 'images'], function() {
+gulp.task('publish', ['foundations', 'components', 'embed', 'images', 'js'], function() {
   // Upload CSS Files
   gulp.src(join('dist/*.css'))
+    .pipe(s3({
+      Bucket: 'bitnami-assets-cf',
+      keyTransform: function(relative_filename) {
+        return `bitnami-ui/${config.version}/${relative_filename}`;
+      },
+      uploadNewFilesOnly: true
+    }, {
+      // S3 Constructor Options, ie:
+      maxRetries: 5
+    }));
+
+  // Upload JS
+  gulp.src(join('dist/*.js'))
     .pipe(s3({
       Bucket: 'bitnami-assets-cf',
       keyTransform: function(relative_filename) {
@@ -185,6 +225,8 @@ gulp.task('default', ['dist'], function() {
   gulp.watch(join('foundations/**/*.scss') , ['docs:foundations']);
   // Compile components and docs
   gulp.watch(join('components/**/*.scss') , ['docs:components']);
+  // Compile JS
+  gulp.watch(join('js/**/*.js') , ['docs:js']);
   // Compiles images and docs
   gulp.watch(join('images/*.png') , ['docs:images']);
 });

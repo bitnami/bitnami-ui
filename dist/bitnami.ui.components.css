@@ -2696,6 +2696,228 @@ Copyright text and social links. This components depends on the
 
 /*
 ---
+name: Header
+category: Components/Navigation
+tag: component
+---
+
+Main header component.
+
+Accesibility best practices:
+* https://inclusive-components.design/menus-menu-buttons/
+* https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html
+
+```html
+<div class="gradient-brand type-color-reverse type-color-reverse-anchor-reset">
+  <div class="container">
+    <header class="header">
+      <div class="header__logo">
+        <a>
+          <img src="/assets/images/logo-white.svg" alt="Bitnami Logo" />
+        </a>
+      </div>
+      <nav class="header__nav">
+        <button class="header__nav__hamburguer" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+        <ul class="header__nav__menu" role="menubar">
+          <li>
+            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Products</a>
+            <ul role="menu" aria-label="Products" class="header__nav__submenu">
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">App Catalog</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Stacksmith</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">Solutions</a>
+            <ul role="menu" aria-label="Solutions" class="header__nav__submenu">
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">App Packaging</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Cloud Migration</a>
+              </li>
+              <li role="none">
+                <a role="menuitem" tabindex="-1" href="#">Kubernetes</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Partners</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">About Us</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Support</a>
+          </li>
+          <li>
+            <a role="menuitem" tabindex="-1" href="#">Blog</a>
+          </li>
+        </ul>
+        <div class="header__nav__user">
+          <a class="button button-action">Sign in</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+</div>
+
+<div style="height: 200px;"></div>
+```
+*/
+.header {
+  align-items: center;
+  display: flex;
+  padding: 1.49962em 0; }
+  .header__logo img {
+    display: block;
+    height: 2.24944em; }
+  .header__nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-top: 0.37491em;
+    padding-left: 2.24944em; }
+    .header__nav ul {
+      margin: 0;
+      padding: 0; }
+      .header__nav ul li {
+        display: inline-block; }
+      .header__nav ul a {
+        color: #ffffff;
+        display: inline-block;
+        padding: 0.74981em 0.74981em;
+        font-size: 0.89977em; }
+    .header__nav__hamburguer {
+      border: none;
+      background: transparent;
+      display: none; }
+      .header__nav__hamburguer div {
+        background: #ffffff;
+        height: 4px;
+        width: 25px;
+        will-change: transform;
+        transition: transform .3s ease-out; }
+        .header__nav__hamburguer div:nth-child(1) {
+          background: linear-gradient(135deg, transparent 3px, #ffffff 3px, #ffffff 100%); }
+        .header__nav__hamburguer div:nth-child(3) {
+          background: linear-gradient(-45deg, transparent 3px, #ffffff 3px, #ffffff 100%); }
+        .header__nav__hamburguer div + div {
+          margin-top: 4px; }
+    .header__nav > ul > li {
+      position: relative; }
+      @media all and (min-width: 48em) {
+        .header__nav > ul > li:hover > a {
+          color: #f9b479; } }
+    .header__nav__submenu {
+      animation: slide-in-header .150s ease-in;
+      background-color: #ffffff;
+      box-shadow: 0 8px 10px -3px rgba(0, 0, 0, 0.2);
+      display: none;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      transform: translateX(-50%) translateY(-2%);
+      z-index: 99; }
+      .header__nav__submenu-open {
+        display: block; }
+      .header__nav__submenu:before {
+        background: #ffffff;
+        content: '';
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%) translateY(-40%) rotate(45deg);
+        height: 0.74981em;
+        width: 0.74981em;
+        z-index: -1; }
+      .header__nav__submenu li {
+        display: block;
+        margin: 0;
+        width: 100%; }
+        .header__nav__submenu li a {
+          color: #1C2B39;
+          display: block;
+          padding: 0.74981em;
+          white-space: nowrap; }
+          .header__nav__submenu li a:hover {
+            background: linear-gradient(45deg, #F58220 0%, #FDBA12 100%);
+            color: #ffffff; }
+  @media all and (max-width: 47.9375em) {
+    .header {
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%; }
+      .header.header-open {
+        background: linear-gradient(45deg, #F58220 0%, #FDBA12 100%);
+        padding: 1.49962em;
+        position: absolute; }
+        .header.header-open .header__nav__menu, .header.header-open .header__nav__user {
+          display: block; }
+        .header.header-open .header__nav__hamburguer div:nth-child(1) {
+          background: #ffffff;
+          transform: translateY(8px) rotateZ(45deg); }
+        .header.header-open .header__nav__hamburguer div:nth-child(2) {
+          transform: scale(0); }
+        .header.header-open .header__nav__hamburguer div:nth-child(3) {
+          background: #ffffff;
+          transform: translateY(-8px) rotateZ(-45deg); }
+      .header__logo {
+        position: absolute; }
+      .header__nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 0; }
+        .header__nav__hamburguer {
+          align-self: flex-end;
+          display: block; }
+        .header__nav__menu, .header__nav__user {
+          animation: fade-in .150s ease-in;
+          display: none; }
+        .header__nav > ul {
+          margin-top: 1.49962em; }
+        .header__nav > ul > li {
+          display: block;
+          font-size: 1.49962em; }
+          .header__nav > ul > li a {
+            padding: 0.37491em 0; }
+        .header__nav__user {
+          margin-top: 2.24944em; }
+        .header__nav__submenu {
+          animation: fade-in .150s ease-in;
+          background: none;
+          box-shadow: none;
+          position: static;
+          transform: none; }
+          .header__nav__submenu:before {
+            display: none; }
+          .header__nav__submenu li {
+            padding-left: 1.49962em;
+            text-align: left; }
+            .header__nav__submenu li a {
+              font-size: 0.66683em;
+              color: #ffffff; }
+              .header__nav__submenu li a:hover {
+                background: none; } }
+
+@keyframes slide-in-header {
+  from {
+    transform: translateX(-50%) translateY(-10%);
+    opacity: 0; }
+  to {
+    transform: translateX(-50%) translateY(-2%);
+    opacity: 1; } }
+
+/*
+---
 name: Hero
 category: Components/Navigation
 tag: component
@@ -2703,7 +2925,7 @@ tag: component
 
 ```html
 <section class="hero type-color-reverse">
-  <div class="container">
+  <div class="container margin-v-huge">
     <section class="hero__content">
       <h1 class="hero__title">Bitnami Application Catalog</h1>
       <p class="hero__subtitle">Ready-to-run Applications and Development Environments</p>
@@ -2717,9 +2939,9 @@ tag: component
 */
 .hero {
   position: relative;
-  overflow: hidden;
-  padding: 4.49887em 2.24944em 7.49812em; }
+  overflow: hidden; }
   .hero__content {
+    margin-left: 2.24944em;
     max-width: 600px; }
   .hero__title, .hero__subtitle {
     margin: 0; }

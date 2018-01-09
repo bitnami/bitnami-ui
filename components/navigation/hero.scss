@@ -7,7 +7,7 @@ tag: component
 
 ```html
 <section class="hero type-color-reverse">
-  <div class="container">
+  <div class="container margin-v-huge">
     <section class="hero__content">
       <h1 class="hero__title">Bitnami Application Catalog</h1>
       <p class="hero__subtitle">Ready-to-run Applications and Development Environments</p>
@@ -22,9 +22,9 @@ tag: component
 .hero {
   position: relative;
   overflow: hidden;
-  padding: su(3) padding('bigger') su(5);
 
   &__content {
+    margin-left: margin('bigger');
     max-width: 600px;
   }
 
