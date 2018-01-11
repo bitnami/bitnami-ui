@@ -1,3 +1,5 @@
+// @flow
+
 // Other helpers
 import CSS from './css';
 import Aria from './aria';
@@ -10,12 +12,21 @@ import HTML from './html';
  * to work with accesbility.
  */
 export class UINode {
+  // Properties
+  node: HTMLElement;
+  css: CSS;
+  aria: Aria;
+  events: Events;
+  tree: Tree;
+  html: HTML;
+  length: number;
+
   /**
    * Store the current node
    *
-   * @param {HTMLNode} node Base node
+   * @param {HTMLElement} node Base node
    */
-  constructor(node) {
+  constructor(node: HTMLElement) {
     // Store the basic node.
     this.node = node;
     this.css = new CSS(node);
@@ -23,17 +34,17 @@ export class UINode {
     this.events = new Events(node);
     this.tree = new Tree(node);
     this.html = new HTML(node);
+    this.length = 1;
   }
 
   // Collection helpers for single nodes
-  length() { return 1; }
-  forEach(callback) { callback(this); }
-  map(callback) { return [callback(this)]; }
+  forEach(callback: ((UINode) => void)): void {
+    callback(this);
+  }
+
+  map(callback: ((UINode) => any)): Array<any> {
+    return [callback(this)];
+  }
 }
 
-export default (selector) => {
-  const elements = document.querySelectorAll(selector);
-  return elements.length === 1 ?
-    new UINode(elements[0]) :
-    Array.from(elements).map((el) => new UINode(el));
-}
+export default UINode;

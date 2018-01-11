@@ -1,5 +1,5 @@
 // Utils
-import b from '../base/node';
+import b from '../base';
 import { touchDevice } from '../utils/mobile';
 
 // Hammer for touch capabilities

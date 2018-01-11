@@ -18,7 +18,7 @@ import Carousel from './components/carousel';
 import Header from './components/header';
 
 // Export the B selector to window
-import b from './base/node';
+import b from './base';
 window.b = b;
 
 // Initialize all elements

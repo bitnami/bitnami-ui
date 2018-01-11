@@ -1,5 +1,5 @@
 // Utils
-import b from '../base/node';
+import b from '../base';
 import { touchDevice } from '../utils/mobile';
 
 /**
@@ -50,7 +50,7 @@ const header = () => {
 
   // Initialization
   const hamburguer = b('.header__nav__hamburguer');
-  if (hamburguer.length > 1) {
+  if (hamburguer.length > 0) {
     // Add toggle to the hamburguer
     hamburguer.events.on('click', (e) => toggleHeader(hamburguer, e));
 
