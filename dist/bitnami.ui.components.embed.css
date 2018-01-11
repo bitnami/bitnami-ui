@@ -1068,13 +1068,13 @@ The prupose of the carousel is to add more information without adding visual wor
 page. However, carousels have a very poor [interaction ratio](https://erikrunyon.com/2013/07/carousel-interaction-stats/),
 so they're not good elements to place relevant information nor main call to actions of a page.
 
-**Good examples**: list of quotes, image galleries.
-**Bad examples**: list of features, top element on the page.
+* **Good examples**: list of quotes, image galleries.
+* **Bad examples**: list of features, top element on the page.
 
 ##### Structure
 
-* `.carousel`: Main container. It defines the content as a `live` element for accessibility.
-* `.carousel__touch`: Touchable section. It allows users to drag and swipe the carousel.
+* `.carousel`: Main container. It defines the content as a `live` element for accessibility
+* `.carousel__touch`: Touchable section. It allows users to drag and swipe the carousel
 * `.carousel__slides`: The slides container
 * `.carousel__slides__slide`: The different slides of the carousel
 * `.carousel__controls`: The controls containers. They're added automatically by the JS library
@@ -3141,12 +3141,12 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
       height: 50px;
       vertical-align: middle; }
     .bitnami-ui .button.cloud-selector:before {
-      background-image: url(/assets/images/cloud-select-sprite.png);
+      background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite.png);
       background-size: cover;
       background-position-x: 0%; }
       @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
         .bitnami-ui .button.cloud-selector:before {
-          background-image: url(/assets/images/cloud-select-sprite@2x.png); } }
+          background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite@2x.png); } }
     .bitnami-ui .button.cloud-selector.cloud-selector-aws:before {
       background-position-y: 0%; }
     .bitnami-ui .button.cloud-selector.cloud-selector-azure:before {
@@ -3850,7 +3850,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
           height: 200%;
           position: absolute;
           transform: rotateZ(4deg);
-          background-image: url("/assets/images/hero-bar-pattern.png");
+          background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hero-bar-pattern.png");
           background-repeat: repeat;
           opacity: .2; }
   .bitnami-ui .avatar {
@@ -4008,7 +4008,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
       display: table;
       clear: both; }
   .bitnami-ui .hexagon {
-    background: url("/assets/images/hexagon.svg") no-repeat center center;
+    background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon.svg") no-repeat center center;
     background-size: contain;
     width: 6.74831em;
     height: 8.24794em;
@@ -4018,7 +4018,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
     justify-content: center;
     color: #ffffff; }
     .bitnami-ui .hexagon-reverse {
-      background-image: url("/assets/images/hexagon-reverse.svg"); }
+      background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon-reverse.svg"); }
   .bitnami-ui .hexagon-inline {
     display: flex;
     align-items: center; }
