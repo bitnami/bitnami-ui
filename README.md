@@ -66,12 +66,16 @@ following location:
 * https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css
 * https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.css
 * https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.js
+* https://d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.js
+
 
 ```html
 <link rel="stylesheet" media="screen"
   href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.css">
 <link rel="stylesheet" media="screen"
   href="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.components.min.css">
+<script src="//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/{VERSION}/bitnami.ui.min.js">
 ```
 
 This library doesn't include the required font families. You will need to add it to your project.
