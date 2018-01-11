@@ -197,6 +197,7 @@ a.type-color-reverse,
 .bg-brand,
 .bg-accent,
 .bg-action,
+.bg-skew,
 [class*="gradient-"][class*="-brand"],
 [class*="gradient-"][class*="-accent"],
 [class*="gradient-"][class*="-action"] {
@@ -209,6 +210,7 @@ a.type-color-reverse,
 
 .bg-brand,
 .bg-dark,
+.bg-skew,
 [class*="gradient-"][class*="-brand"] {
   @include type-color-reverse-anchor('accent-light', 300);
 }

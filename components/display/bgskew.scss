@@ -1,0 +1,102 @@
+/*
+---
+name: Background Skew
+category: Components/Display
+tag: helpers
+---
+
+This section is used in full width sections where the content is placed only on the left.
+
+* **Good examples**: Newsletter subscription form
+* **Bad examples**: Any section that includes content on the right
+
+##### Architecture
+
+* `.bg-skew`: main container of the component
+* `.bg-skew__pattern`: this container will add the cube pattern to the right background
+* `.bg-skew__content`: content of the section. It takes 50% of the available above the phone-land
+breakpoint
+
+```html
+<section class="padding-v-bigger bg-skew type-color-reverse">
+  <div class="bg-skew__pattern">
+    <div class="container">
+      <div class="bg-skew__content">
+        <h2>Interested?</h2>
+        <p>
+          <a href="#">Signup</a> for the Bitnami Newsletter for news, events and more.
+        </p>
+        <form>
+          <div>
+            <label for="username">Username</label>
+            <input name="username" id="username" placeholder="Your username" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input name="password" id="password" placeholder="A secure password" />
+          </div>
+          <p>
+            <a class="button button-accent">Subscribe</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+```
+*/
+
+.bg-skew {
+  position: relative;
+  overflow: hidden;
+  padding: padding('big');
+
+  &__content {
+    max-width: 50%;
+  }
+
+  &:before,
+  &:after,
+  &__pattern:before {
+    content: '';
+    position: absolute;
+    z-index: z-index('bottom');
+  }
+
+  &__pattern:before,
+  &:before {
+    height: 100%;
+    width: 100%;
+    top: 0;
+  }
+
+  &__pattern:before {
+    background: url("#{image-endpoint()}hero-bar-pattern.png") center center/89px 77px repeat;
+    opacity: .2;
+  }
+
+  &:before {
+    background: linear-gradient(-40deg, #1683C6 36%, #1A3663 100%);
+  }
+
+  &:after {
+    background: linear-gradient(20deg, #1683C6 8%, #1A3663 50%);
+    height: 200%;
+    left: -145%;
+    width: 300%;
+    top: -100%;
+    transform: rotateZ(-25deg);
+  }
+
+  @include mappy-query('b-desktop') {
+    &__content {
+      max-width: 100%;
+    }
+  }
+
+  @include mappy-query('a-wide') {
+    &:after {
+      left: -125%;
+    }
+  }
+}
