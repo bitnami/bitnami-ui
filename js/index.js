@@ -4,6 +4,9 @@
  * This is the main javascript file of Bitnami Pattern lib. It contains all
  * the required JS code for interacting with the library. It's written in
  * pure JS.
+ *
+ * ----------------
+ *
  */
 
 // Define global variables
