@@ -1182,15 +1182,27 @@ name: Half Section
 category: Components/Display
 tag: component
 ---
-Display a section that has 2 backgrounds. Each half could have its own background (image, color,
-gradient, etc..)
+Display related information that belongs to different topics. Each half should have its own
+background (image, color, gradient) to highlight this different.
+
+* **Good examples**: Information about two products of the same family. Two features of a product.
+* **Bad examples**: A title and paragraph in a section and a video / diagram on the other one.
+
+If you want to cover the **bad examples**, you can use a single background with two columns.
+
+##### Architecture
+
+* `.halfSection`: Main container of the component
+* `.halfSection__left` and `.halfSection__right`: Containers that determines the position of the
+content
+* `.halfSection__container`: Container with the 50% of size
 
 ```html
-<section class="halfBg">
-  <div class="halfBg__left bg-dark">
-    <div class="halfBg__container">
+<section class="halfSection">
+  <div class="halfSection__left bg-dark">
+    <div class="halfSection__container">
       <div class="container padding-big">
-        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
         <p>At the core of Bitnami is an application automation platform that builds software stacks
         from applications and their dependencies, packaging them for one-click deployment to all
         major platforms, local or cloud. Bitnami then maintains those stacks by continuously
@@ -1199,10 +1211,10 @@ gradient, etc..)
       </div>
     </div>
   </div>
-  <div class="halfBg__right gradient-brand">
-    <div class="halfBg__container">
+  <div class="halfSection__right gradient-brand">
+    <div class="halfSection__container">
       <div class="container padding-big">
-        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
         <p>The Result: An application deployment platform that developers love and ops can trust</p>
       </div>
     </div>
@@ -3141,12 +3153,12 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
       height: 50px;
       vertical-align: middle; }
     .bitnami-ui .button.cloud-selector:before {
-      background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite.png);
+      background-image: url(/assets/images/cloud-select-sprite.png);
       background-size: cover;
       background-position-x: 0%; }
       @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
         .bitnami-ui .button.cloud-selector:before {
-          background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite@2x.png); } }
+          background-image: url(/assets/images/cloud-select-sprite@2x.png); } }
     .bitnami-ui .button.cloud-selector.cloud-selector-aws:before {
       background-position-y: 0%; }
     .bitnami-ui .button.cloud-selector.cloud-selector-azure:before {
@@ -3306,25 +3318,25 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
     border-right: 1px solid #1C2B39; }
     .bitnami-ui .row.row-vdivide [class*="col-"]:last-child {
       border: 0; }
-  .bitnami-ui .halfBg {
+  .bitnami-ui .halfSection {
     display: flex; }
-    .bitnami-ui .halfBg__left {
+    .bitnami-ui .halfSection__left {
       width: 50%;
       display: flex;
       justify-content: flex-end; }
-    .bitnami-ui .halfBg__right {
+    .bitnami-ui .halfSection__right {
       width: 50%; }
-    .bitnami-ui .halfBg__container {
+    .bitnami-ui .halfSection__container {
       max-width: 650px; }
     @media all and (max-width: 47.9375em) {
-      .bitnami-ui .halfBg {
+      .bitnami-ui .halfSection {
         display: block; }
-        .bitnami-ui .halfBg__left {
+        .bitnami-ui .halfSection__left {
           display: block;
           width: 100%; }
-        .bitnami-ui .halfBg__right {
+        .bitnami-ui .halfSection__right {
           width: 100%; }
-        .bitnami-ui .halfBg__container {
+        .bitnami-ui .halfSection__container {
           max-width: 1300px; } }
   .bitnami-ui .screenshots {
     position: relative; }
@@ -3850,7 +3862,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
           height: 200%;
           position: absolute;
           transform: rotateZ(4deg);
-          background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hero-bar-pattern.png");
+          background-image: url("/assets/images/hero-bar-pattern.png");
           background-repeat: repeat;
           opacity: .2; }
   .bitnami-ui .avatar {
@@ -4008,7 +4020,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
       display: table;
       clear: both; }
   .bitnami-ui .hexagon {
-    background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon.svg") no-repeat center center;
+    background: url("/assets/images/hexagon.svg") no-repeat center center;
     background-size: contain;
     width: 6.74831em;
     height: 8.24794em;
@@ -4018,7 +4030,7 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
     justify-content: center;
     color: #ffffff; }
     .bitnami-ui .hexagon-reverse {
-      background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon-reverse.svg"); }
+      background-image: url("/assets/images/hexagon-reverse.svg"); }
   .bitnami-ui .hexagon-inline {
     display: flex;
     align-items: center; }

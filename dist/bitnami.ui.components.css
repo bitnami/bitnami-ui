@@ -1251,12 +1251,12 @@ Display the clouds as buttons.
     height: 50px;
     vertical-align: middle; }
   .button.cloud-selector:before {
-    background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite.png);
+    background-image: url(/assets/images/cloud-select-sprite.png);
     background-size: cover;
     background-position-x: 0%; }
     @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
       .button.cloud-selector:before {
-        background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/cloud-select-sprite@2x.png); } }
+        background-image: url(/assets/images/cloud-select-sprite@2x.png); } }
   .button.cloud-selector.cloud-selector-aws:before {
     background-position-y: 0%; }
   .button.cloud-selector.cloud-selector-azure:before {
@@ -1639,15 +1639,30 @@ name: Half Section
 category: Components/Display
 tag: component
 ---
-Display a section that has 2 backgrounds. Each half could have its own background (image, color,
-gradient, etc..)
+Display related information that belongs to different topics. Each half should have its own
+background (image, color, gradient) to highlight this different.
+
+* **Good examples**: Information about two products of the same family. Two features of a product.
+* **Bad examples**: A title and paragraph in a section and a video / diagram on the other one.
+
+If you want to cover the **bad examples**, you can use a
+[flat background](/category/Foundations/Helpers/#Backgrounds) or
+a [gradient](/category/Foundations/Helpers/#Linear%20Gradients)
+with a [two columns grid](/category/Foundations/Grid/#Basic).
+
+##### Architecture
+
+* `.halfSection`: Main container of the component
+* `.halfSection__left` and `.halfSection__right`: Containers that determines the position of the
+content
+* `.halfSection__container`: Container with the 50% of size
 
 ```html
-<section class="halfBg">
-  <div class="halfBg__left bg-dark">
-    <div class="halfBg__container">
+<section class="halfSection">
+  <div class="halfSection__left bg-dark">
+    <div class="halfSection__container">
       <div class="container padding-big">
-        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
         <p>At the core of Bitnami is an application automation platform that builds software stacks
         from applications and their dependencies, packaging them for one-click deployment to all
         major platforms, local or cloud. Bitnami then maintains those stacks by continuously
@@ -1656,10 +1671,10 @@ gradient, etc..)
       </div>
     </div>
   </div>
-  <div class="halfBg__right gradient-brand">
-    <div class="halfBg__container">
+  <div class="halfSection__right gradient-brand">
+    <div class="halfSection__container">
       <div class="container padding-big">
-        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
+        <h2>Any Application, Any Platform, Secure and Ready to Run</h2>
         <p>The Result: An application deployment platform that developers love and ops can trust</p>
       </div>
     </div>
@@ -1667,25 +1682,25 @@ gradient, etc..)
 </section>
 ```
 */
-.halfBg {
+.halfSection {
   display: flex; }
-  .halfBg__left {
+  .halfSection__left {
     width: 50%;
     display: flex;
     justify-content: flex-end; }
-  .halfBg__right {
+  .halfSection__right {
     width: 50%; }
-  .halfBg__container {
+  .halfSection__container {
     max-width: 650px; }
   @media all and (max-width: 47.9375em) {
-    .halfBg {
+    .halfSection {
       display: block; }
-      .halfBg__left {
+      .halfSection__left {
         display: block;
         width: 100%; }
-      .halfBg__right {
+      .halfSection__right {
         width: 100%; }
-      .halfBg__container {
+      .halfSection__container {
         max-width: 1300px; } }
 
 /*
@@ -3534,7 +3549,7 @@ This components depends on:
         height: 200%;
         position: absolute;
         transform: rotateZ(4deg);
-        background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hero-bar-pattern.png");
+        background-image: url("/assets/images/hero-bar-pattern.png");
         background-repeat: repeat;
         opacity: .2; }
 
@@ -4059,7 +4074,7 @@ the class <code>.hexagon-reverse</code>
 ```
 */
 .hexagon {
-  background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon.svg") no-repeat center center;
+  background: url("/assets/images/hexagon.svg") no-repeat center center;
   background-size: contain;
   width: 6.74831em;
   height: 8.24794em;
@@ -4069,7 +4084,7 @@ the class <code>.hexagon-reverse</code>
   justify-content: center;
   color: #ffffff; }
   .hexagon-reverse {
-    background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/2.2.0/images/hexagon-reverse.svg"); }
+    background-image: url("/assets/images/hexagon-reverse.svg"); }
 
 /*
 ---
