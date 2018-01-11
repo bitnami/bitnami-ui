@@ -10,7 +10,10 @@
     "build": "BITNAMI_UI_ENV=production gulp dist",
     "publish": "BITNAMI_UI_ENV=production gulp publish",
     "docs:build": "gulp docs",
-    "docs:serve": "http-server ./docs/dist",
+    "docs:serve": "http-server ./docs/dist -s",
+    "flow": "flow",
+    "flow:start": "flow status",
+    "flow:stop": "flow stop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -46,6 +49,9 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.63.1",
+    "hammerjs": "^2.0.8",
     "mappy-breakpoints": "^0.2.3",
     "webpack": "^3.10.0",
     "webpack-closure-compiler": "^2.1.6",

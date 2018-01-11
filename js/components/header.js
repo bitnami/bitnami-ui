@@ -50,23 +50,26 @@ const header = () => {
 
   // Initialization
   const hamburguer = b('.header__nav__hamburguer');
-  hamburguer.events.on('click', (e) => toggleHeader(hamburguer, e));
+  if (hamburguer.length > 1) {
+    // Add toggle to the hamburguer
+    hamburguer.events.on('click', (e) => toggleHeader(hamburguer, e));
 
-  // Add event listeners for submenus
-  b('.header__nav__submenu').forEach((el) => {
-    // Select the previous anchor
-    const button = el.tree.prev();
-    const parent = el.tree.parent();
+    // Add event listeners for submenus
+    b('.header__nav__submenu').forEach((el) => {
+      // Select the previous anchor
+      const button = el.tree.prev();
+      const parent = el.tree.parent();
 
-    // Click for mobile
-    if (touchDevice) {
-      button.events.on('click', (e) => toggleSubmenu(el, e));
-    } else {
-      // Hover for normal
-      parent.events.on('mouseenter', (e) => openSubmenu(el, e));
-      parent.events.on('mouseleave', (e) => closeSubmenu(el, e));
-    }
-  });
+      // Click for mobile
+      if (touchDevice) {
+        button.events.on('click', (e) => toggleSubmenu(el, e));
+      } else {
+        // Hover for normal
+        parent.events.on('mouseenter', (e) => openSubmenu(el, e));
+        parent.events.on('mouseleave', (e) => closeSubmenu(el, e));
+      }
+    });
+  }
 }
 
 export default header;

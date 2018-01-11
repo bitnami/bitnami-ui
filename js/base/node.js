@@ -3,6 +3,7 @@ import CSS from './css';
 import Aria from './aria';
 import Events from './events';
 import Tree from './tree';
+import HTML from './html';
 
 /**
  * A really simple wrapper over the native HTML node element. This class offers some helper methods
@@ -21,6 +22,7 @@ export class UINode {
     this.aria = new Aria(node);
     this.events = new Events(node);
     this.tree = new Tree(node);
+    this.html = new HTML(node);
   }
 
   // Collection helpers for single nodes
@@ -31,12 +33,7 @@ export class UINode {
 
 export default (selector) => {
   const elements = document.querySelectorAll(selector);
-
-  if (elements.length === 1) {
-    return new UINode(elements[0]);
-  } else {
-    const uiNodes = [];
-    elements.forEach((el) => uiNodes.push(new UINode(el)));
-    return uiNodes;
-  }
+  return elements.length === 1 ?
+    new UINode(elements[0]) :
+    Array.from(elements).map((el) => new UINode(el));
 }

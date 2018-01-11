@@ -16,6 +16,40 @@ export default class Tree {
   }
 
   /**
+   * Get children nodes.
+   *
+   * @return {UINode[]} Target nodes
+   */
+  children() {
+    // HTMLCollection doesn't implement forEach nor map. We need to convert it to an array.
+    return Array.from(this.node.children).map((el) => new UINode(el));
+  }
+
+  /**
+   * Get the index of the current element in the parent
+   *
+   * @return {number} The index of the element in the parent
+   */
+  indexOnParent(): number {
+    // TODO: Allow parent to receive a selector
+    const parentChildren = this.parent().tree.children().map((el) => el.node);
+    return parentChildren.indexOf(this.node);
+  }
+
+  /**
+   * Find an element in the hierarchy
+   *
+   * @param {string} selector CSS selector to find
+   * @return {UINode|UINode[]} Target node or nodes
+   */
+  find(selector) {
+    const elements = this.node.querySelectorAll(selector);
+    return elements.length === 1 ?
+      new UINode(elements[0]) :
+      Array.from(elements).map((el) => new UINode(el));
+  }
+
+  /**
    * Get the parent node.
    *
    * @return {UINode} Target node

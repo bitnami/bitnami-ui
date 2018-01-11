@@ -2042,9 +2042,10 @@ weight of the typography.
     color: #00437B; }
   .bitnami-ui h3 {
     font-size: 1.49962em;
+    font-weight: 300;
     color: #1C2B39; }
   .bitnami-ui h4 {
-    font-size: 1em;
+    font-size: 1.49962em;
     text-transform: uppercase; }
   .bitnami-ui h5,
   .bitnami-ui h6 {

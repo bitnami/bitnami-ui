@@ -1,0 +1,141 @@
+/*
+---
+name: Carousel
+category: Components/Display
+tag: component
+---
+
+The prupose of the carousel is to add more information without adding visual workload to the current
+page. However, carousels have a very poor [interaction ratio](https://erikrunyon.com/2013/07/carousel-interaction-stats/),
+so they're not good elements to place relevant information nor main call to actions of a page.
+
+* **Good examples**: list of quotes, image galleries.
+* **Bad examples**: list of features, top element on the page.
+
+##### Structure
+
+* `.carousel`: Main container. It defines the content as a `live` element for accessibility
+* `.carousel__touch`: Touchable section. It allows users to drag and swipe the carousel
+* `.carousel__slides`: The slides container
+* `.carousel__slides__slide`: The different slides of the carousel
+* `.carousel__controls`: The controls containers. They're added automatically by the JS library
+
+##### Accesibility
+
+* [Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/carousels/)
+* [ARIA Example -- Carousel](http://accessibility.athena-ict.com/aria/examples/carousel.shtml)
+
+```html
+<div class="carousel" aria-live="polite">
+  <div class="container">
+    <div class="carousel__touch">
+      <ul class="carousel__slides">
+        <li class="carousel__slides__slide">
+          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+            Great day at my first Linux Foundation board meeting, but looking forward to seeing
+            everyone at #awsreinvent. On my way!
+            </br>
+            See you there!
+            <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+          </blockquote>
+        </li>
+        <li class="carousel__slides__slide carousel__slides__slide-top">
+          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
+            Join us at the Microsoft Reactor: Deploying Java apps with Microsoft's Azure Kubernetes Service and Cosmos DB
+            <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+          </blockquote>
+        </li>
+        <li class="carousel__slides__slide">
+          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
+            Join us at the Microsoft Reactor: Deploying Java apps with Microsoft's Azure Kubernetes Service and Cosmos DB
+            <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+          </blockquote>
+        </li>
+      </ul>
+    </div>
+    <ul class="carousel__controls" aria-label="Carousel buttons">
+      <!-- Will be added by the JS library -->
+    </ul>
+  </div>
+</div>
+```
+*/
+
+// I need to setup the size directly because there is an issue with em units in
+// Chrome and Opera. If I use su(), the circle in the center is distorted in some
+// screen sizes.
+$carousel-button-size: 12px;
+
+.carousel {
+  &__slides,
+  &__controls {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__touch {
+    overflow-x: hidden;
+  }
+
+  &__slides {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+
+    &__slide {
+      flex-shrink: 0;
+      width: 100%;
+
+      &-top {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 margin('tiny');
+    }
+
+    &__button {
+      background: color('white');
+      border: 1px solid color('gray');
+      border-radius: $carousel-button-size;
+      cursor: pointer;
+      height: $carousel-button-size;
+      padding: 0;
+      width: $carousel-button-size;
+
+      &__inner {
+        background: color('action');
+        border-radius: $carousel-button-size;
+        height: 100%;
+        transform: scale(0);
+        transition: transform .150s ease-in;
+        width: 100%;
+        will-change: transform;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover {
+        .carousel__controls__button__inner {
+          transform: scale(.8);
+        }
+      }
+
+      &-active {
+        .carousel__controls__button__inner {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

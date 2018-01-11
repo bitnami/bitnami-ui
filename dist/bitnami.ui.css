@@ -1209,10 +1209,11 @@ h2 {
 
 h3 {
   font-size: 1.49962em;
+  font-weight: 300;
   color: #1C2B39; }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.49962em;
   text-transform: uppercase; }
 
 h5,

@@ -11,9 +11,15 @@ window.BITNAMI_UI_VERSION = 'v{VERSION}';
 window.BITNAMI_UI_INIT = false;
 
 // Import components
+import Carousel from './components/carousel';
 import Header from './components/header';
+
+// Export the B selector to window
+import b from './base/node';
+window.b = b;
 
 // Initialize all elements
 document.addEventListener('DOMContentLoaded', () => {
+  Carousel();
   Header();
 });
