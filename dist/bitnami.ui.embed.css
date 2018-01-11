@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI (embed) - v3.0.0-alpha-1
+ * Bitnami UI (embed) - v3.0.0-alpha-3
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -2604,6 +2604,7 @@ weight of the typography.
   .bitnami-ui .bg-brand *:not(.form-reverse-reset) label,
   .bitnami-ui .bg-accent *:not(.form-reverse-reset) label,
   .bitnami-ui .bg-action *:not(.form-reverse-reset) label,
+  .bitnami-ui .bg-skew *:not(.form-reverse-reset) label,
   .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) label,
   .bitnami-ui [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) label,
   .bitnami-ui [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) label,
@@ -2621,6 +2622,9 @@ weight of the typography.
   .bitnami-ui .bg-action *:not(.form-reverse-reset) input,
   .bitnami-ui .bg-action *:not(.form-reverse-reset) select,
   .bitnami-ui .bg-action *:not(.form-reverse-reset) textarea,
+  .bitnami-ui .bg-skew *:not(.form-reverse-reset) input,
+  .bitnami-ui .bg-skew *:not(.form-reverse-reset) select,
+  .bitnami-ui .bg-skew *:not(.form-reverse-reset) textarea,
   .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input,
   .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select,
   .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea,
@@ -2646,6 +2650,9 @@ weight of the typography.
     .bitnami-ui .bg-action *:not(.form-reverse-reset) input:focus,
     .bitnami-ui .bg-action *:not(.form-reverse-reset) select:focus,
     .bitnami-ui .bg-action *:not(.form-reverse-reset) textarea:focus,
+    .bitnami-ui .bg-skew *:not(.form-reverse-reset) input:focus,
+    .bitnami-ui .bg-skew *:not(.form-reverse-reset) select:focus,
+    .bitnami-ui .bg-skew *:not(.form-reverse-reset) textarea:focus,
     .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input:focus,
     .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select:focus,
     .bitnami-ui [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea:focus,
@@ -3264,16 +3271,19 @@ weight of the typography.
   .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     text-decoration: none; }
   .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+  .bitnami-ui .bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button),
   .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
     color: #9bcf67; }
     .bitnami-ui .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
     .bitnami-ui .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+    .bitnami-ui .bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
     .bitnami-ui [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
       color: #8fc954; }
   .bitnami-ui .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),

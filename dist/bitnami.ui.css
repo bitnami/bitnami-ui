@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v3.0.0-alpha-1
+ * Bitnami UI - v3.0.0-alpha-3
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -2422,6 +2422,7 @@ So, you can disable it using the `form-reverse-reset` class.
 .bg-brand *:not(.form-reverse-reset) label,
 .bg-accent *:not(.form-reverse-reset) label,
 .bg-action *:not(.form-reverse-reset) label,
+.bg-skew *:not(.form-reverse-reset) label,
 [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) label,
 [class*="gradient-"][class*="-accent"] *:not(.form-reverse-reset) label,
 [class*="gradient-"][class*="-action"] *:not(.form-reverse-reset) label,
@@ -2440,6 +2441,9 @@ So, you can disable it using the `form-reverse-reset` class.
 .bg-action *:not(.form-reverse-reset) input,
 .bg-action *:not(.form-reverse-reset) select,
 .bg-action *:not(.form-reverse-reset) textarea,
+.bg-skew *:not(.form-reverse-reset) input,
+.bg-skew *:not(.form-reverse-reset) select,
+.bg-skew *:not(.form-reverse-reset) textarea,
 [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input,
 [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select,
 [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea,
@@ -2465,6 +2469,9 @@ So, you can disable it using the `form-reverse-reset` class.
   .bg-action *:not(.form-reverse-reset) input:focus,
   .bg-action *:not(.form-reverse-reset) select:focus,
   .bg-action *:not(.form-reverse-reset) textarea:focus,
+  .bg-skew *:not(.form-reverse-reset) input:focus,
+  .bg-skew *:not(.form-reverse-reset) select:focus,
+  .bg-skew *:not(.form-reverse-reset) textarea:focus,
   [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) input:focus,
   [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) select:focus,
   [class*="gradient-"][class*="-brand"] *:not(.form-reverse-reset) textarea:focus,
@@ -3920,6 +3927,7 @@ a.type-color-reverse:not(.button),
 .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
 .bg-accent:not(.type-color-reverse-anchor-reset) a:not(.button),
 .bg-action:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button),
 [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button),
 [class*="gradient-"][class*="-accent"]:not(.type-color-reverse-anchor-reset) a:not(.button),
 [class*="gradient-"][class*="-action"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
@@ -3927,10 +3935,12 @@ a.type-color-reverse:not(.button),
 
 .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button),
 .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button),
+.bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button),
 [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button) {
   color: #9bcf67; }
   .bg-brand:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
   .bg-dark:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
+  .bg-skew:not(.type-color-reverse-anchor-reset) a:not(.button):hover,
   [class*="gradient-"][class*="-brand"]:not(.type-color-reverse-anchor-reset) a:not(.button):hover {
     color: #8fc954; }
 
