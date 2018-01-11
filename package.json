@@ -14,6 +14,8 @@
     "flow": "flow",
     "flow:start": "flow status",
     "flow:stop": "flow stop",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
