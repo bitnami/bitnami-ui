@@ -70,3 +70,48 @@ pre code .tag {
 .Menu .Menu__Items a {
   display: inline-block;
 }
+
+/* Color boxes! */
+.colorBoxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colorBoxes .colorBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  width: 33%;
+}
+
+.colorBoxes .colorBox-50 {
+  width: 50%;
+}
+
+.colorBox__title {
+  align-self: flex-start;
+}
+
+.colorBox__values {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.colorBox__values__value {
+  font-size: 16px;
+}
+
+.colorBox__values__value span {
+  display: block;
+  font-size: 12px;
+  opacity: .8;
+  text-transform: uppercase;
+}
+
+.colorBox-reverse .colorBox__title,
+.colorBox-reverse .colorBox__values {
+  color: white;
+}

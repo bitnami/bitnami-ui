@@ -81,6 +81,206 @@ tag: variables
 Base colors of the applications. These colors are defined in the Brand Book Guide of Bitnami.
 You can see the colors in [Project colors](/color.html).
 
+<div class="container">
+  <div class="colorBoxes">
+    <div class="colorBox" style="background-color: #00437B;">
+      <div class="colorBox__title">brand</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#00437B</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #1C2B39;">
+      <div class="colorBox__title">primary</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#1C2B39</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #1598CB;">
+      <div class="colorBox__title">secondary</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#1598CB</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #008145;">
+      <div class="colorBox__title">accent</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#008145</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #82C341;">
+      <div class="colorBox__title">accent-light</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#82C341</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #f1f1f1;">
+      <div class="colorBox__title">light</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#f1f1f1</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #ffffff;">
+      <div class="colorBox__title">white</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#ffffff</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #1C2B39;">
+      <div class="colorBox__title">dark</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#1C2B39</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #1C2B39;">
+      <div class="colorBox__title">text</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#1C2B39</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #F58220;">
+      <div class="colorBox__title">action</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#F58220</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #FDBA12;">
+      <div class="colorBox__title">action-light</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#FDBA12</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #5F6369;">
+      <div class="colorBox__title">gray</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#5F6369</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #C7C9C8;">
+      <div class="colorBox__title">gray-light</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#C7C9C8</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #fff;">
+      <div class="colorBox__title">base</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#ffffff</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #fff23f;">
+      <div class="colorBox__title">highlight</div>
+      <div class="colorBox__values">
+        <table class="margin-reset">
+          <tbody>
+            <tr>
+              <td>Hex</td>
+              <td>#fff23</td>
+            </tr>
+          </tbody>
+        </table class="margin-reset">
+      </div>
+    </div>
+  </div>
+</div>
+
 ```scss
 $colors: (
   'brand': #00437B,

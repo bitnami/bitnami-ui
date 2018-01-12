@@ -4,8 +4,270 @@ name: Colors
 category: Foundations/Variables
 tag: variables
 ---
-Base colors of the applications. These colors are defined in the Brand Book Guide of Bitnami.
-You can see the colors in [Project colors](/color.html).
+Base colors of the Bitnami styleguide.
+
+<div class="container">
+
+  <h5>Base</h5>
+  <div class="colorBoxes">
+    <div class="colorBox colorBox-reverse" style="background-color: #00437B;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Brand</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#00437B</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(0, 67, 123)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(207, 100%, 24%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-reverse" style="background-color: #1C2B39;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Primary</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#1C2B39</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-reverse" style="background-color: #1598CB;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Secondary</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#1598CB</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(21, 152, 203)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(197, 81%, 44%)</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Accent</h5>
+  <div class="colorBoxes">
+    <div class="colorBox colorBox-reverse" style="background-color: #008145;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Accent</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#008145</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(0, 129, 69)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(152, 100%, 25%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #82C341;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Light accent</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#82C341</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(130, 195, 65)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(90, 52%, 51%)</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Action</h5>
+  <div class="colorBoxes">
+    <div class="colorBox" style="background-color: #F58220;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Action</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#F58220</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(245, 130, 32)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(28, 91%, 54%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #FDBA12;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Light action</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#FDBA12</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(253, 186, 18)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(43, 98%, 53%)</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Other backgrounds and text colors</h5>
+  <div class="colorBoxes">
+    <div class="colorBox" style="background-color: #fff;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Base</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#ffffff</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #ffffff;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>White</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#ffffff</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-reverse" style="background-color: #1C2B39;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Text</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#1C2B39</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #f1f1f1;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Light</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#f1f1f1</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(241, 241, 241)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(0, 0%, 95%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-reverse" style="background-color: #1C2B39;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Dark</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#1C2B39</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-reverse" style="background-color: #5F6369;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Gray</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#5F6369</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(95, 99, 105)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(216, 5%, 39%)</b>
+        </div>
+      </div>
+    </div>
+    <div class="colorBox" style="background-color: #C7C9C8;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Light gray</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#C7C9C8</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(199, 201, 200)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(150, 2%, 78%)</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h5>Additional colors</h5>
+  <div class="colorBoxes">
+    <div class="colorBox" style="background-color: #fff23f;">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Highlight</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex</span> <b>#fff23</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>RGB</span> <b>rgb(255, 242, 63)</b>
+        </div>
+        <div class="colorBox__values__value">
+          <span>HSL</span> <b>hsl(56, 100%, 62%)</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ```scss
 $colors: (
@@ -25,12 +287,6 @@ $colors: (
   'highlight': #fff23f
 );
 
-$gradients: (
-  'brand': #00437B #1598CB,
-  'accent': #008145 #82C341,
-  'action': #F58220 #FDBA12,
-  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
-);
 // Interval to get tints and shades
 $color-interval: 10%;
 ```
@@ -63,3 +319,82 @@ $gradients: (
 
 // Interval to get tints and shades
 $color-interval: 10%;
+
+/*
+---
+name: Gradients
+category: Foundations/Variables
+tag: variables
+---
+Base gradients of the Bitnami styleguide.
+
+<div class="container margin-b-bigger">
+  <h5>Base</h5>
+  <div class="colorBoxes">
+    <div class="colorBox colorBox-50 colorBox-reverse gradient-45-brand">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Brand</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div>
+          <div class="colorBox__values__value">
+            <span>Hex (from)</span> <b>#00437B</b> (Brand)
+          </div>
+        </div>
+        <div class="colorBox__values__value">
+          <span>Hex (to)</span> <b>#1598CB</b> (Secondary)
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-50 colorBox-reverse gradient-45-accent">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Accent</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex (from)</span> <b>#008145</b> (Accent)
+        </div>
+        <div class="colorBox__values__value">
+          <span>Hex (to)</span> <b>#82C341</b> (Light accent)
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-50 gradient-45-action">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Action</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex (from)</span> <b>#F58220</b> (Action)
+        </div>
+        <div class="colorBox__values__value">
+          <span>Hex (to)</span> <b>#FDBA12</b> (Light action)
+        </div>
+      </div>
+    </div>
+    <div class="colorBox colorBox-50 gradient-45-light">
+      <div class="colorBox__title padding-h-normal">
+        <h5>Light</h5>
+      </div>
+      <div class="colorBox__values padding-h-normal padding-v-small">
+        <div class="colorBox__values__value">
+          <span>Hex (from)</span> <b>#f1f1f1</b> (Light)
+        </div>
+        <div class="colorBox__values__value">
+          <span>Hex (to)</span> <b>#f7f7f7</b> (50 Light)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+```scss
+$gradients: (
+  'brand': #00437B #1598CB,
+  'accent': #008145 #82C341,
+  'action': #F58220 #FDBA12,
+  'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
+);
+```
+*/
+
