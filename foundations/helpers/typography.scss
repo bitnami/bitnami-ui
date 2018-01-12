@@ -249,8 +249,11 @@ name: Typography weight
 category: Foundations/Helpers
 tag: helpers
 ---
-By default, the weight of the text is 300. For certain situations, we may need to increase the
+By default, the weight of the text is regular (400). For certain situations, we may need to increase the
 weight of the typography.
+
+**NOTE**: Interstate is a bit special font-family. Light is represented by 400 and regular by 500.
+That's the reason of the values on these helpers.
 
 ```html
 <p>
@@ -262,11 +265,11 @@ weight of the typography.
 ```
 */
 .type-light {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .type-regular {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .type-bold {

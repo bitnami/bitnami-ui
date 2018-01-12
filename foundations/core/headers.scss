@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+  font-weight: normal;
   font-family: $type-headings;
   margin: margin('normal') 0 margin('small');
 
@@ -46,7 +46,6 @@ h1 {
   // Interstate Light 42px
   // 30px margin-bottom
   font-size: type-scale('bigger'); // Computed 40.47px
-  font-weight: 300;
   color: color-level('text', 700);
 }
 
@@ -54,7 +53,6 @@ h2 {
   // Interstate Light 30px
   // 25px margin-bottom
   font-size: type-scale('big'); // Computed 27px
-  font-weight: 300;
   color: color('brand');
 }
 
@@ -62,7 +60,6 @@ h3 {
   // Interstate Light 24px
   // 20px margin-bottom
   font-size: type-scale('big'); // Computed 27px
-  font-weight: 300;
   color: color('text');
 }
 
@@ -70,6 +67,7 @@ h4 {
   // Interstate Regular 24px
   // 20px margin-bottom
   font-size: type-scale('big'); // Computed 27px
+  font-weight: 500;
   text-transform: uppercase;
 }
 
