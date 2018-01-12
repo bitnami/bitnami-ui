@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Bitnami UI Components - v3.0.0-alpha-4
+ * Bitnami UI Components - v3.0.0-alpha-5
  *
  * This is the main file of Bitnami UI Components library. It constains all the styles for
  * the components of Bitnami. Every component is a complex structure with specific styles.
@@ -21,22 +21,42 @@
  */
 /*
 ---
-name: Base
+name: Base sizing units
 category: Foundations/Variables
 tag: variables
 ---
-Basic values of the applications
+
+These values defines the spacing and font size of all the framework. **Every property or mixin that
+involves sizes is affected by these values**. That's the reason why most of the elements of
+the foundations uses relative units like `em` and `rem`.
+
+These base sizing units are:
+
+* `base-type-zoom`: represents the base zoom of the page. This value is added on the `html` selector
+and it allow us to grow the site proportionally. For most of the browsers, 100% font-size is equal
+to 16px. Browsers that have a different value for 100% are not an issue because the site grows
+correctly. This framework uses this property to decrease or increase the spacing of the site
+based on media queries.
+* `base-type-size`: defines the base font size of the body text. The current value refers to
+the `base-type-zoom`: 100% (16px) -> 1em -> 16px body text. We use a relative units to be able to
+change the base font size using `base-type-zoom`. It also allow browsers to define their own
+font size based on user preferences.
+* `scale`: this is the ratio of decrease or increase of the spacing unit. Combining the
+`base-type-size` and the `scale`, the framework defines proportional sizes for spacing. You
+can check the current proportion on [TypeScale](http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source+Sans+Pro&font-family=%27Source%20Sans%20Pro%27,%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).
+* `size-unit`: this is the base size unit for font sizes and spacing. We use this unit for spacing
+and font-sizes.
 
 ```scss
 // Sizing values
 $base-type-zoom: 100%;
 $base-type-size: 1em; // 16px
-// Fourth
-$scale: 1.333;
+// Major Third
+$scale: 1.250;
 
-// Basic size unity
-$size-unity: $base-type-size * $scale;
-$su: $size-unity;
+// Basic size unit
+$size-unit: $base-type-size * $scale;
+$su: $size-unit;
 ```
 */
 /*
@@ -90,13 +110,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#00437B</b>
+          <span>Hex</span> #00437B
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(0, 67, 123)</b>
+          <span>RGB</span> rgb(0, 67, 123)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(207, 100%, 24%)</b>
+          <span>HSL</span> hsl(207, 100%, 24%)
         </div>
       </div>
     </div>
@@ -106,13 +126,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -122,13 +142,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1598CB</b>
+          <span>Hex</span> #1598CB
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(21, 152, 203)</b>
+          <span>RGB</span> rgb(21, 152, 203)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(197, 81%, 44%)</b>
+          <span>HSL</span> hsl(197, 81%, 44%)
         </div>
       </div>
     </div>
@@ -142,13 +162,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#008145</b>
+          <span>Hex</span> #008145
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(0, 129, 69)</b>
+          <span>RGB</span> rgb(0, 129, 69)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(152, 100%, 25%)</b>
+          <span>HSL</span> hsl(152, 100%, 25%)
         </div>
       </div>
     </div>
@@ -158,13 +178,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#82C341</b>
+          <span>Hex</span> #82C341
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(130, 195, 65)</b>
+          <span>RGB</span> rgb(130, 195, 65)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(90, 52%, 51%)</b>
+          <span>HSL</span> hsl(90, 52%, 51%)
         </div>
       </div>
     </div>
@@ -178,13 +198,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#F58220</b>
+          <span>Hex</span> #F58220
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(245, 130, 32)</b>
+          <span>RGB</span> rgb(245, 130, 32)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(28, 91%, 54%)</b>
+          <span>HSL</span> hsl(28, 91%, 54%)
         </div>
       </div>
     </div>
@@ -194,13 +214,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#FDBA12</b>
+          <span>Hex</span> #FDBA12
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(253, 186, 18)</b>
+          <span>RGB</span> rgb(253, 186, 18)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(43, 98%, 53%)</b>
+          <span>HSL</span> hsl(43, 98%, 53%)
         </div>
       </div>
     </div>
@@ -214,13 +234,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#ffffff</b>
+          <span>Hex</span> #ffffff
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+          <span>RGB</span> rgb(255, 255, 255)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+          <span>HSL</span> hsl(0, 0%, 100%)
         </div>
       </div>
     </div>
@@ -230,13 +250,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#ffffff</b>
+          <span>Hex</span> #ffffff
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+          <span>RGB</span> rgb(255, 255, 255)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+          <span>HSL</span> hsl(0, 0%, 100%)
         </div>
       </div>
     </div>
@@ -246,13 +266,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -262,13 +282,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#f1f1f1</b>
+          <span>Hex</span> #f1f1f1
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(241, 241, 241)</b>
+          <span>RGB</span> rgb(241, 241, 241)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 95%)</b>
+          <span>HSL</span> hsl(0, 0%, 95%)
         </div>
       </div>
     </div>
@@ -278,13 +298,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -294,13 +314,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#5F6369</b>
+          <span>Hex</span> #5F6369
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(95, 99, 105)</b>
+          <span>RGB</span> rgb(95, 99, 105)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(216, 5%, 39%)</b>
+          <span>HSL</span> hsl(216, 5%, 39%)
         </div>
       </div>
     </div>
@@ -310,13 +330,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#C7C9C8</b>
+          <span>Hex</span> #C7C9C8
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(199, 201, 200)</b>
+          <span>RGB</span> rgb(199, 201, 200)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(150, 2%, 78%)</b>
+          <span>HSL</span> hsl(150, 2%, 78%)
         </div>
       </div>
     </div>
@@ -330,13 +350,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#fff23</b>
+          <span>Hex</span> #fff23
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 242, 63)</b>
+          <span>RGB</span> rgb(255, 242, 63)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(56, 100%, 62%)</b>
+          <span>HSL</span> hsl(56, 100%, 62%)
         </div>
       </div>
     </div>
@@ -383,11 +403,11 @@ Base gradients of the Bitnami styleguide.
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div>
           <div class="colorBox__values__value">
-            <span>Hex (from)</span> <b>#00437B</b> (Brand)
+            <span>Hex (from)</span> #00437B (Brand)
           </div>
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#1598CB</b> (Secondary)
+          <span>Hex (to)</span> #1598CB (Secondary)
         </div>
       </div>
     </div>
@@ -397,10 +417,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#008145</b> (Accent)
+          <span>Hex (from)</span> #008145 (Accent)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#82C341</b> (Light accent)
+          <span>Hex (to)</span> #82C341 (Light accent)
         </div>
       </div>
     </div>
@@ -410,10 +430,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#F58220</b> (Action)
+          <span>Hex (from)</span> #F58220 (Action)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#FDBA12</b> (Light action)
+          <span>Hex (to)</span> #FDBA12 (Light action)
         </div>
       </div>
     </div>
@@ -423,10 +443,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#f1f1f1</b> (Light)
+          <span>Hex (from)</span> #f1f1f1 (Light)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#f7f7f7</b> (50 Light)
+          <span>Hex (to)</span> #f7f7f7 (50 Light)
         </div>
       </div>
     </div>
@@ -552,11 +572,11 @@ $type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monos
 
 // Fix the line-heights
 $line-heights: (
-  -1: $size-unity,
-  0: $size-unity,
-  1: $size-unity * 1.5,
-  2: $size-unity * 2,
-  3: $size-unity * 3,
+  -1: $size-unit,
+  0: $size-unit,
+  1: $size-unit * 1.5,
+  2: $size-unit * 2,
+  3: $size-unit * 3,
 );
 ```
 */
@@ -1575,21 +1595,21 @@ Display the clouds as buttons.
 .button.cloud-selector {
   height: auto;
   width: 100%;
-  padding: 0.74981em; }
+  padding: 0.625em; }
   .button.cloud-selector:before {
     content: '';
     display: inline-block;
-    margin-right: 0.37491em;
+    margin-right: 0.3125em;
     width: 50px;
     height: 50px;
     vertical-align: middle; }
   .button.cloud-selector:before {
-    background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/cloud-select-sprite.png);
+    background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/cloud-select-sprite.png);
     background-size: cover;
     background-position-x: 0%; }
     @media (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 124.8dpi), (min-resolution: 1.3dppx) {
       .button.cloud-selector:before {
-        background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/cloud-select-sprite@2x.png); } }
+        background-image: url(//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/cloud-select-sprite@2x.png); } }
   .button.cloud-selector.cloud-selector-aws:before {
     background-position-y: 0%; }
   .button.cloud-selector.cloud-selector-azure:before {
@@ -1730,7 +1750,7 @@ Creating non-existent deployments kube-system.tiller-deploy
 .Terminal {
   background-color: #111a22;
   border-radius: 5px;
-  padding: 0.74981em 1.49962em; }
+  padding: 0.625em 1.25em; }
   .Terminal__Top {
     height: 35px;
     display: flex;
@@ -1743,7 +1763,7 @@ Creating non-existent deployments kube-system.tiller-deploy
       border-radius: 15px;
       display: inline-block;
       height: .75em;
-      margin-right: 0.37491em;
+      margin-right: 0.3125em;
       width: .75em; }
       .Terminal__Top__Button--red {
         background: #dd751d; }
@@ -1752,7 +1772,7 @@ Creating non-existent deployments kube-system.tiller-deploy
       .Terminal__Top__Button--green {
         background: #008145; }
   .Terminal__Tab {
-    padding-bottom: 0.74981em; }
+    padding-bottom: 0.625em; }
   .Terminal__Code {
     margin: 0;
     padding: 0;
@@ -1762,7 +1782,7 @@ Creating non-existent deployments kube-system.tiller-deploy
       .Terminal__Code code.Terminal__Code__Command {
         color: #f1f1f1;
         display: inline-block;
-        margin-top: 1.49962em; }
+        margin-top: 1.25em; }
         .Terminal__Code code.Terminal__Code__Command:first-child {
           margin-top: 0; }
         .Terminal__Code code.Terminal__Code__Command:before {
@@ -1792,8 +1812,8 @@ tag: component
 .banner {
   background-color: #f7f7f7;
   border-top: 2px solid #00437B;
-  margin: 1.49962em auto;
-  padding: 1.49962em 0; }
+  margin: 1.25em auto;
+  padding: 1.25em 0; }
 
 /*
 ---
@@ -1845,7 +1865,7 @@ breakpoint
 .bg-skew {
   position: relative;
   overflow: hidden;
-  padding: 1.49962em; }
+  padding: 1.25em; }
   .bg-skew__content {
     max-width: 50%; }
   .bg-skew:before, .bg-skew:after, .bg-skew__pattern:before {
@@ -1857,7 +1877,7 @@ breakpoint
     width: 100%;
     top: 0; }
   .bg-skew__pattern:before {
-    background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/hero-bar-pattern.png") center center/89px 77px repeat;
+    background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/hero-bar-pattern.png") center center/89px 77px repeat;
     opacity: .2; }
   .bg-skew:before {
     background: linear-gradient(-40deg, #1683C6 36%, #1A3663 100%); }
@@ -1960,7 +1980,7 @@ so they're not good elements to place relevant information nor main call to acti
   display: flex;
   justify-content: center; }
   .carousel__controls li {
-    margin: 0 0.18745em; }
+    margin: 0 0.15625em; }
   .carousel__controls__button {
     background: #ffffff;
     border: 1px solid #5F6369;
@@ -1999,7 +2019,7 @@ helpers in action.
   <div class="row collapse-b-tablet row-vdivide">
     <div class="col-4">
       <div class="padding-r-bigger padding-reset-b-desktop">
-        <h2>EVENT</h2>
+        <h4>EVENT</h4>
         <h3>Join us at Kubecon 2017</h3>
         <p>
           Join us at the Bitnami booth for a demo of any of our Kubernetes projects,
@@ -2012,7 +2032,7 @@ helpers in action.
     </div>
     <div class="col-4">
       <div class="padding-h-bigger padding-reset-b-desktop">
-        <h2>BLOG</h2>
+        <h4>BLOG</h4>
         <h3>Exploring The Security Of Helm</h3>
         <p>
           Bitnami has been a part of the Helm community for a long while, but I
@@ -2026,7 +2046,7 @@ helpers in action.
     </div>
     <div class="col-4">
       <div class="padding-l-bigger padding-reset-b-desktop">
-        <h2>NEWS</h2>
+        <h4>NEWS</h4>
         <h3>Software vendors line up Kubernetes tasting menu for devops</h3>
         <p>
           With the advent of KubCon and CloudNativeCon in Austin, Texas, on Wednesday,
@@ -2259,7 +2279,7 @@ Display an ordered lists with a bigger numbers. Also, the numbers have a circle 
   padding-left: 0; }
   .steps li {
     display: table;
-    padding: 0.18745em; }
+    padding: 0.15625em; }
     .steps li:before {
       border: 1px solid #00437B;
       color: #00437B;
@@ -2267,10 +2287,10 @@ Display an ordered lists with a bigger numbers. Also, the numbers have a circle 
       text-align: center;
       content: counter(list-counter);
       counter-increment: list-counter;
-      width: 2.24944em;
-      height: 2.24944em;
-      line-height: 2.24944em;
-      margin-right: 0.37491em;
+      width: 1.875em;
+      height: 1.875em;
+      line-height: 1.875em;
+      margin-right: 0.3125em;
       float: left; }
     .steps li:after {
       content: '';
@@ -2297,10 +2317,10 @@ Small elements to display as pills or tags.
 .tag {
   background-color: #4d7ba3;
   color: #ffffff;
-  padding: 0.37491em;
+  padding: 0.3125em;
   border-radius: 3px; }
   .tag-small {
-    font-size: 0.66683em; }
+    font-size: 0.8em; }
 
 /*
 ---
@@ -2414,9 +2434,9 @@ Display a timeline with different events
     font-weight: normal;
     color: #1C2B39;
     font-size: 1em;
-    height: 2.99925em;
-    padding: 0 0.74981em;
-    margin: 0 0 0.74981em; }
+    height: 2.5em;
+    padding: 0 0.625em;
+    margin: 0 0 0.625em; }
   .timeline__event__line {
     position: relative;
     height: 1.5em; }
@@ -2435,7 +2455,7 @@ Display a timeline with different events
       bottom: 0;
       left: 0; }
   .timeline__event__date {
-    margin: 0.37491em 0 0;
+    margin: 0.3125em 0 0;
     font-weight: bold; }
   .timeline__event:first-child .timeline__event__line:after {
     left: 50%; }
@@ -2493,7 +2513,7 @@ These components help you to build more complex input elements. Now, you can cre
     border-right: 0; }
   .input-group button,
   .input-group .button {
-    height: 2.99925em;
+    height: 2.5em;
     background: linear-gradient(45deg, #f1f1f1 0%, #f7f7f7 100%);
     box-shadow: none; }
     .input-group button.button-primary,
@@ -2574,14 +2594,14 @@ tag: component
   .dropdown__list {
     background-color: #fff;
     display: none;
-    padding: 0.37491em 0.74981em;
+    padding: 0.3125em 0.625em;
     position: absolute;
     white-space: nowrap;
     z-index: 99; }
     .dropdown__list li {
-      padding: 0.37491em 0; }
+      padding: 0.3125em 0; }
       .dropdown__list li.dropdown__list__separator {
-        margin: 0.37491em 0;
+        margin: 0.3125em 0;
         padding: 0;
         border-bottom: 1px solid #f1f1f1; }
   .dropdown-open .dropdown__list {
@@ -2806,7 +2826,7 @@ You only need to add the `search-overlay` class. In this example the `results` l
   position: relative; }
   .search input {
     margin-top: 0;
-    padding-left: 2.24944em; }
+    padding-left: 1.875em; }
   .search__input {
     position: relative; }
     .search__input:after {
@@ -2816,30 +2836,30 @@ You only need to add the `search-overlay` class. In this example the `results` l
       width: 1em;
       height: 1em;
       position: absolute;
-      left: 0.74981em;
+      left: 0.625em;
       top: .9em; }
   .search__results {
-    margin-top: 0.74981em; }
+    margin-top: 0.625em; }
     .search__results__result {
-      padding-bottom: 1.49962em;
-      margin-bottom: 0.74981em;
+      padding-bottom: 1.25em;
+      margin-bottom: 0.625em;
       border-bottom: 1px solid #f1f1f1; }
     .search__results__caption {
-      font-size: 0.66683em;
+      font-size: 0.8em;
       color: #606b74;
-      margin: 0.37491em 0 2.24944em; }
+      margin: 0.3125em 0 1.875em; }
     .search__results em {
       background-color: #fff23f;
-      padding: 0 0.18745em; }
+      padding: 0 0.15625em; }
   .search-overlay .search__results {
     background-color: #ffffff;
     display: none;
     height: 500px;
     overflow-y: scroll;
-    padding: 1.49962em;
+    padding: 1.25em;
     position: absolute;
     right: 0;
-    top: 4.49887em;
+    top: 3.75em;
     width: 100%;
     z-index: 10; }
 
@@ -3059,7 +3079,7 @@ This layout includes several components:
 ```
 */
 .clouds header {
-  min-height: 23.994em; }
+  min-height: 20em; }
 
 .clouds__companies {
   text-align: center; }
@@ -3067,18 +3087,18 @@ This layout includes several components:
     vertical-align: middle;
     display: inline-block; }
   .clouds__companies img {
-    max-height: 7.49812em;
+    max-height: 6.25em;
     max-width: 100%; }
   .clouds__companies_plus {
-    font-size: 5.05744em;
+    font-size: 2.44141em;
     color: #f1f1f1;
-    padding: 0 0.49988em; }
+    padding: 0 0.41667em; }
 
 .clouds__started {
-  margin-top: 4.49887em; }
+  margin-top: 3.75em; }
 
 .clouds__stacks {
-  padding: 4.49887em 0;
+  padding: 3.75em 0;
   background-color: #00437B; }
 
 .clouds iframe {
@@ -3128,7 +3148,7 @@ tag: component
 ```
 */
 .breadcrumb {
-  margin: 0.74981em 0; }
+  margin: 0.625em 0; }
   .breadcrumb ol {
     list-style: none;
     padding: 0;
@@ -3137,9 +3157,9 @@ tag: component
       display: inline;
       padding: 0; }
       .breadcrumb ol li + li:before {
-        padding: 0 0.74981em;
+        padding: 0 0.625em;
         color: #1C2B39;
-        content: '›'; }
+        content: '› '; }
 
 /*
 ---
@@ -3266,13 +3286,13 @@ Copyright text and social links. This components depends on the
   height: 2em; }
 
 .footer ul h3 {
-  font-size: 0.89977em;
+  font-size: 1em;
   color: #1598CB; }
   .footer ul h3 a:hover {
     color: #1389b7; }
 
 .footer ul li a {
-  font-size: 0.74981em;
+  font-size: 0.875em;
   color: #ffffff; }
   .footer ul li a:hover {
     color: #d9d9d9; }
@@ -3284,7 +3304,7 @@ Copyright text and social links. This components depends on the
     text-align: center;
     border-bottom: 1px solid #ffffff; }
     .footer .footer__copyright a {
-      font-size: 1.49962em; } }
+      font-size: 1em; } }
 
 /*
 ---
@@ -3367,17 +3387,17 @@ Accesibility best practices:
 .header {
   align-items: center;
   display: flex;
-  padding: 1.49962em 0; }
+  padding: 1.25em 0; }
   .header__logo img {
     display: block;
-    height: 2.24944em; }
+    height: 2.1875em; }
   .header__nav {
     align-items: center;
     display: flex;
     justify-content: space-between;
     flex: 1;
-    margin-top: 0.37491em;
-    padding-left: 2.24944em; }
+    margin-top: 0.3125em;
+    padding-left: 1.875em; }
     .header__nav ul {
       margin: 0;
       padding: 0; }
@@ -3386,8 +3406,7 @@ Accesibility best practices:
       .header__nav ul a {
         color: #ffffff;
         display: inline-block;
-        padding: 0.74981em 0.74981em;
-        font-size: 0.89977em; }
+        padding: 0.625em 0.625em; }
     .header__nav__hamburguer {
       border: none;
       background: transparent;
@@ -3427,8 +3446,8 @@ Accesibility best practices:
         left: 50%;
         position: absolute;
         transform: translateX(-50%) translateY(-40%) rotate(45deg);
-        height: 0.74981em;
-        width: 0.74981em;
+        height: 0.625em;
+        width: 0.625em;
         z-index: -1; }
       .header__nav__submenu li {
         display: block;
@@ -3437,7 +3456,7 @@ Accesibility best practices:
         .header__nav__submenu li a {
           color: #1C2B39;
           display: block;
-          padding: 0.74981em;
+          padding: 0.625em;
           white-space: nowrap; }
           .header__nav__submenu li a:hover {
             background: linear-gradient(45deg, #F58220 0%, #FDBA12 100%);
@@ -3450,7 +3469,7 @@ Accesibility best practices:
       width: 100%; }
       .header.header-open {
         background: linear-gradient(45deg, #F58220 0%, #FDBA12 100%);
-        padding: 1.49962em;
+        padding: 1.25em;
         position: absolute; }
         .header.header-open .header__nav__menu, .header.header-open .header__nav__user {
           display: block; }
@@ -3475,14 +3494,14 @@ Accesibility best practices:
           animation: fade-in .150s ease-in;
           display: none; }
         .header__nav > ul {
-          margin-top: 1.49962em; }
+          margin-top: 1.25em; }
         .header__nav > ul > li {
           display: block;
-          font-size: 1.49962em; }
+          font-size: 1.25em; }
           .header__nav > ul > li a {
-            padding: 0.37491em 0; }
+            padding: 0.3125em 0; }
         .header__nav__user {
-          margin-top: 2.24944em; }
+          margin-top: 1.875em; }
         .header__nav__submenu {
           animation: fade-in .150s ease-in;
           background: none;
@@ -3492,10 +3511,10 @@ Accesibility best practices:
           .header__nav__submenu:before {
             display: none; }
           .header__nav__submenu li {
-            padding-left: 1.49962em;
+            padding-left: 1.25em;
             text-align: left; }
             .header__nav__submenu li a {
-              font-size: 0.66683em;
+              font-size: 0.8em;
               color: #ffffff; }
               .header__nav__submenu li a:hover {
                 background: none; } }
@@ -3533,7 +3552,7 @@ tag: component
   position: relative;
   overflow: hidden; }
   .hero__content {
-    margin-left: 2.24944em;
+    margin-left: 1.875em;
     max-width: 600px; }
   .hero__title, .hero__subtitle {
     margin: 0; }
@@ -3584,13 +3603,13 @@ See http://www.a11ymatters.com/pattern/pagination/.
 ```
 */
 .pagination {
-  margin: 1.49962em 0; }
+  margin: 1.25em 0; }
   .pagination ul {
     text-align: center; }
     .pagination ul li {
       display: inline-block; }
       .pagination ul li a {
-        padding: 0.37491em 0.74981em;
+        padding: 0.3125em 0.625em;
         border-radius: 3px; }
       .pagination ul li:not(.pagination__current) a:hover {
         background: #7398b6;
@@ -3858,7 +3877,7 @@ You can switch the header to use the `accent` gradient too.
 
 .OSHeader__Logo a span {
   display: block;
-  padding-left: 2.99925em;
+  padding-left: 2.5em;
   margin-top: -5px; }
 
 .OSHeader__Logo a, .OSHeader__Logo a:hover,
@@ -3940,7 +3959,7 @@ This components depends on:
   overflow: hidden; }
   .OSHero__Content {
     text-align: center;
-    padding: 5.9985em 0 10.49737em; }
+    padding: 5em 0 8.75em; }
   .OSHero__Logo {
     height: 2.5em; }
   .OSHero__Bar {
@@ -3962,7 +3981,7 @@ This components depends on:
         height: 200%;
         position: absolute;
         transform: rotateZ(4deg);
-        background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/hero-bar-pattern.png");
+        background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/hero-bar-pattern.png");
         background-repeat: repeat;
         opacity: .2; }
 
@@ -3983,8 +4002,8 @@ Display an image as an avatar. It uses a rounded square by default.
   display: inline-block;
   vertical-align: middle;
   border-radius: 3px;
-  width: 2.24944em;
-  height: 2.24944em;
+  width: 1.875em;
+  height: 1.875em;
   max-width: inherit; }
 
 /*
@@ -4023,24 +4042,24 @@ Change the size of the avatar. You can combine it with other avatar classes.
 ```
 */
 .avatar.avatar-tiny {
-  width: 0.74981em;
-  height: 0.74981em; }
+  width: 0.625em;
+  height: 0.625em; }
 
 .avatar.avatar-small {
-  width: 1.49962em;
-  height: 1.49962em; }
+  width: 1.25em;
+  height: 1.25em; }
 
 .avatar.avatar-big {
-  width: 4.49887em;
-  height: 4.49887em; }
+  width: 3.75em;
+  height: 3.75em; }
 
 .avatar.avatar-bigger {
-  width: 6.74831em;
-  height: 6.74831em; }
+  width: 5.625em;
+  height: 5.625em; }
 
 .avatar.avatar-enormous {
-  width: 8.99775em;
-  height: 8.99775em; }
+  width: 7.5em;
+  height: 7.5em; }
 
 /*
 ---
@@ -4287,8 +4306,8 @@ All the icons come from [SimpleIcons](https://simpleicons.org/).
   color: #1598CB; }
   .socialIcon svg {
     display: block;
-    width: 1.79955em;
-    height: 1.79955em; }
+    width: 1.875em;
+    height: 1.875em; }
     .socialIcon svg path {
       color: #ffffff; }
   .socialIcon:hover {
@@ -4358,14 +4377,14 @@ Display the applications as a list. When the user hover in an element, a tooltip
 */
 .launcher {
   text-align: center;
-  padding-top: 1.49962em; }
+  padding-top: 1.25em; }
   .launcher__stack {
     display: inline-block;
     background-image: url("//d33np9n32j53g7.cloudfront.net/assets/new/launch-icon-bg-418e0f317870860b107951338c9acb6e.png");
     background-position: 50% 0;
     background-repeat: no-repeat;
     position: relative;
-    margin: 0 0.74981em 1.49962em; }
+    margin: 0 0.625em 1.25em; }
     .launcher__stack__icon {
       display: block;
       width: 77px;
@@ -4379,8 +4398,8 @@ Display the applications as a list. When the user hover in an element, a tooltip
         left: 50%; }
     .launcher__stack__tooltip {
       position: absolute;
-      bottom: 3.74906em;
-      padding-bottom: 2.24944em;
+      bottom: 3.125em;
+      padding-bottom: 1.875em;
       left: -9999px;
       width: 140px;
       margin-left: -70px;
@@ -4389,7 +4408,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
       .launcher__stack__tooltip__content {
         position: relative;
         background: #ffffff;
-        padding: 0.37491em 0.74981em;
+        padding: 0.3125em 0.625em;
         border: 3px solid #f1f1f1;
         border-radius: 3px; }
         .launcher__stack__tooltip__content:after, .launcher__stack__tooltip__content:before {
@@ -4453,7 +4472,7 @@ Display the applications as a list. When the user hover in an element, a tooltip
         content: '>';
         vertical-align: text-top;
         line-height: 85px;
-        font-size: 3.37247em;
+        font-size: 1.95312em;
         font-weight: bold; }
     .launcher__stack.stack-more:hover .launcher__stack__icon, .launcher__stack.stack-more.hover .launcher__stack__icon {
       color: #00437B; }
@@ -4487,17 +4506,17 @@ the class <code>.hexagon-reverse</code>
 ```
 */
 .hexagon {
-  background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/hexagon.svg") no-repeat center center;
+  background: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/hexagon.svg") no-repeat center center;
   background-size: contain;
-  width: 6.74831em;
-  height: 8.24794em;
+  width: 5.625em;
+  height: 6.875em;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff; }
   .hexagon-reverse {
-    background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-4/images/hexagon-reverse.svg"); }
+    background-image: url("//d1d5nb8vlsbujg.cloudfront.net/bitnami-ui/3.0.0-alpha-5/images/hexagon-reverse.svg"); }
 
 /*
 ---
@@ -4531,9 +4550,9 @@ lines.
   display: flex;
   align-items: center; }
   .hexagon-inline .hexagon {
-    width: 1.94951em;
-    height: 2.09947em;
-    margin-right: 0.74981em;
+    width: 1.625em;
+    height: 1.75em;
+    margin-right: 0.625em;
     flex: none;
     position: relative;
     top: -0.05em; }
@@ -4555,9 +4574,9 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
 ```
 */
 .hexagon.hexagon-tiny {
-  width: 5.24869em;
-  height: 6.74831em; }
+  width: 4.375em;
+  height: 5.625em; }
 
 .hexagon.hexagon-small {
-  width: 5.9985em;
-  height: 7.49812em; }
+  width: 5em;
+  height: 6.25em; }

@@ -1,5 +1,5 @@
 /*!
- * Bitnami UI - v3.0.0-alpha-4
+ * Bitnami UI - v3.0.0-alpha-5
  *
  * This is the main file of Bitnami UI foundations. It contains all
  * the base code for styling our UI. This file includes the reset, the base code
@@ -21,22 +21,42 @@
  */
 /*
 ---
-name: Base
+name: Base sizing units
 category: Foundations/Variables
 tag: variables
 ---
-Basic values of the applications
+
+These values defines the spacing and font size of all the framework. **Every property or mixin that
+involves sizes is affected by these values**. That's the reason why most of the elements of
+the foundations uses relative units like `em` and `rem`.
+
+These base sizing units are:
+
+* `base-type-zoom`: represents the base zoom of the page. This value is added on the `html` selector
+and it allow us to grow the site proportionally. For most of the browsers, 100% font-size is equal
+to 16px. Browsers that have a different value for 100% are not an issue because the site grows
+correctly. This framework uses this property to decrease or increase the spacing of the site
+based on media queries.
+* `base-type-size`: defines the base font size of the body text. The current value refers to
+the `base-type-zoom`: 100% (16px) -> 1em -> 16px body text. We use a relative units to be able to
+change the base font size using `base-type-zoom`. It also allow browsers to define their own
+font size based on user preferences.
+* `scale`: this is the ratio of decrease or increase of the spacing unit. Combining the
+`base-type-size` and the `scale`, the framework defines proportional sizes for spacing. You
+can check the current proportion on [TypeScale](http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source+Sans+Pro&font-family=%27Source%20Sans%20Pro%27,%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).
+* `size-unit`: this is the base size unit for font sizes and spacing. We use this unit for spacing
+and font-sizes.
 
 ```scss
 // Sizing values
 $base-type-zoom: 100%;
 $base-type-size: 1em; // 16px
-// Fourth
-$scale: 1.333;
+// Major Third
+$scale: 1.250;
 
-// Basic size unity
-$size-unity: $base-type-size * $scale;
-$su: $size-unity;
+// Basic size unit
+$size-unit: $base-type-size * $scale;
+$su: $size-unit;
 ```
 */
 /*
@@ -90,13 +110,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#00437B</b>
+          <span>Hex</span> #00437B
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(0, 67, 123)</b>
+          <span>RGB</span> rgb(0, 67, 123)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(207, 100%, 24%)</b>
+          <span>HSL</span> hsl(207, 100%, 24%)
         </div>
       </div>
     </div>
@@ -106,13 +126,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -122,13 +142,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1598CB</b>
+          <span>Hex</span> #1598CB
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(21, 152, 203)</b>
+          <span>RGB</span> rgb(21, 152, 203)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(197, 81%, 44%)</b>
+          <span>HSL</span> hsl(197, 81%, 44%)
         </div>
       </div>
     </div>
@@ -142,13 +162,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#008145</b>
+          <span>Hex</span> #008145
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(0, 129, 69)</b>
+          <span>RGB</span> rgb(0, 129, 69)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(152, 100%, 25%)</b>
+          <span>HSL</span> hsl(152, 100%, 25%)
         </div>
       </div>
     </div>
@@ -158,13 +178,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#82C341</b>
+          <span>Hex</span> #82C341
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(130, 195, 65)</b>
+          <span>RGB</span> rgb(130, 195, 65)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(90, 52%, 51%)</b>
+          <span>HSL</span> hsl(90, 52%, 51%)
         </div>
       </div>
     </div>
@@ -178,13 +198,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#F58220</b>
+          <span>Hex</span> #F58220
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(245, 130, 32)</b>
+          <span>RGB</span> rgb(245, 130, 32)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(28, 91%, 54%)</b>
+          <span>HSL</span> hsl(28, 91%, 54%)
         </div>
       </div>
     </div>
@@ -194,13 +214,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#FDBA12</b>
+          <span>Hex</span> #FDBA12
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(253, 186, 18)</b>
+          <span>RGB</span> rgb(253, 186, 18)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(43, 98%, 53%)</b>
+          <span>HSL</span> hsl(43, 98%, 53%)
         </div>
       </div>
     </div>
@@ -214,13 +234,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#ffffff</b>
+          <span>Hex</span> #ffffff
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+          <span>RGB</span> rgb(255, 255, 255)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+          <span>HSL</span> hsl(0, 0%, 100%)
         </div>
       </div>
     </div>
@@ -230,13 +250,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#ffffff</b>
+          <span>Hex</span> #ffffff
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 255, 255)</b>
+          <span>RGB</span> rgb(255, 255, 255)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 100%)</b>
+          <span>HSL</span> hsl(0, 0%, 100%)
         </div>
       </div>
     </div>
@@ -246,13 +266,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -262,13 +282,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#f1f1f1</b>
+          <span>Hex</span> #f1f1f1
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(241, 241, 241)</b>
+          <span>RGB</span> rgb(241, 241, 241)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(0, 0%, 95%)</b>
+          <span>HSL</span> hsl(0, 0%, 95%)
         </div>
       </div>
     </div>
@@ -278,13 +298,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#1C2B39</b>
+          <span>Hex</span> #1C2B39
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(28, 43, 57)</b>
+          <span>RGB</span> rgb(28, 43, 57)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(209, 34%, 17%)</b>
+          <span>HSL</span> hsl(209, 34%, 17%)
         </div>
       </div>
     </div>
@@ -294,13 +314,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#5F6369</b>
+          <span>Hex</span> #5F6369
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(95, 99, 105)</b>
+          <span>RGB</span> rgb(95, 99, 105)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(216, 5%, 39%)</b>
+          <span>HSL</span> hsl(216, 5%, 39%)
         </div>
       </div>
     </div>
@@ -310,13 +330,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#C7C9C8</b>
+          <span>Hex</span> #C7C9C8
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(199, 201, 200)</b>
+          <span>RGB</span> rgb(199, 201, 200)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(150, 2%, 78%)</b>
+          <span>HSL</span> hsl(150, 2%, 78%)
         </div>
       </div>
     </div>
@@ -330,13 +350,13 @@ Base colors of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex</span> <b>#fff23</b>
+          <span>Hex</span> #fff23
         </div>
         <div class="colorBox__values__value">
-          <span>RGB</span> <b>rgb(255, 242, 63)</b>
+          <span>RGB</span> rgb(255, 242, 63)
         </div>
         <div class="colorBox__values__value">
-          <span>HSL</span> <b>hsl(56, 100%, 62%)</b>
+          <span>HSL</span> hsl(56, 100%, 62%)
         </div>
       </div>
     </div>
@@ -383,11 +403,11 @@ Base gradients of the Bitnami styleguide.
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div>
           <div class="colorBox__values__value">
-            <span>Hex (from)</span> <b>#00437B</b> (Brand)
+            <span>Hex (from)</span> #00437B (Brand)
           </div>
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#1598CB</b> (Secondary)
+          <span>Hex (to)</span> #1598CB (Secondary)
         </div>
       </div>
     </div>
@@ -397,10 +417,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#008145</b> (Accent)
+          <span>Hex (from)</span> #008145 (Accent)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#82C341</b> (Light accent)
+          <span>Hex (to)</span> #82C341 (Light accent)
         </div>
       </div>
     </div>
@@ -410,10 +430,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#F58220</b> (Action)
+          <span>Hex (from)</span> #F58220 (Action)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#FDBA12</b> (Light action)
+          <span>Hex (to)</span> #FDBA12 (Light action)
         </div>
       </div>
     </div>
@@ -423,10 +443,10 @@ Base gradients of the Bitnami styleguide.
       </div>
       <div class="colorBox__values padding-h-normal padding-v-small">
         <div class="colorBox__values__value">
-          <span>Hex (from)</span> <b>#f1f1f1</b> (Light)
+          <span>Hex (from)</span> #f1f1f1 (Light)
         </div>
         <div class="colorBox__values__value">
-          <span>Hex (to)</span> <b>#f7f7f7</b> (50 Light)
+          <span>Hex (to)</span> #f7f7f7 (50 Light)
         </div>
       </div>
     </div>
@@ -552,11 +572,11 @@ $type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monos
 
 // Fix the line-heights
 $line-heights: (
-  -1: $size-unity,
-  0: $size-unity,
-  1: $size-unity * 1.5,
-  2: $size-unity * 2,
-  3: $size-unity * 3,
+  -1: $size-unit,
+  0: $size-unit,
+  1: $size-unit * 1.5,
+  2: $size-unit * 2,
+  3: $size-unit * 3,
 );
 ```
 */
@@ -875,7 +895,7 @@ hr {
 pre {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   /* 1 */
-  font-size: 1.125em;
+  font-size: 1em;
   /* 2 */ }
 
 /* Text-level semantics
@@ -933,7 +953,7 @@ kbd,
 samp {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   /* 1 */
-  font-size: 1.125em;
+  font-size: 1em;
   /* 2 */ }
 
 /**
@@ -946,7 +966,7 @@ dfn {
  * Add the correct font size in all browsers.
  */
 small {
-  font-size: 0.66683em; }
+  font-size: 0.8em; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -954,16 +974,16 @@ small {
  */
 sub,
 sup {
-  font-size: 0.66683em;
+  font-size: 0.8em;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
 sub {
-  bottom: -0.18745em; }
+  bottom: -0.15625em; }
 
 sup {
-  top: -0.37491em; }
+  top: -0.3125em; }
 
 /* Embedded content
    ========================================================================== */
@@ -1194,7 +1214,7 @@ html {
 
 body {
   font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  font-size: 1.125em;
+  font-size: 1em;
   color: #1C2B39;
   line-height: 1.5;
   font-weight: 400;
@@ -1242,12 +1262,12 @@ Display an inline code element correctly.
 pre {
   background-color: #111a22;
   line-height: 1.2;
-  margin: 0.74981em 0 1.49962em;
-  padding: 0.74981em; }
+  margin: 0.625em 0 1.25em;
+  padding: 0.625em; }
 
 code {
-  font-size: 0.66683em;
-  padding: 0.18745em 0.37491em;
+  font-size: 0.8em;
+  padding: 0.15625em 0.3125em;
   background-color: #f1f1f1;
   border-radius: 3px;
   border: 1px solid #d9d9d9;
@@ -1274,24 +1294,19 @@ Basic inputs to build forms.
 */
 input,
 select,
-textarea,
-button,
-.button {
-  font-size: 0.89977em; }
-
-input,
-select,
 textarea {
-  margin: 0.37491em 0 0.74981em;
-  padding: 0 0.74981em;
   border-radius: 0;
   border: 1px solid #C7C9C8;
+  font-size: 1em;
+  margin: 0.3125em 0 0.625em;
+  padding: 0 0.625em;
   width: 100%; }
 
 input,
-select {
-  height: 2.99925em;
-  line-height: 2.99925em; }
+select,
+button {
+  height: 2.5em;
+  line-height: 2.5em; }
 
 textarea:focus,
 input:focus,
@@ -1334,10 +1349,10 @@ This is a test
 ```
 */
 textarea {
-  padding: 0.74981em;
+  padding: 0.625em;
   font-family: "Interstate", "Hind", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   resize: vertical;
-  min-height: 7.49812em; }
+  min-height: 6.25em; }
 
 /*
 ---
@@ -1354,7 +1369,7 @@ label {
   color: #1C2B39;
   font-size: 1em; }
   label + label {
-    margin-left: 1.49962em; }
+    margin-left: 1.25em; }
   label.checkbox, label.radio {
     cursor: pointer; }
     label.checkbox input:disabled + span, label.radio input:disabled + span {
@@ -1409,7 +1424,7 @@ tag: text
 input[type="checkbox"],
 input[type="radio"] {
   display: inline-block;
-  margin: 0 0.37491em 0 0;
+  margin: 0 0.3125em 0 0;
   width: auto;
   height: auto;
   vertical-align: 1px; }
@@ -1451,12 +1466,13 @@ tag: text
   color: #16222e;
   cursor: pointer;
   display: inline-block;
-  line-height: 2.3994em;
+  font-size: 1em;
+  line-height: 2.5em;
   vertical-align: middle;
   text-decoration: none;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 2.24944em;
+  padding: 0 1.875em;
   text-overflow: ellipsis;
   transition: transform .15s ease-in-out, box-shadow .15s ease-in-out;
   white-space: nowrap;
@@ -1475,7 +1491,7 @@ tag: text
     opacity: .5; }
   .button + .button,
   .button + button {
-    margin-left: 0.37491em; }
+    margin-left: 0.3125em; }
 
 /*
 ---
@@ -1508,7 +1524,7 @@ h5,
 h6 {
   font-weight: normal;
   font-family: "Interstate", "Fira Sans", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  margin: 0.74981em 0 0.37491em; }
+  margin: 0.625em 0 0.3125em; }
   h1 a,
   h1 a:hover,
   h1 a:active,
@@ -1530,25 +1546,25 @@ h6 {
     color: inherit; }
 
 h1 {
-  font-size: 2.24888em;
+  font-size: 2.44141em;
   color: #16222e; }
 
 h2 {
-  font-size: 1.49962em;
+  font-size: 1.95312em;
   color: #00437B; }
 
 h3 {
-  font-size: 1.49962em;
+  font-size: 1.5625em;
   color: #1C2B39; }
 
 h4 {
-  font-size: 1.49962em;
+  font-size: 1.5625em;
   font-weight: 500;
   text-transform: uppercase; }
 
 h5,
 h6 {
-  font-size: 1em;
+  font-size: 1.25em;
   font-weight: bold; }
 
 /*
@@ -1583,8 +1599,8 @@ tag: blocks
 */
 ul,
 ol {
-  padding-left: 2.99925em;
-  margin: 0.74981em 0 1.49962em; }
+  padding-left: 2.5em;
+  margin: 0.625em 0 1.25em; }
 
 /*
 ---
@@ -1632,7 +1648,7 @@ latest language features are available and you're building on a secure foundatio
 ```
 */
 p {
-  margin: 0.74981em 0 1.49962em; }
+  margin: 0.625em 0 1.25em; }
 
 /*
 ---
@@ -1655,10 +1671,10 @@ anchor must be equal to "author". You can check the following
 ```
 */
 blockquote {
-  font-size: 1.49962em;
-  margin: 1.49962em auto;
-  max-width: 37.49063em;
-  padding: 0.37491em;
+  font-size: 1.25em;
+  margin: 1.25em auto;
+  max-width: 31.25em;
+  padding: 0.3125em;
   position: relative;
   text-align: center; }
   blockquote:before, blockquote:after {
@@ -1666,24 +1682,24 @@ blockquote {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 2.24944em;
+    height: 1.875em;
     position: absolute;
-    top: 0.74981em;
-    width: 2.99925em; }
+    top: 0.625em;
+    width: 2.5em; }
   blockquote:before {
-    left: 0.37491em;
+    left: 0.3125em;
     transform: rotateZ(180deg); }
   blockquote:after {
-    right: 0.37491em; }
+    right: 0.3125em; }
   blockquote a[rel="author"] {
     color: #1C2B39;
     display: block;
     font-weight: bold;
-    font-size: 0.66683em;
-    margin-top: 1.49962em; }
+    font-size: 0.8em;
+    margin-top: 1.25em; }
   @media all and (min-width: 48em) {
     blockquote {
-      padding: 0.37491em 4.49887em; }
+      padding: 0.3125em 3.75em; }
       blockquote:before, blockquote:after {
         content: ''; } }
 
@@ -1735,7 +1751,7 @@ hr {
   background-color: #f1f1f1;
   height: 2px;
   border: 0;
-  margin: 0.74981em auto; }
+  margin: 0.625em auto; }
 
 /*
 ---
@@ -1780,12 +1796,12 @@ Tables should follow the standard format using `thead > th` and `tbody > td` tag
 */
 table {
   width: 100%;
-  margin: 0.74981em 0 1.49962em;
+  margin: 0.625em 0 1.25em;
   border-collapse: collapse;
   text-align: left; }
   table th,
   table td {
-    padding: 0.74981em; }
+    padding: 0.625em; }
   table th {
     border-bottom: 1px solid #f1f1f1; }
   table tbody > tr:hover {
@@ -1859,13 +1875,13 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
   /**
    * Row definition
    */ }
-  @media all and (max-width: 1347.988px) {
+  @media all and (max-width: 1340px) {
     .container {
-      padding: 0 1.49962em; } }
+      padding: 0 1.25em; } }
   .container .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 1.49962em -0.74981em;
+    margin: 1.25em -0.625em;
     /**
      * Column definition
      */ }
@@ -1877,7 +1893,7 @@ _All the images comes from [this article](http://j4n.co/blog/Creating-your-own-c
       flex: 1;
       min-height: 1px;
       box-sizing: border-box;
-      padding: 0 0.74981em; }
+      padding: 0 0.625em; }
     .container .row .col-1 {
       flex: 0 0 8.33333%; }
     .container .row .col-2 {
@@ -2038,21 +2054,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (max-width: 29.9375em) {
     .container .row.collapse-on-phone > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-on-phone > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-on-phone.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-on-phone > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-on-phone > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-on-phone.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-on-phone > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-on-phone > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2060,21 +2076,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 30em) and (max-width: 47.9375em) {
     .container .row.collapse-on-phone-land > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-on-phone-land > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-on-phone-land.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-on-phone-land > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-on-phone-land > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-on-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-on-phone-land > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-on-phone-land > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-on-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2082,21 +2098,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 48em) and (max-width: 56.1875em) {
     .container .row.collapse-on-tablet > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-on-tablet > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-on-tablet.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-on-tablet > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-on-tablet > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-on-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-on-tablet > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-on-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-on-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2104,21 +2120,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 56.25em) and (max-width: 68.6875em) {
     .container .row.collapse-on-desktop > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-on-desktop > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-on-desktop.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-on-desktop > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-on-desktop > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-on-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-on-desktop > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-on-desktop > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-on-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2126,21 +2142,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 68.75em) and (max-width: 81.1875em) {
     .container .row.collapse-on-wide > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-on-wide > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-on-wide.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-on-wide > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-on-wide > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-on-wide.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-on-wide > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-on-wide > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-on-wide.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2148,21 +2164,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (max-width: 29.9375em) {
     .container .row.collapse-b-phone-land > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-b-phone-land > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-b-phone-land.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-b-phone-land > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-b-phone-land > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-b-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-b-phone-land > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-b-phone-land > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-b-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2170,21 +2186,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (max-width: 47.9375em) {
     .container .row.collapse-b-tablet > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-b-tablet > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-b-tablet.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-b-tablet > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-b-tablet > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-b-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-b-tablet > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-b-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-b-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2192,21 +2208,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (max-width: 56.1875em) {
     .container .row.collapse-b-desktop > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-b-desktop > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-b-desktop.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-b-desktop > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-b-desktop > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-b-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-b-desktop > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-b-desktop > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-b-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2214,21 +2230,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (max-width: 68.6875em) {
     .container .row.collapse-b-wide > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-b-wide > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-b-wide.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-b-wide > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-b-wide > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-b-wide.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-b-wide > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-b-wide > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-b-wide.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2236,21 +2252,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 30em) {
     .container .row.collapse-a-phone > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-a-phone > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-a-phone.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-a-phone > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-a-phone > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-a-phone.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-a-phone > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-a-phone > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-a-phone.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2258,21 +2274,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 48em) {
     .container .row.collapse-a-phone-land > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-a-phone-land > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-a-phone-land.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-a-phone-land > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-a-phone-land > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-a-phone-land.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-a-phone-land > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-a-phone-land > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-a-phone-land.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2280,21 +2296,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 56.25em) {
     .container .row.collapse-a-tablet > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-a-tablet > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-a-tablet.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-a-tablet > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-a-tablet > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-a-tablet.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-a-tablet > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-a-tablet > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-a-tablet.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2302,21 +2318,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 68.75em) {
     .container .row.collapse-a-desktop > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-a-desktop > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-a-desktop.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-a-desktop > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-a-desktop > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-a-desktop.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-a-desktop > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-a-desktop > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-a-desktop.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2324,21 +2340,21 @@ If you want to collapse a row above or below an specific screen size, you can us
   @media all and (min-width: 81.25em) {
     .container .row.collapse-a-wide > [class^="col"] {
       flex: 0 0 100%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-a-wide > [class^="col"]:first-child {
         margin-top: 0; }
     .container .row.collapse-a-wide.row-vdivide > [class^="col"] {
       border-right: 0; }
     .container .row.collapse-2-a-wide > [class^="col"] {
       flex: 0 0 50%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-2-a-wide > [class^="col"]:nth-child(-n+2) {
         margin-top: 0; }
     .container .row.collapse-2-a-wide.row-vdivide > [class^="col"]:nth-child(2n) {
       border-right: 0; }
     .container .row.collapse-3-a-wide > [class^="col"] {
       flex: 0 0 33.33333%;
-      margin-top: 1.49962em; }
+      margin-top: 1.25em; }
       .container .row.collapse-3-a-wide > [class^="col"]:nth-child(-n+3) {
         margin-top: 0; }
     .container .row.collapse-3-a-wide.row-vdivide > [class^="col"]:nth-child(3n) {
@@ -2394,10 +2410,10 @@ The grid is limited by the `max-width` property. By default, the rows can not be
   max-width: none; }
 
 .container.container-small {
-  max-width: calc(8 * (1300px / 12) + 1.49962em / 2); }
+  max-width: calc(8 * (1300px / 12) + 1.25em / 2); }
 
 .container.container-tiny {
-  max-width: calc(6 * (1300px / 12) + 1.49962em / 2); }
+  max-width: calc(6 * (1300px / 12) + 1.25em / 2); }
 
 /*
 ---
@@ -2647,13 +2663,13 @@ Modify the size of the buttons. Available classes:
 ```
 */
 .button-small {
-  font-size: 0.66683em; }
+  font-size: 0.8em; }
 
 .button-big {
-  font-size: 1.49962em; }
+  font-size: 1.25em; }
 
 .button-bigger {
-  font-size: 2.24888em; }
+  font-size: 1.5625em; }
 
 /*
 ---
@@ -2681,9 +2697,9 @@ See https://css-tricks.com/snippets/css/css-triangle/.
   display: inline-block;
   content: '';
   height: 0;
-  margin-left: 0.37491em;
+  margin-left: 0.3125em;
   position: relative;
-  top: 0.09373em;
+  top: 0.07812em;
   vertical-align: middle;
   width: 0; }
 
@@ -2943,7 +2959,7 @@ Modify the color and the margin-top of a header. It should be combined with a no
 .subtitle {
   font-weight: normal;
   color: #44add5;
-  margin-top: -0.74981em; }
+  margin-top: -0.625em; }
 
 /*
 ---
@@ -3077,13 +3093,13 @@ hr.separator-small {
   height: 1px; }
 
 hr.separator-big {
-  height: 0.18745em; }
+  height: 0.15625em; }
 
 hr.separator-bigger {
-  height: 0.37491em; }
+  height: 0.3125em; }
 
 hr.separator-enormous {
-  height: 0.74981em; }
+  height: 0.625em; }
 
 hr.separator-15 {
   width: 15%; }
@@ -3157,28 +3173,28 @@ Reduce or increase the default padding based on the base size unity.
   padding: 0; }
 
 .padding-tiny {
-  padding: 0.18745em; }
+  padding: 0.15625em; }
 
 .padding-small {
-  padding: 0.37491em; }
+  padding: 0.3125em; }
 
 .padding-normal {
-  padding: 0.74981em; }
+  padding: 0.625em; }
 
 .padding-big {
-  padding: 1.49962em; }
+  padding: 1.25em; }
 
 .padding-bigger {
-  padding: 2.24944em; }
+  padding: 1.875em; }
 
 .padding-enormous {
-  padding: 2.99925em; }
+  padding: 2.5em; }
 
 .padding-giant {
-  padding: 4.49887em; }
+  padding: 3.75em; }
 
 .padding-huge {
-  padding: 7.49812em; }
+  padding: 6.25em; }
 
 /*
 ---
@@ -3215,109 +3231,109 @@ Reduce or increase a padding property based on the base size unity.
   padding-top: 0; }
 
 .padding-t-tiny {
-  padding-top: 0.18745em; }
+  padding-top: 0.15625em; }
 
 .padding-t-small {
-  padding-top: 0.37491em; }
+  padding-top: 0.3125em; }
 
 .padding-t-normal {
-  padding-top: 0.74981em; }
+  padding-top: 0.625em; }
 
 .padding-t-big {
-  padding-top: 1.49962em; }
+  padding-top: 1.25em; }
 
 .padding-t-bigger {
-  padding-top: 2.24944em; }
+  padding-top: 1.875em; }
 
 .padding-t-enormous {
-  padding-top: 2.99925em; }
+  padding-top: 2.5em; }
 
 .padding-t-giant {
-  padding-top: 4.49887em; }
+  padding-top: 3.75em; }
 
 .padding-t-huge {
-  padding-top: 7.49812em; }
+  padding-top: 6.25em; }
 
 .padding-b-reset {
   padding-bottom: 0; }
 
 .padding-b-tiny {
-  padding-bottom: 0.18745em; }
+  padding-bottom: 0.15625em; }
 
 .padding-b-small {
-  padding-bottom: 0.37491em; }
+  padding-bottom: 0.3125em; }
 
 .padding-b-normal {
-  padding-bottom: 0.74981em; }
+  padding-bottom: 0.625em; }
 
 .padding-b-big {
-  padding-bottom: 1.49962em; }
+  padding-bottom: 1.25em; }
 
 .padding-b-bigger {
-  padding-bottom: 2.24944em; }
+  padding-bottom: 1.875em; }
 
 .padding-b-enormous {
-  padding-bottom: 2.99925em; }
+  padding-bottom: 2.5em; }
 
 .padding-b-giant {
-  padding-bottom: 4.49887em; }
+  padding-bottom: 3.75em; }
 
 .padding-b-huge {
-  padding-bottom: 7.49812em; }
+  padding-bottom: 6.25em; }
 
 .padding-l-reset {
   padding-left: 0; }
 
 .padding-l-tiny {
-  padding-left: 0.18745em; }
+  padding-left: 0.15625em; }
 
 .padding-l-small {
-  padding-left: 0.37491em; }
+  padding-left: 0.3125em; }
 
 .padding-l-normal {
-  padding-left: 0.74981em; }
+  padding-left: 0.625em; }
 
 .padding-l-big {
-  padding-left: 1.49962em; }
+  padding-left: 1.25em; }
 
 .padding-l-bigger {
-  padding-left: 2.24944em; }
+  padding-left: 1.875em; }
 
 .padding-l-enormous {
-  padding-left: 2.99925em; }
+  padding-left: 2.5em; }
 
 .padding-l-giant {
-  padding-left: 4.49887em; }
+  padding-left: 3.75em; }
 
 .padding-l-huge {
-  padding-left: 7.49812em; }
+  padding-left: 6.25em; }
 
 .padding-r-reset {
   padding-right: 0; }
 
 .padding-r-tiny {
-  padding-right: 0.18745em; }
+  padding-right: 0.15625em; }
 
 .padding-r-small {
-  padding-right: 0.37491em; }
+  padding-right: 0.3125em; }
 
 .padding-r-normal {
-  padding-right: 0.74981em; }
+  padding-right: 0.625em; }
 
 .padding-r-big {
-  padding-right: 1.49962em; }
+  padding-right: 1.25em; }
 
 .padding-r-bigger {
-  padding-right: 2.24944em; }
+  padding-right: 1.875em; }
 
 .padding-r-enormous {
-  padding-right: 2.99925em; }
+  padding-right: 2.5em; }
 
 .padding-r-giant {
-  padding-right: 4.49887em; }
+  padding-right: 3.75em; }
 
 .padding-r-huge {
-  padding-right: 7.49812em; }
+  padding-right: 6.25em; }
 
 /*
 ---
@@ -3345,72 +3361,72 @@ Reduce or increase the vertical or horizontal padding based on the base size uni
   padding-bottom: 0; }
 
 .padding-v-tiny {
-  padding-top: 0.18745em;
-  padding-bottom: 0.18745em; }
+  padding-top: 0.15625em;
+  padding-bottom: 0.15625em; }
 
 .padding-v-small {
-  padding-top: 0.37491em;
-  padding-bottom: 0.37491em; }
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em; }
 
 .padding-v-normal {
-  padding-top: 0.74981em;
-  padding-bottom: 0.74981em; }
+  padding-top: 0.625em;
+  padding-bottom: 0.625em; }
 
 .padding-v-big {
-  padding-top: 1.49962em;
-  padding-bottom: 1.49962em; }
+  padding-top: 1.25em;
+  padding-bottom: 1.25em; }
 
 .padding-v-bigger {
-  padding-top: 2.24944em;
-  padding-bottom: 2.24944em; }
+  padding-top: 1.875em;
+  padding-bottom: 1.875em; }
 
 .padding-v-enormous {
-  padding-top: 2.99925em;
-  padding-bottom: 2.99925em; }
+  padding-top: 2.5em;
+  padding-bottom: 2.5em; }
 
 .padding-v-giant {
-  padding-top: 4.49887em;
-  padding-bottom: 4.49887em; }
+  padding-top: 3.75em;
+  padding-bottom: 3.75em; }
 
 .padding-v-huge {
-  padding-top: 7.49812em;
-  padding-bottom: 7.49812em; }
+  padding-top: 6.25em;
+  padding-bottom: 6.25em; }
 
 .padding-h-reset {
   padding-left: 0;
   padding-right: 0; }
 
 .padding-h-tiny {
-  padding-left: 0.18745em;
-  padding-right: 0.18745em; }
+  padding-left: 0.15625em;
+  padding-right: 0.15625em; }
 
 .padding-h-small {
-  padding-left: 0.37491em;
-  padding-right: 0.37491em; }
+  padding-left: 0.3125em;
+  padding-right: 0.3125em; }
 
 .padding-h-normal {
-  padding-left: 0.74981em;
-  padding-right: 0.74981em; }
+  padding-left: 0.625em;
+  padding-right: 0.625em; }
 
 .padding-h-big {
-  padding-left: 1.49962em;
-  padding-right: 1.49962em; }
+  padding-left: 1.25em;
+  padding-right: 1.25em; }
 
 .padding-h-bigger {
-  padding-left: 2.24944em;
-  padding-right: 2.24944em; }
+  padding-left: 1.875em;
+  padding-right: 1.875em; }
 
 .padding-h-enormous {
-  padding-left: 2.99925em;
-  padding-right: 2.99925em; }
+  padding-left: 2.5em;
+  padding-right: 2.5em; }
 
 .padding-h-giant {
-  padding-left: 4.49887em;
-  padding-right: 4.49887em; }
+  padding-left: 3.75em;
+  padding-right: 3.75em; }
 
 .padding-h-huge {
-  padding-left: 7.49812em;
-  padding-right: 7.49812em; }
+  padding-left: 6.25em;
+  padding-right: 6.25em; }
 
 /*
 ---
@@ -3555,28 +3571,28 @@ Reduce or increase the default margin based on the base size unity.
   margin: 0; }
 
 .margin-tiny {
-  margin: 0.18745em; }
+  margin: 0.15625em; }
 
 .margin-small {
-  margin: 0.37491em; }
+  margin: 0.3125em; }
 
 .margin-normal {
-  margin: 0.74981em; }
+  margin: 0.625em; }
 
 .margin-big {
-  margin: 1.49962em; }
+  margin: 1.25em; }
 
 .margin-bigger {
-  margin: 2.24944em; }
+  margin: 1.875em; }
 
 .margin-enormous {
-  margin: 2.99925em; }
+  margin: 2.5em; }
 
 .margin-giant {
-  margin: 4.49887em; }
+  margin: 3.75em; }
 
 .margin-huge {
-  margin: 7.49812em; }
+  margin: 6.25em; }
 
 /*
 ---
@@ -3613,109 +3629,109 @@ Reduce or increase a margin property based on the base size unity.
   margin-top: 0; }
 
 .margin-t-tiny {
-  margin-top: 0.18745em; }
+  margin-top: 0.15625em; }
 
 .margin-t-small {
-  margin-top: 0.37491em; }
+  margin-top: 0.3125em; }
 
 .margin-t-normal {
-  margin-top: 0.74981em; }
+  margin-top: 0.625em; }
 
 .margin-t-big {
-  margin-top: 1.49962em; }
+  margin-top: 1.25em; }
 
 .margin-t-bigger {
-  margin-top: 2.24944em; }
+  margin-top: 1.875em; }
 
 .margin-t-enormous {
-  margin-top: 2.99925em; }
+  margin-top: 2.5em; }
 
 .margin-t-giant {
-  margin-top: 4.49887em; }
+  margin-top: 3.75em; }
 
 .margin-t-huge {
-  margin-top: 7.49812em; }
+  margin-top: 6.25em; }
 
 .margin-b-reset {
   margin-bottom: 0; }
 
 .margin-b-tiny {
-  margin-bottom: 0.18745em; }
+  margin-bottom: 0.15625em; }
 
 .margin-b-small {
-  margin-bottom: 0.37491em; }
+  margin-bottom: 0.3125em; }
 
 .margin-b-normal {
-  margin-bottom: 0.74981em; }
+  margin-bottom: 0.625em; }
 
 .margin-b-big {
-  margin-bottom: 1.49962em; }
+  margin-bottom: 1.25em; }
 
 .margin-b-bigger {
-  margin-bottom: 2.24944em; }
+  margin-bottom: 1.875em; }
 
 .margin-b-enormous {
-  margin-bottom: 2.99925em; }
+  margin-bottom: 2.5em; }
 
 .margin-b-giant {
-  margin-bottom: 4.49887em; }
+  margin-bottom: 3.75em; }
 
 .margin-b-huge {
-  margin-bottom: 7.49812em; }
+  margin-bottom: 6.25em; }
 
 .margin-l-reset {
   margin-left: 0; }
 
 .margin-l-tiny {
-  margin-left: 0.18745em; }
+  margin-left: 0.15625em; }
 
 .margin-l-small {
-  margin-left: 0.37491em; }
+  margin-left: 0.3125em; }
 
 .margin-l-normal {
-  margin-left: 0.74981em; }
+  margin-left: 0.625em; }
 
 .margin-l-big {
-  margin-left: 1.49962em; }
+  margin-left: 1.25em; }
 
 .margin-l-bigger {
-  margin-left: 2.24944em; }
+  margin-left: 1.875em; }
 
 .margin-l-enormous {
-  margin-left: 2.99925em; }
+  margin-left: 2.5em; }
 
 .margin-l-giant {
-  margin-left: 4.49887em; }
+  margin-left: 3.75em; }
 
 .margin-l-huge {
-  margin-left: 7.49812em; }
+  margin-left: 6.25em; }
 
 .margin-r-reset {
   margin-right: 0; }
 
 .margin-r-tiny {
-  margin-right: 0.18745em; }
+  margin-right: 0.15625em; }
 
 .margin-r-small {
-  margin-right: 0.37491em; }
+  margin-right: 0.3125em; }
 
 .margin-r-normal {
-  margin-right: 0.74981em; }
+  margin-right: 0.625em; }
 
 .margin-r-big {
-  margin-right: 1.49962em; }
+  margin-right: 1.25em; }
 
 .margin-r-bigger {
-  margin-right: 2.24944em; }
+  margin-right: 1.875em; }
 
 .margin-r-enormous {
-  margin-right: 2.99925em; }
+  margin-right: 2.5em; }
 
 .margin-r-giant {
-  margin-right: 4.49887em; }
+  margin-right: 3.75em; }
 
 .margin-r-huge {
-  margin-right: 7.49812em; }
+  margin-right: 6.25em; }
 
 /*
 ---
@@ -3743,72 +3759,72 @@ Reduce or increase the vertical or horizontal margin based on the base size unit
   margin-bottom: 0; }
 
 .margin-v-tiny {
-  margin-top: 0.18745em;
-  margin-bottom: 0.18745em; }
+  margin-top: 0.15625em;
+  margin-bottom: 0.15625em; }
 
 .margin-v-small {
-  margin-top: 0.37491em;
-  margin-bottom: 0.37491em; }
+  margin-top: 0.3125em;
+  margin-bottom: 0.3125em; }
 
 .margin-v-normal {
-  margin-top: 0.74981em;
-  margin-bottom: 0.74981em; }
+  margin-top: 0.625em;
+  margin-bottom: 0.625em; }
 
 .margin-v-big {
-  margin-top: 1.49962em;
-  margin-bottom: 1.49962em; }
+  margin-top: 1.25em;
+  margin-bottom: 1.25em; }
 
 .margin-v-bigger {
-  margin-top: 2.24944em;
-  margin-bottom: 2.24944em; }
+  margin-top: 1.875em;
+  margin-bottom: 1.875em; }
 
 .margin-v-enormous {
-  margin-top: 2.99925em;
-  margin-bottom: 2.99925em; }
+  margin-top: 2.5em;
+  margin-bottom: 2.5em; }
 
 .margin-v-giant {
-  margin-top: 4.49887em;
-  margin-bottom: 4.49887em; }
+  margin-top: 3.75em;
+  margin-bottom: 3.75em; }
 
 .margin-v-huge {
-  margin-top: 7.49812em;
-  margin-bottom: 7.49812em; }
+  margin-top: 6.25em;
+  margin-bottom: 6.25em; }
 
 .margin-h-reset {
   margin-left: 0;
   margin-right: 0; }
 
 .margin-h-tiny {
-  margin-left: 0.18745em;
-  margin-right: 0.18745em; }
+  margin-left: 0.15625em;
+  margin-right: 0.15625em; }
 
 .margin-h-small {
-  margin-left: 0.37491em;
-  margin-right: 0.37491em; }
+  margin-left: 0.3125em;
+  margin-right: 0.3125em; }
 
 .margin-h-normal {
-  margin-left: 0.74981em;
-  margin-right: 0.74981em; }
+  margin-left: 0.625em;
+  margin-right: 0.625em; }
 
 .margin-h-big {
-  margin-left: 1.49962em;
-  margin-right: 1.49962em; }
+  margin-left: 1.25em;
+  margin-right: 1.25em; }
 
 .margin-h-bigger {
-  margin-left: 2.24944em;
-  margin-right: 2.24944em; }
+  margin-left: 1.875em;
+  margin-right: 1.875em; }
 
 .margin-h-enormous {
-  margin-left: 2.99925em;
-  margin-right: 2.99925em; }
+  margin-left: 2.5em;
+  margin-right: 2.5em; }
 
 .margin-h-giant {
-  margin-left: 4.49887em;
-  margin-right: 4.49887em; }
+  margin-left: 3.75em;
+  margin-right: 3.75em; }
 
 .margin-h-huge {
-  margin-left: 7.49812em;
-  margin-right: 7.49812em; }
+  margin-left: 6.25em;
+  margin-right: 6.25em; }
 
 /*
 ---
@@ -3921,28 +3937,28 @@ Apply a margin `auto` to center elements.
   margin: 0 auto; }
 
 .margin-vc-tiny {
-  margin: 0.18745em auto; }
+  margin: 0.15625em auto; }
 
 .margin-vc-small {
-  margin: 0.37491em auto; }
+  margin: 0.3125em auto; }
 
 .margin-vc-normal {
-  margin: 0.74981em auto; }
+  margin: 0.625em auto; }
 
 .margin-vc-big {
-  margin: 1.49962em auto; }
+  margin: 1.25em auto; }
 
 .margin-vc-bigger {
-  margin: 2.24944em auto; }
+  margin: 1.875em auto; }
 
 .margin-vc-enormous {
-  margin: 2.99925em auto; }
+  margin: 2.5em auto; }
 
 .margin-vc-giant {
-  margin: 4.49887em auto; }
+  margin: 3.75em auto; }
 
 .margin-vc-huge {
-  margin: 7.49812em auto; }
+  margin: 6.25em auto; }
 
 .margin-vc-6 {
   margin: auto; }
@@ -4041,34 +4057,34 @@ Reduce or increase the default `font-size` of an element.
 ```
 */
 .type-tiny {
-  font-size: 0.44467em; }
+  font-size: 0.64em; }
 
 .type-small {
-  font-size: 0.66683em; }
+  font-size: 0.8em; }
 
 .type-normal {
   font-size: 1em; }
 
 .type-big {
-  font-size: 1.49962em; }
+  font-size: 1.25em; }
 
 .type-bigger {
-  font-size: 2.24888em; }
+  font-size: 1.5625em; }
 
 .type-enormous {
-  font-size: 3.37247em; }
+  font-size: 1.95312em; }
 
 .type-giant {
-  font-size: 5.05744em; }
+  font-size: 2.44141em; }
 
 .type-huge {
-  font-size: 7.58426em; }
+  font-size: 3.05176em; }
 
 .type-6 {
-  font-size: 11.37355em; }
+  font-size: 3.8147em; }
 
 .type-7 {
-  font-size: 17.05606em; }
+  font-size: 4.76837em; }
 
 /*
 ---

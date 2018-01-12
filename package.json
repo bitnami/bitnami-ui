@@ -1,6 +1,6 @@
 {
   "name": "bitnami-ui",
-  "version": "3.0.0-alpha-4",
+  "version": "3.0.0-alpha-5",
   "description": "Bitnami Pattern lib (UI)",
   "main": "index.js",
   "scripts": {
