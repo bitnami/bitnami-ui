@@ -84,7 +84,7 @@ Accesibility best practices:
   &__logo {
     img {
       display: block;
-      height: su(1.5);
+      height: su(1.75);
     }
   }
 
@@ -108,7 +108,6 @@ Accesibility best practices:
         color: color('white');
         display: inline-block;
         padding: padding('normal') padding('normal');
-        font-size: su(.6);
       }
     }
 

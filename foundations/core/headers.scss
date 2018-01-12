@@ -45,28 +45,28 @@ h6 {
 h1 {
   // Interstate Light 42px
   // 30px margin-bottom
-  font-size: type-scale('bigger'); // Computed 40.47px
+  font-size: type-scale('giant'); // Computed 39.056px
   color: color-level('text', 700);
 }
 
 h2 {
   // Interstate Light 30px
   // 25px margin-bottom
-  font-size: type-scale('big'); // Computed 27px
+  font-size: type-scale('enormous'); // Computed 31.248px
   color: color('brand');
 }
 
 h3 {
   // Interstate Light 24px
   // 20px margin-bottom
-  font-size: type-scale('big'); // Computed 27px
+  font-size: type-scale('bigger'); // Computed 25px
   color: color('text');
 }
 
 h4 {
   // Interstate Regular 24px
   // 20px margin-bottom
-  font-size: type-scale('big'); // Computed 27px
+  font-size: type-scale('bigger'); // Computed 25px
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -75,6 +75,6 @@ h5,
 h6 {
   // Interstate Bold 20px
   // 20px margin-bottom
-  font-size: type-scale('normal'); // Computed 20px
+  font-size: type-scale('big'); // Computed 20px
   font-weight: bold;
 }

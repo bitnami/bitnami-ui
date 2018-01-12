@@ -10,29 +10,21 @@ Basic inputs to build forms.
 <input name="test" placeholder="This is a test" />
 ```
 */
-// Inputs and buttons use a font size between normal and small. That's the reason I was
-// forced to use su instead of the normal helpers.
-input,
-select,
-textarea,
-button,
-.button {
-  font-size: su(.6);
-}
-
 input,
 select,
 textarea {
-  margin: margin('small') 0 margin('normal');
-  padding: 0 padding('normal');
   border-radius: 0;
   border: 1px solid color('gray-light');
+  font-size: type-scale('normal');
+  margin: margin('small') 0 margin('normal');
+  padding: 0 padding('normal');
   width: 100%;
 }
 
 // We need to set a fixed height because select doesn't allow `padding`
 input,
-select {
+select,
+button {
   height: su(2);
   // I must use line-height to center the elements to display it correctly in Firefox
   line-height: su(2);
@@ -228,8 +220,9 @@ tag: text
   color: color-level('text', 700);
   cursor: pointer;
   display: inline-block;
+  font-size: type-scale('normal');
   // Center the text in the button for `button` and anchors
-  line-height: su(1.6);
+  line-height: su(2);
   // Align elements in the same line
   vertical-align: middle;
   // Remove text decoration on links

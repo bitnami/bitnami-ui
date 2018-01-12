@@ -30,11 +30,11 @@ $type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monos
 
 // Fix the line-heights
 $line-heights: (
-  -1: $size-unity,
-  0: $size-unity,
-  1: $size-unity * 1.5,
-  2: $size-unity * 2,
-  3: $size-unity * 3,
+  -1: $size-unit,
+  0: $size-unit,
+  1: $size-unit * 1.5,
+  2: $size-unit * 2,
+  3: $size-unit * 3,
 );
 ```
 */
@@ -47,9 +47,9 @@ $type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monos
 
 // Fix the line-heights
 $line-heights: (
-  -1: $size-unity,
-  0: $size-unity,
-  1: $size-unity * 1.5,
-  2: $size-unity * 2,
-  3: $size-unity * 3,
+  -1: $size-unit,
+  0: $size-unit,
+  1: $size-unit * 1.5,
+  2: $size-unit * 2,
+  3: $size-unit * 3,
 );

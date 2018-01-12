@@ -1,34 +1,54 @@
 /*
 ---
-name: Base
+name: Base sizing units
 category: Foundations/Variables
 tag: variables
 ---
-Basic values of the applications
+
+These values defines the spacing and font size of all the framework. **Every property or mixin that
+involves sizes is affected by these values**. That's the reason why most of the elements of
+the foundations uses relative units like `em` and `rem`.
+
+These base sizing units are:
+
+* `base-type-zoom`: represents the base zoom of the page. This value is added on the `html` selector
+and it allow us to grow the site proportionally. For most of the browsers, 100% font-size is equal
+to 16px. Browsers that have a different value for 100% are not an issue because the site grows
+correctly. This framework uses this property to decrease or increase the spacing of the site
+based on media queries.
+* `base-type-size`: defines the base font size of the body text. The current value refers to
+the `base-type-zoom`: 100% (16px) -> 1em -> 16px body text. We use a relative units to be able to
+change the base font size using `base-type-zoom`. It also allow browsers to define their own
+font size based on user preferences.
+* `scale`: this is the ratio of decrease or increase of the spacing unit. Combining the
+`base-type-size` and the `scale`, the framework defines proportional sizes for spacing. You
+can check the current proportion on [TypeScale](http://type-scale.com/?size=16&scale=1.333&text=Bitnami%20Rocks!&webfont=Source+Sans+Pro&font-family=%27Source%20Sans%20Pro%27,%20sans-serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).
+* `size-unit`: this is the base size unit for font sizes and spacing. We use this unit for spacing
+and font-sizes.
 
 ```scss
 // Sizing values
 $base-type-zoom: 100%;
 $base-type-size: 1em; // 16px
-// Fourth
-$scale: 1.333;
+// Major Third
+$scale: 1.250;
 
-// Basic size unity
-$size-unity: $base-type-size * $scale;
-$su: $size-unity;
+// Basic size unit
+$size-unit: $base-type-size * $scale;
+$su: $size-unit;
 ```
 */
 
 // Sizing values
 $base-type-zoom: 100%;
-$base-type-size: 1.125em; // 18px
+$base-type-size: 1em; // 16px
 // Fourth
-$scale: 1.333;
+$scale: 1.250;
 $line-height: 1.5;
 
-// Basic size unity
-$size-unity: $base-type-size * $scale;
-$su: $size-unity;
+// Basic size unit
+$size-unit: $base-type-size * $scale;
+$su: $size-unit;
 
 /*
 ---
