@@ -4,6 +4,9 @@ node_modules
 # Compilated docs
 docs/dist
 
+# Dist files
+dist
+
 # Ignore compilated README
 docs/templates/readme.ejs
 
