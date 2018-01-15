@@ -26,14 +26,19 @@ the class <code>.hexagon-reverse</code>
 .hexagon {
   background: url("#{image-endpoint()}hexagon.svg") no-repeat center center;
   background-size: contain;
-  width: su(4.5);
-  height: su(5.5);
+  width: su(5);
+  height: su(6);
 
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   color: color("white");
+
+  svg,
+  img {
+    max-width: 75%;
+  }
 
   &-reverse {
     background-image: url("#{image-endpoint()}hexagon-reverse.svg");
@@ -82,8 +87,9 @@ lines.
     position: relative;
     top: -0.05em;
 
+    svg,
     img {
-      width: 60%;
+      max-width: 60%;
     }
   }
 }
@@ -107,8 +113,8 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
   $multiplier: map-get($scale-names, $size-name);
   $size-w: 1;
   $size-h: 1;
-  $width: 4.5;
-  $height: 5.5;
+  $width: 5;
+  $height: 6;
 
   @if $multiplier > 0 {
     $size-w: $width + (1.5 * $multiplier);
