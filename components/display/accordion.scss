@@ -1,0 +1,152 @@
+/*
+---
+name: Accordion
+category: Components/Display
+tag: component
+---
+
+An accordion is a vertically stacked set of panels composed by a header and content. These panels
+are displayed based on user interactions. This component is useful to reduce the scroll of a page
+and hide the content below its header. This "extra information" (content) is not displayed until
+the user clicks on the header.
+
+* **Good examples**: list of elements that can be defined by a title. However, they have extra
+information that may be helpful if the user is interested (click).
+* **Bad examples**: list of elements that users must read. If we expect the user to open all
+elements, we musn't use an accordion.
+
+##### Structure
+
+* `.accordion`: Main container of the accordion. It takes the 100% width of the container
+* `.accordion__panel`: Container for every element of the accordion. Headers + Content are placed
+inside panels
+* `.accordion__header`: Header of an element. Headers are always visible for users
+* `.accordion__header__button`: The button to toggle the accordion element
+* `.accordion__content`: Actual content of the element. Only the content of the active element is
+showed.
+
+##### Accesibilty
+
+* [WAI Aria practices - Accordion](https://www.w3.org/TR/wai-aria-practices/#accordion)
+* [WAI Arai examples - Accordion](https://www.w3.org/TR/wai-aria-practices/examples/accordion/accordion.html)
+
+**Don't forget to associated the headers and the content using the `id`, `aria-controls` and
+`aria-labelledby` properties** to the `.accordion__header__button` and the `.accordion__content`
+HTML elements. These properties must be present and correctly initialized to avoid accesibility
+issues.
+
+```html
+<dl class="accordion type-color-reverse type-color-reverse-anchor-reset" role="presentation">
+  <section class="accordion__panel accordion__panel-open">
+    <!-- header -->
+    <dt role="heading" aria-level="3" class="accordion__header">
+      <!-- The first element is showed by default -->
+      <button id="accordionSection1" aria-controls="section1" aria-expanded="true"
+        class="accordion__header__button">
+        <h2 class="accordion__header__title">Automation</h2>
+      </button>
+    </dt>
+    <!-- content -->
+    <dd id="section1" role="region" aria-labelledby="accordionSection1"
+      class="accordion__content">
+      <section>
+        Continuous monitoring of component versions or CVE vulnerabilities and automated rebuild
+      </section>
+    </dd>
+  </section>
+  <section class="accordion__panel">
+    <!-- header -->
+    <dt role="heading" aria-level="3" class="accordion__header">
+      <!-- The first element is showed by default -->
+      <button id="accordionSection2" aria-controls="section2" aria-expanded="false"
+        class="accordion__header__button">
+        <h2 class="accordion__header__title">Multi-Format</h2>
+      </button>
+    </dt>
+    <!-- content -->
+    <dd id="section2" role="region" aria-labelledby="accordionSection2"
+      class="accordion__content" aria-hidden="true">
+      <section>
+        Build and deploy multiple clouds and formats: VMs, containers, kubernetes, AWS...
+      </section>
+    </dd>
+  </section>
+  <section class="accordion__panel">
+    <!-- header -->
+    <dt role="heading" aria-level="3" class="accordion__header">
+      <!-- The first element is showed by default -->
+      <button id="accordionSection3" aria-controls="section3" aria-expanded="false"
+        class="accordion__header__button">
+        <h2 class="accordion__header__title">Consistency</h2>
+      </button>
+    </dt>
+    <!-- content -->
+    <dd id="section3" role="region" aria-labelledby="accordionSection3"
+      class="accordion__content" aria-hidden="true">
+      <section>
+        Build and deploy multiple clouds and formats: VMs, containers, kubernetes, AWS...
+      </section>
+    </dd>
+  </section>
+  <section class="accordion__panel">
+    <!-- header -->
+    <dt role="heading" aria-level="3" class="accordion__header">
+      <!-- The first element is showed by default -->
+      <button id="accordionSection4" aria-controls="section4" aria-expanded="false"
+        class="accordion__header__button">
+        <h2 class="accordion__header__title">Optimization</h2>
+      </button>
+    </dt>
+    <!-- content -->
+    <dd id="section4" role="region" aria-labelledby="accordionSection4"
+      class="accordion__content" aria-hidden="true">
+      <section>
+        Build and deploy multiple clouds and formats: VMs, containers, kubernetes, AWS...
+      </section>
+    </dd>
+  </section>
+</dl>
+```
+*/
+.accordion {
+  &__panel {
+    background-image: gradient('accent', 170deg);
+    padding: padding('big') padding('enormous');
+    max-height: su(4);
+    transition: max-height .200s ease-in;
+    overflow: hidden;
+
+    // Open
+    &-open {
+      .accordion__content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__header {
+
+    &__button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: padding('normal') 0;
+      text-align: left;
+      width: 100%;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &__title {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    margin: margin('big') 0 margin('normal');
+    opacity: 0;
+    transition: opacity .150s ease-in-out;
+  }
+}
