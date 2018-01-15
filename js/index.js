@@ -14,6 +14,7 @@ window.BITNAMI_UI_VERSION = 'v{VERSION}';
 window.BITNAMI_UI_INIT = false;
 
 // Import components
+import Accordion from './components/accordion';
 import Carousel from './components/carousel';
 import Header from './components/header';
 
@@ -23,6 +24,7 @@ window.b = b;
 
 // Initialize all elements
 document.addEventListener('DOMContentLoaded', () => {
+  Accordion();
   Carousel();
   Header();
 });

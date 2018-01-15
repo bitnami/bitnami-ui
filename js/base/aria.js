@@ -24,7 +24,7 @@ export default class Aria {
    *
    * @param {boolean} status Set the open status
    */
-  expand(status: boolean) {
+  expand(status: boolean = true) {
     this.node.setAttribute('aria-expanded', String(status));
   }
 

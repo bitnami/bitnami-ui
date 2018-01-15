@@ -42,8 +42,8 @@ export default class CSS {
    * @param {Object} styles Object with the styles to apply. The format is { 'property': 'value' }
    * @return {Object} The styles applied or the current ones.
    */
-  style(styles: Object = {}): Object {
-    if (Object.keys(styles).length === 0) {
+  style(styles: ?Object = {}): Object {
+    if (styles == null) {
       return this._styleStringToObject(this.node.getAttribute('style') || '');
     } else {
       this.node.setAttribute('style', this._styleObjectToString(styles));
@@ -55,9 +55,10 @@ export default class CSS {
    * Check if the current class is already present in the node
    *
    * @param {string} cssClass CSS class to remove
+   * @return {boolean} True if the node has the given class
    */
-  contains(cssClass: string) {
-    this.list.contains(cssClass);
+  contains(cssClass: string): boolean {
+    return this.list.contains(cssClass);
   }
 
   /**
