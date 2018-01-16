@@ -20,11 +20,21 @@ to helper to add an offset to a line so it fits with the previous line:
 * `beehive__line-offset-in`
 * `beehive__line-offset-out`
 
+**NOTE:** These helpers only apply to screen sizes greater than the `.phone-land` breakpoint.
+Check the responsive section.
+
 ##### Structure
 
 * `.beehive`: Main container
 * `.beehive__line`: A line of hexagons
 * `.beehive__hexagon`: An individual element of the beehive
+
+##### Responsive
+
+For small screens, this components hides most of the hexagons:
+
+* Tablets: 3 elements on the first line, 2 on the second, 3 on the third. All other lines are hidden
+* Mobile: 2 elements on the first line, 1 on the second. All other lines are hidden
 
 ```html
 <h2 class="text-c">Odd + even</h2>
@@ -198,19 +208,71 @@ $beehive_offset: padding('normal') * 6;
   &__line {
     display: flex;
     justify-content: center;
-
-    &-offset {
-      &-in {
-        transform: translateX(-($beehive_offset));
-      }
-
-      &-out {
-        transform: translateX($beehive_offset);
-      }
-    }
   }
 
   &__hexagon {
     margin: -(margin('normal')) margin('normal') 0;
+  }
+
+  // Offset. Only availabe for > phone-land screens
+  @include mappy-query('a-phone-land') {
+    &__line {
+      &-offset {
+        &-in {
+          transform: translateX(-($beehive_offset));
+        }
+
+        &-out {
+          transform: translateX($beehive_offset);
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @include mappy-query('b-tablet') {
+    &__line {
+      &:first-child {
+        .beehive__hexagon:nth-child(n + 4) {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        .beehive__hexagon:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        .beehive__hexagon:nth-child(n + 4) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+  }
+
+  @include mappy-query('b-phone-land') {
+    &__line {
+      &:first-child {
+        .beehive__hexagon:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        .beehive__hexagon:nth-child(n + 2) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
   }
 }
