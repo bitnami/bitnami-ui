@@ -22,7 +22,7 @@ background both classes will be added `.breadcrumb breadcrumb-reverse`
   </ol>
 </nav>
 
-<div style="background: black;" class="padding-tiny">
+<div class="padding-bigger gradient-180-brand type-color-reverse-anchor-reset">
   <nav class="breadcrumb breadcrumb-reverse">
     <ol>
       <li><a href="#">First element</a></li>
@@ -46,7 +46,6 @@ background both classes will be added `.breadcrumb breadcrumb-reverse`
 
       + li:before {
         padding: 0 padding('normal');
-        color: color('dark');
         content: '› ';
       }
     }
@@ -60,15 +59,7 @@ background both classes will be added `.breadcrumb breadcrumb-reverse`
       color: color('white');
 
       &:hover {
-        color: color('light');
-      }
-    }
-
-    ol {
-      li {
-        +li:before {
-          color: color('white');
-        }
+        color: color-level('action', 100);
       }
     }
   }
