@@ -109,6 +109,8 @@ issues.
 ```
 */
 .accordion {
+  margin: 0;
+
   &__panel {
     background-image: gradient('accent', 170deg);
     padding: padding('big') padding('enormous');

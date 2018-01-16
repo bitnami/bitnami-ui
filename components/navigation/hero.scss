@@ -11,10 +11,19 @@ tag: component
     <section class="hero__content">
       <h1 class="hero__title">Bitnami Application Catalog</h1>
       <p class="hero__subtitle">Ready-to-run Applications and Development Environments</p>
-      <p class="margin-b-reset">
-        <a class="button button-action">Sign in</a>
-      </p>
     </section>
+  </div>
+</section>
+<section class="subhero">
+  <div class="container">
+    <div class="subhero__content">
+      <p>
+        Bitnami Stacksmith simplifies the migration of traditional applications by
+        automating the manual tasks required to build, deploy and maintain software stacks
+        for all major container and cloud platforms.
+      </p>
+      <a href="#" class="button button-action">Watch Now</a>
+    </div>
   </div>
 </section>
 ```
@@ -25,6 +34,7 @@ tag: component
 
   &__content {
     margin-left: margin('bigger');
+    padding-bottom: margin('big');
     max-width: 600px;
   }
 
@@ -66,5 +76,11 @@ tag: component
       transform: rotateZ(-15deg);
       opacity: .9;
     }
+  }
+}
+
+.subhero {
+  &__content {
+    max-width: 700px;
   }
 }
