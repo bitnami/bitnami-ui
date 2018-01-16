@@ -5,9 +5,15 @@ category: Components/Stacks
 tag: component
 ---
 
-We use this element as a background on any element. You just need to add the class
-<code>.hexagon</code> to get the blue hexagon. The reverse option (white hexagon) can be used with
-the class <code>.hexagon-reverse</code>
+This component is used with icons, logos, text to visualize or group some concepts. This component
+is used in the [Behive component](/category/Components/Display/#Behive) which allows to create a set
+hexagons.
+
+##### Options
+
+* `.hexagon`: Blue hexagon using the normal size. There are more [sizes available](#Hexagon%20sizes)
+* `.hexagon-reverse`: White hexagon. Both classes have to be added to the element `.hexagon .hexagon-reverse`
+* `.hexagon margin-c`: Hexagon centered. It will center the hexagon horizontally inside any element.
 
 ```html
 <div class="padding-big">
@@ -19,6 +25,16 @@ the class <code>.hexagon-reverse</code>
   <div class="hexagon hexagon-reverse">
     <img src="/assets/images/gears.svg"/>
   </div>
+</div>
+<div class="container">
+<div class="row padding-big">
+  <div class="col-4 text-c">Col-4</div>
+  <div class="col-4">
+    <div class="hexagon margin-c">
+      <p class="margin-reset">This is just text</p>
+    </div>
+  </div>
+  <div class="col-4 text-c">Col-4</div>
 </div>
 ```
 */
