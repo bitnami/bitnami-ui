@@ -5,18 +5,35 @@ category: Components/Navigation
 tag: component
 ---
 
+The class `.breadcrumb` will be added to the `nav` element. If the component is used with a dark
+background both classes will be added `.breadcrumb breadcrumb-reverse`
+
+##### Options
+
+* `.breadcrumb`: Main breadcrumb used with light backgrounds
+* `.breadcrumb-reverse`: Used with dark backgrounds
+
 ```html
 <nav class="breadcrumb">
   <ol>
     <li><a href="#">First element</a></li>
     <li><a href="#">Second element</a></li>
+    <li> Third element</li>
   </ol>
 </nav>
+
+<div style="background: black;" class="padding-tiny">
+  <nav class="breadcrumb breadcrumb-reverse">
+    <ol>
+      <li><a href="#">First element</a></li>
+      <li><a href="#">Second element</a></li>
+      <li> Third element</li>
+    </ol>
+  </nav>
+</div>
 ```
 */
 .breadcrumb {
-  margin: margin('normal') 0;
-
   // Main list
   ol {
     list-style: none;
@@ -31,6 +48,27 @@ tag: component
         padding: 0 padding('normal');
         color: color('dark');
         content: '› ';
+      }
+    }
+  }
+
+  &.breadcrumb-reverse {
+    color: color('white');
+
+    a {
+      text-decoration: none;
+      color: color('white');
+
+      &:hover {
+        color: color('light');
+      }
+    }
+
+    ol {
+      li {
+        +li:before {
+          color: color('white');
+        }
       }
     }
   }
