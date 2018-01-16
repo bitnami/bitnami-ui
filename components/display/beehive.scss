@@ -1,0 +1,278 @@
+/*
+---
+name: Beehive
+category: Components/Display
+tag: component
+---
+
+The beehive section display the inner hexagons as a beehive. This structure is very common to
+display a list of contributors, companies, applications, etc. This component enhances the main shape
+of Bitnami (the hexagon), so **it fits very well with any iconography**.
+
+* **Good examples**: list of application logos or any iconography.
+* **Bad examples**: don't use this component with text.
+
+Sometimes, the behive is not correctly built due to the number of elements. You always need to
+alternate odd with even number of elements to display them correctly. However, this structure
+may unbalance the design of the beehive. To solve this, this library provides you with
+to helper to add an offset to a line so it fits with the previous line:
+
+* `beehive__line-offset-in`
+* `beehive__line-offset-out`
+
+**NOTE:** These helpers only apply to screen sizes greater than the `.phone-land` breakpoint.
+Check the responsive section.
+
+##### Structure
+
+* `.beehive`: Main container
+* `.beehive__line`: A line of hexagons
+* `.beehive__hexagon`: An individual element of the beehive
+
+##### Responsive
+
+For small screens, this components hides most of the hexagons:
+
+* Tablets: 3 elements on the first line, 2 on the second, 3 on the third. All other lines are hidden
+* Mobile: 2 elements on the first line, 1 on the second. All other lines are hidden
+
+```html
+<h2 class="text-c">Odd + even</h2>
+<div class="beehive margin-t-big margin-b-enormous">
+  <div class="container container-small">
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-c">Odd + Odd (offset in)</h2>
+<div class="beehive margin-t-big margin-b-enormous">
+  <div class="container container-small">
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line beehive__line-offset-in">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-c">Even + Even (offset out)</h2>
+<div class="beehive margin-t-big margin-b-enormous">
+  <div class="container container-small">
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line beehive__line-offset-out">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-c">Mixed</h2>
+<div class="beehive margin-t-big margin-b-enormous">
+  <div class="container container-small">
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line beehive__line-offset-in">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line beehive__line-offset-out">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+    <div class="beehive__line">
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+      <div class="beehive__hexagon hexagon">
+        <img src="/assets/images/logo-white.svg" alt="Bitnami logo"/>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+$beehive_offset: padding('normal') * 6;
+
+.beehive {
+  &__line {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__hexagon {
+    margin: -(margin('normal')) margin('normal') 0;
+  }
+
+  // Offset. Only availabe for > phone-land screens
+  @include mappy-query('a-phone-land') {
+    &__line {
+      &-offset {
+        &-in {
+          transform: translateX(-($beehive_offset));
+        }
+
+        &-out {
+          transform: translateX($beehive_offset);
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @include mappy-query('b-tablet') {
+    &__line {
+      &:first-child {
+        .beehive__hexagon:nth-child(n + 4) {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        .beehive__hexagon:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      &:nth-child(3) {
+        .beehive__hexagon:nth-child(n + 4) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+  }
+
+  @include mappy-query('b-phone-land') {
+    &__line {
+      &:first-child {
+        .beehive__hexagon:nth-child(n + 3) {
+          display: none;
+        }
+      }
+
+      &:nth-child(2) {
+        .beehive__hexagon:nth-child(n + 2) {
+          display: none;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+}
