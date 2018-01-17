@@ -5,9 +5,45 @@ category: Components/Navigation
 tag: component
 ---
 
-Main header component.
+Main navigation header for the application. It includes the logo, menu and user menu if it's
+required. This navigation supports a one level submenu per item.
 
-Accesibility best practices:
+##### Structure
+
+* `.header`: Base container. It doesn't define any background, you have to do it in an upper container.
+* `.header__logo`: Logo of the application
+* `.header__nav`: Navigation container
+* `.header__nav__hamburguer`: Hamburguer icon for mobile navigation
+* `.header__nav__menu`: First level menu. It includes a list of navigation elements
+* `.header__nav__menu__item`: Links to the different sections. They can include a submenu
+* `.header__nav__menu__item-active`: Visually, set an element as active
+* `.header__nav__submenu`: Submenu container. It belongs to a first level menu item
+* `.header__nav__user`: User information container
+
+##### Responsive
+
+Below the phone landscape breakpoint, the menu is collapsed and the hamburguer icon is showed. When
+users click on the hamburguer icon, the menu is showed and they can interact with submenu elements.
+The user information is placed at the bottom of the mobile menu.
+
+##### Accesibility
+
+The key of accesibility in complex navigations is to use correctly the `role`, `tabindex`,
+`aria-label`, `aria-haspopup` and `aria-expanded` attributes. These attributes give a hint to users
+about the current status of the navigation.
+
+The role of links (anchors) must be set to `menuitem`. If they include a submenu, the
+`aria-haspopup` property needs to be `true` and the `role` of the submenu must be `menu`.
+Also, when the user is hover the link (desktop) or click on it (mobile), the submenu is showed.
+To notify users about this change, we use the `aria-expanded` attribute.
+
+The last attribute is `tabindex`. This property indicates the browser what's the next element that
+should be focus when users press the `tab` key. Check references to find more information
+about this property and its values.
+
+**References**:
+
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
 * https://inclusive-components.design/menus-menu-buttons/
 * https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html
 
@@ -28,7 +64,10 @@ Accesibility best practices:
         </button>
         <ul class="header__nav__menu" role="menubar">
           <li>
-            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Products</a>
+            <a class="header__nav__menu__item header__nav__menu__item-active" role="menuitem"
+              aria-haspopup="true" aria-expanded="false" tabindex="0">
+              Products
+            </a>
             <ul role="menu" aria-label="Products" class="header__nav__submenu">
               <li role="none">
                 <a role="menuitem" tabindex="-1" href="#">App Catalog</a>
@@ -39,7 +78,10 @@ Accesibility best practices:
             </ul>
           </li>
           <li>
-            <a role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="-1">Solutions</a>
+            <a class="header__nav__menu__item" role="menuitem" aria-haspopup="true"
+              aria-expanded="false" tabindex="0">
+              Solutions
+            </a>
             <ul role="menu" aria-label="Solutions" class="header__nav__submenu">
               <li role="none">
                 <a role="menuitem" tabindex="-1" href="#">App Packaging</a>
@@ -53,20 +95,20 @@ Accesibility best practices:
             </ul>
           </li>
           <li>
-            <a role="menuitem" tabindex="-1" href="#">Partners</a>
+            <a class="header__nav__menu__item" role="menuitem" tabindex="0" href="#">Partners</a>
           </li>
           <li>
-            <a role="menuitem" tabindex="-1" href="#">About Us</a>
+            <a class="header__nav__menu__item" role="menuitem" tabindex="0" href="#">About Us</a>
           </li>
           <li>
-            <a role="menuitem" tabindex="-1" href="#">Support</a>
+            <a class="header__nav__menu__item" role="menuitem" tabindex="0" href="#">Support</a>
           </li>
           <li>
-            <a role="menuitem" tabindex="-1" href="#">Blog</a>
+            <a class="header__nav__menu__item" role="menuitem" tabindex="0" href="#">Blog</a>
           </li>
         </ul>
         <div class="header__nav__user">
-          <a class="button button-action">Sign in</a>
+          <a class="button button-action button-small">Sign in</a>
         </div>
       </nav>
     </header>
@@ -143,7 +185,8 @@ Accesibility best practices:
       position: relative;
 
       @include mappy-query('a-phone-land') {
-        &:hover > a {
+        &:hover > a,
+        .header__nav__menu__item-active {
           color: color-level('action', 100);
         }
       }
