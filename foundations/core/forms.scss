@@ -208,6 +208,7 @@ tag: text
 <button class="button">Submit</button>
 <a class="button">Link button</a>
 <button class="button" disabled="disabled">Disabled</button>
+<button class="button" disabled>Disabled too</button>
 ```
 */
 // To avoid incompatibilities with the current implementation, I'm going to comment the button selector
@@ -257,7 +258,8 @@ tag: text
 
   // Set the correct cursor on disabled
   &[disabled="disabled"],
-  &[disabled="true"] {
+  &[disabled="true"],
+  &[disabled] {
     cursor: not-allowed;
     opacity: .5;
   }
