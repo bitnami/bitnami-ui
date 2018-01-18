@@ -42,8 +42,8 @@ hexagons.
 .hexagon {
   background: url("#{image-endpoint()}hexagon.svg") no-repeat center center;
   background-size: contain;
-  width: su(5);
-  height: su(6);
+  width: su(6.5);
+  height: su(7.5);
 
   text-align: center;
   display: flex;
@@ -129,16 +129,11 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
   $multiplier: map-get($scale-names, $size-name);
   $size-w: 1;
   $size-h: 1;
-  $width: 5;
-  $height: 6;
+  $width: 6.5;
+  $height: 7.5;
 
-  @if $multiplier > 0 {
-    $size-w: $width + (1.5 * $multiplier);
-    $size-h: $height + (1.5 * $multiplier);
-  } @else {
-    $size-w: $width + (.5 * $multiplier);
-    $size-h: $height + (.5 * $multiplier);
-  }
+  $size-w: $width + (1.5 * $multiplier);
+  $size-h: $height + (1.5 * $multiplier);
 
   .hexagon {
     &.hexagon-#{$size-name} {
