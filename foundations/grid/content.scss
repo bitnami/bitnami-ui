@@ -61,3 +61,56 @@ Content helpers allows you to change the alignment of an specific column or all 
     }
   }
 }
+
+/*
+---
+name: Row reverse
+category: Foundations/Grid
+tag: grid
+---
+
+Row reverse is a helper that will allow to exchange the order of the columns when collapsed.
+
+There are layouts with content/text on the left side and images on the right side for
+the first row and, for the second, the image is on the left and the content on the right. When
+the layout collapses, this helper will show the content first and the image below for all the cases.
+
+##### Options
+
+* `.column-reverse`: Helper used on the `.row` that will reverse the order of its columns.
+
+##### Note
+
+* Please notice this is example is collapsed by default using `.collapse-b-ultrawide` so the
+feature is visible
+
+
+```html
+<div class="container container-tiny">
+  <div class="row collapse-b-ultrawide">
+    <div class="col-7">
+      <p>
+        Bitnami has spent years perfecting the business of packaging applications. During this time,
+        we have built the expertise and internal tooling required to automate the process of
+        publishing and maintaining a catalog of applications and development environments
+      </p>
+    </div>
+    <div class="col-5 text-c">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+    </div>
+  </div>
+  <div class="row row-reverse collapse-b-ultrawide">
+    <div class="col-5 text-c">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+    </div>
+    <div class="col-7">
+      <p>
+        Bitnami has spent years perfecting the business of packaging applications. During this time,
+        we have built the expertise and internal tooling required to automate the process of
+        publishing and maintaining a catalog of applications and development environments
+      </p>
+    </div>
+  </div>
+</div>
+```
+*/

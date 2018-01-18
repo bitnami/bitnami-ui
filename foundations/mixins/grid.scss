@@ -17,6 +17,11 @@
         border-right: 0;
       }
     }
+
+    // Reverse the order of the columns when collapsed
+    &.row-reverse {
+      flex-direction: column-reverse;
+    }
   }
 }
 
