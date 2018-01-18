@@ -52,7 +52,7 @@ const carousel = () => {
    * @param {number} slideNumber The number of the slide to change
    */
   const changeSlide = (carousel, slides, slideNumber) => {
-    const slidesCount = slides.length;
+    const slidesCount = slides.tree.children().length;
 
     // Avoid go out of the scope
     if (slideNumber > slidesCount - 1 || slideNumber < 0) return;
