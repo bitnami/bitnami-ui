@@ -45,6 +45,27 @@ export class UINode {
   map(callback: ((UINode) => any)): Array<any> {
     return [callback(this)];
   }
+
+  /**
+   * Get the current height (visible / hidden) of the node.
+   * @see http://usefulangle.com/post/40/javascript-client-height-vs-offset-height-vs-scroll-height
+   *
+   * @return {number} The number of the height pixels
+   */
+  height(): number {
+    return this.node.scrollHeight;
+  }
+
+  /**
+   * Get the current height (visible) of the node.
+   * @see http://usefulangle.com/post/40/javascript-client-height-vs-offset-height-vs-scroll-height
+   *
+   * @param {boolean} borders True if you want to include the borders in the calculation
+   * @return {number} The number of the height pixels
+   */
+  visibleHeight(borders: boolean = true): number {
+    return borders ? this.node.offsetHeight : this.node.clientHeight;
+  }
 }
 
 export default UINode;

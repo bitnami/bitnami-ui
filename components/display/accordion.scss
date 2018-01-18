@@ -43,7 +43,7 @@ issues.
       <!-- The first element is showed by default -->
       <button id="accordionSection1" aria-controls="section1" aria-expanded="true"
         class="accordion__header__button">
-        <h2 class="accordion__header__title">Automation</h2>
+        <h2 class="accordion__header__title">Automation is a good thing to take in mind</h2>
       </button>
     </dt>
     <!-- content -->
@@ -132,6 +132,8 @@ issues.
       background: transparent;
       border: none;
       cursor: pointer;
+      height: auto;
+      min-height: 2.5em;
       padding: padding('normal') 0;
       text-align: left;
       width: 100%;
