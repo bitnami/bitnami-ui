@@ -82,15 +82,18 @@ If you want to collapse a row above or below an specific screen size, you can us
   //   @include grid-collapse();
   // }
 
+  // Collapse-a has the lowest priority, it will be imported the first one
+  // Collapse-b has a higer priorioty, it will be imported after Collapse-a
+  // Collapse-on has the highest priority, it will be imported the last one
+
   /**
-   * Specific media queries
+   * Above media queries
    */
-  @each $name in $grid-collapse-on {
+   @each $name in $grid-collapse-above {
     @include mappy-query($name) {
-      $breakpoint: "on-#{$name}";
-      @include grid-collapse-on-prefix($breakpoint);
-      @include grid-collapse-by-columns-on-prefix(2, $breakpoint);
-      @include grid-collapse-by-columns-on-prefix(3, $breakpoint);
+      @include grid-collapse-on-prefix($name);
+      @include grid-collapse-by-columns-on-prefix(2, $name);
+      @include grid-collapse-by-columns-on-prefix(3, $name);
     }
   }
 
@@ -106,13 +109,14 @@ If you want to collapse a row above or below an specific screen size, you can us
   }
 
   /**
-   * Above media queries
+   * Specific media queries
    */
-   @each $name in $grid-collapse-above {
+  @each $name in $grid-collapse-on {
     @include mappy-query($name) {
-      @include grid-collapse-on-prefix($name);
-      @include grid-collapse-by-columns-on-prefix(2, $name);
-      @include grid-collapse-by-columns-on-prefix(3, $name);
+      $breakpoint: "on-#{$name}";
+      @include grid-collapse-on-prefix($breakpoint);
+      @include grid-collapse-by-columns-on-prefix(2, $breakpoint);
+      @include grid-collapse-by-columns-on-prefix(3, $breakpoint);
     }
   }
 }
