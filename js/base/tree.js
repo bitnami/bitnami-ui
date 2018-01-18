@@ -52,10 +52,19 @@ export default class Tree {
   /**
    * Get the parent node.
    *
-   * @return {UINode} Target node
+   * @param {string} selector CSS selector to find in upper hierarchy
+   * @return {UINode|null} Target node
    */
-  parent() {
-    return new UINode(this.node.parentElement);
+  parent(selector: string = ''): UINode|null {
+    if (selector == '') {
+      return new UINode(this.node.parentElement);
+    }
+    // Iterate in the hierarchy
+    let parent = this.node.parentElement;
+    while(parent != null && !parent.matches(selector)) {
+      parent = parent.parentElement;
+    }
+    return parent ? new UINode(parent) : null;
   }
 
   /**
