@@ -111,7 +111,7 @@ pre code .tag {
   text-transform: uppercase;
 }
 
-.colorBox-reverse .colorBox__title,
+.colorBox-reverse .colorBox__title h5,
 .colorBox-reverse .colorBox__values {
   color: white;
 }
