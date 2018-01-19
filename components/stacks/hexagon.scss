@@ -86,14 +86,14 @@ lines.
     <div class="hexagon hexagon-reverse">
       <img src="/assets/images/gears.svg"/>
     </div>
-    <h4 class="margin-reset">This is a regular header with an hexagon next to it.</h4>
+    <h4>This is a regular header with an hexagon next to it.</h4>
   </div>
 </div>
 
 <div class="padding-normal">
   <div class="hexagon-inline">
     <div class="hexagon">&nbsp;</div>
-    <h4 class="margin-reset">This is a regular header with an hexagon next to it.</h4>
+    This is regular text with an hexagon next to it.
   </div>
 </div>
 ```
@@ -102,6 +102,16 @@ lines.
 .hexagon-inline {
   display: flex;
   align-items: center;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
 
   .hexagon {
     width: su(1.3);
