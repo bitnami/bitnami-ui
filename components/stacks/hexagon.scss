@@ -11,30 +11,35 @@ hexagons.
 
 ##### Options
 
-* `.hexagon`: Blue hexagon using the normal size. There are more [sizes available](#Hexagon%20sizes)
-* `.hexagon-reverse`: White hexagon. Both classes have to be added to the element `.hexagon .hexagon-reverse`
-* `.hexagon margin-c`: Hexagon centered. It will center the hexagon horizontally inside any element.
+* `.hexagon`: **Blue hexagon** using the normal size. There are more [sizes available](#Hexagon%20sizes)
+* `.hexagon-reverse`: **White hexagon**. Used with dark backgrounds. Both classes have to be added to
+the element `.hexagon .hexagon-reverse`
+* `.hexagon-outline`: **White hexagon and dark border**. Used with light backgrounds. Both classes
+have to be added to the element `.hexagon .hexagon-outline`
+* `.hexagon margin-c`: **Hexagon centered**. It will center the hexagon horizontally inside any element.
 
 ```html
-<div class="padding-big">
-  <div class="hexagon">
-    <p class="margin-reset">This is just text</p>
+
+<div class="container container-tiny">
+  <div class="padding-big">
+    <div class="hexagon">
+      <p class="margin-reset">This is just text</p>
+    </div>
   </div>
-</div>
-<div class="bg-dark padding-big">
-  <div class="hexagon hexagon-reverse">
-    <img src="/assets/images/gears.svg"/>
+  <div class="padding-big">
+    <div class="hexagon hexagon-outline">
+    </div>
   </div>
-</div>
-<div class="container">
-<div class="row padding-big">
-  <div class="col-4 text-c">Col-4</div>
-  <div class="col-4">
+  <div class="bg-dark padding-big">
+    <div class="hexagon hexagon-reverse">
+      <img src="/assets/images/gears.svg"/>
+    </div>
+  </div>
+  <div class="padding-big">
     <div class="hexagon margin-c">
       <p class="margin-reset">This is just text</p>
     </div>
   </div>
-  <div class="col-4 text-c">Col-4</div>
 </div>
 ```
 */
@@ -58,6 +63,10 @@ hexagons.
 
   &-reverse {
     background-image: url("#{image-endpoint()}hexagon-reverse.svg");
+  }
+
+  &-outline {
+    background-image: url("#{image-endpoint()}hexagon-outline.svg");
   }
 }
 
