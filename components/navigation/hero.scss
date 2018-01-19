@@ -77,7 +77,7 @@ tag: component
     }
   }
 
-  @include mappy-bp(1800x) {
+  @include mappy-bp(1800px) {
     &__content {
       padding-bottom: margin('huge');
     }
