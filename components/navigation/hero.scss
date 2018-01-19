@@ -33,7 +33,6 @@ tag: component
   overflow: hidden;
 
   &__content {
-    margin-left: margin('bigger');
     padding-bottom: margin('big');
     max-width: 600px;
   }
@@ -75,6 +74,12 @@ tag: component
     &:after {
       transform: rotateZ(-15deg);
       opacity: .9;
+    }
+  }
+
+  @include mappy-bp(1800x) {
+    &__content {
+      padding-bottom: margin('huge');
     }
   }
 }
