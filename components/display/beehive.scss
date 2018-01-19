@@ -202,7 +202,7 @@ For small screens, this components hides most of the hexagons:
 ```
 */
 
-$beehive_offset: padding('normal') * 6;
+$beehive_offset: 4.25em;
 
 .beehive {
   &__line {
@@ -211,7 +211,7 @@ $beehive_offset: padding('normal') * 6;
   }
 
   &__hexagon {
-    margin: -(margin('normal')) margin('normal') 0;
+    margin: -(su(1.2)) su(0.2) 0;
   }
 
   // Offset. Only availabe for > phone-land screens
