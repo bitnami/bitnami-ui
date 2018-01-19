@@ -11,30 +11,35 @@ hexagons.
 
 ##### Options
 
-* `.hexagon`: Blue hexagon using the normal size. There are more [sizes available](#Hexagon%20sizes)
-* `.hexagon-reverse`: White hexagon. Both classes have to be added to the element `.hexagon .hexagon-reverse`
-* `.hexagon margin-c`: Hexagon centered. It will center the hexagon horizontally inside any element.
+* `.hexagon`: **Blue hexagon** using the normal size. There are more [sizes available](#Hexagon%20sizes)
+* `.hexagon-reverse`: **White hexagon**. Used with dark backgrounds. Both classes have to be added to
+the element `.hexagon .hexagon-reverse`
+* `.hexagon-outline`: **White hexagon and dark border**. Used with light backgrounds. Both classes
+have to be added to the element `.hexagon .hexagon-outline`
+* `.hexagon margin-c`: **Hexagon centered**. It will center the hexagon horizontally inside any element.
 
 ```html
-<div class="padding-big">
-  <div class="hexagon">
-    <p class="margin-reset">This is just text</p>
+
+<div class="container container-tiny">
+  <div class="padding-big">
+    <div class="hexagon">
+      <p class="margin-reset">This is just text</p>
+    </div>
   </div>
-</div>
-<div class="bg-dark padding-big">
-  <div class="hexagon hexagon-reverse">
-    <img src="/assets/images/gears.svg"/>
+  <div class="padding-big">
+    <div class="hexagon hexagon-outline">
+    </div>
   </div>
-</div>
-<div class="container">
-<div class="row padding-big">
-  <div class="col-4 text-c">Col-4</div>
-  <div class="col-4">
+  <div class="bg-dark padding-big">
+    <div class="hexagon hexagon-reverse">
+      <img src="/assets/images/gears.svg"/>
+    </div>
+  </div>
+  <div class="padding-big">
     <div class="hexagon margin-c">
       <p class="margin-reset">This is just text</p>
     </div>
   </div>
-  <div class="col-4 text-c">Col-4</div>
 </div>
 ```
 */
@@ -42,8 +47,8 @@ hexagons.
 .hexagon {
   background: url("#{image-endpoint()}hexagon.svg") no-repeat center center;
   background-size: contain;
-  width: su(6.5);
-  height: su(7.5);
+  width: su(5);
+  height: su(6);
 
   text-align: center;
   display: flex;
@@ -58,6 +63,10 @@ hexagons.
 
   &-reverse {
     background-image: url("#{image-endpoint()}hexagon-reverse.svg");
+  }
+
+  &-outline {
+    background-image: url("#{image-endpoint()}hexagon-outline.svg");
   }
 }
 
@@ -129,11 +138,16 @@ Change the size of the hexagon. You can combine it with other hexagon classes.
   $multiplier: map-get($scale-names, $size-name);
   $size-w: 1;
   $size-h: 1;
-  $width: 6.5;
-  $height: 7.5;
+  $width: 5;
+  $height: 6;
 
-  $size-w: $width + (1.5 * $multiplier);
-  $size-h: $height + (1.5 * $multiplier);
+  @if $multiplier > 0 {
+    $size-w: $width + (1.5 * $multiplier);
+    $size-h: $height + (1.5 * $multiplier);
+  } @else {
+    $size-w: $width + (.5 * $multiplier);
+    $size-h: $height + (.5 * $multiplier);
+  }
 
   .hexagon {
     &.hexagon-#{$size-name} {
