@@ -249,7 +249,7 @@ about this property and its values.
     &.header-open {
       background: gradient('action');
       padding: padding('big');
-      position: absolute;
+      position: fixed;
 
       .header__nav {
         &__menu,
