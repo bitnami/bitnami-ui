@@ -4,6 +4,16 @@ name: Hero
 category: Components/Navigation
 tag: component
 ---
+The hero component will be used as a header for pages. It will include the following structure.
+
+##### Structure
+
+* `.hero`: The main container
+* `.hero__title`: The title
+* `.hero__subtitle`: The subtitle
+* `.subhero`: Any content after the header. Usually will be just text and sometimes one CTA button
+* `.subhero__content`: Content of the subhero
+* `.subhero__content-big`: Bigger container, useful for longer texts and headers.
 
 ```html
 <section class="hero type-color-reverse">
@@ -16,13 +26,26 @@ tag: component
 </section>
 <section class="subhero">
   <div class="container">
-    <div class="subhero__content">
+    <div class="subhero__content subhero__content">
+      <h2>Trusted to deploy over 1 million applications per month</h2>
       <p>
-        Bitnami Stacksmith simplifies the migration of traditional applications by
-        automating the manual tasks required to build, deploy and maintain software stacks
-        for all major container and cloud platforms.
+        Bitnami is the leader in application packaging providing the largest catalog of click to
+        deploy applications and development stacks. Quickly and easily launch your favorites on
+        your own servers or deploy to every major cloud environment. Choose from local installers,
+        single VMs, multi-tier VMs, container images or Kubernetes Helm charts.
       </p>
       <a href="#" class="button button-action">Watch Now</a>
+    </div>
+    <div class="subhero__content subhero__content-big">
+      <h3>"50% of Enterprises state cloud migration as a top priority for 2017"</h3>
+      <h4>THE PROBLEM: LEGACY APPLICATIONS ARE NOT CLOUD-READY</h4>
+      <p>
+        Not all applications are created equal. Recent data shows that only 20% of applications
+        in the cloud today are cloud-native, and only 15% of new enterprise applications being
+        developed are cloud-native. The fact is that regardless of the growth of cloud computing,
+        most businesses still rely heavily on legacy software and in-house applications that are
+        hosted in on-premises datacenters.
+      </p>
     </div>
   </div>
 </section>
@@ -87,5 +110,13 @@ tag: component
 .subhero {
   &__content {
     max-width: 700px;
+
+    &-big {
+      max-width: 950px;
+
+      p {
+        max-width: 820px;
+      }
+    }
   }
 }
