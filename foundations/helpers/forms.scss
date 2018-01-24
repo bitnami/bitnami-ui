@@ -5,20 +5,24 @@ category: Foundations/Helpers
 tag: helpers
 ---
 Modify the color of the buttons. Available classes:
+
 * `.button-primary`
 * `.button-accent`
 * `.button-action`
+* `.button-danger`
 
 ```html
 <button class="button button-primary">Submit</button>
 <a class="button button-accent">Link button</a>
 <a class="button button-action">Link button</a>
+<a class="button button-danger">Link button</a>
 <a class="button">Link button</a>
 ```
 */
 .button-primary,
 .button-accent,
-.button-action {
+.button-action,
+.button-danger {
   color: white;
 }
 
@@ -26,11 +30,22 @@ Modify the color of the buttons. Available classes:
   background: button-gradient('brand');
 }
 
-.button-accent,
-// The styleguide uses accent as the action button. The action color is used
-// for :hover
-.button-action {
+.button-accent {
   background: button-gradient('accent');
+}
+
+.button-action {
+  background: button-gradient('action');
+}
+
+// The hover color is the actual .button-action so we need to slightly change it
+// for this modifier
+.button-action:hover {
+  background: linear-gradient(135deg, transparent 7px, color-level('action', 600) 7px, color-level('action-light', 600) 100%);
+}
+
+.button-danger {
+  background: button-gradient('danger');
 }
 
 /*
