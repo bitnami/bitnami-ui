@@ -8,20 +8,24 @@ Blockquotes can be combined with anchors to display a complete quote. The `rel` 
 anchor must be equal to "author". You can check the following
 [link](https://html.spec.whatwg.org/multipage/semantics.html#link-type-author) for more information.
 
+The quotation will inherit the width from the parent container. We recommend to use it inside a
+small container `.container.container-small` for display purposes, but it will work anywhere.
+
 ```html
-<blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
-  Great day at my first Linux Foundation board meeting, but looking forward to seeing
-  everyone at #awsreinvent. On my way!
-  </br>
-  See you there!
-  <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
-</blockquote>
+<div class="container container-small">
+  <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone at #awsreinvent. On my way!
+    </br>
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+</div>
 ```
 */
 blockquote {
   font-size: type-scale('big');
   margin: margin('big') auto;
-  max-width: su(25);
   padding: padding('small');
   position: relative;
   text-align: center;
@@ -66,6 +70,24 @@ blockquote {
     &:before,
     &:after {
       content: '';
+    }
+  }
+}
+
+// The author link will be white when used with color backgrounds
+.bg-dark,
+.bg-brand,
+.bg-accent,
+.bg-action,
+.bg-skew,
+[class*="gradient-"][class*="-brand"],
+[class*="gradient-"][class*="-accent"],
+[class*="gradient-"][class*="-action"] {
+  &:not(.type-color-reverse-anchor-reset) {
+    blockquote {
+      a[rel=author]{
+        color: color('white');
+      }
     }
   }
 }
