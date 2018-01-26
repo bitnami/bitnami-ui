@@ -1,0 +1,159 @@
+/*
+---
+name: Alerts
+category: Components/Feedback
+tag: component
+---
+
+Alerts displays relevant information for users. The content could be an error in the current action
+a notification, or any message that the user should read.
+
+* **Good examples**: result of the previous actions or errors that are blocking the current one.
+* **Bad examples**: long content or any information that are not relevant for the current action.
+
+Depending on the kind of the message, we also provide some helpers to set the color of the alert:
+
+* `.alert-success`
+* `.alert-warning`
+* `.alert-danger`, `.alert-error`
+
+##### Structure
+
+* `.alert`: Base container.
+* `.alert__close`: Display the button to close the current alert.
+
+##### Accesibility
+
+We can distinguish two types of alerts based on the interaction they require from users.
+
+_Note that we're not considering the close button as a focusable element because it's an optional
+interaction_.
+
+**Alerts: no interaction. They don't include any focusable element**
+
+They inform the users about relevant information, such as the result or errors in the current
+action. They users the `role="alert"` property.
+
+**Alert dialogs: requires user interaction. They include focusable elements**
+
+These alerts require some interaction from users. For example, confirm an action or enter a value
+are considered user interactions. They uses the `role="alertdialog"` and define an accesible name
+and description using the `aria-labelledby` and `aria-describedby` properties. You can check the
+last example.
+
+##### References
+
+* [Using the alert role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role)
+* [Using the alertdialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role)
+* [Using the dialog role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_dialog_role)
+
+```html
+<div class="container container-tiny margin-b-enormous">
+  <div class="alert margin-c" role="alert">
+    Thank you for suscribing to our newsletter
+    <button class="alert__close">
+      &times;
+    </button>
+  </div>
+</div>
+<div class="container container-tiny margin-b-enormous">
+  <div class="alert alert-success margin-c" role="alert">
+    You application was created correctly
+    <button class="alert__close">
+      &times;
+    </button>
+  </div>
+</div>
+<div class="container container-tiny margin-b-enormous">
+  <div class="alert alert-warning margin-c" role="alert">
+    Please, check your current configuration
+    <button class="alert__close">
+      &times;
+    </button>
+  </div>
+</div>
+<div class="container container-tiny margin-b-enormous">
+  <div class="alert alert-error margin-c" role="alert">
+    There was an error connecting to your account.</br>
+    Please, check the credentials are valid.
+    <button class="alert__close">
+      &times;
+    </button>
+  </div>
+</div>
+<div class="container container-tiny">
+  <div class="alert alert-warning margin-c" role="alertdialog" aria-labelledby="alertTitle1" aria-describedby="alertDesc1">
+    <h3 id="alertTitle1" class="margin-t-reset">Delete your application</h3>
+    <p id="alertDesc1">This action will remove your application from our systems and it cannot be reverted:</p>
+    <p class="margin-b-small">
+      <button class="button button-danger">Delete my application</button>
+      <button class="button">Cancel deletion</button>
+    </p>
+    <button class="alert__close">
+      &times;
+    </button>
+  </div>
+</div>
+```
+*/
+.alert {
+  background-color: color('white');
+  border-left: 5px solid color('brand');
+  box-shadow: 0 4px 25px -3px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  padding: padding('normal') padding('enormous') padding('normal') padding('big');
+  position: relative;
+
+  /* Colored corner */
+  &:after {
+    background-color: color('brand');
+    content: '';
+    height: 50px;
+    position: absolute;
+    right: -20%;
+    bottom: -35px;
+    transform: rotateZ(-13deg);
+    width: 30%;
+  }
+
+  /* Close button */
+  &__close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: type-scale('big');
+    font-weight: bold;
+    height: auto;
+    line-height: $line-height;
+    padding: 0;
+    position: absolute;
+    top: su(.3);
+    right: padding('normal');
+  }
+
+  /* Modifiers */
+  &-success {
+    border-left-color: color('accent');
+
+    &:after {
+      background-color: color('accent');
+    }
+  }
+
+  &-warning {
+    border-left-color: color-level('highlight', 600);
+
+    &:after {
+      background-color: color-level('highlight', 600);
+    }
+  }
+
+  &-error,
+  &-danger {
+    border-left-color: color-level('danger', 600);
+
+    &:after {
+      background-color: color-level('danger', 600);
+    }
+  }
+}
