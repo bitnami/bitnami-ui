@@ -1,0 +1,53 @@
+/*
+---
+name: Flex Align
+category: Foundations/Helpers
+tag: helper
+---
+
+The flex helper will allow to align content vertically. When used in the parent element, the
+alignment will apply to all the child elements.
+
+* `.flex.align-start`: Top alignment
+* `.flex.align-end`: Bottom alignment
+* `.flex.aling-center`: Middle alignment
+
+If a specific child element needs a different alignment, it can be redefined using the
+following classes.
+
+* `.align-start`
+* `.align-center`
+* `.align-end`
+
+```html
+<div class="container container-small">
+  <div class='flex align-center' style="border: 1px solid #ccc">
+    <img class="avatar avatar-big align-start"
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    <img class="avatar avatar-big"
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    <img class="avatar avatar-big align-end"
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    <img class="avatar avatar-big align-start margin-r-big"
+      src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+    <div class="margin-r-big" style="width:350px;">
+      <article>A very long long long long long long long long long long long long long long long long long long long long long long long long long long long long content</article>
+    </div>
+    <span>The element is placed in the middle of the parent element</span>
+  </div>
+  <br/>
+  <div class='flex' style="border: 1px solid #ccc">
+    <div style="width:350px; margin-right: 2em;">
+      <article>A very long long long long long long long long long long long long long long long long long long long long long long long long long long long long content</article>
+    </div>
+    <div style="width:350px; margin-right: 2em;" class='align-center'>
+      The element is placed in the middle of the parent element
+    </div>
+    <div style="width:350px;">
+      This element is not vertical aligned
+    </div>
+  </div>
+</div>
+```
+*/
+
