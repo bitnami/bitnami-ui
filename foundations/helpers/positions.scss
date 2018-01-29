@@ -4,7 +4,10 @@ name: Text alignment
 category: Foundations/Helpers
 tag: helpers
 ---
-These classes help us to modify the default aligntment of the text in our views
+These classes help us to modify the default aligntment of the text in our views.
+
+If the parent is displayed using flex, it will also work because
+`justify-content: left | center | right` is applied.
 
 ```html
 <p class="text-l">Left alignment</p>
@@ -14,14 +17,17 @@ These classes help us to modify the default aligntment of the text in our views
 */
 .text-l {
   text-align: left;
+  justify-content: left;
 }
 
 .text-r {
   text-align: right;
+  justify-content: right;
 }
 
 .text-c {
   text-align: center;
+  justify-content: center;
 }
 
 /*
