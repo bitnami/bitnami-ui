@@ -1,24 +1,129 @@
 /*
 ---
+name: Profile
+category: Components/Profiles
+tag: component
+---
+The profile component shows the avatar, name and title of a person. This is used in pages where
+is important to show the profile information.
+
+```html
+<div class="profile">
+  <img class="avatar avatar-huge"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+  <div class="profile__info">
+    <h4>Jamie Smith</h4>
+    <p class="profile__info__company">Senior Director of Cloud Technologies</p>
+  </div>
+</div>
+
+```
+*/
+
+$multiplier: map-get($scale-names, 'huge');
+$size: 1.5 + (1.5 * $multiplier);
+
+.profile {
+  margin-bottom: margin('normal');
+  // This width is fixed because smaller sizes are way too small to be readable
+  width: su($size);
+  text-align: center;
+
+  &__info {
+    padding: 0 padding('normal');
+
+    &__company {
+      color: color('accent-light');
+    }
+  }
+}
+
+/*
+---
 name: Profile list
 category: Components/Profiles
 tag: component
 ---
-This component shows a list of users. You can use it for pages like webinars or study cases.
+This component shows a list of users. You can use it for pages like 'team' where more than one
+profile is displayed. The container size, number of columns and the avatar size can be modified
+in order to fit the needs of each specific page. It will be aligned to the center by default.
+
+The class `.text-c` in the `.row` level allows to center the profile elements in the list, so
+when a profile is placed in a new row, it will be displayed in the center.
+
+The `.profile` element has a fixed width and can be centered adding the class `.margin-c`
+
+```html
+<div class="container container-small">
+  <div class="row text-c">
+    <div class="col-4">
+      <div class="profile margin-c">
+        <img class="avatar avatar-huge"
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+        <div class="profile__info margin-c">
+          <h4>Jamie Smith</h4>
+          <p class="profile__info__company">Senior Director of Cloud Technologies</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="profile margin-c">
+        <img class="avatar avatar-bigger"
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+        <div class="profile__info margin-c">
+          <h4>Jamie Miller</h4>
+          <p class="profile__info__company">Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="profile margin-c">
+        <img class="avatar avatar-huge"
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+        <div class="profile__info margin-c">
+          <h4>Jamie Smith</h4>
+          <p class="profile__info__company">Senior Director of Cloud Technologies</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="profile margin-c">
+        <img class="avatar avatar-huge"
+          src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg"/>
+        <div class="profile__info margin-c">
+          <h4>Jamie Smith</h4>
+          <p class="profile__info__company">Senior Director of Cloud Technologies</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+```
+*/
+
+/*
+---
+name: Profile vertical list
+category: Components/Profiles
+tag: component
+---
+This component shows a list of users vertically. You can use it for pages like webinars or
+study cases where the user is mentioned but it's not the main information you want to show.
 
 ```html
 <div class="container container-tiny">
   <div class="profile-list margin-v-big">
     <div class="profile-list__avatar">
-      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+      <img class="avatar avatar-enormous padding-normal"
         src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
     </div>
     <div class="profile-list__info padding-l-big">
-      <h2 class="type-big type-uppercase">
+      <h4>
         Miguel Martinez
         <span class="type-color-iron"> / </span>
-        <span class="type-color-accent">Bitnami</span>
-      </h2>
+        <span class="profile__info__company type-capitalize">Bitnami</span>
+      </h4>
       <p>
         Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
       </p>
@@ -27,15 +132,15 @@ This component shows a list of users. You can use it for pages like webinars or 
   </div>
   <div class="profile-list margin-v-big">
     <div class="profile-list__avatar">
-      <img class="avatar avatar-border avatar-circle avatar-enormous padding-normal"
+      <img class="avatar avatar-enormous padding-normal"
         src="https://s3.amazonaws.com/uifaces/faces/twitter/zeldman/128.jpg" alt="Person name avatar" />
     </div>
     <div class="profile-list__info padding-l-big">
-      <h2 class="type-big type-uppercase">
+      <h4>
         Other name
         <span class="type-color-iron"> / </span>
-        <span class="type-color-accent">Bitnami</span>
-      </h2>
+        <span class="profile__info__company type-capitalize">Bitnami</span>
+      </h4>
       <p>
         Miguel Martinez is a core contributor to the Helm and Monocular projects & Senior Software Engineer at Bitnami.
       </p>

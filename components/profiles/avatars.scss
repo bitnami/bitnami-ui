@@ -33,6 +33,10 @@ Change the size of the avatar. You can combine it with other avatar classes.
 
 ```html
 <p>
+  <img class="avatar avatar-huge"
+    src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
+</p>
+<p>
   <img class="avatar avatar-enormous"
     src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg" alt="Person name avatar" />
 </p>
@@ -59,7 +63,7 @@ Change the size of the avatar. You can combine it with other avatar classes.
 ```
 */
 
-@each $size-name in 'tiny', 'small', 'big', 'bigger', 'enormous' {
+@each $size-name in 'tiny', 'small', 'big', 'bigger', 'enormous', 'huge' {
   $multiplier: map-get($scale-names, $size-name);
   $size: 1;
 

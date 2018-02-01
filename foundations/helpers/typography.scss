@@ -87,7 +87,7 @@ the [reverse helper](#Typography%20color%20reverse) may interest you.
 </p>
 ```
 */
-@each $alias in 'bitnami', 'accent', 'iron', 'action', 'white', 'light-blue' {
+@each $alias in 'bitnami', 'accent', 'accent-light', 'iron', 'action', 'white', 'light-blue' {
   $name: map-get($color-names, $alias);
 
   .type-color-#{$alias},
@@ -245,6 +245,24 @@ Set the text to Uppercase
 */
 .type-uppercase {
   text-transform: uppercase;
+}
+
+/*
+---
+name: Typography capitalize
+category: Foundations/Helpers
+tag: helpers
+---
+Set the text to Capitalize
+
+```html
+<h1 class="type-capitalize">
+  Bitnami rocks!
+</h1>
+```
+*/
+.type-capitalize {
+  text-transform: capitalize;
 }
 
 /*
