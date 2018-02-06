@@ -11,7 +11,7 @@ See http://www.a11ymatters.com/pattern/pagination/.
 
 ```html
 <nav class="pagination" role="navigation" aria-label="Pagination Navigation">
-  <ul class="remove-style">
+  <ul>
     <li class="pagination__current"><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
     <li><a href="#" aria-label="Goto Page 2">2</a></li>
     <li><a href="#" aria-label="Goto Page 3">3</a></li>
@@ -23,6 +23,7 @@ See http://www.a11ymatters.com/pattern/pagination/.
 ```
 */
 .pagination {
+  list-style: none;
   margin: margin('big') 0;
 
   // Main list
@@ -34,12 +35,11 @@ See http://www.a11ymatters.com/pattern/pagination/.
 
       a {
         padding: padding('small') padding('normal');
-        border-radius: $spacing-border-radius;
       }
 
       &:not(.pagination__current) {
         a:hover {
-          background: color-level('brand', 50);
+          background: color-level('brand', 100);
           color: color('white');
         }
       }
@@ -49,7 +49,7 @@ See http://www.a11ymatters.com/pattern/pagination/.
   &__current {
     a,
     a:hover {
-      background: color('brand');
+      background: color-level('brand', 700);
       color: color('white');
     }
   }

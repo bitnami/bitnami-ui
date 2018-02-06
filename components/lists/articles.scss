@@ -1,0 +1,153 @@
+/*
+---
+name: Articles
+category: Components/Lists
+tag: component
+---
+
+Displays a list of articles, conferences or any other external resource. You can use with other
+resources but this list component is focused on articles.
+
+* **Good examples**: any list of external resources, mainly articles
+* **Bad examples**: a list of features
+
+##### Structure
+
+* `.articles`: main container of the list of articles
+* `.articles__article`: individual articles of the list
+* `.articles__article__title`
+* `.articles__article__description`: text after the title. It can include an icon, date, excerpt or
+any other short and relevant information
+* `.articles__article__icon`: icon of the article
+
+##### Related components
+
+* [Pagination](/category/Components/Navigation/#Pagination)
+
+##### Accesibility
+
+Check the [accesibility information of the Pagination component](/category/Components/Navigation/#Pagination)
+
+```html
+<div class="section bg-light padding-v-bigger">
+  <div class="container">
+    <h2 class="margin-t-reset">All News</h2>
+    <ul class="articles">
+      <li class="articles__article">
+        <h4 class="articles__article__title">
+          <a href="#">
+            Manage your cluster on the go with our new awesome mobile application
+          </a>
+        </h4>
+        <p class="articles__article__description">
+          <span class="articles__article__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>icon</title><path d="M9.072 10.274H6.929a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.143c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zM3.894 4.739V6.88c0 .099.08.179.179.179h2.142c.099 0 .178-.08.178-.18V4.74a.178.178 0 0 0-.178-.18H4.073a.18.18 0 0 0-.18.18zm5.356 0a.178.178 0 0 0-.178-.18H6.929a.18.18 0 0 0-.18.18V6.88c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V4.74zM6.393 7.595a.178.178 0 0 0-.178-.178H4.073a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.142c.099 0 .178-.08.178-.18V7.596zm-.178 2.679H4.073a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.142c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zm5.892-2.68a.179.179 0 0 0-.18-.177H9.787a.179.179 0 0 0-.178.178v2.143c0 .099.08.179.178.179h2.142a.18.18 0 0 0 .179-.18V7.596zm-2.321 2.68a.179.179 0 0 0-.178.178v2.143c0 .098.08.179.178.179h2.142a.18.18 0 0 0 .179-.18v-2.142a.179.179 0 0 0-.18-.178H9.787zm-.178-5.535V6.88c0 .099.08.179.178.179h2.143a.18.18 0 0 0 .179-.18V4.74a.18.18 0 0 0-.18-.18H9.787a.179.179 0 0 0-.178.18zM9.25 7.595a.178.178 0 0 0-.178-.178H6.929a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V7.596zM12.663 4c.185 0 .334-.15.334-.333V.334a.333.333 0 1 0-.667 0v3.333c0 .183.15.333.333.333zM14 1.334V14H2V1.334H.334A.333.333 0 0 0 0 1.667v14c0 .184.148.333.333.333h15.334c.184 0 .332-.15.332-.333v-14a.332.332 0 0 0-.332-.333H14zM3.333 4c.184 0 .333-.15.333-.333V.334a.333.333 0 0 0-.666 0v3.333c0 .183.148.333.333.333zM4.5 3.334h2.333v-2H4.5v2zm4.66 0h2.333v-2H9.16v2zM8 4c.185 0 .333-.15.333-.333V.334a.333.333 0 1 0-.666 0v3.333c0 .183.15.333.333.333z" fill="currentColor" fill-rule="evenodd"/></svg>
+          </span>
+          RandomCompany -
+          <date>August 8, 2017</date>
+        </p>
+      </li>
+      <li class="articles__article">
+        <h4 class="articles__article__title">
+          <a href="#">
+            Get relevant information from your cluster status using the dashboard
+          </a>
+        </h4>
+        <p class="articles__article__description">
+          <span class="articles__article__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>icon</title><path d="M9.072 10.274H6.929a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.143c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zM3.894 4.739V6.88c0 .099.08.179.179.179h2.142c.099 0 .178-.08.178-.18V4.74a.178.178 0 0 0-.178-.18H4.073a.18.18 0 0 0-.18.18zm5.356 0a.178.178 0 0 0-.178-.18H6.929a.18.18 0 0 0-.18.18V6.88c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V4.74zM6.393 7.595a.178.178 0 0 0-.178-.178H4.073a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.142c.099 0 .178-.08.178-.18V7.596zm-.178 2.679H4.073a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.142c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zm5.892-2.68a.179.179 0 0 0-.18-.177H9.787a.179.179 0 0 0-.178.178v2.143c0 .099.08.179.178.179h2.142a.18.18 0 0 0 .179-.18V7.596zm-2.321 2.68a.179.179 0 0 0-.178.178v2.143c0 .098.08.179.178.179h2.142a.18.18 0 0 0 .179-.18v-2.142a.179.179 0 0 0-.18-.178H9.787zm-.178-5.535V6.88c0 .099.08.179.178.179h2.143a.18.18 0 0 0 .179-.18V4.74a.18.18 0 0 0-.18-.18H9.787a.179.179 0 0 0-.178.18zM9.25 7.595a.178.178 0 0 0-.178-.178H6.929a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V7.596zM12.663 4c.185 0 .334-.15.334-.333V.334a.333.333 0 1 0-.667 0v3.333c0 .183.15.333.333.333zM14 1.334V14H2V1.334H.334A.333.333 0 0 0 0 1.667v14c0 .184.148.333.333.333h15.334c.184 0 .332-.15.332-.333v-14a.332.332 0 0 0-.332-.333H14zM3.333 4c.184 0 .333-.15.333-.333V.334a.333.333 0 0 0-.666 0v3.333c0 .183.148.333.333.333zM4.5 3.334h2.333v-2H4.5v2zm4.66 0h2.333v-2H9.16v2zM8 4c.185 0 .333-.15.333-.333V.334a.333.333 0 1 0-.666 0v3.333c0 .183.15.333.333.333z" fill="currentColor" fill-rule="evenodd"/></svg>
+          </span>
+          RandomCompany -
+          <date>August 5, 2017</date>
+        </p>
+      </li>
+      <li class="articles__article">
+        <h4 class="articles__article__title">
+          <a href="#">
+            Our experience at the ConfConf
+          </a>
+        </h4>
+        <p class="articles__article__description">
+          <span class="articles__article__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>icon</title><path d="M9.072 10.274H6.929a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.143c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zM3.894 4.739V6.88c0 .099.08.179.179.179h2.142c.099 0 .178-.08.178-.18V4.74a.178.178 0 0 0-.178-.18H4.073a.18.18 0 0 0-.18.18zm5.356 0a.178.178 0 0 0-.178-.18H6.929a.18.18 0 0 0-.18.18V6.88c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V4.74zM6.393 7.595a.178.178 0 0 0-.178-.178H4.073a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.142c.099 0 .178-.08.178-.18V7.596zm-.178 2.679H4.073a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.142c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zm5.892-2.68a.179.179 0 0 0-.18-.177H9.787a.179.179 0 0 0-.178.178v2.143c0 .099.08.179.178.179h2.142a.18.18 0 0 0 .179-.18V7.596zm-2.321 2.68a.179.179 0 0 0-.178.178v2.143c0 .098.08.179.178.179h2.142a.18.18 0 0 0 .179-.18v-2.142a.179.179 0 0 0-.18-.178H9.787zm-.178-5.535V6.88c0 .099.08.179.178.179h2.143a.18.18 0 0 0 .179-.18V4.74a.18.18 0 0 0-.18-.18H9.787a.179.179 0 0 0-.178.18zM9.25 7.595a.178.178 0 0 0-.178-.178H6.929a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V7.596zM12.663 4c.185 0 .334-.15.334-.333V.334a.333.333 0 1 0-.667 0v3.333c0 .183.15.333.333.333zM14 1.334V14H2V1.334H.334A.333.333 0 0 0 0 1.667v14c0 .184.148.333.333.333h15.334c.184 0 .332-.15.332-.333v-14a.332.332 0 0 0-.332-.333H14zM3.333 4c.184 0 .333-.15.333-.333V.334a.333.333 0 0 0-.666 0v3.333c0 .183.148.333.333.333zM4.5 3.334h2.333v-2H4.5v2zm4.66 0h2.333v-2H9.16v2zM8 4c.185 0 .333-.15.333-.333V.334a.333.333 0 1 0-.666 0v3.333c0 .183.15.333.333.333z" fill="currentColor" fill-rule="evenodd"/></svg>
+          </span>
+          RandomCompany -
+          <date>August 3, 2017</date>
+        </p>
+      </li>
+      <li class="articles__article">
+        <h4 class="articles__article__title">
+          <a href="#">
+            Releasing v3.4 of DummyApp. The last minor version before the next huge change in the application
+          </a>
+        </h4>
+        <p class="articles__article__description">
+          <span class="articles__article__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>icon</title><path d="M9.072 10.274H6.929a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.143c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zM3.894 4.739V6.88c0 .099.08.179.179.179h2.142c.099 0 .178-.08.178-.18V4.74a.178.178 0 0 0-.178-.18H4.073a.18.18 0 0 0-.18.18zm5.356 0a.178.178 0 0 0-.178-.18H6.929a.18.18 0 0 0-.18.18V6.88c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V4.74zM6.393 7.595a.178.178 0 0 0-.178-.178H4.073a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.142c.099 0 .178-.08.178-.18V7.596zm-.178 2.679H4.073a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.142c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zm5.892-2.68a.179.179 0 0 0-.18-.177H9.787a.179.179 0 0 0-.178.178v2.143c0 .099.08.179.178.179h2.142a.18.18 0 0 0 .179-.18V7.596zm-2.321 2.68a.179.179 0 0 0-.178.178v2.143c0 .098.08.179.178.179h2.142a.18.18 0 0 0 .179-.18v-2.142a.179.179 0 0 0-.18-.178H9.787zm-.178-5.535V6.88c0 .099.08.179.178.179h2.143a.18.18 0 0 0 .179-.18V4.74a.18.18 0 0 0-.18-.18H9.787a.179.179 0 0 0-.178.18zM9.25 7.595a.178.178 0 0 0-.178-.178H6.929a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V7.596zM12.663 4c.185 0 .334-.15.334-.333V.334a.333.333 0 1 0-.667 0v3.333c0 .183.15.333.333.333zM14 1.334V14H2V1.334H.334A.333.333 0 0 0 0 1.667v14c0 .184.148.333.333.333h15.334c.184 0 .332-.15.332-.333v-14a.332.332 0 0 0-.332-.333H14zM3.333 4c.184 0 .333-.15.333-.333V.334a.333.333 0 0 0-.666 0v3.333c0 .183.148.333.333.333zM4.5 3.334h2.333v-2H4.5v2zm4.66 0h2.333v-2H9.16v2zM8 4c.185 0 .333-.15.333-.333V.334a.333.333 0 1 0-.666 0v3.333c0 .183.15.333.333.333z" fill="currentColor" fill-rule="evenodd"/></svg>
+          </span>
+          RandomCompany -
+          <date>August 1, 2017</date>
+        </p>
+      </li>
+      <li class="articles__article">
+        <h4 class="articles__article__title">
+          <a href="#">
+            5 tips to organize your communication in a remote culture
+          </a>
+        </h4>
+        <p class="articles__article__description">
+          <span class="articles__article__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><title>icon</title><path d="M9.072 10.274H6.929a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.143c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zM3.894 4.739V6.88c0 .099.08.179.179.179h2.142c.099 0 .178-.08.178-.18V4.74a.178.178 0 0 0-.178-.18H4.073a.18.18 0 0 0-.18.18zm5.356 0a.178.178 0 0 0-.178-.18H6.929a.18.18 0 0 0-.18.18V6.88c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V4.74zM6.393 7.595a.178.178 0 0 0-.178-.178H4.073a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.142c.099 0 .178-.08.178-.18V7.596zm-.178 2.679H4.073a.179.179 0 0 0-.18.178v2.143c0 .098.081.179.18.179h2.142c.099 0 .178-.08.178-.18v-2.142a.178.178 0 0 0-.178-.178zm5.892-2.68a.179.179 0 0 0-.18-.177H9.787a.179.179 0 0 0-.178.178v2.143c0 .099.08.179.178.179h2.142a.18.18 0 0 0 .179-.18V7.596zm-2.321 2.68a.179.179 0 0 0-.178.178v2.143c0 .098.08.179.178.179h2.142a.18.18 0 0 0 .179-.18v-2.142a.179.179 0 0 0-.18-.178H9.787zm-.178-5.535V6.88c0 .099.08.179.178.179h2.143a.18.18 0 0 0 .179-.18V4.74a.18.18 0 0 0-.18-.18H9.787a.179.179 0 0 0-.178.18zM9.25 7.595a.178.178 0 0 0-.178-.178H6.929a.179.179 0 0 0-.18.178v2.143c0 .099.081.179.18.179h2.143c.099 0 .178-.08.178-.18V7.596zM12.663 4c.185 0 .334-.15.334-.333V.334a.333.333 0 1 0-.667 0v3.333c0 .183.15.333.333.333zM14 1.334V14H2V1.334H.334A.333.333 0 0 0 0 1.667v14c0 .184.148.333.333.333h15.334c.184 0 .332-.15.332-.333v-14a.332.332 0 0 0-.332-.333H14zM3.333 4c.184 0 .333-.15.333-.333V.334a.333.333 0 0 0-.666 0v3.333c0 .183.148.333.333.333zM4.5 3.334h2.333v-2H4.5v2zm4.66 0h2.333v-2H9.16v2zM8 4c.185 0 .333-.15.333-.333V.334a.333.333 0 1 0-.666 0v3.333c0 .183.15.333.333.333z" fill="currentColor" fill-rule="evenodd"/></svg>
+          </span>
+          RandomCompany -
+          <date>July 24, 2017</date>
+        </p>
+      </li>
+    </ul>
+    <nav class="pagination margin-t-enormous" role="navigation" aria-label="Articles pagination">
+      <ul>
+        <li class="pagination__current"><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+        <li><a href="#" aria-label="Goto Page 2">2</a></li>
+        <li><a href="#" aria-label="Goto Page 3">3</a></li>
+        <li><a href="#" aria-label="Goto Page 4">4</a></li>
+        <li><a href="#" aria-label="Goto Page 5">5</a></li>
+        <li><a href="#" aria-label="Goto Page 6">6</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+```
+*/
+.articles {
+  list-style: none;
+  margin: spacing('big') 0 0;
+  padding-left: 0;
+
+  &__article {
+    border-top: 1px solid color('gray-light');
+    padding: spacing('normal') 0;
+
+    &__title {
+      margin: 0;
+      text-transform: unset;
+    }
+
+    &__icon {
+      vertical-align: middle;
+
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+    }
+
+    &__description {
+      color: color('gray');
+      margin: 0;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid color('gray-light');
+    }
+  }
+}

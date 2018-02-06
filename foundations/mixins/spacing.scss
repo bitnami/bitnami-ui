@@ -1,9 +1,43 @@
 /*
 ---
+name: spacing(name)
+category: Foundations/Mixins
+tag: function
+---
+
+Get a spacing value based on the `size unity`. This method will throw an exception if the name
+of the size is not valid.
+
+```scss
+.test {
+  margin: spacing('tiny');
+}
+.test2 {
+  padding-bottom: spacing('huge');
+}
+```
+*/
+@function spacing($name: 'normal') {
+  @if map-has-key($spacing-sizes, $name) {
+    @return map-get($spacing-sizes, $name);
+  } @else if map-has-key($scale-names, $name) {
+    @return map-get($spacing-sizes, map-get($scale-names, $name));
+  } @else {
+    @warn "We didn't find the size called #{$name}. Please check available sizes";
+    @return map-get($spacing-sizes, 'normal');
+  }
+}
+
+
+/*
+---
 name: margin(name)
 category: Foundations/Mixins
 tag: function
 ---
+
+**DEPRECATED:** see <a href="/category/Foundations/Mixins/#spacing(name)">spacing(name)</a>
+
 Get a margin value based on the `size unity`. This method will throw an exception if the name
 of the size is not valid.
 
@@ -17,14 +51,7 @@ of the size is not valid.
 ```
 */
 @function margin($name: 'normal') {
-  @if map-has-key($spacing-sizes, $name) {
-    @return map-get($spacing-sizes, $name);
-  } @else if map-has-key($scale-names, $name) {
-    @return map-get($spacing-sizes, map-get($scale-names, $name));
-  } @else {
-    @warn "We didn't find the size called #{$name}. Please check available sizes";
-    @return map-get($spacing-sizes, 'normal');
-  }
+  @return spacing($name);
 }
 
 /*
@@ -33,6 +60,9 @@ name: padding(name)
 category: Foundations/Mixins
 tag: function
 ---
+
+**DEPRECATED:** see <a href="/category/Foundations/Mixins/#spacing(name)">spacing(name)</a>
+
 Get a padding value based on the `size unity`. This method will throw an exception if the name
 of the size is not valid.
 
@@ -46,7 +76,7 @@ of the size is not valid.
 ```
 */
 @function padding($name: 'normal') {
-  @return margin($name);
+  @return spacing($name);
 }
 
 /**
