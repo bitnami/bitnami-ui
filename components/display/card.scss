@@ -1,0 +1,142 @@
+/*
+---
+name: Card
+category: Components/Display
+tag: component
+---
+
+Cards highlights a block of content as a single entity. [Material.io](https://material.io/) made
+them popular in mobile, and currently you can see them in a lot of different design systems. They
+usually condense information as an entrypoint for a extended information.
+
+* **Good examples**: title and date of an article or event. Other example could be applications name
+and actions.
+* **Bad examples**: do not use cards to show a full content element in a single page
+
+##### Structure
+
+* `.card`: main container. By default it takes all the space and set a min-height of 18em.
+* `.card-accent`, `.card-action`, `.card-light`: change the color of the ribbon
+* `.card__image`: it's an optional part of the card. It's displayed above the content
+* `.card__time`: datetime or any other non-primary information
+* `.card__title`: title of the card. The height is currently limited to 3 lines. Remember this
+limitation when you add content for the card
+* `.card__actions`: actions for the card
+
+```html
+<div class="container">
+  <div class="row collapse-2-b-desktop collapse-b-tablet">
+    <div class="col-3">
+      <div class="card shadow-1">
+        <div class="card__image">
+          <img src="https://via.placeholder.com/150x50" />
+        </div>
+        <time class="card__time" datetime="2017-09-12">September 12, 2017</time>
+        <h3 class="card__title">
+          A company delivers cloud-ready applications for a new cloud provider
+        </h3>
+        <p class="card__actions">
+          <a href="#">Read more</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card card-accent shadow-1">
+        <time class="card__time" datetime="2017-09-12">September 12, 2017</time>
+        <h3 class="card__title">
+          A company delivers cloud-ready applications for a new cloud provider
+        </h3>
+        <p class="card__actions">
+          <a href="#">Read more</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card card-action shadow-1">
+        <time class="card__time" datetime="2017-09-12">September 12, 2017</time>
+        <p class="margin-reset">
+          <b>Category</b>
+        </p>
+        <h3 class="card__title">
+          A company delivers cloud-ready applications for a new cloud provider
+        </h3>
+        <p class="card__actions">
+          <a href="#">Read more</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card card-light shadow-1">
+        <div class="card__image">
+          <img src="https://via.placeholder.com/150x50" />
+        </div>
+        <time class="card__time" datetime="2017-09-12">September 12, 2017</time>
+        <h3 class="card__title">
+          A company delivers cloud-ready applications for a new cloud provider
+        </h3>
+        <p class="card__actions">
+          <a href="#">Read more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.card {
+  background-color: color('base');
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 19em;
+  overflow: hidden;
+  padding: spacing('big');
+  position: relative;
+  width: 100%;
+
+  &:before {
+    background: gradient('brand');
+    content: '';
+    height: 10em;
+    position: absolute;
+    left: -50%;
+    top: -7em;
+    transform: rotateZ(10deg);
+    width: 200%;
+  }
+
+  @each $v in 'accent', 'action', 'light' {
+    &-#{$v} {
+      &:before {
+        background: gradient($v);
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: spacing('small');
+
+    img {
+      max-height: 3em;
+    }
+  }
+
+  &__time {
+    color: color('gray');
+    font-size: type-scale('small');
+  }
+
+  &__title {
+    display: inline-block;
+    font-weight: 400;
+    font-size: type-scale('big');
+    margin: spacing('small') 0 0;
+    max-height: 3 * $line-height * 1em;
+    overflow: hidden;
+  }
+
+  &__actions {
+    margin: spacing('big') 0 0;
+  }
+}
