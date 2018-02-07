@@ -13,13 +13,13 @@ This section is used in full width sections where the content is placed only on 
 ##### Architecture
 
 * `.bg-skew`: main container of the component
-* `.bg-skew__pattern`: this container will add the cube pattern to the right background
+* `.bg-skew__pattern bg-skew__pattern-dark`: this container will add the dark cube pattern to the right background
 * `.bg-skew__content`: content of the section. It takes 50% of the available above the phone-land
 breakpoint
 
 ```html
 <section class="padding-v-bigger bg-skew type-color-reverse">
-  <div class="bg-skew__pattern">
+  <div class="bg-skew__pattern bg-skew__pattern-dark">
     <div class="container">
       <div class="bg-skew__content">
         <h2>Interested?</h2>
@@ -70,9 +70,17 @@ breakpoint
     top: 0;
   }
 
-  &__pattern:before {
-    background: url("#{image-endpoint()}hero-bar-pattern.png") center center/89px 77px repeat;
-    opacity: .2;
+  &__pattern {
+    &:before,
+    &-dark:before {
+      opacity: .2;
+    }
+    &:before {
+      background: url("#{image-endpoint()}hero-bar-pattern.png") center center/89px 77px repeat;
+    }
+    &-dark:before {
+      background: url("#{image-endpoint()}hero-bar-pattern-dark.png") center center/89px 77px repeat;
+    }
   }
 
   &:before {
