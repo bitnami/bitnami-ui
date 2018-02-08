@@ -18,11 +18,11 @@ module.exports = {
   },
   plugins: [
     new ClosureCompilerPlugin({
-      jsCompiler: true,
+      //jsCompiler: true,
       compiler: {
         language_in: 'ECMASCRIPT6',
         language_out: 'ECMASCRIPT5',
-        compilation_level: 'ADVANCED',
+        compilation_level: 'ADVANCED'
       }
     })
   ]
