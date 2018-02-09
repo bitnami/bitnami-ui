@@ -38,6 +38,15 @@ export default class Aria {
   }
 
   /**
+   * Set the value of the aria-selected attribute of the node element
+   *
+   * @param {boolean} selected True if the element is selected. True by default
+   */
+  select(selected:boolean = true) {
+    this.node.setAttribute('aria-selected', String(!selected));
+  }
+
+  /**
    * Set the value of the aria-hidden attribute of the node element
    *
    * @param {boolean} show True if the element is shown. True by default

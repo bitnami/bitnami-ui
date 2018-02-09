@@ -1,0 +1,207 @@
+/*
+---
+name: Vertical tabs
+category: Components/Lists
+tag: component
+---
+
+Filter or categorize a [list of resources](#Resources). You can add useful description per tab.
+
+* **Good examples**: a filtered list of resources by category
+* **Bad examples**: any list of elements with a too spread list of categories. For example, 20
+categories and 2 elements per category
+
+##### Structure
+
+* `.verticalTabs`: main container
+* `.verticalTabs__tabs`: list of tabs
+* `.verticalTabs__tabs__tab`: tab item
+* `.verticalTabs__tabs__tab-active`: change the style of the tab to looks active. It also displays
+the description
+* `.verticalTabs__tabs__tab__button`: include the label of a panel and open the panel when users
+click on it
+* `.verticalTabs__tabs__tab__description`: optional description for the tab. It's showed only in
+the active tab
+* `.verticalTabs__panel`: every panel contains the content of the different tabs
+
+##### Related components
+
+* [Lists / Resources](#Resources)
+
+##### Accesibility
+
+For accesibility, this component is considered as a tab. `verticalTabs__tabs__tab` elements must
+include the `presentation` role for the row and the `tab` role for the button. Remember to identify
+the buttons that open tabs and set the proper `href` and `aria-controls` value for the panel
+identifier.
+
+Panels have the `tabpanel` role and refer to these tab buttons using the `aria-labeledby` attribute.
+
+The active panel is determined by the `aria-selected` attribute in the tab buttons.
+
+* [WAI Aria practices](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel)
+* [A11y responsive tabs](https://codepen.io/BeyondHyper/pen/xZXXzj)
+
+
+```html
+<div class="verticalTabs bg-light padding-v-bigger">
+  <div class="container">
+    <h2 class="margin-t-reset">Events by Category</h2>
+    <div class="row">
+      <div class="col-4">
+        <aside>
+          <ul class="verticalTabs__tabs">
+            <li class="verticalTabs__tabs__tab" role="presentation">
+              <a href="#section-0" id="#tab0" class="verticalTabs__tabs__tab__button" role="tab" tabindex="-1"
+                aria-controls="#section-0">
+                All Upcoming Events
+              </a>
+              <p class="verticalTabs__tabs__tab__description">
+                Check the list of all the upcoming events!
+              </p>
+            </li>
+            <li class="verticalTabs__tabs__tab verticalTabs__tabs__tab-active" role="presentation">
+              <a href="#section-1" id="#tab1" class="verticalTabs__tabs__tab__button" role="tab" tabindex="-1"
+                aria-selected="true" aria-controls="#section-1">
+                Webinars
+              </a>
+              <p class="verticalTabs__tabs__tab__description">
+                Attend any of our webinars to talk to leading experts from our partners and us
+              </p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <div class="col-8">
+        <section id="section-0" class="verticalTabs__panel" role="tabpanel" aria-labeledby="tab0" tabindex="-1">
+          <ul class="articles margin-t-reset">
+            <li class="articles__article">
+              <h4 class="articles__article__title">
+                <a href="#">
+                  Get relevant information from your cluster status using the dashboard
+                </a>
+              </h4>
+              <p class="articles__article__description">
+                RandomCompany -
+                <date>August 5, 2017</date>
+              </p>
+            </li>
+            <li class="articles__article">
+              <h4 class="articles__article__title">
+                <a href="#">
+                  Our experience at the ConfConf
+                </a>
+              </h4>
+              <p class="articles__article__description">
+                RandomCompany -
+                <date>August 3, 2017</date>
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section id="section-1" class="verticalTabs__panel verticalTabs__panel-active"
+          role="tabpanel" aria-labeledby="tab1" tabindex="-1">
+          <ul class="articles margin-t-reset">
+            <li class="articles__article">
+              <h4 class="articles__article__title">
+                <a href="#">
+                  Manage your cluster on the go with our new awesome mobile application
+                </a>
+              </h4>
+              <p class="articles__article__description">
+                RandomCompany -
+                <date>August 8, 2017</date>
+              </p>
+            </li>
+            <li class="articles__article">
+              <h4 class="articles__article__title">
+                <a href="#">
+                  Get relevant information from your cluster status using the dashboard
+                </a>
+              </h4>
+              <p class="articles__article__description">
+                RandomCompany -
+                <date>August 5, 2017</date>
+              </p>
+            </li>
+            <li class="articles__article">
+              <h4 class="articles__article__title">
+                <a href="#">
+                  Our experience at the ConfConf
+                </a>
+              </h4>
+              <p class="articles__article__description">
+                RandomCompany -
+                <date>August 3, 2017</date>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+.verticalTabs {
+
+  &__tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__tab {
+      $tab: &;
+
+      padding: 0;
+      border-top: 1px solid color('gray-light');
+
+      &__button {
+        display: block;
+        padding: spacing('normal') spacing('small');
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      &__description {
+        color: gray;
+        display: none;
+        font-size: type-scale('small');
+        padding-left: spacing('big');
+        margin: spacing('normal') 0;
+      }
+
+      &-active {
+        border-top-color: transparent;
+
+        #{$tab}__button {
+          background-color: color('action-light');
+          color: color('white');
+        }
+
+        #{$tab}__description {
+          display: block;
+        }
+      }
+
+      &:hover:not(#{$tab}-active) {
+        background-color: color-level('action-light', 50);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid color('gray-light');
+      }
+    }
+  }
+
+  // .verticalTabs
+  &__panel {
+    display: none;
+
+    &-active {
+      display: block;
+    }
+  }
+}

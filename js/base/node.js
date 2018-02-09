@@ -47,6 +47,21 @@ export class UINode {
   }
 
   /**
+   * Read an attribute of the node or set it if the second parameter is present
+   *
+   * @param {string} attribute The attribute to get the value
+   * @param {string} value (Optional) The value for the attribute.
+   * @return {string|null} The value of the attribute
+   */
+  attr(attribute: string, value:?string = null): ?string {
+    if (value != null) {
+      this.node.setAttribute(attribute, value);
+    } else {
+      return this.node.getAttribute(attribute);
+    }
+  }
+
+  /**
    * Get the current height (visible / hidden) of the node.
    * @see http://usefulangle.com/post/40/javascript-client-height-vs-offset-height-vs-scroll-height
    *

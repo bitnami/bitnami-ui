@@ -17,6 +17,7 @@ window['BITNAMI_UI_INIT'] = false;
 import Accordion from './components/accordion';
 import Carousel from './components/carousel';
 import Header from './components/header';
+import verticalTabs from './components/vertical-tabs';
 
 // Export the B selector to window
 import b from './base';
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   Accordion();
   Carousel();
   Header();
+  verticalTabs();
 });
