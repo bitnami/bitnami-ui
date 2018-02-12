@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ClosureCompilerPlugin = require('webpack-closure-compiler');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 // Basic config
 module.exports = {
@@ -17,13 +17,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new ClosureCompilerPlugin({
-      jsCompiler: true,
-      compiler: {
-        language_in: 'ECMASCRIPT6',
-        language_out: 'ECMASCRIPT5',
-        compilation_level: 'ADVANCED'
-      }
-    })
+    new UglifyJSPlugin()
   ]
 };

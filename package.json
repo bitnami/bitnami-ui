@@ -48,12 +48,13 @@
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.63.1",
     "hammerjs": "^2.0.8",
     "mappy-breakpoints": "^0.2.3",
+    "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "^3.10.0",
-    "webpack-closure-compiler": "^2.1.6",
     "webpack-stream": "^4.0.0"
   }
 }
