@@ -254,6 +254,7 @@ about this property and its values.
       background: gradient('action');
       padding: padding('big');
       position: fixed;
+      z-index: z-index('top');
 
       .header__nav {
         &__menu,
