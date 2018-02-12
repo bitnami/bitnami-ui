@@ -46,7 +46,7 @@ background both classes will be added `.breadcrumb breadcrumb-reverse`
 
       + li:before {
         padding: 0 padding('normal');
-        content: '› ';
+        content: '\203a  '; // extra-space needed because the CSS spec treats it as a separator
       }
     }
   }
