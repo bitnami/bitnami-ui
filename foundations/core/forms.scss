@@ -270,3 +270,20 @@ tag: text
     margin-left: margin('small');
   }
 }
+
+/**
+ * Update the color of the placeholder due to the similarity of the normal text color
+ * https://github.com/bitnami/ui/issues/143
+ */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: color-level('gray-light', 600);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: color-level('gray-light', 600);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: color-level('gray-light', 600);
+}

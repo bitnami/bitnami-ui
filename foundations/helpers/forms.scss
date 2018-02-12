@@ -192,15 +192,19 @@ So, you can disable it using the `form-reverse-reset` class.
   *:not(.form-reverse-reset) {
     label {
       color: color('gray-light');
+
+      &.radio,
+      &.checkbox {
+        color: color('white');
+      }
     }
 
     input,
     select,
     textarea {
-      border-color: transparent;
-
+      &,
       &:focus {
-        border-color: color-level('brand', 300);
+        border-color: transparent;
       }
     }
   }
