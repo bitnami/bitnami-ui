@@ -1,0 +1,37 @@
+{
+  "name": "@bitnami/hex",
+  "version": "3.0.0-alpha-20",
+  "description": "HEx Design System",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "dist": "gulp dist",
+    "build": "HEX_ENV=production gulp dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bitnami",
+    "User",
+    "Interface",
+    "Components",
+    "Foundations",
+    "Library"
+  ],
+  "author": "Bitnami (https://design.bitnami.com)",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "devDependencies": {
+    "@bitnami/hex-core": "^3.0.0-alpha-20",
+    "gulp": "^3.9.1",
+    "gulp-image-resize": "^0.12.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-responsive": "^2.7.0",
+    "gulp-sass": "^3.1.0",
+    "imagemin-pngquant": "^5.0.0"
+  },
+  "dependencies": {
+    "mappy-breakpoints": "^0.2.3"
+  }
+}

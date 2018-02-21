@@ -1,17 +1,17 @@
 version: '2'
 
 services:
-  bitnami-ui:
+  hex:
     build: .
-    image: bitnami-ui-dev
+    image: hex-dev
     ports:
       - 8080:8080
     volumes:
       - .:/app
     tty: true
     entrypoint: /app/scripts/entrypoint.sh
-    command: npm run docs:serve
+    command: yarn run docs
     environment:
-      BITNAMI_UI_ENV: development
+      HEX_ENV: development
       VIRTUAL_HOST: bitnami-ui-dev.docker
       VIRTUAL_PORT: 8080

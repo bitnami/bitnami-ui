@@ -1,0 +1,32 @@
+{
+  "name": "@bitnami/hex-core",
+  "version": "3.0.0-alpha-20",
+  "description": "HEx Design System core elements: design tokens, mixins and foundations",
+  "main": "dist/hex.core.min.css",
+  "scripts": {
+    "start": "gulp",
+    "dist": "gulp css",
+    "build": "HEX_ENV=production gulp css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bitnami",
+    "User",
+    "Interface",
+    "Components",
+    "Foundations",
+    "Library"
+  ],
+  "author": "Bitnami (https://design.bitnami.com)",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "mappy-breakpoints": "^0.2.3"
+  }
+}

@@ -1,0 +1,49 @@
+/*!
+ * Bitnami UI Components (Embedded) - v{VERSION}
+ *
+ * This is the main file of Bitnami UI Components library. It constains all the styles for
+ * the components of Bitnami. Every component is a complex structure with specific styles.
+ * For example, a "hero" header or an application card
+ */
+
+// Environment
+$env: '{HEX_ENV}';
+$version: '{VERSION}';
+
+/**
+ * Mappy breakpoint library
+ */
+@import  'node_modules/mappy-breakpoints/mappy-breakpoints';
+
+/**
+ * Config
+ */
+@import '../config';
+
+/**
+ * Variables
+ */
+@import '../foundations/variables/all';
+@import '../components/variables/all';
+
+/**
+ * Helper functions to work with the Bitnami UI.
+ */
+@import '../foundations/mixins/all';
+@import '../components/mixins/all';
+
+/**
+ * Components!
+ */
+.bitnami-ui {
+  @import '../components/clouds/all';
+  @import '../components/code/all';
+  @import '../components/display/all';
+  @import '../components/forms/all';
+  @import '../components/layouts/all';
+  @import '../components/navigation/all';
+  @import '../components/open-source/all';
+  @import '../components/profiles/all';
+  @import '../components/social/all';
+  @import '../components/stacks/all';
+}

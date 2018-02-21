@@ -1,7 +1,13 @@
-FROM bitnami/node:6.9.0-r0
-MAINTAINER Bitnami <containers@bitnami.com>
+FROM bitnami/node:9
+LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
-RUN sudo apt-get update && sudo apt-get install -y openssh-client
+# Dependencies
+RUN install_packages openssh-client apt-transport-https vim
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    install_packages yarn
 
 WORKDIR /app
 
@@ -9,4 +15,4 @@ WORKDIR /app
 EXPOSE 8080
 
 # By default, generate the Docs and serve them
-CMD ["npm docs:serve"]
+CMD ["yarn", "run", "docs"]

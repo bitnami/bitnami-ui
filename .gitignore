@@ -1,6 +1,9 @@
 # Modules
 node_modules
 
+# Modules
+**/node_modules
+
 # Compilated docs
 docs/dist
 
@@ -8,10 +11,16 @@ docs/dist
 dist
 
 # Ignore compilated README
-docs/templates/readme.ejs
+packages/hex-docs/templates/readme.ejs
 
 # Deploy key
 deploy.key
 
 # DS_Store
 .DS_Store
+
+# Logs
+*.log
+
+# Lerna
+*.lerna_backup

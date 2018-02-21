@@ -1,0 +1,36 @@
+# The directory containing the source files to parse recursively
+source:
+  - ../hex/**/*.scss
+  - ../hex/**/*.md
+  - ../hex-core/**/*.scss
+  - ../hex-core/**/*.md
+
+source_type:
+  - .css
+  - .sass
+  - .scss
+  - .styl
+
+# The directory that aigis will build to
+dest: ./dist
+
+# The assets needed to build the docs
+# You may put doc related assets here too: images, css, etc.
+dependencies:
+  - ./assets
+  - ../hex/dist/hex.css
+  - ../hex/dist/hex.min.css
+  - ../hex-js/dist/hex.js
+
+# The directory containing the tempalte files to generate pages
+# It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
+template_dir: ./templates
+template_engine: ejs
+
+helper_options:
+  disable_link_index: false
+
+preview_class: Component__Preview
+
+# For debugging purposes
+log: false
