@@ -32,7 +32,9 @@ gulp.task('default', ['dist'], function() {
   gulp.watch([
     join('../hex-core/src/**/*.scss'),
     join('../hex/src/**/*.scss'),
-    join('../hex-js/dist/*.js')
+    join('../hex-js/dist/*.js'),
+    join('templates/**/*.ejs'),
+    join('assets/**/*.css')
   ], ['docs']);
   // Copy images
   gulp.watch(join('../hex/dist/images/*') , ['docs:images']);

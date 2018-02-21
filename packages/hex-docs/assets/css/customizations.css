@@ -115,3 +115,34 @@ pre code .tag {
 .colorBox-reverse .colorBox__values {
   color: white;
 }
+
+/* Home page! */
+.home__hero {
+  margin: 7em auto 3em;
+  max-width: 980px;
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0 20px 40px -37px rgba(0, 0, 0, .8);
+}
+
+.home__hero__title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.home__hero__slogan {
+  margin-top: 0;
+}
+
+.home__hero__graphic svg {
+  display: block;
+  max-width: 100%;
+}
+
+.home__hero__graphic .graphic__rectangle:hover {
+  stroke: url(#hover);
+}
+
+.home__info {
+  max-width: 980px;
+}

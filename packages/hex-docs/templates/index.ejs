@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bitnami Pattern Lib</title>
+    <title>HEx Design System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://use.typekit.net/iwb8jlp.css">
     <link href="<%- root %>assets/favicon.png" rel="icon">
     <link href="<%- root %>assets/css/customizations.css" rel="stylesheet">
-    <link href="<%- root %>assets/css/highlight/hljs.css" rel="stylesheet">
     <link href="<%- root %>assets/css/highlight/okadia.css" rel="stylesheet">
     <link href="<%- root %>hex.css" rel="stylesheet">
     <script src="<%- root %>assets/js/prism.js" data-manual></script>
@@ -23,9 +22,7 @@
       <% } else if (html.length) { %>
         <%- html %>
       <% } else { %>
-        <div class="container">
-          <%- include('readme') %>
-        </div>
+        <%- include('home') %>
       <% } %>
     </main>
     <%- include('partials/footer') %>

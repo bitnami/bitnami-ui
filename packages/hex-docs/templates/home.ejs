@@ -1,0 +1,148 @@
+<div class="home__hero">
+  <h1 class="home__hero__title type-huge">HEx Design System!</h1>
+  <p class="home__hero__slogan type-big">
+    Create <b>memorable</b> User Interfaces
+  </p>
+  <p>
+    <a href="#" class="button button-action">Get Started</a>
+  <div class="home__hero__graphic">
+    <%- include('partials/graphic') %>
+  </div>
+</div>
+
+<p class="home__info margin-c text-c">
+  <b>Current version:</b>
+  <a href="https://github.com/bitnami/hex/releases/latest" rel="noopener noreferrer" target="_blank">
+    v3.0.0
+  </a>
+  <span class="type-color-light padding-h-big">|</span>
+  <a href="#">Usage</a>
+  <span class="type-color-light padding-h-big">|</span>
+  <a href="#">Development</a>
+  <span class="type-color-light padding-h-big">|</span>
+  <a href="#">License</a>
+  <span class="type-color-light padding-h-big">|</span>
+  <a href="#">Contributing</a>
+</p>
+
+<div class="container container-small margin-t-huge">
+  <h1>Overview</h1>
+  <p>
+    The HEx design systems provides you powerful tools to create memorable User Interfaces (UI)
+    for your projects. Focused on design and accesibility, HEx defines a set of guidelines, tools
+    and a pattern lib to help you during the UI development journey.
+  </p>
+  <p>
+    From design to implementation, in this design system you will find everything you need.
+  </p>
+</div>
+
+<div class="container container-small margin-t-bigger">
+  <div class="row collapse-b-phone-land">
+    <div class="col-6">
+      <div class="padding-h-big padding-v-normal gradient-135-brand type-color-reverse-anchor-reset">
+        <div class="text-c margin-t-bigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        </div>
+        <h3 class="text-c">
+          <a href="#">
+            Design tokens
+          </a>
+        </h3>
+        <p>
+          Basic entities that stores visual attributes like colors, shadows and timing
+        </p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="padding-h-big padding-v-normal gradient-135-brand type-color-reverse-anchor-reset">
+        <div class="text-c margin-t-bigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <h3 class="text-c">
+          <a href="#">
+            UX guidelines
+          </a>
+        </h3>
+        <p>
+          Guidelines for a producing a right user experience. Accesibility are included in components
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row collapse-b-phone-land">
+    <div class="col-6">
+      <div class="padding-h-big padding-v-normal gradient-135-accent type-color-reverse-anchor-reset">
+        <div class="text-c margin-t-bigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+        </div>
+        <h3 class="text-c">
+          <a href="#">Foundations</a>
+        </h3>
+        <p>
+          Basic CSS styling library. Give color to your UI with a single file
+        </p>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="padding-h-big padding-v-normal gradient-135-accent type-color-reverse-anchor-reset">
+        <div class="text-c margin-t-bigger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h3 class="text-c">
+          <a href="#">
+            Components
+          </a>
+        </h3>
+        <p>
+          A set of components that could be reused to build any UI
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container container-small margin-v-giant">
+  <h1>Usage</h1>
+  <h3>Styles</h3>
+  <p>
+    Paste this code in the <code>head</code> tag of your site:
+  </p>
+  <section>
+    <pre class="language-html"><code>&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;//unpkg.com/@bitnami/hex/dist/hex.min.css&quot;&gt;
+&lt;script src=&quot;//unpkg.com/@bitnami/hex/dist/hex.min.js&quot;&gt;</code></pre>
+  </section>
+  <p>
+    Now, the base styles from the <a href="#">foundations</a> has been applied in your site.
+    Check our documentation to find <a href="#">useful components</a> for your site.
+  </p>
+  <h3>Mixins and variables</h3>
+  <p>
+    The fast way to use this library is adding the compiled files from the CDN. However, it also
+    includes useful mixins, functions and variables that you can reuse in your code.
+  </p>
+  <p>
+    HEx is distributed through <a href="#">npm</a>. To add HEx to your project, just run the following
+    code:
+  </p>
+  <pre class="language-sh"><code>npm install --save @bitnami/hex</code></pre>
+  <p>
+    Then, you need to import your code in your project. Remember that <a href="#">SASS</a> is required.
+  </p>
+  <pre class="language-scss"><code>@import '~@bitnami/hex/mixins.scss';</code></pre>
+  <p>
+    That's all. Check our documentation to find more information about:
+  </p>
+  <ul>
+    <li>
+      <a href="/category/Foundations/Mixins/">Mixins</a>
+    </li>
+    <li>
+      <a href="/category/Foundations/Variables/">Variables</a>
+    </li>
+  </ul>
+</div>
+
+<script defer>
+  Prism.highlightAll();
+</script>
