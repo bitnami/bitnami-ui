@@ -123,4 +123,4 @@ Generally, this is the workflow to contribute the project:
 
 The HEx design system is released under the [Apache-2.0 license](https://github.com/bitnami/hex/tree/master/LICENSE).
 
-Copyright © 2018 Bitnami. The Bitnami names and logos are trademarks of Bitnami.
+Copyright © 2018 BitRock Inc. (DBA Bitnami). The Bitnami names, logos and all product names are trademarks of BitRock Inc.
