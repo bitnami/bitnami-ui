@@ -114,7 +114,7 @@ Generally, this is the workflow to contribute the project:
 
 1. Create an issue and discuss about the feature or bug
 2. Fork the project
-3. Read the [Development](#Development) guide
+3. Read the [Development](#development) guide
 4. Apply the changes to the code
 5. Create a new pull request and provide information about the changes and some screenshots
 6. Merge and publish!
