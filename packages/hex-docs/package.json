@@ -5,10 +5,11 @@
   "description": "Bitnami Pattern lib (UI)",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all -p dev server",
-    "dev": "gulp --silent",
+    "start": "npm-run-all -p watch server",
+    "build:dev": "yarn run build",
     "build": "gulp docs --silent",
     "server": "http-server ./dist -s",
+    "watch": "gulp --silent",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

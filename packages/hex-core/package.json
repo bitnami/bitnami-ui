@@ -5,7 +5,7 @@
   "main": "dist/hex.core.min.css",
   "scripts": {
     "start": "gulp",
-    "dist": "gulp css",
+    "build:dev": "gulp css",
     "build": "HEX_ENV=production gulp css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

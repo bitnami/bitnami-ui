@@ -1,11 +1,11 @@
 {
   "name": "@bitnami/hex-js",
   "version": "3.0.0-alpha-20",
-  "description": "Bitnami Pattern lib (UI)",
+  "description": "HEx Design System native JS library",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "dist": "gulp js",
+    "build:dev": "gulp js",
     "build": "HEX_ENV=production gulp js",
     "flow": "flow",
     "flow:start": "flow status",

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "dist": "gulp dist",
+    "build:dev": "gulp dist",
     "build": "HEX_ENV=production gulp dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
