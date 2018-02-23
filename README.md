@@ -8,6 +8,17 @@ HEx is the Design System we use in all the Bitnami user interfaces (UI). It unif
 
 You can find all the documentation of HEx in [design.bitnami.com](https://design.bitnami.com).
 
+* [Packages](#packages)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Development](#development)
+  * [Working with the packages](#working-with-the-packages)
+  * [Execute npm scripts in packages](#execute-npm-scripts-in-packages) 
+  * [Generating the documentation](#generating-the-documentation)
+  * [Build the project](#build-the-project)
+* [Contributing](#contributing)
+* [License](#license)
+
 ## Packages
 
 HEx repo is managed as a monorepo and it's composed of many npm packages. All of them are located in the [`packages/`](https://github.com/bitnami/hex/tree/master/packages) folder.
@@ -50,11 +61,17 @@ yarn install && lerna bootstrap
 
 Every package is a single unit and they have their own npm scripts. Generally, the available scripts are:
 
-* `start` - Start the project in development mode with a watcher. The distributed files of the project will be recreated every time you change a file
-* `build` - Build the package **ready for production**
-* `build:dev` - Build the project in development mode. Distributed files are present in the `packages/hex*/dist` folder
+|Script| Description |
+| --- | --- |
+| `start` | Start the project in development mode with a watcher. The distributed files of the project will be recreated every time you change a file |
+| `build` | Build the package **ready for production** |
+| `build:dev` | Build the project in development mode. Distributed files are present in the `packages/hex*/dist` folder |
 
-Other packages like [hex-docs](https://github.com/bitnami/hex/blob/master/packages/hex-docs/package.json#L7) and [hex-js](https://github.com/bitnami/hex/blob/master/packages/hex-js/package.json#L6) has more scripts. To run a command of an specific package, I recommend you to use lerna. For example, if you want to work on the `hex` package, you can start it in development mode using the following command from the root folder of the project:
+Other packages like [hex-docs](https://github.com/bitnami/hex/blob/master/packages/hex-docs/package.json#L7) and [hex-js](https://github.com/bitnami/hex/blob/master/packages/hex-js/package.json#L6) have more npm scripts. 
+
+### Execute npm scripts in packages
+
+**To run a command of an specific package, I recommend you to use lerna**. For example, if you want to work on the `hex` package, you can start it in development mode using the following command from the root folder of the project:
 
 ```
 lerna run --scope @bitnami/hex --stream start
@@ -106,7 +123,7 @@ Use lerna to build all the different packages:
 lerna run build
 ```
 
-# Contributing
+## Contributing
 
 Thank you for be interested in contributing this project. Before starting with your contribution, you should know that this project is under the Bitnami Styleguide. Aestethic changes will be discussed internally and may not be accepted. If you are interested in a new component, please [create an issue](https://github.com/bitnami/hex/issues/new) to talk about it.
 
