@@ -1,7 +1,7 @@
 /*
 ---
-name: Hexagon
-category: Components/Stacks
+name: Base
+category: Components/Hexagons
 tag: component
 ---
 
@@ -72,8 +72,8 @@ have to be added to the element `.hexagon .hexagon-outline`
 
 /*
 ---
-name: Hexagon Inline
-category: Components/Stacks
+name: Inline
+category: Components/Hexagons
 tag: helpers
 ---
 The hexagon will align vertically with the header text. The size of the hexagon is fixed.
@@ -131,8 +131,8 @@ lines.
 
 /*
 ---
-name: Hexagon sizes
-category: Components/Stacks
+name: Sizes
+category: Components/Hexagons
 tag: helpers
 ---
 Change the size of the hexagon. You can combine it with other hexagon classes.

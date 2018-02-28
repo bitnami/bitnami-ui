@@ -1,24 +1,20 @@
-// Set all the sprites of the components
+/* Set all the sprites of the components
+ *
+ * Example:
+ *
+ * $sprites: (
+ *   'name-of-sprite': (
+ *     'filename': 'filename-withou-extension',
+ *     'extension': 'png',
+ *     'positions': (
+ *       0: 'name-of-element-0',
+ *       1: 'name-of-element-1',
+ *       ...
+ *     )
+ *   )
+ * );
+ */
+
 $sprites: (
-  'cloud-selector': (
-    'filename': 'cloud-select-sprite',
-    'extension': 'png',
-    'positions': (
-      0: 'aws',
-      1: 'azure',
-      2: 'google',
-      3: 'oracle',
-      4: 'centurylink',
-      5: 'bch',
-      6: 'oneone',
-      7: 'godaddy',
-      8: 'otc',
-      9: 'installer',
-      10: 'virtual-machine',
-      11: 'containers',
-      12: 'kubernetes',
-      13: 'huawei',
-      14: 'vmware'
-    )
-  )
+
 );
