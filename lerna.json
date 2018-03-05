@@ -17,5 +17,6 @@
       "PR: Docs": ":memo: Documentation",
       "PR: Internal": ":house: Internal"
     }
-  }
+  },
+  "version": "3.0.0-beta.1"
 }
