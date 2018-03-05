@@ -20,8 +20,7 @@
     "Library"
   ],
   "author": "Bitnami (https://design.bitnami.com)",
-  "license": "SEE LICENSE IN LICENSE",
-  "private": true,
+  "license": "Apache-2.0",
   "devDependencies": {
     "@bitnami/hex-core": "^3.0.0-alpha-20",
     "gulp": "^3.9.1",
