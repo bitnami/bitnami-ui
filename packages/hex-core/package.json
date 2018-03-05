@@ -7,6 +7,8 @@
     "start": "gulp",
     "build:dev": "gulp css",
     "build": "HEX_ENV=production gulp css",
+    "prepublish": "yarn run build",
+    "prepack": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -2,11 +2,13 @@
   "name": "@bitnami/hex",
   "version": "3.0.0-alpha-20",
   "description": "HEx Design System",
-  "main": "index.js",
+  "main": "dist/hex.min.css",
   "scripts": {
     "start": "gulp",
     "build:dev": "gulp dist",
     "build": "HEX_ENV=production gulp dist",
+    "prepublish": "yarn run build",
+    "prepack": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

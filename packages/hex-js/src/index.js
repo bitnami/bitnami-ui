@@ -1,12 +1,9 @@
-/*!
- * Bitnami UI - v{VERSION}
+/*!!
+ * HEx - v{VERSION}
  *
- * This is the main javascript file of Bitnami Pattern lib. It contains all
- * the required JS code for interacting with the library. It's written in
- * pure JS.
- *
- * ----------------
- *
+ * The HEx design system is released under the Apache-2.0 license.
+ * Copyright © 2018 BitRock Inc. (DBA Bitnami). The Bitnami names, logos and all product names
+ * are trademarks of BitRock Inc.
  */
 
 // Define global variables
