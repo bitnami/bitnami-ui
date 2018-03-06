@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "8"
+cache: yarn
+before_install:
+  - yarn global add lerna
+install:
+  - lerna bootstrap
+
+jobs:
+  include:
+    - stage: build:hex
+      script:
+        - lerna run --scope @bitnami/hex build
+    - stage: build:hex-core
+      script:
+        - lerna run --scope @bitnami/hex-core build
+    - stage: build:hex-js
+      script:
+        - lerna run --scope @bitnami/hex-js build
+    - stage: build:hex-docs
+      script:
+        - lerna run --scope @bitnami/hex-docs build
