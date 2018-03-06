@@ -1,11 +1,16 @@
 /**
+ * Mappy breakpoint library
+ */
+@import 'node_modules/mappy-breakpoints/mappy-breakpoints';
+
+/**
  * Variables
  */
- @import 'node_modules/@bitnami/hex-core/src/variables/all';
- @import 'src/variables/all';
+@import 'node_modules/@bitnami/hex-core/src/variables/all';
+@import 'src/variables/all';
 
  /**
   * Helper functions to work with the Bitnami UI.
   */
- @import 'node_modules/@bitnami/hex-core/src/mixins/all';
- @import 'src/mixins/all';
+@import 'node_modules/@bitnami/hex-core/src/mixins/all';
+@import 'src/mixins/all';
