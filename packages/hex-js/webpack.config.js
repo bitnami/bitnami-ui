@@ -21,7 +21,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'string-replace-loader',
         options: {
-          search: /{VERSION}/,
+          search: '{VERSION}',
           replace: config.version,
           flags: 'g'
         }
