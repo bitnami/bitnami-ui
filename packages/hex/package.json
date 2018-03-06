@@ -22,7 +22,6 @@
   "author": "Bitnami (https://design.bitnami.com)",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@bitnami/hex-core": "^3.0.0-beta.2",
     "gulp": "^3.9.1",
     "gulp-image-resize": "^0.12.0",
     "gulp-imagemin": "^3.1.1",
@@ -33,6 +32,7 @@
     "imagemin-pngquant": "^5.0.0"
   },
   "dependencies": {
+    "@bitnami/hex-core": "^3.0.0-beta.2",
     "mappy-breakpoints": "^0.2.3"
   }
 }
