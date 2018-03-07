@@ -19,6 +19,9 @@
     "Foundations",
     "Library"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Bitnami (https://design.bitnami.com)",
   "license": "Apache-2.0",
   "devDependencies": {
