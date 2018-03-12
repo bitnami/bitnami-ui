@@ -108,7 +108,9 @@ about this property and its values.
           </li>
         </ul>
         <div class="header__nav__user">
-          <a class="button button-action button-small">Sign in</a>
+          <a class="button button-action button-small">Console</a>
+          <a class="type-color-light margin-l-big margin-r-normal">My Account</a>
+          <a title="Sign Out" class="type-color-light margin-l-normal">Sign Out</a>
         </div>
       </nav>
     </header>
@@ -180,6 +182,16 @@ about this property and its values.
 
         & + div {
           margin-top: 4px;
+        }
+      }
+    }
+
+    // User Account
+    // Hover link color for the user account container for non mobile screens
+    &__user {
+      @include mappy-query('a-phone-land') {
+        a:not(.button):hover {
+          color: color-level('action', 100);
         }
       }
     }
