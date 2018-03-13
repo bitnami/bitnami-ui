@@ -15,7 +15,7 @@ You can find all the documentation of HEx in [design.bitnami.com](https://design
 * [Usage](#usage)
 * [Development](#development)
   * [Working with the packages](#working-with-the-packages)
-  * [Execute npm scripts in packages](#execute-npm-scripts-in-packages) 
+  * [Execute npm scripts in packages](#execute-npm-scripts-in-packages)
   * [Generating the documentation](#generating-the-documentation)
   * [Build the project](#build-the-project)
 * [Contributing](#contributing)
@@ -35,11 +35,11 @@ HEx repo is managed as a monorepo and it's composed of many npm packages. All of
 
 ## Installation
 
-Check the documentation: [design.bitnami.com/#installation](https://design.bitnami.com/#installation)
+Check the documentation: [design.bitnami.com](https://design.bitnami.com/#installation)
 
 ## Usage
 
-Check the documentation: [design.bitnami.com/#usage](https://design.bitnami.com/#usage)
+Check the documentation: [design.bitnami.com](https://design.bitnami.com/#usage)
 
 ## Development
 
@@ -69,7 +69,7 @@ Every package is a single unit and they have their own npm scripts. Generally, t
 | `build` | Build the package **ready for production** |
 | `build:dev` | Build the project in development mode. Distributed files are present in the `packages/hex*/dist` folder |
 
-Other packages like [hex-docs](https://github.com/bitnami/hex/blob/master/packages/hex-docs/package.json#L7) and [hex-js](https://github.com/bitnami/hex/blob/master/packages/hex-js/package.json#L6) have more npm scripts. 
+Other packages like [hex-docs](https://github.com/bitnami/hex/blob/master/packages/hex-docs/package.json#L7) and [hex-js](https://github.com/bitnami/hex/blob/master/packages/hex-js/package.json#L6) have more npm scripts.
 
 ### Execute npm scripts in packages
 
