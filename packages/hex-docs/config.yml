@@ -20,7 +20,7 @@ dependencies:
   - ./assets
   - ../hex/dist/hex.css
   - ../hex/dist/hex.min.css
-  - ../hex-js/dist/hex.js
+  - ../hex-js/dist/hex.min.js
 
 # The directory containing the tempalte files to generate pages
 # It must contain 'layout.xxx' and 'index.xxx' (.ejs or .jade or .hbs)
