@@ -4,7 +4,7 @@
     Create <b>memorable</b> User Interfaces
   </p>
   <p>
-    <a href="#" class="button button-action">Get Started</a>
+    <a href="#usage" class="button button-action">Get Started</a>
   <div class="home__hero__graphic">
     <%- include('partials/graphic') %>
   </div>
@@ -12,17 +12,17 @@
 
 <p class="home__info margin-c text-c">
   <b>Current version:</b>
-  <a href="https://github.com/bitnami/hex/releases/latest" rel="noopener noreferrer" target="_blank">
-    v3.0.0
+  <a class="currentVersion" href="https://github.com/bitnami/hex/releases/latest" rel="noopener noreferrer" target="_blank">
+    -.-.-
   </a>
   <span class="type-color-light padding-h-big">|</span>
-  <a href="#">Usage</a>
+  <a href="#usage">Usage</a>
   <span class="type-color-light padding-h-big">|</span>
-  <a href="#">Development</a>
+  <a href="https://github.com/bitnami/hex#development" rel="noopener noreferrer" target="_blank">Development</a>
   <span class="type-color-light padding-h-big">|</span>
-  <a href="#">License</a>
+  <a href="#license">License</a>
   <span class="type-color-light padding-h-big">|</span>
-  <a href="#">Contributing</a>
+  <a href="https://github.com/bitnami/hex#contributing" rel="noopener noreferrer" target="_blank">Contributing</a>
 </p>
 
 <div class="container container-small margin-t-huge">
@@ -77,7 +77,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
         </div>
         <h3 class="text-c">
-          <a href="#">Foundations</a>
+          <a href="/category/Foundations/">Foundations</a>
         </h3>
         <p>
           Basic CSS styling library. Give color to your UI with a single file
@@ -90,7 +90,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
         </div>
         <h3 class="text-c">
-          <a href="#">
+          <a href="/category/Components/">
             Components
           </a>
         </h3>
@@ -103,19 +103,15 @@
 </div>
 
 <div class="container container-small margin-v-giant">
-  <h1>Usage</h1>
+  <h1 id="usage">Usage</h1>
   <h3>Styles</h3>
   <p>
-    Paste this code in the <code>head</code> tag of your site:
+    To start adding the HEx to your site you just need to paste this code in the <code>head</code> tag:
   </p>
   <section>
     <pre class="language-html"><code>&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;//unpkg.com/@bitnami/hex/dist/hex.min.css&quot;&gt;
-&lt;script src=&quot;//unpkg.com/@bitnami/hex/dist/hex.min.js&quot;&gt;</code></pre>
+&lt;script src=&quot;//unpkg.com/@bitnami/hex-js/dist/hex.min.js&quot;&gt;</code></pre>
   </section>
-  <p>
-    Now, the base styles from the <a href="#">foundations</a> has been applied in your site.
-    Check our documentation to find <a href="#">useful components</a> for your site.
-  </p>
   <h3>Mixins and variables</h3>
   <p>
     The fast way to use this library is adding the compiled files from the CDN. However, it also
@@ -129,7 +125,7 @@
   <p>
     Then, you need to import your code in your project. Remember that <a href="#">SASS</a> is required.
   </p>
-  <pre class="language-scss"><code>@import '~@bitnami/hex/mixins.scss';</code></pre>
+  <pre class="language-scss"><code>@import '~@bitnami/hex/lib';</code></pre>
   <p>
     That's all. Check our documentation to find more information about:
   </p>
@@ -141,6 +137,16 @@
       <a href="/category/Foundations/Variables/">Variables</a>
     </li>
   </ul>
+</div>
+
+<div class="container container-small margin-v-giant">
+  <h1 id="license">License</h1>
+  <p>
+    The HEx design system is released under the <a href="https://github.com/bitnami/hex/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0 license.</a>
+  </p>
+  <p>
+    Copyright © 2018 BitRock Inc. (DBA Bitnami). The Bitnami names, logos and all product names are trademarks of BitRock Inc.
+  </p>
 </div>
 
 <script defer>

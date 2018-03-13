@@ -71,4 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
       restoreCursor(target, cursor);
     });
   });
+
+  // Get the current release
+  if (b('.currentVersion').length > 0) {
+    fetch('https://api.github.com/repos/bitnami/hex/releases/latest')
+      .then((res) => res.json())
+      .then((data) => {
+        b('.currentVersion').html.replace(data.tag_name);
+      });
+  }
 });
