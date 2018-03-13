@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm-run-all -p watch server",
     "build:dev": "yarn run build",
-    "build": "gulp docs --silent",
+    "build": "gulp docs",
     "server": "http-server ./dist -s",
     "watch": "gulp --silent",
     "test": "echo \"Error: no test specified\" && exit 1"
