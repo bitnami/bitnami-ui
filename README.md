@@ -43,7 +43,7 @@ Check the documentation: [design.bitnami.com](https://design.bitnami.com/#usage)
 
 ## Development
 
-To manage this monorepo, we use [Lerna](https://lerna.io). This tool allows us to work with the internal dependencies of the different packages and publish new versions easily.
+To manage this monorepo, we use [Lerna](https://lernajs.io). This tool allows us to work with the internal dependencies of the different packages and publish new versions easily.
 
 Currently, lerna is configured in the default mode so every new version in a package requires to bump the version of all packages. The reason of this mode is to match JS libraries with the version of the HEx pattern lib.
 
