@@ -9,6 +9,8 @@ if git describe --exact-match >&/dev/null; then
   # Build
   lerna bootstrap
   lerna run build
+  # Run JS dev
+  lerna run --scope @bitnami/hex-js build:dev
 
   # Prepare the folder
   BUCKET=$BUCKET yarn run cdn

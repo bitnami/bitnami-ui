@@ -22,7 +22,8 @@ gulp.task('cdn', function() {
   gulp.src([
       join('packages/hex/dist/*.css'),
       join('packages/hex-core/dist/*.css'),
-      join('packages/hex-js/dist/*.js')
+      join('packages/hex-js/dist/*.js'),
+      join('packages/hex-js/dist/*.js.LICENSE')
     ])
     .pipe(s3({
       Bucket: bucket,
