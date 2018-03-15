@@ -6,6 +6,8 @@ if git describe --exact-match >&/dev/null; then
   TAG=$(git describe --exact-match)
   echo "Deploying $TAG tag"
 
+  # Install
+  yarn install
   # Build
   lerna bootstrap
   lerna run build
