@@ -9,7 +9,7 @@ const s3 = require('gulp-s3-upload')({ useIAM: true });
 // Bucket
 const bucket = process.env.BUCKET;
 
-if (bukect == null) {
+if (bucket == null) {
   console.error('The BUCKET variable is required!');
   process.exit(1);
 }
