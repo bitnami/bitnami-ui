@@ -9,6 +9,7 @@
     <link href="<%- root %>assets/css/customizations.css" rel="stylesheet">
     <link href="<%- root %>assets/css/highlight/okadia.css" rel="stylesheet">
     <link href="<%- root %>hex.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
     <script src="<%- root %>assets/js/prism.js" data-manual></script>
     <script src="<%- root %>assets/js/all.js"></script>
     <script src="<%- root %>hex.min.js"></script>
@@ -26,5 +27,15 @@
       <% } %>
     </main>
     <%- include('partials/footer') %>
+    <!-- at the end of the BODY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript">
+      docsearch({
+        apiKey: 'c716aa7315f8eb226f3af943a027b12a',
+        indexName: 'bitnami',
+        inputSelector: '#navSearch',
+        debug: false // Set debug to true if you want to inspect the dropdown
+      });
+    </script>
   </body>
 </html>

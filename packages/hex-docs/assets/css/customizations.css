@@ -146,3 +146,23 @@ pre code .tag {
 .home__info {
   max-width: 980px;
 }
+
+/* Algolia search */
+.algolia-autocomplete {
+  width: 100%;
+}
+
+.searchForm {
+  position: relative;
+}
+
+.searchForm svg {
+  color: #5F6369;
+  top: 50%;
+  left: .5em;
+  height: 1em;
+  position: absolute;
+  transform: translateY(-50%);
+  width: 1em;
+  z-index: 99;
+}
