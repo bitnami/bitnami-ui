@@ -3,7 +3,7 @@ const path = require('path');
 const join = path.join.bind(__dirname);
 
 // Publish
-const config = require('./package.json');
+const config = require('./packages/hex/package.json');
 const s3 = require('gulp-s3-upload')({ useIAM: true });
 
 // Bucket

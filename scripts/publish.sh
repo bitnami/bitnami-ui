@@ -7,10 +7,11 @@ if git describe --exact-match >&/dev/null; then
   echo "Deploying $TAG tag"
 
   # Build
+  lerna bootstrap
   lerna run build
 
   # Prepare the folder
-  yarn run cdn
+  BUCKET=$BUCKET yarn run cdn
 else
   echo "No new tags. Skipping the publishing"
 fi
