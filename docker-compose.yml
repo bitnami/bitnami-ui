@@ -3,7 +3,7 @@ version: '2'
 services:
   hex:
     build: .
-    image: hex-dev
+    image: hex
     ports:
       - 8080:8080
     volumes:
@@ -13,5 +13,5 @@ services:
     command: yarn run docs
     environment:
       HEX_ENV: development
-      VIRTUAL_HOST: bitnami-ui-dev.docker
+      VIRTUAL_HOST: hex-dev.docker
       VIRTUAL_PORT: 8080

@@ -4,9 +4,12 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"scripts": {
 		"build": "lerna run build",
-		"docs": "lerna run --scope @bitnami/hex-docs --stream start"
+		"docs": "lerna run --scope @bitnami/hex-docs --stream start",
+		"cdn": "gulp cdn"
 	},
 	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-s3-upload": "^1.7.0",
 		"lerna": "^2.9.0"
 	}
 }

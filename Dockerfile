@@ -10,6 +10,10 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     install_packages yarn
 
 WORKDIR /app
+COPY ./package.json /app/package.json
+
+# Install
+RUN yarn global add lerna && yarn install
 
 # Documentation port
 EXPOSE 8080
