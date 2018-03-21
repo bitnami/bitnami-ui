@@ -5,6 +5,7 @@
 	"scripts": {
 		"start": "lerna run --stream --parallel start",
 		"build": "lerna run build",
+		"build:dev": "lerna run --stream --parallel build:dev",
 		"docs": "lerna run --scope @bitnami/hex-docs --stream start",
 		"cdn": "gulp cdn"
 	},

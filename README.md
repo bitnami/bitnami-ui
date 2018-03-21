@@ -69,6 +69,24 @@ Every package is a single unit and they have their own npm scripts. Generally, t
 | `build` | Build the package **ready for production** |
 | `build:dev` | Build the project in development mode. Distributed files are present in the `packages/hex*/dist` folder |
 
+**The main package has defined these scripts too**. Running them in the root of the project will parallelize the script in all the packages:
+
+```
+~/projects/bitnami/hex (master●)
+> yarn start
+
+yarn run v1.5.1
+$ lerna run --stream --parallel start
+lerna info version 2.9.0
+lerna info run in 4 package(s): npm run start
+@bitnami/hex-core: $ gulp
+@bitnami/hex: $ gulp
+@bitnami/hex-docs: $ npm-run-all -p watch server
+@bitnami/hex-js: $ webpack --mode development --watch
+```
+
+#### Extra npm scripts
+
 Other packages like [hex-docs](https://github.com/bitnami/hex/blob/master/packages/hex-docs/package.json#L7) and [hex-js](https://github.com/bitnami/hex/blob/master/packages/hex-js/package.json#L6) have more npm scripts.
 
 ### Execute npm scripts in packages
