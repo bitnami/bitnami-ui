@@ -3,6 +3,7 @@
 	"private": true,
 	"license": "SEE LICENSE IN LICENSE",
 	"scripts": {
+		"start": "lerna run --stream --parallel start",
 		"build": "lerna run build",
 		"docs": "lerna run --scope @bitnami/hex-docs --stream start",
 		"cdn": "gulp cdn"
