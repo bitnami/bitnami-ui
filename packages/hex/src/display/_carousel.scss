@@ -27,11 +27,11 @@ so they're not good elements to place relevant information nor main call to acti
 
 ```html
 <div class="carousel" aria-live="polite">
-  <div class="container">
+  <div class="container container-small">
     <div class="carousel__touch">
       <ul class="carousel__slides">
         <li class="carousel__slides__slide">
-          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+          <blockquote class="outstanding margin-v-small" cite="https://twitter.com/ericabrescia/status/803775698297036801">
             Great day at my first Linux Foundation board meeting, but looking forward to seeing
             everyone at #awsreinvent. On my way!
             </br>
@@ -40,13 +40,13 @@ so they're not good elements to place relevant information nor main call to acti
           </blockquote>
         </li>
         <li class="carousel__slides__slide carousel__slides__slide-top">
-          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
+          <blockquote class="outstanding margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
             Join us at the Microsoft Reactor: Deploying Java apps with Microsoft's Azure Kubernetes Service and Cosmos DB
             <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
           </blockquote>
         </li>
         <li class="carousel__slides__slide">
-          <blockquote class="margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
+          <blockquote class="outstanding margin-v-small" cite="https://twitter.com/ericabrescia/status/950898931046662144">
             Join us at the Microsoft Reactor: Deploying Java apps with Microsoft's Azure Kubernetes Service and Cosmos DB
             <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
           </blockquote>

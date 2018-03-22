@@ -11,9 +11,29 @@ anchor must be equal to "author". You can check the following
 The quotation will inherit the width from the parent container. We recommend to use it inside a
 small container `.container.container-small` for display purposes, but it will work anywhere.
 
+You can add modifiers to change the color of the left border:
+
+* `.action`
+* `.accent`
+* `.brand`
+
 ```html
 <div class="container container-small">
   <blockquote cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone at #awsreinvent. On my way!
+    </br>
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+  <blockquote class="accent" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone at #awsreinvent. On my way!
+    </br>
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+  <blockquote class="brand" cite="https://twitter.com/ericabrescia/status/803775698297036801">
     Great day at my first Linux Foundation board meeting, but looking forward to seeing
     everyone at #awsreinvent. On my way!
     </br>
@@ -24,8 +44,78 @@ small container `.container.container-small` for display purposes, but it will w
 ```
 */
 blockquote {
-  font-size: type-scale('big');
+  border-left: 3px solid color('iron');
   margin: margin('big') auto;
+  padding: padding('small') padding('small') padding('small') padding('big');
+
+  // scss-lint:disable QualifyingElement
+  // @see https://html.spec.whatwg.org/multipage/semantics.html#link-type-author
+  a[rel="author"] {
+    color: color('text');
+    display: block;
+    font-weight: bold;
+    margin-top: margin('big');
+  }
+  // scss-lint:enable QualifyingElement
+
+  &.accent {
+    border-left-color: color('accent');
+  }
+
+  &.action {
+    border-left-color: color('action');
+  }
+
+  &.brand {
+    border-left-color: color('brand');
+  }
+}
+
+// The author link will be white when used with color backgrounds
+.bg-dark,
+.bg-brand,
+.bg-accent,
+.bg-action,
+.bg-skew,
+[class*="gradient-"][class*="-brand"],
+[class*="gradient-"][class*="-accent"],
+[class*="gradient-"][class*="-action"] {
+  &:not(.type-color-reverse-anchor-reset) {
+    blockquote {
+      a[rel=author]{
+        color: color('white');
+      }
+    }
+  }
+}
+
+/*
+---
+name: Outstanding blockquote
+category: Foundations/Quotations
+tag: blocks
+---
+Add more visibility for the blockquote. This style includes a big quotes on both sides of the quote.
+Thsi is convenient to highlight a quote or for marketing sites.
+
+You can combine it with the [carousel component](/category/Components/Display/#Carousel).
+
+```html
+<div class="container container-small">
+  <blockquote class="outstanding" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone at #awsreinvent. On my way!
+    </br>
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+</div>
+```
+*/
+
+blockquote.outstanding {
+  border-left: none;
+  font-size: type-scale('big');
   padding: padding('small');
   position: relative;
   text-align: center;
@@ -33,7 +123,7 @@ blockquote {
   // Quotes
   &:before,
   &:after {
-    background-image: url("data:image/svg+xml;utf8,<svg width='68' height='49' viewBox='0 0 68 49' xmlns='http://www.w3.org/2000/svg'><title>Fill 1</title><path d='M30.769 21.522c0 19.627-11.1 26.936-28.521 27.478L0 39.119c9.413-1.083 14.05-5.415 13.769-12.724H3.372V0h27.397v21.522zm37.231 0C68 41.15 57.041 48.458 39.48 49l-2.108-9.881c9.413-1.083 14.05-5.415 13.628-12.724H40.603V0H68v21.522z' fill='#7ED321' fill-rule='evenodd'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg width='68' height='49' viewBox='0 0 68 49' xmlns='http://www.w3.org/2000/svg'><title>Fill 1</title><path d='M30.769 21.522c0 19.627-11.1 26.936-28.521 27.478L0 39.119c9.413-1.083 14.05-5.415 13.769-12.724H3.372V0h27.397v21.522zm37.231 0C68 41.15 57.041 48.458 39.48 49l-2.108-9.881c9.413-1.083 14.05-5.415 13.628-12.724H40.603V0H68v21.522z' fill='rgb(126, 211, 33)' fill-rule='evenodd'/></svg>");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -52,16 +142,9 @@ blockquote {
     right: padding('small');
   }
 
-  // scss-lint:disable QualifyingElement
-  // @see https://html.spec.whatwg.org/multipage/semantics.html#link-type-author
   a[rel="author"] {
-    color: color('text');
-    display: block;
-    font-weight: bold;
     font-size: type-scale('small');
-    margin-top: margin('big');
   }
-  // scss-lint:enable QualifyingElement
 
   @include mappy-query('a-phone-land') {
     // Increase padding and show quotes
@@ -70,24 +153,6 @@ blockquote {
     &:before,
     &:after {
       content: '';
-    }
-  }
-}
-
-// The author link will be white when used with color backgrounds
-.bg-dark,
-.bg-brand,
-.bg-accent,
-.bg-action,
-.bg-skew,
-[class*="gradient-"][class*="-brand"],
-[class*="gradient-"][class*="-accent"],
-[class*="gradient-"][class*="-action"] {
-  &:not(.type-color-reverse-anchor-reset) {
-    blockquote {
-      a[rel=author]{
-        color: color('white');
-      }
     }
   }
 }
