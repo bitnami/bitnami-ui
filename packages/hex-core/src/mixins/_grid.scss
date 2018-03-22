@@ -56,7 +56,9 @@
 
 @mixin grid-collapse-by-columns-on($columns) {
   > [class^="col"] {
-    flex: 0 0 ($grid-columns / $columns) * (100% / $grid-columns);
+    $percent: ($grid-columns / $columns) * (100% / $grid-columns);
+    flex: 0 0 $percent;
+    max-width: $percent;
     margin-top: $grid-gutter;
 
     &:nth-child(-n+#{$columns}) {

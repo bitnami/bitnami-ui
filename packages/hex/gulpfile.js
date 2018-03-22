@@ -98,7 +98,10 @@ gulp.task('dist', ['css', 'images'], function() {});
 // Default
 gulp.task('default', ['dist'], function() {
   // Compile css
-  gulp.watch(join('src/**/*.scss') , ['css']);
+  gulp.watch([
+    join('src/**/*.scss'),
+    join('../hex-core/dist/*.css')
+  ], ['css']);
   // Compiles images and docs
   gulp.watch([join('images/*.png'), join('images/*.svg')] , ['images']);
 });

@@ -1,8 +1,8 @@
 # The directory containing the source files to parse recursively
 source:
-  - ../hex/**/*.scss
+  - ../hex/src/**/*.scss
   - ../hex/**/*.md
-  - ../hex-core/**/*.scss
+  - ../hex-core/src/**/*.scss
   - ../hex-core/**/*.md
 
 source_type:
