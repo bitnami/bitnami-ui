@@ -6,7 +6,7 @@ body {
 }
 
 body > main {
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 /* Pre code snippets */
@@ -32,6 +32,10 @@ pre code .tag {
   margin-right: auto;
 }
 
+.Component__Content > table:not(pre):not(.Component__Preview) {
+  width: calc(100% - 2 * 1.49962rem);
+}
+
 .Component__Content > ul {
   /* Don't do this at home */
   padding-left: 4rem !important;
@@ -41,6 +45,11 @@ pre code .tag {
 @media (max-width: 1347.988px) {
   .Component__Content > *:not(pre):not(.Component__Preview)  {
     padding: 0 1.49962rem;
+  }
+
+  .Component__Content > table:not(pre):not(.Component__Preview) {
+    margin-left: 1.49962rem;
+    margin-right: 1.49962rem;
   }
 }
 
@@ -165,4 +174,16 @@ pre code .tag {
   transform: translateY(-50%);
   width: 1em;
   z-index: 99;
+}
+
+/* Design tokens section */
+.designTokens table tr th:first-child,
+.designTokens table tr td:first-child {
+  width: 30px;
+}
+
+.designTokens table tr th:nth-child(-n + 2),
+.designTokens table tr td:nth-child(-n + 2),
+.designTokens table tr td:nth-child(-n + 3) {
+  white-space: nowrap;
 }

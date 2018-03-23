@@ -17,7 +17,7 @@
 <% } %>
 <section class="Components">
   <% components.forEach(function(component) { %>
-    <article class="Component margin-b-enormous">
+    <article class="Component margin-b-enormous <%= component.config.customCssClass %>">
       <!-- Hide the title and file if ignoreHeader is present in the frontmatter -->
       <% if (component.config.ignoreHeader !== true) { %>
         <div class="container margin-b-big">

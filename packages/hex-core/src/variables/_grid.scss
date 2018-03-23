@@ -19,8 +19,6 @@ $grid-width: map-get($breakpoints, 'uxl');
 $grid-columns: 12;
 $grid-gutter: $su;
 
-$grid-inner-padding: 1em;
-
 $grid-collapse-on: phone phone-land tablet desktop wide;
 // The order is inverse because the smaller sizes have priority over the bigger
 // ie. collapse-2-b-tablet has priority over collapse-3-b-wide
