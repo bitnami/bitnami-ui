@@ -1,7 +1,7 @@
 {
   "name": "@bitnami/hex-docs",
   "private": true,
-  "version": "3.0.0-beta.6",
+  "version": "3.0.0",
   "description": "Bitnami Pattern lib (UI)",
   "main": "index.js",
   "scripts": {
