@@ -41,7 +41,7 @@
  */
 @mixin grid-collapse-by-columns-on-prefix($columns, $breakpoint) {
   &.collapse-#{$columns}-#{$breakpoint} {
-    @include grid-collapse-by-columns-on($columns)
+    @include grid-collapse-by-columns-on($columns);
 
     // Reset the border-right for vdivide class
     &.row-vdivide {
