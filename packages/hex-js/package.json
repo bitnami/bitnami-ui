@@ -1,6 +1,6 @@
 {
   "name": "@bitnami/hex-js",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "HEx Design System native JS library",
   "main": "index.js",
   "scripts": {
