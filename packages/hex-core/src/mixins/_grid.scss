@@ -29,6 +29,7 @@
   > [class^="col"] {
     flex: 0 0 100%;
     margin-top: $grid-gutter;
+    max-width: 100%;
 
     &:first-child {
       margin-top: 0;
