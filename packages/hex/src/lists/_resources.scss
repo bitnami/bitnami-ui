@@ -31,7 +31,7 @@ Check the [accesibility information of the Pagination component](/category/Compo
 ```html
 <div class="bg-light padding-v-bigger">
   <div class="container">
-    <h2 class="margin-t-reset margin-b-normal">All News</h2>
+    <h2 class="margin-t-reset">All News</h2>
     <ul class="articles">
       <li class="articles__article">
         <h4 class="articles__article__title">
@@ -121,6 +121,7 @@ Check the [accesibility information of the Pagination component](/category/Compo
 .articles {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 
   &__article {
     border-top: 1px solid color('gray-light');
