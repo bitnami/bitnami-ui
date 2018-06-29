@@ -120,8 +120,8 @@ Check the [accesibility information of the Pagination component](/category/Compo
 */
 .articles {
   list-style: none;
-  margin: spacing('big') 0 0;
   padding-left: 0;
+  margin: 0;
 
   &__article {
     border-top: 1px solid color('gray-light');
