@@ -1,0 +1,25 @@
+{
+  "name": "@bitnami/hex-docz",
+  "private": true,
+  "version": "3.0.3",
+  "description": "Bitnami HEx documentation",
+  "scripts": {
+    "start": "docz dev",
+    "build:dev": "yarn run build",
+    "build": "docz build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Bitnami",
+    "User",
+    "Interface",
+    "Components",
+    "Foundations",
+    "Library"
+  ],
+  "author": "Bitnami Team",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "docz": "^0.3.3"
+  }
+}
