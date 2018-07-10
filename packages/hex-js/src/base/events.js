@@ -50,6 +50,6 @@ export default class Events {
    *    preventDefault.
    */
   trigger(event) {
-    return this.node.dispatchEvent(event);
+    return this.node.dispatchEvent(new Event(event));
   }
 }

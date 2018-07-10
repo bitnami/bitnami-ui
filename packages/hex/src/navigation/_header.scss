@@ -48,7 +48,7 @@ about this property and its values.
 * https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html
 
 ```html
-<div class="gradient-brand type-color-reverse type-color-reverse-anchor-reset">
+<div class="gradient-135-brand type-color-reverse type-color-reverse-anchor-reset">
   <div class="container">
     <header class="header">
       <div class="header__logo">
@@ -65,32 +65,32 @@ about this property and its values.
         <ul class="header__nav__menu" role="menubar">
           <li>
             <a class="header__nav__menu__item header__nav__menu__item-active" role="menuitem"
-              aria-haspopup="true" aria-expanded="false" tabindex="0">
+              aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">
               Products
             </a>
             <ul role="menu" aria-label="Products" class="header__nav__submenu">
               <li role="none">
-                <a role="menuitem" tabindex="-1" href="#">App Catalog</a>
+                <a role="menuitem" href="#">App Catalog</a>
               </li>
               <li role="none">
-                <a role="menuitem" tabindex="-1" href="#">Stacksmith</a>
+                <a role="menuitem" href="#">Stacksmith</a>
               </li>
             </ul>
           </li>
           <li>
             <a class="header__nav__menu__item" role="menuitem" aria-haspopup="true"
-              aria-expanded="false" tabindex="0">
+              aria-expanded="false" tabindex="0" href="#">
               Solutions
             </a>
             <ul role="menu" aria-label="Solutions" class="header__nav__submenu">
               <li role="none">
-                <a role="menuitem" tabindex="-1" href="#">App Packaging</a>
+                <a role="menuitem" href="#">App Packaging</a>
               </li>
               <li role="none">
-                <a role="menuitem" tabindex="-1" href="#">Cloud Migration</a>
+                <a role="menuitem" href="#">Cloud Migration</a>
               </li>
               <li role="none">
-                <a role="menuitem" tabindex="-1" href="#">Kubernetes</a>
+                <a role="menuitem" href="#">Kubernetes</a>
               </li>
             </ul>
           </li>

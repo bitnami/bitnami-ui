@@ -81,6 +81,13 @@ export class UINode {
   visibleHeight(borders: boolean = true): number {
     return borders ? this.node.offsetHeight : this.node.clientHeight;
   }
+
+  /**
+   * Set the focus for this element
+   */
+  focus(): void {
+    this.node.focus();
+  }
 }
 
 export default UINode;
