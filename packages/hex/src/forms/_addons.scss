@@ -20,13 +20,14 @@ These components help you to build more complex input elements. Now, you can cre
   <label for="search">Search</label>
   <div class="input-group">
     <input id="search" placeholder="Describe your issue..." />
-    <div class="dropdown dropdown-open dropdown-right">
-      <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
-      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
-        <li><a>First element</a></li>
-        <li><a>Second element</a></li>
-        <li class="dropdown__list__separator"></li>
-        <li><a>Last element</a></li>
+    <div class="dropdown dropdown-right">
+      <button class="button button-dropdown" aria-haspopup="true" aria-expanded="false">Open Dropdown</button>
+      <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu"
+        aria-label="Select the element" role="menu">
+        <li><a href="#" role="menuitem">First element</a></li>
+        <li><a href="#" role="menuitem">Second element</a></li>
+        <li class="dropdown__list__separator" aria-hidden="true"></li>
+        <li><a href="#" role="menuitem">Last element</a></li>
       </ul>
     </div>
   </div>

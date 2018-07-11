@@ -10,48 +10,52 @@ tag: component
   <div class="row">
     <div class="col-3">
       <div class="dropdown">
-        <button class="button button-dropdown" aria-haspopup="true">Dropdown</button>
-        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
-          <li><a>First element</a></li>
-          <li><a>Second element</a></li>
-          <li class="dropdown__list__separator"></li>
-          <li><a>Last element</a></li>
+        <button class="button button-dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true"
+          aria-label="Select the element" role="menu">
+          <li><a href="#" role="menuitem">First element</a></li>
+          <li><a href="#" role="menuitem">Second element</a></li>
+          <li class="dropdown__list__separator" aria-hidden="true"></li>
+          <li><a href="#" role="menuitem">Last element</a></li>
         </ul>
       </div>
     </div>
 
     <div class="col-3">
-      <div class="dropdown dropdown-open">
-        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Open Dropdown</button>
-        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
-          <li><a>First element</a></li>
-          <li><a>Second element</a></li>
-          <li class="dropdown__list__separator"></li>
-          <li><a>Last element</a></li>
+      <div class="dropdown">
+        <button class="button button-dropdown" aria-haspopup="true" aria-expanded="false">Open Dropdown</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true"
+          aria-label="Select the element" role="menu">
+          <li><a href="#" role="menuitem">First element</a></li>
+          <li><a href="#" role="menuitem">Second element</a></li>
+          <li class="dropdown__list__separator" aria-hidden="true"></li>
+          <li><a href="#" role="menuitem">Last element</a></li>
         </ul>
       </div>
     </div>
 
     <div class="col-3">
-      <div class="dropdown dropdown-open dropdown-right">
-        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Right aligned drop</button>
-        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
-          <li><a>First element</a></li>
-          <li><a>Second element</a></li>
+      <div class="dropdown dropdown-right">
+        <button class="button button-dropdown" aria-haspopup="true" aria-expanded="false">Right aligned drop</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true"
+          aria-label="Select the element" role="menu">
+          <li><a href="#" role="menuitem">First element</a></li>
+          <li><a href="#" role="menuitem">Second element</a></li>
           <li class="dropdown__list__separator"></li>
-          <li><a>Last element</a></li>
+          <li><a href="#" role="menuitem">Last element</a></li>
         </ul>
       </div>
     </div>
 
     <div class="col-3">
-      <div class="dropdown dropdown-open dropdown-top">
-        <button class="button button-dropdown button-dropdown-open" aria-haspopup="true">Top align</button>
-        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true" aria-label="submenu">
-          <li><a>First element</a></li>
-          <li><a>Second element</a></li>
-          <li class="dropdown__list__separator"></li>
-          <li><a>Last element</a></li>
+      <div class="dropdown dropdown-top">
+        <button class="button button-dropdown" aria-haspopup="true" aria-expanded="false">Top align</button>
+        <ul class="dropdown__list remove-style elevation-1 slide-in" aria-hidden="true"
+          aria-label="Select the element" role="menu">
+          <li><a href="#" role="menuitem">First element</a></li>
+          <li><a href="#" role="menuitem">Second element</a></li>
+          <li class="dropdown__list__separator" aria-hidden="true"></li>
+          <li><a href="#" role="menuitem">Last element</a></li>
         </ul>
       </div>
     </div>
@@ -80,6 +84,10 @@ tag: component
         margin: margin('small') 0;
         padding: 0;
         border-bottom: 1px solid color('light');
+      }
+
+      a {
+        box-shadow: none;
       }
     }
   }

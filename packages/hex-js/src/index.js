@@ -13,6 +13,7 @@ window['HEX_INIT'] = false;
 // Import components
 import Accordion from './components/accordion';
 import Carousel from './components/carousel';
+import Dropdown from './components/dropdown';
 import Header from './components/header';
 import verticalTabs from './components/vertical-tabs';
 
@@ -24,6 +25,7 @@ window['b'] = b;
 document.addEventListener('DOMContentLoaded', () => {
   Accordion();
   Carousel();
+  Dropdown();
   Header();
   verticalTabs();
 });

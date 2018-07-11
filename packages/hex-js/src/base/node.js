@@ -46,6 +46,10 @@ export class UINode {
     return [callback(this)];
   }
 
+  filter(callback: ((UINode) => any)): Array<any> {
+    return callback(this) ? [this] : [];
+  }
+
   /**
    * Read an attribute of the node or set it if the second parameter is present
    *
