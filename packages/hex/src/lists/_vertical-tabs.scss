@@ -35,7 +35,7 @@ include the `presentation` role for the row and the `tab` role for the button. R
 the buttons that open tabs and set the proper `href` and `aria-controls` value for the panel
 identifier.
 
-Panels have the `tabpanel` role and refer to these tab buttons using the `aria-labeledby` attribute.
+Panels have the `tabpanel` role and refer to these tab buttons using the `aria-labelledby` attribute.
 
 The active panel is determined by the `aria-selected` attribute in the tab buttons.
 
@@ -50,10 +50,10 @@ The active panel is determined by the `aria-selected` attribute in the tab butto
     <div class="row">
       <div class="col-4">
         <aside>
-          <ul class="verticalTabs__tabs">
+          <ul class="verticalTabs__tabs" role="tablist">
             <li class="verticalTabs__tabs__tab" role="presentation">
-              <a href="#section-0" id="#tab0" class="verticalTabs__tabs__tab__button" role="tab" tabindex="-1"
-                aria-controls="#section-0">
+              <a href="#section-0" id="tab0" class="verticalTabs__tabs__tab__button" role="tab"
+                aria-selected="false" aria-controls="section-0">
                 All Upcoming Events
               </a>
               <p class="verticalTabs__tabs__tab__description">
@@ -61,8 +61,8 @@ The active panel is determined by the `aria-selected` attribute in the tab butto
               </p>
             </li>
             <li class="verticalTabs__tabs__tab verticalTabs__tabs__tab-active" role="presentation">
-              <a href="#section-1" id="#tab1" class="verticalTabs__tabs__tab__button" role="tab" tabindex="-1"
-                aria-selected="true" aria-controls="#section-1">
+              <a href="#section-1" id="tab1" class="verticalTabs__tabs__tab__button" role="tab"
+                aria-selected="true" aria-controls="section-1">
                 Webinars
               </a>
               <p class="verticalTabs__tabs__tab__description">
@@ -73,69 +73,71 @@ The active panel is determined by the `aria-selected` attribute in the tab butto
         </aside>
       </div>
       <div class="col-8">
-        <section id="section-0" class="verticalTabs__panel" role="tabpanel" aria-labeledby="tab0" tabindex="-1">
-          <ul class="articles">
-            <li class="articles__article">
-              <h4 class="articles__article__title">
-                <a href="#">
-                  Get relevant information from your cluster status using the dashboard
-                </a>
-              </h4>
-              <p class="articles__article__description">
-                RandomCompany -
-                <date>August 5, 2017</date>
-              </p>
-            </li>
-            <li class="articles__article">
-              <h4 class="articles__article__title">
-                <a href="#">
-                  Our experience at the ConfConf
-                </a>
-              </h4>
-              <p class="articles__article__description">
-                RandomCompany -
-                <date>August 3, 2017</date>
-              </p>
-            </li>
-          </ul>
-        </section>
-        <section id="section-1" class="verticalTabs__panel verticalTabs__panel-active"
-          role="tabpanel" aria-labeledby="tab1" tabindex="-1">
-          <ul class="articles margin-t-reset">
-            <li class="articles__article">
-              <h4 class="articles__article__title">
-                <a href="#">
-                  Manage your cluster on the go with our new awesome mobile application
-                </a>
-              </h4>
-              <p class="articles__article__description">
-                RandomCompany -
-                <date>August 8, 2017</date>
-              </p>
-            </li>
-            <li class="articles__article">
-              <h4 class="articles__article__title">
-                <a href="#">
-                  Get relevant information from your cluster status using the dashboard
-                </a>
-              </h4>
-              <p class="articles__article__description">
-                RandomCompany -
-                <date>August 5, 2017</date>
-              </p>
-            </li>
-            <li class="articles__article">
-              <h4 class="articles__article__title">
-                <a href="#">
-                  Our experience at the ConfConf
-                </a>
-              </h4>
-              <p class="articles__article__description">
-                RandomCompany -
-                <date>August 3, 2017</date>
-              </p>
-            </li>
-          </ul>
+        <section aria-live="polite">
+          <section id="section-0" class="verticalTabs__panel" role="tabpanel" aria-labelledby="tab0">
+            <ul class="articles">
+              <li class="articles__article">
+                <h4 class="articles__article__title">
+                  <a href="#">
+                    Get relevant information from your cluster status using the dashboard
+                  </a>
+                </h4>
+                <p class="articles__article__description">
+                  RandomCompany -
+                  <date>August 5, 2017</date>
+                </p>
+              </li>
+              <li class="articles__article">
+                <h4 class="articles__article__title">
+                  <a href="#">
+                    Our experience at the ConfConf
+                  </a>
+                </h4>
+                <p class="articles__article__description">
+                  RandomCompany -
+                  <date>August 3, 2017</date>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section id="section-1" class="verticalTabs__panel verticalTabs__panel-active"
+            role="tabpanel" aria-labelledby="tab1">
+            <ul class="articles margin-t-reset">
+              <li class="articles__article">
+                <h4 class="articles__article__title">
+                  <a href="#">
+                    Manage your cluster on the go with our new awesome mobile application
+                  </a>
+                </h4>
+                <p class="articles__article__description">
+                  RandomCompany -
+                  <date>August 8, 2017</date>
+                </p>
+              </li>
+              <li class="articles__article">
+                <h4 class="articles__article__title">
+                  <a href="#">
+                    Get relevant information from your cluster status using the dashboard
+                  </a>
+                </h4>
+                <p class="articles__article__description">
+                  RandomCompany -
+                  <date>August 5, 2017</date>
+                </p>
+              </li>
+              <li class="articles__article">
+                <h4 class="articles__article__title">
+                  <a href="#">
+                    Our experience at the ConfConf
+                  </a>
+                </h4>
+                <p class="articles__article__description">
+                  RandomCompany -
+                  <date>August 3, 2017</date>
+                </p>
+              </li>
+            </ul>
+          </section>
         </section>
       </div>
     </div>
@@ -160,8 +162,8 @@ The active panel is determined by the `aria-selected` attribute in the tab butto
         display: block;
         padding: spacing('normal') spacing('small');
 
-        &:focus {
-          outline: 0;
+        &, &:hover {
+          box-shadow: none;
         }
       }
 

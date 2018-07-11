@@ -130,6 +130,10 @@ Check the [accesibility information of the Pagination component](/category/Compo
     &__title {
       margin: 0;
       text-transform: unset;
+
+      a {
+        box-shadow: none;
+      }
     }
 
     &__icon {

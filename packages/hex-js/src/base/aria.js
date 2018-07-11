@@ -43,7 +43,7 @@ export default class Aria {
    * @param {boolean} selected True if the element is selected. True by default
    */
   select(selected:boolean = true) {
-    this.node.setAttribute('aria-selected', String(!selected));
+    this.node.setAttribute('aria-selected', String(selected));
   }
 
   /**
