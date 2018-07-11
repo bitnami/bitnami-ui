@@ -125,6 +125,10 @@ about this property and its values.
   display: flex;
   padding: padding('big') 0;
 
+  a {
+    box-shadow: none;
+  }
+
   &__logo {
     img {
       display: block;
@@ -152,6 +156,7 @@ about this property and its values.
         color: color('white');
         display: inline-block;
         padding: padding('normal') padding('normal');
+        transition: none;
 
         &:not([href]) {
           cursor: default;

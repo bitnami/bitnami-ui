@@ -124,6 +124,10 @@ Copyright text and social links. This components depends on the
     height: 2em;
   }
 
+  a {
+    box-shadow: none;
+  }
+
   ul {
     h3 {
       font-size: type-scale('normal');

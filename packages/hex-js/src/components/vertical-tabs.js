@@ -23,10 +23,13 @@ const verticalTabs = () => {
         // Change the panel and update aria values
         const panel = tab.attr('href');
         const active = tabs.tree.find('.verticalTabs__tabs__tab-active');
-        active.aria.select(false);
         active.css.remove('verticalTabs__tabs__tab-active');
         tabs.tree.find('.verticalTabs__panel-active').css.remove('verticalTabs__panel-active');
 
+        // Set all the other elements as not-selected
+        tabs.tree.find('.verticalTabs__tabs__tab').forEach(t => t.aria.select(false));
+
+        // Select the current one
         tab.aria.select();
         tab.tree.parent('.verticalTabs__tabs__tab').css.add('verticalTabs__tabs__tab-active');
         tabs.tree.find(panel).css.add('verticalTabs__panel-active')

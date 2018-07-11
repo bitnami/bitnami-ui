@@ -104,6 +104,10 @@ last example.
   padding: padding('normal') padding('enormous') padding('normal') padding('big');
   position: relative;
 
+  a {
+    box-shadow: inset 0 -1px 0 color-level('link', 200);
+  }
+
   /* Colored corner */
   &:after {
     background-color: color('brand');
