@@ -205,8 +205,9 @@ category: Foundations/Forms
 tag: text
 ---
 ```html
-<button class="button">Submit</button>
 <a class="button" href="#">Link button</a>
+<button class="button">Submit</button>
+<input type="submit" value="Input Submit" class="button"/>
 <button class="button" disabled="disabled">Disabled</button>
 <button class="button" disabled>Disabled too</button>
 ```
@@ -237,6 +238,10 @@ tag: text
               box-shadow .15s ease-in-out;
   white-space: nowrap;
   will-change: transform;
+  // Fix width and margins for input type:submit, button, reset.
+  width: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
 
   // Default skin
   background: button-gradient('light');
