@@ -186,28 +186,31 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
 a.type-color-reverse,
 .type-color-reverse:not(.type-color-reverse-anchor-reset) a {
   &:not(.button) {
+    box-shadow: inset 0 -1px 0 color('white');
     color: color('white');
-    // I've added this text decoration in case the background it's not known.
-    text-decoration: underline;
 
-    &:hover {
-      color: color-level('light', 600);
+    &:hover,
+    &:active,
+    &:focus {
+      color: color-level('link', 50);
+      box-shadow: inset 0 -1px 0 color-level('action', 300);
     }
   }
 }
 
 // The background comes from the library so we can disable the text-decoration property
-.bg-dark,
 .bg-brand,
+.bg-dark,
+.bg-skew,
 .bg-accent,
 .bg-action,
-.bg-skew,
 [class*="gradient-"][class*="-brand"],
 [class*="gradient-"][class*="-accent"],
 [class*="gradient-"][class*="-action"] {
   &:not(.type-color-reverse-anchor-reset) {
     a:not(.button) {
-      text-decoration: none;
+      box-shadow: inset 0 -1px 0 color('white');
+      color: color('white');
     }
   }
 }

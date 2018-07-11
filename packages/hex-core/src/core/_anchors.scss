@@ -7,17 +7,25 @@ tag: text
 Buttons use the `accent` color.
 
 ```html
-This is a <a>link</a>
+<p>This is a <a>link</a> inside a paragraph. It's important to highlight them in the <a>text</a>.</p>
 ```
 */
 a {
-  color: color-level('bitnami', 200);
+  color: color('link');
   text-decoration: none;
+  transition: box-shadow .1s ease-in-out,
+              color .1s ease-in-out;
   cursor: pointer;
 
   &:hover,
-  &:active {
-    color: color-level('bitnami', 50);
+  &:active,
+  &:focus {
+    color: color-level('action', 600);
+    box-shadow: inset 0 -1px 0 color-level('action', 300);
+  }
+
+  &.no-decoration {
+    box-shadow: none;
   }
 
   // Now, visited links are overriding button colors, so I will disable it until we solve
@@ -26,4 +34,11 @@ a {
   // &:visited {
   //   color: color-level('bitnami', 100);
   // }
+}
+
+// Display the underline by default only in anchors inside paragraphs and lists
+p a,
+ul a,
+a.decoration {
+  box-shadow: inset 0 -1px 0 color-level('link', 200);
 }

@@ -144,6 +144,10 @@ blockquote.outstanding {
 
   a[rel="author"] {
     font-size: type-scale('small');
+
+    &, &:hover {
+      box-shadow: none;
+    }
   }
 
   @include mappy-query('a-phone-land') {
