@@ -156,6 +156,7 @@ about this property and its values.
         color: color('white');
         display: inline-block;
         padding: padding('normal') padding('normal');
+        transition: none;
 
         &:not([href]) {
           cursor: default;
