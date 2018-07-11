@@ -206,7 +206,7 @@ tag: text
 ---
 ```html
 <button class="button">Submit</button>
-<a class="button">Link button</a>
+<a class="button" href="#">Link button</a>
 <button class="button" disabled="disabled">Disabled</button>
 <button class="button" disabled>Disabled too</button>
 ```
@@ -241,18 +241,16 @@ tag: text
   // Default skin
   background: button-gradient('light');
 
-  &:hover {
-    background: button-gradient('action');
-    color: color('white');
-  }
-
-  // Show an inset shadow on click
+  &:hover,
   &:focus {
-    outline: 0;
+    background: button-gradient('action');
+    box-shadow: 0 12px 10px -7px rgba(0, 0, 0, .2);
+    color: color('white');
   }
 
   &:active {
     transform: translateY(2px);
+    color: color('white');
     box-shadow: 0 10px 10px -8px rgba(0, 0, 0, .2);
   }
 
