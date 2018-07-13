@@ -186,14 +186,12 @@ headers. So, you can disable it using the `type-color-reverse-anchor-reset` clas
 a.type-color-reverse,
 .type-color-reverse:not(.type-color-reverse-anchor-reset) a {
   &:not(.button) {
-    box-shadow: inset 0 -1px 0 color('white');
     color: color('white');
 
     &:hover,
     &:active,
     &:focus {
       color: color-level('link', 50);
-      box-shadow: inset 0 -1px 0 color-level('action', 300);
     }
   }
 }
@@ -209,7 +207,6 @@ a.type-color-reverse,
 [class*="gradient-"][class*="-action"] {
   &:not(.type-color-reverse-anchor-reset) {
     a:not(.button) {
-      box-shadow: inset 0 -1px 0 color('white');
       color: color('white');
     }
   }

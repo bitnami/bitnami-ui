@@ -35,7 +35,10 @@ See http://www.a11ymatters.com/pattern/pagination/.
 
       a {
         padding: padding('small') padding('normal');
-        text-decoration: none;
+
+        &, &:hover {
+          text-decoration: none;
+        }
       }
 
       &:not(.pagination__current) {
