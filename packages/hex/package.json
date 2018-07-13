@@ -1,6 +1,6 @@
 {
   "name": "@bitnami/hex",
-  "version": "3.0.3",
+  "version": "3.1.0",
   "description": "HEx Design System",
   "main": "dist/hex.min.css",
   "scripts": {
@@ -35,7 +35,7 @@
     "imagemin-pngquant": "^5.0.0"
   },
   "dependencies": {
-    "@bitnami/hex-core": "^3.0.3",
+    "@bitnami/hex-core": "^3.1.0",
     "mappy-breakpoints": "^0.2.3"
   }
 }
