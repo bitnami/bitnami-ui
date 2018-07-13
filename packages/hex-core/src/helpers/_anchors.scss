@@ -4,18 +4,24 @@ name: Anchors
 category: Foundations/Helpers
 tag: helpers
 ---
-Modify the color of the anchor. Available classes:
+Modify the color and the decoration of the anchor. Available classes:
 * `.light`
 * `.secondary`
+* `.no-decoration`
 
 ```html
 <div class="preview-inverse">
-  This is a <a class="light">link</a>
+  <p>This is a <a class="light">link</a></p>
 </div>
 ```
 ```html
 <div class="preview-light-blue">
-  This is a <a class="secondary">link</a>
+  <p>This is a <a class="secondary">link</a></p>
+</div>
+```
+```html
+<div>
+  <p>This is a <a class="no-decoration">link</a></p>
 </div>
 ```
 */
@@ -41,4 +47,8 @@ a.secondary:not(.button) {
   &:visited {
     color: color-level('brand', 600);
   }
+}
+
+a.no-decoration {
+  text-decoration: none;
 }

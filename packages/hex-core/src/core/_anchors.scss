@@ -12,20 +12,16 @@ Buttons use the `accent` color.
 */
 a {
   color: color('link');
-  text-decoration: none;
-  transition: box-shadow .1s ease-in-out,
-              color .1s ease-in-out;
   cursor: pointer;
 
   &:hover,
   &:active,
   &:focus {
     color: color-level('action', 600);
-    box-shadow: inset 0 -1px 0 color-level('action', 300);
-  }
 
-  &.no-decoration {
-    box-shadow: none;
+    &:not(.button) {
+      text-decoration: underline;
+    }
   }
 
   // Now, visited links are overriding button colors, so I will disable it until we solve
@@ -40,5 +36,19 @@ a {
 p a,
 ul a,
 a.decoration {
-  box-shadow: inset 0 -1px 0 color-level('link', 200);
+  text-decoration: underline;
+}
+
+// Doesn't show the link in lists if there isn't any other type
+ul a,
+ol a,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  &:only-of-type {
+    text-decoration: none;
+  }
 }

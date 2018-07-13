@@ -163,7 +163,7 @@ The active panel is determined by the `aria-selected` attribute in the tab butto
         padding: spacing('normal') spacing('small');
 
         &, &:hover {
-          box-shadow: none;
+          text-decoration: none;
         }
       }
 

@@ -175,7 +175,7 @@ input[type="radio"] {
   vertical-align: 1px;
 
   &:focus {
-    box-shadow: none;
+    text-decoration: none;
   }
 }
 // scss-lint:enable QualifyingElement

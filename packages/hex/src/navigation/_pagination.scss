@@ -35,7 +35,7 @@ See http://www.a11ymatters.com/pattern/pagination/.
 
       a {
         padding: padding('small') padding('normal');
-        box-shadow: none;
+        text-decoration: none;
       }
 
       &:not(.pagination__current) {
