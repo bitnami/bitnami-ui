@@ -1,4 +1,4 @@
-FROM bitnami/node:9
+FROM bitnami/node:9-debian-8-master
 LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
 # Dependencies
