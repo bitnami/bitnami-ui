@@ -2,7 +2,8 @@ FROM bitnami/node:9
 LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
 # Dependencies
-RUN install_packages openssh-client apt-transport-https vim gnupg libpng-dev
+RUN install_packages gnupg
+RUN install_packages openssh-client apt-transport-https libpng-dev
 
 # Install Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
