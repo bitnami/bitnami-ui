@@ -1,4 +1,4 @@
-FROM bitnami/node:9-debian-8-master
+FROM bitnami/node:9
 LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
 # Dependencies
@@ -11,10 +11,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     install_packages yarn
 
 WORKDIR /app
-COPY ./package.json /app/package.json
 
 # Install
-RUN yarn global add lerna && yarn install
+RUN yarn global add lerna
 
 # Documentation port
 EXPOSE 8080

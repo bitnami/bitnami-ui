@@ -32,7 +32,8 @@
     "gulp-replace": "^0.5.4",
     "gulp-responsive": "^2.7.0",
     "gulp-sass": "^3.1.0",
-    "imagemin-pngquant": "^5.0.0"
+    "imagemin-pngquant": "^6.0.0",
+    "imagemin-svgo": "^6.0.0"
   },
   "dependencies": {
     "@bitnami/hex-core": "^3.1.2",

@@ -5,8 +5,9 @@ set -e
 echo "Installing dependencies..."
 yarn
 
+# Bootstrap
 echo "Bootstraping the project with lerna"
-lerna bootstrap --scope @bitnami/hex-docs --npm-client=yarn
+lerna bootstrap --npm-client=yarn
 
 # Now, we just launch the command
 exec "$@"

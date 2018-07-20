@@ -8,6 +8,11 @@ services:
       - 8080:8080
     volumes:
       - .:/app
+      - /app/node_modules
+      - /app/packages/hex/node_modules
+      - /app/packages/hex-core/node_modules
+      - /app/packages/hex-docs/node_modules
+      - /app/packages/hex-js/node_modules
     tty: true
     entrypoint: /app/scripts/entrypoint.sh
     command: yarn run docs
@@ -15,3 +20,9 @@ services:
       HEX_ENV: development
       VIRTUAL_HOST: hex-dev.docker
       VIRTUAL_PORT: 8080
+
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1376
