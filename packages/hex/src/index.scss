@@ -12,7 +12,7 @@ $version: '{VERSION}';
 /**
  * Import the foundations
  */
-@import 'node_modules/@bitnami/hex-core/dist/hex.core';
+@import 'node_modules/@bitnami/hex-core/src/index';
 
 /**
  * Config

@@ -1,0 +1,139 @@
+/*
+---
+name: baseSizing(zoom, size, scale, lineHeight)
+category: Foundations/Themes
+tag: function
+---
+
+Set the values for the base sizing units. These values defines the spacing and font size of all the framework.
+Every property or mixin that involves sizes is affected by these values.
+You can reuse the [default values](/category/Foundations/Variables/#Base%20sizing%20units).
+
+```scss
+@include baseSizing(
+  100%,
+  1.15em,
+  $scale,
+  1.45
+);
+```
+*/
+@mixin baseSizing($baseZoom, $baseSize, $newScale, $newLineHeight) {
+  $base-type-zoom: $baseZoom !global;
+  $base-type-size: $baseSize !global;
+  $scale: $newScale !global;
+  $line-height: $newLineHeight !global;
+}
+
+/*
+---
+name: colorTheme(colors, colorInterval)
+category: Foundations/Themes
+tag: function
+---
+
+Update the color theme of HEx. It receives a map that will be merged with the [default one](/category/Foundations/Variables/#Colors).
+
+```scss
+@include colorTheme(
+  (
+    'brand': green,
+    'text': #000000
+  ),
+  8%
+);
+```
+*/
+@mixin colorTheme($colorTheme, $interval) {
+  $colors: map-merge($colors, $colorTheme) !global;
+  $color-interval: $interval !global;
+}
+
+/*
+---
+name: gradientTheme(gradients)
+category: Foundations/Themes
+tag: function
+---
+
+Update the gradient theme of HEx. It receives a map that will be merged with the [default one](/category/Foundations/Variables/#Gradients).
+
+```scss
+@include gradientTheme(
+  (
+    'accent': #008145 #82C341,
+    'action': green blue,
+  )
+);
+```
+*/
+@mixin gradientTheme($gradientTheme) {
+  $gradients: map-merge($gradients, $gradientTheme) !global;
+}
+
+/*
+---
+name: fontFamilies(body, headings, code)
+category: Foundations/Themes
+tag: function
+---
+
+Update the font families for HEx. The default ones are [Interstate, Fira Sans and Hind](/category/Foundations/Variables/#Typography).
+
+```scss
+$body: Arial, Verdana;
+
+@include fontFamilies(
+  $body,
+  Arial,
+  Consolas
+);
+```
+*/
+@mixin fontFamilies($body, $headings, $code) {
+  $type-body: #{$body}, #{$type-os-fallback} !global;
+  $type-headings: #{$headings}, #{$type-os-fallback} !global;
+  $type-code: #{$code}, #{$type-code-fallback} !global;
+}
+
+/*
+---
+name: gridConfig(width, columns, gutter)
+category: Foundations/Themes
+tag: function
+---
+
+Set the base values to generate the grid classes and helpers. We recommend to use 12 columns always
+because the `collapse-*-on-*` helpers collapse the rows in blocks of 3, 2 and 1 elements.
+You can reuse the [default values](/category/Foundations/Variables/#Grid).
+
+```scss
+@include gridConfig(
+  1500px,
+  $grid-columns,
+  2em
+);
+```
+*/
+@mixin gridConfig($width, $columns, $gutter) {
+  $grid-width: $width !global;
+  $grid-columns: $columns !global;
+  $grid-gutter: $gutter !global;
+}
+
+/*
+---
+name: borderRadiusConfig(borderRadius)
+category: Foundations/Themes
+tag: function
+---
+
+Set the border radius for some elements like tags and avatars.
+
+```scss
+@include borderRadiusConfig(5px);
+```
+*/
+@mixin borderRadiusConfig($bordeRadius) {
+  $spacing-border-radius: $bordeRadius !global;
+}

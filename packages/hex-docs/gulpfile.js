@@ -34,6 +34,7 @@ gulp.task('default', ['dist'], function() {
     join('../hex/src/**/*.scss'),
     join('../hex-js/dist/*.js'),
     join('docs/*.md'),
+    join('docs/**/*.md'),
     join('templates/**/*.ejs'),
     join('assets/**/*.css')
   ], ['docs']);

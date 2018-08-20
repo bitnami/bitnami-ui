@@ -30,6 +30,6 @@ $spacing-sizes: (
   3: 2 * $su,
   4: 3 * $su,
   5: 5 * $su
-);
+) !default;
 
-$spacing-border-radius: 3px;
+$spacing-border-radius: 3px !default;

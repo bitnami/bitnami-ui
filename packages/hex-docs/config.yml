@@ -4,7 +4,7 @@ source:
   - ../hex/**/*.md
   - ../hex-core/src/**/*.scss
   - ../hex-core/**/*.md
-  - ./docs/*.md
+  - ./docs/**/*.md
 
 source_type:
   - .css

@@ -40,11 +40,11 @@ $su: $size-unit;
 */
 
 // Sizing values
-$base-type-zoom: 100%;
-$base-type-size: 1em; // 16px
+$base-type-zoom: 100% !default;
+$base-type-size: 1em !default; // 16px
 // Fourth
-$scale: 1.250;
-$line-height: 1.5;
+$scale: 1.250 !default;
+$line-height: 1.5 !default;
 
 // Basic size unit
 $size-unit: $base-type-size * $scale;

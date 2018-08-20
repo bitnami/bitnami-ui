@@ -40,10 +40,12 @@ $line-heights: (
 */
 
 // Font families
-$type-os-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$type-headings: 'Interstate', 'Fira Sans', #{$type-os-fallback};
-$type-body: 'Interstate', 'Hind', #{$type-os-fallback};
-$type-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+$type-os-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$type-code-fallback: 'Liberation Mono', Menlo, Courier, monospace;
+
+$type-headings: 'Interstate', 'Fira Sans', #{$type-os-fallback} !default;
+$type-body: 'Interstate', 'Hind', #{$type-os-fallback} !default;
+$type-code: 'SFMono-Regular', Consolas, #{$type-code-fallback} !default;
 
 // Fix the line-heights
 $line-heights: (
@@ -52,4 +54,4 @@ $line-heights: (
   1: $size-unit * 1.5,
   2: $size-unit * 2,
   3: $size-unit * 3,
-);
+) !default;

@@ -15,12 +15,12 @@ $grid-gutter: su();
 */
 
 // Basic values of our grid system
-$grid-width: map-get($breakpoints, 'uxl');
-$grid-columns: 12;
-$grid-gutter: $su;
+$grid-width: map-get($breakpoints, 'uxl') !default;
+$grid-columns: 12 !default;
+$grid-gutter: $su !default;
 
-$grid-collapse-on: phone phone-land tablet desktop wide;
+$grid-collapse-on: phone phone-land tablet desktop wide !default;
 // The order is inverse because the smaller sizes have priority over the bigger
 // ie. collapse-2-b-tablet has priority over collapse-3-b-wide
-$grid-collapse-below: b-ultrawide b-wide b-desktop b-tablet b-phone-land;
-$grid-collapse-above: a-phone a-phone-land a-tablet a-desktop a-wide;
+$grid-collapse-below: b-ultrawide b-wide b-desktop b-tablet b-phone-land !default;
+$grid-collapse-above: a-phone a-phone-land a-tablet a-desktop a-wide !default;

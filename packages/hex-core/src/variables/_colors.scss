@@ -327,7 +327,7 @@ $colors: (
   'base': #fff,
   'highlight': #fff23f,
   'danger': #de0606
-);
+) !default;
 
 $gradients: (
   'brand': #00437B #1598CB,
@@ -335,10 +335,10 @@ $gradients: (
   'action': #F58220 #FDBA12,
   'light': #f1f1f1 #f7f7f7, // The last color is the result of `color-level('light', 50)`
   'danger': #de0606 #e85151 // The last color is the result of `color-level('danger', 200)`
-);
+) !default;
 
 // Interval to get tints and shades
-$color-interval: 10%;
+$color-interval: 10% !default;
 
 /*
 ---
