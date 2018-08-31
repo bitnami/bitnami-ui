@@ -20,6 +20,6 @@
   "author": "Bitnami Team",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
-    "docz": "^0.3.3"
+    "docz": "^0.10.3"
   }
 }
