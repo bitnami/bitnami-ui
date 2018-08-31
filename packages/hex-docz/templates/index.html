@@ -8,6 +8,7 @@
     <link rel="stylesheet" media="screen" href="//unpkg.com/@bitnami/hex/dist/hex.min.css" />
     <script src="//unpkg.com/@bitnami/hex-js/dist/hex.min.js"></script>
     <title>{{ title }}</title>
+    {{ head }}
     <style>
       pre .tag {
         background-color: initial;
@@ -15,6 +16,7 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
+    <main id="root"/>
+    {{ footer }}
   </body>
 </html>
