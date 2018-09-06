@@ -1,0 +1,6 @@
+# Ignore
+example/*.js
+lib/*.js
+setupTests.js
+webpack.*.js
+scripts/*.js

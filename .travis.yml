@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - "8"
 cache: yarn
+addons:
+  chrome: stable
 before_install:
   - yarn global add lerna
 install:
@@ -11,7 +13,11 @@ jobs:
   include:
     - stage: build
       script:
-        - lerna run --scope @bitnami/hex build
-        - lerna run --scope @bitnami/hex-core build
-        - lerna run --scope @bitnami/hex-js build
-        - lerna run --scope @bitnami/hex-docs build
+        - lerna run build
+    - stage: test
+      script:
+        - yarn install --cwd packages/hex-react/example
+        - lerna run --scope @bitnami/hex-react build
+        - lerna run --scope @bitnami/hex-react build:dev
+        - lerna run --scope @bitnami/hex-react test:ci
+        - lerna run --scope @bitnami/hex-react test:a11y

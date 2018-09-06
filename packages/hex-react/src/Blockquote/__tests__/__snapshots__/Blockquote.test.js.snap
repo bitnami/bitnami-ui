@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blockquote renders correctly 1`] = `
+<blockquote
+  className=""
+  htmlProps={Object {}}
+>
+  Test
+</blockquote>
+`;
