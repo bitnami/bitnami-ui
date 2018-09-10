@@ -166,4 +166,4 @@ Copyright © 2018 BitRock Inc. (DBA Bitnami). The Bitnami names, logos and all p
 
 We use [BrowserStack](https://www.browserstack.com) to test HEx in the different available browsers.
 
-<img src="https://user-images.githubusercontent.com/4056725/45289991-c1b6d100-b4ee-11e8-9911-01ba2a2a548f.png" width="150"/>
+<a href="https://www.browserstack.com" target="_blank"><img src="https://user-images.githubusercontent.com/4056725/45289991-c1b6d100-b4ee-11e8-9911-01ba2a2a548f.png" width="150"/></a>
