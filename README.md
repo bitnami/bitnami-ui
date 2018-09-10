@@ -161,3 +161,9 @@ Generally, this is the workflow to contribute the project:
 The HEx design system is released under the [Apache-2.0 license](https://github.com/bitnami/hex/tree/master/LICENSE).
 
 Copyright © 2018 BitRock Inc. (DBA Bitnami). The Bitnami names, logos and all product names are trademarks of BitRock Inc.
+
+## Browser tests
+
+We use [BrowserStack](https://www.browserstack.com) to test HEx in the different available browsers.
+
+<img src="https://user-images.githubusercontent.com/4056725/45289991-c1b6d100-b4ee-11e8-9911-01ba2a2a548f.png" width="150"/>
