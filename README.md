@@ -4,7 +4,7 @@
   <br/>
 </p>
 
-[![Build Status](https://travis-ci.org/bitnami/hex.svg?branch=master)](https://travis-ci.org/bitnami/hex)
+[![Build Status](https://travis-ci.org/bitnami/hex.svg?branch=master)](https://travis-ci.org/bitnami/hex) [![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=UjBTcEdkZGE4U1FKdkFhWm1XZGtLQUpZOFJsL3ZISUxLWnhxcW1iSUltRT0tLUh3VU9LOGIvZkdSc1ZxTzZPTlQyZWc9PQ==--cd46dc47721b5ebd883f629c0c1b0b80ae7388b3)](https://www.browserstack.com/automate/public-build/UjBTcEdkZGE4U1FKdkFhWm1XZGtLQUpZOFJsL3ZISUxLWnhxcW1iSUltRT0tLUh3VU9LOGIvZkdSc1ZxTzZPTlQyZWc9PQ==--cd46dc47721b5ebd883f629c0c1b0b80ae7388b3)
 
 HEx is the Design System we use in all the Bitnami user interfaces (UI). It unifies all the projects under the same design tokens and styleguide. This design system also provides you with a complete pattern lib and different JS libraries to make it interactive.
 

@@ -1,0 +1,24 @@
+{
+  "firefox": {
+    "browser": "Firefox",
+    "os": "Windows",
+    "os_version": "10"
+  },
+  "chrome": {
+    "browser": "Chrome",
+    "os": "Windows",
+    "os_version": "10"
+  },
+  "ie11": {
+    "browser": "IE",
+    "browser_version": "11.0",
+    "os": "Windows",
+    "os_version": "10"
+  },
+  "safari": {
+    "os": "OS X",
+    "os_version": "Sierra",
+    "browserName": "Safari",
+    "browser_version": "10.0"
+  }
+}

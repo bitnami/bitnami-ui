@@ -4,3 +4,4 @@ lib/*.js
 setupTests.js
 webpack.*.js
 scripts/*.js
+__integration__/*.js
