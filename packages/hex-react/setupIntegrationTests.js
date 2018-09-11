@@ -5,7 +5,7 @@ import capabilities from './capabilities';
 // Set a bigger timeout
 jest.setTimeout(60000);
 
-const buildName = process.env.TRAVIS_COMMIT || 'local';
+const buildName = process.env.TRAVIS_TAG || process.env.TRAVIS_COMMIT || 'local';
 
 // Add the capabilities
 const capability = process.env.CAPABILITY || Object.keys(capabilities)[0];
