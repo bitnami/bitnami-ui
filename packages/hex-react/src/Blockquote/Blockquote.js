@@ -1,29 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cs from 'classnames';
+import { merge, cleanProps, Spacing } from '../helpers';
 
-const Blockquote = ({ outstanding, className, children, ...htmlProps }) => {
-  const css = cs(className, { outstanding });
+const Blockquote = ({ outstanding, className, children, ...attributes }) => {
+  const css = cs(className, { outstanding }, Spacing.propToClass(attributes));
 
   return (
-    <blockquote className={css} {...htmlProps}>
+    <blockquote className={css} {...cleanProps(attributes, Spacing)}>
       {children}
     </blockquote>
   );
 };
 
-Blockquote.propTypes = {
-  outstanding: PropTypes.bool,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-  htmlProps: PropTypes.object,
-};
+Blockquote.propTypes = merge(
+  {
+    outstanding: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+    attributes: PropTypes.object,
+  },
+  Spacing.propTypes,
+);
 
-Blockquote.defaultProps = {
-  outstanding: false,
-  className: '',
-  children: undefined,
-  htmlProps: {},
-};
+Blockquote.defaultProps = merge(
+  {
+    outstanding: false,
+    className: '',
+    children: undefined,
+    attributes: {},
+  },
+  Spacing.defaultProps,
+);
 
 export default Blockquote;
