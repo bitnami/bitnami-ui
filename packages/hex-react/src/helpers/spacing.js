@@ -24,18 +24,18 @@ export const propTypes = {
   marginVerticalCenter: PropTypes.bool,
 };
 
-// Keys
-export const PropKeys = Object.assign(propTypes);
-
-// Default values for the props
-export const defaultProps = {};
-
 // Iterate over the suffixes to generate the correct props, defaults and cssToProps
 propSuffixes.forEach(k => {
   // propTypes
   propTypes[`margin${k}`] = PropTypes.oneOf(validValues);
   propTypes[`padding${k}`] = PropTypes.oneOf(validValues);
 });
+
+// Keys
+export const propKeys = Object.keys(propTypes);
+
+// Default values for the props
+export const defaultProps = {};
 
 /**
  * Function that maps the value to the actual CSS class
@@ -60,6 +60,7 @@ export const propToClass = props => {
 
 export default {
   validValues,
+  propKeys,
   propTypes,
   defaultProps,
   propToClass,
