@@ -4,6 +4,7 @@ import WithHelpers from './WithHelpers';
 export { default as Spacing } from './spacing';
 export { default as Typography } from './typography';
 export { default as Background } from './background';
+export { default as Shadow } from './shadow';
 
 // Utils methods
 export const merge = (...args) => Object.assign(...args);

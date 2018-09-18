@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WithHelpers, { Spacing, Typography, Background } from '../helpers';
+import WithHelpers, { Spacing, Typography, Background, Shadow } from '../helpers';
 
 // Outside the Box!
 export const Box = ({ children, ...others }) => <div {...others}>{children}</div>;
@@ -16,4 +16,4 @@ Box.defaultProps = {
   children: undefined,
 };
 
-export default WithHelpers(Box, Spacing, Typography, Background);
+export default WithHelpers(Box, Spacing, Typography, Background, Shadow);

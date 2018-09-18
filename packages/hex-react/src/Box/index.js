@@ -1,3 +1,3 @@
-import Box from './Box';
+import BoxWithHelpers from './Box';
 
-export default Box;
+export default BoxWithHelpers;
