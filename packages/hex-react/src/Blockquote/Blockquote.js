@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cs from 'classnames';
 import WithHelpers, { Spacing, Typography } from '../helpers';
 
-const Blockquote = ({ outstanding, className, children, ...attributes }) => {
+export const Blockquote = ({ outstanding, className, children, ...attributes }) => {
   const css = cs(className, { outstanding });
 
   return (

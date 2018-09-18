@@ -1,0 +1,30 @@
+---
+name: Box
+menu: Core
+route: /core/box
+---
+
+import { Playground, PropsTable } from 'docz'
+import Box, { Box as PureBox } from '../../hex-react/src/Box/Box'
+
+# Box
+
+Box is the most basic component of the library. It acts as a simple `div` but includes all the
+helpers in the React component.
+
+## Example
+
+<Playground>
+  <Box marginVertical="big" paddingHorizontal="huge" color="light" background="action">
+    Hello from HEx
+  </Box>
+</Playground>
+
+## React
+
+<PropsTable of={PureBox} />
+
+## Accesibilty
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.
