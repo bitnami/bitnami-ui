@@ -9,8 +9,6 @@ export default {
 
     rules[0].include.push(path.resolve('../hex-react/src/'));
 
-    console.log(rules[0]);
-
     return {
       ...config,
       module: {

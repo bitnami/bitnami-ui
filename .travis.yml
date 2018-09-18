@@ -2,6 +2,7 @@ language: node_js
 node_js:
 - '8'
 cache: yarn
+sudo: required
 env:
   global:
   - secure: cnowZfqaCguu++nBrqC611LXWFzsTWDwXBRs5iHQiAkHIsD+dXkeUb7kwd7ScBEllhQA8jmnskN/lOHuwF4vQU8Ae1pgvt+d1yGRtm9vjPgiL5OyXfgcPjnkeKSYvP785N9M1X8c2n6vfTroBAfExKmDzwpE7uAF3HmUzyhQf5g3Dd6JizCLmEs9jKmmfSO3QJO6v9Xjx7W+Uf7FZvlfwBlvG+5dWN8ENAqui+jmf0iOfOLVCdEW4/VY6fuPXPYkDvUVYWURPcXKyYQL21I1x9r4pKx2DTP3EuBDM7vrKUekEiwok0i6gMfH7TJEs8LVfLEB5CBrAx76w/a9k/M3h1glNk9Xsx2eDhiD0iBbb8cXfM765ZNQ9HOCk2oLD9DB9Rh2mapmbLgEls+APPnV5buh81zGBg9EM6px3U1M2BUcIAc4srh8mUHxRDgQ7eoG13hMXACaCymS+pVuYIIIYrGZrGsv0OSqtNIZ/xNHvmds6F+tnNUGg/oI9ZXRPAJIStFCKsLblEg4U+Dq5KSSSXvDiWIyNJw004nkDtp7SfEmVAEtbvNLgzfIjbyOKlMxz3nYcW4WbjrL/Ae6hgQCAt82QtC1RKW1o/TaNCsVVA+dS9S9R0rcSQZp68MEKogyXWMYOY/yfwTyX/PGI6W7umLsOd5LzD0cuwAWWhbq1B0=
@@ -9,6 +10,7 @@ env:
 addons:
   chrome: stable
 before_install:
+- echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 - yarn global add lerna
 install:
 - lerna bootstrap
