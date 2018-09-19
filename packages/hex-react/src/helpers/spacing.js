@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types';
 import cs from 'classnames';
+
+// Prop keys to cleanup. More elements are append below
+const propKeys = ['marginCenter'];
 
 // Valid values for the propTypes
 // @see https://github.com/bitnami/hex/blob/master/packages/hex-core/src/variables/_names.scss#L42
-export const validValues = [
+const validValues = [
   'reset',
   'tiny',
   'small',
@@ -18,24 +20,10 @@ export const validValues = [
 // Suffixes for the props
 const propSuffixes = ['Top', 'Bottom', 'Left', 'Right', 'Horizontal', 'Vertical'];
 
-// Defines the prop-types of spacing helpers
-export const propTypes = {
-  marginCenter: PropTypes.bool,
-  marginVerticalCenter: PropTypes.bool,
-};
-
-// Iterate over the suffixes to generate the correct props, defaults and cssToProps
 propSuffixes.forEach(k => {
-  // propTypes
-  propTypes[`margin${k}`] = PropTypes.oneOf(validValues);
-  propTypes[`padding${k}`] = PropTypes.oneOf(validValues);
+  propKeys.push(`margin${k}`);
+  propKeys.push(`padding${k}`);
 });
-
-// Keys
-export const propKeys = Object.keys(propTypes);
-
-// Default values for the props
-export const defaultProps = {};
 
 /**
  * Function that maps the value to the actual CSS class
@@ -58,10 +46,10 @@ export const propToClass = props => {
   return cs('', availableProps);
 };
 
+// Export propKeys too
+export { propKeys };
+
 export default {
-  validValues,
   propKeys,
-  propTypes,
-  defaultProps,
   propToClass,
 };

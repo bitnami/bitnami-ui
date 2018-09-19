@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cs from 'classnames';
-import WithHelpers, { Spacing, Typography } from '../helpers';
 
-export const Blockquote = ({ outstanding, className, children, ...attributes }) => {
+const Blockquote = ({ outstanding, className, children, ...attributes }) => {
   const css = cs(className, { outstanding });
 
   return (
@@ -25,4 +24,4 @@ Blockquote.defaultProps = {
   children: undefined,
 };
 
-export default WithHelpers(Blockquote, Spacing, Typography);
+export default Blockquote;

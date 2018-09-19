@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text apply correctly the helpers 1`] = `
+<p
+  className="type-small type-regular text-c"
+  type="p"
+>
+  Test
+</p>
+`;
+
+exports[`Text renders correctly 1`] = `
+<p
+  className="type-normal type-regular text-l"
+  type="p"
+>
+  Test
+</p>
+`;

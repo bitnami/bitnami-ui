@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Box apply correctly the helpers 1`] = `
+<div
+  className="margin-t-small bg-brand"
+>
+  Test
+</div>
+`;
+
 exports[`Box renders correctly 1`] = `
-<Box
+<div
   className=""
 >
   Test
-</Box>
-`;
-
-exports[`Box renders correctly with Helpers 1`] = `
-<Box
-  className="margin-t-small type-big bg-brand"
->
-  Test
-</Box>
+</div>
 `;

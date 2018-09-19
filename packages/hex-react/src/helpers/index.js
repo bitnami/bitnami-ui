@@ -1,5 +1,3 @@
-import WithHelpers from './WithHelpers';
-
 // Export helpers
 export { default as Spacing } from './spacing';
 export { default as Typography } from './typography';
@@ -21,6 +19,3 @@ export const cleanProps = (props, ...helpers) => {
   });
   return newProps;
 };
-
-// Main HOC component
-export default WithHelpers;

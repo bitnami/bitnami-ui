@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Box from '../Box';
+import Text from '../Text';
 
-describe('Box', () => {
+describe('Text', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<Box>Test</Box>);
+    const wrapper = shallow(<Text>Test</Text>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('apply correctly the helpers', () => {
     const wrapper = shallow(
-      <Box marginTop="small" background="brand">
+      <Text fontSize="small" textAlign="center">
         Test
-      </Box>,
+      </Text>,
     );
     expect(wrapper).toMatchSnapshot();
   });

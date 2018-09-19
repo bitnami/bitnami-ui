@@ -1,3 +1,3 @@
-import BlockquoteWithHelpers from './Blockquote';
+import Blockquote from './Blockquote';
 
-export default BlockquoteWithHelpers;
+export default Blockquote;

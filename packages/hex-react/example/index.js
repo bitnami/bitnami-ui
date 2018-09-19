@@ -5,24 +5,17 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box } from '@bitnami/hex-react';
+import { Blockquote, Box, Text } from '@bitnami/hex-react';
 
 const App = () => (
   <div className="container">
     <h1 id="title">HEx</h1>
     <h2>Quote</h2>
-    <Blockquote
-      className="test"
-      marginTop="big"
-      marginBottom="small"
-      fontSize="big"
-      color="accent"
-      cite="https://twitter.com"
-    >
+    <Blockquote className="test" cite="https://twitter.com">
       Hey! I am a quote
     </Blockquote>
     <Box marginTop="bigger">
-      <p>Testing da box!</p>
+      <Text fontSize="big">Testing da box!</Text>
     </Box>
   </div>
 );
