@@ -5,11 +5,11 @@ import { Typography, cleanProps } from '../helpers';
 
 // Outside the Box!
 const Text = props => {
-  const { className, children, type, ...others } = props;
+  const { className, children, type, ...attributes } = props;
 
   // Setup the proper CSS classes and clean the props
-  const helperClasses = cs(className, Typography.propToClass(others));
-  const remainingProps = cleanProps(others, Typography);
+  const helperClasses = cs(className, Typography.propToClass(attributes));
+  const remainingProps = cleanProps(attributes, Typography);
 
   return React.createElement(
     type,

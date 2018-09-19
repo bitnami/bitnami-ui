@@ -5,12 +5,12 @@ import { Spacing, Background, Shadow, cleanProps } from '../helpers';
 
 // Outside the Box!
 const Box = props => {
-  const { className, children, type, ...others } = props;
+  const { className, children, type, ...attributes } = props;
 
   // Setup the proper CSS classes and clean the props
   const helpers = [Spacing, Background, Shadow];
-  const helperClasses = cs(className, ...helpers.map(h => h.propToClass(others)));
-  const remainingProps = cleanProps(others, ...helpers);
+  const helperClasses = cs(className, ...helpers.map(h => h.propToClass(attributes)));
+  const remainingProps = cleanProps(attributes, ...helpers);
 
   return React.createElement(
     type,
