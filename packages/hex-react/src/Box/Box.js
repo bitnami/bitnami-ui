@@ -5,17 +5,20 @@ import { Spacing, Background, Shadow, cleanProps } from '../helpers';
 
 // Outside the Box!
 const Box = props => {
-  const { className, children } = props;
+  const { className, children, type, ...others } = props;
 
   // Setup the proper CSS classes and clean the props
   const helpers = [Spacing, Background, Shadow];
-  const helperClasses = cs(className, ...helpers.map(h => h.propToClass(props)));
-  const remainingProps = cleanProps(props, ...helpers);
+  const helperClasses = cs(className, ...helpers.map(h => h.propToClass(others)));
+  const remainingProps = cleanProps(others, ...helpers);
 
-  return (
-    <div className={helperClasses} {...remainingProps}>
-      {children}
-    </div>
+  return React.createElement(
+    type,
+    {
+      className: helperClasses,
+      ...remainingProps,
+    },
+    children,
   );
 };
 
@@ -34,9 +37,18 @@ const spacingValues = [
 
 Box.propTypes = {
   /**
+   * Set the HTML tag that will be rendered
+   */
+  type: PropTypes.oneOf(['div', 'section', 'article', 'main']),
+  /**
+   * Base CSS class for the component
+   */
+  className: PropTypes.string,
+  /**
    * Any element that will be wrapped by the Box
    */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
+  /* eslint-disable react/no-unused-prop-types */
   /**
    * Setup the margin-left and right as auto
    */
@@ -105,9 +117,12 @@ Box.propTypes = {
    * Setup a different angle for the gradient
    */
   gradientAngle: PropTypes.oneOf([45, 90, 135, 180, 225, 270]),
+  /* eslint-enable react/no-unused-prop-types */
 };
 
 Box.defaultProps = {
+  type: 'div',
+  className: '',
   children: undefined,
   marginCenter: undefined,
   marginTop: undefined,
