@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import cs from 'classnames';
 import { Typography, cleanProps } from '../helpers';
 
-// Outside the Box!
+/**
+ * Text is the most basic text component of the library. It acts as a simple wrapper (`span`, `p`, ...)
+ * but includes all the typography helpers.
+ */
 const Text = props => {
   const { className, children, type, ...attributes } = props;
 

@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import cs from 'classnames';
 import { Spacing, Background, Shadow, cleanProps } from '../helpers';
 
-// Outside the Box!
+/**
+ * Box is the most basic block component of the library. It acts as a simple wrapper (`div`, `article`, ...)
+ * but includes all the spacing, background and shadow helpers.
+ */
 const Box = props => {
   const { className, children, type, ...attributes } = props;
 
