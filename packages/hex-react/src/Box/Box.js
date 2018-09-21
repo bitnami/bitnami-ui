@@ -55,55 +55,55 @@ Box.propTypes = {
   /**
    * Setup the margin-left and right as auto
    */
-  marginCenter: PropTypes.bool,
+  marginC: PropTypes.bool,
   /**
    * Set the top margin
    */
-  marginTop: PropTypes.oneOf(spacingValues),
+  marginT: PropTypes.oneOf(spacingValues),
   /**
    * Set the bottom margin
    */
-  marginBottom: PropTypes.oneOf(spacingValues),
+  marginB: PropTypes.oneOf(spacingValues),
   /**
    * Set the left margin
    */
-  marginLeft: PropTypes.oneOf(spacingValues),
+  marginL: PropTypes.oneOf(spacingValues),
   /**
    * Set the right margin
    */
-  marginRight: PropTypes.oneOf(spacingValues),
+  marginR: PropTypes.oneOf(spacingValues),
   /**
    * Set the vertical margin (top and bottom)
    */
-  marginVertical: PropTypes.oneOf(spacingValues),
+  marginV: PropTypes.oneOf(spacingValues),
   /**
    * Set the horizontal margin (left and right)
    */
-  marginHorizontal: PropTypes.oneOf(spacingValues),
+  marginH: PropTypes.oneOf(spacingValues),
   /**
    * Set the top padding
    */
-  paddingTop: PropTypes.oneOf(spacingValues),
+  paddingT: PropTypes.oneOf(spacingValues),
   /**
    * Set the bottom padding
    */
-  paddingBottom: PropTypes.oneOf(spacingValues),
+  paddingB: PropTypes.oneOf(spacingValues),
   /**
    * Set the left padding
    */
-  paddingLeft: PropTypes.oneOf(spacingValues),
+  paddingL: PropTypes.oneOf(spacingValues),
   /**
    * Set the right padding
    */
-  paddingRight: PropTypes.oneOf(spacingValues),
+  paddingR: PropTypes.oneOf(spacingValues),
   /**
    * Set the vertical padding (top and bottom)
    */
-  paddingVertical: PropTypes.oneOf(spacingValues),
+  paddingV: PropTypes.oneOf(spacingValues),
   /**
    * Set the horizontal padding (left and right)
    */
-  paddingHorizontal: PropTypes.oneOf(spacingValues),
+  paddingH: PropTypes.oneOf(spacingValues),
   /**
    * Display a shadow. The level represents the visual elevation
    */
@@ -127,19 +127,19 @@ Box.defaultProps = {
   type: 'div',
   className: '',
   children: undefined,
-  marginCenter: undefined,
-  marginTop: undefined,
-  marginBottom: undefined,
-  marginLeft: undefined,
-  marginRight: undefined,
-  marginVertical: undefined,
-  marginHorizontal: undefined,
-  paddingTop: undefined,
-  paddingBottom: undefined,
-  paddingLeft: undefined,
-  paddingRight: undefined,
-  paddingVertical: undefined,
-  paddingHorizontal: undefined,
+  marginC: undefined,
+  marginT: undefined,
+  marginB: undefined,
+  marginL: undefined,
+  marginR: undefined,
+  marginV: undefined,
+  marginH: undefined,
+  paddingT: undefined,
+  paddingB: undefined,
+  paddingL: undefined,
+  paddingR: undefined,
+  paddingV: undefined,
+  paddingH: undefined,
   shadow: undefined,
   background: undefined,
   gradient: undefined,

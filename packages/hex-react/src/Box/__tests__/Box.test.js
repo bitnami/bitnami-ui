@@ -11,7 +11,7 @@ describe('Box', () => {
 
   it('apply correctly the helpers', () => {
     const wrapper = shallow(
-      <Box marginTop="small" background="brand">
+      <Box marginT="small" background="brand">
         Test
       </Box>,
     );

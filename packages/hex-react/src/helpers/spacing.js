@@ -18,7 +18,7 @@ const validValues = [
 ];
 
 // Suffixes for the props
-const propSuffixes = ['Top', 'Bottom', 'Left', 'Right', 'Horizontal', 'Vertical'];
+const propSuffixes = ['T', 'B', 'L', 'R', 'H', 'V'];
 
 propSuffixes.forEach(k => {
   propKeys.push(`margin${k}`);
