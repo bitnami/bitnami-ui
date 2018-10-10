@@ -16,8 +16,6 @@ export default {
         rules
       }
     }
-  }
-  // src: './',
-  // source: './',
-  // theme: 'src/theme/src/index.tsx'
+  },
+  //theme: '@bitnami/hex-docz-theme'
 }

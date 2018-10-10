@@ -1,0 +1,15 @@
+{
+  "name": "@bitnami/hex-docz-theme",
+  "version": "3.2.0",
+  "description": "Theme for the HEx documentation",
+  "main": "src/index.js",
+  "author": "Bitnami <webdev@bitnami.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@bitnami/hex-react": "^3.2.0",
+    "docz": "^0.11.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}

@@ -23,6 +23,7 @@
     "docz": "^0.11.0"
   },
   "dependencies": {
+    "@bitnami/hex-docz-theme": "^3.2.0",
     "@bitnami/hex-react": "^3.2.0"
   }
 }
