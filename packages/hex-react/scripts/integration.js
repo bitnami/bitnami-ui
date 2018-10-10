@@ -27,16 +27,18 @@ const tasks = new Listr(
           const envOpts = Object.assign(process.env, { CAPABILITY: k });
           const test = spawn('yarn', ['test:integration:single'], { env: envOpts });
 
-          // // TODO: (angel) move this to a log file
-          // test.stdout.on('data', data => {
-          //   debug(`${k}: ${data}`);
-          // });
+          if (process.env.DEBUG && process.env.DEBUG === 'true') {
+            // TODO: (angel) move this to a log file
+            test.stdout.on('data', data => {
+              debug(`${k}: ${data}`);
+            });
 
-          // // TODO: (angel) move this to a log file
-          // test.stderr.on('data', testErr => {
-          //   debug(`Error running ${k}`);
-          //   debug(testErr);
-          // });
+            // TODO: (angel) move this to a log file
+            test.stderr.on('data', testErr => {
+              debug(`Error running ${k}`);
+              debug(testErr);
+            });
+          }
 
           test.on('close', code => {
             if (code === 0) {

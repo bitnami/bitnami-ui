@@ -1,0 +1,44 @@
+---
+name: Box
+menu: Components
+route: /components/box
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Box } from '@bitnami/hex-react/src'
+
+# Box
+
+Box is the most basic component of the library. It acts as a simple `div` but includes all the
+helpers in the React component.
+
+## React
+
+### Example
+
+<Playground>
+  <Box background="accent" shadow={1}>
+    Hello from HEx
+  </Box>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Box} />
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <div class="bg-accent shadow-1">
+    Hello from HEx
+  </div>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.

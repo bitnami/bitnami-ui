@@ -1,0 +1,45 @@
+---
+name: Text
+menu: Components
+route: /components/text
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Text } from '@bitnami/hex-react/src'
+
+# Text
+
+Text is a basic component for styling the inner text. It includes different helpers to modify the
+font size, style, weight and color.
+
+## React
+
+### Example
+
+<Playground>
+  <Text fontSize="big">
+    Hello from HEx
+  </Text>
+</Playground>
+
+### PropsTable
+
+<PropsTable of={Text} />
+
+## Vanilla
+
+Text modifiers are a bunch of CSS classes that modifies the behaviour of the text
+in the inner elements.
+
+### Example
+
+<Playground>
+  <p class="type-big type-color-accent">
+    Hello from HEx
+  </p>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.
