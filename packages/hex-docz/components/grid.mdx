@@ -1,0 +1,45 @@
+---
+name: Grid
+menu: Components
+route: /components/grid
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Grid } from '@bitnami/hex-react/src'
+
+# Grid
+
+This component is the generic wrapper for any content in the project. It encapsulates its children
+into a container that delimits the maximum width. You can combine it with `Row` and `Col` components
+to get all the features of a grid system.
+
+## React
+
+### Example
+
+<Playground>
+  <Grid size="small">
+    Hello from HEx
+  </Grid>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Grid} />
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <div class="container container-small">
+    Hello from HEx
+  </div>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.
