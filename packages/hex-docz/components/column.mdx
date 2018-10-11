@@ -1,0 +1,61 @@
+---
+name: Column
+menu: Components
+route: /components/column
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Column, Grid } from '@bitnami/hex-react/src'
+
+# Column
+
+`Column` components are used inside the [`Row`](/components/row) of a grid. It can span its width to the
+number of columns to assign to it but it can be eventually collapsed by the parent `Row`. This component
+also accepts an `align` parameter to change the centering behaviour of a column.
+
+By default, the HEx grid is divided in 12 columns.
+
+## React
+
+### Example
+
+<Playground>
+  <Grid size="small">
+    <div class="row collapse-b-tablet">
+      <Column span={6}>
+        Hello from HEx
+      </Column>
+      <Column span={6}>
+        Hello from HEx
+      </Column>
+    </div>
+  </Grid>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Column} />
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <div class="container container-small">
+    <div class="row collapse-b-tablet">
+      <div class="col-6">
+        Hello from HEx
+      </div>
+      <div class="col-6">
+        Hello from HEx
+      </div>
+    </div>
+  </div>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.

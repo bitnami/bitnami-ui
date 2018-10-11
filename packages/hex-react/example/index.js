@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Column } from '@bitnami/hex-react';
 
 const App = () => (
   <Grid>
@@ -15,7 +15,14 @@ const App = () => (
       Hey! I am a quote
     </Blockquote>
     <Box background="accent">
-      <Text fontSize="big">Testing da box!</Text>
+      <div className="row collapse-b-tablet">
+        <Column span={6}>
+          <Text fontSize="big">Testing da box!</Text>
+        </Column>
+        <Column span={6}>
+          <Text fontSize="big">Testing da box!</Text>
+        </Column>
+      </div>
     </Box>
   </Grid>
 );
