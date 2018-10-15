@@ -1,0 +1,73 @@
+---
+name: Code
+menu: Components
+route: /components/code
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Code } from '@bitnami/hex-react/src'
+import RegisterLanguage from '../examples/RegisterLanguage';
+
+import js from 'highlight.js/lib/languages/javascript';
+Code.registerLanguage('js', js);
+
+# Code
+
+The `Code` component adds syntax highligting to your code snippets. You can use it as a block or inline.
+Under the hood, it uses [highlight.js](https://highlightjs.org/).
+
+## React
+
+By default, `Code` doesn't include any language to reduce the size of the bundle. To install a new language,
+you need to follow these steps:
+
+1. Add highlight.js to your project
+
+  <Code>
+    {`yarn add highlight.js`}
+  </Code>
+
+1. Add the CSS of a dark theme to your `head`. We recommend the hybrid theme:
+
+  <Code>
+    {`<link rel="stylesheet" media="screen"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hybrid.min.css">`}
+  </Code>
+
+1. Register the languages you need before use `Code`:
+
+  <RegisterLanguage />
+
+### Example
+
+<Playground>
+  <Code language="js">
+    const num = 1;
+  </Code>
+  This is some <Code inline highlight={false}>console.log('inline JS code')</Code>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Code} />
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+**NOTE**: You need to manually add [highlight.js](https://highlightjs.org/) to enable code highlighting.
+
+<Playground>
+  <pre>
+    <code>
+      const num = 1;
+    </code>
+  </pre>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.

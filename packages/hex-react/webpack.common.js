@@ -18,6 +18,15 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: ['babel-loader', 'eslint-loader'],
       },
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, './node_modules/detect-indent'),
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+        ],
+      },
     ],
   },
   externals: {

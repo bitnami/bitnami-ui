@@ -649,6 +649,19 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@bitnami/hex-core@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@bitnami/hex-core/-/hex-core-3.2.0.tgz#2d2d8f508f25d524062713e0371e5b743bb31218"
+  dependencies:
+    mappy-breakpoints "^0.2.3"
+
+"@bitnami/hex@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@bitnami/hex/-/hex-3.2.0.tgz#75b4a141e6053112c491187ac8d6a14d367accfe"
+  dependencies:
+    "@bitnami/hex-core" "^3.2.0"
+    mappy-breakpoints "^0.2.3"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -2314,6 +2327,10 @@ detect-indent@^4.0.0:
   dependencies:
     repeating "^2.0.0"
 
+detect-indent@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-5.0.0.tgz#3871cc0a6a002e8c3e5b3cf7f336264675f06b9d"
+
 detect-libc@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
@@ -3118,6 +3135,12 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
+fault@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/fault/-/fault-1.0.2.tgz#c3d0fec202f172a3a4d414042ad2bb5e2a3ffbaa"
+  dependencies:
+    format "^0.2.2"
+
 faye-websocket@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.10.0.tgz#4e492f8d04dfb6f89003507f6edbf2d501e7c6f4"
@@ -3298,6 +3321,10 @@ form-data@~2.3.2:
     asynckit "^0.4.0"
     combined-stream "1.0.6"
     mime-types "^2.1.12"
+
+format@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
 
 formatio@1.1.1:
   version "1.1.1"
@@ -3625,6 +3652,10 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
+
+highlight.js@^9.12.0, highlight.js@~9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -5057,6 +5088,13 @@ loud-rejection@^1.6.0:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
 
+lowlight@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-1.10.0.tgz#fbbd9158240d9c6c07c44b055ff0c32f1a2c9b99"
+  dependencies:
+    fault "^1.0.2"
+    highlight.js "~9.12.0"
+
 lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.3.tgz#a1175cf3496dfc8436c156c334b4955992bce69c"
@@ -5103,6 +5141,10 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+mappy-breakpoints@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/mappy-breakpoints/-/mappy-breakpoints-0.2.3.tgz#e7966a15eea5a2ea6b4895d25b7eb822dd7df45b"
 
 math-random@^1.0.1:
   version "1.0.1"

@@ -16,7 +16,9 @@ pre {
   background-color: color-level('dark', 900);
   line-height: 1.2;
   margin: margin('normal') 0 margin('big');
+  overflow: auto;
   padding: padding('normal');
+  word-wrap: normal;
 }
 
 code {
@@ -30,7 +32,7 @@ code {
 }
 
 pre code {
-  background-color: initial;
+  background-color: inherit;
   border: none;
   color: color('iron');
   padding: 0;

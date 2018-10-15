@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code renders correctly 1`] = `
+<pre
+  className=""
+>
+  <code>
+    <span
+      className={
+        Array [
+          "hljs-keyword",
+        ]
+      }
+      key="lo-0-0"
+    >
+      const
+    </span>
+     test = 
+    <span
+      className={
+        Array [
+          "hljs-number",
+        ]
+      }
+      key="lo-0-2"
+    >
+      1
+    </span>
+    ;
+  </code>
+</pre>
+`;
+
+exports[`Code renders multiline correctly 1`] = `
+<pre
+  className=""
+>
+  <code>
+    <span
+      className={
+        Array [
+          "hljs-keyword",
+        ]
+      }
+      key="lo-0-0"
+    >
+      const
+    </span>
+     test = 
+    <span
+      className={
+        Array [
+          "hljs-number",
+        ]
+      }
+      key="lo-0-2"
+    >
+      1
+    </span>
+    ;
+
+    <span
+      className={
+        Array [
+          "hljs-keyword",
+        ]
+      }
+      key="lo-0-4"
+    >
+      const
+    </span>
+     f = 
+    <span
+      className={
+        Array [
+          "hljs-function",
+        ]
+      }
+      key="lo-0-6"
+    >
+      (
+      <span
+        className={
+          Array [
+            "hljs-params",
+          ]
+        }
+        key="lo-1-1"
+      >
+        t
+      </span>
+      ) =&gt;
+    </span>
+     t + 
+    <span
+      className={
+        Array [
+          "hljs-number",
+        ]
+      }
+      key="lo-0-8"
+    >
+      1
+    </span>
+    ;
+  </code>
+</pre>
+`;

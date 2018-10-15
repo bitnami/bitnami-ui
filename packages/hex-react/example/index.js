@@ -5,7 +5,15 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Column } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Code, Column } from '@bitnami/hex-react';
+
+// Code block
+import js from 'highlight.js/lib/languages/javascript';
+import ruby from 'highlight.js/lib/languages/ruby';
+
+// Register new languages
+Code.registerLanguage('js', js);
+Code.registerLanguage('ruby', ruby);
 
 const App = () => (
   <Grid>
@@ -24,6 +32,35 @@ const App = () => (
         </Column>
       </div>
     </Box>
+    <h3>Code</h3>
+    <Code language="js">
+      {`
+        const test = (num) => num + 1;
+        test(1);
+
+        const anotherFunc = () => {
+          return 'This is a test';
+        }
+      `}
+    </Code>
+    <Code language="js">{`const test = (num) => num + 1;`}</Code>
+    <Code language="js">
+      {`const test = (num) => num + 1;
+const test = 1`}
+    </Code>
+    <Code language="ruby">
+      {`
+        def test
+          puts "hello world"
+        end
+      `}
+    </Code>
+    <h3>Inline code</h3>
+    <p>
+      <Code inline language="js" highlight={false}>
+        {`console.log('inline code')`}
+      </Code>
+    </p>
   </Grid>
 );
 
