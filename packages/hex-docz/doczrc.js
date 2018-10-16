@@ -1,5 +1,8 @@
 const path = require('path');
 
+// Public folder
+const PUBLIC = path.resolve(__dirname, 'public');
+
 export default {
   indexHtml: 'templates/index.html',
   title: 'HEx',
@@ -8,6 +11,10 @@ export default {
     const rule = rules[0];
 
     rules[0].include.push(path.resolve('../hex-react/src/'));
+
+    config.resolve.alias = Object.assign({}, config.resolve.alias, {
+      '@images': `${PUBLIC}/images`,
+    });
 
     return {
       ...config,

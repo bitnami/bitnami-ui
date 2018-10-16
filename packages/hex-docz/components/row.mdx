@@ -1,0 +1,107 @@
+---
+name: Row
+menu: Components
+route: /components/Row
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Grid, Row } from '@bitnami/hex-react/src'
+import diagram from '@images/collapse-diagram.png'
+
+# Row
+
+A `Row` delimits a set of columns inside a [`Grid`](/components/Row) component. Unlike other libraries,
+the `Row` is the component that sets the resposive behaviour of the different columns. By default,
+it will show the columns based on its number and will _collapse_ based on different predefined media queries.
+
+* `phone`
+* `phone-land`
+* `tablet`
+* `desktop`
+* `wide`
+* `ultrawide`
+
+Comparing it with other frameworks like Bootstrap, this code is equivalent in both:
+
+```
+// Bootstrap
+<div class="row">
+  <div class="col-12 col-md-6"></div>
+  <div class="col-12 col-md-6"></div>
+</div>
+
+// HEx
+<div class="row collapse-b-phone-land">
+  <div class="col-6"></div>
+  <div class="col-6"></div>
+</div>
+```
+
+## React
+
+### Example
+
+**NOTE**: The collapse feature is based on browser width, so it won't work when you change the width
+of the playground component.
+
+<Playground>
+  <Grid>
+    <Row collapse={[1, 1, 2, 3]}>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+    </Row>
+  </Grid>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Row} />
+
+`collapse` property allows you to modify the responsive behaviour of inner columns. It's based on the media queries
+described in the [introduction](#Row) and uses the index in the array to define the number of columns per query. This
+diagram describes all the available media queries for the `collapse` property:
+
+<img src={diagram} alt="Diagram describing the collapse valid values" className="img-fluid" />
+
+Also, you can check the following examples:
+
+* `[1]`: this value indicates the row to collapse the columns on phone
+* `[1, 1]`: since the number of columns is the same for phone and phone landscape, the row will collapse below phone-land breakpoint (`b-phone-land`)
+* `[2, 3, 3, 4]`: in this case, we will have 2 columns on phone, 3 below tablet and 4 below desktop
+
+Remember that the index in the array defines the specific media query:
+
+* 0: `phone`
+* 1: `phone-land`
+* 2: `tablet`
+* 3: `desktop`
+* 4: `wide`
+* 5: `ultrawide`
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <div class="container container-small">
+    <div class="row collapse-on-phone collapse-2-b-tablet collapse-3-b-wide">
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+      <div className="col-2">Test</div>
+    </div>
+  </div>
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.

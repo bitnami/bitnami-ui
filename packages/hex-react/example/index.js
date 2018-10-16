@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Code, Column } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -23,14 +23,42 @@ const App = () => (
       Hey! I am a quote
     </Blockquote>
     <Box background="accent">
-      <div className="row collapse-b-tablet">
-        <Column span={6}>
-          <Text fontSize="big">Testing da box!</Text>
-        </Column>
-        <Column span={6}>
-          <Text fontSize="big">Testing da box!</Text>
-        </Column>
-      </div>
+      <Grid>
+        <Row collapse={[1, 2, 2, 3, 3]} align="center">
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+            </Text>
+          </Column>
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+            </Text>
+          </Column>
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+              <br />
+              Testing da box!
+            </Text>
+          </Column>
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+            </Text>
+          </Column>
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+            </Text>
+          </Column>
+          <Column span={2}>
+            <Text fontSize="big" textAlign="center">
+              Testing da box!
+            </Text>
+          </Column>
+        </Row>
+      </Grid>
     </Box>
     <h3>Code</h3>
     <Code language="js">

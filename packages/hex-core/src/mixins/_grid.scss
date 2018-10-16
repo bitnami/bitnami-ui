@@ -11,16 +11,16 @@
   &.collapse-#{$breakpoint} {
     @include grid-collapse();
 
+    // When collapse, all items except the first one must have the margin-top
+    > [class^="col"]:nth-child(n+2) {
+      margin-top: $grid-gutter;
+    }
+
     // Reset the border-right for vdivide class
     &.row-vdivide {
       > [class^="col"] {
         border-right: 0;
       }
-    }
-
-    // Reverse the order of the columns when collapsed
-    &.row-reverse {
-      flex-direction: column-reverse;
     }
   }
 }
@@ -60,7 +60,11 @@
     $percent: ($grid-columns / $columns) * (100% / $grid-columns);
     flex: 0 0 $percent;
     max-width: $percent;
-    margin-top: $grid-gutter;
+
+    // Use it to reset the 'margin-top: 0;' of bigger media queries
+    &:nth-child(n) {
+      margin-top: $grid-gutter;
+    }
 
     &:nth-child(-n+#{$columns}) {
       margin-top: 0;
