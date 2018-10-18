@@ -9,16 +9,62 @@ import { Blockquote } from '@bitnami/hex-react/src'
 
 # Blockquote
 
-Testing the blockquote
+Blockquote is a component to display a cite or any other text you want to highlight. This component
+is useful to highlight a special text in a page.
+
+Check the next sections to find some customizations.
+
+### Example
 
 <Playground>
-  <Blockquote>Hey! I am a quote</Blockquote>
+  <Blockquote color="accent" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone at #awsreinvent. On my way!
+    <br />
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </Blockquote>
+
+  <Blockquote outstanding cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone later. On my way!
+    <br />
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </Blockquote>
 </Playground>
 
-## React
+### PropTypes
 
 <PropsTable of={Blockquote} />
 
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <blockquote class="accent" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone later. On my way!
+    <br />
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+
+  <blockquote class="outstanding" cite="https://twitter.com/ericabrescia/status/803775698297036801">
+    Great day at my first Linux Foundation board meeting, but looking forward to seeing
+    everyone later. On my way!
+    <br />
+    See you there!
+    <a href="https://twitter.com/ericabrescia/" rel="author">Erica Brescia</a>
+  </blockquote>
+</Playground>
+
 ## Accesibility
 
-Test!
+It's important to identify properly the source of the quote and the author of it:
+
+* Set the source of teh quote using the `cite` property of the component
+* Add an anchor with a proper link to the author profile. Add the `rel="author"` property to that anchor

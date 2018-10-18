@@ -19,7 +19,7 @@ const App = () => (
   <Grid>
     <h1 id="title">HEx</h1>
     <h2>Quote</h2>
-    <Blockquote className="test" cite="https://twitter.com">
+    <Blockquote color="brand" cite="https://twitter.com">
       Hey! I am a quote
     </Blockquote>
     <Box background="accent">
