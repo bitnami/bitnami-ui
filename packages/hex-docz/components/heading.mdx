@@ -1,0 +1,52 @@
+---
+name: Heading
+menu: Components
+route: /components/heading
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Heading, Code, Blockquote } from '@bitnami/hex-react/src'
+
+# Heading
+
+Heading allows you to modify the default behaviour of HTML headings. Use it when you want to set a subtitle or
+inverse heading.
+
+## React
+
+### Example
+
+<Playground>
+  <h1>Test</h1>
+  <Heading level={2} subtitle>
+    This is the subtitle
+  </Heading>
+</Playground>
+
+### PropsTable
+
+<PropsTable of={Heading} />
+
+## Vanilla
+
+Heading modifiers are a bunch of CSS classes that modifies the behaviour of the default heading:
+
+### Example
+
+<Playground>
+  <h1>Hello from HEx</h1>
+  <h2 class="subtitle">
+    This is the subtitle
+  </h2>
+</Playground>
+
+## Accesibility
+
+<Blockquote color="action" cite="https://www.w3.org/WAI/tutorials/page-structure/headings/">
+  Headings communicate the organization of the content on the page. Web browsers, plug-ins, and assistive technologies can use them to provide in-page navigation.
+  <br />
+  <a href="https://www.w3.org/WAI/" rel="author">W3C Accessibility initiative</a>
+</Blockquote>
+
+Headings are an important element in the content hierarchy. The level of the headings should be consecutive, otherwise
+it's difficult to identify if we've missed a section. The key is to avoid skipping heading ranks.
