@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Row, Column, Code } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code, Heading } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -17,8 +17,8 @@ Code.registerLanguage('ruby', ruby);
 
 const App = () => (
   <Grid>
-    <h1 id="title">HEx</h1>
-    <h2>Quote</h2>
+    <Heading id="title">HEx</Heading>
+    <Heading level={2}>Quote</Heading>
     <Blockquote className="test" cite="https://twitter.com">
       Hey! I am a quote
     </Blockquote>
@@ -60,7 +60,7 @@ const App = () => (
         </Row>
       </Grid>
     </Box>
-    <h3>Code</h3>
+    <Heading level={3}>Code</Heading>
     <Code language="js">
       {`
         const test = (num) => num + 1;
@@ -83,7 +83,7 @@ const test = 1`}
         end
       `}
     </Code>
-    <h3>Inline code</h3>
+    <Heading level={3}>Inline code</Heading>
     <p>
       <Code inline language="js" highlight={false}>
         {`console.log('inline code')`}
