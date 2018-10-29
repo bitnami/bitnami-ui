@@ -33,7 +33,7 @@ Grid.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Any element that will be wrapped by the Box
+   * Any element that will be wrapped by the Grid
    */
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };

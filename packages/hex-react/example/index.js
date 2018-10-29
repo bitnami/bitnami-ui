@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Row, Column, Code, Link } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code, Separator, Heading, Link } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -17,11 +17,12 @@ Code.registerLanguage('ruby', ruby);
 
 const App = () => (
   <Grid>
-    <h1 id="title">HEx</h1>
-    <h2>Quote</h2>
-    <Blockquote className="test" cite="https://twitter.com">
+    <Heading id="title">HEx</Heading>
+    <Heading level={2}>Quote</Heading>
+    <Blockquote color="brand" cite="https://twitter.com">
       Hey! I am a quote
     </Blockquote>
+    <Separator margin="enormous" size="small" width="50" />
     <Box background="accent">
       <Grid>
         <Row collapse={[1, 2, 2, 3, 3]} align="center">
@@ -60,7 +61,8 @@ const App = () => (
         </Row>
       </Grid>
     </Box>
-    <h3>Code</h3>
+    <Separator margin="enormous" />
+    <Heading level={3}>Code</Heading>
     <Code language="js">
       {`
         const test = (num) => num + 1;
@@ -83,7 +85,7 @@ const test = 1`}
         end
       `}
     </Code>
-    <h3>Inline code</h3>
+    <Heading level={3}>Inline code</Heading>
     <p>
       <Code inline language="js" highlight={false}>
         {`console.log('inline code')`}

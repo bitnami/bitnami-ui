@@ -53,7 +53,7 @@ Lerna is widely used in the commands, so first of all, we recommend you to insta
 npm i -g lerna # or yarn global add lerna
 ```
 
-Then, you have to install the dependencies of the proejct and the different packages. Lerna will take care of install the internal dependencies as symlinks and the other dependencies with Yarn:
+Then, you have to install the dependencies of the project and the different packages. Lerna will take care of install the internal dependencies as symlinks and the other dependencies with Yarn:
 
 ```
 yarn install && lerna bootstrap
