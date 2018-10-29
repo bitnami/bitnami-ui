@@ -31,12 +31,12 @@ describe('Heading', () => {
     expect(wrapper.text()).toEqual(text);
   });
 
-  it('adds subtitle CSS class', () => {
+  it('adds inverse CSS class', () => {
     const wrapper = shallow(<Heading inverse>Test</Heading>);
     expect(wrapper.hasClass('inverse')).toBe(true);
   });
 
-  it('adds inverse CSS class', () => {
+  it('adds subtitle CSS class', () => {
     const wrapper = shallow(<Heading subtitle>Test</Heading>);
     expect(wrapper.hasClass('subtitle')).toBe(true);
   });
