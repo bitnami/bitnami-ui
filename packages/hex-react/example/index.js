@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Row, Column, Code } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code, Link } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -88,6 +88,20 @@ const test = 1`}
       <Code inline language="js" highlight={false}>
         {`console.log('inline code')`}
       </Code>
+    </p>
+    <h3>Anchors</h3>
+    <p>
+      <Link href="https://bitnami.com" external>
+        Test
+      </Link>
+    </p>
+    <p>
+      <Link href="https://bitnami.com" external noReferrer>
+        Test
+      </Link>
+    </p>
+    <p>
+      <Link href="https://design.bitnami.com">Documentation</Link>
     </p>
   </Grid>
 );
