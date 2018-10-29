@@ -20,6 +20,11 @@ describe('Blockquote', () => {
     expect(wrapper.hasClass('outstanding')).toBe(true);
   });
 
+  it('adds color class', () => {
+    const wrapper = shallow(<Blockquote color="brand" />);
+    expect(wrapper.hasClass('brand')).toBe(true);
+  });
+
   it('accept external classNames', () => {
     const wrapper = shallow(<Blockquote className="test" />);
     expect(wrapper.hasClass('test')).toBe(true);
