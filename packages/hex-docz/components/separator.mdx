@@ -1,0 +1,39 @@
+---
+name: Separator
+menu: Components
+route: /components/separator
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Separator } from '@bitnami/hex-react/src'
+
+# Separator
+
+Display a simple horizontal separator (`hr`)
+
+## React
+
+### Example
+
+<Playground>
+  <Separator size="small" />
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Separator} />
+
+## Vanilla
+
+These modifiers are mapped directly from CSS classes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <hr class="separator-small" />
+</Playground>
+
+## Accesibility
+
+Since this is a generic component, it doesn't have any particular accessibility requirement.
+It's just for presentation.

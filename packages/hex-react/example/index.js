@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Row, Column, Code, Heading } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code, Separator, Heading } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -19,9 +19,10 @@ const App = () => (
   <Grid>
     <Heading id="title">HEx</Heading>
     <Heading level={2}>Quote</Heading>
-    <Blockquote className="test" cite="https://twitter.com">
+    <Blockquote color="brand" cite="https://twitter.com">
       Hey! I am a quote
     </Blockquote>
+    <Separator margin="enormous" size="small" width="50" />
     <Box background="accent">
       <Grid>
         <Row collapse={[1, 2, 2, 3, 3]} align="center">
@@ -60,6 +61,7 @@ const App = () => (
         </Row>
       </Grid>
     </Box>
+    <Separator margin="enormous" />
     <Heading level={3}>Code</Heading>
     <Code language="js">
       {`
