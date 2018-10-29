@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import '@babel/polyfill';
 
 // Components
-import { Blockquote, Box, Text, Grid, Row, Column, Code, Separator, Heading, Link } from '@bitnami/hex-react';
+import { Blockquote, Box, Text, Grid, Row, Column, Code, Separator, Heading, Anchor } from '@bitnami/hex-react';
 
 // Code block
 import js from 'highlight.js/lib/languages/javascript';
@@ -93,17 +93,17 @@ const test = 1`}
     </p>
     <h3>Anchors</h3>
     <p>
-      <Link href="https://bitnami.com" external>
+      <Anchor href="https://bitnami.com" external>
         Test
-      </Link>
+      </Anchor>
     </p>
     <p>
-      <Link href="https://bitnami.com" external noReferrer>
+      <Anchor href="https://bitnami.com" external noReferrer>
         Test
-      </Link>
+      </Anchor>
     </p>
     <p>
-      <Link href="https://design.bitnami.com">Documentation</Link>
+      <Anchor href="https://design.bitnami.com">Documentation</Anchor>
     </p>
   </Grid>
 );

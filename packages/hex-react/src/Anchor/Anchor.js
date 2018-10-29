@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cs from 'classnames';
 
-const Link = props => {
+const Anchor = props => {
   const {
     external,
     noReferrer,
     inverse,
     secondary,
-    noDecoration,
+    noUnderline,
     className,
     children,
     href,
@@ -23,7 +23,7 @@ const Link = props => {
   const css = cs(className, {
     inverse: inverse === true,
     secondary: secondary === true,
-    'no-decoration': noDecoration === true,
+    'no-decoration': noUnderline === true,
   });
 
   return React.createElement(
@@ -39,13 +39,13 @@ const Link = props => {
   );
 };
 
-Link.propTypes = {
+Anchor.propTypes = {
   /**
-   * URL or anchor for the link
+   * URL or hash for the anchor
    */
   href: PropTypes.string,
   /**
-   * Open the link in a new tab. It adds the "noopener" protection
+   * Open the anchor in a new tab. It adds the "noopener" protection
    */
   external: PropTypes.bool,
   /**
@@ -57,13 +57,13 @@ Link.propTypes = {
    */
   inverse: PropTypes.bool,
   /**
-   * Use the brand color for the link
+   * Use the brand color for the anchor
    */
   secondary: PropTypes.bool,
   /**
-   * Remove the underline for the link
+   * Remove the underline for the anchor
    */
-  noDecoration: PropTypes.bool,
+  noUnderline: PropTypes.bool,
   /**
    * Other CSS classes for the component
    */
@@ -74,15 +74,15 @@ Link.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
-Link.defaultProps = {
+Anchor.defaultProps = {
   href: '',
   external: false,
   noReferrer: false,
   inverse: false,
   secondary: false,
-  noDecoration: false,
+  noUnderline: false,
   className: '',
   children: undefined,
 };
 
-export default Link;
+export default Anchor;
