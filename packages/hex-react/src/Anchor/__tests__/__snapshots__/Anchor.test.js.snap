@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor renders correctly 1`] = `
+<a
+  className={null}
+  href="https://design.bitnami.com"
+  rel={null}
+  target={null}
+>
+  Test
+</a>
+`;

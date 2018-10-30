@@ -1,0 +1,49 @@
+---
+name: Anchor
+menu: Components
+route: /components/link
+---
+
+import { Playground, PropsTable } from 'docz'
+import { Anchor } from '@bitnami/hex-react/src'
+
+# Anchor
+
+`Anchor` is a helper component that ensure you set the proper HTML attributes to the anchors. For example,
+we must use `noopener` to avoid security issues with external links.
+
+## React
+
+### Example
+
+<Playground>
+  <Anchor href="https://design.bitnami.com" external>
+    HEx Design System
+  </Anchor>
+</Playground>
+
+### PropTypes
+
+<PropsTable of={Anchor} />
+
+## Vanilla
+
+These modifiers are mapped directly from anchor (`a`) attributes you can use directly in your HTML code:
+
+### Example
+
+<Playground>
+  <a href="https://design.bitnami.com" rel="noopener" target="_blank">
+    HEx Design System
+  </a>
+</Playground>
+
+## Accesibility
+
+Anchors are the way people navigate through websites. It's important to keep them clear, so people know where
+will be redirected. These are some rules to make your links more accessible:
+
+* Don't use icons/images without `alt` inside an anchor
+* Keep the text of the link concise
+* Don't use non-ASCII characters in links
+* Avoid the usage of emojis
