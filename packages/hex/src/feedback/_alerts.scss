@@ -84,10 +84,12 @@ last example.
 <div class="container container-tiny">
   <div class="alert alert-warning margin-c" role="alertdialog" aria-labelledby="alertTitle1" aria-describedby="alertDesc1">
     <h3 id="alertTitle1" class="margin-t-reset">Delete your application</h3>
-    <p id="alertDesc1">This action will remove your application from our systems and it cannot be reverted:</p>
+    <p id="alertDesc1">
+      This action will remove your application from our <a href="#">systems</a> and it cannot be reverted:
+    </p>
     <p class="margin-b-small">
       <button class="button button-danger">Delete my application</button>
-      <button class="button">Cancel deletion</button>
+      <a class="button">Cancel deletion</a>
     </p>
     <button class="alert__close">
       &times;
@@ -104,7 +106,7 @@ last example.
   padding: padding('normal') padding('enormous') padding('normal') padding('big');
   position: relative;
 
-  a {
+  a:not(.button) {
     text-decoration: underline;
   }
 
