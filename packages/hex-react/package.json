@@ -2,7 +2,12 @@
   "name": "@bitnami/hex-react",
   "version": "3.2.0",
   "description": "React component library based on HEx design system",
-  "main": "lib/hex.react.js",
+  "main": "lib/hex.react.min.js",
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "start": "webpack --watch --config webpack.dev.js --progress",
     "build:dev": "webpack --progress --config webpack.dev.js",
