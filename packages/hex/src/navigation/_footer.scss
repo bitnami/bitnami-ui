@@ -14,7 +14,7 @@ Copyright text and social links. This components depends on the
     <div class="row collapse-b-desktop">
       <div class="col-3">
         <div class="footer__copyright">
-          <h4 class="inverse">
+          <h4 class="inverse margin-t-small">
             <img src="/assets/images/logo-white.svg" alt="Bitnami logo"
               class="footer__logo">
           </h4>
@@ -63,22 +63,22 @@ Copyright text and social links. This components depends on the
       <div class="col-9">
         <div class="row collapse-3-on-phone-land collapse-2-on-phone">
           <div class="col-2">
+            <h3>Products</h3>
             <ul class="remove-style padding-reset">
-              <h3>Products</h3>
               <li><a href="#">Application Catalog</a></li>
               <li><a href="#">Stacksmith</a></li>
             </ul>
           </div>
           <div class="col-2">
+            <h3>Solutions</h3>
             <ul class="remove-style padding-reset">
-              <h3>Solutions</h3>
               <li><a href="#">Application Packaging</a></li>
               <li><a href="#">Cloud Migration</a></li>
             </ul>
           </div>
           <div class="col-2">
+            <h3>Partners</h3>
             <ul class="remove-style padding-reset">
-              <h3>Partners</h3>
               <li><a href="#">Cloud</a></li>
               <li><a href="#">Software</a></li>
               <li><a href="#">Technology</a></li>
@@ -86,8 +86,8 @@ Copyright text and social links. This components depends on the
             </ul>
           </div>
           <div class="col-2">
+            <h3><a href="#">About Us</a></h3>
             <ul class="remove-style padding-reset">
-              <h3><a href="#">About Us</a></h3>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Team</a></li>
               <li><a href="#">Careers</a></li>
@@ -99,15 +99,15 @@ Copyright text and social links. This components depends on the
             </ul>
           </div>
           <div class="col-2">
+            <h3>Legal</h3>
             <ul class="remove-style padding-reset">
-              <h3>Legal</h3>
               <li><a href="#">Customer Agreement</a></li>
               <li><a href="#">Privacy</a></li>
             </ul>
           </div>
           <div class="col-2">
+            <h3>Support</h3>
             <ul class="remove-style padding-reset">
-              <h3>Support</h3>
               <li><a href="#">Docs</a></li>
               <li><a href="#">Forum</a></li>
             </ul>
@@ -128,17 +128,19 @@ Copyright text and social links. This components depends on the
     text-decoration: none;
   }
 
-  ul {
-    h3 {
-      font-size: type-scale('normal');
-      color: color("light-blue");
+  h3 {
+    font-size: type-scale('normal');
+    color: color('light-blue');
+    margin-top: spacing('big');
 
-      a{
-        &:hover {
-          color: color-level('light-blue', 600);
-        }
+    a {
+      &:hover {
+        color: color-level('light-blue', 600);
       }
     }
+  }
+
+  ul {
     li {
       a {
         font-size: su(.7);
