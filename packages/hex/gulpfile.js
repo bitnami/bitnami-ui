@@ -36,9 +36,11 @@ gulp.task('css', function () {
     .pipe(replace('{VERSION}', config.version))
     .pipe(replace('{HEX_ENV}', environment))
     .pipe(sass().on('error', sass.logError))
+    .pipe(replace('{VERSION}', config.version)) // Replace the {VERSION} in the core import
     .pipe(rename({ basename: basename }))
     .pipe(gulp.dest(dist))
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(replace('{VERSION}', config.version)) // Replace the {VERSION} in the core import
     .pipe(rename({ basename: basename, suffix: '.min' }))
     .pipe(gulp.dest(dist));
 });
