@@ -30,7 +30,7 @@ HEx repo is managed as a monorepo and it's composed of many npm packages. All of
 | [hex](https://github.com/bitnami/hex/tree/master/packages/hex) | ![HEx version in npm](https://img.shields.io/npm/v/@bitnami/hex.svg?style=flat-square) | HEx core + components library. This library only includes CSS code |
 | [hex-core](https://github.com/bitnami/hex/tree/master/packages/hex-core) | ![HEx-core version in npm](https://img.shields.io/npm/v/@bitnami/hex-core.svg?style=flat-square) | HEx core components: design tokens, mixins and foundations |
 | [hex-js](https://github.com/bitnami/hex/tree/master/packages/hex-js) | ![HEx-js version in npm](https://img.shields.io/npm/v/@bitnami/hex-js.svg?style=flat-square) | Native JS library for interactive components of the pattern lib |
-| [hex-react](https://github.com/bitnami/hex/tree/master/packages/hex-react) | - | (Soon) React components based on HEx |
+| [hex-react](https://github.com/bitnami/hex/tree/master/packages/hex-react) | ![HEx-react version in npm](https://img.shields.io/npm/v/@bitnami/hex-react.svg?style=flat-square) | (Soon) React components based on HEx |
 | [hex-docs](https://github.com/bitnami/hex/tree/master/packages/hex-docs) | (private) | HEx documentation site: [design.bitnami.com](https://design.bitnami.com) |
 
 ## Installation
