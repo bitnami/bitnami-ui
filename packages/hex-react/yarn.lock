@@ -649,19 +649,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@bitnami/hex-core@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@bitnami/hex-core/-/hex-core-3.2.0.tgz#2d2d8f508f25d524062713e0371e5b743bb31218"
-  dependencies:
-    mappy-breakpoints "^0.2.3"
-
-"@bitnami/hex@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@bitnami/hex/-/hex-3.2.0.tgz#75b4a141e6053112c491187ac8d6a14d367accfe"
-  dependencies:
-    "@bitnami/hex-core" "^3.2.0"
-    mappy-breakpoints "^0.2.3"
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -5141,10 +5128,6 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
-
-mappy-breakpoints@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/mappy-breakpoints/-/mappy-breakpoints-0.2.3.tgz#e7966a15eea5a2ea6b4895d25b7eb822dd7df45b"
 
 math-random@^1.0.1:
   version "1.0.1"
