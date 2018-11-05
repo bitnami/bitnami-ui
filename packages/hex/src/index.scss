@@ -1,9 +1,4 @@
 // The license copy is added by the foundations
-
-// Environment
-$env: '{HEX_ENV}';
-$version: '{VERSION}';
-
 /**
  * Mappy breakpoint library
  */
@@ -13,6 +8,12 @@ $version: '{VERSION}';
  * Import the foundations
  */
 @import 'node_modules/@bitnami/hex-core/src/index';
+
+/**
+ * Need to declare the variables after the hex-core because they're also defined there.
+ */
+$env: '{HEX_ENV}';
+$version: '{VERSION}';
 
 /**
  * Config
