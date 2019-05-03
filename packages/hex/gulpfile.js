@@ -31,7 +31,7 @@ var svgoOptions = {
   removeViewBox: false
 };
 
-gulp.task('css', function () {
+const compileCss = () => {
   return gulp.src(join('src/index.scss'))
     .pipe(replace('{VERSION}', config.version))
     .pipe(replace('{HEX_ENV}', environment))
@@ -43,7 +43,47 @@ gulp.task('css', function () {
     .pipe(replace('{VERSION}', config.version)) // Replace the {VERSION} in the core import
     .pipe(rename({ basename: basename, suffix: '.min' }))
     .pipe(gulp.dest(dist));
-});
+}
+
+const compressPNG = () => {
+  // First copy the base images as @2x
+  return gulp.src(join('images/*.png'))
+    .pipe(rename({ suffix: '@2x' }))
+    .pipe(imagemin([pngquant(pngquantOptions)]))
+    .pipe(gulp.dest(imageDist));
+}
+
+const compressPNGSmall = () => {
+  return gulp.src(join('images/*.png'))
+    .pipe(responsive({
+      '*.png': {
+        width: '50%'
+      }
+    }))
+    .pipe(imagemin([pngquant(pngquantOptions)]))
+    .pipe(gulp.dest(imageDist));
+}
+
+const compressSVG = () => {
+  return gulp.src(join('images/*.svg'))
+    .pipe(imagemin([imagemin.svgo(svgoOptions)]))
+    .pipe(gulp.dest(imageDist));
+}
+
+const watchCss = () => {
+  return gulp.watch([
+    join('src/**/*.scss'),
+    join('../hex-core/dist/*.css')
+  ], gulp.parallel('css'));
+}
+
+const watchImages = () => {
+  // Compiles images and docs
+  return gulp.watch([
+    join('images/*.png'),
+    join('images/*.svg')
+  ], gulp.parallel('images'));
+}
 
 // gulp.task('embed:foundations', function () {
 //   return gulp.src(join('embed/foundations.scss'))
@@ -71,39 +111,8 @@ gulp.task('css', function () {
 
 // gulp.task('embed', ['embed:foundations', 'embed:components']);
 
-// Image tasks
-gulp.task('images', function() {
-  // First copy the base images as @2x
-  gulp.src(join('images/*.png'))
-    .pipe(rename({ suffix: '@2x' }))
-    .pipe(imagemin([pngquant(pngquantOptions)]))
-    .pipe(gulp.dest(imageDist));
-
-  // Copy SVG
-  gulp.src(join('images/*.svg'))
-    .pipe(imagemin([imagemin.svgo(svgoOptions)]))
-    .pipe(gulp.dest(imageDist));
-
-  gulp.src(join('images/*.png'))
-    .pipe(responsive({
-      '*.png': {
-        width: '50%'
-      }
-    }))
-    .pipe(imagemin([pngquant(pngquantOptions)]))
-    .pipe(gulp.dest(imageDist));
-});
-
-// Compile all assets
-gulp.task('dist', ['css', 'images'], function() {});
-
-// Default
-gulp.task('default', ['dist'], function() {
-  // Compile css
-  gulp.watch([
-    join('src/**/*.scss'),
-    join('../hex-core/dist/*.css')
-  ], ['css']);
-  // Compiles images and docs
-  gulp.watch([join('images/*.png'), join('images/*.svg')] , ['images']);
-});
+// Tasks
+gulp.task('css', gulp.parallel(compileCss));
+gulp.task('images', gulp.parallel(compressPNG, compressPNGSmall, compressSVG));
+gulp.task('dist', gulp.parallel('css', 'images'));
+gulp.task('default', gulp.series('dist', gulp.parallel(watchCss, watchImages)));

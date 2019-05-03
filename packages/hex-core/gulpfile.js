@@ -17,8 +17,7 @@ var dist = join('dist'),
 
 var environment = process.env.HEX_ENV || 'development';
 
-// Compile CSS
-gulp.task('css', function () {
+const compileCss = () => {
   return gulp.src(join('src/index.scss'))
     .pipe(replace('{VERSION}', config.version))
     .pipe(replace('{HEX_ENV}', environment))
@@ -28,10 +27,12 @@ gulp.task('css', function () {
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(rename({ basename: basename, suffix: '.min' }))
     .pipe(gulp.dest(dist));
-});
+}
 
-// Default
-gulp.task('default', ['css'], function() {
-  // Compile foundations
-  gulp.watch(join('src/**/*.scss') , ['css']);
-});
+const watch = () => {
+  gulp.watch(join('src/**/*.scss') , gulp.parallel('css'));
+}
+
+// Tasks
+gulp.task('css', gulp.parallel(compileCss));
+gulp.task('default', gulp.series(compileCss, watch));
