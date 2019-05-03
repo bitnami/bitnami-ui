@@ -18,7 +18,7 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "test:integration": "node ./scripts/integration.js",
-    "test:integration:single": "jest --ci --setupTestFrameworkScriptFile ./setupIntegrationTests.js --testMatch **/__integration__/*.js ./__integration__/*.js",
+    "test:integration:single": "jest --ci --setupFilesAfterEnv ./setupIntegrationTests.js --testEnvironment ./integrationEnvironment.js --transform '{ \"^.*\\\\.js$\": \"<rootDir>/jestPreprocess.js\" }' --no-cache --testMatch **/__integration__/*.js ./__integration__/*.js",
     "test:a11y": "node ./scripts/pa11y.js"
   },
   "keywords": [
@@ -75,6 +75,7 @@
     "highlight.js": "^9.15.6",
     "husky": "^2.2.0",
     "jest": "^24.7.1",
+    "jest-environment-node": "^24.7.1",
     "jest-enzyme": "^7.0.2",
     "lint-staged": "^8.1.6",
     "listr": "^0.14.3",
