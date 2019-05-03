@@ -10,8 +10,8 @@
 		"cdn": "gulp cdn"
 	},
 	"devDependencies": {
-		"gulp": "^3.9.1",
-		"gulp-s3-upload": "^1.7.0",
-		"lerna": "^2.9.0"
+		"gulp": "^4.0.1",
+		"gulp-s3-upload": "^1.7.3",
+		"lerna": "^3.13.4"
 	}
 }

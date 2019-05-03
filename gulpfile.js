@@ -14,30 +14,26 @@ if (bucket == null) {
   process.exit(1);
 }
 
-/**
- * Deploy the current project to production.
- */
-gulp.task('cdn', function() {
-  // Upload CSS Files
-  gulp.src([
-      join('packages/hex/dist/*.css'),
-      join('packages/hex-core/dist/*.css'),
-      join('packages/hex-js/dist/*.js'),
-      join('packages/hex-js/dist/*.js.LICENSE')
-    ])
-    .pipe(s3({
-      Bucket: bucket,
-      keyTransform: function(relative_filename) {
-        return `hex/${config.version}/${relative_filename}`;
-      },
-      uploadNewFilesOnly: true
-    }, {
-      // S3 Constructor Options, ie:
-      maxRetries: 5
-    }));
+const uploadAssets = () => {
+  return gulp.src([
+    join('packages/hex/dist/*.css'),
+    join('packages/hex-core/dist/*.css'),
+    join('packages/hex-js/dist/*.js'),
+    join('packages/hex-js/dist/*.js.LICENSE')
+  ]).pipe(s3({
+    Bucket: bucket,
+    keyTransform: function(relative_filename) {
+      return `hex/${config.version}/${relative_filename}`;
+    },
+    uploadNewFilesOnly: true
+  }, {
+    // S3 Constructor Options, ie:
+    maxRetries: 5
+  }));
+}
 
-  // Upload images
-  gulp.src(join('packages/hex/dist/images/*.{png,svg}'))
+const uploadImages = () => {
+  return gulp.src(join('packages/hex/dist/images/*.{png,svg}'))
     .pipe(s3({
       Bucket: bucket,
       keyTransform: function(relative_filename) {
@@ -47,4 +43,9 @@ gulp.task('cdn', function() {
       // S3 Constructor Options, ie:
       maxRetries: 5
     }));
-});
+}
+
+/**
+ * Deploy the current project to production.
+ */
+gulp.task('cdn', gulp.series(uploadAssets, uploadImages));
