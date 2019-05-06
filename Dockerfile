@@ -1,4 +1,5 @@
-FROM bitnami/node:9
+# Current LTS
+FROM bitnami/node:10.15.3-0
 LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
 # Dependencies
