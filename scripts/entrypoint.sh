@@ -13,6 +13,7 @@ lerna bootstrap --npm-client=yarn
 # It causes the prepublish script to fail due to https://docs.npmjs.com/misc/scripts#user
 lerna run build --scope @bitnami/hex-core
 lerna run build --scope @bitnami/hex
+lerna run build --scope @bitnami/hex-js
 
 # Now, we just launch the command
 exec "$@"
