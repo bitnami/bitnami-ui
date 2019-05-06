@@ -1,5 +1,5 @@
 # Current LTS
-FROM bitnami/node:10.15.3-0
+FROM bitnami/node:10.15.3
 LABEL maintainer="Bitnami <webdev@bitnami.com>"
 
 # Dependencies
