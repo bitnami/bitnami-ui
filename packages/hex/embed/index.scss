@@ -24,16 +24,28 @@ $version: '{VERSION}';
  * Variables contain the values of differents properties for the UI. Some of them
  * are font families, line heights, colors...
  */
-@import '../foundations/variables/all';
+@import '../../hex-core/src/variables/all';
+@import '../src/variables/all';
 
 /**
  * Helper functions to work with the Bitnami UI.
  */
-@import '../foundations/mixins/all';
+@import '../../hex-core/src/mixins/all';
+@import '../src/mixins/all';
 
 // Now, it's time to import all the library
-.bitnami-ui {
-  @import '../foundations/core/all';
-  @import '../foundations/grid/all';
-  @import '../foundations/helpers/all';
+.hex {
+  @import '../../hex-core/src/core/all';
+  @import '../../hex-core/src/grid/all';
+  @import '../../hex-core/src/helpers/all';
+  @import '../src/code/all';
+  @import '../src/display/all';
+  @import '../src/feedback/all';
+  @import '../src/forms/all';
+  @import '../src/hexagons/all';
+  @import '../src/lists/all';
+  @import '../src/navigation/all';
+  @import '../src/open-source/all';
+  @import '../src/profiles/all';
+  @import '../src/social/all';
 }

@@ -85,34 +85,21 @@ const watchImages = () => {
   ], gulp.parallel('images'));
 }
 
-// gulp.task('embed:foundations', function () {
-//   return gulp.src(join('embed/foundations.scss'))
-//     .pipe(replace('{VERSION}', config.version))
-//     .pipe(replace('{HEX_ENV}', environment))
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(rename({ basename: basename, suffix: '.embed' }))
-//     .pipe(gulp.dest(dist))
-//     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-//     .pipe(rename({ basename: basename, suffix: '.embed.min' }))
-//     .pipe(gulp.dest(dist));
-// });
-
-// gulp.task('embed:components', function () {
-//   return gulp.src(join('embed/components.scss'))
-//     .pipe(replace('{VERSION}', config.version))
-//     .pipe(replace('{HEX_ENV}', environment))
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(rename({ basename: basenameComponents, suffix: '.embed' }))
-//     .pipe(gulp.dest(dist))
-//     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-//     .pipe(rename({ basename: basenameComponents, suffix: '.embed.min' }))
-//     .pipe(gulp.dest(dist));
-// });
-
-// gulp.task('embed', ['embed:foundations', 'embed:components']);
+const compileEmbedCSS = () => {
+  return gulp.src(join('embed/index.scss'))
+    .pipe(replace('{VERSION}', config.version))
+    .pipe(replace('{HEX_ENV}', environment))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename({ basename: basename, suffix: '.embed' }))
+    .pipe(gulp.dest(dist))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(rename({ basename: basename, suffix: '.embed.min' }))
+    .pipe(gulp.dest(dist));
+}
 
 // Tasks
-gulp.task('css', gulp.parallel(compileCss));
+gulp.task('embed', gulp.parallel(compileEmbedCSS));
+gulp.task('css', gulp.parallel(compileCss, 'embed'));
 gulp.task('images', gulp.parallel(compressPNG, compressPNGSmall, compressSVG));
 gulp.task('dist', gulp.parallel('css', 'images'));
 gulp.task('default', gulp.series('dist', gulp.parallel(watchCss, watchImages)));
