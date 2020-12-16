@@ -10,11 +10,18 @@
     <link href="<%- root %>assets/css/highlight/okadia.css" rel="stylesheet">
     <link href="<%- root %>hex.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+    <% if(process.env.ONETRUST_ID) { %>
+      <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="<%- process.env.ONETRUST_ID %>"></script>
+      <script type="text/javascript"> function OptanonWrapper() { { window.dataLayer.push({ event: 'OneTrustGroupsUpdated' }); } } </script>
+    <% } %>
     <script src="<%- root %>assets/js/prism.js" data-manual></script>
     <script src="<%- root %>assets/js/all.js"></script>
     <script src="<%- root %>hex.min.js"></script>
   </head>
   <body>
+    <% if(process.env.ONETRUST_ID) { %>
+      <button id="ot-sdk-btn" class="ot-sdk-show-settings" hidden="hidden"> Cookie Settings</button>
+    <% } %>
     <%- include('partials/header') %>
     <main>
       <%- include('menu') %>
