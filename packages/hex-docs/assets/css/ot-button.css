@@ -1,0 +1,18 @@
+.ot-sdk-show-settings {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  color: rgb(255, 255, 255) !important;
+  border: 2px solid rgb(29, 66, 138) !important;
+  padding: 6px !important;
+  display: inline-block;
+  margin: -8 0 1.2px -82px;
+  background-color: rgb(29, 66, 138);
+  cursor: pointer;
+  border-radius: 2.75rem;
+  font-size: 13px;
+  min-width: 200px;
+  height: 40px;
+  font-weight: bold;
+}
